@@ -1,0 +1,1199 @@
+===== File: it/feio/android/omninotes/BaseActivity.java =====
+
+Line 49: Covered 3 times
+Line 60: Covered 3 times
+Line 61: Covered 4 times
+Line 62: Covered 4 times
+Line 67: Covered 4 times
+Line 68: Covered 3 times
+Line 69: Covered 1 times
+Line 73: Covered 2 times
+Line 74: Covered 7 times
+Line 75: Covered 5 times
+Line 76: Covered 3 times
+Line 77: Covered 1 times
+Line 153: Covered 6 times
+Line 154: Covered 6 times
+Line 155: Covered 5 times
+Line 156: Covered 2 times
+Line 160: Covered 3 times
+Line 161: Covered 4 times
+Line 163: Covered 1 times
+Line 167: Covered 3 times
+
+
+===== File: it/feio/android/omninotes/BaseFragment.java =====
+
+Line 24: Covered 3 times
+Line 30: Covered 7 times
+Line 33: Covered 3 times
+Line 34: Covered 2 times
+
+
+===== File: it/feio/android/omninotes/JacocoCoverageReceiver.java =====
+
+Line 10: Covered 3 times
+Line 17: Covered 4 times
+Line 18: Covered 5 times
+Line 19: Covered 3 times
+Line 21: Covered 1 times
+Line 26: Covered 4 times
+Line 27: Covered 4 times
+Line 32: Covered 3 times
+Line 33: Covered 27 times
+Line 34: Covered 9 times
+Line 36: Covered 12 times
+Line 39: Covered 1 times
+Line 40: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/ListFragment.java =====
+
+Line 132: Covered 2 times
+Line 143: Covered 5 times
+Line 149: Covered 3 times
+Line 153: Covered 3 times
+Line 156: Covered 3 times
+Line 157: Covered 3 times
+Line 158: Covered 3 times
+Line 159: Covered 3 times
+Line 160: Covered 5 times
+Line 162: Covered 5 times
+Line 164: Covered 5 times
+Line 171: Covered 3 times
+Line 172: Covered 4 times
+Line 182: Covered 3 times
+Line 183: Covered 3 times
+Line 184: Covered 3 times
+Line 185: Covered 3 times
+Line 186: Covered 4 times
+Line 187: Covered 1 times
+Line 200: Covered 2 times
+Line 209: Covered 6 times
+Line 210: Covered 4 times
+Line 212: Covered 5 times
+Line 213: Covered 6 times
+Line 214: Covered 5 times
+Line 216: Covered 5 times
+Line 217: Covered 2 times
+Line 218: Covered 3 times
+Line 219: Covered 2 times
+Line 220: Covered 4 times
+Line 221: Covered 5 times
+Line 223: Covered 4 times
+Line 224: Covered 3 times
+Line 225: Covered 3 times
+Line 226: Covered 5 times
+Line 229: Covered 7 times
+Line 231: Covered 2 times
+Line 237: Covered 3 times
+Line 238: Covered 5 times
+Line 239: Covered 5 times
+Line 242: Covered 2 times
+Line 243: Covered 1 times
+Line 247: Covered 2 times
+Line 248: Covered 2 times
+Line 249: Covered 10 times
+Line 251: Covered 5 times
+Line 252: Covered 2 times
+Line 253: Covered 2 times
+Line 254: Covered 1 times
+Line 258: Covered 12 times
+Line 259: Covered 3 times
+Line 260: Covered 5 times
+Line 278: Covered 1 times
+Line 282: Covered 7 times
+Line 286: Covered 2 times
+Line 294: Covered 5 times
+Line 295: Covered 5 times
+Line 296: Covered 4 times
+Line 298: Covered 6 times
+Line 299: Covered 5 times
+Line 302: Covered 6 times
+Line 303: Covered 5 times
+Line 308: Covered 4 times
+Line 309: Covered 4 times
+Line 310: Covered 1 times
+Line 317: Covered 6 times
+Line 329: Covered 1 times
+Line 383: Covered 2 times
+Line 384: Covered 4 times
+Line 387: Covered 7 times
+Line 390: Covered 1 times
+Line 491: Covered 6 times
+Line 493: Covered 3 times
+Line 501: Covered 2 times
+Line 512: Covered 5 times
+Line 513: Covered 1 times
+Line 562: Covered 4 times
+Line 563: Covered 4 times
+Line 564: Covered 3 times
+Line 565: Covered 3 times
+Line 566: Covered 1 times
+Line 590: Covered 4 times
+Line 591: Covered 1 times
+Line 657: Covered 3 times
+Line 662: Covered 5 times
+Line 664: Covered 3 times
+Line 665: Covered 2 times
+Line 671: Covered 3 times
+Line 672: Covered 3 times
+Line 673: Covered 7 times
+Line 674: Covered 8 times
+Line 675: Covered 4 times
+Line 678: Covered 6 times
+Line 679: Covered 5 times
+Line 681: Covered 13 times
+Line 683: Covered 4 times
+Line 689: Covered 4 times
+Line 690: Covered 6 times
+Line 693: Covered 7 times
+Line 694: Covered 7 times
+Line 695: Covered 4 times
+Line 696: Covered 2 times
+Line 703: Covered 14 times
+Line 714: Covered 4 times
+Line 722: Covered 4 times
+Line 723: Covered 2 times
+Line 727: Covered 2 times
+Line 730: Covered 1 times
+Line 735: Covered 2 times
+Line 736: Covered 6 times
+Line 737: Covered 4 times
+Line 738: Covered 4 times
+Line 740: Covered 2 times
+Line 741: Covered 5 times
+Line 742: Covered 5 times
+Line 743: Covered 5 times
+Line 744: Covered 5 times
+Line 746: Covered 4 times
+Line 747: Covered 2 times
+Line 748: Covered 2 times
+Line 750: Covered 3 times
+Line 751: Covered 4 times
+Line 752: Covered 4 times
+Line 757: Covered 9 times
+Line 758: Covered 8 times
+Line 759: Covered 2 times
+Line 761: Covered 10 times
+Line 762: Covered 2 times
+Line 764: Covered 12 times
+Line 766: Covered 8 times
+Line 767: Covered 2 times
+Line 769: Covered 12 times
+Line 770: Covered 2 times
+Line 771: Covered 12 times
+Line 772: Covered 2 times
+Line 773: Covered 12 times
+Line 774: Covered 2 times
+Line 775: Covered 10 times
+Line 776: Covered 6 times
+Line 777: Covered 6 times
+Line 778: Covered 1 times
+Line 783: Covered 8 times
+Line 784: Covered 7 times
+Line 791: Covered 4 times
+Line 793: Covered 4 times
+Line 802: Covered 3 times
+Line 806: Covered 2 times
+Line 807: Covered 3 times
+Line 840: Covered 2 times
+Line 841: Covered 1 times
+Line 847: Covered 1 times
+Line 894: Covered 3 times
+Line 895: Covered 1 times
+Line 908: Covered 4 times
+Line 909: Covered 7 times
+Line 911: Covered 5 times
+Line 913: Covered 3 times
+Line 914: Covered 1 times
+Line 998: Covered 4 times
+Line 1010: Covered 1 times
+Line 1045: Covered 10 times
+Line 1047: Covered 5 times
+Line 1048: Covered 5 times
+Line 1052: Covered 5 times
+Line 1058: Covered 5 times
+Line 1063: Covered 4 times
+Line 1064: Covered 3 times
+Line 1065: Covered 20 times
+Line 1067: Covered 2 times
+Line 1096: Covered 8 times
+Line 1097: Covered 2 times
+Line 1117: Covered 11 times
+Line 1118: Covered 4 times
+Line 1121: Covered 1 times
+Line 1169: Covered 9 times
+Line 1170: Covered 3 times
+Line 1172: Covered 2 times
+Line 1174: Covered 6 times
+Line 1177: Covered 4 times
+Line 1184: Covered 2 times
+Line 1186: Covered 3 times
+Line 1187: Covered 1 times
+Line 1190: Covered 7 times
+Line 1191: Covered 8 times
+Line 1207: Covered 5 times
+Line 1209: Covered 5 times
+Line 1210: Covered 2 times
+Line 1211: Covered 6 times
+Line 1215: Covered 1 times
+Line 1264: Covered 2 times
+Line 1270: Covered 5 times
+Line 1271: Covered 5 times
+Line 1273: Covered 1 times
+Line 1325: Covered 3 times
+Line 1844: Covered 4 times
+Line 1850: Covered 2 times
+Line 1853: Covered 8 times
+Line 1855: Covered 2 times
+Line 1856: Covered 14 times
+Line 1860: Covered 4 times
+Line 1861: Covered 6 times
+Line 1863: Covered 5 times
+Line 1865: Covered 2 times
+
+
+===== File: it/feio/android/omninotes/MainActivity.java =====
+
+Line 86: Covered 2 times
+Line 89: Covered 3 times
+Line 96: Covered 4 times
+Line 103: Covered 3 times
+Line 104: Covered 3 times
+Line 106: Covered 5 times
+Line 107: Covered 4 times
+Line 108: Covered 3 times
+Line 110: Covered 3 times
+Line 111: Covered 3 times
+Line 112: Covered 6 times
+Line 114: Covered 2 times
+Line 115: Covered 1 times
+Line 119: Covered 3 times
+Line 120: Covered 9 times
+Line 123: Covered 1 times
+Line 131: Covered 2 times
+Line 135: Covered 2 times
+Line 140: Covered 2 times
+Line 141: Covered 3 times
+Line 144: Covered 2 times
+Line 146: Covered 1 times
+Line 157: Covered 6 times
+Line 158: Covered 4 times
+Line 159: Covered 4 times
+Line 160: Covered 1 times
+Line 167: Covered 4 times
+Line 182: Covered 2 times
+Line 184: Covered 1 times
+Line 193: Covered 3 times
+Line 196: Covered 1 times
+Line 199: Covered 3 times
+Line 201: Covered 3 times
+Line 203: Covered 3 times
+Line 204: Covered 3 times
+Line 205: Covered 2 times
+Line 211: Covered 5 times
+Line 212: Covered 4 times
+Line 213: Covered 7 times
+Line 214: Covered 2 times
+Line 217: Covered 2 times
+Line 218: Covered 1 times
+Line 221: Covered 3 times
+Line 222: Covered 4 times
+Line 224: Covered 3 times
+Line 358: Covered 4 times
+Line 385: Covered 5 times
+Line 390: Covered 3 times
+Line 392: Covered 3 times
+Line 396: Covered 5 times
+Line 400: Covered 4 times
+Line 417: Covered 5 times
+Line 423: Covered 5 times
+Line 430: Covered 5 times
+Line 442: Covered 5 times
+Line 446: Covered 1 times
+Line 463: Covered 8 times
+Line 464: Covered 5 times
+Line 465: Covered 5 times
+Line 466: Covered 5 times
+Line 467: Covered 5 times
+Line 468: Covered 5 times
+Line 469: Covered 5 times
+Line 470: Covered 3 times
+Line 471: Covered 1 times
+Line 472: Covered 5 times
+Line 609: Covered 3 times
+Line 610: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/NavigationDrawerFragment.java =====
+
+Line 50: Covered 3 times
+Line 63: Covered 3 times
+Line 64: Covered 3 times
+Line 65: Covered 1 times
+Line 70: Covered 2 times
+Line 71: Covered 3 times
+Line 72: Covered 1 times
+Line 85: Covered 6 times
+Line 91: Covered 3 times
+Line 92: Covered 5 times
+Line 93: Covered 2 times
+Line 94: Covered 1 times
+Line 98: Covered 4 times
+Line 103: Covered 3 times
+Line 104: Covered 4 times
+Line 108: Covered 1 times
+Line 122: Covered 3 times
+Line 123: Covered 2 times
+Line 124: Covered 4 times
+Line 127: Covered 5 times
+Line 128: Covered 2 times
+Line 130: Covered 2 times
+Line 131: Covered 3 times
+Line 132: Covered 1 times
+Line 164: Covered 2 times
+Line 166: Covered 7 times
+Line 167: Covered 4 times
+Line 169: Covered 5 times
+Line 170: Covered 4 times
+Line 171: Covered 7 times
+Line 172: Covered 2 times
+Line 177: Covered 9 times
+Line 179: Covered 6 times
+Line 182: Covered 11 times
+Line 194: Covered 2 times
+Line 199: Covered 5 times
+Line 200: Covered 5 times
+Line 201: Covered 4 times
+Line 203: Covered 2 times
+Line 204: Covered 1 times
+Line 208: Covered 2 times
+Line 209: Covered 2 times
+Line 210: Covered 2 times
+Line 211: Covered 2 times
+Line 212: Covered 3 times
+Line 213: Covered 1 times
+Line 217: Covered 5 times
+Line 218: Covered 6 times
+Line 219: Covered 1 times
+Line 223: Covered 5 times
+Line 224: Covered 6 times
+Line 225: Covered 1 times
+Line 249: Covered 2 times
+
+
+===== File: it/feio/android/omninotes/OmniNotes.java =====
+
+Line 39: Covered 3 times
+Line 44: Covered 2 times
+Line 49: Covered 3 times
+Line 50: Covered 2 times
+Line 51: Covered 1 times
+Line 55: Covered 2 times
+Line 56: Covered 3 times
+Line 57: Covered 2 times
+Line 58: Covered 2 times
+Line 59: Covered 5 times
+Line 60: Covered 1 times
+Line 63: Covered 3 times
+Line 64: Covered 4 times
+Line 65: Covered 2 times
+Line 66: Covered 2 times
+Line 67: Covered 2 times
+Line 68: Covered 2 times
+Line 69: Covered 2 times
+Line 71: Covered 5 times
+Line 72: Covered 3 times
+Line 73: Covered 2 times
+Line 75: Covered 8 times
+Line 76: Covered 9 times
+Line 78: Covered 3 times
+Line 79: Covered 8 times
+Line 81: Covered 1 times
+Line 84: Covered 4 times
+Line 85: Covered 2 times
+Line 86: Covered 2 times
+Line 87: Covered 2 times
+Line 88: Covered 1 times
+Line 89: Covered 1 times
+Line 90: Covered 1 times
+Line 93: Covered 2 times
+Line 94: Covered 1 times
+Line 96: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/async/CategoryMenuTask.java =====
+
+Line 52: Covered 2 times
+Line 53: Covered 6 times
+Line 54: Covered 5 times
+Line 55: Covered 1 times
+Line 60: Covered 2 times
+Line 61: Covered 7 times
+Line 62: Covered 3 times
+Line 63: Covered 3 times
+Line 65: Covered 6 times
+Line 68: Covered 7 times
+Line 69: Covered 6 times
+Line 70: Covered 2 times
+Line 71: Covered 6 times
+Line 72: Covered 6 times
+Line 74: Covered 10 times
+Line 77: Covered 1 times
+Line 82: Covered 3 times
+Line 83: Covered 3 times
+Line 94: Covered 3 times
+Line 95: Covered 10 times
+Line 96: Covered 2 times
+Line 97: Covered 3 times
+Line 98: Covered 5 times
+Line 99: Covered 6 times
+Line 104: Covered 3 times
+Line 106: Covered 1 times
+Line 110: Covered 2 times
+Line 111: Covered 7 times
+Line 113: Covered 1 times
+Line 117: Covered 7 times
+Line 118: Covered 6 times
+Line 119: Covered 6 times
+Line 120: Covered 7 times
+Line 126: Covered 3 times
+Line 128: Covered 7 times
+Line 129: Covered 2 times
+Line 133: Covered 6 times
+Line 134: Covered 4 times
+Line 139: Covered 2 times
+Line 141: Covered 2 times
+Line 143: Covered 1 times
+Line 145: Covered 2 times
+Line 149: Covered 5 times
+Line 161: Covered 1 times
+Line 164: Covered 5 times
+Line 178: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/async/MainMenuTask.java =====
+
+Line 49: Covered 2 times
+Line 50: Covered 6 times
+Line 51: Covered 8 times
+Line 52: Covered 1 times
+Line 56: Covered 3 times
+Line 61: Covered 9 times
+Line 62: Covered 3 times
+Line 63: Covered 11 times
+Line 64: Covered 6 times
+Line 69: Covered 3 times
+Line 71: Covered 1 times
+Line 84: Covered 7 times
+Line 85: Covered 6 times
+Line 86: Covered 6 times
+Line 87: Covered 7 times
+Line 91: Covered 3 times
+Line 95: Covered 8 times
+Line 96: Covered 6 times
+Line 97: Covered 2 times
+Line 98: Covered 8 times
+Line 101: Covered 4 times
+Line 102: Covered 8 times
+Line 103: Covered 4 times
+Line 104: Covered 9 times
+Line 105: Covered 4 times
+Line 106: Covered 3 times
+Line 107: Covered 4 times
+Line 110: Covered 2 times
+Line 114: Covered 2 times
+Line 115: Covered 4 times
+Line 116: Covered 2 times
+Line 117: Covered 2 times
+Line 118: Covered 2 times
+Line 120: Covered 2 times
+Line 122: Covered 5 times
+Line 123: Covered 3 times
+Line 127: Covered 4 times
+Line 128: Covered 2 times
+Line 130: Covered 3 times
+Line 134: Covered 5 times
+Line 135: Covered 3 times
+Line 139: Covered 5 times
+Line 140: Covered 2 times
+Line 144: Covered 2 times
+
+
+===== File: it/feio/android/omninotes/async/bus/DynamicNavigationReadyEvent.java =====
+
+Line 23: Covered 3 times
+
+
+===== File: it/feio/android/omninotes/async/bus/NotesLoadedEvent.java =====
+
+Line 29: Covered 3 times
+Line 33: Covered 2 times
+Line 34: Covered 4 times
+Line 35: Covered 3 times
+Line 36: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/async/bus/NotificationsGrantedEvent.java =====
+
+Line 28: Covered 2 times
+Line 29: Covered 3 times
+Line 30: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/async/notes/NoteLoaderTask.java =====
+
+Line 43: Covered 2 times
+Line 44: Covered 4 times
+Line 46: Covered 4 times
+Line 51: Covered 4 times
+Line 52: Covered 2 times
+Line 59: Covered 5 times
+Line 60: Covered 2 times
+Line 62: Covered 8 times
+Line 72: Covered 4 times
+Line 73: Covered 8 times
+Line 75: Covered 6 times
+Line 76: Covered 15 times
+Line 87: Covered 3 times
+Line 88: Covered 6 times
+Line 89: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/databinding/ActivityMainBinding.java =====
+
+Line 36: Covered 2 times
+Line 37: Covered 3 times
+Line 38: Covered 3 times
+Line 39: Covered 3 times
+Line 40: Covered 3 times
+Line 41: Covered 3 times
+Line 42: Covered 1 times
+Line 47: Covered 3 times
+Line 52: Covered 5 times
+Line 58: Covered 6 times
+Line 59: Covered 2 times
+Line 62: Covered 3 times
+Line 71: Covered 2 times
+Line 72: Covered 4 times
+Line 73: Covered 2 times
+Line 76: Covered 3 times
+Line 78: Covered 2 times
+Line 79: Covered 5 times
+Line 80: Covered 2 times
+Line 84: Covered 2 times
+Line 85: Covered 5 times
+Line 86: Covered 2 times
+Line 90: Covered 2 times
+Line 91: Covered 4 times
+Line 92: Covered 2 times
+Line 95: Covered 3 times
+Line 97: Covered 10 times
+
+
+===== File: it/feio/android/omninotes/databinding/CroutonHandleBinding.java =====
+
+Line 22: Covered 2 times
+Line 23: Covered 3 times
+Line 24: Covered 3 times
+Line 25: Covered 1 times
+Line 50: Covered 2 times
+Line 54: Covered 3 times
+Line 56: Covered 7 times
+
+
+===== File: it/feio/android/omninotes/databinding/FabBinding.java =====
+
+Line 36: Covered 2 times
+Line 37: Covered 3 times
+Line 38: Covered 3 times
+Line 39: Covered 3 times
+Line 40: Covered 3 times
+Line 41: Covered 3 times
+Line 42: Covered 1 times
+Line 47: Covered 3 times
+Line 71: Covered 3 times
+Line 73: Covered 2 times
+Line 74: Covered 5 times
+Line 75: Covered 2 times
+Line 79: Covered 2 times
+Line 80: Covered 5 times
+Line 81: Covered 2 times
+Line 85: Covered 2 times
+Line 86: Covered 5 times
+Line 87: Covered 2 times
+Line 91: Covered 10 times
+
+
+===== File: it/feio/android/omninotes/databinding/FragmentListBinding.java =====
+
+Line 66: Covered 2 times
+Line 67: Covered 3 times
+Line 68: Covered 3 times
+Line 69: Covered 3 times
+Line 70: Covered 3 times
+Line 71: Covered 3 times
+Line 72: Covered 3 times
+Line 73: Covered 3 times
+Line 74: Covered 3 times
+Line 75: Covered 3 times
+Line 76: Covered 3 times
+Line 77: Covered 3 times
+Line 78: Covered 3 times
+Line 79: Covered 1 times
+Line 84: Covered 3 times
+Line 95: Covered 6 times
+Line 96: Covered 2 times
+Line 99: Covered 3 times
+Line 108: Covered 2 times
+Line 109: Covered 5 times
+Line 110: Covered 2 times
+Line 114: Covered 2 times
+Line 115: Covered 5 times
+Line 116: Covered 2 times
+Line 120: Covered 2 times
+Line 121: Covered 4 times
+Line 122: Covered 2 times
+Line 125: Covered 3 times
+Line 127: Covered 2 times
+Line 128: Covered 5 times
+Line 129: Covered 2 times
+Line 133: Covered 2 times
+Line 134: Covered 5 times
+Line 135: Covered 2 times
+Line 139: Covered 2 times
+Line 140: Covered 5 times
+Line 141: Covered 2 times
+Line 145: Covered 2 times
+Line 146: Covered 5 times
+Line 147: Covered 2 times
+Line 151: Covered 2 times
+Line 152: Covered 5 times
+Line 153: Covered 2 times
+Line 157: Covered 2 times
+Line 158: Covered 5 times
+Line 159: Covered 2 times
+Line 163: Covered 2 times
+Line 164: Covered 5 times
+Line 165: Covered 2 times
+Line 169: Covered 2 times
+Line 170: Covered 4 times
+Line 171: Covered 2 times
+Line 174: Covered 3 times
+Line 176: Covered 17 times
+
+
+===== File: it/feio/android/omninotes/databinding/ToolbarBinding.java =====
+
+Line 22: Covered 2 times
+Line 23: Covered 3 times
+Line 24: Covered 3 times
+Line 25: Covered 1 times
+Line 50: Covered 2 times
+Line 54: Covered 3 times
+Line 56: Covered 7 times
+
+
+===== File: it/feio/android/omninotes/databinding/UndobarBinding.java =====
+
+Line 33: Covered 2 times
+Line 34: Covered 3 times
+Line 35: Covered 3 times
+Line 36: Covered 3 times
+Line 37: Covered 3 times
+Line 38: Covered 1 times
+Line 43: Covered 3 times
+Line 67: Covered 3 times
+Line 69: Covered 2 times
+Line 70: Covered 5 times
+Line 71: Covered 2 times
+Line 75: Covered 2 times
+Line 76: Covered 5 times
+Line 77: Covered 2 times
+Line 81: Covered 9 times
+
+
+===== File: it/feio/android/omninotes/db/DbHelper.java =====
+
+Line 124: Covered 3 times
+Line 129: Covered 3 times
+Line 134: Covered 2 times
+Line 135: Covered 5 times
+Line 137: Covered 2 times
+Line 152: Covered 6 times
+Line 153: Covered 3 times
+Line 154: Covered 1 times
+Line 162: Covered 4 times
+Line 167: Covered 5 times
+Line 175: Covered 2 times
+Line 176: Covered 3 times
+Line 177: Covered 1 times
+Line 182: Covered 2 times
+Line 183: Covered 4 times
+Line 186: Covered 1 times
+Line 187: Covered 1 times
+Line 275: Covered 9 times
+Line 276: Covered 19 times
+Line 277: Covered 2 times
+Line 278: Covered 9 times
+Line 280: Covered 3 times
+Line 283: Covered 1 times
+Line 284: Covered 1 times
+Line 285: Covered 1 times
+Line 332: Covered 2 times
+Line 333: Covered 4 times
+Line 334: Covered 2 times
+Line 335: Covered 2 times
+Line 337: Covered 3 times
+Line 352: Covered 5 times
+Line 359: Covered 2 times
+Line 361: Covered 5 times
+Line 396: Covered 4 times
+Line 398: Covered 2 times
+Line 399: Covered 2 times
+Line 402: Covered 3 times
+Line 405: Covered 4 times
+Line 407: Covered 2 times
+Line 409: Covered 7 times
+Line 413: Covered 7 times
+Line 416: Covered 4 times
+Line 417: Covered 2 times
+Line 420: Covered 7 times
+Line 442: Covered 18 times
+Line 444: Covered 9 times
+Line 446: Covered 6 times
+Line 448: Covered 3 times
+Line 492: Covered 2 times
+Line 493: Covered 2 times
+Line 842: Covered 4 times
+Line 843: Covered 2 times
+Line 862: Covered 2 times
+Line 864: Covered 6 times
+Line 866: Covered 3 times
+Line 875: Covered 2 times
+Line 876: Covered 2 times
+Line 879: Covered 2 times
+
+
+===== File: it/feio/android/omninotes/db/SqlParser.java =====
+
+Line 32: Covered 2 times
+Line 33: Covered 4 times
+Line 35: Covered 3 times
+Line 37: Covered 2 times
+Line 39: Covered 2 times
+Line 44: Covered 3 times
+Line 45: Covered 4 times
+Line 51: Covered 4 times
+Line 53: Covered 5 times
+Line 55: Covered 5 times
+Line 58: Covered 2 times
+Line 59: Covered 5 times
+Line 60: Covered 3 times
+Line 62: Covered 2 times
+Line 63: Covered 4 times
+Line 67: Covered 4 times
+Line 71: Covered 8 times
+Line 72: Covered 7 times
+Line 86: Covered 2 times
+Line 90: Covered 2 times
+Line 93: Covered 3 times
+Line 98: Covered 4 times
+Line 99: Covered 4 times
+Line 100: Covered 2 times
+Line 101: Covered 3 times
+Line 102: Covered 8 times
+Line 103: Covered 5 times
+Line 106: Covered 7 times
+Line 107: Covered 3 times
+Line 108: Covered 6 times
+Line 109: Covered 5 times
+Line 112: Covered 6 times
+Line 115: Covered 3 times
+Line 118: Covered 2 times
+
+
+===== File: it/feio/android/omninotes/helpers/AppVersionHelper.java =====
+
+Line 32: Covered 8 times
+Line 37: Covered 4 times
+Line 49: Covered 8 times
+
+
+===== File: it/feio/android/omninotes/helpers/LanguageHelper.java =====
+
+Line 43: Covered 4 times
+Line 45: Covered 2 times
+Line 46: Covered 5 times
+Line 47: Covered 3 times
+Line 55: Covered 4 times
+Line 65: Covered 4 times
+Line 66: Covered 3 times
+Line 67: Covered 5 times
+Line 68: Covered 2 times
+
+
+===== File: it/feio/android/omninotes/helpers/LogDelegate.java =====
+
+Line 41: Covered 2 times
+Line 44: Covered 4 times
+Line 46: Covered 1 times
+Line 49: Covered 2 times
+Line 52: Covered 4 times
+Line 54: Covered 1 times
+Line 57: Covered 2 times
+Line 60: Covered 4 times
+Line 62: Covered 1 times
+Line 93: Covered 2 times
+Line 94: Covered 5 times
+Line 95: Covered 4 times
+Line 106: Covered 3 times
+
+
+===== File: it/feio/android/omninotes/helpers/notifications/NotificationChannel.java =====
+
+Line 27: Covered 2 times
+Line 28: Covered 3 times
+Line 29: Covered 3 times
+Line 30: Covered 3 times
+Line 31: Covered 3 times
+Line 32: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/helpers/notifications/NotificationChannels.java =====
+
+Line 39: Covered 5 times
+Line 40: Covered 7 times
+Line 42: Covered 3 times
+Line 43: Covered 5 times
+Line 45: Covered 7 times
+Line 47: Covered 3 times
+Line 48: Covered 5 times
+Line 50: Covered 7 times
+Line 52: Covered 3 times
+Line 53: Covered 5 times
+Line 55: Covered 1 times
+Line 57: Covered 3 times
+Line 58: Covered 18 times
+
+
+===== File: it/feio/android/omninotes/helpers/notifications/NotificationsHelper.java =====
+
+Line 60: Covered 2 times
+Line 61: Covered 4 times
+Line 62: Covered 3 times
+Line 63: Covered 3 times
+Line 64: Covered 3 times
+Line 66: Covered 1 times
+Line 74: Covered 3 times
+Line 76: Covered 4 times
+Line 77: Covered 2 times
+Line 78: Covered 3 times
+Line 80: Covered 5 times
+Line 82: Covered 10 times
+Line 85: Covered 4 times
+Line 87: Covered 4 times
+Line 88: Covered 2 times
+Line 89: Covered 1 times
+Line 90: Covered 2 times
+Line 91: Covered 4 times
+Line 93: Covered 4 times
+Line 94: Covered 1 times
+Line 96: Covered 1 times
+Line 252: Covered 3 times
+Line 261: Covered 6 times
+Line 263: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/intro/IntroActivity.java =====
+
+Line 47: Covered 4 times
+
+
+===== File: it/feio/android/omninotes/models/NavigationItem.java =====
+
+Line 29: Covered 2 times
+Line 30: Covered 3 times
+Line 31: Covered 3 times
+Line 32: Covered 3 times
+Line 33: Covered 3 times
+Line 34: Covered 1 times
+Line 48: Covered 3 times
+Line 68: Covered 3 times
+
+
+===== File: it/feio/android/omninotes/models/UndoBarController.java =====
+
+Line 58: Covered 2 times
+Line 59: Covered 3 times
+Line 61: Covered 5 times
+Line 62: Covered 3 times
+Line 64: Covered 7 times
+Line 66: Covered 7 times
+Line 67: Covered 9 times
+Line 68: Covered 13 times
+Line 76: Covered 3 times
+Line 77: Covered 1 times
+Line 108: Covered 2 times
+Line 115: Covered 3 times
+Line 116: Covered 3 times
+Line 117: Covered 3 times
+Line 118: Covered 7 times
+Line 119: Covered 2 times
+Line 120: Covered 8 times
+Line 124: Covered 3 times
+Line 125: Covered 5 times
+Line 126: Covered 4 times
+Line 127: Covered 4 times
+Line 128: Covered 1 times
+Line 131: Covered 3 times
+Line 132: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/models/adapters/CategoryBaseAdapter.java =====
+
+Line 51: Covered 2 times
+Line 52: Covered 3 times
+Line 53: Covered 3 times
+Line 54: Covered 3 times
+Line 55: Covered 3 times
+Line 56: Covered 6 times
+Line 57: Covered 1 times
+Line 61: Covered 4 times
+
+
+===== File: it/feio/android/omninotes/models/adapters/NavDrawerAdapter.java =====
+
+Line 46: Covered 2 times
+Line 47: Covered 3 times
+Line 48: Covered 3 times
+Line 49: Covered 6 times
+Line 50: Covered 1 times
+Line 55: Covered 4 times
+Line 73: Covered 2 times
+Line 74: Covered 7 times
+Line 76: Covered 4 times
+Line 78: Covered 6 times
+Line 79: Covered 6 times
+Line 80: Covered 4 times
+Line 86: Covered 9 times
+Line 88: Covered 4 times
+Line 89: Covered 9 times
+Line 90: Covered 5 times
+Line 91: Covered 6 times
+Line 92: Covered 4 times
+Line 93: Covered 7 times
+Line 94: Covered 1 times
+Line 100: Covered 2 times
+Line 107: Covered 4 times
+Line 108: Covered 2 times
+Line 112: Covered 6 times
+Line 113: Covered 6 times
+Line 115: Covered 2 times
+Line 116: Covered 6 times
+Line 119: Covered 5 times
+Line 121: Covered 3 times
+Line 125: Covered 4 times
+Line 126: Covered 4 times
+Line 127: Covered 9 times
+Line 138: Covered 3 times
+
+
+===== File: it/feio/android/omninotes/models/adapters/NoteAdapter.java =====
+
+Line 56: Covered 5 times
+Line 58: Covered 4 times
+Line 62: Covered 2 times
+Line 63: Covered 3 times
+Line 64: Covered 3 times
+Line 65: Covered 3 times
+Line 66: Covered 3 times
+Line 67: Covered 5 times
+Line 68: Covered 1 times
+Line 165: Covered 3 times
+Line 176: Covered 1 times
+Line 327: Covered 4 times
+
+
+===== File: it/feio/android/omninotes/models/listeners/RecyclerViewItemClickSupport.java =====
+
+Line 30: Covered 12 times
+Line 39: Covered 12 times
+Line 50: Covered 6 times
+Line 51: Covered 6 times
+Line 69: Covered 2 times
+Line 70: Covered 3 times
+Line 71: Covered 5 times
+Line 72: Covered 5 times
+Line 73: Covered 1 times
+Line 76: Covered 5 times
+Line 77: Covered 2 times
+Line 78: Covered 5 times
+Line 80: Covered 2 times
+Line 84: Covered 3 times
+Line 85: Covered 2 times
+Line 89: Covered 3 times
+Line 90: Covered 2 times
+
+
+===== File: it/feio/android/omninotes/models/misc/DynamicNavigationLookupTable.java =====
+
+Line 39: Covered 2 times
+Line 40: Covered 3 times
+Line 41: Covered 2 times
+Line 42: Covered 1 times
+Line 46: Covered 2 times
+Line 47: Covered 4 times
+Line 49: Covered 2 times
+Line 54: Covered 2 times
+Line 55: Covered 12 times
+Line 56: Covered 5 times
+Line 57: Covered 6 times
+Line 69: Covered 5 times
+Line 70: Covered 2 times
+Line 71: Covered 2 times
+Line 72: Covered 1 times
+Line 81: Covered 3 times
+Line 86: Covered 3 times
+Line 91: Covered 3 times
+
+
+===== File: it/feio/android/omninotes/models/views/Fab.java =====
+
+Line 50: Covered 2 times
+Line 51: Covered 4 times
+Line 52: Covered 3 times
+Line 53: Covered 3 times
+Line 54: Covered 2 times
+Line 55: Covered 1 times
+Line 58: Covered 3 times
+Line 59: Covered 3 times
+Line 61: Covered 3 times
+Line 62: Covered 3 times
+Line 63: Covered 4 times
+Line 70: Covered 4 times
+Line 78: Covered 7 times
+Line 79: Covered 6 times
+Line 93: Covered 7 times
+Line 94: Covered 7 times
+Line 96: Covered 3 times
+Line 97: Covered 5 times
+Line 98: Covered 3 times
+Line 99: Covered 4 times
+Line 101: Covered 1 times
+Line 103: Covered 4 times
+Line 120: Covered 9 times
+Line 121: Covered 5 times
+Line 122: Covered 3 times
+Line 124: Covered 1 times
+Line 137: Covered 8 times
+Line 138: Covered 3 times
+Line 139: Covered 7 times
+Line 140: Covered 14 times
+Line 143: Covered 6 times
+Line 144: Covered 1 times
+Line 148: Covered 6 times
+Line 149: Covered 1 times
+Line 156: Covered 1 times
+Line 159: Covered 3 times
+Line 160: Covered 1 times
+Line 172: Covered 3 times
+Line 173: Covered 1 times
+Line 194: Covered 3 times
+
+
+===== File: it/feio/android/omninotes/models/views/InterceptorLinearLayout.java =====
+
+Line 38: Covered 4 times
+Line 39: Covered 1 times
+Line 52: Covered 3 times
+Line 53: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/models/views/NonScrollableListView.java =====
+
+Line 36: Covered 4 times
+Line 37: Covered 1 times
+Line 47: Covered 3 times
+Line 49: Covered 2 times
+Line 52: Covered 2 times
+Line 53: Covered 2 times
+Line 54: Covered 8 times
+Line 55: Covered 6 times
+Line 56: Covered 4 times
+Line 57: Covered 5 times
+Line 60: Covered 3 times
+Line 61: Covered 11 times
+Line 62: Covered 3 times
+Line 63: Covered 2 times
+Line 64: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/models/views/RecyclerViewEmptySupport.java =====
+
+Line 29: Covered 12 times
+Line 34: Covered 4 times
+Line 35: Covered 6 times
+Line 36: Covered 3 times
+Line 37: Covered 5 times
+Line 38: Covered 5 times
+Line 45: Covered 1 times
+Line 53: Covered 4 times
+Line 54: Covered 1 times
+Line 62: Covered 3 times
+Line 64: Covered 2 times
+Line 65: Covered 4 times
+Line 68: Covered 3 times
+Line 69: Covered 1 times
+Line 72: Covered 3 times
+Line 73: Covered 1 times
+
+
+===== File: it/feio/android/omninotes/utils/Display.java =====
+
+Line 49: Covered 4 times
+Line 51: Covered 5 times
+Line 52: Covered 2 times
+Line 53: Covered 3 times
+Line 54: Covered 2 times
+Line 55: Covered 3 times
+Line 60: Covered 1 times
+Line 61: Covered 2 times
+Line 105: Covered 5 times
+Line 106: Covered 3 times
+Line 107: Covered 4 times
+Line 108: Covered 4 times
+Line 109: Covered 3 times
+Line 110: Covered 4 times
+Line 111: Covered 4 times
+Line 112: Covered 2 times
+Line 118: Covered 8 times
+
+
+===== File: it/feio/android/omninotes/utils/IntentChecker.java =====
+
+Line 64: Covered 5 times
+Line 75: Covered 16 times
+Line 76: Covered 4 times
+Line 80: Covered 2 times
+
+
+===== File: it/feio/android/omninotes/utils/Navigation.java =====
+
+Line 49: Covered 5 times
+Line 51: Covered 2 times
+Line 53: Covered 6 times
+Line 54: Covered 2 times
+Line 70: Covered 2 times
+Line 71: Covered 3 times
+Line 72: Covered 2 times
+Line 73: Covered 6 times
+Line 91: Covered 9 times
+Line 96: Covered 2 times
+Line 97: Covered 2 times
+Line 98: Covered 15 times
+Line 99: Covered 3 times
+Line 103: Covered 1 times
+Line 104: Covered 2 times
+

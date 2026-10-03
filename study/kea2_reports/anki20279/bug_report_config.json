@@ -1,0 +1,12 @@
+{
+    "driverName": "d",
+    "packageNames": [
+        "com.ichi2.anki.debug"
+    ],
+    "take_screenshots": false,
+    "pre_failure_screenshots": 0,
+    "post_failure_screenshots": 0,
+    "device_output_root": "/sdcard",
+    "log_stamp": "2026053109_4507755884",
+    "test_time": "2026-05-31 09:45:07"
+}

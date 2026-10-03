@@ -1,0 +1,14 @@
+net/gsantner/markor/ui/SearchOrCustomTextDialogCreator.java
+net/gsantner/opoc/ui/SearchOrCustomTextDialog.java
+net/gsantner/markor/activity/MainActivity.java
+net/gsantner/opoc/ui/FilesystemViewerFragment.java
+net/gsantner/opoc/ui/FilesystemViewerAdapter.java
+net/gsantner/markor/util/AppSettings.java
+net/gsantner/markor/activity/DocumentEditFragment.java
+net/gsantner/opoc/activity/GsFragmentBase.java
+net/gsantner/opoc/util/ContextUtils.java
+net/gsantner/opoc/util/FileWithCachedData.java
+net/gsantner/opoc/android/dummy/TextWatcherDummy.java
+net/gsantner/markor/format/markdown/MarkdownTextActions.java
+net/gsantner/markor/activity/MoreInfoFragment.java
+net/gsantner/markor/activity/MainActivity_ViewBinding.java

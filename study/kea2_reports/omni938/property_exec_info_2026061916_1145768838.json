@@ -1,0 +1,21 @@
+{"startStepsCount": 5, "propName": "omni938.OmninotesCategory.test_create_note_with_new_category", "state": "pass", "tb": ""}
+{"startStepsCount": 5, "propName": "omni938.OmninotesCategory.test_category_count_accuracy", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni938.py\", line 160, in test_category_count_accuracy\n    assert read_count_elems_text == count_elems_text and read_title_elems_text == title_elems_text\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 5, "propName": "omni938.OmninotesCategory.test_create_note_without_category", "state": "pass", "tb": ""}
+{"startStepsCount": 5, "propName": "omni938.OmninotesCategory.test_behavior_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 5, "propName": "omni938.OmninotesCategory.test_data_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 5, "propName": "omni938.OmninotesCategory.test_create_note_without_category", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "omni938.OmninotesCategory.test_create_note_without_category", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "omni938.OmninotesCategory.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "omni938.OmninotesCategory.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "omni938.OmninotesCategory.test_category_count_accuracy", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "omni938.OmninotesCategory.test_create_note_with_new_category", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "omni938.OmninotesCategory.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "omni938.OmninotesCategory.test_create_note_without_category", "state": "pass", "tb": ""}
+{"startStepsCount": 7, "propName": "omni938.OmninotesCategory.test_create_note_without_category", "state": "pass", "tb": ""}
+{"startStepsCount": 7, "propName": "omni938.OmninotesCategory.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 7, "propName": "omni938.OmninotesCategory.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "omni938.OmninotesCategory.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "omni938.OmninotesCategory.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "omni938.OmninotesCategory.test_category_count_accuracy", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "omni938.OmninotesCategory.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "omni938.OmninotesCategory.test_reduced_view", "state": "pass", "tb": ""}

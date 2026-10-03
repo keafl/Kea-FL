@@ -1,0 +1,27 @@
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_create_note_with_tag_in_content", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_open_existing_note", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_add_and_remove_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_behavior_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_open_existing_note", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_add_and_remove_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_open_existing_note", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_add_and_remove_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni942.py\", line 114, in test_add_and_remove_tag\n    assert new_content == content\n           ^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni942.OmninotesTag.test_data_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni942.OmninotesTag.test_open_existing_note", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni942.OmninotesTag.test_add_and_remove_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni942.OmninotesTag.test_open_existing_note", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni942.OmninotesTag.test_add_and_remove_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni942.OmninotesTag.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni942.OmninotesTag.test_open_existing_note", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni942.OmninotesTag.test_add_and_remove_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni942.OmninotesTag.test_open_existing_note", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni942.OmninotesTag.test_add_and_remove_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni942.OmninotesTag.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni942.OmninotesTag.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni942.OmninotesTag.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni942.OmninotesTag.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni942.OmninotesTag.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni942.OmninotesTag.test_create_note", "state": "pass", "tb": ""}

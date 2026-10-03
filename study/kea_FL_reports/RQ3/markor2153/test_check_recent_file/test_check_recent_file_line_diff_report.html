@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test_check_recent_file Line Coverage Diff Report</title>
+<style>
+    :root {
+        --github-bg: #ffffff;
+        --github-text: #24292f;
+        --github-gray-50: #f9fafb;
+        --github-gray-100: #f1f2f4;
+        --github-gray-200: #e4e7eb;
+        --github-gray-300: #d1d5db;
+        --github-gray-400: #9ca3af;
+        --github-gray-500: #6e7781;
+        --github-gray-600: #4d5663;
+        --github-gray-700: #374151;
+        --github-gray-800: #272e3b;
+        
+        --line-number-bg: #f6f8fa;
+        --line-number-text: #6e7781;
+        --line-number-border: #eaecef;
+        
+        --correct-bg: rgb(218, 251, 225);
+        --correct-border: rgb(172, 238, 187);
+        --correct-line-number-bg: rgb(172, 238, 187); 
+        --correct-line-number-text: #000000;
+        
+        --bug-bg: rgb(255, 235, 233); 
+        --bug-border: rgb(255, 206, 203);           
+        --bug-line-number-bg: rgb(255, 206, 203); 
+        --bug-line-number-text: #000000;            
+        
+        --covered-bg: var(--correct-bg);
+        --covered-border: var(--correct-border);
+        --covered-line-number-bg: var(--correct-line-number-bg);
+        --covered-line-number-text: var(--correct-line-number-text);
+        
+        --sidebar-width: 300px;
+        --sidebar-collapsed-width: 0px;
+        --border-radius: 6px;
+        --transition: all 0.2s ease;
+        --code-line-height: 1.5em;
+        --line-number-width: 4.5rem;
+        --header-height: 60px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.5;
+        color: var(--github-text);
+        background-color: var(--github-gray-50);
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        padding-top: var(--header-height);
+    }
+
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        background-color: var(--github-bg);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--github-gray-800);
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--github-gray-200);
+    }
+
+    p {
+        color: var(--github-gray-600);
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-toggle-btn {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        color: var(--github-gray-700);
+        cursor: pointer;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .sidebar-toggle-btn:hover {
+        background-color: var(--github-gray-50);
+        border-color: var(--github-gray-300);
+        color: var(--github-gray-800);
+    }
+
+    .sidebar {
+        width: var(--sidebar-width);
+        background-color: var(--github-bg);
+        border-right: 1px solid var(--github-gray-200);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        transition: var(--transition);
+        overflow: hidden;
+        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+    }
+
+    .sidebar.collapsed {
+        width: var(--sidebar-collapsed-width);
+        border-right: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .sidebar-resizer {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .file-list-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        color: var(--github-gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid var(--github-gray-200);
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-tree {
+        list-style: none;
+        overflow-y: auto;
+        flex: 1;
+        padding: 0.5rem 0;
+    }
+
+    .dir-item {
+        position: relative;
+    }
+
+    .dir-header {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .dir-header:hover {
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-toggle {
+        width: 1rem;
+        height: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: var(--github-gray-500);
+        margin-right: 0.5rem;
+    }
+
+    .dir-content {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .file-item {
+        padding: 0;
+    }
+
+    .file-link {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .file-link::before {
+        content: "📄";
+        font-size: 0.75rem;
+        margin-right: 0.5rem;
+        opacity: 0.7;
+    }
+
+    .file-link:hover {
+        background-color: var(--github-gray-50);
+        color: #0969da;
+    }
+
+    .file-link.active {
+        color: #0969da;
+        font-weight: 500;
+    }
+
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+        transition: var(--transition);
+        margin-left: var(--sidebar-width);
+        height: 100vh;
+        background-color: var(--github-gray-50);
+        padding-top: 1rem;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: var(--sidebar-collapsed-width) !important;
+    }
+
+    .file-header {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        scroll-margin-top: calc(var(--header-height) + 1rem);
+    }
+
+    .file-header a {
+        color: #0969da;
+        text-decoration: none;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .file-header a:hover {
+        text-decoration: underline;
+    }
+
+    .diff-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        min-height: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .diff-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .diff-panel {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .panel-header {
+        background-color: var(--github-gray-50);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .panel-header::before {
+        content: "";
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .diff-container > .diff-panel:first-child .panel-header::before {
+        background-color: var(--bug-border);
+    }
+
+    .diff-container > .diff-panel:last-child .panel-header::before {
+        background-color: var(--correct-border);
+    }
+
+    .code-container {
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-size: 12px;
+        line-height: var(--code-line-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 600px;
+        flex: 1;
+        width: 100%;
+        background-color: var(--github-bg);
+    }
+
+    .code-line {
+        display: grid;
+        grid-template-columns: var(--line-number-width) 1fr;
+        width: 100%;
+        transition: background-color 0.2s ease;
+        border-left: 3px solid transparent;
+        min-height: var(--code-line-height);
+    }
+
+    .line-number {
+        width: var(--line-number-width);
+        padding: 0 0.75rem;
+        text-align: right;
+        color: var(--line-number-text);
+        user-select: none;
+        background-color: var(--line-number-bg);
+        border-right: 1px solid var(--line-number-border);
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .correct-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 100;
+    }
+
+    .bug-line .line-number {
+        background-color: var(--bug-line-number-bg);
+        color: var(--bug-line-number-text);
+        border-right-color: var(--bug-border);
+        font-weight: 100;
+    }
+
+    .covered-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 600;
+    }
+
+    .code-content {
+        flex: 1;
+        padding: 0 0.75rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: flex-start;
+        padding-top: calc((var(--code-line-height) - 1em) / 2);
+        width: 100%;
+        color: var(--github-text);
+    }
+
+    .correct-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .bug-line {
+        background-color: var(--bug-bg);
+        border-left-color: var(--bug-border);
+    }
+
+    .covered-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .context-line .code-content:empty::before {
+        content: " ";
+    }
+
+    .separator-line {
+        background-color: var(--github-gray-50);
+        color: var(--github-gray-500);
+        text-align: center;
+        padding: 0.5rem 0;
+        font-style: italic;
+        border-top: 1px dashed var(--github-gray-300);
+        border-bottom: 1px dashed var(--github-gray-300);
+        grid-column: 1 / -1;
+    }
+
+    .separator-line .line-number,
+    .separator-line .code-content {
+        height: auto;
+        line-height: 1.5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--github-gray-300);
+        border-radius: 6px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--github-gray-400);
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            position: fixed;
+            z-index: 100;
+        }
+        
+        .main-content {
+            margin-left: 0 !important;
+            padding: 1rem;
+        }
+    }
+
+    .context-line {
+        background-color: var(--github-bg);
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+// Global sidebar toggle function
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("collapsed");
+}
+
+// Directory expand/collapse function
+function toggleDir(dirHeader) {
+    const toggle = dirHeader.querySelector(".dir-toggle");
+    const content = dirHeader.nextElementSibling;
+    
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        toggle.textContent = "−";
+    } else {
+        content.style.display = "none";
+        toggle.textContent = "+";
+    }
+}
+
+// File link click event handler
+document.addEventListener('DOMContentLoaded', () => {
+    const fileLinks = document.querySelectorAll('.file-link');
+    
+    fileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            fileLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    if (fileLinks.length > 0) {
+        fileLinks[0].classList.add('active');
+    }
+});
+</script>
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<div class="fixed-header">
+    <h1>test_check_recent_file Line Coverage Diff Report</h1>
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        File List
+    </button>
+</div>
+<div class="sidebar" id="sidebar">
+<h3 class="file-list-title">File List</h3>
+<ul class="dir-tree">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">net/gsantner</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">markor</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">activity</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-0" class="file-link"><span>MainActivity.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-1" class="file-link"><span>MainActivity_ViewBinding.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-2" class="file-link"><span>MoreFragment.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-3" class="file-link"><span>MoreInfoFragment.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">util</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-4" class="file-link"><span>AppSettings.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-5" class="file-link"><span>ShortcutUtils.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">opoc</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">activity</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-6" class="file-link"><span>GsFragmentBase.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">preference</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-7" class="file-link"><span>GsPreferenceFragmentCompat.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-8" class="file-link"><span>SharedPreferencesPropertyBackend.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">util</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-9" class="file-link"><span>ContextUtils.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+</ul>
+</div>
+<div class="main-content">
+<p>Generated Time: 2026-06-20 15:13:08</p>
+<h2>Line Coverage Diff</h2>
+<div class="file-header" id="file-0">
+    File: net/gsantner/markor/activity/MainActivity.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MainActivity.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">122</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">123</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">124</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">125</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">126</span><span class="code-content">    protected void onNewIntent(final Intent intent) {</span></div>
+<div class="code-line bug-line"><span class="line-number">127</span><span class="code-content">        final File dir = getIntentDir(intent, null);</span></div>
+<div class="code-line bug-line"><span class="line-number">128</span><span class="code-content">        final FilesystemViewerFragment frag = (FilesystemViewerFragment) _viewPagerAdapter.getFragmentByTag(FilesystemViewerFragment.FRAGMENT_TAG);</span></div>
+<div class="code-line bug-line"><span class="line-number">129</span><span class="code-content">        if (frag != null &amp;&amp; dir != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">130</span><span class="code-content">            frag.getAdapter().setCurrentFolder(dir, false);</span></div>
+<div class="code-line context-line"><span class="line-number">131</span><span class="code-content">            _bottomNav.postDelayed(() -&gt; _bottomNav.setSelectedItemId(R.id.nav_notebook), 10);</span></div>
+<div class="code-line context-line"><span class="line-number">132</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">133</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">134</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">135</span><span class="code-content">    private static File getIntentDir(final Intent intent, final File fallback) {</span></div>
+<div class="code-line context-line"><span class="line-number">136</span><span class="code-content">        if (intent == null) {</span></div>
+<div class="code-line context-line"><span class="line-number">137</span><span class="code-content">            return fallback;</span></div>
+<div class="code-line context-line"><span class="line-number">138</span><span class="code-content">        }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">327</span><span class="code-content">        new Handler().postDelayed(() -&gt; _doubleBackToExitPressedOnce = false, 2000);</span></div>
+<div class="code-line context-line"><span class="line-number">328</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">329</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">330</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">331</span><span class="code-content">    public boolean onNavigationItemSelected(@NonNull MenuItem item) {</span></div>
+<div class="code-line bug-line"><span class="line-number">332</span><span class="code-content">        _viewPager.setCurrentItem(tabIdToPos(item.getItemId()));</span></div>
+<div class="code-line bug-line"><span class="line-number">333</span><span class="code-content">        return true;</span></div>
+<div class="code-line context-line"><span class="line-number">334</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">335</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">336</span><span class="code-content">    public void updateFabVisibility(boolean visible) {</span></div>
+<div class="code-line bug-line"><span class="line-number">337</span><span class="code-content">        if (visible) {</span></div>
+<div class="code-line bug-line"><span class="line-number">338</span><span class="code-content">            _fab.show();</span></div>
+<div class="code-line context-line"><span class="line-number">339</span><span class="code-content">        } else {</span></div>
+<div class="code-line bug-line"><span class="line-number">340</span><span class="code-content">            _fab.hide();</span></div>
+<div class="code-line context-line"><span class="line-number">341</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">342</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">343</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">344</span><span class="code-content">    public String getFileBrowserTitle() {</span></div>
+<div class="code-line context-line"><span class="line-number">345</span><span class="code-content">        final File file = _appSettings.getFileBrowserLastBrowsedFolder();</span></div>
+<div class="code-line context-line"><span class="line-number">346</span><span class="code-content">        String title = getString(R.string.app_name);</span></div>
+<div class="code-line context-line"><span class="line-number">347</span><span class="code-content">        if (!_appSettings.getNotebookDirectory().getAbsolutePath().equals(file.getAbsolutePath())) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">350</span><span class="code-content">        return title;</span></div>
+<div class="code-line context-line"><span class="line-number">351</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">352</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">353</span><span class="code-content">    public int tabIdToPos(final int id) {</span></div>
+<div class="code-line context-line"><span class="line-number">354</span><span class="code-content">        if (id == R.id.nav_notebook) return 0;</span></div>
+<div class="code-line bug-line"><span class="line-number">355</span><span class="code-content">        if (id == R.id.nav_todo) return 1;</span></div>
+<div class="code-line bug-line"><span class="line-number">356</span><span class="code-content">        if (id == R.id.nav_quicknote) return 2;</span></div>
+<div class="code-line bug-line"><span class="line-number">357</span><span class="code-content">        if (id == R.id.nav_more) return 3;</span></div>
+<div class="code-line context-line"><span class="line-number">358</span><span class="code-content">        return 0;</span></div>
+<div class="code-line context-line"><span class="line-number">359</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">360</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">361</span><span class="code-content">    public int getCurrentPos() {</span></div>
+<div class="code-line context-line"><span class="line-number">362</span><span class="code-content">        return _viewPager.getCurrentItem();</span></div>
+<div class="code-line context-line"><span class="line-number">363</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">364</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">365</span><span class="code-content">    public String getPosTitle(final int pos) {</span></div>
+<div class="code-line bug-line"><span class="line-number">366</span><span class="code-content">        if (pos == 0) return getFileBrowserTitle();</span></div>
+<div class="code-line bug-line"><span class="line-number">367</span><span class="code-content">        if (pos == 1) return getString(R.string.todo);</span></div>
+<div class="code-line bug-line"><span class="line-number">368</span><span class="code-content">        if (pos == 2) return getString(R.string.quicknote);</span></div>
+<div class="code-line bug-line"><span class="line-number">369</span><span class="code-content">        if (pos == 3) return getString(R.string.more);</span></div>
+<div class="code-line context-line"><span class="line-number">370</span><span class="code-content">        return &quot;&quot;;</span></div>
+<div class="code-line context-line"><span class="line-number">371</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">372</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">373</span><span class="code-content">    @OnPageChange(value = R.id.main__view_pager_container, callback = OnPageChange.Callback.PAGE_SELECTED)</span></div>
+<div class="code-line context-line"><span class="line-number">374</span><span class="code-content">    public void onViewPagerPageSelected(int pos) {</span></div>
+<div class="code-line bug-line"><span class="line-number">375</span><span class="code-content">        _bottomNav.getMenu().getItem(pos).setChecked(true);</span></div>
+<div class="code-line context-line"><span class="line-number">376</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">377</span><span class="code-content">        updateFabVisibility(pos == tabIdToPos(R.id.nav_notebook));</span></div>
+<div class="code-line bug-line"><span class="line-number">378</span><span class="code-content">        setTitle(getPosTitle(pos));</span></div>
+<div class="code-line context-line"><span class="line-number">379</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">380</span><span class="code-content">        if (pos != tabIdToPos(R.id.nav_notebook)) {</span></div>
+<div class="code-line bug-line"><span class="line-number">381</span><span class="code-content">            restoreDefaultToolbar();</span></div>
+<div class="code-line context-line"><span class="line-number">382</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">383</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">384</span><span class="code-content">        if (pos == tabIdToPos(R.id.nav_quicknote) || pos == tabIdToPos(R.id.nav_todo)) {</span></div>
+<div class="code-line context-line"><span class="line-number">385</span><span class="code-content">            // cannot prevent bottom tab selection</span></div>
+<div class="code-line context-line"><span class="line-number">386</span><span class="code-content">            new PermissionChecker(this).doIfExtStoragePermissionGranted();</span></div>
+<div class="code-line context-line"><span class="line-number">387</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">388</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">389</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">390</span><span class="code-content">    private FilesystemViewerData.Options _filesystemDialogOptions = null;</span></div>
+<div class="code-line context-line"><span class="line-number">391</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">392</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">393</span><span class="code-content">    public FilesystemViewerData.Options getFilesystemFragmentOptions(FilesystemViewerData.Options existingOptions) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">490</span><span class="code-content">        public GsFragmentBase getFragmentByTag(String fragmentTag) {</span></div>
+<div class="code-line context-line"><span class="line-number">491</span><span class="code-content">            for (GsFragmentBase frag : _fragCache.values()) {</span></div>
+<div class="code-line context-line"><span class="line-number">492</span><span class="code-content">                if (fragmentTag.equals(frag.getFragmentTag())) {</span></div>
+<div class="code-line context-line"><span class="line-number">493</span><span class="code-content">                    return frag;</span></div>
+<div class="code-line context-line"><span class="line-number">494</span><span class="code-content">                }</span></div>
+<div class="code-line bug-line"><span class="line-number">495</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">496</span><span class="code-content">            return null;</span></div>
+<div class="code-line context-line"><span class="line-number">497</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">498</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">499</span><span class="code-content">        public HashMap&lt;Integer, GsFragmentBase&gt; getCachedFragments() {</span></div>
+<div class="code-line context-line"><span class="line-number">500</span><span class="code-content">            return _fragCache;</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-1">
+    File: net/gsantner/markor/activity/MainActivity_ViewBinding.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MainActivity_ViewBinding.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-2">
+    File: net/gsantner/markor/activity/MoreFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MoreFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">33</span><span class="code-content">        return R.layout.more__fragment;</span></div>
+<div class="code-line context-line"><span class="line-number">34</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">35</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">36</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">37</span><span class="code-content">    public String getFragmentTag() {</span></div>
+<div class="code-line bug-line"><span class="line-number">38</span><span class="code-content">        return FRAGMENT_TAG;</span></div>
+<div class="code-line context-line"><span class="line-number">39</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">40</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">41</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">42</span><span class="code-content">    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {</span></div>
+<div class="code-line context-line"><span class="line-number">43</span><span class="code-content">        super.onViewCreated(view, savedInstanceState);</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-3">
+    File: net/gsantner/markor/activity/MoreInfoFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MoreInfoFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">55</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">56</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">57</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">58</span><span class="code-content">    @SuppressWarnings({&quot;ConstantConditions&quot;, &quot;ConstantIfStatement&quot;, &quot;StatementWithEmptyBody&quot;})</span></div>
+<div class="code-line context-line"><span class="line-number">59</span><span class="code-content">    public Boolean onPreferenceClicked(Preference preference, String key, int keyResId) {</span></div>
+<div class="code-line bug-line"><span class="line-number">60</span><span class="code-content">        ActivityUtils au = new ActivityUtils(getActivity());</span></div>
+<div class="code-line bug-line"><span class="line-number">61</span><span class="code-content">        if (isAdded() &amp;&amp; preference.hasKey()) {</span></div>
+<div class="code-line bug-line"><span class="line-number">62</span><span class="code-content">            switch (keyResId) {</span></div>
+<div class="code-line context-line"><span class="line-number">63</span><span class="code-content">                case R.string.pref_key__more_info__app: {</span></div>
+<div class="code-line bug-line"><span class="line-number">64</span><span class="code-content">                    _cu.openWebpageInExternalBrowser(getString(R.string.app_web_url));</span></div>
+<div class="code-line bug-line"><span class="line-number">65</span><span class="code-content">                    return true;</span></div>
+<div class="code-line context-line"><span class="line-number">66</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">67</span><span class="code-content">                case R.string.pref_key__more_info__settings: {</span></div>
+<div class="code-line context-line"><span class="line-number">68</span><span class="code-content">                    au.animateToActivity(SettingsActivity.class, false, 124).freeContextRef();</span></div>
+<div class="code-line context-line"><span class="line-number">69</span><span class="code-content">                    return true;</span></div>
+<div class="code-line context-line"><span class="line-number">70</span><span class="code-content">                }</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-4">
+    File: net/gsantner/markor/util/AppSettings.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\util\AppSettings.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">310</span><span class="code-content">    public void addRecentDocument(File file) {</span></div>
+<div class="code-line context-line"><span class="line-number">311</span><span class="code-content">        if (!listFileInRecents(file)) {</span></div>
+<div class="code-line context-line"><span class="line-number">312</span><span class="code-content">            return;</span></div>
+<div class="code-line context-line"><span class="line-number">313</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">314</span><span class="code-content">        if (!file.equals(getTodoFile()) &amp;&amp; !file.equals(getQuickNoteFile())) {</span></div>
+<div class="code-line bug-line"><span class="line-number">315</span><span class="code-content">            ArrayList&lt;String&gt; recent = getRecentDocuments();</span></div>
+<div class="code-line bug-line"><span class="line-number">316</span><span class="code-content">            recent.add(0, file.getAbsolutePath());</span></div>
+<div class="code-line bug-line"><span class="line-number">317</span><span class="code-content">            recent.remove(getTodoFile().getAbsolutePath());</span></div>
+<div class="code-line bug-line"><span class="line-number">318</span><span class="code-content">            recent.remove(getQuickNoteFile().getAbsolutePath());</span></div>
+<div class="code-line bug-line"><span class="line-number">319</span><span class="code-content">            recent.remove(&quot;&quot;);</span></div>
+<div class="code-line bug-line"><span class="line-number">320</span><span class="code-content">            recent.remove(null);</span></div>
+<div class="code-line context-line"><span class="line-number">321</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">322</span><span class="code-content">            setInt(file.getAbsolutePath(), getInt(file.getAbsolutePath(), 0, _prefCache) + 1, _prefCache);</span></div>
+<div class="code-line bug-line"><span class="line-number">323</span><span class="code-content">            setRecentDocuments(recent);</span></div>
+<div class="code-line context-line"><span class="line-number">324</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">325</span><span class="code-content">        ShortcutUtils.setShortcuts(_context);</span></div>
+<div class="code-line context-line"><span class="line-number">326</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">327</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">328</span><span class="code-content">    public void toggleFavouriteFile(File file) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">491</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">492</span><span class="code-content">        return getInt(PREF_PREFIX_VIEW_SCROLL_Y + file.getAbsolutePath(), -3, _prefCache);</span></div>
+<div class="code-line context-line"><span class="line-number">493</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">494</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">495</span><span class="code-content">    private List&lt;String&gt; getPopularDocumentsSorted() {</span></div>
+<div class="code-line bug-line"><span class="line-number">496</span><span class="code-content">        List&lt;String&gt; popular = getRecentDocuments();</span></div>
+<div class="code-line bug-line"><span class="line-number">497</span><span class="code-content">        Collections.sort(popular, (o1, o2) -&gt; Integer.compare(getInt(o1, 0, _prefCache), getInt(o2, 0, _prefCache)));</span></div>
+<div class="code-line bug-line"><span class="line-number">498</span><span class="code-content">        return popular;</span></div>
+<div class="code-line context-line"><span class="line-number">499</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">500</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">501</span><span class="code-content">    public List&lt;String&gt; getPopularDocuments() {</span></div>
+<div class="code-line context-line"><span class="line-number">502</span><span class="code-content">        return getStringList(R.string.pref_key__popular_documents);</span></div>
+<div class="code-line context-line"><span class="line-number">503</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">504</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">505</span><span class="code-content">    public void setPopularDocuments(List&lt;String&gt; v) {</span></div>
+<div class="code-line bug-line"><span class="line-number">506</span><span class="code-content">        limitListTo(v, 20, true);</span></div>
+<div class="code-line bug-line"><span class="line-number">507</span><span class="code-content">        setStringList(R.string.pref_key__popular_documents, v, _prefApp);</span></div>
+<div class="code-line bug-line"><span class="line-number">508</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">509</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">510</span><span class="code-content">    public void setRecentDocuments(List&lt;String&gt; v) {</span></div>
+<div class="code-line bug-line"><span class="line-number">511</span><span class="code-content">        limitListTo(v, 20, true);</span></div>
+<div class="code-line bug-line"><span class="line-number">512</span><span class="code-content">        setStringList(R.string.pref_key__recent_documents, v, _prefApp);</span></div>
+<div class="code-line bug-line"><span class="line-number">513</span><span class="code-content">        setPopularDocuments(getPopularDocumentsSorted());</span></div>
+<div class="code-line bug-line"><span class="line-number">514</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">515</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">516</span><span class="code-content">    public ArrayList&lt;String&gt; getRecentDocuments() {</span></div>
+<div class="code-line context-line"><span class="line-number">517</span><span class="code-content">        ArrayList&lt;String&gt; list = getStringList(R.string.pref_key__recent_documents);</span></div>
+<div class="code-line context-line"><span class="line-number">518</span><span class="code-content">        for (int i = 0; i &lt; list.size(); i++) {</span></div>
+<div class="code-line bug-line"><span class="line-number">519</span><span class="code-content">            if (!new File(list.get(i)).isFile()) {</span></div>
+<div class="code-line context-line"><span class="line-number">520</span><span class="code-content">                list.remove(i);</span></div>
+<div class="code-line context-line"><span class="line-number">521</span><span class="code-content">                i--;</span></div>
+<div class="code-line context-line"><span class="line-number">522</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">523</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">524</span><span class="code-content">        return list;</span></div>
+<div class="code-line context-line"><span class="line-number">525</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">526</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">527</span><span class="code-content">    public ArrayList&lt;File&gt; getAsFileList(List&lt;String&gt; list) {</span></div>
+<div class="code-line context-line"><span class="line-number">528</span><span class="code-content">        ArrayList&lt;File&gt; r = new ArrayList&lt;&gt;();</span></div>
+<div class="code-line context-line"><span class="line-number">529</span><span class="code-content">        for (String f : list) {</span></div>
+<div class="code-line bug-line"><span class="line-number">530</span><span class="code-content">            r.add(new File(f));</span></div>
+<div class="code-line bug-line"><span class="line-number">531</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">532</span><span class="code-content">        return r;</span></div>
+<div class="code-line context-line"><span class="line-number">533</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">534</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">535</span><span class="code-content">    public ArrayList&lt;File&gt; getFavouriteFiles() {</span></div>
+<div class="code-line context-line"><span class="line-number">536</span><span class="code-content">        ArrayList&lt;File&gt; list = new ArrayList&lt;&gt;();</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-5">
+    File: net/gsantner/markor/util/ShortcutUtils.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\util\ShortcutUtils.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">89</span><span class="code-content">            // Generate shortcuts for the most recent documents. Maximum of MAX_RECENT_DOCUMENTS.</span></div>
+<div class="code-line context-line"><span class="line-number">90</span><span class="code-content">            final AppSettings settings = new AppSettings(context);</span></div>
+<div class="code-line context-line"><span class="line-number">91</span><span class="code-content">            final List&lt;String&gt; recentDocuments = settings.getRecentDocuments();</span></div>
+<div class="code-line context-line"><span class="line-number">92</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">93</span><span class="code-content">            for (int i = 0; i &lt; MAX_RECENT_DOCUMENTS; i++) {</span></div>
+<div class="code-line bug-line"><span class="line-number">94</span><span class="code-content">                final File file = new File(recentDocuments.get(i));</span></div>
+<div class="code-line context-line"><span class="line-number">95</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">96</span><span class="code-content">                final Intent openFile = new Intent(context, OpenEditorFromShortcutOrWidgetActivity.class)</span></div>
+<div class="code-line bug-line"><span class="line-number">97</span><span class="code-content">                        .setAction(Intent.ACTION_EDIT)</span></div>
+<div class="code-line bug-line"><span class="line-number">98</span><span class="code-content">                        .setData(Uri.fromFile(file));</span></div>
+<div class="code-line context-line"><span class="line-number">99</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">100</span><span class="code-content">                final String name = file.getName();</span></div>
+<div class="code-line bug-line"><span class="line-number">101</span><span class="code-content">                newShortcuts.add(new ShortcutInfo.Builder(context, ID_PREFIX + name)</span></div>
+<div class="code-line bug-line"><span class="line-number">102</span><span class="code-content">                        .setShortLabel(createShortLabel(name))</span></div>
+<div class="code-line bug-line"><span class="line-number">103</span><span class="code-content">                        .setLongLabel(createLongLabel(name))</span></div>
+<div class="code-line bug-line"><span class="line-number">104</span><span class="code-content">                        .setIcon(Icon.createWithResource(context, R.mipmap.ic_shortcut_file))</span></div>
+<div class="code-line bug-line"><span class="line-number">105</span><span class="code-content">                        .setIntent(openFile)</span></div>
+<div class="code-line bug-line"><span class="line-number">106</span><span class="code-content">                        .build());</span></div>
+<div class="code-line context-line"><span class="line-number">107</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">108</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">109</span><span class="code-content">            shortcutManager.setDynamicShortcuts(newShortcuts);</span></div>
+<div class="code-line context-line"><span class="line-number">110</span><span class="code-content">        } catch (Exception error) {</span></div>
+<div class="code-line context-line"><span class="line-number">111</span><span class="code-content">            error.printStackTrace();</span></div>
+<div class="code-line bug-line"><span class="line-number">112</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">113</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">114</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">115</span><span class="code-content">    /**</span></div>
+<div class="code-line context-line"><span class="line-number">116</span><span class="code-content">     * Create a short label. Text will be truncated to 10 characters.</span></div>
+<div class="code-line context-line"><span class="line-number">117</span><span class="code-content">     *</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-6">
+    File: net/gsantner/opoc/activity/GsFragmentBase.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\activity\GsFragmentBase.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">83</span><span class="code-content">    protected void attachToolbarClickListenersToFragment() {</span></div>
+<div class="code-line context-line"><span class="line-number">84</span><span class="code-content">        final Toolbar toolbar;</span></div>
+<div class="code-line context-line"><span class="line-number">85</span><span class="code-content">        if ((toolbar = getToolbar()) != null &amp;&amp; getUserVisibleHint()) {</span></div>
+<div class="code-line context-line"><span class="line-number">86</span><span class="code-content">            toolbar.setOnLongClickListener(clickView -&gt; getUserVisibleHint() &amp;&amp; onToolbarLongClicked(clickView));</span></div>
+<div class="code-line context-line"><span class="line-number">87</span><span class="code-content">            toolbar.setOnClickListener(clickView -&gt; {</span></div>
+<div class="code-line bug-line"><span class="line-number">88</span><span class="code-content">                if (getUserVisibleHint()) {</span></div>
+<div class="code-line bug-line"><span class="line-number">89</span><span class="code-content">                    onToolbarClicked(clickView);</span></div>
+<div class="code-line context-line"><span class="line-number">90</span><span class="code-content">                }</span></div>
+<div class="code-line bug-line"><span class="line-number">91</span><span class="code-content">            });</span></div>
+<div class="code-line context-line"><span class="line-number">92</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">93</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">94</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">95</span><span class="code-content">    /**</span></div>
+<div class="code-line context-line"><span class="line-number">96</span><span class="code-content">     * Get a tag from the fragment, allows faster distinction</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">179</span><span class="code-content">     * Called when on @{{@link Toolbar#setOnClickListener(View.OnClickListener)}} click</span></div>
+<div class="code-line context-line"><span class="line-number">180</span><span class="code-content">     *</span></div>
+<div class="code-line context-line"><span class="line-number">181</span><span class="code-content">     * @param v Toolbar @{{@link View}}</span></div>
+<div class="code-line context-line"><span class="line-number">182</span><span class="code-content">     */</span></div>
+<div class="code-line context-line"><span class="line-number">183</span><span class="code-content">    protected void onToolbarClicked(final View v) {</span></div>
+<div class="code-line bug-line"><span class="line-number">184</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">185</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">186</span><span class="code-content">    /**</span></div>
+<div class="code-line context-line"><span class="line-number">187</span><span class="code-content">     * Called when on @{{@link Toolbar#setOnLongClickListener(View.OnLongClickListener)}} long click</span></div>
+<div class="code-line context-line"><span class="line-number">188</span><span class="code-content">     *</span></div>
+<div class="code-line context-line"><span class="line-number">189</span><span class="code-content">     * @param v Toolbar @{{@link View}}</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-7">
+    File: net/gsantner/opoc/preference/GsPreferenceFragmentCompat.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\preference\GsPreferenceFragmentCompat.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">203</span><span class="code-content">    /**</span></div>
+<div class="code-line context-line"><span class="line-number">204</span><span class="code-content">     * Try to fetch string resource id from key</span></div>
+<div class="code-line context-line"><span class="line-number">205</span><span class="code-content">     * This only works if the key is only defined once and value=key</span></div>
+<div class="code-line context-line"><span class="line-number">206</span><span class="code-content">     */</span></div>
+<div class="code-line context-line"><span class="line-number">207</span><span class="code-content">    protected int keyToStringResId(Preference preference) {</span></div>
+<div class="code-line bug-line"><span class="line-number">208</span><span class="code-content">        if (preference != null &amp;&amp; !TextUtils.isEmpty(preference.getKey())) {</span></div>
+<div class="code-line bug-line"><span class="line-number">209</span><span class="code-content">            return _cu.getResId(ContextUtils.ResType.STRING, preference.getKey());</span></div>
+<div class="code-line context-line"><span class="line-number">210</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">211</span><span class="code-content">        return 0;</span></div>
+<div class="code-line context-line"><span class="line-number">212</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">213</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">214</span><span class="code-content">    /**</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">295</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">296</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">297</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">298</span><span class="code-content">    @Deprecated</span></div>
+<div class="code-line context-line"><span class="line-number">299</span><span class="code-content">    public boolean onPreferenceTreeClick(Preference preference) {</span></div>
+<div class="code-line bug-line"><span class="line-number">300</span><span class="code-content">        if (isAdded()) {</span></div>
+<div class="code-line bug-line"><span class="line-number">301</span><span class="code-content">            String key = preference.hasKey() ? preference.getKey() : &quot;&quot;;</span></div>
+<div class="code-line bug-line"><span class="line-number">302</span><span class="code-content">            int keyResId = keyToStringResId(preference);</span></div>
+<div class="code-line bug-line"><span class="line-number">303</span><span class="code-content">            Boolean ret = onPreferenceClicked(preference, key, keyResId);</span></div>
+<div class="code-line bug-line"><span class="line-number">304</span><span class="code-content">            if (ret != null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">305</span><span class="code-content">                return ret;</span></div>
+<div class="code-line context-line"><span class="line-number">306</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">307</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">308</span><span class="code-content">        return super.onPreferenceTreeClick(preference);</span></div>
+<div class="code-line context-line"><span class="line-number">309</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">310</span><span class="code-content"></span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-8">
+    File: net/gsantner/opoc/preference/SharedPreferencesPropertyBackend.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\preference\SharedPreferencesPropertyBackend.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">145</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">146</span><span class="code-content">    public static void limitListTo(final List&lt;?&gt; list, int maxSize, boolean removeDuplicates) {</span></div>
+<div class="code-line context-line"><span class="line-number">147</span><span class="code-content">        Object o;</span></div>
+<div class="code-line context-line"><span class="line-number">148</span><span class="code-content">        int pos;</span></div>
+<div class="code-line context-line"><span class="line-number">149</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">150</span><span class="code-content">        for (int i = 0; removeDuplicates &amp;&amp; i &lt; list.size(); i++) {</span></div>
+<div class="code-line bug-line"><span class="line-number">151</span><span class="code-content">            o = list.get(i);</span></div>
+<div class="code-line bug-line"><span class="line-number">152</span><span class="code-content">            while ((pos = list.lastIndexOf(o)) != i &amp;&amp; pos &gt;= 0) {</span></div>
+<div class="code-line context-line"><span class="line-number">153</span><span class="code-content">                list.remove(pos);</span></div>
+<div class="code-line context-line"><span class="line-number">154</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">155</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">156</span><span class="code-content">        while ((pos = list.size()) &gt; maxSize &amp;&amp; pos &gt; 0) {</span></div>
+<div class="code-line context-line"><span class="line-number">157</span><span class="code-content">            list.remove(list.size() - 1);</span></div>
+<div class="code-line context-line"><span class="line-number">158</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">159</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">160</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">161</span><span class="code-content">    //</span></div>
+<div class="code-line context-line"><span class="line-number">162</span><span class="code-content">    // Getter for resources</span></div>
+<div class="code-line context-line"><span class="line-number">163</span><span class="code-content">    //</span></div>
+<div class="code-line context-line"><span class="line-number">164</span><span class="code-content">    public String rstr(@StringRes int stringKeyResourceId) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">184</span><span class="code-content">    public void setString(@StringRes int keyResourceId, String value, final SharedPreferences... pref) {</span></div>
+<div class="code-line context-line"><span class="line-number">185</span><span class="code-content">        gp(pref).edit().putString(rstr(keyResourceId), value).apply();</span></div>
+<div class="code-line context-line"><span class="line-number">186</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">187</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">188</span><span class="code-content">    public void setString(String key, String value, final SharedPreferences... pref) {</span></div>
+<div class="code-line bug-line"><span class="line-number">189</span><span class="code-content">        gp(pref).edit().putString(key, value).apply();</span></div>
+<div class="code-line bug-line"><span class="line-number">190</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">191</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">192</span><span class="code-content">    public void setString(@StringRes int keyResourceId, @StringRes int defaultValueResourceId, final SharedPreferences... pref) {</span></div>
+<div class="code-line context-line"><span class="line-number">193</span><span class="code-content">        gp(pref).edit().putString(rstr(keyResourceId), rstr(defaultValueResourceId)).apply();</span></div>
+<div class="code-line context-line"><span class="line-number">194</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">195</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">212</span><span class="code-content">    public String getString(@StringRes int keyResourceId, String defaultValue, @StringRes int keyResourceIdDefaultValue, final SharedPreferences... pref) {</span></div>
+<div class="code-line context-line"><span class="line-number">213</span><span class="code-content">        return getString(rstr(keyResourceId), rstr(keyResourceIdDefaultValue), pref);</span></div>
+<div class="code-line context-line"><span class="line-number">214</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">215</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">216</span><span class="code-content">    private void setStringListOne(String key, List&lt;String&gt; values, final SharedPreferences pref) {</span></div>
+<div class="code-line bug-line"><span class="line-number">217</span><span class="code-content">        StringBuilder sb = new StringBuilder();</span></div>
+<div class="code-line bug-line"><span class="line-number">218</span><span class="code-content">        for (String value : values) {</span></div>
+<div class="code-line bug-line"><span class="line-number">219</span><span class="code-content">            sb.append(ARRAY_SEPARATOR);</span></div>
+<div class="code-line bug-line"><span class="line-number">220</span><span class="code-content">            sb.append(value.replace(ARRAY_SEPARATOR, ARRAY_SEPARATOR_SUBSTITUTE));</span></div>
+<div class="code-line bug-line"><span class="line-number">221</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">222</span><span class="code-content">        setString(key, sb.toString().replaceFirst(ARRAY_SEPARATOR, &quot;&quot;), pref);</span></div>
+<div class="code-line bug-line"><span class="line-number">223</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">224</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">225</span><span class="code-content">    private ArrayList&lt;String&gt; getStringListOne(String key, final SharedPreferences pref) {</span></div>
+<div class="code-line context-line"><span class="line-number">226</span><span class="code-content">        ArrayList&lt;String&gt; ret = new ArrayList&lt;&gt;();</span></div>
+<div class="code-line context-line"><span class="line-number">227</span><span class="code-content">        String value = getString(key, ARRAY_SEPARATOR).replace(ARRAY_SEPARATOR_SUBSTITUTE, ARRAY_SEPARATOR);</span></div>
+<div class="code-line context-line"><span class="line-number">228</span><span class="code-content">        if (value.equals(ARRAY_SEPARATOR) || TextUtils.isEmpty(value)) {</span></div>
+<div class="code-line context-line"><span class="line-number">229</span><span class="code-content">            return ret;</span></div>
+<div class="code-line context-line"><span class="line-number">230</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">231</span><span class="code-content">        ret.addAll(Arrays.asList(value.split(ARRAY_SEPARATOR)));</span></div>
+<div class="code-line bug-line"><span class="line-number">232</span><span class="code-content">        return ret;</span></div>
+<div class="code-line context-line"><span class="line-number">233</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">234</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">235</span><span class="code-content">    public void setStringArray(@StringRes int keyResourceId, String[] values, final SharedPreferences... pref) {</span></div>
+<div class="code-line context-line"><span class="line-number">236</span><span class="code-content">        setStringArray(rstr(keyResourceId), values, pref);</span></div>
+<div class="code-line context-line"><span class="line-number">237</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">238</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">239</span><span class="code-content">    public void setStringArray(String key, String[] values, final SharedPreferences... pref) {</span></div>
+<div class="code-line bug-line"><span class="line-number">240</span><span class="code-content">        setStringListOne(key, Arrays.asList(values), gp(pref));</span></div>
+<div class="code-line bug-line"><span class="line-number">241</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">242</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">243</span><span class="code-content">    public void setStringList(@StringRes int keyResourceId, List&lt;String&gt; values, final SharedPreferences... pref) {</span></div>
+<div class="code-line bug-line"><span class="line-number">244</span><span class="code-content">        setStringArray(rstr(keyResourceId), values.toArray(new String[values.size()]), pref);</span></div>
+<div class="code-line bug-line"><span class="line-number">245</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">246</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">247</span><span class="code-content">    public void setStringList(String key, List&lt;String&gt; values, final SharedPreferences... pref) {</span></div>
+<div class="code-line context-line"><span class="line-number">248</span><span class="code-content">        setStringArray(key, values.toArray(new String[values.size()]), pref);</span></div>
+<div class="code-line context-line"><span class="line-number">249</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">250</span><span class="code-content"></span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-9">
+    File: net/gsantner/opoc/util/ContextUtils.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\util\ContextUtils.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">264</span><span class="code-content">     * Send a {@link Intent#ACTION_VIEW} Intent with given paramter</span></div>
+<div class="code-line context-line"><span class="line-number">265</span><span class="code-content">     * If the parameter is an string a browser will get triggered</span></div>
+<div class="code-line context-line"><span class="line-number">266</span><span class="code-content">     */</span></div>
+<div class="code-line context-line"><span class="line-number">267</span><span class="code-content">    public ContextUtils openWebpageInExternalBrowser(final String url) {</span></div>
+<div class="code-line context-line"><span class="line-number">268</span><span class="code-content">        try {</span></div>
+<div class="code-line bug-line"><span class="line-number">269</span><span class="code-content">            Uri uri = Uri.parse(url);</span></div>
+<div class="code-line bug-line"><span class="line-number">270</span><span class="code-content">            Intent intent = new Intent(Intent.ACTION_VIEW, uri);</span></div>
+<div class="code-line bug-line"><span class="line-number">271</span><span class="code-content">            intent.addFlags(FLAG_ACTIVITY_NEW_TASK);</span></div>
+<div class="code-line bug-line"><span class="line-number">272</span><span class="code-content">            _context.startActivity(intent);</span></div>
+<div class="code-line context-line"><span class="line-number">273</span><span class="code-content">        } catch (Exception e) {</span></div>
+<div class="code-line context-line"><span class="line-number">274</span><span class="code-content">            e.printStackTrace();</span></div>
+<div class="code-line bug-line"><span class="line-number">275</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">276</span><span class="code-content">        return this;</span></div>
+<div class="code-line context-line"><span class="line-number">277</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">278</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">279</span><span class="code-content">    /**</span></div>
+<div class="code-line context-line"><span class="line-number">280</span><span class="code-content">     * Get the apps base packagename, which is equal with all build flavors and variants</span></div>
+<div class="code-line context-line"><span class="line-number">281</span><span class="code-content">     */</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

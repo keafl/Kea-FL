@@ -1,0 +1,25 @@
+{"startStepsCount": 1, "propName": "anki_droid.AnkiTest.test_create_deck", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "anki_droid.AnkiTest.test_rename_deck", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "anki_droid.AnkiTest.test_add_card", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "anki_droid.AnkiTest.test_create_subdeck", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "anki_droid.AnkiTest.test_edit_deck_description", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "pass", "tb": ""}
+{"startStepsCount": 22, "propName": "anki_droid.AnkiTest.test_delete_deck", "state": "pass", "tb": ""}
+{"startStepsCount": 22, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "pass", "tb": ""}
+{"startStepsCount": 22, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "pass", "tb": ""}
+{"startStepsCount": 24, "propName": "anki_droid.AnkiTest.test_create_deck", "state": "pass", "tb": ""}
+{"startStepsCount": 24, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_app_run\\anki_droid.py\", line 70, in test_check_cardbrowser\n    assert not result\n           ^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 25, "propName": "anki_droid.AnkiTest.test_create_deck", "state": "pass", "tb": ""}
+{"startStepsCount": 25, "propName": "anki_droid.AnkiTest.test_create_deck", "state": "pass", "tb": ""}
+{"startStepsCount": 25, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "pass", "tb": ""}
+{"startStepsCount": 26, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "pass", "tb": ""}
+{"startStepsCount": 26, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_app_run\\anki_droid.py\", line 44, in test_check_cardbrowser\n    sleep(2)\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 151, in click\n    self.session.click(x, y)\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\__init__.py\", line 224, in click\n    x, y = self.pos_rel2abs(x, y)\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\__init__.py\", line 156, in _convert\n    assert x >= 0\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 26, "propName": "anki_droid.AnkiTest.test_create_deck", "state": "pass", "tb": ""}
+{"startStepsCount": 26, "propName": "anki_droid.AnkiTest.test_create_deck", "state": "pass", "tb": ""}
+{"startStepsCount": 47, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_app_run\\anki_droid.py\", line 44, in test_check_cardbrowser\n    sleep(2)\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 151, in click\n    self.session.click(x, y)\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\__init__.py\", line 224, in click\n    x, y = self.pos_rel2abs(x, y)\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\__init__.py\", line 156, in _convert\n    assert x >= 0\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 48, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "pass", "tb": ""}
+{"startStepsCount": 51, "propName": "anki_droid.AnkiTest.test_create_deck", "state": "pass", "tb": ""}
+{"startStepsCount": 53, "propName": "anki_droid.AnkiTest.test_create_deck", "state": "pass", "tb": ""}
+{"startStepsCount": 53, "propName": "anki_droid.AnkiTest.test_check_cardbrowser", "state": "pass", "tb": ""}

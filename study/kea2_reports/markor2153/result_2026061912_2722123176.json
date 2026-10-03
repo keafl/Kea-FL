@@ -1,0 +1,38 @@
+{
+    "markor2153.Markor.test_check_recent_file": {
+        "precond_satisfied": 23,
+        "executed": 10,
+        "fail": 3,
+        "error": 0
+    },
+    "markor2153.Markor.test_create_note": {
+        "precond_satisfied": 4,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "markor2153.Markor.test_modify_note": {
+        "precond_satisfied": 1,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "markor2153.Markor.test_new_folder": {
+        "precond_satisfied": 7,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "markor2153.Markor.test_open_file": {
+        "precond_satisfied": 7,
+        "executed": 2,
+        "fail": 0,
+        "error": 0
+    },
+    "markor2153.Markor.test_stop_start": {
+        "precond_satisfied": 1,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "omni981.OmniNotesBugTest.test_behavior_setting": {
+        "precond_satisfied": 1,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni981.OmniNotesBugTest.test_click_note": {
+        "precond_satisfied": 22,
+        "executed": 8,
+        "fail": 0,
+        "error": 0
+    },
+    "omni981.OmniNotesBugTest.test_create_checklist": {
+        "precond_satisfied": 7,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni981.OmniNotesBugTest.test_create_empty_category": {
+        "precond_satisfied": 6,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni981.OmniNotesBugTest.test_create_note": {
+        "precond_satisfied": 27,
+        "executed": 3,
+        "fail": 0,
+        "error": 0
+    },
+    "omni981.OmniNotesBugTest.test_data_setting": {
+        "precond_satisfied": 3,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni981.OmniNotesBugTest.test_reduce_view": {
+        "precond_satisfied": 22,
+        "executed": 7,
+        "fail": 1,
+        "error": 1
+    },
+    "omni981.OmniNotesBugTest.test_search_note": {
+        "precond_satisfied": 18,
+        "executed": 5,
+        "fail": 0,
+        "error": 0
+    }
+}

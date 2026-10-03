@@ -1,0 +1,19 @@
+{"startStepsCount": 1, "propName": "omni949.OmniNotesBugTest.test_create_note_with_tags", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni949.OmniNotesBugTest.test_create_note_with_tags", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni949.OmniNotesBugTest.test_create_note_with_tags", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni949.OmniNotesBugTest.test_edit_note", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni949.OmniNotesBugTest.test_remove_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni949.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni949.OmniNotesBugTest.test_create_note_with_tags", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni949.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni949.OmniNotesBugTest.test_data_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni949.OmniNotesBugTest.test_edit_note", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni949.OmniNotesBugTest.test_remove_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni949.py\", line 94, in test_remove_tag\n    assert tag_in_content == \"#tag2\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 4, "propName": "omni949.OmniNotesBugTest.test_behavior_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "omni949.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 5, "propName": "omni949.OmniNotesBugTest.test_delete_note", "state": "error", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni949.py\", line 147, in test_delete_note\n    self.d(resourceId=\"it.feio.android.omninotes.alpha:id/title\", text=\"Trash\").click()\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 149, in click\n    self.must_wait(timeout=timeout)\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 338, in must_wait\n    raise UiObjectNotFoundError({'code': -32002, 'data': str(self.selector), 'method': 'wait'})\nuiautomator2.exceptions.UiObjectNotFoundError: {'code': -32002, 'data': \"Selector [resourceId='it.feio.android.omninotes.alpha:id/title', text='Trash']\", 'method': 'wait'}\n"}
+{"startStepsCount": 8, "propName": "omni949.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "omni949.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni949.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni949.OmniNotesBugTest.test_edit_note", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni949.OmniNotesBugTest.test_remove_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni949.py\", line 94, in test_remove_tag\n    assert tag_in_content == \"#tag2\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}

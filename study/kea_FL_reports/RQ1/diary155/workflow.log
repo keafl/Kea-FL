@@ -1,0 +1,1566 @@
+2026-06-19 20:59:16 [runner] INFO: Building pair test cases...
+2026-06-19 20:59:16 [replayer] INFO: Parse 278 events
+2026-06-19 20:59:16 [replayer] INFO: Parse 134 Monkey actions
+2026-06-19 20:59:16 [reproducer] INFO: Extract 5 pairs test cases
+2026-06-19 20:59:16 [replayer] INFO: Property activity_diary155.ActivityDiaryTest.test_add_activity not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 20:59:16 [replayer] INFO: Property activity_diary155.ActivityDiaryTest.test_edit_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 20:59:16 [replayer] INFO: Property activity_diary155.ActivityDiaryTest.test_select_activity not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 20:59:16 [replayer] INFO: Property activity_diary155.ActivityDiaryTest.test_open_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 20:59:16 [reproducer] INFO: Build 1 pairs test cases
+2026-06-19 20:59:16 [reproducer] INFO: Test case [1]: test_search_activity
+2026-06-19 20:59:16 [reproducer] INFO:     -happy_path: [preconditions]: 47, [property]: 6
+2026-06-19 20:59:16 [reproducer] INFO:     -bug_path: [preconditions]: 162, [property]: 7
+2026-06-19 20:59:16 [runner] INFO: Start running full coverage difference analysis...
+2026-06-19 20:59:16 [runner] INFO: Processing pair test case [1]: happy_test_search_activity <-> bug_test_search_activity
+2026-06-19 20:59:16 [runner] INFO: Running pair test case analysis: happy_test_search_activity <-> bug_test_search_activity
+2026-06-19 20:59:16 [runner] INFO: Running property-satisfying path...
+2026-06-19 20:59:16 [reproducer] INFO: Start reproducing test case: happy_test_search_activity
+2026-06-19 20:59:16 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 20:59:16 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 20:59:16 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 20:59:16 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 20:59:17 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: de.rampro.activitydiary.debug
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=17ms (0ms mobile, 0ms wifi, 17ms not connected)
+
+2026-06-19 20:59:17 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 20:59:17 [reproducer] INFO: Init operation executed
+2026-06-19 20:59:20 [reproducer] INFO: Test environment setup completed
+2026-06-19 20:59:20 [reproducer] INFO: Start executing preconditions for test case: happy_test_search_activity
+2026-06-19 20:59:20 [replayer] INFO: [1] Execute Monkey event: LONG_CLICK
+2026-06-19 20:59:20 [replayer] INFO: Touch: Touch(touch_type='down', x=937.0, y=476.0, wait_duration=0.0)
+2026-06-19 20:59:20 [replayer] INFO: Press coordinate at: (937.0, 476.0)
+2026-06-19 20:59:20 [replayer] INFO: Touch: Touch(touch_type='up', x=937.0, y=476.0, wait_duration=1.0)
+2026-06-19 20:59:20 [replayer] INFO: Release coordinate at: (937.0, 476.0)
+2026-06-19 20:59:22 [replayer] INFO: [2] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 20:59:22 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 20:59:22 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 20:59:22 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 20:59:22 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 20:59:22 [replayer] INFO: Touch: Touch(touch_type='move', x=593.9, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:22 [replayer] INFO: Move coordinate to: (593.9, 1008.0)
+2026-06-19 20:59:22 [replayer] INFO: Touch: Touch(touch_type='move', x=647.8, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:22 [replayer] INFO: Move coordinate to: (647.8, 1008.0)
+2026-06-19 20:59:22 [replayer] INFO: Touch: Touch(touch_type='move', x=701.7, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:22 [replayer] INFO: Move coordinate to: (701.7, 1008.0)
+2026-06-19 20:59:22 [replayer] INFO: Touch: Touch(touch_type='move', x=755.6, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:23 [replayer] INFO: Move coordinate to: (755.6, 1008.0)
+2026-06-19 20:59:23 [replayer] INFO: Touch: Touch(touch_type='move', x=809.5, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:23 [replayer] INFO: Move coordinate to: (809.5, 1008.0)
+2026-06-19 20:59:23 [replayer] INFO: Touch: Touch(touch_type='move', x=863.4, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:23 [replayer] INFO: Move coordinate to: (863.4, 1008.0)
+2026-06-19 20:59:23 [replayer] INFO: Touch: Touch(touch_type='move', x=917.3, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:23 [replayer] INFO: Move coordinate to: (917.3, 1008.0)
+2026-06-19 20:59:23 [replayer] INFO: Touch: Touch(touch_type='move', x=971.2, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:23 [replayer] INFO: Move coordinate to: (971.2, 1008.0)
+2026-06-19 20:59:23 [replayer] INFO: Touch: Touch(touch_type='move', x=1025.1, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:23 [replayer] INFO: Move coordinate to: (1025.1, 1008.0)
+2026-06-19 20:59:23 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:23 [replayer] INFO: Release coordinate at: (1079.0, 1008.0)
+2026-06-19 20:59:24 [replayer] INFO: [3] Execute Monkey event: CLICK
+2026-06-19 20:59:24 [replayer] INFO: Touch: Touch(touch_type='down', x=396.0, y=416.0, wait_duration=0.0)
+2026-06-19 20:59:24 [replayer] INFO: Press coordinate at: (396.0, 416.0)
+2026-06-19 20:59:24 [replayer] INFO: Touch: Touch(touch_type='up', x=396.0, y=416.0, wait_duration=0.0)
+2026-06-19 20:59:24 [replayer] INFO: Release coordinate at: (396.0, 416.0)
+2026-06-19 20:59:25 [replayer] INFO: [4] Execute Monkey event: CLICK
+2026-06-19 20:59:25 [replayer] INFO: Touch: Touch(touch_type='down', x=974.0, y=653.0, wait_duration=0.0)
+2026-06-19 20:59:25 [replayer] INFO: Press coordinate at: (974.0, 653.0)
+2026-06-19 20:59:25 [replayer] INFO: Touch: Touch(touch_type='up', x=974.0, y=653.0, wait_duration=0.0)
+2026-06-19 20:59:25 [replayer] INFO: Release coordinate at: (974.0, 653.0)
+2026-06-19 20:59:26 [replayer] INFO: [5] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 20:59:26 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1139.5, wait_duration=0.0)
+2026-06-19 20:59:27 [replayer] INFO: Press coordinate at: (540.0, 1139.5)
+2026-06-19 20:59:27 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1139.5, wait_duration=0.0)
+2026-06-19 20:59:27 [replayer] INFO: Move coordinate to: (540.0, 1139.5)
+2026-06-19 20:59:27 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1227.05, wait_duration=0.02)
+2026-06-19 20:59:27 [replayer] INFO: Move coordinate to: (540.0, 1227.05)
+2026-06-19 20:59:27 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1314.6, wait_duration=0.02)
+2026-06-19 20:59:27 [replayer] INFO: Move coordinate to: (540.0, 1314.6)
+2026-06-19 20:59:27 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1402.15, wait_duration=0.02)
+2026-06-19 20:59:27 [replayer] INFO: Move coordinate to: (540.0, 1402.15)
+2026-06-19 20:59:27 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1489.7, wait_duration=0.02)
+2026-06-19 20:59:27 [replayer] INFO: Move coordinate to: (540.0, 1489.7)
+2026-06-19 20:59:27 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1577.25, wait_duration=0.02)
+2026-06-19 20:59:27 [replayer] INFO: Move coordinate to: (540.0, 1577.25)
+2026-06-19 20:59:27 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1664.8, wait_duration=0.02)
+2026-06-19 20:59:27 [replayer] INFO: Move coordinate to: (540.0, 1664.8)
+2026-06-19 20:59:27 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1752.35, wait_duration=0.02)
+2026-06-19 20:59:27 [replayer] INFO: Move coordinate to: (540.0, 1752.35)
+2026-06-19 20:59:27 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1839.9, wait_duration=0.02)
+2026-06-19 20:59:27 [replayer] INFO: Move coordinate to: (540.0, 1839.9)
+2026-06-19 20:59:27 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1927.45, wait_duration=0.02)
+2026-06-19 20:59:27 [replayer] INFO: Move coordinate to: (540.0, 1927.45)
+2026-06-19 20:59:27 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=2015.0, wait_duration=0.02)
+2026-06-19 20:59:28 [replayer] INFO: Release coordinate at: (540.0, 2015.0)
+2026-06-19 20:59:29 [replayer] INFO: [6] Execute Monkey event: CLICK
+2026-06-19 20:59:29 [replayer] INFO: Touch: Touch(touch_type='down', x=842.0, y=1550.0, wait_duration=0.0)
+2026-06-19 20:59:29 [replayer] INFO: Press coordinate at: (842.0, 1550.0)
+2026-06-19 20:59:29 [replayer] INFO: Touch: Touch(touch_type='up', x=842.0, y=1550.0, wait_duration=0.0)
+2026-06-19 20:59:29 [replayer] INFO: Release coordinate at: (842.0, 1550.0)
+2026-06-19 20:59:30 [replayer] INFO: [7] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 20:59:30 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 20:59:30 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 20:59:30 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 20:59:30 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 20:59:30 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=913.8, wait_duration=0.02)
+2026-06-19 20:59:30 [replayer] INFO: Move coordinate to: (540.0, 913.8)
+2026-06-19 20:59:30 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=819.6, wait_duration=0.02)
+2026-06-19 20:59:30 [replayer] INFO: Move coordinate to: (540.0, 819.6)
+2026-06-19 20:59:30 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=725.4, wait_duration=0.02)
+2026-06-19 20:59:30 [replayer] INFO: Move coordinate to: (540.0, 725.4)
+2026-06-19 20:59:30 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=631.19995, wait_duration=0.02)
+2026-06-19 20:59:30 [replayer] INFO: Move coordinate to: (540.0, 631.19995)
+2026-06-19 20:59:30 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=537.0, wait_duration=0.02)
+2026-06-19 20:59:30 [replayer] INFO: Move coordinate to: (540.0, 537.0)
+2026-06-19 20:59:30 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=442.8, wait_duration=0.02)
+2026-06-19 20:59:30 [replayer] INFO: Move coordinate to: (540.0, 442.8)
+2026-06-19 20:59:31 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=348.60004, wait_duration=0.02)
+2026-06-19 20:59:31 [replayer] INFO: Move coordinate to: (540.0, 348.60004)
+2026-06-19 20:59:31 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=254.39996, wait_duration=0.02)
+2026-06-19 20:59:31 [replayer] INFO: Move coordinate to: (540.0, 254.39996)
+2026-06-19 20:59:31 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=160.20001, wait_duration=0.02)
+2026-06-19 20:59:31 [replayer] INFO: Move coordinate to: (540.0, 160.20001)
+2026-06-19 20:59:31 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=82.0, wait_duration=0.02)
+2026-06-19 20:59:31 [replayer] INFO: Release coordinate at: (540.0, 82.0)
+2026-06-19 20:59:32 [replayer] INFO: [8] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 20:59:32 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 20:59:32 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 20:59:32 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 20:59:32 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 20:59:32 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1108.7, wait_duration=0.02)
+2026-06-19 20:59:32 [replayer] INFO: Move coordinate to: (540.0, 1108.7)
+2026-06-19 20:59:32 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1209.4, wait_duration=0.02)
+2026-06-19 20:59:32 [replayer] INFO: Move coordinate to: (540.0, 1209.4)
+2026-06-19 20:59:32 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1310.1, wait_duration=0.02)
+2026-06-19 20:59:32 [replayer] INFO: Move coordinate to: (540.0, 1310.1)
+2026-06-19 20:59:32 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1410.8, wait_duration=0.02)
+2026-06-19 20:59:32 [replayer] INFO: Move coordinate to: (540.0, 1410.8)
+2026-06-19 20:59:32 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1511.5, wait_duration=0.02)
+2026-06-19 20:59:32 [replayer] INFO: Move coordinate to: (540.0, 1511.5)
+2026-06-19 20:59:32 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1612.2, wait_duration=0.02)
+2026-06-19 20:59:32 [replayer] INFO: Move coordinate to: (540.0, 1612.2)
+2026-06-19 20:59:32 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1712.8999, wait_duration=0.02)
+2026-06-19 20:59:32 [replayer] INFO: Move coordinate to: (540.0, 1712.8999)
+2026-06-19 20:59:32 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1813.6001, wait_duration=0.02)
+2026-06-19 20:59:33 [replayer] INFO: Move coordinate to: (540.0, 1813.6001)
+2026-06-19 20:59:33 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1914.3, wait_duration=0.02)
+2026-06-19 20:59:33 [replayer] INFO: Move coordinate to: (540.0, 1914.3)
+2026-06-19 20:59:33 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=2015.0, wait_duration=0.02)
+2026-06-19 20:59:33 [replayer] INFO: Release coordinate at: (540.0, 2015.0)
+2026-06-19 20:59:34 [replayer] INFO: [9] Execute Monkey event: CLICK
+2026-06-19 20:59:34 [replayer] INFO: Touch: Touch(touch_type='down', x=139.0, y=246.0, wait_duration=0.0)
+2026-06-19 20:59:34 [replayer] INFO: Press coordinate at: (139.0, 246.0)
+2026-06-19 20:59:34 [replayer] INFO: Touch: Touch(touch_type='up', x=139.0, y=246.0, wait_duration=0.0)
+2026-06-19 20:59:34 [replayer] INFO: Release coordinate at: (139.0, 246.0)
+2026-06-19 20:59:35 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_select_activity - start
+2026-06-19 20:59:35 [replayer] INFO: [9] Execute Script event: click
+2026-06-19 20:59:35 [replayer] INFO: Click coordinate: (241.0, 894.0)
+2026-06-19 20:59:36 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_select_activity - pass
+2026-06-19 20:59:36 [replayer] INFO: [10] Execute Monkey event: CLICK
+2026-06-19 20:59:36 [replayer] INFO: Touch: Touch(touch_type='down', x=219.0, y=526.0, wait_duration=0.0)
+2026-06-19 20:59:36 [replayer] INFO: Press coordinate at: (219.0, 526.0)
+2026-06-19 20:59:36 [replayer] INFO: Touch: Touch(touch_type='up', x=219.0, y=526.0, wait_duration=0.0)
+2026-06-19 20:59:36 [replayer] INFO: Release coordinate at: (219.0, 526.0)
+2026-06-19 20:59:37 [replayer] INFO: [11] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 20:59:37 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 20:59:37 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 20:59:37 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 20:59:37 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 20:59:37 [replayer] INFO: Touch: Touch(touch_type='move', x=593.9, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:38 [replayer] INFO: Move coordinate to: (593.9, 1008.0)
+2026-06-19 20:59:38 [replayer] INFO: Touch: Touch(touch_type='move', x=647.8, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:38 [replayer] INFO: Move coordinate to: (647.8, 1008.0)
+2026-06-19 20:59:38 [replayer] INFO: Touch: Touch(touch_type='move', x=701.7, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:38 [replayer] INFO: Move coordinate to: (701.7, 1008.0)
+2026-06-19 20:59:38 [replayer] INFO: Touch: Touch(touch_type='move', x=755.6, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:38 [replayer] INFO: Move coordinate to: (755.6, 1008.0)
+2026-06-19 20:59:38 [replayer] INFO: Touch: Touch(touch_type='move', x=809.5, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:38 [replayer] INFO: Move coordinate to: (809.5, 1008.0)
+2026-06-19 20:59:38 [replayer] INFO: Touch: Touch(touch_type='move', x=863.4, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:38 [replayer] INFO: Move coordinate to: (863.4, 1008.0)
+2026-06-19 20:59:38 [replayer] INFO: Touch: Touch(touch_type='move', x=917.3, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:38 [replayer] INFO: Move coordinate to: (917.3, 1008.0)
+2026-06-19 20:59:38 [replayer] INFO: Touch: Touch(touch_type='move', x=971.2, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:38 [replayer] INFO: Move coordinate to: (971.2, 1008.0)
+2026-06-19 20:59:38 [replayer] INFO: Touch: Touch(touch_type='move', x=1025.1, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:38 [replayer] INFO: Move coordinate to: (1025.1, 1008.0)
+2026-06-19 20:59:38 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1008.0, wait_duration=0.02)
+2026-06-19 20:59:38 [replayer] INFO: Release coordinate at: (1079.0, 1008.0)
+2026-06-19 20:59:39 [replayer] INFO: [12] Execute Monkey event: CLICK
+2026-06-19 20:59:39 [replayer] INFO: Touch: Touch(touch_type='down', x=1032.0, y=688.0, wait_duration=0.0)
+2026-06-19 20:59:39 [replayer] INFO: Press coordinate at: (1032.0, 688.0)
+2026-06-19 20:59:39 [replayer] INFO: Touch: Touch(touch_type='up', x=1032.0, y=688.0, wait_duration=0.0)
+2026-06-19 20:59:39 [replayer] INFO: Release coordinate at: (1032.0, 688.0)
+2026-06-19 20:59:40 [replayer] INFO: [13] Execute Monkey event: CLICK
+2026-06-19 20:59:40 [replayer] INFO: Touch: Touch(touch_type='down', x=802.0, y=673.0, wait_duration=0.0)
+2026-06-19 20:59:40 [replayer] INFO: Press coordinate at: (802.0, 673.0)
+2026-06-19 20:59:40 [replayer] INFO: Touch: Touch(touch_type='up', x=802.0, y=673.0, wait_duration=0.0)
+2026-06-19 20:59:40 [replayer] INFO: Release coordinate at: (802.0, 673.0)
+2026-06-19 20:59:41 [replayer] INFO: [14] Execute Monkey event: CLICK
+2026-06-19 20:59:41 [replayer] INFO: Touch: Touch(touch_type='down', x=213.0, y=1627.0, wait_duration=0.0)
+2026-06-19 20:59:42 [replayer] INFO: Press coordinate at: (213.0, 1627.0)
+2026-06-19 20:59:42 [replayer] INFO: Touch: Touch(touch_type='up', x=213.0, y=1627.0, wait_duration=0.0)
+2026-06-19 20:59:42 [replayer] INFO: Release coordinate at: (213.0, 1627.0)
+2026-06-19 20:59:43 [replayer] INFO: [15] Execute Monkey event: CLICK
+2026-06-19 20:59:43 [replayer] INFO: Touch: Touch(touch_type='down', x=688.0, y=1251.0, wait_duration=0.0)
+2026-06-19 20:59:43 [replayer] INFO: Press coordinate at: (688.0, 1251.0)
+2026-06-19 20:59:43 [replayer] INFO: Touch: Touch(touch_type='up', x=688.0, y=1251.0, wait_duration=0.0)
+2026-06-19 20:59:43 [replayer] INFO: Release coordinate at: (688.0, 1251.0)
+2026-06-19 20:59:44 [replayer] INFO: [16] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 20:59:44 [replayer] INFO: Touch: Touch(touch_type='down', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 20:59:44 [replayer] INFO: Press coordinate at: (638.5, 1244.0)
+2026-06-19 20:59:44 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 20:59:44 [replayer] INFO: Move coordinate to: (638.5, 1244.0)
+2026-06-19 20:59:44 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1321.1, wait_duration=0.02)
+2026-06-19 20:59:44 [replayer] INFO: Move coordinate to: (638.5, 1321.1)
+2026-06-19 20:59:44 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1398.2, wait_duration=0.02)
+2026-06-19 20:59:44 [replayer] INFO: Move coordinate to: (638.5, 1398.2)
+2026-06-19 20:59:44 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1475.3, wait_duration=0.02)
+2026-06-19 20:59:44 [replayer] INFO: Move coordinate to: (638.5, 1475.3)
+2026-06-19 20:59:44 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1552.4, wait_duration=0.02)
+2026-06-19 20:59:44 [replayer] INFO: Move coordinate to: (638.5, 1552.4)
+2026-06-19 20:59:44 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1629.5, wait_duration=0.02)
+2026-06-19 20:59:44 [replayer] INFO: Move coordinate to: (638.5, 1629.5)
+2026-06-19 20:59:44 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1706.6, wait_duration=0.02)
+2026-06-19 20:59:44 [replayer] INFO: Move coordinate to: (638.5, 1706.6)
+2026-06-19 20:59:44 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1783.7, wait_duration=0.02)
+2026-06-19 20:59:45 [replayer] INFO: Move coordinate to: (638.5, 1783.7)
+2026-06-19 20:59:45 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1860.8, wait_duration=0.02)
+2026-06-19 20:59:45 [replayer] INFO: Move coordinate to: (638.5, 1860.8)
+2026-06-19 20:59:45 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1937.8999, wait_duration=0.02)
+2026-06-19 20:59:45 [replayer] INFO: Move coordinate to: (638.5, 1937.8999)
+2026-06-19 20:59:45 [replayer] INFO: Touch: Touch(touch_type='up', x=638.5, y=2015.0, wait_duration=0.02)
+2026-06-19 20:59:45 [replayer] INFO: Release coordinate at: (638.5, 2015.0)
+2026-06-19 20:59:46 [replayer] INFO: [17] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-19 20:59:46 [replayer] INFO: Touch: Touch(touch_type='down', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 20:59:46 [replayer] INFO: Press coordinate at: (638.5, 1244.0)
+2026-06-19 20:59:46 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 20:59:46 [replayer] INFO: Move coordinate to: (638.5, 1244.0)
+2026-06-19 20:59:46 [replayer] INFO: Touch: Touch(touch_type='move', x=574.65, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:46 [replayer] INFO: Move coordinate to: (574.65, 1244.0)
+2026-06-19 20:59:46 [replayer] INFO: Touch: Touch(touch_type='move', x=510.8, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:46 [replayer] INFO: Move coordinate to: (510.8, 1244.0)
+2026-06-19 20:59:46 [replayer] INFO: Touch: Touch(touch_type='move', x=446.95, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:46 [replayer] INFO: Move coordinate to: (446.95, 1244.0)
+2026-06-19 20:59:46 [replayer] INFO: Touch: Touch(touch_type='move', x=383.09998, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:46 [replayer] INFO: Move coordinate to: (383.09998, 1244.0)
+2026-06-19 20:59:46 [replayer] INFO: Touch: Touch(touch_type='move', x=319.25, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:46 [replayer] INFO: Move coordinate to: (319.25, 1244.0)
+2026-06-19 20:59:46 [replayer] INFO: Touch: Touch(touch_type='move', x=255.4, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:46 [replayer] INFO: Move coordinate to: (255.4, 1244.0)
+2026-06-19 20:59:46 [replayer] INFO: Touch: Touch(touch_type='move', x=191.55002, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:46 [replayer] INFO: Move coordinate to: (191.55002, 1244.0)
+2026-06-19 20:59:46 [replayer] INFO: Touch: Touch(touch_type='move', x=127.69998, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:47 [replayer] INFO: Move coordinate to: (127.69998, 1244.0)
+2026-06-19 20:59:47 [replayer] INFO: Touch: Touch(touch_type='move', x=63.850037, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:47 [replayer] INFO: Move coordinate to: (63.850037, 1244.0)
+2026-06-19 20:59:47 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:47 [replayer] INFO: Release coordinate at: (0.0, 1244.0)
+2026-06-19 20:59:48 [replayer] INFO: [18] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 20:59:48 [replayer] INFO: Touch: Touch(touch_type='down', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 20:59:48 [replayer] INFO: Press coordinate at: (638.5, 1244.0)
+2026-06-19 20:59:48 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 20:59:48 [replayer] INFO: Move coordinate to: (638.5, 1244.0)
+2026-06-19 20:59:48 [replayer] INFO: Touch: Touch(touch_type='move', x=682.55, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:48 [replayer] INFO: Move coordinate to: (682.55, 1244.0)
+2026-06-19 20:59:48 [replayer] INFO: Touch: Touch(touch_type='move', x=726.6, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:48 [replayer] INFO: Move coordinate to: (726.6, 1244.0)
+2026-06-19 20:59:48 [replayer] INFO: Touch: Touch(touch_type='move', x=770.65, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:48 [replayer] INFO: Move coordinate to: (770.65, 1244.0)
+2026-06-19 20:59:48 [replayer] INFO: Touch: Touch(touch_type='move', x=814.7, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:48 [replayer] INFO: Move coordinate to: (814.7, 1244.0)
+2026-06-19 20:59:48 [replayer] INFO: Touch: Touch(touch_type='move', x=858.75, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:49 [replayer] INFO: Move coordinate to: (858.75, 1244.0)
+2026-06-19 20:59:49 [replayer] INFO: Touch: Touch(touch_type='move', x=902.80005, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:49 [replayer] INFO: Move coordinate to: (902.80005, 1244.0)
+2026-06-19 20:59:49 [replayer] INFO: Touch: Touch(touch_type='move', x=946.85, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:49 [replayer] INFO: Move coordinate to: (946.85, 1244.0)
+2026-06-19 20:59:49 [replayer] INFO: Touch: Touch(touch_type='move', x=990.9, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:49 [replayer] INFO: Move coordinate to: (990.9, 1244.0)
+2026-06-19 20:59:49 [replayer] INFO: Touch: Touch(touch_type='move', x=1034.95, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:49 [replayer] INFO: Move coordinate to: (1034.95, 1244.0)
+2026-06-19 20:59:49 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1244.0, wait_duration=0.02)
+2026-06-19 20:59:49 [replayer] INFO: Release coordinate at: (1079.0, 1244.0)
+2026-06-19 20:59:50 [replayer] INFO: [19] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 20:59:50 [replayer] INFO: Touch: Touch(touch_type='down', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 20:59:50 [replayer] INFO: Press coordinate at: (638.5, 1244.0)
+2026-06-19 20:59:50 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 20:59:50 [replayer] INFO: Move coordinate to: (638.5, 1244.0)
+2026-06-19 20:59:50 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1126.2, wait_duration=0.02)
+2026-06-19 20:59:50 [replayer] INFO: Move coordinate to: (638.5, 1126.2)
+2026-06-19 20:59:50 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1008.4, wait_duration=0.02)
+2026-06-19 20:59:50 [replayer] INFO: Move coordinate to: (638.5, 1008.4)
+2026-06-19 20:59:50 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=890.6, wait_duration=0.02)
+2026-06-19 20:59:50 [replayer] INFO: Move coordinate to: (638.5, 890.6)
+2026-06-19 20:59:50 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=772.8, wait_duration=0.02)
+2026-06-19 20:59:50 [replayer] INFO: Move coordinate to: (638.5, 772.8)
+2026-06-19 20:59:50 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=655.0, wait_duration=0.02)
+2026-06-19 20:59:50 [replayer] INFO: Move coordinate to: (638.5, 655.0)
+2026-06-19 20:59:50 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=537.19995, wait_duration=0.02)
+2026-06-19 20:59:50 [replayer] INFO: Move coordinate to: (638.5, 537.19995)
+2026-06-19 20:59:51 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=419.40002, wait_duration=0.02)
+2026-06-19 20:59:51 [replayer] INFO: Move coordinate to: (638.5, 419.40002)
+2026-06-19 20:59:51 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=301.59998, wait_duration=0.02)
+2026-06-19 20:59:51 [replayer] INFO: Move coordinate to: (638.5, 301.59998)
+2026-06-19 20:59:51 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=183.80005, wait_duration=0.02)
+2026-06-19 20:59:51 [replayer] INFO: Move coordinate to: (638.5, 183.80005)
+2026-06-19 20:59:51 [replayer] INFO: Touch: Touch(touch_type='up', x=638.5, y=82.0, wait_duration=0.02)
+2026-06-19 20:59:51 [replayer] INFO: Release coordinate at: (638.5, 82.0)
+2026-06-19 20:59:52 [replayer] INFO: [20] Execute Monkey event: CLICK
+2026-06-19 20:59:52 [replayer] INFO: Touch: Touch(touch_type='down', x=644.0, y=1258.0, wait_duration=0.0)
+2026-06-19 20:59:52 [replayer] INFO: Press coordinate at: (644.0, 1258.0)
+2026-06-19 20:59:52 [replayer] INFO: Touch: Touch(touch_type='up', x=644.0, y=1258.0, wait_duration=0.0)
+2026-06-19 20:59:52 [replayer] INFO: Release coordinate at: (644.0, 1258.0)
+2026-06-19 20:59:53 [replayer] INFO: [21] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 20:59:53 [replayer] INFO: Touch: Touch(touch_type='down', x=748.5, y=1222.0, wait_duration=0.0)
+2026-06-19 20:59:53 [replayer] INFO: Press coordinate at: (748.5, 1222.0)
+2026-06-19 20:59:53 [replayer] INFO: Touch: Touch(touch_type='move', x=748.5, y=1222.0, wait_duration=0.0)
+2026-06-19 20:59:53 [replayer] INFO: Move coordinate to: (748.5, 1222.0)
+2026-06-19 20:59:53 [replayer] INFO: Touch: Touch(touch_type='move', x=781.55, y=1222.0, wait_duration=0.02)
+2026-06-19 20:59:53 [replayer] INFO: Move coordinate to: (781.55, 1222.0)
+2026-06-19 20:59:53 [replayer] INFO: Touch: Touch(touch_type='move', x=814.6, y=1222.0, wait_duration=0.02)
+2026-06-19 20:59:53 [replayer] INFO: Move coordinate to: (814.6, 1222.0)
+2026-06-19 20:59:53 [replayer] INFO: Touch: Touch(touch_type='move', x=847.65, y=1222.0, wait_duration=0.02)
+2026-06-19 20:59:53 [replayer] INFO: Move coordinate to: (847.65, 1222.0)
+2026-06-19 20:59:53 [replayer] INFO: Touch: Touch(touch_type='move', x=880.7, y=1222.0, wait_duration=0.02)
+2026-06-19 20:59:53 [replayer] INFO: Move coordinate to: (880.7, 1222.0)
+2026-06-19 20:59:53 [replayer] INFO: Touch: Touch(touch_type='move', x=913.75, y=1222.0, wait_duration=0.02)
+2026-06-19 20:59:53 [replayer] INFO: Move coordinate to: (913.75, 1222.0)
+2026-06-19 20:59:53 [replayer] INFO: Touch: Touch(touch_type='move', x=946.8, y=1222.0, wait_duration=0.02)
+2026-06-19 20:59:53 [replayer] INFO: Move coordinate to: (946.8, 1222.0)
+2026-06-19 20:59:54 [replayer] INFO: Touch: Touch(touch_type='move', x=979.85, y=1222.0, wait_duration=0.02)
+2026-06-19 20:59:54 [replayer] INFO: Move coordinate to: (979.85, 1222.0)
+2026-06-19 20:59:54 [replayer] INFO: Touch: Touch(touch_type='move', x=1012.9, y=1222.0, wait_duration=0.02)
+2026-06-19 20:59:54 [replayer] INFO: Move coordinate to: (1012.9, 1222.0)
+2026-06-19 20:59:54 [replayer] INFO: Touch: Touch(touch_type='move', x=1045.95, y=1222.0, wait_duration=0.02)
+2026-06-19 20:59:54 [replayer] INFO: Move coordinate to: (1045.95, 1222.0)
+2026-06-19 20:59:54 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1222.0, wait_duration=0.02)
+2026-06-19 20:59:54 [replayer] INFO: Release coordinate at: (1079.0, 1222.0)
+2026-06-19 20:59:55 [replayer] INFO: [22] Execute Monkey event: CLICK
+2026-06-19 20:59:55 [replayer] INFO: Touch: Touch(touch_type='down', x=225.0, y=1421.0, wait_duration=0.0)
+2026-06-19 20:59:55 [replayer] INFO: Press coordinate at: (225.0, 1421.0)
+2026-06-19 20:59:55 [replayer] INFO: Touch: Touch(touch_type='up', x=225.0, y=1421.0, wait_duration=0.0)
+2026-06-19 20:59:55 [replayer] INFO: Release coordinate at: (225.0, 1421.0)
+2026-06-19 20:59:56 [replayer] INFO: [23] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 20:59:56 [replayer] INFO: Touch: Touch(touch_type='down', x=496.0, y=1096.0, wait_duration=0.0)
+2026-06-19 20:59:56 [replayer] INFO: Press coordinate at: (496.0, 1096.0)
+2026-06-19 20:59:56 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=1096.0, wait_duration=0.0)
+2026-06-19 20:59:56 [replayer] INFO: Move coordinate to: (496.0, 1096.0)
+2026-06-19 20:59:56 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=993.0, wait_duration=0.02)
+2026-06-19 20:59:56 [replayer] INFO: Move coordinate to: (496.0, 993.0)
+2026-06-19 20:59:56 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=890.0, wait_duration=0.02)
+2026-06-19 20:59:56 [replayer] INFO: Move coordinate to: (496.0, 890.0)
+2026-06-19 20:59:56 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=787.0, wait_duration=0.02)
+2026-06-19 20:59:56 [replayer] INFO: Move coordinate to: (496.0, 787.0)
+2026-06-19 20:59:56 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=684.0, wait_duration=0.02)
+2026-06-19 20:59:56 [replayer] INFO: Move coordinate to: (496.0, 684.0)
+2026-06-19 20:59:56 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=581.0, wait_duration=0.02)
+2026-06-19 20:59:56 [replayer] INFO: Move coordinate to: (496.0, 581.0)
+2026-06-19 20:59:56 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=478.0, wait_duration=0.02)
+2026-06-19 20:59:57 [replayer] INFO: Move coordinate to: (496.0, 478.0)
+2026-06-19 20:59:57 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=375.0, wait_duration=0.02)
+2026-06-19 20:59:57 [replayer] INFO: Move coordinate to: (496.0, 375.0)
+2026-06-19 20:59:57 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=272.0, wait_duration=0.02)
+2026-06-19 20:59:57 [replayer] INFO: Move coordinate to: (496.0, 272.0)
+2026-06-19 20:59:57 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=169.0, wait_duration=0.02)
+2026-06-19 20:59:57 [replayer] INFO: Move coordinate to: (496.0, 169.0)
+2026-06-19 20:59:57 [replayer] INFO: Touch: Touch(touch_type='up', x=496.0, y=82.0, wait_duration=0.02)
+2026-06-19 20:59:57 [replayer] INFO: Release coordinate at: (496.0, 82.0)
+2026-06-19 20:59:58 [replayer] INFO: [24] Execute Monkey event: CLICK
+2026-06-19 20:59:58 [replayer] INFO: Touch: Touch(touch_type='down', x=701.0, y=704.0, wait_duration=0.0)
+2026-06-19 20:59:58 [replayer] INFO: Press coordinate at: (701.0, 704.0)
+2026-06-19 20:59:58 [replayer] INFO: Touch: Touch(touch_type='up', x=701.0, y=704.0, wait_duration=0.0)
+2026-06-19 20:59:58 [replayer] INFO: Release coordinate at: (701.0, 704.0)
+2026-06-19 20:59:59 [replayer] INFO: [25] Execute Monkey event: CLICK
+2026-06-19 20:59:59 [replayer] INFO: Touch: Touch(touch_type='down', x=887.0, y=1602.0, wait_duration=0.0)
+2026-06-19 20:59:59 [replayer] INFO: Press coordinate at: (887.0, 1602.0)
+2026-06-19 20:59:59 [replayer] INFO: Touch: Touch(touch_type='up', x=887.0, y=1602.0, wait_duration=0.0)
+2026-06-19 20:59:59 [replayer] INFO: Release coordinate at: (887.0, 1602.0)
+2026-06-19 21:00:00 [replayer] INFO: [26] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-19 21:00:00 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:00:00 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 21:00:00 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:00:00 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 21:00:00 [replayer] INFO: Touch: Touch(touch_type='move', x=486.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:00 [replayer] INFO: Move coordinate to: (486.0, 1008.0)
+2026-06-19 21:00:00 [replayer] INFO: Touch: Touch(touch_type='move', x=432.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:00 [replayer] INFO: Move coordinate to: (432.0, 1008.0)
+2026-06-19 21:00:00 [replayer] INFO: Touch: Touch(touch_type='move', x=378.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:01 [replayer] INFO: Move coordinate to: (378.0, 1008.0)
+2026-06-19 21:00:01 [replayer] INFO: Touch: Touch(touch_type='move', x=324.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:01 [replayer] INFO: Move coordinate to: (324.0, 1008.0)
+2026-06-19 21:00:01 [replayer] INFO: Touch: Touch(touch_type='move', x=270.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:01 [replayer] INFO: Move coordinate to: (270.0, 1008.0)
+2026-06-19 21:00:01 [replayer] INFO: Touch: Touch(touch_type='move', x=216.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:01 [replayer] INFO: Move coordinate to: (216.0, 1008.0)
+2026-06-19 21:00:01 [replayer] INFO: Touch: Touch(touch_type='move', x=162.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:01 [replayer] INFO: Move coordinate to: (162.0, 1008.0)
+2026-06-19 21:00:01 [replayer] INFO: Touch: Touch(touch_type='move', x=108.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:01 [replayer] INFO: Move coordinate to: (108.0, 1008.0)
+2026-06-19 21:00:01 [replayer] INFO: Touch: Touch(touch_type='move', x=54.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:01 [replayer] INFO: Move coordinate to: (54.0, 1008.0)
+2026-06-19 21:00:01 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:01 [replayer] INFO: Release coordinate at: (0.0, 1008.0)
+2026-06-19 21:00:02 [replayer] INFO: [27] Execute Monkey event: CLICK
+2026-06-19 21:00:02 [replayer] INFO: Touch: Touch(touch_type='down', x=526.0, y=864.0, wait_duration=0.0)
+2026-06-19 21:00:07 [replayer] INFO: Press coordinate at: (526.0, 864.0)
+2026-06-19 21:00:07 [replayer] INFO: Touch: Touch(touch_type='up', x=526.0, y=864.0, wait_duration=0.0)
+2026-06-19 21:00:08 [replayer] INFO: Release coordinate at: (526.0, 864.0)
+2026-06-19 21:00:09 [replayer] INFO: [28] Execute Monkey event: CLICK
+2026-06-19 21:00:09 [replayer] INFO: Touch: Touch(touch_type='down', x=696.0, y=1659.0, wait_duration=0.0)
+2026-06-19 21:00:09 [replayer] INFO: Press coordinate at: (696.0, 1659.0)
+2026-06-19 21:00:09 [replayer] INFO: Touch: Touch(touch_type='up', x=696.0, y=1659.0, wait_duration=0.0)
+2026-06-19 21:00:09 [replayer] INFO: Release coordinate at: (696.0, 1659.0)
+2026-06-19 21:00:10 [replayer] INFO: [29] Execute Monkey event: LONG_CLICK
+2026-06-19 21:00:10 [replayer] INFO: Touch: Touch(touch_type='down', x=339.0, y=1095.0, wait_duration=0.0)
+2026-06-19 21:00:10 [replayer] INFO: Press coordinate at: (339.0, 1095.0)
+2026-06-19 21:00:10 [replayer] INFO: Touch: Touch(touch_type='up', x=339.0, y=1095.0, wait_duration=1.0)
+2026-06-19 21:00:10 [replayer] INFO: Release coordinate at: (339.0, 1095.0)
+2026-06-19 21:00:12 [replayer] INFO: [30] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 21:00:12 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:00:12 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 21:00:12 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:00:12 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 21:00:12 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1108.7, wait_duration=0.02)
+2026-06-19 21:00:12 [replayer] INFO: Move coordinate to: (540.0, 1108.7)
+2026-06-19 21:00:12 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1209.4, wait_duration=0.02)
+2026-06-19 21:00:12 [replayer] INFO: Move coordinate to: (540.0, 1209.4)
+2026-06-19 21:00:12 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1310.1, wait_duration=0.02)
+2026-06-19 21:00:12 [replayer] INFO: Move coordinate to: (540.0, 1310.1)
+2026-06-19 21:00:12 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1410.8, wait_duration=0.02)
+2026-06-19 21:00:13 [replayer] INFO: Move coordinate to: (540.0, 1410.8)
+2026-06-19 21:00:13 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1511.5, wait_duration=0.02)
+2026-06-19 21:00:13 [replayer] INFO: Move coordinate to: (540.0, 1511.5)
+2026-06-19 21:00:13 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1612.2, wait_duration=0.02)
+2026-06-19 21:00:13 [replayer] INFO: Move coordinate to: (540.0, 1612.2)
+2026-06-19 21:00:13 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1712.8999, wait_duration=0.02)
+2026-06-19 21:00:13 [replayer] INFO: Move coordinate to: (540.0, 1712.8999)
+2026-06-19 21:00:13 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1813.6001, wait_duration=0.02)
+2026-06-19 21:00:13 [replayer] INFO: Move coordinate to: (540.0, 1813.6001)
+2026-06-19 21:00:13 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1914.3, wait_duration=0.02)
+2026-06-19 21:00:13 [replayer] INFO: Move coordinate to: (540.0, 1914.3)
+2026-06-19 21:00:13 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=2015.0, wait_duration=0.02)
+2026-06-19 21:00:13 [replayer] INFO: Release coordinate at: (540.0, 2015.0)
+2026-06-19 21:00:14 [replayer] INFO: [31] Execute Monkey event: CLICK
+2026-06-19 21:00:14 [replayer] INFO: Touch: Touch(touch_type='down', x=1052.0, y=774.0, wait_duration=0.0)
+2026-06-19 21:00:14 [replayer] INFO: Press coordinate at: (1052.0, 774.0)
+2026-06-19 21:00:14 [replayer] INFO: Touch: Touch(touch_type='up', x=1052.0, y=774.0, wait_duration=0.0)
+2026-06-19 21:00:14 [replayer] INFO: Release coordinate at: (1052.0, 774.0)
+2026-06-19 21:00:15 [replayer] INFO: [32] Execute Monkey event: CLICK
+2026-06-19 21:00:15 [replayer] INFO: Touch: Touch(touch_type='down', x=342.0, y=802.0, wait_duration=0.0)
+2026-06-19 21:00:15 [replayer] INFO: Press coordinate at: (342.0, 802.0)
+2026-06-19 21:00:15 [replayer] INFO: Touch: Touch(touch_type='up', x=342.0, y=802.0, wait_duration=0.0)
+2026-06-19 21:00:15 [replayer] INFO: Release coordinate at: (342.0, 802.0)
+2026-06-19 21:00:17 [replayer] INFO: [33] Execute Monkey event: CLICK
+2026-06-19 21:00:17 [replayer] INFO: Touch: Touch(touch_type='down', x=515.0, y=1563.0, wait_duration=0.0)
+2026-06-19 21:00:17 [replayer] INFO: Press coordinate at: (515.0, 1563.0)
+2026-06-19 21:00:17 [replayer] INFO: Touch: Touch(touch_type='up', x=515.0, y=1563.0, wait_duration=0.0)
+2026-06-19 21:00:17 [replayer] INFO: Release coordinate at: (515.0, 1563.0)
+2026-06-19 21:00:18 [replayer] INFO: [34] Execute Monkey event: CLICK
+2026-06-19 21:00:18 [replayer] INFO: Touch: Touch(touch_type='down', x=1079.0, y=143.0, wait_duration=0.0)
+2026-06-19 21:00:18 [replayer] INFO: Press coordinate at: (1079.0, 143.0)
+2026-06-19 21:00:18 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=143.0, wait_duration=0.0)
+2026-06-19 21:00:18 [replayer] INFO: Release coordinate at: (1079.0, 143.0)
+2026-06-19 21:00:19 [replayer] INFO: [35] Execute Monkey event: CLICK
+2026-06-19 21:00:19 [replayer] INFO: Touch: Touch(touch_type='down', x=117.0, y=580.0, wait_duration=0.0)
+2026-06-19 21:00:19 [replayer] INFO: Press coordinate at: (117.0, 580.0)
+2026-06-19 21:00:19 [replayer] INFO: Touch: Touch(touch_type='up', x=117.0, y=580.0, wait_duration=0.0)
+2026-06-19 21:00:19 [replayer] INFO: Release coordinate at: (117.0, 580.0)
+2026-06-19 21:00:20 [replayer] INFO: [36] Execute Monkey event: CLICK
+2026-06-19 21:00:20 [replayer] INFO: Touch: Touch(touch_type='down', x=272.0, y=750.0, wait_duration=0.0)
+2026-06-19 21:00:20 [replayer] INFO: Press coordinate at: (272.0, 750.0)
+2026-06-19 21:00:20 [replayer] INFO: Touch: Touch(touch_type='up', x=272.0, y=750.0, wait_duration=0.0)
+2026-06-19 21:00:20 [replayer] INFO: Release coordinate at: (272.0, 750.0)
+2026-06-19 21:00:22 [replayer] INFO: [37] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='down', x=518.0, y=1182.0, wait_duration=0.0)
+2026-06-19 21:00:22 [replayer] INFO: Press coordinate at: (518.0, 1182.0)
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1182.0, wait_duration=0.0)
+2026-06-19 21:00:22 [replayer] INFO: Move coordinate to: (518.0, 1182.0)
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='move', x=466.2, y=1182.0, wait_duration=0.02)
+2026-06-19 21:00:22 [replayer] INFO: Move coordinate to: (466.2, 1182.0)
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='move', x=414.4, y=1182.0, wait_duration=0.02)
+2026-06-19 21:00:22 [replayer] INFO: Move coordinate to: (414.4, 1182.0)
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='move', x=362.59998, y=1182.0, wait_duration=0.02)
+2026-06-19 21:00:22 [replayer] INFO: Move coordinate to: (362.59998, 1182.0)
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='move', x=310.8, y=1182.0, wait_duration=0.02)
+2026-06-19 21:00:22 [replayer] INFO: Move coordinate to: (310.8, 1182.0)
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='move', x=259.0, y=1182.0, wait_duration=0.02)
+2026-06-19 21:00:22 [replayer] INFO: Move coordinate to: (259.0, 1182.0)
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='move', x=207.19998, y=1182.0, wait_duration=0.02)
+2026-06-19 21:00:22 [replayer] INFO: Move coordinate to: (207.19998, 1182.0)
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='move', x=155.4, y=1182.0, wait_duration=0.02)
+2026-06-19 21:00:22 [replayer] INFO: Move coordinate to: (155.4, 1182.0)
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='move', x=103.600006, y=1182.0, wait_duration=0.02)
+2026-06-19 21:00:22 [replayer] INFO: Move coordinate to: (103.600006, 1182.0)
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='move', x=51.80002, y=1182.0, wait_duration=0.02)
+2026-06-19 21:00:22 [replayer] INFO: Move coordinate to: (51.80002, 1182.0)
+2026-06-19 21:00:22 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=1182.0, wait_duration=0.02)
+2026-06-19 21:00:23 [replayer] INFO: Release coordinate at: (0.0, 1182.0)
+2026-06-19 21:00:24 [replayer] INFO: [38] Execute Monkey event: CLICK
+2026-06-19 21:00:24 [replayer] INFO: Touch: Touch(touch_type='down', x=219.0, y=599.0, wait_duration=0.0)
+2026-06-19 21:00:24 [replayer] INFO: Press coordinate at: (219.0, 599.0)
+2026-06-19 21:00:24 [replayer] INFO: Touch: Touch(touch_type='up', x=219.0, y=599.0, wait_duration=0.0)
+2026-06-19 21:00:24 [replayer] INFO: Release coordinate at: (219.0, 599.0)
+2026-06-19 21:00:25 [replayer] INFO: [39] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-19 21:00:25 [replayer] INFO: Touch: Touch(touch_type='down', x=496.0, y=1095.5, wait_duration=0.0)
+2026-06-19 21:00:25 [replayer] INFO: Press coordinate at: (496.0, 1095.5)
+2026-06-19 21:00:25 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=1095.5, wait_duration=0.0)
+2026-06-19 21:00:25 [replayer] INFO: Move coordinate to: (496.0, 1095.5)
+2026-06-19 21:00:25 [replayer] INFO: Touch: Touch(touch_type='move', x=446.4, y=1095.5, wait_duration=0.02)
+2026-06-19 21:00:25 [replayer] INFO: Move coordinate to: (446.4, 1095.5)
+2026-06-19 21:00:25 [replayer] INFO: Touch: Touch(touch_type='move', x=396.8, y=1095.5, wait_duration=0.02)
+2026-06-19 21:00:25 [replayer] INFO: Move coordinate to: (396.8, 1095.5)
+2026-06-19 21:00:25 [replayer] INFO: Touch: Touch(touch_type='move', x=347.2, y=1095.5, wait_duration=0.02)
+2026-06-19 21:00:25 [replayer] INFO: Move coordinate to: (347.2, 1095.5)
+2026-06-19 21:00:25 [replayer] INFO: Touch: Touch(touch_type='move', x=297.59998, y=1095.5, wait_duration=0.02)
+2026-06-19 21:00:25 [replayer] INFO: Move coordinate to: (297.59998, 1095.5)
+2026-06-19 21:00:25 [replayer] INFO: Touch: Touch(touch_type='move', x=248.0, y=1095.5, wait_duration=0.02)
+2026-06-19 21:00:25 [replayer] INFO: Move coordinate to: (248.0, 1095.5)
+2026-06-19 21:00:25 [replayer] INFO: Touch: Touch(touch_type='move', x=198.4, y=1095.5, wait_duration=0.02)
+2026-06-19 21:00:25 [replayer] INFO: Move coordinate to: (198.4, 1095.5)
+2026-06-19 21:00:25 [replayer] INFO: Touch: Touch(touch_type='move', x=148.80002, y=1095.5, wait_duration=0.02)
+2026-06-19 21:00:25 [replayer] INFO: Move coordinate to: (148.80002, 1095.5)
+2026-06-19 21:00:25 [replayer] INFO: Touch: Touch(touch_type='move', x=99.19998, y=1095.5, wait_duration=0.02)
+2026-06-19 21:00:25 [replayer] INFO: Move coordinate to: (99.19998, 1095.5)
+2026-06-19 21:00:25 [replayer] INFO: Touch: Touch(touch_type='move', x=49.600006, y=1095.5, wait_duration=0.02)
+2026-06-19 21:00:26 [replayer] INFO: Move coordinate to: (49.600006, 1095.5)
+2026-06-19 21:00:26 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=1095.5, wait_duration=0.02)
+2026-06-19 21:00:26 [replayer] INFO: Release coordinate at: (0.0, 1095.5)
+2026-06-19 21:00:27 [replayer] INFO: [40] Execute Monkey event: CLICK
+2026-06-19 21:00:27 [replayer] INFO: Touch: Touch(touch_type='down', x=790.0, y=780.0, wait_duration=0.0)
+2026-06-19 21:00:27 [replayer] INFO: Press coordinate at: (790.0, 780.0)
+2026-06-19 21:00:27 [replayer] INFO: Touch: Touch(touch_type='up', x=790.0, y=780.0, wait_duration=0.0)
+2026-06-19 21:00:27 [replayer] INFO: Release coordinate at: (790.0, 780.0)
+2026-06-19 21:00:28 [replayer] INFO: [41] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 21:00:28 [replayer] INFO: Touch: Touch(touch_type='down', x=518.0, y=1182.0, wait_duration=0.0)
+2026-06-19 21:00:28 [replayer] INFO: Press coordinate at: (518.0, 1182.0)
+2026-06-19 21:00:28 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1182.0, wait_duration=0.0)
+2026-06-19 21:00:28 [replayer] INFO: Move coordinate to: (518.0, 1182.0)
+2026-06-19 21:00:28 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1265.3, wait_duration=0.02)
+2026-06-19 21:00:28 [replayer] INFO: Move coordinate to: (518.0, 1265.3)
+2026-06-19 21:00:28 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1348.6, wait_duration=0.02)
+2026-06-19 21:00:28 [replayer] INFO: Move coordinate to: (518.0, 1348.6)
+2026-06-19 21:00:28 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1431.9, wait_duration=0.02)
+2026-06-19 21:00:28 [replayer] INFO: Move coordinate to: (518.0, 1431.9)
+2026-06-19 21:00:28 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1515.2, wait_duration=0.02)
+2026-06-19 21:00:28 [replayer] INFO: Move coordinate to: (518.0, 1515.2)
+2026-06-19 21:00:29 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1598.5, wait_duration=0.02)
+2026-06-19 21:00:29 [replayer] INFO: Move coordinate to: (518.0, 1598.5)
+2026-06-19 21:00:29 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1681.8, wait_duration=0.02)
+2026-06-19 21:00:29 [replayer] INFO: Move coordinate to: (518.0, 1681.8)
+2026-06-19 21:00:29 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1765.1, wait_duration=0.02)
+2026-06-19 21:00:29 [replayer] INFO: Move coordinate to: (518.0, 1765.1)
+2026-06-19 21:00:29 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1848.4, wait_duration=0.02)
+2026-06-19 21:00:29 [replayer] INFO: Move coordinate to: (518.0, 1848.4)
+2026-06-19 21:00:29 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1931.7, wait_duration=0.02)
+2026-06-19 21:00:29 [replayer] INFO: Move coordinate to: (518.0, 1931.7)
+2026-06-19 21:00:29 [replayer] INFO: Touch: Touch(touch_type='up', x=518.0, y=2015.0, wait_duration=0.02)
+2026-06-19 21:00:29 [replayer] INFO: Release coordinate at: (518.0, 2015.0)
+2026-06-19 21:00:30 [replayer] INFO: [42] Execute Monkey event: CLICK
+2026-06-19 21:00:30 [replayer] INFO: Touch: Touch(touch_type='down', x=751.0, y=1729.0, wait_duration=0.0)
+2026-06-19 21:00:30 [replayer] INFO: Press coordinate at: (751.0, 1729.0)
+2026-06-19 21:00:30 [replayer] INFO: Touch: Touch(touch_type='up', x=751.0, y=1729.0, wait_duration=0.0)
+2026-06-19 21:00:30 [replayer] INFO: Release coordinate at: (751.0, 1729.0)
+2026-06-19 21:00:31 [replayer] INFO: [43] Execute Monkey event: CLICK
+2026-06-19 21:00:31 [replayer] INFO: Touch: Touch(touch_type='down', x=73.0, y=1227.0, wait_duration=0.0)
+2026-06-19 21:00:31 [replayer] INFO: Press coordinate at: (73.0, 1227.0)
+2026-06-19 21:00:31 [replayer] INFO: Touch: Touch(touch_type='up', x=73.0, y=1227.0, wait_duration=0.0)
+2026-06-19 21:00:31 [replayer] INFO: Release coordinate at: (73.0, 1227.0)
+2026-06-19 21:00:32 [replayer] INFO: [44] Execute Monkey event: CLICK
+2026-06-19 21:00:32 [replayer] INFO: Touch: Touch(touch_type='down', x=147.0, y=171.0, wait_duration=0.0)
+2026-06-19 21:00:32 [replayer] INFO: Press coordinate at: (147.0, 171.0)
+2026-06-19 21:00:32 [replayer] INFO: Touch: Touch(touch_type='up', x=147.0, y=171.0, wait_duration=0.0)
+2026-06-19 21:00:32 [replayer] INFO: Release coordinate at: (147.0, 171.0)
+2026-06-19 21:00:34 [reproducer] INFO: Preconditions executed for test case: happy_test_search_activity
+2026-06-19 21:00:34 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_search_activity
+2026-06-19 21:00:34 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 21:00:34 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 21:00:34 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 21:00:34 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_precondition/happy_test_search_activity.ec --classfiles D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\build\intermediates\classes\debug --sourcefiles D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_precondition/happy_test_search_activity.xml
+2026-06-19 21:00:34 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_precondition\happy_test_search_activity.ec.
+[INFO] Analyzing 349 classes.
+
+2026-06-19 21:00:34 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_precondition/happy_test_search_activity.ec -> D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_precondition/happy_test_search_activity.xml
+2026-06-19 21:00:34 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_precondition/happy_test_search_activity.xml
+2026-06-19 21:00:34 [reproducer] INFO: Start executing property for test case: happy_test_search_activity
+2026-06-19 21:00:34 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_search_activity - start
+2026-06-19 21:00:34 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:00:34 [replayer] INFO: Click coordinate: (860.0, 209.0)
+2026-06-19 21:00:35 [replayer] INFO: [44] Execute Script event: setText
+2026-06-19 21:00:35 [replayer] INFO: Set text to: Cinema (26.57)
+2026-06-19 21:00:36 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:00:37 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:00:38 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:00:38 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:00:39 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_search_activity - pass
+2026-06-19 21:00:39 [reproducer] INFO: Property executed for test case: happy_test_search_activity
+2026-06-19 21:00:39 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_search_activity
+2026-06-19 21:00:39 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 21:00:39 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 21:00:39 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 21:00:39 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_property/happy_test_search_activity.ec --classfiles D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\build\intermediates\classes\debug --sourcefiles D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_property/happy_test_search_activity.xml
+2026-06-19 21:00:39 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_property\happy_test_search_activity.ec.
+[INFO] Analyzing 349 classes.
+
+2026-06-19 21:00:39 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_property/happy_test_search_activity.ec -> D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_property/happy_test_search_activity.xml
+2026-06-19 21:00:39 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\happy_test_search_activity_property/happy_test_search_activity.xml
+2026-06-19 21:00:39 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 21:00:39 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 21:00:39 [reproducer] INFO: Test environment reset completed
+2026-06-19 21:00:39 [runner] INFO: Running property-violating path path...
+2026-06-19 21:00:39 [reproducer] INFO: Start reproducing test case: bug_test_search_activity
+2026-06-19 21:00:51 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 21:00:51 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 21:00:51 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 21:00:52 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 21:00:52 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: de.rampro.activitydiary.debug
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=37ms (0ms mobile, 0ms wifi, 37ms not connected)
+
+2026-06-19 21:00:52 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 21:00:52 [reproducer] INFO: Init operation executed
+2026-06-19 21:00:55 [reproducer] INFO: Test environment setup completed
+2026-06-19 21:00:55 [reproducer] INFO: Start executing preconditions for test case: bug_test_search_activity
+2026-06-19 21:00:55 [replayer] INFO: [1] Execute Monkey event: LONG_CLICK
+2026-06-19 21:00:55 [replayer] INFO: Touch: Touch(touch_type='down', x=937.0, y=476.0, wait_duration=0.0)
+2026-06-19 21:00:55 [replayer] INFO: Press coordinate at: (937.0, 476.0)
+2026-06-19 21:00:55 [replayer] INFO: Touch: Touch(touch_type='up', x=937.0, y=476.0, wait_duration=1.0)
+2026-06-19 21:00:55 [replayer] INFO: Release coordinate at: (937.0, 476.0)
+2026-06-19 21:00:57 [replayer] INFO: [2] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 21:00:57 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:00:57 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 21:00:57 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:00:57 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 21:00:57 [replayer] INFO: Touch: Touch(touch_type='move', x=593.9, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:57 [replayer] INFO: Move coordinate to: (593.9, 1008.0)
+2026-06-19 21:00:57 [replayer] INFO: Touch: Touch(touch_type='move', x=647.8, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:58 [replayer] INFO: Move coordinate to: (647.8, 1008.0)
+2026-06-19 21:00:58 [replayer] INFO: Touch: Touch(touch_type='move', x=701.7, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:58 [replayer] INFO: Move coordinate to: (701.7, 1008.0)
+2026-06-19 21:00:58 [replayer] INFO: Touch: Touch(touch_type='move', x=755.6, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:58 [replayer] INFO: Move coordinate to: (755.6, 1008.0)
+2026-06-19 21:00:58 [replayer] INFO: Touch: Touch(touch_type='move', x=809.5, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:58 [replayer] INFO: Move coordinate to: (809.5, 1008.0)
+2026-06-19 21:00:58 [replayer] INFO: Touch: Touch(touch_type='move', x=863.4, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:58 [replayer] INFO: Move coordinate to: (863.4, 1008.0)
+2026-06-19 21:00:58 [replayer] INFO: Touch: Touch(touch_type='move', x=917.3, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:58 [replayer] INFO: Move coordinate to: (917.3, 1008.0)
+2026-06-19 21:00:58 [replayer] INFO: Touch: Touch(touch_type='move', x=971.2, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:58 [replayer] INFO: Move coordinate to: (971.2, 1008.0)
+2026-06-19 21:00:58 [replayer] INFO: Touch: Touch(touch_type='move', x=1025.1, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:58 [replayer] INFO: Move coordinate to: (1025.1, 1008.0)
+2026-06-19 21:00:58 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:00:58 [replayer] INFO: Release coordinate at: (1079.0, 1008.0)
+2026-06-19 21:00:59 [replayer] INFO: [3] Execute Monkey event: CLICK
+2026-06-19 21:00:59 [replayer] INFO: Touch: Touch(touch_type='down', x=396.0, y=416.0, wait_duration=0.0)
+2026-06-19 21:01:00 [replayer] INFO: Press coordinate at: (396.0, 416.0)
+2026-06-19 21:01:00 [replayer] INFO: Touch: Touch(touch_type='up', x=396.0, y=416.0, wait_duration=0.0)
+2026-06-19 21:01:00 [replayer] INFO: Release coordinate at: (396.0, 416.0)
+2026-06-19 21:01:01 [replayer] INFO: [4] Execute Monkey event: CLICK
+2026-06-19 21:01:01 [replayer] INFO: Touch: Touch(touch_type='down', x=974.0, y=653.0, wait_duration=0.0)
+2026-06-19 21:01:01 [replayer] INFO: Press coordinate at: (974.0, 653.0)
+2026-06-19 21:01:01 [replayer] INFO: Touch: Touch(touch_type='up', x=974.0, y=653.0, wait_duration=0.0)
+2026-06-19 21:01:01 [replayer] INFO: Release coordinate at: (974.0, 653.0)
+2026-06-19 21:01:02 [replayer] INFO: [5] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 21:01:02 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1139.5, wait_duration=0.0)
+2026-06-19 21:01:02 [replayer] INFO: Press coordinate at: (540.0, 1139.5)
+2026-06-19 21:01:02 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1139.5, wait_duration=0.0)
+2026-06-19 21:01:02 [replayer] INFO: Move coordinate to: (540.0, 1139.5)
+2026-06-19 21:01:02 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1227.05, wait_duration=0.02)
+2026-06-19 21:01:02 [replayer] INFO: Move coordinate to: (540.0, 1227.05)
+2026-06-19 21:01:02 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1314.6, wait_duration=0.02)
+2026-06-19 21:01:02 [replayer] INFO: Move coordinate to: (540.0, 1314.6)
+2026-06-19 21:01:02 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1402.15, wait_duration=0.02)
+2026-06-19 21:01:02 [replayer] INFO: Move coordinate to: (540.0, 1402.15)
+2026-06-19 21:01:02 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1489.7, wait_duration=0.02)
+2026-06-19 21:01:02 [replayer] INFO: Move coordinate to: (540.0, 1489.7)
+2026-06-19 21:01:02 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1577.25, wait_duration=0.02)
+2026-06-19 21:01:02 [replayer] INFO: Move coordinate to: (540.0, 1577.25)
+2026-06-19 21:01:02 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1664.8, wait_duration=0.02)
+2026-06-19 21:01:02 [replayer] INFO: Move coordinate to: (540.0, 1664.8)
+2026-06-19 21:01:02 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1752.35, wait_duration=0.02)
+2026-06-19 21:01:03 [replayer] INFO: Move coordinate to: (540.0, 1752.35)
+2026-06-19 21:01:03 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1839.9, wait_duration=0.02)
+2026-06-19 21:01:03 [replayer] INFO: Move coordinate to: (540.0, 1839.9)
+2026-06-19 21:01:03 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1927.45, wait_duration=0.02)
+2026-06-19 21:01:03 [replayer] INFO: Move coordinate to: (540.0, 1927.45)
+2026-06-19 21:01:03 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=2015.0, wait_duration=0.02)
+2026-06-19 21:01:03 [replayer] INFO: Release coordinate at: (540.0, 2015.0)
+2026-06-19 21:01:04 [replayer] INFO: [6] Execute Monkey event: CLICK
+2026-06-19 21:01:04 [replayer] INFO: Touch: Touch(touch_type='down', x=842.0, y=1550.0, wait_duration=0.0)
+2026-06-19 21:01:04 [replayer] INFO: Press coordinate at: (842.0, 1550.0)
+2026-06-19 21:01:04 [replayer] INFO: Touch: Touch(touch_type='up', x=842.0, y=1550.0, wait_duration=0.0)
+2026-06-19 21:01:04 [replayer] INFO: Release coordinate at: (842.0, 1550.0)
+2026-06-19 21:01:05 [replayer] INFO: [7] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 21:01:05 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:01:05 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 21:01:05 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:01:05 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 21:01:05 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=913.8, wait_duration=0.02)
+2026-06-19 21:01:05 [replayer] INFO: Move coordinate to: (540.0, 913.8)
+2026-06-19 21:01:05 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=819.6, wait_duration=0.02)
+2026-06-19 21:01:05 [replayer] INFO: Move coordinate to: (540.0, 819.6)
+2026-06-19 21:01:05 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=725.4, wait_duration=0.02)
+2026-06-19 21:01:05 [replayer] INFO: Move coordinate to: (540.0, 725.4)
+2026-06-19 21:01:05 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=631.19995, wait_duration=0.02)
+2026-06-19 21:01:06 [replayer] INFO: Move coordinate to: (540.0, 631.19995)
+2026-06-19 21:01:06 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=537.0, wait_duration=0.02)
+2026-06-19 21:01:06 [replayer] INFO: Move coordinate to: (540.0, 537.0)
+2026-06-19 21:01:06 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=442.8, wait_duration=0.02)
+2026-06-19 21:01:06 [replayer] INFO: Move coordinate to: (540.0, 442.8)
+2026-06-19 21:01:06 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=348.60004, wait_duration=0.02)
+2026-06-19 21:01:06 [replayer] INFO: Move coordinate to: (540.0, 348.60004)
+2026-06-19 21:01:06 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=254.39996, wait_duration=0.02)
+2026-06-19 21:01:06 [replayer] INFO: Move coordinate to: (540.0, 254.39996)
+2026-06-19 21:01:06 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=160.20001, wait_duration=0.02)
+2026-06-19 21:01:06 [replayer] INFO: Move coordinate to: (540.0, 160.20001)
+2026-06-19 21:01:06 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=82.0, wait_duration=0.02)
+2026-06-19 21:01:06 [replayer] INFO: Release coordinate at: (540.0, 82.0)
+2026-06-19 21:01:07 [replayer] INFO: [8] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 21:01:07 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:01:07 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 21:01:07 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:01:07 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 21:01:07 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1108.7, wait_duration=0.02)
+2026-06-19 21:01:07 [replayer] INFO: Move coordinate to: (540.0, 1108.7)
+2026-06-19 21:01:07 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1209.4, wait_duration=0.02)
+2026-06-19 21:01:07 [replayer] INFO: Move coordinate to: (540.0, 1209.4)
+2026-06-19 21:01:07 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1310.1, wait_duration=0.02)
+2026-06-19 21:01:07 [replayer] INFO: Move coordinate to: (540.0, 1310.1)
+2026-06-19 21:01:07 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1410.8, wait_duration=0.02)
+2026-06-19 21:01:07 [replayer] INFO: Move coordinate to: (540.0, 1410.8)
+2026-06-19 21:01:07 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1511.5, wait_duration=0.02)
+2026-06-19 21:01:07 [replayer] INFO: Move coordinate to: (540.0, 1511.5)
+2026-06-19 21:01:07 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1612.2, wait_duration=0.02)
+2026-06-19 21:01:08 [replayer] INFO: Move coordinate to: (540.0, 1612.2)
+2026-06-19 21:01:08 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1712.8999, wait_duration=0.02)
+2026-06-19 21:01:08 [replayer] INFO: Move coordinate to: (540.0, 1712.8999)
+2026-06-19 21:01:08 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1813.6001, wait_duration=0.02)
+2026-06-19 21:01:08 [replayer] INFO: Move coordinate to: (540.0, 1813.6001)
+2026-06-19 21:01:08 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1914.3, wait_duration=0.02)
+2026-06-19 21:01:08 [replayer] INFO: Move coordinate to: (540.0, 1914.3)
+2026-06-19 21:01:08 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=2015.0, wait_duration=0.02)
+2026-06-19 21:01:08 [replayer] INFO: Release coordinate at: (540.0, 2015.0)
+2026-06-19 21:01:09 [replayer] INFO: [9] Execute Monkey event: CLICK
+2026-06-19 21:01:09 [replayer] INFO: Touch: Touch(touch_type='down', x=139.0, y=246.0, wait_duration=0.0)
+2026-06-19 21:01:09 [replayer] INFO: Press coordinate at: (139.0, 246.0)
+2026-06-19 21:01:09 [replayer] INFO: Touch: Touch(touch_type='up', x=139.0, y=246.0, wait_duration=0.0)
+2026-06-19 21:01:09 [replayer] INFO: Release coordinate at: (139.0, 246.0)
+2026-06-19 21:01:10 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_select_activity - start
+2026-06-19 21:01:10 [replayer] INFO: [9] Execute Script event: click
+2026-06-19 21:01:10 [replayer] INFO: Click coordinate: (241.0, 894.0)
+2026-06-19 21:01:11 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_select_activity - pass
+2026-06-19 21:01:11 [replayer] INFO: [10] Execute Monkey event: CLICK
+2026-06-19 21:01:11 [replayer] INFO: Touch: Touch(touch_type='down', x=219.0, y=526.0, wait_duration=0.0)
+2026-06-19 21:01:11 [replayer] INFO: Press coordinate at: (219.0, 526.0)
+2026-06-19 21:01:11 [replayer] INFO: Touch: Touch(touch_type='up', x=219.0, y=526.0, wait_duration=0.0)
+2026-06-19 21:01:11 [replayer] INFO: Release coordinate at: (219.0, 526.0)
+2026-06-19 21:01:12 [replayer] INFO: [11] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 21:01:12 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:01:13 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 21:01:13 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:01:13 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 21:01:13 [replayer] INFO: Touch: Touch(touch_type='move', x=593.9, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:13 [replayer] INFO: Move coordinate to: (593.9, 1008.0)
+2026-06-19 21:01:13 [replayer] INFO: Touch: Touch(touch_type='move', x=647.8, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:13 [replayer] INFO: Move coordinate to: (647.8, 1008.0)
+2026-06-19 21:01:13 [replayer] INFO: Touch: Touch(touch_type='move', x=701.7, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:13 [replayer] INFO: Move coordinate to: (701.7, 1008.0)
+2026-06-19 21:01:13 [replayer] INFO: Touch: Touch(touch_type='move', x=755.6, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:13 [replayer] INFO: Move coordinate to: (755.6, 1008.0)
+2026-06-19 21:01:13 [replayer] INFO: Touch: Touch(touch_type='move', x=809.5, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:13 [replayer] INFO: Move coordinate to: (809.5, 1008.0)
+2026-06-19 21:01:13 [replayer] INFO: Touch: Touch(touch_type='move', x=863.4, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:13 [replayer] INFO: Move coordinate to: (863.4, 1008.0)
+2026-06-19 21:01:13 [replayer] INFO: Touch: Touch(touch_type='move', x=917.3, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:13 [replayer] INFO: Move coordinate to: (917.3, 1008.0)
+2026-06-19 21:01:13 [replayer] INFO: Touch: Touch(touch_type='move', x=971.2, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:13 [replayer] INFO: Move coordinate to: (971.2, 1008.0)
+2026-06-19 21:01:13 [replayer] INFO: Touch: Touch(touch_type='move', x=1025.1, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:14 [replayer] INFO: Move coordinate to: (1025.1, 1008.0)
+2026-06-19 21:01:14 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:14 [replayer] INFO: Release coordinate at: (1079.0, 1008.0)
+2026-06-19 21:01:15 [replayer] INFO: [12] Execute Monkey event: CLICK
+2026-06-19 21:01:15 [replayer] INFO: Touch: Touch(touch_type='down', x=1032.0, y=688.0, wait_duration=0.0)
+2026-06-19 21:01:15 [replayer] INFO: Press coordinate at: (1032.0, 688.0)
+2026-06-19 21:01:15 [replayer] INFO: Touch: Touch(touch_type='up', x=1032.0, y=688.0, wait_duration=0.0)
+2026-06-19 21:01:15 [replayer] INFO: Release coordinate at: (1032.0, 688.0)
+2026-06-19 21:01:16 [replayer] INFO: [13] Execute Monkey event: CLICK
+2026-06-19 21:01:16 [replayer] INFO: Touch: Touch(touch_type='down', x=802.0, y=673.0, wait_duration=0.0)
+2026-06-19 21:01:16 [replayer] INFO: Press coordinate at: (802.0, 673.0)
+2026-06-19 21:01:16 [replayer] INFO: Touch: Touch(touch_type='up', x=802.0, y=673.0, wait_duration=0.0)
+2026-06-19 21:01:16 [replayer] INFO: Release coordinate at: (802.0, 673.0)
+2026-06-19 21:01:17 [replayer] INFO: [14] Execute Monkey event: CLICK
+2026-06-19 21:01:17 [replayer] INFO: Touch: Touch(touch_type='down', x=213.0, y=1627.0, wait_duration=0.0)
+2026-06-19 21:01:17 [replayer] INFO: Press coordinate at: (213.0, 1627.0)
+2026-06-19 21:01:17 [replayer] INFO: Touch: Touch(touch_type='up', x=213.0, y=1627.0, wait_duration=0.0)
+2026-06-19 21:01:17 [replayer] INFO: Release coordinate at: (213.0, 1627.0)
+2026-06-19 21:01:18 [replayer] INFO: [15] Execute Monkey event: CLICK
+2026-06-19 21:01:18 [replayer] INFO: Touch: Touch(touch_type='down', x=688.0, y=1251.0, wait_duration=0.0)
+2026-06-19 21:01:18 [replayer] INFO: Press coordinate at: (688.0, 1251.0)
+2026-06-19 21:01:18 [replayer] INFO: Touch: Touch(touch_type='up', x=688.0, y=1251.0, wait_duration=0.0)
+2026-06-19 21:01:18 [replayer] INFO: Release coordinate at: (688.0, 1251.0)
+2026-06-19 21:01:19 [replayer] INFO: [16] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 21:01:19 [replayer] INFO: Touch: Touch(touch_type='down', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 21:01:20 [replayer] INFO: Press coordinate at: (638.5, 1244.0)
+2026-06-19 21:01:20 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 21:01:20 [replayer] INFO: Move coordinate to: (638.5, 1244.0)
+2026-06-19 21:01:20 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1321.1, wait_duration=0.02)
+2026-06-19 21:01:20 [replayer] INFO: Move coordinate to: (638.5, 1321.1)
+2026-06-19 21:01:20 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1398.2, wait_duration=0.02)
+2026-06-19 21:01:20 [replayer] INFO: Move coordinate to: (638.5, 1398.2)
+2026-06-19 21:01:20 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1475.3, wait_duration=0.02)
+2026-06-19 21:01:20 [replayer] INFO: Move coordinate to: (638.5, 1475.3)
+2026-06-19 21:01:20 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1552.4, wait_duration=0.02)
+2026-06-19 21:01:20 [replayer] INFO: Move coordinate to: (638.5, 1552.4)
+2026-06-19 21:01:20 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1629.5, wait_duration=0.02)
+2026-06-19 21:01:20 [replayer] INFO: Move coordinate to: (638.5, 1629.5)
+2026-06-19 21:01:20 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1706.6, wait_duration=0.02)
+2026-06-19 21:01:20 [replayer] INFO: Move coordinate to: (638.5, 1706.6)
+2026-06-19 21:01:20 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1783.7, wait_duration=0.02)
+2026-06-19 21:01:20 [replayer] INFO: Move coordinate to: (638.5, 1783.7)
+2026-06-19 21:01:20 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1860.8, wait_duration=0.02)
+2026-06-19 21:01:20 [replayer] INFO: Move coordinate to: (638.5, 1860.8)
+2026-06-19 21:01:20 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1937.8999, wait_duration=0.02)
+2026-06-19 21:01:20 [replayer] INFO: Move coordinate to: (638.5, 1937.8999)
+2026-06-19 21:01:20 [replayer] INFO: Touch: Touch(touch_type='up', x=638.5, y=2015.0, wait_duration=0.02)
+2026-06-19 21:01:20 [replayer] INFO: Release coordinate at: (638.5, 2015.0)
+2026-06-19 21:01:21 [replayer] INFO: [17] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-19 21:01:21 [replayer] INFO: Touch: Touch(touch_type='down', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 21:01:21 [replayer] INFO: Press coordinate at: (638.5, 1244.0)
+2026-06-19 21:01:21 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 21:01:22 [replayer] INFO: Move coordinate to: (638.5, 1244.0)
+2026-06-19 21:01:22 [replayer] INFO: Touch: Touch(touch_type='move', x=574.65, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:22 [replayer] INFO: Move coordinate to: (574.65, 1244.0)
+2026-06-19 21:01:22 [replayer] INFO: Touch: Touch(touch_type='move', x=510.8, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:22 [replayer] INFO: Move coordinate to: (510.8, 1244.0)
+2026-06-19 21:01:22 [replayer] INFO: Touch: Touch(touch_type='move', x=446.95, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:22 [replayer] INFO: Move coordinate to: (446.95, 1244.0)
+2026-06-19 21:01:22 [replayer] INFO: Touch: Touch(touch_type='move', x=383.09998, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:22 [replayer] INFO: Move coordinate to: (383.09998, 1244.0)
+2026-06-19 21:01:22 [replayer] INFO: Touch: Touch(touch_type='move', x=319.25, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:22 [replayer] INFO: Move coordinate to: (319.25, 1244.0)
+2026-06-19 21:01:22 [replayer] INFO: Touch: Touch(touch_type='move', x=255.4, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:22 [replayer] INFO: Move coordinate to: (255.4, 1244.0)
+2026-06-19 21:01:22 [replayer] INFO: Touch: Touch(touch_type='move', x=191.55002, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:22 [replayer] INFO: Move coordinate to: (191.55002, 1244.0)
+2026-06-19 21:01:22 [replayer] INFO: Touch: Touch(touch_type='move', x=127.69998, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:22 [replayer] INFO: Move coordinate to: (127.69998, 1244.0)
+2026-06-19 21:01:22 [replayer] INFO: Touch: Touch(touch_type='move', x=63.850037, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:22 [replayer] INFO: Move coordinate to: (63.850037, 1244.0)
+2026-06-19 21:01:22 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:23 [replayer] INFO: Release coordinate at: (0.0, 1244.0)
+2026-06-19 21:01:24 [replayer] INFO: [18] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 21:01:24 [replayer] INFO: Touch: Touch(touch_type='down', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 21:01:24 [replayer] INFO: Press coordinate at: (638.5, 1244.0)
+2026-06-19 21:01:24 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 21:01:24 [replayer] INFO: Move coordinate to: (638.5, 1244.0)
+2026-06-19 21:01:24 [replayer] INFO: Touch: Touch(touch_type='move', x=682.55, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:24 [replayer] INFO: Move coordinate to: (682.55, 1244.0)
+2026-06-19 21:01:24 [replayer] INFO: Touch: Touch(touch_type='move', x=726.6, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:24 [replayer] INFO: Move coordinate to: (726.6, 1244.0)
+2026-06-19 21:01:24 [replayer] INFO: Touch: Touch(touch_type='move', x=770.65, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:24 [replayer] INFO: Move coordinate to: (770.65, 1244.0)
+2026-06-19 21:01:24 [replayer] INFO: Touch: Touch(touch_type='move', x=814.7, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:24 [replayer] INFO: Move coordinate to: (814.7, 1244.0)
+2026-06-19 21:01:24 [replayer] INFO: Touch: Touch(touch_type='move', x=858.75, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:24 [replayer] INFO: Move coordinate to: (858.75, 1244.0)
+2026-06-19 21:01:24 [replayer] INFO: Touch: Touch(touch_type='move', x=902.80005, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:24 [replayer] INFO: Move coordinate to: (902.80005, 1244.0)
+2026-06-19 21:01:24 [replayer] INFO: Touch: Touch(touch_type='move', x=946.85, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:24 [replayer] INFO: Move coordinate to: (946.85, 1244.0)
+2026-06-19 21:01:24 [replayer] INFO: Touch: Touch(touch_type='move', x=990.9, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:25 [replayer] INFO: Move coordinate to: (990.9, 1244.0)
+2026-06-19 21:01:25 [replayer] INFO: Touch: Touch(touch_type='move', x=1034.95, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:25 [replayer] INFO: Move coordinate to: (1034.95, 1244.0)
+2026-06-19 21:01:25 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1244.0, wait_duration=0.02)
+2026-06-19 21:01:25 [replayer] INFO: Release coordinate at: (1079.0, 1244.0)
+2026-06-19 21:01:26 [replayer] INFO: [19] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 21:01:26 [replayer] INFO: Touch: Touch(touch_type='down', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 21:01:26 [replayer] INFO: Press coordinate at: (638.5, 1244.0)
+2026-06-19 21:01:26 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1244.0, wait_duration=0.0)
+2026-06-19 21:01:26 [replayer] INFO: Move coordinate to: (638.5, 1244.0)
+2026-06-19 21:01:26 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1126.2, wait_duration=0.02)
+2026-06-19 21:01:26 [replayer] INFO: Move coordinate to: (638.5, 1126.2)
+2026-06-19 21:01:26 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=1008.4, wait_duration=0.02)
+2026-06-19 21:01:26 [replayer] INFO: Move coordinate to: (638.5, 1008.4)
+2026-06-19 21:01:26 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=890.6, wait_duration=0.02)
+2026-06-19 21:01:26 [replayer] INFO: Move coordinate to: (638.5, 890.6)
+2026-06-19 21:01:26 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=772.8, wait_duration=0.02)
+2026-06-19 21:01:26 [replayer] INFO: Move coordinate to: (638.5, 772.8)
+2026-06-19 21:01:26 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=655.0, wait_duration=0.02)
+2026-06-19 21:01:26 [replayer] INFO: Move coordinate to: (638.5, 655.0)
+2026-06-19 21:01:26 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=537.19995, wait_duration=0.02)
+2026-06-19 21:01:26 [replayer] INFO: Move coordinate to: (638.5, 537.19995)
+2026-06-19 21:01:26 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=419.40002, wait_duration=0.02)
+2026-06-19 21:01:27 [replayer] INFO: Move coordinate to: (638.5, 419.40002)
+2026-06-19 21:01:27 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=301.59998, wait_duration=0.02)
+2026-06-19 21:01:27 [replayer] INFO: Move coordinate to: (638.5, 301.59998)
+2026-06-19 21:01:27 [replayer] INFO: Touch: Touch(touch_type='move', x=638.5, y=183.80005, wait_duration=0.02)
+2026-06-19 21:01:27 [replayer] INFO: Move coordinate to: (638.5, 183.80005)
+2026-06-19 21:01:27 [replayer] INFO: Touch: Touch(touch_type='up', x=638.5, y=82.0, wait_duration=0.02)
+2026-06-19 21:01:27 [replayer] INFO: Release coordinate at: (638.5, 82.0)
+2026-06-19 21:01:28 [replayer] INFO: [20] Execute Monkey event: CLICK
+2026-06-19 21:01:28 [replayer] INFO: Touch: Touch(touch_type='down', x=644.0, y=1258.0, wait_duration=0.0)
+2026-06-19 21:01:28 [replayer] INFO: Press coordinate at: (644.0, 1258.0)
+2026-06-19 21:01:28 [replayer] INFO: Touch: Touch(touch_type='up', x=644.0, y=1258.0, wait_duration=0.0)
+2026-06-19 21:01:28 [replayer] INFO: Release coordinate at: (644.0, 1258.0)
+2026-06-19 21:01:29 [replayer] INFO: [21] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 21:01:29 [replayer] INFO: Touch: Touch(touch_type='down', x=748.5, y=1222.0, wait_duration=0.0)
+2026-06-19 21:01:29 [replayer] INFO: Press coordinate at: (748.5, 1222.0)
+2026-06-19 21:01:29 [replayer] INFO: Touch: Touch(touch_type='move', x=748.5, y=1222.0, wait_duration=0.0)
+2026-06-19 21:01:29 [replayer] INFO: Move coordinate to: (748.5, 1222.0)
+2026-06-19 21:01:29 [replayer] INFO: Touch: Touch(touch_type='move', x=781.55, y=1222.0, wait_duration=0.02)
+2026-06-19 21:01:29 [replayer] INFO: Move coordinate to: (781.55, 1222.0)
+2026-06-19 21:01:29 [replayer] INFO: Touch: Touch(touch_type='move', x=814.6, y=1222.0, wait_duration=0.02)
+2026-06-19 21:01:29 [replayer] INFO: Move coordinate to: (814.6, 1222.0)
+2026-06-19 21:01:29 [replayer] INFO: Touch: Touch(touch_type='move', x=847.65, y=1222.0, wait_duration=0.02)
+2026-06-19 21:01:30 [replayer] INFO: Move coordinate to: (847.65, 1222.0)
+2026-06-19 21:01:30 [replayer] INFO: Touch: Touch(touch_type='move', x=880.7, y=1222.0, wait_duration=0.02)
+2026-06-19 21:01:30 [replayer] INFO: Move coordinate to: (880.7, 1222.0)
+2026-06-19 21:01:30 [replayer] INFO: Touch: Touch(touch_type='move', x=913.75, y=1222.0, wait_duration=0.02)
+2026-06-19 21:01:30 [replayer] INFO: Move coordinate to: (913.75, 1222.0)
+2026-06-19 21:01:30 [replayer] INFO: Touch: Touch(touch_type='move', x=946.8, y=1222.0, wait_duration=0.02)
+2026-06-19 21:01:30 [replayer] INFO: Move coordinate to: (946.8, 1222.0)
+2026-06-19 21:01:30 [replayer] INFO: Touch: Touch(touch_type='move', x=979.85, y=1222.0, wait_duration=0.02)
+2026-06-19 21:01:30 [replayer] INFO: Move coordinate to: (979.85, 1222.0)
+2026-06-19 21:01:30 [replayer] INFO: Touch: Touch(touch_type='move', x=1012.9, y=1222.0, wait_duration=0.02)
+2026-06-19 21:01:30 [replayer] INFO: Move coordinate to: (1012.9, 1222.0)
+2026-06-19 21:01:30 [replayer] INFO: Touch: Touch(touch_type='move', x=1045.95, y=1222.0, wait_duration=0.02)
+2026-06-19 21:01:30 [replayer] INFO: Move coordinate to: (1045.95, 1222.0)
+2026-06-19 21:01:30 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1222.0, wait_duration=0.02)
+2026-06-19 21:01:30 [replayer] INFO: Release coordinate at: (1079.0, 1222.0)
+2026-06-19 21:01:31 [replayer] INFO: [22] Execute Monkey event: CLICK
+2026-06-19 21:01:31 [replayer] INFO: Touch: Touch(touch_type='down', x=225.0, y=1421.0, wait_duration=0.0)
+2026-06-19 21:01:31 [replayer] INFO: Press coordinate at: (225.0, 1421.0)
+2026-06-19 21:01:31 [replayer] INFO: Touch: Touch(touch_type='up', x=225.0, y=1421.0, wait_duration=0.0)
+2026-06-19 21:01:31 [replayer] INFO: Release coordinate at: (225.0, 1421.0)
+2026-06-19 21:01:32 [replayer] INFO: [23] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 21:01:32 [replayer] INFO: Touch: Touch(touch_type='down', x=496.0, y=1096.0, wait_duration=0.0)
+2026-06-19 21:01:32 [replayer] INFO: Press coordinate at: (496.0, 1096.0)
+2026-06-19 21:01:32 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=1096.0, wait_duration=0.0)
+2026-06-19 21:01:33 [replayer] INFO: Move coordinate to: (496.0, 1096.0)
+2026-06-19 21:01:33 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=993.0, wait_duration=0.02)
+2026-06-19 21:01:33 [replayer] INFO: Move coordinate to: (496.0, 993.0)
+2026-06-19 21:01:33 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=890.0, wait_duration=0.02)
+2026-06-19 21:01:33 [replayer] INFO: Move coordinate to: (496.0, 890.0)
+2026-06-19 21:01:33 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=787.0, wait_duration=0.02)
+2026-06-19 21:01:33 [replayer] INFO: Move coordinate to: (496.0, 787.0)
+2026-06-19 21:01:33 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=684.0, wait_duration=0.02)
+2026-06-19 21:01:33 [replayer] INFO: Move coordinate to: (496.0, 684.0)
+2026-06-19 21:01:33 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=581.0, wait_duration=0.02)
+2026-06-19 21:01:33 [replayer] INFO: Move coordinate to: (496.0, 581.0)
+2026-06-19 21:01:33 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=478.0, wait_duration=0.02)
+2026-06-19 21:01:33 [replayer] INFO: Move coordinate to: (496.0, 478.0)
+2026-06-19 21:01:33 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=375.0, wait_duration=0.02)
+2026-06-19 21:01:33 [replayer] INFO: Move coordinate to: (496.0, 375.0)
+2026-06-19 21:01:33 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=272.0, wait_duration=0.02)
+2026-06-19 21:01:33 [replayer] INFO: Move coordinate to: (496.0, 272.0)
+2026-06-19 21:01:33 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=169.0, wait_duration=0.02)
+2026-06-19 21:01:33 [replayer] INFO: Move coordinate to: (496.0, 169.0)
+2026-06-19 21:01:33 [replayer] INFO: Touch: Touch(touch_type='up', x=496.0, y=82.0, wait_duration=0.02)
+2026-06-19 21:01:33 [replayer] INFO: Release coordinate at: (496.0, 82.0)
+2026-06-19 21:01:34 [replayer] INFO: [24] Execute Monkey event: CLICK
+2026-06-19 21:01:34 [replayer] INFO: Touch: Touch(touch_type='down', x=701.0, y=704.0, wait_duration=0.0)
+2026-06-19 21:01:34 [replayer] INFO: Press coordinate at: (701.0, 704.0)
+2026-06-19 21:01:34 [replayer] INFO: Touch: Touch(touch_type='up', x=701.0, y=704.0, wait_duration=0.0)
+2026-06-19 21:01:35 [replayer] INFO: Release coordinate at: (701.0, 704.0)
+2026-06-19 21:01:36 [replayer] INFO: App de.rampro.activitydiary.debug is in background, restarting...
+2026-06-19 21:01:38 [replayer] INFO: [25] Execute Monkey event: CLICK
+2026-06-19 21:01:38 [replayer] INFO: Touch: Touch(touch_type='down', x=887.0, y=1602.0, wait_duration=0.0)
+2026-06-19 21:01:38 [replayer] INFO: Press coordinate at: (887.0, 1602.0)
+2026-06-19 21:01:38 [replayer] INFO: Touch: Touch(touch_type='up', x=887.0, y=1602.0, wait_duration=0.0)
+2026-06-19 21:01:38 [replayer] INFO: Release coordinate at: (887.0, 1602.0)
+2026-06-19 21:01:39 [replayer] INFO: [26] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-19 21:01:39 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:01:39 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 21:01:39 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:01:39 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 21:01:39 [replayer] INFO: Touch: Touch(touch_type='move', x=486.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:39 [replayer] INFO: Move coordinate to: (486.0, 1008.0)
+2026-06-19 21:01:39 [replayer] INFO: Touch: Touch(touch_type='move', x=432.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:39 [replayer] INFO: Move coordinate to: (432.0, 1008.0)
+2026-06-19 21:01:39 [replayer] INFO: Touch: Touch(touch_type='move', x=378.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:39 [replayer] INFO: Move coordinate to: (378.0, 1008.0)
+2026-06-19 21:01:39 [replayer] INFO: Touch: Touch(touch_type='move', x=324.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:39 [replayer] INFO: Move coordinate to: (324.0, 1008.0)
+2026-06-19 21:01:39 [replayer] INFO: Touch: Touch(touch_type='move', x=270.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:39 [replayer] INFO: Move coordinate to: (270.0, 1008.0)
+2026-06-19 21:01:39 [replayer] INFO: Touch: Touch(touch_type='move', x=216.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:39 [replayer] INFO: Move coordinate to: (216.0, 1008.0)
+2026-06-19 21:01:39 [replayer] INFO: Touch: Touch(touch_type='move', x=162.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:40 [replayer] INFO: Move coordinate to: (162.0, 1008.0)
+2026-06-19 21:01:40 [replayer] INFO: Touch: Touch(touch_type='move', x=108.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:40 [replayer] INFO: Move coordinate to: (108.0, 1008.0)
+2026-06-19 21:01:40 [replayer] INFO: Touch: Touch(touch_type='move', x=54.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:40 [replayer] INFO: Move coordinate to: (54.0, 1008.0)
+2026-06-19 21:01:40 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=1008.0, wait_duration=0.02)
+2026-06-19 21:01:40 [replayer] INFO: Release coordinate at: (0.0, 1008.0)
+2026-06-19 21:01:41 [replayer] INFO: [27] Execute Monkey event: CLICK
+2026-06-19 21:01:41 [replayer] INFO: Touch: Touch(touch_type='down', x=526.0, y=864.0, wait_duration=0.0)
+2026-06-19 21:01:41 [replayer] INFO: Press coordinate at: (526.0, 864.0)
+2026-06-19 21:01:41 [replayer] INFO: Touch: Touch(touch_type='up', x=526.0, y=864.0, wait_duration=0.0)
+2026-06-19 21:01:41 [replayer] INFO: Release coordinate at: (526.0, 864.0)
+2026-06-19 21:01:42 [replayer] INFO: [28] Execute Monkey event: CLICK
+2026-06-19 21:01:42 [replayer] INFO: Touch: Touch(touch_type='down', x=696.0, y=1659.0, wait_duration=0.0)
+2026-06-19 21:01:42 [replayer] INFO: Press coordinate at: (696.0, 1659.0)
+2026-06-19 21:01:42 [replayer] INFO: Touch: Touch(touch_type='up', x=696.0, y=1659.0, wait_duration=0.0)
+2026-06-19 21:01:42 [replayer] INFO: Release coordinate at: (696.0, 1659.0)
+2026-06-19 21:01:43 [replayer] INFO: [29] Execute Monkey event: LONG_CLICK
+2026-06-19 21:01:43 [replayer] INFO: Touch: Touch(touch_type='down', x=339.0, y=1095.0, wait_duration=0.0)
+2026-06-19 21:01:43 [replayer] INFO: Press coordinate at: (339.0, 1095.0)
+2026-06-19 21:01:43 [replayer] INFO: Touch: Touch(touch_type='up', x=339.0, y=1095.0, wait_duration=1.0)
+2026-06-19 21:01:44 [replayer] INFO: Release coordinate at: (339.0, 1095.0)
+2026-06-19 21:01:46 [replayer] INFO: [30] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 21:01:46 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:01:46 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 21:01:46 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:01:46 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 21:01:46 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1108.7, wait_duration=0.02)
+2026-06-19 21:01:46 [replayer] INFO: Move coordinate to: (540.0, 1108.7)
+2026-06-19 21:01:46 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1209.4, wait_duration=0.02)
+2026-06-19 21:01:46 [replayer] INFO: Move coordinate to: (540.0, 1209.4)
+2026-06-19 21:01:46 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1310.1, wait_duration=0.02)
+2026-06-19 21:01:46 [replayer] INFO: Move coordinate to: (540.0, 1310.1)
+2026-06-19 21:01:46 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1410.8, wait_duration=0.02)
+2026-06-19 21:01:46 [replayer] INFO: Move coordinate to: (540.0, 1410.8)
+2026-06-19 21:01:46 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1511.5, wait_duration=0.02)
+2026-06-19 21:01:46 [replayer] INFO: Move coordinate to: (540.0, 1511.5)
+2026-06-19 21:01:46 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1612.2, wait_duration=0.02)
+2026-06-19 21:01:46 [replayer] INFO: Move coordinate to: (540.0, 1612.2)
+2026-06-19 21:01:46 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1712.8999, wait_duration=0.02)
+2026-06-19 21:01:46 [replayer] INFO: Move coordinate to: (540.0, 1712.8999)
+2026-06-19 21:01:46 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1813.6001, wait_duration=0.02)
+2026-06-19 21:01:46 [replayer] INFO: Move coordinate to: (540.0, 1813.6001)
+2026-06-19 21:01:46 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1914.3, wait_duration=0.02)
+2026-06-19 21:01:47 [replayer] INFO: Move coordinate to: (540.0, 1914.3)
+2026-06-19 21:01:47 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=2015.0, wait_duration=0.02)
+2026-06-19 21:01:47 [replayer] INFO: Release coordinate at: (540.0, 2015.0)
+2026-06-19 21:01:48 [replayer] INFO: [31] Execute Monkey event: CLICK
+2026-06-19 21:01:48 [replayer] INFO: Touch: Touch(touch_type='down', x=1052.0, y=774.0, wait_duration=0.0)
+2026-06-19 21:01:48 [replayer] INFO: Press coordinate at: (1052.0, 774.0)
+2026-06-19 21:01:48 [replayer] INFO: Touch: Touch(touch_type='up', x=1052.0, y=774.0, wait_duration=0.0)
+2026-06-19 21:01:48 [replayer] INFO: Release coordinate at: (1052.0, 774.0)
+2026-06-19 21:01:49 [replayer] INFO: [32] Execute Monkey event: CLICK
+2026-06-19 21:01:49 [replayer] INFO: Touch: Touch(touch_type='down', x=342.0, y=802.0, wait_duration=0.0)
+2026-06-19 21:01:49 [replayer] INFO: Press coordinate at: (342.0, 802.0)
+2026-06-19 21:01:49 [replayer] INFO: Touch: Touch(touch_type='up', x=342.0, y=802.0, wait_duration=0.0)
+2026-06-19 21:01:49 [replayer] INFO: Release coordinate at: (342.0, 802.0)
+2026-06-19 21:01:50 [replayer] INFO: [33] Execute Monkey event: CLICK
+2026-06-19 21:01:50 [replayer] INFO: Touch: Touch(touch_type='down', x=515.0, y=1563.0, wait_duration=0.0)
+2026-06-19 21:01:50 [replayer] INFO: Press coordinate at: (515.0, 1563.0)
+2026-06-19 21:01:50 [replayer] INFO: Touch: Touch(touch_type='up', x=515.0, y=1563.0, wait_duration=0.0)
+2026-06-19 21:01:50 [replayer] INFO: Release coordinate at: (515.0, 1563.0)
+2026-06-19 21:01:51 [replayer] INFO: [34] Execute Monkey event: CLICK
+2026-06-19 21:01:51 [replayer] INFO: Touch: Touch(touch_type='down', x=1079.0, y=143.0, wait_duration=0.0)
+2026-06-19 21:01:51 [replayer] INFO: Press coordinate at: (1079.0, 143.0)
+2026-06-19 21:01:51 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=143.0, wait_duration=0.0)
+2026-06-19 21:01:51 [replayer] INFO: Release coordinate at: (1079.0, 143.0)
+2026-06-19 21:01:53 [replayer] INFO: [35] Execute Monkey event: CLICK
+2026-06-19 21:01:53 [replayer] INFO: Touch: Touch(touch_type='down', x=117.0, y=580.0, wait_duration=0.0)
+2026-06-19 21:01:53 [replayer] INFO: Press coordinate at: (117.0, 580.0)
+2026-06-19 21:01:53 [replayer] INFO: Touch: Touch(touch_type='up', x=117.0, y=580.0, wait_duration=0.0)
+2026-06-19 21:01:53 [replayer] INFO: Release coordinate at: (117.0, 580.0)
+2026-06-19 21:01:54 [replayer] INFO: [36] Execute Monkey event: CLICK
+2026-06-19 21:01:54 [replayer] INFO: Touch: Touch(touch_type='down', x=272.0, y=750.0, wait_duration=0.0)
+2026-06-19 21:01:54 [replayer] INFO: Press coordinate at: (272.0, 750.0)
+2026-06-19 21:01:54 [replayer] INFO: Touch: Touch(touch_type='up', x=272.0, y=750.0, wait_duration=0.0)
+2026-06-19 21:01:54 [replayer] INFO: Release coordinate at: (272.0, 750.0)
+2026-06-19 21:01:55 [replayer] INFO: [37] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-19 21:01:55 [replayer] INFO: Touch: Touch(touch_type='down', x=518.0, y=1182.0, wait_duration=0.0)
+2026-06-19 21:01:55 [replayer] INFO: Press coordinate at: (518.0, 1182.0)
+2026-06-19 21:01:55 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1182.0, wait_duration=0.0)
+2026-06-19 21:01:55 [replayer] INFO: Move coordinate to: (518.0, 1182.0)
+2026-06-19 21:01:55 [replayer] INFO: Touch: Touch(touch_type='move', x=466.2, y=1182.0, wait_duration=0.02)
+2026-06-19 21:01:55 [replayer] INFO: Move coordinate to: (466.2, 1182.0)
+2026-06-19 21:01:55 [replayer] INFO: Touch: Touch(touch_type='move', x=414.4, y=1182.0, wait_duration=0.02)
+2026-06-19 21:01:55 [replayer] INFO: Move coordinate to: (414.4, 1182.0)
+2026-06-19 21:01:55 [replayer] INFO: Touch: Touch(touch_type='move', x=362.59998, y=1182.0, wait_duration=0.02)
+2026-06-19 21:01:55 [replayer] INFO: Move coordinate to: (362.59998, 1182.0)
+2026-06-19 21:01:55 [replayer] INFO: Touch: Touch(touch_type='move', x=310.8, y=1182.0, wait_duration=0.02)
+2026-06-19 21:01:55 [replayer] INFO: Move coordinate to: (310.8, 1182.0)
+2026-06-19 21:01:55 [replayer] INFO: Touch: Touch(touch_type='move', x=259.0, y=1182.0, wait_duration=0.02)
+2026-06-19 21:01:55 [replayer] INFO: Move coordinate to: (259.0, 1182.0)
+2026-06-19 21:01:55 [replayer] INFO: Touch: Touch(touch_type='move', x=207.19998, y=1182.0, wait_duration=0.02)
+2026-06-19 21:01:55 [replayer] INFO: Move coordinate to: (207.19998, 1182.0)
+2026-06-19 21:01:55 [replayer] INFO: Touch: Touch(touch_type='move', x=155.4, y=1182.0, wait_duration=0.02)
+2026-06-19 21:01:56 [replayer] INFO: Move coordinate to: (155.4, 1182.0)
+2026-06-19 21:01:56 [replayer] INFO: Touch: Touch(touch_type='move', x=103.600006, y=1182.0, wait_duration=0.02)
+2026-06-19 21:01:56 [replayer] INFO: Move coordinate to: (103.600006, 1182.0)
+2026-06-19 21:01:56 [replayer] INFO: Touch: Touch(touch_type='move', x=51.80002, y=1182.0, wait_duration=0.02)
+2026-06-19 21:01:56 [replayer] INFO: Move coordinate to: (51.80002, 1182.0)
+2026-06-19 21:01:56 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=1182.0, wait_duration=0.02)
+2026-06-19 21:01:56 [replayer] INFO: Release coordinate at: (0.0, 1182.0)
+2026-06-19 21:01:57 [replayer] INFO: [38] Execute Monkey event: CLICK
+2026-06-19 21:01:57 [replayer] INFO: Touch: Touch(touch_type='down', x=219.0, y=599.0, wait_duration=0.0)
+2026-06-19 21:01:57 [replayer] INFO: Press coordinate at: (219.0, 599.0)
+2026-06-19 21:01:57 [replayer] INFO: Touch: Touch(touch_type='up', x=219.0, y=599.0, wait_duration=0.0)
+2026-06-19 21:01:57 [replayer] INFO: Release coordinate at: (219.0, 599.0)
+2026-06-19 21:01:58 [replayer] INFO: [39] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-19 21:01:58 [replayer] INFO: Touch: Touch(touch_type='down', x=496.0, y=1095.5, wait_duration=0.0)
+2026-06-19 21:01:58 [replayer] INFO: Press coordinate at: (496.0, 1095.5)
+2026-06-19 21:01:58 [replayer] INFO: Touch: Touch(touch_type='move', x=496.0, y=1095.5, wait_duration=0.0)
+2026-06-19 21:01:58 [replayer] INFO: Move coordinate to: (496.0, 1095.5)
+2026-06-19 21:01:58 [replayer] INFO: Touch: Touch(touch_type='move', x=446.4, y=1095.5, wait_duration=0.02)
+2026-06-19 21:01:58 [replayer] INFO: Move coordinate to: (446.4, 1095.5)
+2026-06-19 21:01:58 [replayer] INFO: Touch: Touch(touch_type='move', x=396.8, y=1095.5, wait_duration=0.02)
+2026-06-19 21:01:58 [replayer] INFO: Move coordinate to: (396.8, 1095.5)
+2026-06-19 21:01:58 [replayer] INFO: Touch: Touch(touch_type='move', x=347.2, y=1095.5, wait_duration=0.02)
+2026-06-19 21:01:59 [replayer] INFO: Move coordinate to: (347.2, 1095.5)
+2026-06-19 21:01:59 [replayer] INFO: Touch: Touch(touch_type='move', x=297.59998, y=1095.5, wait_duration=0.02)
+2026-06-19 21:01:59 [replayer] INFO: Move coordinate to: (297.59998, 1095.5)
+2026-06-19 21:01:59 [replayer] INFO: Touch: Touch(touch_type='move', x=248.0, y=1095.5, wait_duration=0.02)
+2026-06-19 21:01:59 [replayer] INFO: Move coordinate to: (248.0, 1095.5)
+2026-06-19 21:01:59 [replayer] INFO: Touch: Touch(touch_type='move', x=198.4, y=1095.5, wait_duration=0.02)
+2026-06-19 21:01:59 [replayer] INFO: Move coordinate to: (198.4, 1095.5)
+2026-06-19 21:01:59 [replayer] INFO: Touch: Touch(touch_type='move', x=148.80002, y=1095.5, wait_duration=0.02)
+2026-06-19 21:01:59 [replayer] INFO: Move coordinate to: (148.80002, 1095.5)
+2026-06-19 21:01:59 [replayer] INFO: Touch: Touch(touch_type='move', x=99.19998, y=1095.5, wait_duration=0.02)
+2026-06-19 21:01:59 [replayer] INFO: Move coordinate to: (99.19998, 1095.5)
+2026-06-19 21:01:59 [replayer] INFO: Touch: Touch(touch_type='move', x=49.600006, y=1095.5, wait_duration=0.02)
+2026-06-19 21:01:59 [replayer] INFO: Move coordinate to: (49.600006, 1095.5)
+2026-06-19 21:01:59 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=1095.5, wait_duration=0.02)
+2026-06-19 21:01:59 [replayer] INFO: Release coordinate at: (0.0, 1095.5)
+2026-06-19 21:02:00 [replayer] INFO: [40] Execute Monkey event: CLICK
+2026-06-19 21:02:00 [replayer] INFO: Touch: Touch(touch_type='down', x=790.0, y=780.0, wait_duration=0.0)
+2026-06-19 21:02:00 [replayer] INFO: Press coordinate at: (790.0, 780.0)
+2026-06-19 21:02:00 [replayer] INFO: Touch: Touch(touch_type='up', x=790.0, y=780.0, wait_duration=0.0)
+2026-06-19 21:02:00 [replayer] INFO: Release coordinate at: (790.0, 780.0)
+2026-06-19 21:02:01 [replayer] INFO: [41] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 21:02:01 [replayer] INFO: Touch: Touch(touch_type='down', x=518.0, y=1182.0, wait_duration=0.0)
+2026-06-19 21:02:02 [replayer] INFO: Press coordinate at: (518.0, 1182.0)
+2026-06-19 21:02:02 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1182.0, wait_duration=0.0)
+2026-06-19 21:02:02 [replayer] INFO: Move coordinate to: (518.0, 1182.0)
+2026-06-19 21:02:02 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1265.3, wait_duration=0.02)
+2026-06-19 21:02:02 [replayer] INFO: Move coordinate to: (518.0, 1265.3)
+2026-06-19 21:02:02 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1348.6, wait_duration=0.02)
+2026-06-19 21:02:02 [replayer] INFO: Move coordinate to: (518.0, 1348.6)
+2026-06-19 21:02:02 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1431.9, wait_duration=0.02)
+2026-06-19 21:02:02 [replayer] INFO: Move coordinate to: (518.0, 1431.9)
+2026-06-19 21:02:02 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1515.2, wait_duration=0.02)
+2026-06-19 21:02:02 [replayer] INFO: Move coordinate to: (518.0, 1515.2)
+2026-06-19 21:02:02 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1598.5, wait_duration=0.02)
+2026-06-19 21:02:02 [replayer] INFO: Move coordinate to: (518.0, 1598.5)
+2026-06-19 21:02:02 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1681.8, wait_duration=0.02)
+2026-06-19 21:02:02 [replayer] INFO: Move coordinate to: (518.0, 1681.8)
+2026-06-19 21:02:02 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1765.1, wait_duration=0.02)
+2026-06-19 21:02:02 [replayer] INFO: Move coordinate to: (518.0, 1765.1)
+2026-06-19 21:02:02 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1848.4, wait_duration=0.02)
+2026-06-19 21:02:02 [replayer] INFO: Move coordinate to: (518.0, 1848.4)
+2026-06-19 21:02:02 [replayer] INFO: Touch: Touch(touch_type='move', x=518.0, y=1931.7, wait_duration=0.02)
+2026-06-19 21:02:02 [replayer] INFO: Move coordinate to: (518.0, 1931.7)
+2026-06-19 21:02:02 [replayer] INFO: Touch: Touch(touch_type='up', x=518.0, y=2015.0, wait_duration=0.02)
+2026-06-19 21:02:02 [replayer] INFO: Release coordinate at: (518.0, 2015.0)
+2026-06-19 21:02:03 [replayer] INFO: [42] Execute Monkey event: CLICK
+2026-06-19 21:02:03 [replayer] INFO: Touch: Touch(touch_type='down', x=751.0, y=1729.0, wait_duration=0.0)
+2026-06-19 21:02:03 [replayer] INFO: Press coordinate at: (751.0, 1729.0)
+2026-06-19 21:02:03 [replayer] INFO: Touch: Touch(touch_type='up', x=751.0, y=1729.0, wait_duration=0.0)
+2026-06-19 21:02:04 [replayer] INFO: Release coordinate at: (751.0, 1729.0)
+2026-06-19 21:02:05 [replayer] INFO: [43] Execute Monkey event: CLICK
+2026-06-19 21:02:05 [replayer] INFO: Touch: Touch(touch_type='down', x=73.0, y=1227.0, wait_duration=0.0)
+2026-06-19 21:02:05 [replayer] INFO: Press coordinate at: (73.0, 1227.0)
+2026-06-19 21:02:05 [replayer] INFO: Touch: Touch(touch_type='up', x=73.0, y=1227.0, wait_duration=0.0)
+2026-06-19 21:02:05 [replayer] INFO: Release coordinate at: (73.0, 1227.0)
+2026-06-19 21:02:06 [replayer] INFO: [44] Execute Monkey event: CLICK
+2026-06-19 21:02:06 [replayer] INFO: Touch: Touch(touch_type='down', x=147.0, y=171.0, wait_duration=0.0)
+2026-06-19 21:02:06 [replayer] INFO: Press coordinate at: (147.0, 171.0)
+2026-06-19 21:02:06 [replayer] INFO: Touch: Touch(touch_type='up', x=147.0, y=171.0, wait_duration=0.0)
+2026-06-19 21:02:06 [replayer] INFO: Release coordinate at: (147.0, 171.0)
+2026-06-19 21:02:07 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_search_activity - start
+2026-06-19 21:02:07 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:07 [replayer] INFO: Click coordinate: (860.0, 209.0)
+2026-06-19 21:02:08 [replayer] INFO: [44] Execute Script event: setText
+2026-06-19 21:02:08 [replayer] INFO: Set text to: Cinema (26.57)
+2026-06-19 21:02:09 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:10 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:02:11 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:11 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:02:12 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_search_activity - pass
+2026-06-19 21:02:12 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_open_setting - start
+2026-06-19 21:02:12 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:12 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:02:13 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:13 [replayer] INFO: Click coordinate: (385.0, 1334.0)
+2026-06-19 21:02:14 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:14 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:02:15 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_open_setting - pass
+2026-06-19 21:02:15 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_open_setting - start
+2026-06-19 21:02:15 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:15 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:02:16 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:17 [replayer] INFO: Click coordinate: (385.0, 1334.0)
+2026-06-19 21:02:18 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:18 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:02:19 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_open_setting - pass
+2026-06-19 21:02:19 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_edit_note - start
+2026-06-19 21:02:19 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:19 [replayer] INFO: Click coordinate: (259.5, 894.0)
+2026-06-19 21:02:20 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:20 [replayer] INFO: Click coordinate: (959.0, 781.0)
+2026-06-19 21:02:21 [replayer] INFO: [44] Execute Script event: setText
+2026-06-19 21:02:21 [replayer] INFO: Set text to: ojZniU
+2026-06-19 21:02:22 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:23 [replayer] INFO: Click coordinate: (881.5, 992.0)
+2026-06-19 21:02:24 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_edit_note - pass
+2026-06-19 21:02:24 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_open_setting - start
+2026-06-19 21:02:24 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:24 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:02:25 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:25 [replayer] INFO: Click coordinate: (385.0, 1334.0)
+2026-06-19 21:02:26 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:26 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:02:27 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_open_setting - pass
+2026-06-19 21:02:27 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_edit_note - start
+2026-06-19 21:02:27 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:27 [replayer] INFO: Click coordinate: (259.5, 894.0)
+2026-06-19 21:02:28 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:29 [replayer] INFO: Click coordinate: (959.0, 781.0)
+2026-06-19 21:02:30 [replayer] INFO: [44] Execute Script event: setText
+2026-06-19 21:02:36 [replayer] INFO: Set text to: IJaInI
+2026-06-19 21:02:37 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:37 [replayer] INFO: Click coordinate: (881.5, 992.0)
+2026-06-19 21:02:38 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_edit_note - pass
+2026-06-19 21:02:38 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_open_setting - start
+2026-06-19 21:02:38 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:39 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:02:40 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:40 [replayer] INFO: Click coordinate: (385.0, 1334.0)
+2026-06-19 21:02:41 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:41 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:02:42 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_open_setting - pass
+2026-06-19 21:02:42 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_add_activity - start
+2026-06-19 21:02:42 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:42 [replayer] INFO: Click coordinate: (1003.0, 209.0)
+2026-06-19 21:02:43 [replayer] INFO: [44] Execute Script event: setText
+2026-06-19 21:02:43 [replayer] INFO: Set text to: OoTcglABxDVslU
+2026-06-19 21:02:44 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:45 [replayer] INFO: Click coordinate: (1003.0, 209.0)
+2026-06-19 21:02:46 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_add_activity - pass
+2026-06-19 21:02:46 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_search_activity - start
+2026-06-19 21:02:46 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:46 [replayer] INFO: Click coordinate: (860.0, 209.0)
+2026-06-19 21:02:47 [replayer] INFO: [44] Execute Script event: setText
+2026-06-19 21:02:47 [replayer] INFO: Set text to: Cinema (14.83)
+2026-06-19 21:02:48 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:48 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:02:49 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:49 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:02:50 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_search_activity - pass
+2026-06-19 21:02:50 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_search_activity - start
+2026-06-19 21:02:50 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:51 [replayer] INFO: Click coordinate: (861.0, 209.0)
+2026-06-19 21:02:52 [replayer] INFO: [44] Execute Script event: setText
+2026-06-19 21:02:52 [replayer] INFO: Set text to: Cinema (14.83)
+2026-06-19 21:02:53 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:53 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:02:54 [replayer] INFO: [44] Execute Script event: click
+2026-06-19 21:02:54 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:02:55 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_search_activity - pass
+2026-06-19 21:02:55 [replayer] INFO: [45] Execute Monkey event: LONG_CLICK
+2026-06-19 21:02:55 [replayer] INFO: Touch: Touch(touch_type='down', x=208.0, y=885.0, wait_duration=0.0)
+2026-06-19 21:02:55 [replayer] INFO: Press coordinate at: (208.0, 885.0)
+2026-06-19 21:02:55 [replayer] INFO: Touch: Touch(touch_type='up', x=208.0, y=885.0, wait_duration=1.0)
+2026-06-19 21:02:55 [replayer] INFO: Release coordinate at: (208.0, 885.0)
+2026-06-19 21:02:57 [replayer] INFO: [46] Execute Monkey event: CLICK
+2026-06-19 21:02:57 [replayer] INFO: Touch: Touch(touch_type='down', x=973.0, y=170.0, wait_duration=0.0)
+2026-06-19 21:02:57 [replayer] INFO: Press coordinate at: (973.0, 170.0)
+2026-06-19 21:02:57 [replayer] INFO: Touch: Touch(touch_type='up', x=973.0, y=170.0, wait_duration=0.0)
+2026-06-19 21:02:58 [replayer] INFO: Release coordinate at: (973.0, 170.0)
+2026-06-19 21:02:59 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_search_activity - start
+2026-06-19 21:02:59 [replayer] INFO: [46] Execute Script event: click
+2026-06-19 21:02:59 [replayer] INFO: Click coordinate: (860.0, 209.0)
+2026-06-19 21:03:00 [replayer] INFO: [46] Execute Script event: setText
+2026-06-19 21:03:06 [replayer] INFO: Set text to: Cinema (14.83)
+2026-06-19 21:03:07 [replayer] INFO: [46] Execute Script event: click
+2026-06-19 21:03:08 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:03:09 [replayer] INFO: [46] Execute Script event: click
+2026-06-19 21:03:09 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:03:10 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_search_activity - pass
+2026-06-19 21:03:10 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_open_setting - start
+2026-06-19 21:03:10 [replayer] INFO: [46] Execute Script event: click
+2026-06-19 21:03:10 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:03:11 [replayer] INFO: [46] Execute Script event: click
+2026-06-19 21:03:11 [replayer] INFO: Click coordinate: (385.0, 1334.0)
+2026-06-19 21:03:12 [replayer] INFO: [46] Execute Script event: click
+2026-06-19 21:03:12 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:03:13 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_open_setting - pass
+2026-06-19 21:03:13 [replayer] INFO: [47] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 21:03:13 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:03:13 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 21:03:13 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:03:13 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 21:03:13 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=913.8, wait_duration=0.02)
+2026-06-19 21:03:14 [replayer] INFO: Move coordinate to: (540.0, 913.8)
+2026-06-19 21:03:14 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=819.6, wait_duration=0.02)
+2026-06-19 21:03:14 [replayer] INFO: Move coordinate to: (540.0, 819.6)
+2026-06-19 21:03:14 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=725.4, wait_duration=0.02)
+2026-06-19 21:03:14 [replayer] INFO: Move coordinate to: (540.0, 725.4)
+2026-06-19 21:03:14 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=631.19995, wait_duration=0.02)
+2026-06-19 21:03:14 [replayer] INFO: Move coordinate to: (540.0, 631.19995)
+2026-06-19 21:03:14 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=537.0, wait_duration=0.02)
+2026-06-19 21:03:14 [replayer] INFO: Move coordinate to: (540.0, 537.0)
+2026-06-19 21:03:14 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=442.8, wait_duration=0.02)
+2026-06-19 21:03:14 [replayer] INFO: Move coordinate to: (540.0, 442.8)
+2026-06-19 21:03:14 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=348.60004, wait_duration=0.02)
+2026-06-19 21:03:14 [replayer] INFO: Move coordinate to: (540.0, 348.60004)
+2026-06-19 21:03:14 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=254.39996, wait_duration=0.02)
+2026-06-19 21:03:14 [replayer] INFO: Move coordinate to: (540.0, 254.39996)
+2026-06-19 21:03:14 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=160.20001, wait_duration=0.02)
+2026-06-19 21:03:14 [replayer] INFO: Move coordinate to: (540.0, 160.20001)
+2026-06-19 21:03:14 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=82.0, wait_duration=0.02)
+2026-06-19 21:03:14 [replayer] INFO: Release coordinate at: (540.0, 82.0)
+2026-06-19 21:03:15 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_search_activity - start
+2026-06-19 21:03:15 [replayer] INFO: [47] Execute Script event: click
+2026-06-19 21:03:15 [replayer] INFO: Click coordinate: (860.0, 209.0)
+2026-06-19 21:03:16 [replayer] INFO: [47] Execute Script event: setText
+2026-06-19 21:03:17 [replayer] INFO: Set text to: Cinema (14.82)
+2026-06-19 21:03:18 [replayer] INFO: [47] Execute Script event: click
+2026-06-19 21:03:18 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:03:19 [replayer] INFO: [47] Execute Script event: click
+2026-06-19 21:03:19 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:03:20 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_search_activity - pass
+2026-06-19 21:03:20 [replayer] INFO: [48] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 21:03:20 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:03:20 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 21:03:20 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 21:03:20 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 21:03:20 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1108.7, wait_duration=0.02)
+2026-06-19 21:03:20 [replayer] INFO: Move coordinate to: (540.0, 1108.7)
+2026-06-19 21:03:20 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1209.4, wait_duration=0.02)
+2026-06-19 21:03:20 [replayer] INFO: Move coordinate to: (540.0, 1209.4)
+2026-06-19 21:03:20 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1310.1, wait_duration=0.02)
+2026-06-19 21:03:20 [replayer] INFO: Move coordinate to: (540.0, 1310.1)
+2026-06-19 21:03:20 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1410.8, wait_duration=0.02)
+2026-06-19 21:03:20 [replayer] INFO: Move coordinate to: (540.0, 1410.8)
+2026-06-19 21:03:21 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1511.5, wait_duration=0.02)
+2026-06-19 21:03:21 [replayer] INFO: Move coordinate to: (540.0, 1511.5)
+2026-06-19 21:03:21 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1612.2, wait_duration=0.02)
+2026-06-19 21:03:21 [replayer] INFO: Move coordinate to: (540.0, 1612.2)
+2026-06-19 21:03:21 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1712.8999, wait_duration=0.02)
+2026-06-19 21:03:21 [replayer] INFO: Move coordinate to: (540.0, 1712.8999)
+2026-06-19 21:03:21 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1813.6001, wait_duration=0.02)
+2026-06-19 21:03:21 [replayer] INFO: Move coordinate to: (540.0, 1813.6001)
+2026-06-19 21:03:21 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1914.3, wait_duration=0.02)
+2026-06-19 21:03:21 [replayer] INFO: Move coordinate to: (540.0, 1914.3)
+2026-06-19 21:03:21 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=2015.0, wait_duration=0.02)
+2026-06-19 21:03:21 [replayer] INFO: Release coordinate at: (540.0, 2015.0)
+2026-06-19 21:03:22 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_add_activity - start
+2026-06-19 21:03:22 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:22 [replayer] INFO: Click coordinate: (1003.5, 209.0)
+2026-06-19 21:03:23 [replayer] INFO: [48] Execute Script event: setText
+2026-06-19 21:03:23 [replayer] INFO: Set text to: AJWwVpLMWZ
+2026-06-19 21:03:24 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:25 [replayer] INFO: Click coordinate: (1003.0, 209.0)
+2026-06-19 21:03:26 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_add_activity - pass
+2026-06-19 21:03:26 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_open_setting - start
+2026-06-19 21:03:26 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:26 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:03:27 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:27 [replayer] INFO: Click coordinate: (385.0, 1334.0)
+2026-06-19 21:03:28 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:29 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:03:30 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_open_setting - pass
+2026-06-19 21:03:30 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_search_activity - start
+2026-06-19 21:03:30 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:30 [replayer] INFO: Click coordinate: (860.0, 209.0)
+2026-06-19 21:03:31 [replayer] INFO: [48] Execute Script event: setText
+2026-06-19 21:03:31 [replayer] INFO: Set text to: AJWwVpLMWZ (11.52)
+2026-06-19 21:03:32 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:33 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:03:34 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:34 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:03:35 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_search_activity - pass
+2026-06-19 21:03:35 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_open_setting - start
+2026-06-19 21:03:35 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:35 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:03:36 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:36 [replayer] INFO: Click coordinate: (385.0, 1334.0)
+2026-06-19 21:03:37 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:37 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 21:03:38 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_open_setting - pass
+2026-06-19 21:03:38 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_search_activity - start
+2026-06-19 21:03:38 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:38 [replayer] INFO: Click coordinate: (860.0, 209.0)
+2026-06-19 21:03:39 [replayer] INFO: [48] Execute Script event: setText
+2026-06-19 21:03:40 [replayer] INFO: Set text to: AJWwVpLMWZ (11.52)
+2026-06-19 21:03:41 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:41 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:03:42 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:42 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:03:43 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_search_activity - pass
+2026-06-19 21:03:43 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_edit_note - start
+2026-06-19 21:03:43 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:43 [replayer] INFO: Click coordinate: (377.5, 894.0)
+2026-06-19 21:03:44 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:44 [replayer] INFO: Click coordinate: (959.0, 781.0)
+2026-06-19 21:03:45 [replayer] INFO: [48] Execute Script event: setText
+2026-06-19 21:03:46 [replayer] INFO: Set text to: srVBjJTB
+2026-06-19 21:03:47 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:47 [replayer] INFO: Click coordinate: (881.5, 992.0)
+2026-06-19 21:03:48 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_edit_note - pass
+2026-06-19 21:03:48 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_search_activity - start
+2026-06-19 21:03:48 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:48 [replayer] INFO: Click coordinate: (861.0, 209.0)
+2026-06-19 21:03:49 [replayer] INFO: [48] Execute Script event: setText
+2026-06-19 21:03:51 [replayer] INFO: Set text to: AJWwVpLMWZ (11.52)
+2026-06-19 21:03:52 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:53 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:03:54 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:54 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:03:55 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_search_activity - pass
+2026-06-19 21:03:55 [reproducer] INFO: Preconditions executed for test case: bug_test_search_activity
+2026-06-19 21:03:55 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_search_activity
+2026-06-19 21:03:55 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 21:03:55 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 21:03:55 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 21:03:55 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_precondition/bug_test_search_activity.ec --classfiles D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\build\intermediates\classes\debug --sourcefiles D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_precondition/bug_test_search_activity.xml
+2026-06-19 21:03:55 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_precondition\bug_test_search_activity.ec.
+[INFO] Analyzing 349 classes.
+
+2026-06-19 21:03:55 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_precondition/bug_test_search_activity.ec -> D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_precondition/bug_test_search_activity.xml
+2026-06-19 21:03:55 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_precondition/bug_test_search_activity.xml
+2026-06-19 21:03:55 [reproducer] INFO: Start executing property for test case: bug_test_search_activity
+2026-06-19 21:03:55 [replayer] INFO: Script execution start state: activity_diary155.ActivityDiaryTest.test_search_activity - start
+2026-06-19 21:03:55 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:03:55 [replayer] INFO: Click coordinate: (861.0, 209.0)
+2026-06-19 21:03:56 [replayer] INFO: [48] Execute Script event: swipe
+2026-06-19 21:04:00 [replayer] INFO: Swipe: (990, 1440) -> (200, 1440)
+2026-06-19 21:04:01 [replayer] INFO: [48] Execute Script event: setText
+2026-06-19 21:04:01 [replayer] INFO: Set text to: AJWwVpLMWZ (11.52)
+2026-06-19 21:04:02 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:04:03 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:04:04 [replayer] INFO: [48] Execute Script event: click
+2026-06-19 21:04:04 [replayer] INFO: Click coordinate: (1001.0, 209.0)
+2026-06-19 21:04:05 [replayer] INFO: Script execution end state: activity_diary155.ActivityDiaryTest.test_search_activity - fail
+2026-06-19 21:04:05 [reproducer] INFO: Property executed for test case: bug_test_search_activity
+2026-06-19 21:04:05 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_search_activity
+2026-06-19 21:04:05 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 21:04:05 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 21:04:05 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 21:04:05 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_property/bug_test_search_activity.ec --classfiles D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\build\intermediates\classes\debug --sourcefiles D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_property/bug_test_search_activity.xml
+2026-06-19 21:04:05 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_property\bug_test_search_activity.ec.
+[INFO] Analyzing 349 classes.
+
+2026-06-19 21:04:05 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_property/bug_test_search_activity.ec -> D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_property/bug_test_search_activity.xml
+2026-06-19 21:04:05 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\bug_test_search_activity_property/bug_test_search_activity.xml
+2026-06-19 21:04:05 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 21:04:05 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 21:04:05 [reproducer] INFO: Test environment reset completed
+2026-06-19 21:04:05 [runner] INFO: Parsing coverage data...
+2026-06-19 21:04:05 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\bug_test_search_activity_pre_line_coverage.md
+2026-06-19 21:04:05 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\bug_test_search_activity_pre_branch_coverage.md
+2026-06-19 21:04:05 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\bug_test_search_activity_prop_line_coverage.md
+2026-06-19 21:04:05 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\bug_test_search_activity_prop_branch_coverage.md
+2026-06-19 21:04:06 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\happy_test_search_activity_pre_line_coverage.md
+2026-06-19 21:04:06 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\happy_test_search_activity_pre_branch_coverage.md
+2026-06-19 21:04:06 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\happy_test_search_activity_prop_line_coverage.md
+2026-06-19 21:04:06 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\happy_test_search_activity_prop_branch_coverage.md
+2026-06-19 21:04:06 [runner] INFO: Calculating incremental coverage...
+2026-06-19 21:04:06 [runner] INFO: Performing incremental coverage analysis...
+2026-06-19 21:04:06 [runner] INFO: Generating pair test case report...
+2026-06-19 21:04:06 [runner] INFO: Saving intermediate data...
+2026-06-19 21:04:06 [report_generator] INFO: generate bug line coverage increment data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\bug_test_search_activity_line_incremental_data.md
+2026-06-19 21:04:06 [report_generator] INFO: generate bug branch coverage increment data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\bug_test_search_activity_branch_incremental_data.md
+2026-06-19 21:04:06 [report_generator] INFO: generate correct line coverage increment data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\happy_test_search_activity_line_incremental_data.md
+2026-06-19 21:04:06 [report_generator] INFO: generate correct branch coverage increment data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\happy_test_search_activity_branch_incremental_data.md
+2026-06-19 21:04:06 [report_generator] INFO: generate line diff data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\line_diff_data.md
+2026-06-19 21:04:06 [report_generator] INFO: generate branch diff data: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\data\branch_diff_data.md
+2026-06-19 21:04:06 [runner] INFO: Generating diff report...
+2026-06-19 21:04:06 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\src\main\java\de\rampro\activitydiary\helpers\ActivityHelper.java encoding: utf-8
+2026-06-19 21:04:06 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\src\main\java\de\rampro\activitydiary\ui\main\MainActivity.java encoding: utf-8
+2026-06-19 21:04:06 [report_generator] INFO: Line Coverage Diff Report Generated: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\test_search_activity_line_diff_report.html
+2026-06-19 21:04:06 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\src\main\java\de\rampro\activitydiary\helpers\ActivityHelper.java encoding: utf-8
+2026-06-19 21:04:06 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\src\main\java\de\rampro\activitydiary\ui\main\MainActivity.java encoding: utf-8
+2026-06-19 21:04:06 [report_generator] INFO: Branch Coverage Diff Report Generated: D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\test_search_activity_branch_diff_report.html
+2026-06-19 21:04:06 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_search_activity
+
+## Code Coverage Summary
+File: de/rampro/activitydiary/helpers/ActivityHelper.java
+  Only in second dataset lines: [640, 643, 644, 645, 648, 668, 669, 670]
+    Line 640: hit count 15
+    Line 643: hit count 8
+    Line 644: hit count 6
+    Line 645: hit count 8
+    Line 648: hit count 8
+    Line 668: hit count 6
+    Line 669: hit count 2
+    Line 670: hit count 4
+----------------------------------------
+File: de/rampro/activitydiary/ui/main/MainActivity.java
+  Only in second dataset lines: [134, 135, 136, 137, 138, 617, 618]
+    Line 134: hit count 4
+    Line 135: hit count 4
+    Line 136: hit count 4
+    Line 137: hit count 4
+    Line 138: hit count 8
+    Line 617: hit count 4
+    Line 618: hit count 1
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Pass: test_open_setting → Start: test_edit_note → Input: ojZniU → Pass: test_edit_note → Start: test_open_setting → Pass: test_open_setting → Start: test_edit_note → Input: IJaInI → Pass: test_edit_note → Start: test_open_setting
+
+FAIL continuation:
+Pass: test_open_setting → Start: test_add_activity → Input: OoTcglABxDVslU → Pass: test_add_activity → Start: test_search_activity → Input: Cinema (14.83) → Pass: test_search_activity → Start: test_search_activity → Input: Cinema (14.83) → Pass: test_search_activity → Random operation: LONG_CLICK → Random operation: CLICK → Start: test_search_activity → Input: Cinema (14.83) → Pass: test_search_activity → Start: test_open_setting → Pass: test_open_setting → Random operation: SCROLL_BOTTOM_UP → Start: test_search_activity → Input: Cinema (14.82) → Pass: test_search_activity → Random operation: SCROLL_TOP_DOWN → Start: test_add_activity → Input: AJWwVpLMWZ → Pass: test_add_activity → Start: test_open_setting → Pass: test_open_setting → Start: test_search_activity → Input: AJWwVpLMWZ (11.52) → Pass: test_search_activity → Start: test_open_setting → Pass: test_open_setting → Start: test_search_activity → Input: AJWwVpLMWZ (11.52) → Pass: test_search_activity → Start: test_edit_note → Input: srVBjJTB → Pass: test_edit_note → Start: test_search_activity → Input: AJWwVpLMWZ (11.52) → Pass: test_search_activity → Start: test_search_activity → Swipe → Input: AJWwVpLMWZ (11.52) → Fail: test_search_activity → Start: test_open_setting → Pass: test_open_setting → Start: test_search_activity → Input: Cooking (1.91) → Fail: test_search_activity → Start: test_search_activity → Input: Cooking (1.91) → Fail: test_search_activity → Start: test_search_activity → Input: Cooking (1.91) → Fail: test_search_activity → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP
+
+## Correct Execution Path
+Random operation: LONG_CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_select_activity → Pass: test_select_activity → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: LONG_CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_search_activity → Input: Cinema (26.57) → Pass: test_search_activity → Start: test_open_setting → Pass: test_open_setting → Start: test_open_setting → Pass: test_open_setting → Start: test_edit_note → Input: ojZniU → Pass: test_edit_note → Start: test_open_setting → Pass: test_open_setting → Start: test_edit_note → Input: IJaInI → Pass: test_edit_note → Start: test_open_setting
+
+## Error Execution Path
+Random operation: LONG_CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_select_activity → Pass: test_select_activity → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: LONG_CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_search_activity → Input: Cinema (26.57) → Pass: test_search_activity → Start: test_open_setting → Pass: test_open_setting → Start: test_open_setting → Pass: test_open_setting → Start: test_edit_note → Input: ojZniU → Pass: test_edit_note → Start: test_open_setting → Pass: test_open_setting → Start: test_edit_note → Input: IJaInI → Pass: test_edit_note → Start: test_open_setting → Pass: test_open_setting → Start: test_add_activity → Input: OoTcglABxDVslU → Pass: test_add_activity → Start: test_search_activity → Input: Cinema (14.83) → Pass: test_search_activity → Start: test_search_activity → Input: Cinema (14.83) → Pass: test_search_activity → Random operation: LONG_CLICK → Random operation: CLICK → Start: test_search_activity → Input: Cinema (14.83) → Pass: test_search_activity → Start: test_open_setting → Pass: test_open_setting → Random operation: SCROLL_BOTTOM_UP → Start: test_search_activity → Input: Cinema (14.82) → Pass: test_search_activity → Random operation: SCROLL_TOP_DOWN → Start: test_add_activity → Input: AJWwVpLMWZ → Pass: test_add_activity → Start: test_open_setting → Pass: test_open_setting → Start: test_search_activity → Input: AJWwVpLMWZ (11.52) → Pass: test_search_activity → Start: test_open_setting → Pass: test_open_setting → Start: test_search_activity → Input: AJWwVpLMWZ (11.52) → Pass: test_search_activity → Start: test_edit_note → Input: srVBjJTB → Pass: test_edit_note → Start: test_search_activity → Input: AJWwVpLMWZ (11.52) → Pass: test_search_activity → Start: test_search_activity → Swipe → Input: AJWwVpLMWZ (11.52) → Fail: test_search_activity → Start: test_open_setting → Pass: test_open_setting → Start: test_search_activity → Input: Cooking (1.91) → Fail: test_search_activity → Start: test_search_activity → Input: Cooking (1.91) → Fail: test_search_activity → Start: test_search_activity → Input: Cooking (1.91) → Fail: test_search_activity → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP
+
+## Files to Analyze
+de/rampro/activitydiary/helpers/ActivityHelper.java
+  Differing lines: 8
+
+de/rampro/activitydiary/ui/main/MainActivity.java
+  Differing lines: 7
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-19 21:04:06 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-19 21:04:07 [llm] INFO: LLM response: de/rampro/activitydiary/helpers/ActivityHelper.java
+de/rampro/activitydiary/ui/main/MainActivity.java
+2026-06-19 21:04:07 [runner] INFO: Saving ranking to D:\code\python\Kea-FL_new\report\report_20260619_205915\test_search_activity\ranking.txt
+2026-06-19 21:04:07 [report_generator] INFO: Generated comprehensive analysis report: D:\code\python\Kea-FL_new\report\report_20260619_205915\index.html
+2026-06-19 21:04:07 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: D:\code\python\Kea-FL_new\report\report_20260619_205915

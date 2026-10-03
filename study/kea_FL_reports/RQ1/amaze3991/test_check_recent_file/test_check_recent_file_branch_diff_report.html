@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test_check_recent_file Branch Coverage Diff Report</title>
+<style>
+    :root {
+        --github-bg: #ffffff;
+        --github-text: #24292f;
+        --github-gray-50: #f9fafb;
+        --github-gray-100: #f1f2f4;
+        --github-gray-200: #e4e7eb;
+        --github-gray-300: #d1d5db;
+        --github-gray-400: #9ca3af;
+        --github-gray-500: #6e7781;
+        --github-gray-600: #4d5663;
+        --github-gray-700: #374151;
+        --github-gray-800: #272e3b;
+        
+        --line-number-bg: #f6f8fa;
+        --line-number-text: #6e7781;
+        --line-number-border: #eaecef;
+        
+        --correct-bg: rgb(218, 251, 225);           
+        --correct-border: rgb(172, 238, 187);       
+        --correct-line-number-bg: rgb(172, 238, 187); 
+        --correct-line-number-text: #000000; 
+        
+        --bug-bg: rgb(255, 235, 233);               
+        --bug-border: rgb(255, 206, 203);           
+        --bug-line-number-bg: rgb(255, 206, 203);   
+        --bug-line-number-text: #000000; 
+        
+        --covered-bg: var(--correct-bg);
+        --covered-border: var(--correct-border);
+        --covered-line-number-bg: var(--correct-line-number-bg);
+        --covered-line-number-text: var(--correct-line-number-text);
+        
+        --sidebar-width: 300px;
+        --sidebar-collapsed-width: 0px;
+        --border-radius: 6px;
+        --transition: all 0.2s ease;
+        --code-line-height: 1.5em;
+        --line-number-width: 4.5rem;
+        --header-height: 60px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.5;
+        color: var(--github-text);
+        background-color: var(--github-gray-50);
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        padding-top: var(--header-height);
+    }
+
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        background-color: var(--github-bg);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--github-gray-800);
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--github-gray-200);
+    }
+
+    p {
+        color: var(--github-gray-600);
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-toggle-btn {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        color: var(--github-gray-700);
+        cursor: pointer;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .sidebar-toggle-btn:hover {
+        background-color: var(--github-gray-50);
+        border-color: var(--github-gray-300);
+        color: var(--github-gray-800);
+    }
+
+    .sidebar {
+        width: var(--sidebar-width);
+        background-color: var(--github-bg);
+        border-right: 1px solid var(--github-gray-200);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        transition: var(--transition);
+        overflow: hidden;
+        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+    }
+
+    .sidebar.collapsed {
+        width: var(--sidebar-collapsed-width);
+        border-right: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .sidebar-resizer {
+        display: none;
+    }
+
+
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .file-list-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        color: var(--github-gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid var(--github-gray-200);
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-tree {
+        list-style: none;
+        overflow-y: auto;
+        flex: 1;
+        padding: 0.5rem 0;
+    }
+
+    .dir-item {
+        position: relative;
+    }
+
+    .dir-header {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .dir-header:hover {
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-toggle {
+        width: 1rem;
+        height: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: var(--github-gray-500);
+        margin-right: 0.5rem;
+    }
+
+    .dir-content {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .file-item {
+        padding: 0;
+    }
+
+    .file-link {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .file-link::before {
+        content: "📄";
+        font-size: 0.75rem;
+        margin-right: 0.5rem;
+        opacity: 0.7;
+    }
+
+    .file-link:hover {
+        background-color: var(--github-gray-50);
+        color: #0969da;
+    }
+
+    .file-link.active {
+        color: #0969da;
+        font-weight: 500;
+    }
+
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+        transition: var(--transition);
+        margin-left: var(--sidebar-width);
+        height: 100vh;
+        background-color: var(--github-gray-50);
+        padding-top: 1rem;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: var(--sidebar-collapsed-width) !important;
+    }
+
+    .file-header {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        scroll-margin-top: calc(var(--header-height) + 1rem);
+    }
+
+    .file-header a {
+        color: #0969da;
+        text-decoration: none;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .file-header a:hover {
+        text-decoration: underline;
+    }
+
+    .diff-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        min-height: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .diff-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .diff-panel {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .panel-header {
+        background-color: var(--github-gray-50);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .panel-header::before {
+        content: "";
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .diff-container > .diff-panel:first-child .panel-header::before {
+        background-color: var(--bug-border);
+    }
+
+    .diff-container > .diff-panel:last-child .panel-header::before {
+        background-color: var(--correct-border);
+    }
+
+    .code-container {
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-size: 12px;
+        line-height: var(--code-line-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 600px;
+        flex: 1;
+        width: 100%;
+        background-color: var(--github-bg);
+    }
+
+    .code-line {
+        display: grid;
+        grid-template-columns: var(--line-number-width) 1fr;
+        width: 100%;
+        transition: background-color 0.2s ease;
+        border-left: 3px solid transparent;
+        min-height: var(--code-line-height);
+    }
+
+    .line-number {
+        width: var(--line-number-width);
+        padding: 0 0.75rem;
+        text-align: right;
+        color: var(--line-number-text);
+        user-select: none;
+        background-color: var(--line-number-bg);
+        border-right: 1px solid var(--line-number-border);
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .correct-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 100;
+    }
+
+    .bug-line .line-number {
+        background-color: var(--bug-line-number-bg);
+        color: var(--bug-line-number-text);
+        border-right-color: var(--bug-border);
+        font-weight: 100;
+    }
+
+    .covered-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 600;
+    }
+
+    .code-content {
+        flex: 1;
+        padding: 0 0.75rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: flex-start;
+        padding-top: calc((var(--code-line-height) - 1em) / 2);
+        width: 100%;
+        color: var(--github-text);
+    }
+
+    .correct-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .bug-line {
+        background-color: var(--bug-bg);
+        border-left-color: var(--bug-border);
+    }
+
+    .covered-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .context-line .code-content:empty::before {
+        content: " ";
+    }
+
+    .separator-line {
+        background-color: var(--github-gray-50);
+        color: var(--github-gray-500);
+        text-align: center;
+        padding: 0.5rem 0;
+        font-style: italic;
+        border-top: 1px dashed var(--github-gray-300);
+        border-bottom: 1px dashed var(--github-gray-300);
+        grid-column: 1 / -1;
+    }
+
+    .separator-line .line-number,
+    .separator-line .code-content {
+        height: auto;
+        line-height: 1.5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--github-gray-300);
+        border-radius: 6px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--github-gray-400);
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            position: fixed;
+            z-index: 100;
+        }
+        
+        .main-content {
+            margin-left: 0 !important;
+            padding: 1rem;
+        }
+    }
+
+    .context-line {
+        background-color: var(--github-bg);
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+// Global sidebar toggle function
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("collapsed");
+}
+
+// Directory expand/collapse function
+function toggleDir(dirHeader) {
+    const toggle = dirHeader.querySelector(".dir-toggle");
+    const content = dirHeader.nextElementSibling;
+    
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        toggle.textContent = "−";
+    } else {
+        content.style.display = "none";
+        toggle.textContent = "+";
+    }
+}
+
+// File link click event handler
+document.addEventListener('DOMContentLoaded', () => {
+    const fileLinks = document.querySelectorAll('.file-link');
+    
+    fileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            fileLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    if (fileLinks.length > 0) {
+        fileLinks[0].classList.add('active');
+    }
+});
+</script>
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<div class="fixed-header">
+    <h1>test_check_recent_file Branch Coverage Diff Report</h1>
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        File List
+    </button>
+</div>
+<div class="sidebar" id="sidebar">
+<h3 class="file-list-title">File List</h3>
+<ul class="dir-tree">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">com/amaze</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">filemanager</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">adapters</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-0" class="file-link"><span>RecyclerAdapter.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">asynchronous/asynctasks</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-1" class="file-link"><span>LoadFilesListTask.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">filesystem</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-2" class="file-link"><span>HybridFile.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">ui</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">activities</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-3" class="file-link"><span>MainActivity.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">colors</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-4" class="file-link"><span>ColorPreferenceHelper.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-5" class="file-link"><span>ColorUtils.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">fragments</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-6" class="file-link"><span>MainFragment.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-7" class="file-link"><span>TabFragment.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">views</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-8" class="file-link"><span>DividerItemDecoration.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-9" class="file-link"><span>Indicator.java</span></a>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">appbar</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-10" class="file-link"><span>BottomBar.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">drawer</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-11" class="file-link"><span>ActionViewStateManager.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-12" class="file-link"><span>CustomNavigationView.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-13" class="file-link"><span>Drawer.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">utils</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-14" class="file-link"><span>DataUtils.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-15" class="file-link"><span>MainActivityHelper.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+</ul>
+</div>
+<div class="main-content">
+<p>Generated Time: 2026-06-19 15:52:30</p>
+<h2>Branch Coverage Diff</h2>
+<div class="file-header" id="file-0">
+    File: com/amaze/filemanager/adapters/RecyclerAdapter.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\adapters\RecyclerAdapter.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">769</span><span class="code-content">    final boolean isBackButton = getItemsDigested().get(position).specialType == TYPE_BACK;</span></div>
+<div class="code-line context-line"><span class="line-number">770</span><span class="code-content">    if (isBackButton) {</span></div>
+<div class="code-line context-line"><span class="line-number">771</span><span class="code-content">      holder.about.setVisibility(View.GONE);</span></div>
+<div class="code-line context-line"><span class="line-number">772</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">773</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">774</span><span class="code-content">    if (!this.stoppedAnimation &amp;&amp; !getItemsDigested().get(position).getAnimating()) { // Branch: Covered 3/4</span></div>
+<div class="code-line context-line"><span class="line-number">775</span><span class="code-content">      animate(holder);</span></div>
+<div class="code-line context-line"><span class="line-number">776</span><span class="code-content">      getItemsDigested().get(position).setAnimate(true);</span></div>
+<div class="code-line context-line"><span class="line-number">777</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">778</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">779</span><span class="code-content">    if (dragAndDropPreference != PreferencesConstants.PREFERENCE_DRAG_DEFAULT) {</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">511</span><span class="code-content">    return checked;</span></div>
+<div class="code-line context-line"><span class="line-number">512</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">513</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">514</span><span class="code-content">  @Override</span></div>
+<div class="code-line context-line"><span class="line-number">515</span><span class="code-content">  public void onViewDetachedFromWindow(@NonNull RecyclerView.ViewHolder holder) {</span></div>
+<div class="code-line correct-line"><span class="line-number">516</span><span class="code-content">    if (holder instanceof ItemViewHolder) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">517</span><span class="code-content">      ((ItemViewHolder) holder).baseItemView.clearAnimation();</span></div>
+<div class="code-line context-line"><span class="line-number">518</span><span class="code-content">      ((ItemViewHolder) holder).txtTitle.setSelected(false);</span></div>
+<div class="code-line correct-line"><span class="line-number">519</span><span class="code-content">      if (dragAndDropPreference != PreferencesConstants.PREFERENCE_DRAG_DEFAULT) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">520</span><span class="code-content">        ((ItemViewHolder) holder).baseItemView.setOnDragListener(null);</span></div>
+<div class="code-line context-line"><span class="line-number">521</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">522</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">523</span><span class="code-content">    super.onViewDetachedFromWindow(holder);</span></div>
+<div class="code-line context-line"><span class="line-number">524</span><span class="code-content">  }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">653</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">654</span><span class="code-content">        if (getItemsDigested().get(i).layoutElementParcelable != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">655</span><span class="code-content">          LayoutElementParcelable nextItem = getItemsDigested().get(i).layoutElementParcelable;</span></div>
+<div class="code-line context-line"><span class="line-number">656</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">657</span><span class="code-content">          if (nextItem != null) {</span></div>
+<div class="code-line correct-line"><span class="line-number">658</span><span class="code-content">            if (!headers[0] &amp;&amp; nextItem.isDirectory) { // Branch: Covered 4/4</span></div>
+<div class="code-line context-line"><span class="line-number">659</span><span class="code-content">              headers[0] = true;</span></div>
+<div class="code-line context-line"><span class="line-number">660</span><span class="code-content">              getItemsDigested().add(i, new ListItem(TYPE_HEADER_FOLDERS));</span></div>
+<div class="code-line context-line"><span class="line-number">661</span><span class="code-content">              uris.add(i, null);</span></div>
+<div class="code-line context-line"><span class="line-number">662</span><span class="code-content">              continue;</span></div>
+<div class="code-line context-line"><span class="line-number">663</span><span class="code-content">            }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">716</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">717</span><span class="code-content">          view = mInflater.inflate(R.layout.grid_header, parent, false);</span></div>
+<div class="code-line context-line"><span class="line-number">718</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">719</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">720</span><span class="code-content">        int type =</span></div>
+<div class="code-line correct-line"><span class="line-number">721</span><span class="code-content">            viewType == TYPE_HEADER_FOLDERS // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">722</span><span class="code-content">                ? SpecialViewHolder.HEADER_FOLDERS</span></div>
+<div class="code-line context-line"><span class="line-number">723</span><span class="code-content">                : SpecialViewHolder.HEADER_FILES;</span></div>
+<div class="code-line context-line"><span class="line-number">724</span><span class="code-content">        return new SpecialViewHolder(context, view, utilsProvider, type);</span></div>
+<div class="code-line context-line"><span class="line-number">725</span><span class="code-content">      case TYPE_ITEM:</span></div>
+<div class="code-line context-line"><span class="line-number">726</span><span class="code-content">      case TYPE_BACK:</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">902</span><span class="code-content">    holder.checkImageView.setVisibility(View.INVISIBLE);</span></div>
+<div class="code-line context-line"><span class="line-number">903</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">904</span><span class="code-content">    // setting icons for various cases</span></div>
+<div class="code-line context-line"><span class="line-number">905</span><span class="code-content">    // apkIcon holder refers to square/non-circular drawable</span></div>
+<div class="code-line context-line"><span class="line-number">906</span><span class="code-content">    // pictureIcon is circular drawable</span></div>
+<div class="code-line correct-line"><span class="line-number">907</span><span class="code-content">    switch (rowItem.filetype) { // Branch: Covered 2/4</span></div>
+<div class="code-line context-line"><span class="line-number">908</span><span class="code-content">      case Icons.IMAGE:</span></div>
+<div class="code-line context-line"><span class="line-number">909</span><span class="code-content">      case Icons.VIDEO:</span></div>
+<div class="code-line context-line"><span class="line-number">910</span><span class="code-content">        if (getBoolean(PREFERENCE_SHOW_THUMB) &amp;&amp; rowItem.getMode() != OpenMode.FTP) {</span></div>
+<div class="code-line context-line"><span class="line-number">911</span><span class="code-content">          if (getBoolean(PREFERENCE_USE_CIRCULAR_IMAGES)) {</span></div>
+<div class="code-line context-line"><span class="line-number">912</span><span class="code-content">            showThumbnailWithBackground(</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">931</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">932</span><span class="code-content">        break;</span></div>
+<div class="code-line context-line"><span class="line-number">933</span><span class="code-content">      case Icons.NOT_KNOWN:</span></div>
+<div class="code-line context-line"><span class="line-number">934</span><span class="code-content">        holder.genericIcon.setVisibility(View.VISIBLE);</span></div>
+<div class="code-line context-line"><span class="line-number">935</span><span class="code-content">        // if the file type is any unknown variable</span></div>
+<div class="code-line correct-line"><span class="line-number">936</span><span class="code-content">        String ext = !rowItem.isDirectory ? MimeTypes.getExtension(rowItem.title) : null; // Branch: Covered 2/2</span></div>
+<div class="code-line correct-line"><span class="line-number">937</span><span class="code-content">        if (ext != null &amp;&amp; ext.trim().length() != 0) { // Branch: Covered 3/4</span></div>
+<div class="code-line context-line"><span class="line-number">938</span><span class="code-content">          holder.genericText.setText(ext);</span></div>
+<div class="code-line context-line"><span class="line-number">939</span><span class="code-content">          holder.genericIcon.setImageDrawable(null);</span></div>
+<div class="code-line context-line"><span class="line-number">940</span><span class="code-content">          holder.genericIcon.setVisibility(View.INVISIBLE);</span></div>
+<div class="code-line context-line"><span class="line-number">941</span><span class="code-content">        } else {</span></div>
+<div class="code-line context-line"><span class="line-number">942</span><span class="code-content">          // we could not find the extension, set a generic file type icon probably a directory</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">983</span><span class="code-content">          &amp;&amp; getBoolean(PREFERENCE_SHOW_THUMB))) {</span></div>
+<div class="code-line context-line"><span class="line-number">984</span><span class="code-content">        holder.genericIcon.setVisibility(View.VISIBLE);</span></div>
+<div class="code-line context-line"><span class="line-number">985</span><span class="code-content">        GradientDrawable gradientDrawable = (GradientDrawable) holder.genericIcon.getBackground();</span></div>
+<div class="code-line context-line"><span class="line-number">986</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">987</span><span class="code-content">        if (getBoolean(PREFERENCE_COLORIZE_ICONS)) {</span></div>
+<div class="code-line correct-line"><span class="line-number">988</span><span class="code-content">          if (rowItem.isDirectory) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">989</span><span class="code-content">            gradientDrawable.setColor(iconSkinColor);</span></div>
+<div class="code-line context-line"><span class="line-number">990</span><span class="code-content">          } else {</span></div>
+<div class="code-line context-line"><span class="line-number">991</span><span class="code-content">            ColorUtils.colorizeIcons(context, rowItem.filetype, gradientDrawable, iconSkinColor);</span></div>
+<div class="code-line context-line"><span class="line-number">992</span><span class="code-content">          }</span></div>
+<div class="code-line context-line"><span class="line-number">993</span><span class="code-content">        } else {</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-1">
+    File: com/amaze/filemanager/asynchronous/asynctasks/LoadFilesListTask.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\asynchronous\asynctasks\LoadFilesListTask.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">155</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">156</span><span class="code-content">    mainFragmentViewModel.setFolderCount(0);</span></div>
+<div class="code-line context-line"><span class="line-number">157</span><span class="code-content">    mainFragmentViewModel.setFileCount(0);</span></div>
+<div class="code-line context-line"><span class="line-number">158</span><span class="code-content">    final List&lt;LayoutElementParcelable&gt; list;</span></div>
+<div class="code-line context-line"><span class="line-number">159</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">160</span><span class="code-content">    switch (openmode) { // Branch: Covered 2/8</span></div>
+<div class="code-line context-line"><span class="line-number">161</span><span class="code-content">      case SMB:</span></div>
+<div class="code-line context-line"><span class="line-number">162</span><span class="code-content">        list = listSmb(hFile, mainActivityViewModel, mainFragment);</span></div>
+<div class="code-line context-line"><span class="line-number">163</span><span class="code-content">        break;</span></div>
+<div class="code-line context-line"><span class="line-number">164</span><span class="code-content">      case FTP:</span></div>
+<div class="code-line context-line"><span class="line-number">165</span><span class="code-content">      case SFTP:</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">196</span><span class="code-content">        // we&#x27;re neither in OTG not in SMB, load the list based on root/general filesystem</span></div>
+<div class="code-line context-line"><span class="line-number">197</span><span class="code-content">        list = listDefault(mainActivityViewModel, mainFragment);</span></div>
+<div class="code-line context-line"><span class="line-number">198</span><span class="code-content">        break;</span></div>
+<div class="code-line context-line"><span class="line-number">199</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">200</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">201</span><span class="code-content">    if (list != null // Branch: Covered 3/4</span></div>
+<div class="code-line context-line"><span class="line-number">202</span><span class="code-content">        &amp;&amp; !(openmode == OpenMode.CUSTOM</span></div>
+<div class="code-line correct-line"><span class="line-number">203</span><span class="code-content">            &amp;&amp; ((&quot;5&quot;).equals(path) || (&quot;6&quot;).equals(path) || (&quot;7&quot;).equals(path)))) { // Branch: Covered 2/6</span></div>
+<div class="code-line context-line"><span class="line-number">204</span><span class="code-content">      postListCustomPathProcess(list, mainFragment);</span></div>
+<div class="code-line context-line"><span class="line-number">205</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">206</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">207</span><span class="code-content">    return new Pair&lt;&gt;(openmode, list);</span></div>
+<div class="code-line context-line"><span class="line-number">208</span><span class="code-content">  }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">254</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">255</span><span class="code-content">  private List&lt;LayoutElementParcelable&gt; getCachedMediaList(</span></div>
+<div class="code-line context-line"><span class="line-number">256</span><span class="code-content">      MainActivityViewModel mainActivityViewModel) throws IllegalStateException {</span></div>
+<div class="code-line context-line"><span class="line-number">257</span><span class="code-content">    List&lt;LayoutElementParcelable&gt; list;</span></div>
+<div class="code-line context-line"><span class="line-number">258</span><span class="code-content">    int mediaType = Integer.parseInt(path);</span></div>
+<div class="code-line correct-line"><span class="line-number">259</span><span class="code-content">    if (5 == mediaType // Branch: Covered 2/6</span></div>
+<div class="code-line context-line"><span class="line-number">260</span><span class="code-content">        || 6 == mediaType</span></div>
+<div class="code-line context-line"><span class="line-number">261</span><span class="code-content">        || 7 == mediaType</span></div>
+<div class="code-line context-line"><span class="line-number">262</span><span class="code-content">        || mainActivityViewModel.getMediaCacheHash().get(mediaType) == null</span></div>
+<div class="code-line context-line"><span class="line-number">263</span><span class="code-content">        || forceReload) {</span></div>
+<div class="code-line correct-line"><span class="line-number">264</span><span class="code-content">      switch (Integer.parseInt(path)) { // Branch: Covered 1/9</span></div>
+<div class="code-line context-line"><span class="line-number">265</span><span class="code-content">        case 0:</span></div>
+<div class="code-line context-line"><span class="line-number">266</span><span class="code-content">          list = listImages();</span></div>
+<div class="code-line context-line"><span class="line-number">267</span><span class="code-content">          break;</span></div>
+<div class="code-line context-line"><span class="line-number">268</span><span class="code-content">        case 1:</span></div>
+<div class="code-line context-line"><span class="line-number">269</span><span class="code-content">          list = listVideos();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">287</span><span class="code-content">          list = listTrashBinFiles();</span></div>
+<div class="code-line context-line"><span class="line-number">288</span><span class="code-content">          break;</span></div>
+<div class="code-line context-line"><span class="line-number">289</span><span class="code-content">        default:</span></div>
+<div class="code-line context-line"><span class="line-number">290</span><span class="code-content">          throw new IllegalStateException();</span></div>
+<div class="code-line context-line"><span class="line-number">291</span><span class="code-content">      }</span></div>
+<div class="code-line correct-line"><span class="line-number">292</span><span class="code-content">      if (5 != mediaType &amp;&amp; 6 != mediaType &amp;&amp; 7 != mediaType) { // Branch: Covered 2/6</span></div>
+<div class="code-line context-line"><span class="line-number">293</span><span class="code-content">        // not saving recent files in cache</span></div>
+<div class="code-line context-line"><span class="line-number">294</span><span class="code-content">        mainActivityViewModel.getMediaCacheHash().set(mediaType, list);</span></div>
+<div class="code-line context-line"><span class="line-number">295</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">296</span><span class="code-content">    } else {</span></div>
+<div class="code-line context-line"><span class="line-number">297</span><span class="code-content">      list = mainActivityViewModel.getFromMediaFilesCache(mediaType);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">536</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">537</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">538</span><span class="code-content">  private @Nullable List&lt;LayoutElementParcelable&gt; listRecentFiles() {</span></div>
+<div class="code-line context-line"><span class="line-number">539</span><span class="code-content">    final Context context = this.context.get();</span></div>
+<div class="code-line context-line"><span class="line-number">540</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">541</span><span class="code-content">    if (context == null) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">542</span><span class="code-content">      cancel(true);</span></div>
+<div class="code-line context-line"><span class="line-number">543</span><span class="code-content">      return null;</span></div>
+<div class="code-line context-line"><span class="line-number">544</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">545</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">546</span><span class="code-content">    List&lt;LayoutElementParcelable&gt; recentFiles = new ArrayList&lt;&gt;(20);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">549</span><span class="code-content">    };</span></div>
+<div class="code-line context-line"><span class="line-number">550</span><span class="code-content">    Calendar c = Calendar.getInstance();</span></div>
+<div class="code-line context-line"><span class="line-number">551</span><span class="code-content">    c.set(Calendar.DAY_OF_YEAR, c.get(Calendar.DAY_OF_YEAR) - 2);</span></div>
+<div class="code-line context-line"><span class="line-number">552</span><span class="code-content">    Date d = c.getTime();</span></div>
+<div class="code-line context-line"><span class="line-number">553</span><span class="code-content">    Cursor cursor;</span></div>
+<div class="code-line correct-line"><span class="line-number">554</span><span class="code-content">    if (SDK_INT &gt;= Q) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">555</span><span class="code-content">      Bundle queryArgs = new Bundle();</span></div>
+<div class="code-line context-line"><span class="line-number">556</span><span class="code-content">      queryArgs.putInt(ContentResolver.QUERY_ARG_LIMIT, 20);</span></div>
+<div class="code-line context-line"><span class="line-number">557</span><span class="code-content">      queryArgs.putStringArray(</span></div>
+<div class="code-line context-line"><span class="line-number">558</span><span class="code-content">          ContentResolver.QUERY_ARG_SORT_COLUMNS,</span></div>
+<div class="code-line context-line"><span class="line-number">559</span><span class="code-content">          new String[] {MediaStore.Files.FileColumns.DATE_MODIFIED});</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">573</span><span class="code-content">                  projection,</span></div>
+<div class="code-line context-line"><span class="line-number">574</span><span class="code-content">                  null,</span></div>
+<div class="code-line context-line"><span class="line-number">575</span><span class="code-content">                  null,</span></div>
+<div class="code-line context-line"><span class="line-number">576</span><span class="code-content">                  MediaStore.Files.FileColumns.DATE_MODIFIED + &quot; DESC LIMIT 20&quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">577</span><span class="code-content">    }</span></div>
+<div class="code-line correct-line"><span class="line-number">578</span><span class="code-content">    if (cursor == null) return recentFiles; // Branch: Covered 1/2</span></div>
+<div class="code-line correct-line"><span class="line-number">579</span><span class="code-content">    if (cursor.getCount() &gt; 0 &amp;&amp; cursor.moveToFirst()) { // Branch: Covered 2/4</span></div>
+<div class="code-line context-line"><span class="line-number">580</span><span class="code-content">      do {</span></div>
+<div class="code-line context-line"><span class="line-number">581</span><span class="code-content">        String path = cursor.getString(cursor.getColumnIndex(MediaStore.Files.FileColumns.DATA));</span></div>
+<div class="code-line context-line"><span class="line-number">582</span><span class="code-content">        File f = new File(path);</span></div>
+<div class="code-line correct-line"><span class="line-number">583</span><span class="code-content">        if (d.compareTo(new Date(f.lastModified())) != 1 &amp;&amp; !f.isDirectory()) { // Branch: Covered 4/4</span></div>
+<div class="code-line context-line"><span class="line-number">584</span><span class="code-content">          HybridFileParcelable strings =</span></div>
+<div class="code-line context-line"><span class="line-number">585</span><span class="code-content">              RootHelper.generateBaseFile(new File(path), showHiddenFiles);</span></div>
+<div class="code-line correct-line"><span class="line-number">586</span><span class="code-content">          if (strings != null) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">587</span><span class="code-content">            LayoutElementParcelable parcelable = createListParcelables(strings);</span></div>
+<div class="code-line correct-line"><span class="line-number">588</span><span class="code-content">            if (parcelable != null) recentFiles.add(parcelable); // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">589</span><span class="code-content">          }</span></div>
+<div class="code-line context-line"><span class="line-number">590</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">591</span><span class="code-content">      } while (cursor.moveToNext()); // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">592</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">593</span><span class="code-content">    cursor.close();</span></div>
+<div class="code-line context-line"><span class="line-number">594</span><span class="code-content">    return recentFiles;</span></div>
+<div class="code-line context-line"><span class="line-number">595</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">596</span><span class="code-content"></span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-2">
+    File: com/amaze/filemanager/filesystem/HybridFile.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\filesystem\HybridFile.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">182</span><span class="code-content">      mode = OpenMode.OTG;</span></div>
+<div class="code-line context-line"><span class="line-number">183</span><span class="code-content">    } else if (path.startsWith(FTP_URI_PREFIX) || path.startsWith(FTPS_URI_PREFIX)) {</span></div>
+<div class="code-line context-line"><span class="line-number">184</span><span class="code-content">      mode = OpenMode.FTP;</span></div>
+<div class="code-line context-line"><span class="line-number">185</span><span class="code-content">    } else if (path.startsWith(DOCUMENT_FILE_PREFIX)) {</span></div>
+<div class="code-line context-line"><span class="line-number">186</span><span class="code-content">      mode = OpenMode.DOCUMENT_FILE;</span></div>
+<div class="code-line correct-line"><span class="line-number">187</span><span class="code-content">    } else if (isCustomPath()) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">188</span><span class="code-content">      mode = OpenMode.CUSTOM;</span></div>
+<div class="code-line context-line"><span class="line-number">189</span><span class="code-content">    } else if (path.startsWith(CloudHandler.CLOUD_PREFIX_BOX)) {</span></div>
+<div class="code-line context-line"><span class="line-number">190</span><span class="code-content">      mode = OpenMode.BOX;</span></div>
+<div class="code-line context-line"><span class="line-number">191</span><span class="code-content">    } else if (path.startsWith(CloudHandler.CLOUD_PREFIX_ONE_DRIVE)) {</span></div>
+<div class="code-line context-line"><span class="line-number">192</span><span class="code-content">      mode = OpenMode.ONEDRIVE;</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">254</span><span class="code-content">  public boolean isSftp() {</span></div>
+<div class="code-line context-line"><span class="line-number">255</span><span class="code-content">    return mode == OpenMode.SFTP;</span></div>
+<div class="code-line context-line"><span class="line-number">256</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">257</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">258</span><span class="code-content">  public boolean isOtgFile() {</span></div>
+<div class="code-line correct-line"><span class="line-number">259</span><span class="code-content">    return mode == OpenMode.OTG; // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">260</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">261</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">262</span><span class="code-content">  public boolean isFtp() {</span></div>
+<div class="code-line context-line"><span class="line-number">263</span><span class="code-content">    return mode == OpenMode.FTP;</span></div>
+<div class="code-line context-line"><span class="line-number">264</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">265</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">266</span><span class="code-content">  public boolean isDocumentFile() {</span></div>
+<div class="code-line correct-line"><span class="line-number">267</span><span class="code-content">    return mode == OpenMode.DOCUMENT_FILE; // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">268</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">269</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">270</span><span class="code-content">  public boolean isBoxFile() {</span></div>
+<div class="code-line context-line"><span class="line-number">271</span><span class="code-content">    return mode == OpenMode.BOX;</span></div>
+<div class="code-line context-line"><span class="line-number">272</span><span class="code-content">  }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">548</span><span class="code-content">        || path.equals(&quot;1&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">549</span><span class="code-content">        || path.equals(&quot;2&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">550</span><span class="code-content">        || path.equals(&quot;3&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">551</span><span class="code-content">        || path.equals(&quot;4&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">552</span><span class="code-content">        || path.equals(&quot;5&quot;)</span></div>
+<div class="code-line correct-line"><span class="line-number">553</span><span class="code-content">        || path.equals(&quot;6&quot;); // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">554</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">555</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">556</span><span class="code-content">  /** Helper method to get parent path */</span></div>
+<div class="code-line context-line"><span class="line-number">557</span><span class="code-content">  @Nullable</span></div>
+<div class="code-line context-line"><span class="line-number">558</span><span class="code-content">  public String getParent(Context context) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1377</span><span class="code-content">   * Whether file is a simple file (i.e. not a directory/smb/otg/other)</span></div>
+<div class="code-line context-line"><span class="line-number">1378</span><span class="code-content">   *</span></div>
+<div class="code-line context-line"><span class="line-number">1379</span><span class="code-content">   * @return true if file; other wise false</span></div>
+<div class="code-line context-line"><span class="line-number">1380</span><span class="code-content">   */</span></div>
+<div class="code-line context-line"><span class="line-number">1381</span><span class="code-content">  public boolean isSimpleFile() {</span></div>
+<div class="code-line correct-line"><span class="line-number">1382</span><span class="code-content">    return !isSmb() // Branch: Covered 1/2</span></div>
+<div class="code-line correct-line"><span class="line-number">1383</span><span class="code-content">        &amp;&amp; !isOtgFile() // Branch: Covered 1/2</span></div>
+<div class="code-line correct-line"><span class="line-number">1384</span><span class="code-content">        &amp;&amp; !isDocumentFile() // Branch: Covered 1/2</span></div>
+<div class="code-line correct-line"><span class="line-number">1385</span><span class="code-content">        &amp;&amp; !isCustomPath() // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">1386</span><span class="code-content">        &amp;&amp; !android.util.Patterns.EMAIL_ADDRESS.matcher(path).matches()</span></div>
+<div class="code-line context-line"><span class="line-number">1387</span><span class="code-content">        &amp;&amp; (getFile() != null &amp;&amp; !getFile().isDirectory())</span></div>
+<div class="code-line context-line"><span class="line-number">1388</span><span class="code-content">        &amp;&amp; !isOneDriveFile()</span></div>
+<div class="code-line context-line"><span class="line-number">1389</span><span class="code-content">        &amp;&amp; !isGoogleDriveFile()</span></div>
+<div class="code-line context-line"><span class="line-number">1390</span><span class="code-content">        &amp;&amp; !isDropBoxFile()</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-3">
+    File: com/amaze/filemanager/ui/activities/MainActivity.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\ui\activities\MainActivity.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">980</span><span class="code-content">      pasteHelper.invalidateSnackbar(this, showSnackbar);</span></div>
+<div class="code-line context-line"><span class="line-number">981</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">982</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">983</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">984</span><span class="code-content">  public void exit() {</span></div>
+<div class="code-line bug-line"><span class="line-number">985</span><span class="code-content">    if (backPressedToExitOnce) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">986</span><span class="code-content">      NetCopyClientConnectionPool.INSTANCE.shutdown();</span></div>
+<div class="code-line context-line"><span class="line-number">987</span><span class="code-content">      finish();</span></div>
+<div class="code-line context-line"><span class="line-number">988</span><span class="code-content">      if (isRootExplorer()) {</span></div>
+<div class="code-line context-line"><span class="line-number">989</span><span class="code-content">        closeInteractiveShell();</span></div>
+<div class="code-line context-line"><span class="line-number">990</span><span class="code-content">      }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1331</span><span class="code-content">    outState.putBoolean(KEY_SELECTED_LIST_ITEM, listItemSelected);</span></div>
+<div class="code-line context-line"><span class="line-number">1332</span><span class="code-content">    if (pasteHelper != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">1333</span><span class="code-content">      outState.putParcelable(PASTEHELPER_BUNDLE, pasteHelper);</span></div>
+<div class="code-line context-line"><span class="line-number">1334</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1335</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">1336</span><span class="code-content">    if (oppathe != null) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">1337</span><span class="code-content">      outState.putString(KEY_OPERATION_PATH, oppathe);</span></div>
+<div class="code-line context-line"><span class="line-number">1338</span><span class="code-content">      outState.putString(KEY_OPERATED_ON_PATH, oppathe1);</span></div>
+<div class="code-line context-line"><span class="line-number">1339</span><span class="code-content">      outState.putParcelableArrayList(KEY_OPERATIONS_PATH_LIST, (oparrayList));</span></div>
+<div class="code-line context-line"><span class="line-number">1340</span><span class="code-content">      outState.putInt(KEY_OPERATION, operation);</span></div>
+<div class="code-line context-line"><span class="line-number">1341</span><span class="code-content">    }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1578</span><span class="code-content">    return drawer;</span></div>
+<div class="code-line context-line"><span class="line-number">1579</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1580</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1581</span><span class="code-content">  protected void onActivityResult(int requestCode, int responseCode, Intent intent) {</span></div>
+<div class="code-line context-line"><span class="line-number">1582</span><span class="code-content">    super.onActivityResult(requestCode, responseCode, intent);</span></div>
+<div class="code-line bug-line"><span class="line-number">1583</span><span class="code-content">    if (requestCode == 3) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">1584</span><span class="code-content">      Uri treeUri;</span></div>
+<div class="code-line bug-line"><span class="line-number">1585</span><span class="code-content">      if (responseCode == Activity.RESULT_OK) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">1586</span><span class="code-content">        // Get Uri from Storage Access Framework.</span></div>
+<div class="code-line context-line"><span class="line-number">1587</span><span class="code-content">        treeUri = intent.getData();</span></div>
+<div class="code-line context-line"><span class="line-number">1588</span><span class="code-content">        // Persist URI - this is required for verification of writability.</span></div>
+<div class="code-line context-line"><span class="line-number">1589</span><span class="code-content">        if (treeUri != null)</span></div>
+<div class="code-line context-line"><span class="line-number">1590</span><span class="code-content">          getPrefs()</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">916</span><span class="code-content">    return volumes;</span></div>
+<div class="code-line context-line"><span class="line-number">917</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">918</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">919</span><span class="code-content">  @Override</span></div>
+<div class="code-line context-line"><span class="line-number">920</span><span class="code-content">  public void onBackPressed() {</span></div>
+<div class="code-line correct-line"><span class="line-number">921</span><span class="code-content">    if (!drawer.isLocked() &amp;&amp; drawer.isOpen()) { // Branch: Covered 2/4</span></div>
+<div class="code-line context-line"><span class="line-number">922</span><span class="code-content">      drawer.close();</span></div>
+<div class="code-line context-line"><span class="line-number">923</span><span class="code-content">      return;</span></div>
+<div class="code-line context-line"><span class="line-number">924</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">925</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">926</span><span class="code-content">    Fragment fragment = getFragmentAtFrame();</span></div>
+<div class="code-line correct-line"><span class="line-number">927</span><span class="code-content">    if (getAppbar().getSearchView().isShown()) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">928</span><span class="code-content">      // hide search view if visible, with an animation</span></div>
+<div class="code-line context-line"><span class="line-number">929</span><span class="code-content">      getAppbar().getSearchView().hideSearchView();</span></div>
+<div class="code-line correct-line"><span class="line-number">930</span><span class="code-content">    } else if (fragment instanceof TabFragment) { // Branch: Covered 1/2</span></div>
+<div class="code-line correct-line"><span class="line-number">931</span><span class="code-content">      if (floatingActionButton.isOpen()) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">932</span><span class="code-content">        floatingActionButton.close(true);</span></div>
+<div class="code-line context-line"><span class="line-number">933</span><span class="code-content">      } else {</span></div>
+<div class="code-line context-line"><span class="line-number">934</span><span class="code-content">        executeWithMainFragment(</span></div>
+<div class="code-line context-line"><span class="line-number">935</span><span class="code-content">            mainFragment -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">936</span><span class="code-content">              mainFragment.goBack();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1441</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">1442</span><span class="code-content">      };</span></div>
+<div class="code-line context-line"><span class="line-number">1443</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1444</span><span class="code-content">  @Override</span></div>
+<div class="code-line context-line"><span class="line-number">1445</span><span class="code-content">  public boolean onKeyDown(int keyCode, KeyEvent event) {</span></div>
+<div class="code-line correct-line"><span class="line-number">1446</span><span class="code-content">    if (keyCode == KeyEvent.KEYCODE_MENU) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">1447</span><span class="code-content">      /*</span></div>
+<div class="code-line context-line"><span class="line-number">1448</span><span class="code-content">      ImageView ib = findViewById(R.id.action_overflow);</span></div>
+<div class="code-line context-line"><span class="line-number">1449</span><span class="code-content">      if (ib.getVisibility() == View.VISIBLE) {</span></div>
+<div class="code-line context-line"><span class="line-number">1450</span><span class="code-content">          ib.performClick();</span></div>
+<div class="code-line context-line"><span class="line-number">1451</span><span class="code-content">      }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1541</span><span class="code-content">  public SpeedDialView getFAB() {</span></div>
+<div class="code-line context-line"><span class="line-number">1542</span><span class="code-content">    return floatingActionButton;</span></div>
+<div class="code-line context-line"><span class="line-number">1543</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1544</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1545</span><span class="code-content">  public void showFab() {</span></div>
+<div class="code-line correct-line"><span class="line-number">1546</span><span class="code-content">    if (getCurrentMainFragment() != null &amp;&amp; getCurrentMainFragment().getHideFab()) { // Branch: Covered 3/4</span></div>
+<div class="code-line context-line"><span class="line-number">1547</span><span class="code-content">      hideFab();</span></div>
+<div class="code-line context-line"><span class="line-number">1548</span><span class="code-content">    } else {</span></div>
+<div class="code-line context-line"><span class="line-number">1549</span><span class="code-content">      showFab(getFAB());</span></div>
+<div class="code-line context-line"><span class="line-number">1550</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1551</span><span class="code-content">  }</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-4">
+    File: com/amaze/filemanager/ui/colors/ColorPreferenceHelper.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\ui\colors\ColorPreferenceHelper.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">79</span><span class="code-content">   *</span></div>
+<div class="code-line context-line"><span class="line-number">80</span><span class="code-content">   * @param num The primary color index</span></div>
+<div class="code-line context-line"><span class="line-number">81</span><span class="code-content">   * @return The ColorUsage for the given primary color.</span></div>
+<div class="code-line context-line"><span class="line-number">82</span><span class="code-content">   */</span></div>
+<div class="code-line context-line"><span class="line-number">83</span><span class="code-content">  public static @ColorInt int getPrimary(UserColorPreferences currentColors, int num) {</span></div>
+<div class="code-line bug-line"><span class="line-number">84</span><span class="code-content">    return num == 1 ? currentColors.getPrimarySecondTab() : currentColors.getPrimaryFirstTab(); // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">85</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">86</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">87</span><span class="code-content">  private UserColorPreferences currentColors;</span></div>
+<div class="code-line context-line"><span class="line-number">88</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">89</span><span class="code-content">  public UserColorPreferences getCurrentUserColorPreferences(</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-5">
+    File: com/amaze/filemanager/ui/colors/ColorUtils.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\ui\colors\ColorUtils.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">34</span><span class="code-content"> */</span></div>
+<div class="code-line context-line"><span class="line-number">35</span><span class="code-content">public class ColorUtils {</span></div>
+<div class="code-line context-line"><span class="line-number">36</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">37</span><span class="code-content">  public static void colorizeIcons(</span></div>
+<div class="code-line context-line"><span class="line-number">38</span><span class="code-content">      Context context, int iconType, GradientDrawable background, @ColorInt int defaultColor) {</span></div>
+<div class="code-line correct-line"><span class="line-number">39</span><span class="code-content">    switch (iconType) { // Branch: Covered 3/9</span></div>
+<div class="code-line context-line"><span class="line-number">40</span><span class="code-content">      case Icons.VIDEO:</span></div>
+<div class="code-line context-line"><span class="line-number">41</span><span class="code-content">      case Icons.IMAGE:</span></div>
+<div class="code-line context-line"><span class="line-number">42</span><span class="code-content">        background.setColor(Utils.getColor(context, R.color.video_item));</span></div>
+<div class="code-line context-line"><span class="line-number">43</span><span class="code-content">        break;</span></div>
+<div class="code-line context-line"><span class="line-number">44</span><span class="code-content">      case Icons.AUDIO:</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-6">
+    File: com/amaze/filemanager/ui/fragments/MainFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\ui\fragments\MainFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">249</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">250</span><span class="code-content">    mSwipeRefreshLayout.setOnRefreshListener(() -&gt; updateList(true));</span></div>
+<div class="code-line context-line"><span class="line-number">251</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">252</span><span class="code-content">    // String itemsstring = res.getString(R.string.items);// TODO: 23/5/2017 use or delete</span></div>
+<div class="code-line context-line"><span class="line-number">253</span><span class="code-content">    mToolbarContainer.setBackgroundColor(</span></div>
+<div class="code-line bug-line"><span class="line-number">254</span><span class="code-content">        MainActivity.currentTab == 1 // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">255</span><span class="code-content">            ? mainFragmentViewModel.getPrimaryTwoColor()</span></div>
+<div class="code-line context-line"><span class="line-number">256</span><span class="code-content">            : mainFragmentViewModel.getPrimaryColor());</span></div>
+<div class="code-line context-line"><span class="line-number">257</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">258</span><span class="code-content">    //   listView.setPadding(listView.getPaddingLeft(), paddingTop, listView.getPaddingRight(),</span></div>
+<div class="code-line context-line"><span class="line-number">259</span><span class="code-content">    // listView.getPaddingBottom());</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1138</span><span class="code-content">        } else {</span></div>
+<div class="code-line context-line"><span class="line-number">1139</span><span class="code-content">          loadlist(mainFragmentViewModel.getHome(), false, OpenMode.FILE, false);</span></div>
+<div class="code-line context-line"><span class="line-number">1140</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">1141</span><span class="code-content">      } else if ((&quot;/&quot;).equals(mainFragmentViewModel.getCurrentPath())</span></div>
+<div class="code-line context-line"><span class="line-number">1142</span><span class="code-content">          || (mainFragmentViewModel.getHome() != null</span></div>
+<div class="code-line bug-line"><span class="line-number">1143</span><span class="code-content">              &amp;&amp; mainFragmentViewModel.getHome().equals(mainFragmentViewModel.getCurrentPath())) // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">1144</span><span class="code-content">          || mainFragmentViewModel.getIsOnCloudRoot()) {</span></div>
+<div class="code-line context-line"><span class="line-number">1145</span><span class="code-content">        getMainActivity().exit();</span></div>
+<div class="code-line context-line"><span class="line-number">1146</span><span class="code-content">      } else if (OpenMode.DOCUMENT_FILE.equals(mainFragmentViewModel.getOpenMode())</span></div>
+<div class="code-line context-line"><span class="line-number">1147</span><span class="code-content">          &amp;&amp; !currentFile.getPath().startsWith(&quot;content://&quot;)) {</span></div>
+<div class="code-line context-line"><span class="line-number">1148</span><span class="code-content">        if (CollectionsKt.contains(ANDROID_DEVICE_DATA_DIRS, currentFile.getParent(getContext()))) {</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">654</span><span class="code-content">    if (SDK_INT &gt;= Q &amp;&amp; ArraysKt.any(ANDROID_DATA_DIRS, providedPath::contains)) {</span></div>
+<div class="code-line context-line"><span class="line-number">655</span><span class="code-content">      openMode = loadPathInQ(actualPath, providedPath, providedOpenMode);</span></div>
+<div class="code-line context-line"><span class="line-number">656</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">657</span><span class="code-content">    // Monkeypatch :( to fix problems with unexpected non content URI path while openMode is still</span></div>
+<div class="code-line context-line"><span class="line-number">658</span><span class="code-content">    // OpenMode.DOCUMENT_FILE</span></div>
+<div class="code-line correct-line"><span class="line-number">659</span><span class="code-content">    else if (actualPath.startsWith(&quot;/&quot;) // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">660</span><span class="code-content">        &amp;&amp; (OpenMode.DOCUMENT_FILE.equals(openMode) || OpenMode.ANDROID_DATA.equals(openMode))) {</span></div>
+<div class="code-line context-line"><span class="line-number">661</span><span class="code-content">      openMode = OpenMode.FILE;</span></div>
+<div class="code-line context-line"><span class="line-number">662</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">663</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">664</span><span class="code-content">    loadFilesListTask =</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">863</span><span class="code-content">        adapter.setItems(listView, mainFragmentViewModel.getListElements());</span></div>
+<div class="code-line context-line"><span class="line-number">864</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">865</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">866</span><span class="code-content">      mainFragmentViewModel.setStopAnims(true);</span></div>
+<div class="code-line context-line"><span class="line-number">867</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">868</span><span class="code-content">      if (mainFragmentViewModel.getOpenMode() != OpenMode.CUSTOM // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">869</span><span class="code-content">          &amp;&amp; mainFragmentViewModel.getOpenMode() != OpenMode.TRASH_BIN) {</span></div>
+<div class="code-line context-line"><span class="line-number">870</span><span class="code-content">        DataUtils.getInstance().addHistoryFile(mainFragmentViewModel.getCurrentPath());</span></div>
+<div class="code-line context-line"><span class="line-number">871</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">872</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">873</span><span class="code-content">      listView.setAdapter(adapter);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">974</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">975</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">976</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">977</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">978</span><span class="code-content">  private void startFileObserver() {</span></div>
+<div class="code-line correct-line"><span class="line-number">979</span><span class="code-content">    switch (mainFragmentViewModel.getOpenMode()) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">980</span><span class="code-content">      case ROOT:</span></div>
+<div class="code-line context-line"><span class="line-number">981</span><span class="code-content">      case FILE:</span></div>
+<div class="code-line context-line"><span class="line-number">982</span><span class="code-content">        if (customFileObserver != null</span></div>
+<div class="code-line context-line"><span class="line-number">983</span><span class="code-content">            &amp;&amp; !customFileObserver.wasStopped()</span></div>
+<div class="code-line context-line"><span class="line-number">984</span><span class="code-content">            &amp;&amp; customFileObserver.getPath().equals(getCurrentPath())) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1081</span><span class="code-content">    b.putInt(&quot;top&quot;, top);</span></div>
+<div class="code-line context-line"><span class="line-number">1082</span><span class="code-content">    scrolls.put(mainFragmentViewModel.getCurrentPath(), b);</span></div>
+<div class="code-line context-line"><span class="line-number">1083</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1084</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1085</span><span class="code-content">  public void goBack() {</span></div>
+<div class="code-line correct-line"><span class="line-number">1086</span><span class="code-content">    if (mainFragmentViewModel.getOpenMode() == OpenMode.CUSTOM // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">1087</span><span class="code-content">        || mainFragmentViewModel.getOpenMode() == OpenMode.TRASH_BIN) {</span></div>
+<div class="code-line context-line"><span class="line-number">1088</span><span class="code-content">      loadlist(mainFragmentViewModel.getHome(), false, OpenMode.FILE, false);</span></div>
+<div class="code-line context-line"><span class="line-number">1089</span><span class="code-content">      setHideFab(false);</span></div>
+<div class="code-line context-line"><span class="line-number">1090</span><span class="code-content">      return;</span></div>
+<div class="code-line context-line"><span class="line-number">1091</span><span class="code-content">    }</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-7">
+    File: com/amaze/filemanager/ui/fragments/TabFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\ui\fragments\TabFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">211</span><span class="code-content">            &amp;&amp; i == pos) {</span></div>
+<div class="code-line context-line"><span class="line-number">212</span><span class="code-content">          updateBottomBar(mainFragment);</span></div>
+<div class="code-line context-line"><span class="line-number">213</span><span class="code-content">          requireMainActivity()</span></div>
+<div class="code-line context-line"><span class="line-number">214</span><span class="code-content">              .getDrawer()</span></div>
+<div class="code-line context-line"><span class="line-number">215</span><span class="code-content">              .selectCorrectDrawerItemForPath(mainFragment.getCurrentPath());</span></div>
+<div class="code-line correct-line"><span class="line-number">216</span><span class="code-content">          if (mainFragment.getMainFragmentViewModel().getOpenMode() == OpenMode.FILE) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">217</span><span class="code-content">            tabHandler.update(</span></div>
+<div class="code-line context-line"><span class="line-number">218</span><span class="code-content">                new Tab(</span></div>
+<div class="code-line context-line"><span class="line-number">219</span><span class="code-content">                    i,</span></div>
+<div class="code-line context-line"><span class="line-number">220</span><span class="code-content">                    mainFragment.getCurrentPath(),</span></div>
+<div class="code-line context-line"><span class="line-number">221</span><span class="code-content">                    mainFragment.getMainFragmentViewModel().getHome()));</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-8">
+    File: com/amaze/filemanager/ui/views/DividerItemDecoration.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\ui\views\DividerItemDecoration.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">72</span><span class="code-content">    for (int i = showtopbottomdividers ? 0 : 1; i &lt; childCount - 1; i++) {</span></div>
+<div class="code-line context-line"><span class="line-number">73</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">74</span><span class="code-content">      final View child = parent.getChildAt(i);</span></div>
+<div class="code-line context-line"><span class="line-number">75</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">76</span><span class="code-content">      int viewType = parent.getChildViewHolder(child).getItemViewType();</span></div>
+<div class="code-line correct-line"><span class="line-number">77</span><span class="code-content">      if (viewType == RecyclerAdapter.TYPE_HEADER_FILES // Branch: Covered 4/4</span></div>
+<div class="code-line context-line"><span class="line-number">78</span><span class="code-content">          || viewType == RecyclerAdapter.TYPE_HEADER_FOLDERS) {</span></div>
+<div class="code-line context-line"><span class="line-number">79</span><span class="code-content">        // no need to decorate header views</span></div>
+<div class="code-line context-line"><span class="line-number">80</span><span class="code-content">        continue;</span></div>
+<div class="code-line context-line"><span class="line-number">81</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">82</span><span class="code-content"></span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-9">
+    File: com/amaze/filemanager/ui/views/Indicator.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\ui\views\Indicator.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">533</span><span class="code-content">  private void drawSelected(Canvas canvas) {</span></div>
+<div class="code-line context-line"><span class="line-number">534</span><span class="code-content">    canvas.drawCircle(selectedDotX, dotCenterY, dotRadius, selectedPaint);</span></div>
+<div class="code-line context-line"><span class="line-number">535</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">536</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">537</span><span class="code-content">  private void setSelectedPage(int now) {</span></div>
+<div class="code-line bug-line"><span class="line-number">538</span><span class="code-content">    if (now == currentPage) return; // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">539</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">540</span><span class="code-content">    pageChanging = true;</span></div>
+<div class="code-line context-line"><span class="line-number">541</span><span class="code-content">    previousPage = currentPage;</span></div>
+<div class="code-line context-line"><span class="line-number">542</span><span class="code-content">    currentPage = now;</span></div>
+<div class="code-line context-line"><span class="line-number">543</span><span class="code-content">    final int steps = Math.abs(now - previousPage);</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-10">
+    File: com/amaze/filemanager/ui/views/appbar/BottomBar.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\ui\views\appbar\BottomBar.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">369</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">370</span><span class="code-content">    if (news.length() == 0) return;</span></div>
+<div class="code-line context-line"><span class="line-number">371</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">372</span><span class="code-content">    MainActivityHelper mainActivityHelper = mainActivity.mainActivityHelper;</span></div>
+<div class="code-line context-line"><span class="line-number">373</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">374</span><span class="code-content">    switch (openmode) { // Branch: Covered 2/5</span></div>
+<div class="code-line context-line"><span class="line-number">375</span><span class="code-content">      case SFTP:</span></div>
+<div class="code-line context-line"><span class="line-number">376</span><span class="code-content">      case SMB:</span></div>
+<div class="code-line context-line"><span class="line-number">377</span><span class="code-content">      case FTP:</span></div>
+<div class="code-line context-line"><span class="line-number">378</span><span class="code-content">        newPath = HybridFile.parseAndFormatUriForDisplay(news);</span></div>
+<div class="code-line context-line"><span class="line-number">379</span><span class="code-content">        break;</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">402</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">403</span><span class="code-content">    if (!areButtonsShowing()) {</span></div>
+<div class="code-line context-line"><span class="line-number">404</span><span class="code-content">      final Animation slideIn = AnimationUtils.loadAnimation(mainActivity, R.anim.slide_in);</span></div>
+<div class="code-line context-line"><span class="line-number">405</span><span class="code-content">      Animation slideOut = AnimationUtils.loadAnimation(mainActivity, R.anim.slide_out);</span></div>
+<div class="code-line context-line"><span class="line-number">406</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">407</span><span class="code-content">      if (newPath.length() &gt; oldPath.length() // Branch: Covered 2/2</span></div>
+<div class="code-line correct-line"><span class="line-number">408</span><span class="code-content">          &amp;&amp; newPath.contains(oldPath) // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">409</span><span class="code-content">          &amp;&amp; oldPath.length() != 0) {</span></div>
+<div class="code-line context-line"><span class="line-number">410</span><span class="code-content">        // navigate forward</span></div>
+<div class="code-line context-line"><span class="line-number">411</span><span class="code-content">        fullPathAnim.setAnimation(slideIn);</span></div>
+<div class="code-line context-line"><span class="line-number">412</span><span class="code-content">        fullPathAnim</span></div>
+<div class="code-line context-line"><span class="line-number">413</span><span class="code-content">            .animate()</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">441</span><span class="code-content">                    // onAnimationEnd(animation);</span></div>
+<div class="code-line context-line"><span class="line-number">442</span><span class="code-content">                  }</span></div>
+<div class="code-line context-line"><span class="line-number">443</span><span class="code-content">                })</span></div>
+<div class="code-line context-line"><span class="line-number">444</span><span class="code-content">            .setStartDelay(PATH_ANIM_START_DELAY)</span></div>
+<div class="code-line context-line"><span class="line-number">445</span><span class="code-content">            .start();</span></div>
+<div class="code-line correct-line"><span class="line-number">446</span><span class="code-content">      } else if (newPath.length() &lt; oldPath.length() &amp;&amp; oldPath.contains(newPath)) { // Branch: Covered 3/4</span></div>
+<div class="code-line context-line"><span class="line-number">447</span><span class="code-content">        // navigate backwards</span></div>
+<div class="code-line context-line"><span class="line-number">448</span><span class="code-content">        fullPathAnim.setAnimation(slideOut);</span></div>
+<div class="code-line context-line"><span class="line-number">449</span><span class="code-content">        fullPathAnim</span></div>
+<div class="code-line context-line"><span class="line-number">450</span><span class="code-content">            .animate()</span></div>
+<div class="code-line context-line"><span class="line-number">451</span><span class="code-content">            .setListener(</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">469</span><span class="code-content">                    scroll.post(() -&gt; pathScroll.fullScroll(View.FOCUS_LEFT));</span></div>
+<div class="code-line context-line"><span class="line-number">470</span><span class="code-content">                  }</span></div>
+<div class="code-line context-line"><span class="line-number">471</span><span class="code-content">                })</span></div>
+<div class="code-line context-line"><span class="line-number">472</span><span class="code-content">            .setStartDelay(PATH_ANIM_START_DELAY)</span></div>
+<div class="code-line context-line"><span class="line-number">473</span><span class="code-content">            .start();</span></div>
+<div class="code-line correct-line"><span class="line-number">474</span><span class="code-content">      } else if (oldPath.isEmpty()) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">475</span><span class="code-content">        // case when app starts</span></div>
+<div class="code-line context-line"><span class="line-number">476</span><span class="code-content">        fullPathAnim.setAnimation(slideIn);</span></div>
+<div class="code-line context-line"><span class="line-number">477</span><span class="code-content">        fullPathAnim.setText(newPath);</span></div>
+<div class="code-line context-line"><span class="line-number">478</span><span class="code-content">        fullPathAnim</span></div>
+<div class="code-line context-line"><span class="line-number">479</span><span class="code-content">            .animate()</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-11">
+    File: com/amaze/filemanager/ui/views/drawer/ActionViewStateManager.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\ui\views\drawer\ActionViewStateManager.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">49</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">50</span><span class="code-content">  public void selectActionView(MenuItem item) {</span></div>
+<div class="code-line context-line"><span class="line-number">51</span><span class="code-content">    if (lastItemSelected != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">52</span><span class="code-content">      lastItemSelected.setColorFilter(idleIconColor);</span></div>
+<div class="code-line context-line"><span class="line-number">53</span><span class="code-content">    }</span></div>
+<div class="code-line correct-line"><span class="line-number">54</span><span class="code-content">    if (item.getActionView() != null) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">55</span><span class="code-content">      lastItemSelected = (AppCompatImageButton) item.getActionView();</span></div>
+<div class="code-line context-line"><span class="line-number">56</span><span class="code-content">      lastItemSelected.setColorFilter(selectedIconColor);</span></div>
+<div class="code-line context-line"><span class="line-number">57</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">58</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">59</span><span class="code-content">}</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-12">
+    File: com/amaze/filemanager/ui/views/drawer/CustomNavigationView.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\ui\views\drawer\CustomNavigationView.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">51</span><span class="code-content">    subclassListener = listener;</span></div>
+<div class="code-line context-line"><span class="line-number">52</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">53</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">54</span><span class="code-content">  @Override</span></div>
+<div class="code-line context-line"><span class="line-number">55</span><span class="code-content">  public boolean onNavigationItemSelected(@NonNull MenuItem item) {</span></div>
+<div class="code-line correct-line"><span class="line-number">56</span><span class="code-content">    if (subclassListener != null) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">57</span><span class="code-content">      boolean shouldBeSelected = subclassListener.onNavigationItemSelected(item);</span></div>
+<div class="code-line context-line"><span class="line-number">58</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">59</span><span class="code-content">      if (shouldBeSelected) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">60</span><span class="code-content">        onItemChecked(item);</span></div>
+<div class="code-line context-line"><span class="line-number">61</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">62</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">63</span><span class="code-content">      return shouldBeSelected;</span></div>
+<div class="code-line context-line"><span class="line-number">64</span><span class="code-content">    } else {</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-13">
+    File: com/amaze/filemanager/ui/views/drawer/Drawer.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\ui\views\drawer\Drawer.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">744</span><span class="code-content">      item.getActionView().setOnClickListener((view) -&gt; onNavigationItemActionClick(finalItem));</span></div>
+<div class="code-line context-line"><span class="line-number">745</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">746</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">747</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">748</span><span class="code-content">  public void closeIfNotLocked() {</span></div>
+<div class="code-line correct-line"><span class="line-number">749</span><span class="code-content">    if (!isLocked()) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">750</span><span class="code-content">      close();</span></div>
+<div class="code-line context-line"><span class="line-number">751</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">752</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">753</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">754</span><span class="code-content">  public boolean isLocked() {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">775</span><span class="code-content">    if (pending_fragmentTransaction != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">776</span><span class="code-content">      pending_fragmentTransaction.commit();</span></div>
+<div class="code-line context-line"><span class="line-number">777</span><span class="code-content">      pending_fragmentTransaction = null;</span></div>
+<div class="code-line context-line"><span class="line-number">778</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">779</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">780</span><span class="code-content">    if (pendingPath != null) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">781</span><span class="code-content">      HybridFile hFile = new HybridFile(OpenMode.UNKNOWN, pendingPath.getPath());</span></div>
+<div class="code-line context-line"><span class="line-number">782</span><span class="code-content">      hFile.generateMode(mainActivity);</span></div>
+<div class="code-line correct-line"><span class="line-number">783</span><span class="code-content">      if (hFile.isSimpleFile()) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">784</span><span class="code-content">        FileUtils.openFile(new File(pendingPath.getPath()), mainActivity, mainActivity.getPrefs());</span></div>
+<div class="code-line context-line"><span class="line-number">785</span><span class="code-content">        resetPendingPath();</span></div>
+<div class="code-line context-line"><span class="line-number">786</span><span class="code-content">        return;</span></div>
+<div class="code-line context-line"><span class="line-number">787</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">788</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">789</span><span class="code-content">      MainFragment mainFragment = mainActivity.getCurrentMainFragment();</span></div>
+<div class="code-line correct-line"><span class="line-number">790</span><span class="code-content">      if (mainFragment != null) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">791</span><span class="code-content">        mainFragment.loadlist(pendingPath.getPath(), false, OpenMode.UNKNOWN, false);</span></div>
+<div class="code-line context-line"><span class="line-number">792</span><span class="code-content">        // Set if the FAB should be hidden when displaying the pendingPath</span></div>
+<div class="code-line context-line"><span class="line-number">793</span><span class="code-content">        mainFragment.setHideFab(pendingPath.getHideFabInMainFragment());</span></div>
+<div class="code-line context-line"><span class="line-number">794</span><span class="code-content">        resetPendingPath();</span></div>
+<div class="code-line context-line"><span class="line-number">795</span><span class="code-content">      } else {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">808</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">809</span><span class="code-content">    DrawerViewModel model = new ViewModelProvider(mainActivity).get(DrawerViewModel.class);</span></div>
+<div class="code-line context-line"><span class="line-number">810</span><span class="code-content">    String title = item.getTitle().toString();</span></div>
+<div class="code-line context-line"><span class="line-number">811</span><span class="code-content">    MenuMetadata meta = model.getDrawerMetadata(item);</span></div>
+<div class="code-line context-line"><span class="line-number">812</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">813</span><span class="code-content">    switch (meta.type) { // Branch: Covered 1/3</span></div>
+<div class="code-line context-line"><span class="line-number">814</span><span class="code-content">      case MenuMetadata.ITEM_ENTRY:</span></div>
+<div class="code-line correct-line"><span class="line-number">815</span><span class="code-content">        if (dataUtils.containsBooks(new String[] {title, meta.path}) != -1) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">816</span><span class="code-content">          FileUtils.checkForPath(mainActivity, meta.path, mainActivity.isRootExplorer());</span></div>
+<div class="code-line context-line"><span class="line-number">817</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">818</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">819</span><span class="code-content">        if (dataUtils.getAccounts().size() &gt; 0 // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">820</span><span class="code-content">            &amp;&amp; (meta.path.startsWith(CloudHandler.CLOUD_PREFIX_BOX)</span></div>
+<div class="code-line context-line"><span class="line-number">821</span><span class="code-content">                || meta.path.startsWith(CloudHandler.CLOUD_PREFIX_DROPBOX)</span></div>
+<div class="code-line context-line"><span class="line-number">822</span><span class="code-content">                || meta.path.startsWith(CloudHandler.CLOUD_PREFIX_ONE_DRIVE)</span></div>
+<div class="code-line context-line"><span class="line-number">823</span><span class="code-content">                || meta.path.startsWith(CloudHandler.CLOUD_PREFIX_GOOGLE_DRIVE))) {</span></div>
+<div class="code-line context-line"><span class="line-number">824</span><span class="code-content">          // we have cloud accounts, try see if token is expired or not</span></div>
+<div class="code-line context-line"><span class="line-number">825</span><span class="code-content">          CloudUtil.checkToken(meta.path, mainActivity);</span></div>
+<div class="code-line context-line"><span class="line-number">826</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">827</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">828</span><span class="code-content">        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP // Branch: Covered 1/2</span></div>
+<div class="code-line correct-line"><span class="line-number">829</span><span class="code-content">            &amp;&amp; (meta.path.contains(OTGUtil.PREFIX_OTG) // Branch: Covered 1/2</span></div>
+<div class="code-line correct-line"><span class="line-number">830</span><span class="code-content">                || meta.path.startsWith(OTGUtil.PREFIX_MEDIA_REMOVABLE)) // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">831</span><span class="code-content">            &amp;&amp; SingletonUsbOtg.getInstance().getUsbOtgRoot() == null) {</span></div>
+<div class="code-line context-line"><span class="line-number">832</span><span class="code-content">          MaterialDialog dialog = GeneralDialogCreation.showOtgSafExplanationDialog(mainActivity);</span></div>
+<div class="code-line context-line"><span class="line-number">833</span><span class="code-content">          dialog</span></div>
+<div class="code-line context-line"><span class="line-number">834</span><span class="code-content">              .getActionButton(DialogAction.POSITIVE)</span></div>
+<div class="code-line context-line"><span class="line-number">835</span><span class="code-content">              .setOnClickListener(</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">847</span><span class="code-content">                  });</span></div>
+<div class="code-line context-line"><span class="line-number">848</span><span class="code-content">          dialog.show();</span></div>
+<div class="code-line context-line"><span class="line-number">849</span><span class="code-content">        } else {</span></div>
+<div class="code-line context-line"><span class="line-number">850</span><span class="code-content">          pendingPath = new PendingPath(meta.path, meta.hideFabInMainFragment);</span></div>
+<div class="code-line context-line"><span class="line-number">851</span><span class="code-content">          closeIfNotLocked();</span></div>
+<div class="code-line correct-line"><span class="line-number">852</span><span class="code-content">          if (isLocked()) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">853</span><span class="code-content">            onDrawerClosed();</span></div>
+<div class="code-line context-line"><span class="line-number">854</span><span class="code-content">          }</span></div>
+<div class="code-line context-line"><span class="line-number">855</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">856</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">857</span><span class="code-content">        break;</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-14">
+    File: com/amaze/filemanager/utils/DataUtils.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\utils\DataUtils.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">169</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">170</span><span class="code-content">    return -1;</span></div>
+<div class="code-line context-line"><span class="line-number">171</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">172</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">173</span><span class="code-content">  int contains(String[] a, ArrayList&lt;String[]&gt; b) {</span></div>
+<div class="code-line correct-line"><span class="line-number">174</span><span class="code-content">    if (b == null) return -1; // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">175</span><span class="code-content">    int i = 0;</span></div>
+<div class="code-line correct-line"><span class="line-number">176</span><span class="code-content">    for (String[] x : b) { // Branch: Covered 2/2</span></div>
+<div class="code-line correct-line"><span class="line-number">177</span><span class="code-content">      if (x[0].equals(a[0]) &amp;&amp; x[1].equals(a[1])) return i; // Branch: Covered 1/4</span></div>
+<div class="code-line context-line"><span class="line-number">178</span><span class="code-content">      i++;</span></div>
+<div class="code-line context-line"><span class="line-number">179</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">180</span><span class="code-content">    return -1;</span></div>
+<div class="code-line context-line"><span class="line-number">181</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">182</span><span class="code-content"></span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-15">
+    File: com/amaze/filemanager/utils/MainActivityHelper.java
+    <a href="file:///D:\code\python\Kea-FL\example\AmazeFileManager\app\src\main\java\com\amaze\filemanager\utils\MainActivityHelper.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">259</span><span class="code-content">        });</span></div>
+<div class="code-line context-line"><span class="line-number">260</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">261</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">262</span><span class="code-content">  public String getIntegralNames(String path) {</span></div>
+<div class="code-line context-line"><span class="line-number">263</span><span class="code-content">    String newPath = &quot;&quot;;</span></div>
+<div class="code-line correct-line"><span class="line-number">264</span><span class="code-content">    switch (Integer.parseInt(path)) { // Branch: Covered 1/9</span></div>
+<div class="code-line context-line"><span class="line-number">265</span><span class="code-content">      case 0:</span></div>
+<div class="code-line context-line"><span class="line-number">266</span><span class="code-content">        newPath = mainActivity.getString(R.string.images);</span></div>
+<div class="code-line context-line"><span class="line-number">267</span><span class="code-content">        break;</span></div>
+<div class="code-line context-line"><span class="line-number">268</span><span class="code-content">      case 1:</span></div>
+<div class="code-line context-line"><span class="line-number">269</span><span class="code-content">        newPath = mainActivity.getString(R.string.videos);</span></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

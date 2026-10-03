@@ -1,0 +1,691 @@
+2026-06-19 16:15:06 [runner] INFO: Building pair test cases...
+2026-06-19 16:15:06 [replayer] INFO: Parse 164 events
+2026-06-19 16:15:06 [replayer] INFO: Parse 9 Monkey actions
+2026-06-19 16:15:06 [reproducer] INFO: Extract 6 pairs test cases
+2026-06-19 16:15:06 [replayer] INFO: Property omni938.OmninotesCategory.test_reduced_view not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:15:06 [replayer] INFO: Property omni938.OmninotesCategory.test_create_note_with_new_category not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:15:06 [replayer] INFO: Property omni938.OmninotesCategory.test_behavior_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:15:06 [replayer] INFO: Property omni938.OmninotesCategory.test_data_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:15:06 [replayer] INFO: Property omni938.OmninotesCategory.test_create_note_without_category not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:15:06 [reproducer] INFO: Build 1 pairs test cases
+2026-06-19 16:15:06 [reproducer] INFO: Test case [1]: test_category_count_accuracy
+2026-06-19 16:15:06 [reproducer] INFO:     -happy_path: [preconditions]: 78, [property]: 8
+2026-06-19 16:15:06 [reproducer] INFO:     -bug_path: [preconditions]: 16, [property]: 8
+2026-06-19 16:15:06 [runner] INFO: Start running full coverage difference analysis...
+2026-06-19 16:15:06 [runner] INFO: Processing pair test case [1]: happy_test_category_count_accuracy <-> bug_test_category_count_accuracy
+2026-06-19 16:15:06 [runner] INFO: Running pair test case analysis: happy_test_category_count_accuracy <-> bug_test_category_count_accuracy
+2026-06-19 16:15:06 [runner] INFO: Running property-satisfying path...
+2026-06-19 16:15:06 [reproducer] INFO: Start reproducing test case: happy_test_category_count_accuracy
+2026-06-19 16:15:06 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 16:15:06 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:15:06 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 16:15:07 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 16:15:07 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: it.feio.android.omninotes.alpha
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=17ms (0ms mobile, 0ms wifi, 17ms not connected)
+
+2026-06-19 16:15:07 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 16:15:07 [reproducer] INFO: Init operation executed
+2026-06-19 16:15:10 [reproducer] INFO: Test environment setup completed
+2026-06-19 16:15:10 [reproducer] INFO: Start executing preconditions for test case: happy_test_category_count_accuracy
+2026-06-19 16:15:10 [replayer] INFO: [1] Execute Monkey event: CLICK
+2026-06-19 16:15:10 [replayer] INFO: Touch: Touch(touch_type='down', x=920.0, y=236.0, wait_duration=0.0)
+2026-06-19 16:15:11 [replayer] INFO: Press coordinate at: (920.0, 236.0)
+2026-06-19 16:15:11 [replayer] INFO: Touch: Touch(touch_type='up', x=920.0, y=236.0, wait_duration=0.0)
+2026-06-19 16:15:11 [replayer] INFO: Release coordinate at: (920.0, 236.0)
+2026-06-19 16:15:12 [replayer] INFO: [2] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 16:15:12 [replayer] INFO: Touch: Touch(touch_type='down', x=729.0, y=408.0, wait_duration=0.0)
+2026-06-19 16:15:12 [replayer] INFO: Press coordinate at: (729.0, 408.0)
+2026-06-19 16:15:12 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=408.0, wait_duration=0.0)
+2026-06-19 16:15:12 [replayer] INFO: Move coordinate to: (729.0, 408.0)
+2026-06-19 16:15:12 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=373.8, wait_duration=0.02)
+2026-06-19 16:15:12 [replayer] INFO: Move coordinate to: (729.0, 373.8)
+2026-06-19 16:15:12 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=339.6, wait_duration=0.02)
+2026-06-19 16:15:12 [replayer] INFO: Move coordinate to: (729.0, 339.6)
+2026-06-19 16:15:12 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=305.4, wait_duration=0.02)
+2026-06-19 16:15:12 [replayer] INFO: Move coordinate to: (729.0, 305.4)
+2026-06-19 16:15:12 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=271.2, wait_duration=0.02)
+2026-06-19 16:15:12 [replayer] INFO: Move coordinate to: (729.0, 271.2)
+2026-06-19 16:15:12 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=237.0, wait_duration=0.02)
+2026-06-19 16:15:12 [replayer] INFO: Move coordinate to: (729.0, 237.0)
+2026-06-19 16:15:12 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=202.79999, wait_duration=0.02)
+2026-06-19 16:15:12 [replayer] INFO: Move coordinate to: (729.0, 202.79999)
+2026-06-19 16:15:12 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=168.6, wait_duration=0.02)
+2026-06-19 16:15:12 [replayer] INFO: Move coordinate to: (729.0, 168.6)
+2026-06-19 16:15:12 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=134.4, wait_duration=0.02)
+2026-06-19 16:15:12 [replayer] INFO: Move coordinate to: (729.0, 134.4)
+2026-06-19 16:15:12 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=100.20001, wait_duration=0.02)
+2026-06-19 16:15:13 [replayer] INFO: Move coordinate to: (729.0, 100.20001)
+2026-06-19 16:15:13 [replayer] INFO: Touch: Touch(touch_type='up', x=729.0, y=82.0, wait_duration=0.02)
+2026-06-19 16:15:13 [replayer] INFO: Release coordinate at: (729.0, 82.0)
+2026-06-19 16:15:14 [replayer] INFO: [3] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 16:15:14 [replayer] INFO: Touch: Touch(touch_type='down', x=729.0, y=408.0, wait_duration=0.0)
+2026-06-19 16:15:14 [replayer] INFO: Press coordinate at: (729.0, 408.0)
+2026-06-19 16:15:14 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=408.0, wait_duration=0.0)
+2026-06-19 16:15:14 [replayer] INFO: Move coordinate to: (729.0, 408.0)
+2026-06-19 16:15:14 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=568.7, wait_duration=0.02)
+2026-06-19 16:15:14 [replayer] INFO: Move coordinate to: (729.0, 568.7)
+2026-06-19 16:15:14 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=729.4, wait_duration=0.02)
+2026-06-19 16:15:14 [replayer] INFO: Move coordinate to: (729.0, 729.4)
+2026-06-19 16:15:14 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=890.1, wait_duration=0.02)
+2026-06-19 16:15:14 [replayer] INFO: Move coordinate to: (729.0, 890.1)
+2026-06-19 16:15:14 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1050.8, wait_duration=0.02)
+2026-06-19 16:15:14 [replayer] INFO: Move coordinate to: (729.0, 1050.8)
+2026-06-19 16:15:14 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1211.5, wait_duration=0.02)
+2026-06-19 16:15:14 [replayer] INFO: Move coordinate to: (729.0, 1211.5)
+2026-06-19 16:15:14 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1372.2, wait_duration=0.02)
+2026-06-19 16:15:14 [replayer] INFO: Move coordinate to: (729.0, 1372.2)
+2026-06-19 16:15:14 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1532.9, wait_duration=0.02)
+2026-06-19 16:15:14 [replayer] INFO: Move coordinate to: (729.0, 1532.9)
+2026-06-19 16:15:15 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1693.6, wait_duration=0.02)
+2026-06-19 16:15:15 [replayer] INFO: Move coordinate to: (729.0, 1693.6)
+2026-06-19 16:15:15 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1854.2999, wait_duration=0.02)
+2026-06-19 16:15:15 [replayer] INFO: Move coordinate to: (729.0, 1854.2999)
+2026-06-19 16:15:15 [replayer] INFO: Touch: Touch(touch_type='up', x=729.0, y=2015.0, wait_duration=0.02)
+2026-06-19 16:15:15 [replayer] INFO: Release coordinate at: (729.0, 2015.0)
+2026-06-19 16:15:16 [replayer] INFO: [4] Execute Monkey event: CLICK
+2026-06-19 16:15:16 [replayer] INFO: Touch: Touch(touch_type='down', x=919.0, y=266.0, wait_duration=0.0)
+2026-06-19 16:15:16 [replayer] INFO: Press coordinate at: (919.0, 266.0)
+2026-06-19 16:15:16 [replayer] INFO: Touch: Touch(touch_type='up', x=919.0, y=266.0, wait_duration=0.0)
+2026-06-19 16:15:16 [replayer] INFO: Release coordinate at: (919.0, 266.0)
+2026-06-19 16:15:17 [replayer] INFO: [5] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 16:15:17 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 16:15:17 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 16:15:17 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 16:15:17 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 16:15:17 [replayer] INFO: Touch: Touch(touch_type='move', x=593.9, y=1008.0, wait_duration=0.02)
+2026-06-19 16:15:17 [replayer] INFO: Move coordinate to: (593.9, 1008.0)
+2026-06-19 16:15:17 [replayer] INFO: Touch: Touch(touch_type='move', x=647.8, y=1008.0, wait_duration=0.02)
+2026-06-19 16:15:17 [replayer] INFO: Move coordinate to: (647.8, 1008.0)
+2026-06-19 16:15:17 [replayer] INFO: Touch: Touch(touch_type='move', x=701.7, y=1008.0, wait_duration=0.02)
+2026-06-19 16:15:17 [replayer] INFO: Move coordinate to: (701.7, 1008.0)
+2026-06-19 16:15:17 [replayer] INFO: Touch: Touch(touch_type='move', x=755.6, y=1008.0, wait_duration=0.02)
+2026-06-19 16:15:17 [replayer] INFO: Move coordinate to: (755.6, 1008.0)
+2026-06-19 16:15:17 [replayer] INFO: Touch: Touch(touch_type='move', x=809.5, y=1008.0, wait_duration=0.02)
+2026-06-19 16:15:17 [replayer] INFO: Move coordinate to: (809.5, 1008.0)
+2026-06-19 16:15:17 [replayer] INFO: Touch: Touch(touch_type='move', x=863.4, y=1008.0, wait_duration=0.02)
+2026-06-19 16:15:17 [replayer] INFO: Move coordinate to: (863.4, 1008.0)
+2026-06-19 16:15:17 [replayer] INFO: Touch: Touch(touch_type='move', x=917.3, y=1008.0, wait_duration=0.02)
+2026-06-19 16:15:18 [replayer] INFO: Move coordinate to: (917.3, 1008.0)
+2026-06-19 16:15:18 [replayer] INFO: Touch: Touch(touch_type='move', x=971.2, y=1008.0, wait_duration=0.02)
+2026-06-19 16:15:18 [replayer] INFO: Move coordinate to: (971.2, 1008.0)
+2026-06-19 16:15:18 [replayer] INFO: Touch: Touch(touch_type='move', x=1025.1, y=1008.0, wait_duration=0.02)
+2026-06-19 16:15:18 [replayer] INFO: Move coordinate to: (1025.1, 1008.0)
+2026-06-19 16:15:18 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1008.0, wait_duration=0.02)
+2026-06-19 16:15:18 [replayer] INFO: Release coordinate at: (1079.0, 1008.0)
+2026-06-19 16:15:19 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_create_note_with_new_category - start
+2026-06-19 16:15:19 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:19 [replayer] INFO: Click coordinate: (957.0, 1969.5)
+2026-06-19 16:15:20 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:20 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:15:21 [replayer] INFO: [5] Execute Script event: setText
+2026-06-19 16:15:21 [replayer] INFO: Set text to: HOw7IM
+2026-06-19 16:15:22 [replayer] INFO: [5] Execute Script event: setText
+2026-06-19 16:15:22 [replayer] INFO: Set text to: test content
+2026-06-19 16:15:23 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:24 [replayer] INFO: Click coordinate: (639.0, 209.0)
+2026-06-19 16:15:25 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:25 [replayer] INFO: Click coordinate: (768.5, 1215.0)
+2026-06-19 16:15:26 [replayer] INFO: [5] Execute Script event: setText
+2026-06-19 16:15:26 [replayer] INFO: Set text to: rXFHz
+2026-06-19 16:15:27 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:27 [replayer] INFO: Click coordinate: (659.5, 1409.5)
+2026-06-19 16:15:28 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:28 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 16:15:29 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_create_note_with_new_category - pass
+2026-06-19 16:15:29 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_category_count_accuracy - start
+2026-06-19 16:15:29 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:29 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 16:15:30 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:15:30 [replayer] INFO: Press key: back
+2026-06-19 16:15:31 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:32 [replayer] INFO: Click coordinate: (536.0, 357.5)
+2026-06-19 16:15:33 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:33 [replayer] INFO: Click coordinate: (639.0, 209.0)
+2026-06-19 16:15:34 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:15:35 [replayer] INFO: Press key: back
+2026-06-19 16:15:36 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:15:36 [replayer] INFO: Press key: back
+2026-06-19 16:15:37 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_category_count_accuracy - fail
+2026-06-19 16:15:37 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_create_note_without_category - start
+2026-06-19 16:15:37 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:37 [replayer] INFO: Click coordinate: (957.0, 1969.5)
+2026-06-19 16:15:38 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:38 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:15:39 [replayer] INFO: [5] Execute Script event: setText
+2026-06-19 16:15:40 [replayer] INFO: Set text to: 0m5Ut5D
+2026-06-19 16:15:41 [replayer] INFO: [5] Execute Script event: setText
+2026-06-19 16:15:41 [replayer] INFO: Set text to: test content
+2026-06-19 16:15:42 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:15:42 [replayer] INFO: Press key: back
+2026-06-19 16:15:43 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_create_note_without_category - pass
+2026-06-19 16:15:43 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_behavior_setting - start
+2026-06-19 16:15:43 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:43 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 16:15:44 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:44 [replayer] INFO: Click coordinate: (478.5, 819.0)
+2026-06-19 16:15:45 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:45 [replayer] INFO: Click coordinate: (140.5, 941.5)
+2026-06-19 16:15:46 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:46 [replayer] INFO: Click coordinate: (972.0, 559.0)
+2026-06-19 16:15:47 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:48 [replayer] INFO: Click coordinate: (972.0, 559.0)
+2026-06-19 16:15:49 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:15:49 [replayer] INFO: Press key: back
+2026-06-19 16:15:50 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:15:50 [replayer] INFO: Press key: back
+2026-06-19 16:15:51 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:15:51 [replayer] INFO: Press key: back
+2026-06-19 16:15:52 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_behavior_setting - pass
+2026-06-19 16:15:52 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_data_setting - start
+2026-06-19 16:15:52 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:53 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 16:15:54 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:54 [replayer] INFO: Click coordinate: (478.5, 819.0)
+2026-06-19 16:15:55 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:55 [replayer] INFO: Click coordinate: (89.5, 500.5)
+2026-06-19 16:15:56 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:15:56 [replayer] INFO: Click coordinate: (222.5, 359.5)
+2026-06-19 16:15:57 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:15:57 [replayer] INFO: Press key: back
+2026-06-19 16:15:58 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:15:58 [replayer] INFO: Press key: back
+2026-06-19 16:15:59 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:16:00 [replayer] INFO: Press key: back
+2026-06-19 16:16:01 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:16:01 [replayer] INFO: Press key: back
+2026-06-19 16:16:02 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_data_setting - pass
+2026-06-19 16:16:02 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_create_note_without_category - start
+2026-06-19 16:16:02 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:16:02 [replayer] INFO: Click coordinate: (957.0, 1969.5)
+2026-06-19 16:16:03 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:16:03 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:16:04 [replayer] INFO: [5] Execute Script event: setText
+2026-06-19 16:16:04 [replayer] INFO: Set text to: sV1e
+2026-06-19 16:16:05 [replayer] INFO: [5] Execute Script event: setText
+2026-06-19 16:16:06 [replayer] INFO: Set text to: test content
+2026-06-19 16:16:07 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:16:07 [replayer] INFO: Press key: back
+2026-06-19 16:16:08 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_create_note_without_category - pass
+2026-06-19 16:16:08 [replayer] INFO: [6] Execute Monkey event: CLICK
+2026-06-19 16:16:08 [replayer] INFO: Touch: Touch(touch_type='down', x=761.0, y=174.0, wait_duration=0.0)
+2026-06-19 16:16:08 [replayer] INFO: Press coordinate at: (761.0, 174.0)
+2026-06-19 16:16:08 [replayer] INFO: Touch: Touch(touch_type='up', x=761.0, y=174.0, wait_duration=0.0)
+2026-06-19 16:16:08 [replayer] INFO: Release coordinate at: (761.0, 174.0)
+2026-06-19 16:16:09 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_create_note_without_category - start
+2026-06-19 16:16:09 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:09 [replayer] INFO: Click coordinate: (957.0, 1969.5)
+2026-06-19 16:16:10 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:10 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:16:11 [replayer] INFO: [6] Execute Script event: setText
+2026-06-19 16:16:11 [replayer] INFO: Set text to: ib1OzE
+2026-06-19 16:16:12 [replayer] INFO: [6] Execute Script event: setText
+2026-06-19 16:16:12 [replayer] INFO: Set text to: test content
+2026-06-19 16:16:13 [replayer] INFO: [6] Execute Script event: pressKey
+2026-06-19 16:16:13 [replayer] INFO: Press key: back
+2026-06-19 16:16:14 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_create_note_without_category - pass
+2026-06-19 16:16:14 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_reduced_view - start
+2026-06-19 16:16:14 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:15 [replayer] INFO: Click coordinate: (1024.5, 209.0)
+2026-06-19 16:16:16 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:16 [replayer] INFO: Click coordinate: (799.5, 231.5)
+2026-06-19 16:16:17 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:17 [replayer] INFO: Click coordinate: (1024.5, 209.0)
+2026-06-19 16:16:18 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:18 [replayer] INFO: Click coordinate: (799.5, 231.5)
+2026-06-19 16:16:19 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_reduced_view - pass
+2026-06-19 16:16:19 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_reduced_view - start
+2026-06-19 16:16:19 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:19 [replayer] INFO: Click coordinate: (1024.5, 209.0)
+2026-06-19 16:16:20 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:20 [replayer] INFO: Click coordinate: (799.5, 231.5)
+2026-06-19 16:16:21 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:22 [replayer] INFO: Click coordinate: (1024.5, 209.0)
+2026-06-19 16:16:23 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:23 [replayer] INFO: Click coordinate: (799.5, 231.5)
+2026-06-19 16:16:24 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_reduced_view - pass
+2026-06-19 16:16:24 [reproducer] INFO: Preconditions executed for test case: happy_test_category_count_accuracy
+2026-06-19 16:16:24 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_category_count_accuracy
+2026-06-19 16:16:24 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:16:24 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:16:24 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:16:24 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_precondition/happy_test_category_count_accuracy.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_precondition/happy_test_category_count_accuracy.xml
+2026-06-19 16:16:24 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_precondition\happy_test_category_count_accuracy.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:16:24 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_precondition/happy_test_category_count_accuracy.ec -> .\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_precondition/happy_test_category_count_accuracy.xml
+2026-06-19 16:16:24 [reproducer] INFO: Coverage data collected: .\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_precondition/happy_test_category_count_accuracy.xml
+2026-06-19 16:16:24 [reproducer] INFO: Start executing property for test case: happy_test_category_count_accuracy
+2026-06-19 16:16:24 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_category_count_accuracy - start
+2026-06-19 16:16:24 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:24 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 16:16:25 [replayer] INFO: [6] Execute Script event: pressKey
+2026-06-19 16:16:25 [replayer] INFO: Press key: back
+2026-06-19 16:16:26 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:27 [replayer] INFO: Click coordinate: (536.0, 957.5)
+2026-06-19 16:16:28 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:16:28 [replayer] INFO: Click coordinate: (639.0, 209.0)
+2026-06-19 16:16:29 [replayer] INFO: [6] Execute Script event: pressKey
+2026-06-19 16:16:30 [replayer] INFO: Press key: back
+2026-06-19 16:16:31 [replayer] INFO: [6] Execute Script event: pressKey
+2026-06-19 16:16:31 [replayer] INFO: Press key: back
+2026-06-19 16:16:32 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_category_count_accuracy - pass
+2026-06-19 16:16:32 [reproducer] INFO: Property executed for test case: happy_test_category_count_accuracy
+2026-06-19 16:16:32 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_category_count_accuracy
+2026-06-19 16:16:32 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:16:32 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:16:32 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:16:32 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_property/happy_test_category_count_accuracy.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_property/happy_test_category_count_accuracy.xml
+2026-06-19 16:16:32 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_property\happy_test_category_count_accuracy.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:16:32 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_property/happy_test_category_count_accuracy.ec -> .\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_property/happy_test_category_count_accuracy.xml
+2026-06-19 16:16:32 [reproducer] INFO: Coverage data collected: .\report\report_20260619_161506\test_category_count_accuracy\happy_test_category_count_accuracy_property/happy_test_category_count_accuracy.xml
+2026-06-19 16:16:32 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 16:16:33 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:16:33 [reproducer] INFO: Test environment reset completed
+2026-06-19 16:16:33 [runner] INFO: Running property-violating path path...
+2026-06-19 16:16:33 [reproducer] INFO: Start reproducing test case: bug_test_category_count_accuracy
+2026-06-19 16:16:44 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 16:16:44 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:16:44 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 16:16:45 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 16:16:45 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: it.feio.android.omninotes.alpha
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=14ms (0ms mobile, 0ms wifi, 14ms not connected)
+
+2026-06-19 16:16:45 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 16:16:45 [reproducer] INFO: Init operation executed
+2026-06-19 16:16:48 [reproducer] INFO: Test environment setup completed
+2026-06-19 16:16:48 [reproducer] INFO: Start executing preconditions for test case: bug_test_category_count_accuracy
+2026-06-19 16:16:48 [replayer] INFO: [1] Execute Monkey event: CLICK
+2026-06-19 16:16:48 [replayer] INFO: Touch: Touch(touch_type='down', x=920.0, y=236.0, wait_duration=0.0)
+2026-06-19 16:16:48 [replayer] INFO: Press coordinate at: (920.0, 236.0)
+2026-06-19 16:16:48 [replayer] INFO: Touch: Touch(touch_type='up', x=920.0, y=236.0, wait_duration=0.0)
+2026-06-19 16:16:48 [replayer] INFO: Release coordinate at: (920.0, 236.0)
+2026-06-19 16:16:49 [replayer] INFO: [2] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 16:16:49 [replayer] INFO: Touch: Touch(touch_type='down', x=729.0, y=408.0, wait_duration=0.0)
+2026-06-19 16:16:49 [replayer] INFO: Press coordinate at: (729.0, 408.0)
+2026-06-19 16:16:49 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=408.0, wait_duration=0.0)
+2026-06-19 16:16:50 [replayer] INFO: Move coordinate to: (729.0, 408.0)
+2026-06-19 16:16:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=373.8, wait_duration=0.02)
+2026-06-19 16:16:50 [replayer] INFO: Move coordinate to: (729.0, 373.8)
+2026-06-19 16:16:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=339.6, wait_duration=0.02)
+2026-06-19 16:16:50 [replayer] INFO: Move coordinate to: (729.0, 339.6)
+2026-06-19 16:16:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=305.4, wait_duration=0.02)
+2026-06-19 16:16:50 [replayer] INFO: Move coordinate to: (729.0, 305.4)
+2026-06-19 16:16:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=271.2, wait_duration=0.02)
+2026-06-19 16:16:50 [replayer] INFO: Move coordinate to: (729.0, 271.2)
+2026-06-19 16:16:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=237.0, wait_duration=0.02)
+2026-06-19 16:16:50 [replayer] INFO: Move coordinate to: (729.0, 237.0)
+2026-06-19 16:16:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=202.79999, wait_duration=0.02)
+2026-06-19 16:16:50 [replayer] INFO: Move coordinate to: (729.0, 202.79999)
+2026-06-19 16:16:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=168.6, wait_duration=0.02)
+2026-06-19 16:16:50 [replayer] INFO: Move coordinate to: (729.0, 168.6)
+2026-06-19 16:16:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=134.4, wait_duration=0.02)
+2026-06-19 16:16:50 [replayer] INFO: Move coordinate to: (729.0, 134.4)
+2026-06-19 16:16:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=100.20001, wait_duration=0.02)
+2026-06-19 16:16:50 [replayer] INFO: Move coordinate to: (729.0, 100.20001)
+2026-06-19 16:16:50 [replayer] INFO: Touch: Touch(touch_type='up', x=729.0, y=82.0, wait_duration=0.02)
+2026-06-19 16:16:50 [replayer] INFO: Release coordinate at: (729.0, 82.0)
+2026-06-19 16:16:51 [replayer] INFO: [3] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 16:16:51 [replayer] INFO: Touch: Touch(touch_type='down', x=729.0, y=408.0, wait_duration=0.0)
+2026-06-19 16:16:51 [replayer] INFO: Press coordinate at: (729.0, 408.0)
+2026-06-19 16:16:51 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=408.0, wait_duration=0.0)
+2026-06-19 16:16:52 [replayer] INFO: Move coordinate to: (729.0, 408.0)
+2026-06-19 16:16:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=568.7, wait_duration=0.02)
+2026-06-19 16:16:52 [replayer] INFO: Move coordinate to: (729.0, 568.7)
+2026-06-19 16:16:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=729.4, wait_duration=0.02)
+2026-06-19 16:16:52 [replayer] INFO: Move coordinate to: (729.0, 729.4)
+2026-06-19 16:16:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=890.1, wait_duration=0.02)
+2026-06-19 16:16:52 [replayer] INFO: Move coordinate to: (729.0, 890.1)
+2026-06-19 16:16:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1050.8, wait_duration=0.02)
+2026-06-19 16:16:52 [replayer] INFO: Move coordinate to: (729.0, 1050.8)
+2026-06-19 16:16:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1211.5, wait_duration=0.02)
+2026-06-19 16:16:52 [replayer] INFO: Move coordinate to: (729.0, 1211.5)
+2026-06-19 16:16:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1372.2, wait_duration=0.02)
+2026-06-19 16:16:52 [replayer] INFO: Move coordinate to: (729.0, 1372.2)
+2026-06-19 16:16:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1532.9, wait_duration=0.02)
+2026-06-19 16:16:52 [replayer] INFO: Move coordinate to: (729.0, 1532.9)
+2026-06-19 16:16:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1693.6, wait_duration=0.02)
+2026-06-19 16:16:52 [replayer] INFO: Move coordinate to: (729.0, 1693.6)
+2026-06-19 16:16:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1854.2999, wait_duration=0.02)
+2026-06-19 16:16:52 [replayer] INFO: Move coordinate to: (729.0, 1854.2999)
+2026-06-19 16:16:52 [replayer] INFO: Touch: Touch(touch_type='up', x=729.0, y=2015.0, wait_duration=0.02)
+2026-06-19 16:16:52 [replayer] INFO: Release coordinate at: (729.0, 2015.0)
+2026-06-19 16:16:53 [replayer] INFO: [4] Execute Monkey event: CLICK
+2026-06-19 16:16:53 [replayer] INFO: Touch: Touch(touch_type='down', x=919.0, y=266.0, wait_duration=0.0)
+2026-06-19 16:16:53 [replayer] INFO: Press coordinate at: (919.0, 266.0)
+2026-06-19 16:16:53 [replayer] INFO: Touch: Touch(touch_type='up', x=919.0, y=266.0, wait_duration=0.0)
+2026-06-19 16:16:53 [replayer] INFO: Release coordinate at: (919.0, 266.0)
+2026-06-19 16:16:55 [replayer] INFO: [5] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 16:16:55 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 16:16:55 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='move', x=593.9, y=1008.0, wait_duration=0.02)
+2026-06-19 16:16:55 [replayer] INFO: Move coordinate to: (593.9, 1008.0)
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='move', x=647.8, y=1008.0, wait_duration=0.02)
+2026-06-19 16:16:55 [replayer] INFO: Move coordinate to: (647.8, 1008.0)
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='move', x=701.7, y=1008.0, wait_duration=0.02)
+2026-06-19 16:16:55 [replayer] INFO: Move coordinate to: (701.7, 1008.0)
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='move', x=755.6, y=1008.0, wait_duration=0.02)
+2026-06-19 16:16:55 [replayer] INFO: Move coordinate to: (755.6, 1008.0)
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='move', x=809.5, y=1008.0, wait_duration=0.02)
+2026-06-19 16:16:55 [replayer] INFO: Move coordinate to: (809.5, 1008.0)
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='move', x=863.4, y=1008.0, wait_duration=0.02)
+2026-06-19 16:16:55 [replayer] INFO: Move coordinate to: (863.4, 1008.0)
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='move', x=917.3, y=1008.0, wait_duration=0.02)
+2026-06-19 16:16:55 [replayer] INFO: Move coordinate to: (917.3, 1008.0)
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='move', x=971.2, y=1008.0, wait_duration=0.02)
+2026-06-19 16:16:55 [replayer] INFO: Move coordinate to: (971.2, 1008.0)
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='move', x=1025.1, y=1008.0, wait_duration=0.02)
+2026-06-19 16:16:55 [replayer] INFO: Move coordinate to: (1025.1, 1008.0)
+2026-06-19 16:16:55 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1008.0, wait_duration=0.02)
+2026-06-19 16:16:55 [replayer] INFO: Release coordinate at: (1079.0, 1008.0)
+2026-06-19 16:16:56 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_create_note_with_new_category - start
+2026-06-19 16:16:56 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:16:56 [replayer] INFO: Click coordinate: (957.0, 1969.5)
+2026-06-19 16:16:57 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:16:58 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:16:59 [replayer] INFO: [5] Execute Script event: setText
+2026-06-19 16:16:59 [replayer] INFO: Set text to: HOw7IM
+2026-06-19 16:17:00 [replayer] INFO: [5] Execute Script event: setText
+2026-06-19 16:17:00 [replayer] INFO: Set text to: test content
+2026-06-19 16:17:01 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:17:01 [replayer] INFO: Click coordinate: (639.0, 209.0)
+2026-06-19 16:17:02 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:17:02 [replayer] INFO: Click coordinate: (768.5, 1215.0)
+2026-06-19 16:17:03 [replayer] INFO: [5] Execute Script event: setText
+2026-06-19 16:17:04 [replayer] INFO: Set text to: rXFHz
+2026-06-19 16:17:05 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:17:05 [replayer] INFO: Click coordinate: (659.5, 1409.5)
+2026-06-19 16:17:06 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:17:06 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 16:17:07 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_create_note_with_new_category - pass
+2026-06-19 16:17:07 [reproducer] INFO: Preconditions executed for test case: bug_test_category_count_accuracy
+2026-06-19 16:17:07 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_category_count_accuracy
+2026-06-19 16:17:07 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:17:07 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:17:07 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:17:07 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_precondition/bug_test_category_count_accuracy.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_precondition/bug_test_category_count_accuracy.xml
+2026-06-19 16:17:07 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_precondition\bug_test_category_count_accuracy.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:17:07 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_precondition/bug_test_category_count_accuracy.ec -> .\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_precondition/bug_test_category_count_accuracy.xml
+2026-06-19 16:17:07 [reproducer] INFO: Coverage data collected: .\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_precondition/bug_test_category_count_accuracy.xml
+2026-06-19 16:17:07 [reproducer] INFO: Start executing property for test case: bug_test_category_count_accuracy
+2026-06-19 16:17:07 [replayer] INFO: Script execution start state: omni938.OmninotesCategory.test_category_count_accuracy - start
+2026-06-19 16:17:07 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:17:07 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 16:17:08 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:17:09 [replayer] INFO: Press key: back
+2026-06-19 16:17:10 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:17:10 [replayer] INFO: Click coordinate: (536.0, 357.5)
+2026-06-19 16:17:11 [replayer] INFO: [5] Execute Script event: click
+2026-06-19 16:17:11 [replayer] INFO: Click coordinate: (639.0, 209.0)
+2026-06-19 16:17:12 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:17:13 [replayer] INFO: Press key: back
+2026-06-19 16:17:14 [replayer] INFO: [5] Execute Script event: pressKey
+2026-06-19 16:17:14 [replayer] INFO: Press key: back
+2026-06-19 16:17:15 [replayer] INFO: Script execution end state: omni938.OmninotesCategory.test_category_count_accuracy - fail
+2026-06-19 16:17:15 [reproducer] INFO: Property executed for test case: bug_test_category_count_accuracy
+2026-06-19 16:17:15 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_category_count_accuracy
+2026-06-19 16:17:15 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:17:15 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:17:15 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:17:16 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_property/bug_test_category_count_accuracy.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_property/bug_test_category_count_accuracy.xml
+2026-06-19 16:17:16 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_property\bug_test_category_count_accuracy.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:17:16 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_property/bug_test_category_count_accuracy.ec -> .\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_property/bug_test_category_count_accuracy.xml
+2026-06-19 16:17:16 [reproducer] INFO: Coverage data collected: .\report\report_20260619_161506\test_category_count_accuracy\bug_test_category_count_accuracy_property/bug_test_category_count_accuracy.xml
+2026-06-19 16:17:16 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 16:17:16 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:17:16 [reproducer] INFO: Test environment reset completed
+2026-06-19 16:17:16 [runner] INFO: Parsing coverage data...
+2026-06-19 16:17:16 [report_generator] INFO: generate line coverage data: .\report\report_20260619_161506\test_category_count_accuracy\data\bug_test_category_count_accuracy_pre_line_coverage.md
+2026-06-19 16:17:16 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_161506\test_category_count_accuracy\data\bug_test_category_count_accuracy_pre_branch_coverage.md
+2026-06-19 16:17:16 [report_generator] INFO: generate line coverage data: .\report\report_20260619_161506\test_category_count_accuracy\data\bug_test_category_count_accuracy_prop_line_coverage.md
+2026-06-19 16:17:16 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_161506\test_category_count_accuracy\data\bug_test_category_count_accuracy_prop_branch_coverage.md
+2026-06-19 16:17:16 [report_generator] INFO: generate line coverage data: .\report\report_20260619_161506\test_category_count_accuracy\data\happy_test_category_count_accuracy_pre_line_coverage.md
+2026-06-19 16:17:16 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_161506\test_category_count_accuracy\data\happy_test_category_count_accuracy_pre_branch_coverage.md
+2026-06-19 16:17:16 [report_generator] INFO: generate line coverage data: .\report\report_20260619_161506\test_category_count_accuracy\data\happy_test_category_count_accuracy_prop_line_coverage.md
+2026-06-19 16:17:16 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_161506\test_category_count_accuracy\data\happy_test_category_count_accuracy_prop_branch_coverage.md
+2026-06-19 16:17:16 [runner] INFO: Calculating incremental coverage...
+2026-06-19 16:17:16 [runner] INFO: Performing incremental coverage analysis...
+2026-06-19 16:17:16 [runner] INFO: Generating pair test case report...
+2026-06-19 16:17:16 [runner] INFO: Saving intermediate data...
+2026-06-19 16:17:16 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260619_161506\test_category_count_accuracy\data\bug_test_category_count_accuracy_line_incremental_data.md
+2026-06-19 16:17:16 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260619_161506\test_category_count_accuracy\data\bug_test_category_count_accuracy_branch_incremental_data.md
+2026-06-19 16:17:16 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260619_161506\test_category_count_accuracy\data\happy_test_category_count_accuracy_line_incremental_data.md
+2026-06-19 16:17:16 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260619_161506\test_category_count_accuracy\data\happy_test_category_count_accuracy_branch_incremental_data.md
+2026-06-19 16:17:16 [report_generator] INFO: generate line diff data: .\report\report_20260619_161506\test_category_count_accuracy\data\line_diff_data.md
+2026-06-19 16:17:16 [report_generator] INFO: generate branch diff data: .\report\report_20260619_161506\test_category_count_accuracy\data\branch_diff_data.md
+2026-06-19 16:17:16 [runner] INFO: Generating diff report...
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\BaseActivity.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\DetailFragment.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\MainActivity.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\NavigationDrawerFragment.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\CategoryRecyclerViewAdapter.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\NoteAdapter.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\listeners\RecyclerViewItemClickSupport.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260619_161506\test_category_count_accuracy\test_category_count_accuracy_line_diff_report.html
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\BaseActivity.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\DetailFragment.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\MainActivity.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\CategoryRecyclerViewAdapter.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\listeners\RecyclerViewItemClickSupport.java encoding: utf-8
+2026-06-19 16:17:16 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260619_161506\test_category_count_accuracy\test_category_count_accuracy_branch_diff_report.html
+2026-06-19 16:17:16 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_category_count_accuracy
+
+## Code Coverage Summary
+File: it/feio/android/omninotes/BaseActivity.java
+  Only in first dataset lines: [173]
+    Line 173: hit count 11
+----------------------------------------
+File: it/feio/android/omninotes/DetailFragment.java
+  Only in first dataset lines: [1231, 1232, 1234, 1254, 1260, 1261, 1565, 1566, 1567, 1569]
+    Line 1231: hit count 6
+    Line 1232: hit count 6
+    Line 1234: hit count 2
+    Line 1254: hit count 10
+    Line 1260: hit count 7
+    Line 1261: hit count 2
+    Line 1565: hit count 3
+    Line 1566: hit count 3
+    Line 1567: hit count 3
+    Line 1569: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/ListFragment.java
+  Only in first dataset lines: [456, 459, 494, 495, 496, 525, 947]
+    Line 456: hit count 3
+    Line 459: hit count 1
+    Line 494: hit count 3
+    Line 495: hit count 7
+    Line 496: hit count 1
+    Line 525: hit count 4
+    Line 947: hit count 10
+----------------------------------------
+File: it/feio/android/omninotes/MainActivity.java
+  Only in first dataset lines: [277, 278, 279, 281, 288, 289, 290, 291, 293, 300, 301, 313, 314, 315, 316, 317, 321, 322, 324, 327, 329, 330, 337, 376, 377, 378, 379, 381]
+    Line 277: hit count 5
+    Line 278: hit count 2
+    Line 279: hit count 3
+    Line 281: hit count 1
+    Line 288: hit count 2
+    Line 289: hit count 5
+    Line 290: hit count 7
+    Line 291: hit count 2
+    Line 293: hit count 2
+    Line 300: hit count 5
+    Line 301: hit count 2
+    Line 313: hit count 5
+    Line 314: hit count 2
+    Line 315: hit count 4
+    Line 316: hit count 5
+    Line 317: hit count 1
+    Line 321: hit count 5
+    Line 322: hit count 2
+    Line 324: hit count 4
+    Line 327: hit count 8
+    Line 329: hit count 4
+    Line 330: hit count 5
+    Line 337: hit count 1
+    Line 376: hit count 3
+    Line 377: hit count 3
+    Line 378: hit count 2
+    Line 379: hit count 2
+    Line 381: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/NavigationDrawerFragment.java
+  Only in first dataset lines: [184, 185, 189, 190, 191]
+    Line 184: hit count 4
+    Line 185: hit count 1
+    Line 189: hit count 4
+    Line 190: hit count 4
+    Line 191: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/adapters/CategoryRecyclerViewAdapter.java
+  Only in first dataset lines: [47, 48, 51, 52, 53, 54, 55, 59, 65, 70, 72, 74, 78, 79, 83, 84, 85, 86, 87, 88, 90, 91, 94, 95, 96, 98, 106, 107, 110, 111, 112, 113, 115, 117, 119]
+    Line 47: hit count 5
+    Line 48: hit count 1
+    Line 51: hit count 2
+    Line 52: hit count 3
+    Line 53: hit count 3
+    Line 54: hit count 3
+    Line 55: hit count 1
+    Line 59: hit count 4
+    Line 65: hit count 10
+    Line 70: hit count 6
+    Line 72: hit count 5
+    Line 74: hit count 4
+    Line 78: hit count 5
+    Line 79: hit count 8
+    Line 83: hit count 7
+    Line 84: hit count 6
+    Line 85: hit count 9
+    Line 86: hit count 4
+    Line 87: hit count 4
+    Line 88: hit count 7
+    Line 90: hit count 4
+    Line 91: hit count 1
+    Line 94: hit count 4
+    Line 95: hit count 6
+    Line 96: hit count 4
+    Line 98: hit count 1
+    Line 106: hit count 4
+    Line 107: hit count 2
+    Line 110: hit count 6
+    Line 111: hit count 5
+    Line 112: hit count 1
+    Line 113: hit count 5
+    Line 115: hit count 3
+    Line 117: hit count 6
+    Line 119: hit count 10
+----------------------------------------
+File: it/feio/android/omninotes/models/adapters/NoteAdapter.java
+  Only in first dataset lines: [293]
+    Line 293: hit count 6
+----------------------------------------
+File: it/feio/android/omninotes/models/listeners/RecyclerViewItemClickSupport.java
+  Only in first dataset lines: [33, 34, 35, 37]
+    Line 33: hit count 4
+    Line 34: hit count 6
+    Line 35: hit count 10
+    Line 37: hit count 1
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Start: test_create_note_with_new_category → Input: HOw7IM → Input: test content → Input: rXFHz → Pass: test_create_note_with_new_category → Start: test_category_count_accuracy → Back → Fail: test_category_count_accuracy → Start: test_create_note_without_category → Input: 0m5Ut5D
+
+PASS continuation:
+Input: test content → Back → Pass: test_create_note_without_category → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_data_setting → Back → Pass: test_data_setting → Start: test_create_note_without_category → Input: sV1e → Input: test content → Back → Pass: test_create_note_without_category → Random operation: CLICK → Start: test_create_note_without_category → Input: ib1OzE → Input: test content → Back → Pass: test_create_note_without_category → Start: test_reduced_view → Pass: test_reduced_view → Start: test_reduced_view → Pass: test_reduced_view → Start: test_category_count_accuracy → Back → Pass: test_category_count_accuracy → Start: test_create_note_with_new_category → Input: AMvYHFucum → Input: test content → Input: MEzz8 → Pass: test_create_note_with_new_category → Start: test_reduced_view → Pass: test_reduced_view → Start: test_create_note_without_category → Input: 9kxAHpbiuA
+
+## Correct Execution Path
+Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Start: test_create_note_with_new_category → Input: HOw7IM → Input: test content → Input: rXFHz → Pass: test_create_note_with_new_category → Start: test_category_count_accuracy → Back → Fail: test_category_count_accuracy → Start: test_create_note_without_category → Input: 0m5Ut5D → Input: test content → Back → Pass: test_create_note_without_category → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_data_setting → Back → Pass: test_data_setting → Start: test_create_note_without_category → Input: sV1e → Input: test content → Back → Pass: test_create_note_without_category → Random operation: CLICK → Start: test_create_note_without_category → Input: ib1OzE → Input: test content → Back → Pass: test_create_note_without_category → Start: test_reduced_view → Pass: test_reduced_view → Start: test_reduced_view → Pass: test_reduced_view → Start: test_category_count_accuracy → Back → Pass: test_category_count_accuracy → Start: test_create_note_with_new_category → Input: AMvYHFucum → Input: test content → Input: MEzz8 → Pass: test_create_note_with_new_category → Start: test_reduced_view → Pass: test_reduced_view → Start: test_create_note_without_category → Input: 9kxAHpbiuA
+
+## Error Execution Path
+Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Start: test_create_note_with_new_category → Input: HOw7IM → Input: test content → Input: rXFHz → Pass: test_create_note_with_new_category → Start: test_category_count_accuracy → Back → Fail: test_category_count_accuracy → Start: test_create_note_without_category → Input: 0m5Ut5D
+
+## Files to Analyze
+it/feio/android/omninotes/BaseActivity.java
+  Differing lines: 1
+
+it/feio/android/omninotes/DetailFragment.java
+  Differing lines: 10
+
+it/feio/android/omninotes/ListFragment.java
+  Differing lines: 7
+
+it/feio/android/omninotes/MainActivity.java
+  Differing lines: 28
+
+it/feio/android/omninotes/NavigationDrawerFragment.java
+  Differing lines: 5
+
+it/feio/android/omninotes/models/adapters/CategoryRecyclerViewAdapter.java
+  Differing lines: 35
+
+it/feio/android/omninotes/models/adapters/NoteAdapter.java
+  Differing lines: 1
+
+it/feio/android/omninotes/models/listeners/RecyclerViewItemClickSupport.java
+  Differing lines: 4
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-19 16:17:17 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-19 16:17:18 [llm] INFO: LLM response: it/feio/android/omninotes/models/adapters/CategoryRecyclerViewAdapter.java
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/MainActivity.java
+it/feio/android/omninotes/DetailFragment.java
+it/feio/android/omninotes/NavigationDrawerFragment.java
+it/feio/android/omninotes/BaseActivity.java
+it/feio/android/omninotes/models/adapters/NoteAdapter.java
+it/feio/android/omninotes/models/listeners/RecyclerViewItemClickSupport.java
+2026-06-19 16:17:18 [runner] INFO: Saving ranking to .\report\report_20260619_161506\test_category_count_accuracy\ranking.txt
+2026-06-19 16:17:18 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260619_161506\index.html
+2026-06-19 16:17:18 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: .\report\report_20260619_161506

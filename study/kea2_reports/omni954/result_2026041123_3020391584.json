@@ -1,0 +1,44 @@
+{
+    "omni954.OmniNotesBugTest.test_check_uncategorized_notes": {
+        "precond_satisfied": 42,
+        "executed": 17,
+        "fail": 15,
+        "error": 0
+    },
+    "omni954.OmniNotesBugTest.test_create_checklist": {
+        "precond_satisfied": 4,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni954.OmniNotesBugTest.test_create_note_with_new_category": {
+        "precond_satisfied": 48,
+        "executed": 7,
+        "fail": 2,
+        "error": 0
+    },
+    "omni954.OmniNotesBugTest.test_create_note_without_category": {
+        "precond_satisfied": 48,
+        "executed": 10,
+        "fail": 3,
+        "error": 0
+    },
+    "omni954.OmniNotesBugTest.test_delete_category": {
+        "precond_satisfied": 44,
+        "executed": 4,
+        "fail": 0,
+        "error": 0
+    },
+    "omni954.OmniNotesBugTest.test_note_info": {
+        "precond_satisfied": 2,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni954.OmniNotesBugTest.test_open_uncategorized_category_setting": {
+        "precond_satisfied": 2,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    }
+}

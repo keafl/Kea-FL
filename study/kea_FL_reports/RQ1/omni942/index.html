@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Comprehensive Coverage Diff Report Generated</title>
+<style>
+    :root {
+        --primary-color: #4361ee;
+        --secondary-color: #3f37c9;
+        --success-color: #4cc9f0;
+        --warning-color: #f72585;
+        --danger-color: #e63946;
+        --light-color: #f8f9fa;
+        --dark-color: #212529;
+        --gray-color: #6c757d;
+        --border-color: #dee2e6;
+        --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f5f7fb;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .report-header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 30px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
+    }
+    
+    .report-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .report-time {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+    
+    h2 {
+        color: var(--secondary-color);
+        margin: 30px 0 20px 0;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--border-color);
+    }
+    
+    .overview-section {
+        margin-bottom: 30px;
+    }
+    
+    .overview-card {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
+        text-align: center;
+    }
+    
+    .overview-card p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+    
+    .test-cases-section {
+        margin-top: 30px;
+    }
+    
+    .test-case-card {
+        background: white;
+        margin-bottom: 30px;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
+        transition: var(--transition);
+    }
+    
+    .test-case-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .test-case-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .test-result-group {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+    }
+    
+    .test-result-group h4 {
+        color: var(--secondary-color);
+        margin-bottom: 10px;
+    }
+    
+    .test-result-group p {
+        margin: 8px 0;
+    }
+    
+    .status {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+    
+    .status.success {
+        background-color: rgba(76, 201, 240, 0.2);
+        color: #168aad;
+    }
+    
+    .status.error {
+        background-color: rgba(230, 57, 70, 0.2);
+        color: #e63946;
+    }
+    
+    .status.unexecuted {
+        background-color: rgba(108, 117, 125, 0.2);
+        color: #6c757d;
+    }
+    
+    .error-message {
+        color: var(--danger-color);
+        font-weight: 500;
+    }
+    
+    .report-links {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
+    
+    .report-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: var(--transition);
+    }
+    
+    .report-link:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-2px);
+    }
+    
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        z-index: 1000;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+    }
+    
+    .back-to-top:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
+        
+        .report-header h1 {
+            font-size: 2rem;
+        }
+        
+        .report-links {
+            flex-direction: column;
+        }
+        
+        .report-link {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+// Global sidebar toggle function
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("collapsed");
+}
+
+// Directory expand/collapse function
+function toggleDir(dirHeader) {
+    const toggle = dirHeader.querySelector(".dir-toggle");
+    const content = dirHeader.nextElementSibling;
+    
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        toggle.textContent = "−";
+    } else {
+        content.style.display = "none";
+        toggle.textContent = "+";
+    }
+}
+
+// File link click event handler
+document.addEventListener('DOMContentLoaded', () => {
+    const fileLinks = document.querySelectorAll('.file-link');
+    
+    fileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            fileLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    if (fileLinks.length > 0) {
+        fileLinks[0].classList.add('active');
+    }
+});
+</script>
+</head>
+<body>
+<div class="container">
+<header class="report-header">
+<h1>Comprehensive Coverage Diff Report Generated</h1>
+<p class="report-time">Generated Time: 2026-06-19 16:25:42</p>
+</header>
+<section class="overview-section">
+<h2>Analysis Overview</h2>
+<div class="overview-card">
+<p>Total Analyzed <strong>1</strong> Test Cases</p>
+</div>
+</section>
+<section class="test-cases-section">
+<h2>Test Cases List</h2>
+<div class="test-case-card">
+<h3>test_add_and_remove_tag</h3>
+<div class="test-result-group">
+<h4>Bug Test Case: Precondition Execution Result</h4>
+<p>Status: <span class="status success">success</span></p>
+<p>Execution Time: 47.56 seconds</p>
+<p>Timestamp: 2026-06-19 16:24:44</p>
+</div>
+<div class="test-result-group">
+<h4>Bug Test Case: Property Execution Result</h4>
+<p>Status: <span class="status success">success</span></p>
+<p>Execution Time: 56.04 seconds</p>
+<p>Timestamp: 2026-06-19 16:24:44</p>
+</div>
+<div class="test-result-group">
+<h4>Correct Test Case: Precondition Execution Result</h4>
+<p>Status: <span class="status success">success</span></p>
+<p>Execution Time: 14.16 seconds</p>
+<p>Timestamp: 2026-06-19 16:24:06</p>
+</div>
+<div class="test-result-group">
+<h4>Correct Test Case: Property Execution Result</h4>
+<p>Status: <span class="status success">success</span></p>
+<p>Execution Time: 22.59 seconds</p>
+<p>Timestamp: 2026-06-19 16:24:06</p>
+</div>
+<div class="report-links">
+<a href="test_add_and_remove_tag\test_add_and_remove_tag_line_diff_report.html" target="_blank" class="report-link">Line Coverage Difference Report</a>
+<a href="test_add_and_remove_tag\test_add_and_remove_tag_branch_diff_report.html" target="_blank" class="report-link">Branch Coverage Difference Report</a>
+</div>
+</div>
+</section>
+</div>
+</body>
+</html>

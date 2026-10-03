@@ -1,0 +1,5 @@
+it/feio/android/omninotes/utils/TagsHelper.java
+it/feio/android/omninotes/db/DbHelper.java
+it/feio/android/omninotes/DetailFragment.java
+it/feio/android/omninotes/models/Tag.java
+it/feio/android/omninotes/BaseFragment.java

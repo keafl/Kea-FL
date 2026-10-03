@@ -1,0 +1,38 @@
+{"startStepsCount": 5, "propName": "omni951.OmniNotesBugTest.test_create_note_with_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 5, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 5, "propName": "omni951.OmniNotesBugTest.test_data_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 5, "propName": "omni951.OmniNotesBugTest.test_create_note_with_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 5, "propName": "omni951.OmniNotesBugTest.test_behavior_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 5, "propName": "omni951.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 7, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 7, "propName": "omni951.OmniNotesBugTest.test_create_note_with_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 7, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni951.py\", line 105, in test_search_tag\n    assert notes == OmniNotesBugTest.tag2note[tag_name]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 7, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni951.py\", line 105, in test_search_tag\n    assert notes == OmniNotesBugTest.tag2note[tag_name]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 7, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni951.py\", line 105, in test_search_tag\n    assert notes == OmniNotesBugTest.tag2note[tag_name]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 8, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni951.py\", line 105, in test_search_tag\n    assert notes == OmniNotesBugTest.tag2note[tag_name]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 8, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni951.py\", line 105, in test_search_tag\n    assert notes == OmniNotesBugTest.tag2note[tag_name]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 11, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni951.py\", line 105, in test_search_tag\n    assert notes == OmniNotesBugTest.tag2note[tag_name]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 13, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 13, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 13, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni951.py\", line 105, in test_search_tag\n    assert notes == OmniNotesBugTest.tag2note[tag_name]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 17, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni951.py\", line 105, in test_search_tag\n    assert notes == OmniNotesBugTest.tag2note[tag_name]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 17, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 17, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 18, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 18, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni951.py\", line 105, in test_search_tag\n    assert notes == OmniNotesBugTest.tag2note[tag_name]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 18, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 19, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni951.py\", line 105, in test_search_tag\n    assert notes == OmniNotesBugTest.tag2note[tag_name]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 19, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni951.py\", line 105, in test_search_tag\n    assert notes == OmniNotesBugTest.tag2note[tag_name]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 19, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 19, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 19, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 19, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 19, "propName": "omni951.OmniNotesBugTest.test_search_tag", "state": "pass", "tb": ""}
+{"startStepsCount": 21, "propName": "omni951.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}

@@ -1,0 +1,11 @@
+it/feio/android/omninotes/SettingsFragment.java
+it/feio/android/omninotes/SettingsActivity.java
+it/feio/android/omninotes/MainActivity.java
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/NavigationDrawerFragment.java
+it/feio/android/omninotes/utils/TagsHelper.java
+it/feio/android/omninotes/async/CategoryMenuTask.java
+it/feio/android/omninotes/databinding/ActivitySettingsBinding.java
+it/feio/android/omninotes/helpers/AppVersionHelper.java
+it/feio/android/omninotes/models/views/Fab.java
+it/feio/android/omninotes/utils/ResourcesUtils.java

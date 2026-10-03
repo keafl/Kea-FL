@@ -1,0 +1,8 @@
+other/writeily/ui/WrRenameDialog.java
+net/gsantner/opoc/ui/FilesystemViewerFragment.java
+net/gsantner/opoc/ui/FilesystemViewerAdapter.java
+net/gsantner/opoc/util/FileUtils.java
+net/gsantner/opoc/util/FileWithCachedData.java
+net/gsantner/markor/activity/MainActivity.java
+net/gsantner/markor/format/TextFormat.java
+net/gsantner/opoc/ui/FilesystemViewerData.java

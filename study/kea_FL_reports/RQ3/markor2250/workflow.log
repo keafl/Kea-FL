@@ -1,0 +1,1136 @@
+2026-06-20 15:14:57 [runner] INFO: Building pair test cases...
+2026-06-20 15:14:57 [replayer] INFO: Parse 137 events
+2026-06-20 15:14:57 [replayer] INFO: Parse 21 Monkey actions
+2026-06-20 15:14:57 [reproducer] INFO: Extract 4 pairs test cases
+2026-06-20 15:14:57 [replayer] INFO: Property markor2250.Markor.test_modify_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:14:57 [replayer] INFO: Property markor2250.Markor.test_create_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:14:57 [replayer] INFO: Property markor2250.Markor.test_search_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:14:57 [reproducer] INFO: Build 1 pairs test cases
+2026-06-20 15:14:57 [reproducer] INFO: Test case [1]: test_create_new_folder
+2026-06-20 15:14:57 [reproducer] INFO:     -happy_path: [preconditions]: 19, [property]: 7
+2026-06-20 15:14:57 [reproducer] INFO:     -bug_path: [preconditions]: 58, [property]: 14
+2026-06-20 15:14:57 [runner] INFO: Start running full coverage difference analysis...
+2026-06-20 15:14:57 [runner] INFO: Processing pair test case [1]: happy_test_create_new_folder <-> bug_test_create_new_folder
+2026-06-20 15:14:57 [runner] INFO: Running pair test case analysis: happy_test_create_new_folder <-> bug_test_create_new_folder
+2026-06-20 15:14:57 [runner] INFO: Running property-satisfying path...
+2026-06-20 15:14:57 [reproducer] INFO: Start reproducing test case: happy_test_create_new_folder
+2026-06-20 15:14:57 [reproducer] INFO: Start executing preconditions for test case: happy_test_create_new_folder
+2026-06-20 15:14:57 [reproducer] INFO: Preconditions executed for test case: happy_test_create_new_folder
+2026-06-20 15:14:57 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_create_new_folder
+2026-06-20 15:14:57 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:14:57 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:14:58 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_precondition/happy_test_create_new_folder.ec --classfiles D:\code\python\Kea-FL\example\markor-2\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-2\app\src\main\java --xml .\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_precondition/happy_test_create_new_folder.xml
+2026-06-20 15:14:58 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_precondition\happy_test_create_new_folder.ec.
+[INFO] Analyzing 248 classes.
+
+2026-06-20 15:14:58 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_precondition/happy_test_create_new_folder.ec -> .\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_precondition/happy_test_create_new_folder.xml
+2026-06-20 15:14:58 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_precondition/happy_test_create_new_folder.xml
+2026-06-20 15:14:58 [reproducer] INFO: Start executing property for test case: happy_test_create_new_folder
+2026-06-20 15:14:58 [reproducer] INFO: Property executed for test case: happy_test_create_new_folder
+2026-06-20 15:14:58 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_create_new_folder
+2026-06-20 15:14:58 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:14:58 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:14:58 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_property/happy_test_create_new_folder.ec --classfiles D:\code\python\Kea-FL\example\markor-2\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-2\app\src\main\java --xml .\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_property/happy_test_create_new_folder.xml
+2026-06-20 15:14:58 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_property\happy_test_create_new_folder.ec.
+[INFO] Analyzing 248 classes.
+
+2026-06-20 15:14:58 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_property/happy_test_create_new_folder.ec -> .\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_property/happy_test_create_new_folder.xml
+2026-06-20 15:14:58 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151457\test_create_new_folder\happy_test_create_new_folder_property/happy_test_create_new_folder.xml
+2026-06-20 15:14:58 [runner] INFO: Running property-violating path path...
+2026-06-20 15:14:58 [reproducer] INFO: Start reproducing test case: bug_test_create_new_folder
+2026-06-20 15:14:58 [reproducer] INFO: Start executing preconditions for test case: bug_test_create_new_folder
+2026-06-20 15:14:58 [reproducer] INFO: Preconditions executed for test case: bug_test_create_new_folder
+2026-06-20 15:14:58 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_create_new_folder
+2026-06-20 15:14:58 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:14:58 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:14:59 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_precondition/bug_test_create_new_folder.ec --classfiles D:\code\python\Kea-FL\example\markor-2\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-2\app\src\main\java --xml .\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_precondition/bug_test_create_new_folder.xml
+2026-06-20 15:14:59 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_precondition\bug_test_create_new_folder.ec.
+[INFO] Analyzing 248 classes.
+
+2026-06-20 15:14:59 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_precondition/bug_test_create_new_folder.ec -> .\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_precondition/bug_test_create_new_folder.xml
+2026-06-20 15:14:59 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_precondition/bug_test_create_new_folder.xml
+2026-06-20 15:14:59 [reproducer] INFO: Start executing property for test case: bug_test_create_new_folder
+2026-06-20 15:14:59 [reproducer] INFO: Property executed for test case: bug_test_create_new_folder
+2026-06-20 15:14:59 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_create_new_folder
+2026-06-20 15:14:59 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:14:59 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:14:59 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_property/bug_test_create_new_folder.ec --classfiles D:\code\python\Kea-FL\example\markor-2\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-2\app\src\main\java --xml .\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_property/bug_test_create_new_folder.xml
+2026-06-20 15:14:59 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_property\bug_test_create_new_folder.ec.
+[INFO] Analyzing 248 classes.
+
+2026-06-20 15:14:59 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_property/bug_test_create_new_folder.ec -> .\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_property/bug_test_create_new_folder.xml
+2026-06-20 15:14:59 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151457\test_create_new_folder\bug_test_create_new_folder_property/bug_test_create_new_folder.xml
+2026-06-20 15:14:59 [runner] INFO: Parsing coverage data...
+2026-06-20 15:14:59 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151457\test_create_new_folder\data\bug_test_create_new_folder_pre_line_coverage.md
+2026-06-20 15:14:59 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151457\test_create_new_folder\data\bug_test_create_new_folder_pre_branch_coverage.md
+2026-06-20 15:14:59 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151457\test_create_new_folder\data\bug_test_create_new_folder_prop_line_coverage.md
+2026-06-20 15:14:59 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151457\test_create_new_folder\data\bug_test_create_new_folder_prop_branch_coverage.md
+2026-06-20 15:14:59 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151457\test_create_new_folder\data\happy_test_create_new_folder_pre_line_coverage.md
+2026-06-20 15:14:59 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151457\test_create_new_folder\data\happy_test_create_new_folder_pre_branch_coverage.md
+2026-06-20 15:14:59 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151457\test_create_new_folder\data\happy_test_create_new_folder_prop_line_coverage.md
+2026-06-20 15:14:59 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151457\test_create_new_folder\data\happy_test_create_new_folder_prop_branch_coverage.md
+2026-06-20 15:14:59 [runner] INFO: Calculating incremental coverage...
+2026-06-20 15:14:59 [runner] INFO: Performing incremental coverage analysis...
+2026-06-20 15:14:59 [runner] INFO: Generating pair test case report...
+2026-06-20 15:14:59 [runner] INFO: Saving intermediate data...
+2026-06-20 15:14:59 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260620_151457\test_create_new_folder\data\bug_test_create_new_folder_line_incremental_data.md
+2026-06-20 15:14:59 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260620_151457\test_create_new_folder\data\bug_test_create_new_folder_branch_incremental_data.md
+2026-06-20 15:14:59 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260620_151457\test_create_new_folder\data\happy_test_create_new_folder_line_incremental_data.md
+2026-06-20 15:14:59 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260620_151457\test_create_new_folder\data\happy_test_create_new_folder_branch_incremental_data.md
+2026-06-20 15:14:59 [report_generator] INFO: generate line diff data: .\report\report_20260620_151457\test_create_new_folder\data\line_diff_data.md
+2026-06-20 15:14:59 [report_generator] INFO: generate branch diff data: .\report\report_20260620_151457\test_create_new_folder\data\branch_diff_data.md
+2026-06-20 15:14:59 [runner] INFO: Generating diff report...
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\activity\DocumentActivity.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\activity\DocumentEditAndViewFragment.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\activity\MainActivity.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\activity\MoreFragment.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\format\FormatRegistry.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\DraggableScrollbarScrollView.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\MarkorDialogFactory.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\NewFileDialog.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\filesearch\FileSearchDialog.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\filesearch\FileSearchEngine.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\filesearch\FileSearchResultSelectorDialog.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\textview\AutoTextFormatter.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\textview\HighlightingEditor.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\textview\ListHandler.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\textview\SyntaxHighlighterBase.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\textview\TextViewUtils.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\model\AppSettings.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\model\Document.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\util\ShortcutUtils.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\frontend\base\GsFragmentBase.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\frontend\base\GsPreferenceFragmentBase.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\frontend\filebrowser\GsFileBrowserFragment.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\frontend\filebrowser\GsFileBrowserListAdapter.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\frontend\textview\TextViewUndoRedo.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\model\GsSharedPreferencesPropertyBackend.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\util\GsContextUtils.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\util\GsFileUtils.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\wrapper\GsTextWatcherAdapter.java encoding: utf-8
+2026-06-20 15:14:59 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260620_151457\test_create_new_folder\test_create_new_folder_line_diff_report.html
+2026-06-20 15:14:59 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260620_151457\test_create_new_folder\test_create_new_folder_branch_diff_report.html
+2026-06-20 15:14:59 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_create_new_folder
+
+## Code Coverage Summary
+File: net/gsantner/markor/activity/DocumentActivity.java
+  Only in first dataset lines: [43, 51, 54, 55, 56, 58, 59, 63, 66, 67, 69, 70, 74, 77, 80, 81, 82, 85, 89, 93, 94, 100, 147, 148, 149, 150, 152, 154, 155, 156, 158, 162, 163, 165, 166, 175, 177, 178, 182, 184, 185, 186, 188, 191, 195, 206, 208, 214, 215, 216, 218, 226, 227, 230, 234, 236, 248, 254, 272, 285, 286, 287, 289, 292, 294, 296, 298, 299, 301, 311, 312, 313, 318, 319, 320, 321, 322, 324, 336, 337, 341, 345, 349, 350, 351, 352, 354, 356, 364]
+    Line 43: hit count 2
+    Line 51: hit count 3
+    Line 54: hit count 2
+    Line 55: hit count 2
+    Line 56: hit count 6
+    Line 58: hit count 2
+    Line 59: hit count 6
+    Line 63: hit count 2
+    Line 66: hit count 2
+    Line 67: hit count 5
+    Line 69: hit count 6
+    Line 70: hit count 5
+    Line 74: hit count 5
+    Line 77: hit count 8
+    Line 80: hit count 3
+    Line 81: hit count 8
+    Line 82: hit count 1
+    Line 85: hit count 4
+    Line 89: hit count 3
+    Line 93: hit count 8
+    Line 94: hit count 7
+    Line 100: hit count 1
+    Line 147: hit count 3
+    Line 148: hit count 2
+    Line 149: hit count 1
+    Line 150: hit count 2
+    Line 152: hit count 2
+    Line 154: hit count 3
+    Line 155: hit count 6
+    Line 156: hit count 6
+    Line 158: hit count 5
+    Line 162: hit count 6
+    Line 163: hit count 4
+    Line 165: hit count 4
+    Line 166: hit count 1
+    Line 175: hit count 2
+    Line 177: hit count 3
+    Line 178: hit count 3
+    Line 182: hit count 5
+    Line 184: hit count 4
+    Line 185: hit count 4
+    Line 186: hit count 4
+    Line 188: hit count 2
+    Line 191: hit count 4
+    Line 195: hit count 2
+    Line 206: hit count 2
+    Line 208: hit count 8
+    Line 214: hit count 5
+    Line 215: hit count 2
+    Line 216: hit count 4
+    Line 218: hit count 2
+    Line 226: hit count 2
+    Line 227: hit count 2
+    Line 230: hit count 10
+    Line 234: hit count 5
+    Line 236: hit count 1
+    Line 248: hit count 10
+    Line 254: hit count 5
+    Line 272: hit count 4
+    Line 285: hit count 4
+    Line 286: hit count 8
+    Line 287: hit count 6
+    Line 289: hit count 1
+    Line 292: hit count 3
+    Line 294: hit count 3
+    Line 296: hit count 2
+    Line 298: hit count 2
+    Line 299: hit count 7
+    Line 301: hit count 1
+    Line 311: hit count 2
+    Line 312: hit count 9
+    Line 313: hit count 1
+    Line 318: hit count 3
+    Line 319: hit count 3
+    Line 320: hit count 2
+    Line 321: hit count 3
+    Line 322: hit count 4
+    Line 324: hit count 3
+    Line 336: hit count 3
+    Line 337: hit count 3
+    Line 341: hit count 1
+    Line 345: hit count 12
+    Line 349: hit count 4
+    Line 350: hit count 6
+    Line 351: hit count 2
+    Line 352: hit count 2
+    Line 354: hit count 2
+    Line 356: hit count 2
+    Line 364: hit count 6
+----------------------------------------
+File: net/gsantner/markor/activity/DocumentEditAndViewFragment.java
+  Only in first dataset lines: [117, 185, 194, 225, 229, 230, 231, 258, 259, 262, 263, 264, 274, 275, 279, 280, 281, 282, 286, 287, 288, 289, 290, 291, 292, 296, 297, 298, 302, 303, 304, 305, 307, 308, 310, 311, 312, 315, 316, 317, 320, 321, 322, 323, 324, 325, 326, 327, 329, 330, 331, 334, 335, 336, 337, 343, 358, 359, 360, 361, 365, 387, 391, 392, 393, 396, 397, 398, 400, 446, 654, 678, 681, 684, 687, 692, 693, 694, 695, 738, 773, 774, 780, 781, 796, 883, 884, 886, 887, 888]
+    Line 117: hit count 7
+    Line 185: hit count 6
+    Line 194: hit count 7
+    Line 225: hit count 3
+    Line 229: hit count 2
+    Line 230: hit count 2
+    Line 231: hit count 1
+    Line 258: hit count 3
+    Line 259: hit count 11
+    Line 262: hit count 3
+    Line 263: hit count 3
+    Line 264: hit count 6
+    Line 274: hit count 9
+    Line 275: hit count 1
+    Line 279: hit count 3
+    Line 280: hit count 3
+    Line 281: hit count 2
+    Line 282: hit count 1
+    Line 286: hit count 4
+    Line 287: hit count 3
+    Line 288: hit count 7
+    Line 289: hit count 9
+    Line 290: hit count 10
+    Line 291: hit count 2
+    Line 292: hit count 1
+    Line 296: hit count 5
+    Line 297: hit count 3
+    Line 298: hit count 1
+    Line 302: hit count 4
+    Line 303: hit count 4
+    Line 304: hit count 6
+    Line 305: hit count 5
+    Line 307: hit count 5
+    Line 308: hit count 7
+    Line 310: hit count 14
+    Line 311: hit count 14
+    Line 312: hit count 15
+    Line 315: hit count 13
+    Line 316: hit count 13
+    Line 317: hit count 13
+    Line 320: hit count 11
+    Line 321: hit count 12
+    Line 322: hit count 12
+    Line 323: hit count 11
+    Line 324: hit count 12
+    Line 325: hit count 6
+    Line 326: hit count 6
+    Line 327: hit count 6
+    Line 329: hit count 10
+    Line 330: hit count 6
+    Line 331: hit count 6
+    Line 334: hit count 7
+    Line 335: hit count 4
+    Line 336: hit count 6
+    Line 337: hit count 5
+    Line 343: hit count 13
+    Line 358: hit count 5
+    Line 359: hit count 2
+    Line 360: hit count 2
+    Line 361: hit count 1
+    Line 365: hit count 3
+    Line 387: hit count 2
+    Line 391: hit count 9
+    Line 392: hit count 8
+    Line 393: hit count 10
+    Line 396: hit count 9
+    Line 397: hit count 8
+    Line 398: hit count 10
+    Line 400: hit count 1
+    Line 446: hit count 2
+    Line 654: hit count 10
+    Line 678: hit count 5
+    Line 681: hit count 6
+    Line 684: hit count 6
+    Line 687: hit count 6
+    Line 692: hit count 8
+    Line 693: hit count 8
+    Line 694: hit count 4
+    Line 695: hit count 1
+    Line 738: hit count 2
+    Line 773: hit count 3
+    Line 774: hit count 8
+    Line 780: hit count 4
+    Line 781: hit count 5
+    Line 796: hit count 2
+    Line 883: hit count 4
+    Line 884: hit count 3
+    Line 886: hit count 1
+    Line 887: hit count 2
+    Line 888: hit count 1
+----------------------------------------
+File: net/gsantner/markor/activity/MainActivity.java
+  Only in first dataset lines: [126, 127, 128, 129, 132, 302, 328, 329, 330, 331, 387, 448, 449]
+    Line 126: hit count 7
+    Line 127: hit count 7
+    Line 128: hit count 7
+    Line 129: hit count 7
+    Line 132: hit count 1
+    Line 302: hit count 8
+    Line 328: hit count 3
+    Line 329: hit count 9
+    Line 330: hit count 12
+    Line 331: hit count 1
+    Line 387: hit count 2
+    Line 448: hit count 5
+    Line 449: hit count 1
+----------------------------------------
+File: net/gsantner/markor/activity/MoreFragment.java
+  Only in first dataset lines: [51]
+    Line 51: hit count 6
+----------------------------------------
+File: net/gsantner/markor/format/FormatRegistry.java
+  Only in first dataset lines: [91, 92, 93, 94, 95, 98, 99]
+    Line 91: hit count 7
+    Line 92: hit count 2
+    Line 93: hit count 5
+    Line 94: hit count 14
+    Line 95: hit count 2
+    Line 98: hit count 4
+    Line 99: hit count 2
+----------------------------------------
+File: net/gsantner/markor/frontend/DraggableScrollbarScrollView.java
+  Only in first dataset lines: [39, 42, 45, 46, 56]
+    Line 39: hit count 3
+    Line 42: hit count 3
+    Line 45: hit count 7
+    Line 46: hit count 12
+    Line 56: hit count 4
+----------------------------------------
+File: net/gsantner/markor/frontend/MarkorDialogFactory.java
+  Only in first dataset lines: [148, 149, 150, 151]
+    Line 148: hit count 3
+    Line 149: hit count 7
+    Line 150: hit count 5
+    Line 151: hit count 1
+----------------------------------------
+File: net/gsantner/markor/frontend/NewFileDialog.java
+  Only in first dataset lines: [180, 184, 185, 186, 187, 188, 190, 195, 199, 200, 203, 204, 205, 206, 256, 275, 332, 342, 343, 344, 345, 346, 353, 354]
+    Line 180: hit count 4
+    Line 184: hit count 6
+    Line 185: hit count 8
+    Line 186: hit count 18
+    Line 187: hit count 9
+    Line 188: hit count 12
+    Line 190: hit count 3
+    Line 195: hit count 3
+    Line 199: hit count 1
+    Line 200: hit count 5
+    Line 203: hit count 11
+    Line 204: hit count 2
+    Line 205: hit count 1
+    Line 206: hit count 1
+    Line 256: hit count 1
+    Line 275: hit count 2
+    Line 332: hit count 2
+    Line 342: hit count 7
+    Line 343: hit count 2
+    Line 344: hit count 3
+    Line 345: hit count 3
+    Line 346: hit count 8
+    Line 353: hit count 2
+    Line 354: hit count 5
+----------------------------------------
+File: net/gsantner/markor/frontend/filesearch/FileSearchDialog.java
+  Only in first dataset lines: [155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 168, 169, 170, 171, 173, 174, 176]
+    Line 155: hit count 4
+    Line 156: hit count 5
+    Line 157: hit count 4
+    Line 158: hit count 3
+    Line 159: hit count 4
+    Line 160: hit count 4
+    Line 161: hit count 4
+    Line 162: hit count 4
+    Line 163: hit count 4
+    Line 164: hit count 4
+    Line 165: hit count 3
+    Line 166: hit count 4
+    Line 168: hit count 4
+    Line 169: hit count 4
+    Line 170: hit count 4
+    Line 171: hit count 4
+    Line 173: hit count 2
+    Line 174: hit count 3
+    Line 176: hit count 1
+----------------------------------------
+File: net/gsantner/markor/frontend/filesearch/FileSearchEngine.java
+  Only in first dataset lines: [54, 56, 59, 60, 62, 73, 74, 75, 76, 84, 86, 87, 88, 89, 94, 103, 104, 105, 106, 107, 109, 120, 121, 122, 123, 124, 125, 126, 128, 129, 130, 132, 133, 134, 136, 137, 149, 150, 154, 155, 159, 160, 163, 168, 169, 170, 173, 176, 178, 182, 185, 186, 190, 191, 193, 194, 196, 200, 201, 204, 205, 207, 208, 210, 213, 214, 218, 221, 225, 226, 228, 230, 233, 235, 237, 239, 240, 245, 246, 249, 250, 254, 257, 259, 264, 265, 267, 269, 273, 274, 275, 276, 278, 280, 282, 284, 293, 294, 295, 297, 298, 301, 308, 310, 317, 319, 320, 324, 325, 326, 336, 337, 338, 341, 342, 346, 347, 348, 352, 353, 438, 439, 445, 446, 449, 450]
+    Line 54: hit count 4
+    Line 56: hit count 4
+    Line 59: hit count 3
+    Line 60: hit count 1
+    Line 62: hit count 2
+    Line 73: hit count 3
+    Line 74: hit count 3
+    Line 75: hit count 4
+    Line 76: hit count 4
+    Line 84: hit count 2
+    Line 86: hit count 12
+    Line 87: hit count 3
+    Line 88: hit count 6
+    Line 89: hit count 1
+    Line 94: hit count 14
+    Line 103: hit count 6
+    Line 104: hit count 3
+    Line 105: hit count 3
+    Line 106: hit count 6
+    Line 107: hit count 5
+    Line 109: hit count 2
+    Line 120: hit count 4
+    Line 121: hit count 4
+    Line 122: hit count 3
+    Line 123: hit count 4
+    Line 124: hit count 5
+    Line 125: hit count 5
+    Line 126: hit count 5
+    Line 128: hit count 2
+    Line 129: hit count 3
+    Line 130: hit count 3
+    Line 132: hit count 11
+    Line 133: hit count 8
+    Line 134: hit count 7
+    Line 136: hit count 2
+    Line 137: hit count 4
+    Line 149: hit count 5
+    Line 150: hit count 1
+    Line 154: hit count 2
+    Line 155: hit count 4
+    Line 159: hit count 5
+    Line 160: hit count 1
+    Line 163: hit count 3
+    Line 168: hit count 8
+    Line 169: hit count 6
+    Line 170: hit count 21
+    Line 173: hit count 3
+    Line 176: hit count 1
+    Line 178: hit count 1
+    Line 182: hit count 1
+    Line 185: hit count 1
+    Line 186: hit count 1
+    Line 190: hit count 4
+    Line 191: hit count 6
+    Line 193: hit count 9
+    Line 194: hit count 4
+    Line 196: hit count 6
+    Line 200: hit count 9
+    Line 201: hit count 7
+    Line 204: hit count 7
+    Line 205: hit count 26
+    Line 207: hit count 6
+    Line 208: hit count 1
+    Line 210: hit count 3
+    Line 213: hit count 4
+    Line 214: hit count 3
+    Line 218: hit count 4
+    Line 221: hit count 6
+    Line 225: hit count 3
+    Line 226: hit count 8
+    Line 228: hit count 19
+    Line 230: hit count 6
+    Line 233: hit count 13
+    Line 235: hit count 5
+    Line 237: hit count 3
+    Line 239: hit count 4
+    Line 240: hit count 4
+    Line 245: hit count 7
+    Line 246: hit count 4
+    Line 249: hit count 7
+    Line 250: hit count 4
+    Line 254: hit count 31
+    Line 257: hit count 1
+    Line 259: hit count 2
+    Line 264: hit count 3
+    Line 265: hit count 3
+    Line 267: hit count 38
+    Line 269: hit count 1
+    Line 273: hit count 3
+    Line 274: hit count 3
+    Line 275: hit count 3
+    Line 276: hit count 3
+    Line 278: hit count 3
+    Line 280: hit count 4
+    Line 282: hit count 1
+    Line 284: hit count 1
+    Line 293: hit count 13
+    Line 294: hit count 3
+    Line 295: hit count 1
+    Line 297: hit count 4
+    Line 298: hit count 3
+    Line 301: hit count 4
+    Line 308: hit count 5
+    Line 310: hit count 7
+    Line 317: hit count 1
+    Line 319: hit count 1
+    Line 320: hit count 1
+    Line 324: hit count 4
+    Line 325: hit count 8
+    Line 326: hit count 2
+    Line 336: hit count 8
+    Line 337: hit count 10
+    Line 338: hit count 14
+    Line 341: hit count 1
+    Line 342: hit count 1
+    Line 346: hit count 3
+    Line 347: hit count 3
+    Line 348: hit count 4
+    Line 352: hit count 5
+    Line 353: hit count 5
+    Line 438: hit count 7
+    Line 439: hit count 7
+    Line 445: hit count 11
+    Line 446: hit count 5
+    Line 449: hit count 1
+    Line 450: hit count 2
+----------------------------------------
+File: net/gsantner/markor/frontend/filesearch/FileSearchResultSelectorDialog.java
+  Only in first dataset lines: [49, 51, 52, 54, 55, 57, 58, 59, 60, 63, 64, 65, 66, 67, 69, 70, 74, 75, 76, 86, 87, 88, 91, 92, 93, 94, 95, 96, 97, 99, 100, 101, 102, 105, 114, 125, 128, 146, 147, 150, 151, 177, 178, 179, 180, 184, 194, 214, 215, 216, 217, 218, 219, 221, 224, 225, 231, 232, 258, 286, 291]
+    Line 49: hit count 6
+    Line 51: hit count 5
+    Line 52: hit count 3
+    Line 54: hit count 5
+    Line 55: hit count 5
+    Line 57: hit count 5
+    Line 58: hit count 4
+    Line 59: hit count 6
+    Line 60: hit count 10
+    Line 63: hit count 3
+    Line 64: hit count 3
+    Line 65: hit count 3
+    Line 66: hit count 3
+    Line 67: hit count 7
+    Line 69: hit count 3
+    Line 70: hit count 4
+    Line 74: hit count 4
+    Line 75: hit count 6
+    Line 76: hit count 24
+    Line 86: hit count 3
+    Line 87: hit count 3
+    Line 88: hit count 3
+    Line 91: hit count 2
+    Line 92: hit count 2
+    Line 93: hit count 2
+    Line 94: hit count 1
+    Line 95: hit count 7
+    Line 96: hit count 1
+    Line 97: hit count 2
+    Line 99: hit count 3
+    Line 100: hit count 2
+    Line 101: hit count 3
+    Line 102: hit count 4
+    Line 105: hit count 5
+    Line 114: hit count 4
+    Line 125: hit count 7
+    Line 128: hit count 7
+    Line 146: hit count 2
+    Line 147: hit count 1
+    Line 150: hit count 4
+    Line 151: hit count 2
+    Line 177: hit count 2
+    Line 178: hit count 3
+    Line 179: hit count 4
+    Line 180: hit count 1
+    Line 184: hit count 4
+    Line 194: hit count 5
+    Line 214: hit count 5
+    Line 215: hit count 3
+    Line 216: hit count 2
+    Line 217: hit count 6
+    Line 218: hit count 6
+    Line 219: hit count 3
+    Line 221: hit count 4
+    Line 224: hit count 7
+    Line 225: hit count 3
+    Line 231: hit count 6
+    Line 232: hit count 2
+    Line 258: hit count 2
+    Line 286: hit count 2
+    Line 291: hit count 1
+----------------------------------------
+File: net/gsantner/markor/frontend/textview/AutoTextFormatter.java
+  Only in first dataset lines: [33, 38, 40]
+    Line 33: hit count 13
+    Line 38: hit count 1
+    Line 40: hit count 2
+----------------------------------------
+File: net/gsantner/markor/frontend/textview/HighlightingEditor.java
+  Only in first dataset lines: [84, 91, 184, 205, 259, 260, 304]
+    Line 84: hit count 8
+    Line 91: hit count 4
+    Line 184: hit count 3
+    Line 205: hit count 3
+    Line 259: hit count 3
+    Line 260: hit count 5
+    Line 304: hit count 3
+----------------------------------------
+File: net/gsantner/markor/frontend/textview/ListHandler.java
+  Only in first dataset lines: [29, 33, 36, 47, 48, 52, 56, 57, 61, 65, 67, 71, 75, 76, 77, 80, 81, 82, 86]
+    Line 29: hit count 3
+    Line 33: hit count 12
+    Line 36: hit count 17
+    Line 47: hit count 3
+    Line 48: hit count 1
+    Line 52: hit count 3
+    Line 56: hit count 3
+    Line 57: hit count 3
+    Line 61: hit count 3
+    Line 65: hit count 3
+    Line 67: hit count 1
+    Line 71: hit count 3
+    Line 75: hit count 7
+    Line 76: hit count 6
+    Line 77: hit count 1
+    Line 80: hit count 4
+    Line 81: hit count 7
+    Line 82: hit count 5
+    Line 86: hit count 2
+----------------------------------------
+File: net/gsantner/markor/frontend/textview/SyntaxHighlighterBase.java
+  Only in first dataset lines: [223, 236, 247, 270, 337]
+    Line 223: hit count 9
+    Line 236: hit count 8
+    Line 247: hit count 2
+    Line 270: hit count 2
+    Line 337: hit count 2
+----------------------------------------
+File: net/gsantner/markor/frontend/textview/TextViewUtils.java
+  Only in first dataset lines: [51, 58, 65, 69, 70, 71, 72, 78, 82, 86, 87, 88, 89, 95, 315, 374, 375, 376, 379, 381, 382, 388, 389, 390, 391, 393, 395, 397, 403, 408, 409, 411, 412, 415, 416, 419, 423, 424, 426, 427, 428, 429, 432, 433, 434, 436, 512, 513, 528, 529, 531, 532, 535, 536, 790, 795, 796, 797]
+    Line 51: hit count 14
+    Line 58: hit count 2
+    Line 65: hit count 5
+    Line 69: hit count 2
+    Line 70: hit count 15
+    Line 71: hit count 5
+    Line 72: hit count 7
+    Line 78: hit count 2
+    Line 82: hit count 6
+    Line 86: hit count 2
+    Line 87: hit count 15
+    Line 88: hit count 5
+    Line 89: hit count 5
+    Line 95: hit count 2
+    Line 315: hit count 29
+    Line 374: hit count 4
+    Line 375: hit count 4
+    Line 376: hit count 6
+    Line 379: hit count 5
+    Line 381: hit count 4
+    Line 382: hit count 4
+    Line 388: hit count 4
+    Line 389: hit count 4
+    Line 390: hit count 4
+    Line 391: hit count 4
+    Line 393: hit count 4
+    Line 395: hit count 5
+    Line 397: hit count 4
+    Line 403: hit count 7
+    Line 408: hit count 5
+    Line 409: hit count 5
+    Line 411: hit count 5
+    Line 412: hit count 5
+    Line 415: hit count 11
+    Line 416: hit count 1
+    Line 419: hit count 5
+    Line 423: hit count 4
+    Line 424: hit count 6
+    Line 426: hit count 15
+    Line 427: hit count 7
+    Line 428: hit count 3
+    Line 429: hit count 3
+    Line 432: hit count 4
+    Line 433: hit count 13
+    Line 434: hit count 1
+    Line 436: hit count 1
+    Line 512: hit count 14
+    Line 513: hit count 21
+    Line 528: hit count 12
+    Line 529: hit count 4
+    Line 531: hit count 2
+    Line 532: hit count 16
+    Line 535: hit count 6
+    Line 536: hit count 19
+    Line 790: hit count 3
+    Line 795: hit count 5
+    Line 796: hit count 6
+    Line 797: hit count 5
+----------------------------------------
+File: net/gsantner/markor/model/AppSettings.java
+  Only in first dataset lines: [330, 333, 334, 335, 336, 337, 338, 339, 341, 342, 344, 345, 397, 398, 400, 403, 406, 427, 428, 431, 514, 515, 551, 552, 553, 561, 562, 563, 566, 567, 568, 569, 574, 585, 586, 622, 667, 668, 675, 676, 683, 684, 691, 692, 695, 697, 701, 705, 706, 722, 807, 839, 908, 909]
+    Line 330: hit count 4
+    Line 333: hit count 10
+    Line 334: hit count 3
+    Line 335: hit count 5
+    Line 336: hit count 6
+    Line 337: hit count 6
+    Line 338: hit count 4
+    Line 339: hit count 4
+    Line 341: hit count 25
+    Line 342: hit count 3
+    Line 344: hit count 3
+    Line 345: hit count 1
+    Line 397: hit count 3
+    Line 398: hit count 12
+    Line 400: hit count 1
+    Line 403: hit count 3
+    Line 406: hit count 12
+    Line 427: hit count 3
+    Line 428: hit count 3
+    Line 431: hit count 12
+    Line 514: hit count 12
+    Line 515: hit count 1
+    Line 551: hit count 3
+    Line 552: hit count 28
+    Line 553: hit count 2
+    Line 561: hit count 4
+    Line 562: hit count 11
+    Line 563: hit count 1
+    Line 566: hit count 4
+    Line 567: hit count 11
+    Line 568: hit count 4
+    Line 569: hit count 1
+    Line 574: hit count 9
+    Line 585: hit count 7
+    Line 586: hit count 1
+    Line 622: hit count 2
+    Line 667: hit count 6
+    Line 668: hit count 1
+    Line 675: hit count 6
+    Line 676: hit count 1
+    Line 683: hit count 6
+    Line 684: hit count 1
+    Line 691: hit count 6
+    Line 692: hit count 1
+    Line 695: hit count 7
+    Line 697: hit count 2
+    Line 701: hit count 2
+    Line 705: hit count 7
+    Line 706: hit count 11
+    Line 722: hit count 7
+    Line 807: hit count 13
+    Line 839: hit count 7
+    Line 908: hit count 6
+    Line 909: hit count 1
+----------------------------------------
+File: net/gsantner/markor/model/Document.java
+  Only in first dataset lines: [124, 125, 141, 166, 403, 406]
+    Line 124: hit count 2
+    Line 125: hit count 8
+    Line 141: hit count 6
+    Line 166: hit count 3
+    Line 403: hit count 4
+    Line 406: hit count 5
+----------------------------------------
+File: net/gsantner/markor/util/ShortcutUtils.java
+  Only in first dataset lines: [56, 60, 61, 63, 66, 67, 68, 69, 71, 72, 73, 74, 75, 76, 77, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 91, 94, 96, 97, 99, 100, 101, 103, 104, 105, 106, 107, 108, 109, 112, 115, 116, 125, 135]
+    Line 56: hit count 3
+    Line 60: hit count 5
+    Line 61: hit count 4
+    Line 63: hit count 2
+    Line 66: hit count 6
+    Line 67: hit count 2
+    Line 68: hit count 5
+    Line 69: hit count 2
+    Line 71: hit count 7
+    Line 72: hit count 5
+    Line 73: hit count 5
+    Line 74: hit count 3
+    Line 75: hit count 1
+    Line 76: hit count 2
+    Line 77: hit count 4
+    Line 80: hit count 6
+    Line 81: hit count 2
+    Line 82: hit count 5
+    Line 83: hit count 2
+    Line 85: hit count 7
+    Line 86: hit count 5
+    Line 87: hit count 5
+    Line 88: hit count 3
+    Line 89: hit count 1
+    Line 90: hit count 2
+    Line 91: hit count 4
+    Line 94: hit count 3
+    Line 96: hit count 10
+    Line 97: hit count 8
+    Line 99: hit count 6
+    Line 100: hit count 2
+    Line 101: hit count 3
+    Line 103: hit count 3
+    Line 104: hit count 16
+    Line 105: hit count 3
+    Line 106: hit count 4
+    Line 107: hit count 3
+    Line 108: hit count 1
+    Line 109: hit count 1
+    Line 112: hit count 4
+    Line 115: hit count 1
+    Line 116: hit count 1
+    Line 125: hit count 18
+    Line 135: hit count 6
+----------------------------------------
+File: net/gsantner/opoc/frontend/base/GsFragmentBase.java
+  Only in first dataset lines: [113]
+    Line 113: hit count 2
+----------------------------------------
+File: net/gsantner/opoc/frontend/base/GsPreferenceFragmentBase.java
+  Only in first dataset lines: [320, 321, 322]
+    Line 320: hit count 3
+    Line 321: hit count 2
+    Line 322: hit count 1
+----------------------------------------
+File: net/gsantner/opoc/frontend/filebrowser/GsFileBrowserFragment.java
+  Only in first dataset lines: [131, 132, 133, 186, 187, 189, 290, 304, 305, 306, 456, 457, 458, 459, 565, 566, 568]
+    Line 131: hit count 3
+    Line 132: hit count 4
+    Line 133: hit count 1
+    Line 186: hit count 3
+    Line 187: hit count 8
+    Line 189: hit count 1
+    Line 290: hit count 3
+    Line 304: hit count 3
+    Line 305: hit count 4
+    Line 306: hit count 1
+    Line 456: hit count 5
+    Line 457: hit count 4
+    Line 458: hit count 7
+    Line 459: hit count 2
+    Line 565: hit count 3
+    Line 566: hit count 3
+    Line 568: hit count 1
+----------------------------------------
+File: net/gsantner/opoc/frontend/filebrowser/GsFileBrowserListAdapter.java
+  Only in first dataset lines: [227, 228, 231, 232, 233, 236, 243, 244, 245, 246, 247, 249, 252, 253, 258, 259, 261, 268, 271, 376, 377, 763, 764, 765, 766]
+    Line 227: hit count 3
+    Line 228: hit count 6
+    Line 231: hit count 3
+    Line 232: hit count 4
+    Line 233: hit count 7
+    Line 236: hit count 1
+    Line 243: hit count 4
+    Line 244: hit count 4
+    Line 245: hit count 2
+    Line 246: hit count 5
+    Line 247: hit count 10
+    Line 249: hit count 2
+    Line 252: hit count 3
+    Line 253: hit count 3
+    Line 258: hit count 8
+    Line 259: hit count 16
+    Line 261: hit count 1
+    Line 268: hit count 7
+    Line 271: hit count 1
+    Line 376: hit count 3
+    Line 377: hit count 10
+    Line 763: hit count 7
+    Line 764: hit count 4
+    Line 765: hit count 4
+    Line 766: hit count 3
+----------------------------------------
+File: net/gsantner/opoc/frontend/textview/TextViewUndoRedo.java
+  Only in first dataset lines: [134, 169, 404, 406, 407, 408, 409, 411, 412, 413, 416, 440, 444, 445, 446, 449, 452, 453, 454, 457, 461, 462, 465, 466]
+    Line 134: hit count 6
+    Line 169: hit count 10
+    Line 404: hit count 2
+    Line 406: hit count 6
+    Line 407: hit count 7
+    Line 408: hit count 10
+    Line 409: hit count 10
+    Line 411: hit count 3
+    Line 412: hit count 3
+    Line 413: hit count 1
+    Line 416: hit count 6
+    Line 440: hit count 4
+    Line 444: hit count 8
+    Line 445: hit count 4
+    Line 446: hit count 1
+    Line 449: hit count 4
+    Line 452: hit count 8
+    Line 453: hit count 3
+    Line 454: hit count 1
+    Line 457: hit count 4
+    Line 461: hit count 3
+    Line 462: hit count 13
+    Line 465: hit count 3
+    Line 466: hit count 1
+----------------------------------------
+File: net/gsantner/opoc/model/GsSharedPreferencesPropertyBackend.java
+  Only in first dataset lines: [150, 151, 152, 153, 156, 159, 189, 190, 217, 218, 219, 220, 221, 222, 223, 231, 232, 240, 241, 244, 245, 279, 280, 432, 433, 525, 526, 537, 538, 605, 606]
+    Line 150: hit count 10
+    Line 151: hit count 4
+    Line 152: hit count 9
+    Line 153: hit count 5
+    Line 156: hit count 6
+    Line 159: hit count 1
+    Line 189: hit count 8
+    Line 190: hit count 1
+    Line 217: hit count 4
+    Line 218: hit count 10
+    Line 219: hit count 4
+    Line 220: hit count 7
+    Line 221: hit count 1
+    Line 222: hit count 14
+    Line 223: hit count 1
+    Line 231: hit count 7
+    Line 232: hit count 2
+    Line 240: hit count 8
+    Line 241: hit count 1
+    Line 244: hit count 12
+    Line 245: hit count 1
+    Line 279: hit count 8
+    Line 280: hit count 1
+    Line 432: hit count 8
+    Line 433: hit count 1
+    Line 525: hit count 11
+    Line 526: hit count 2
+    Line 537: hit count 11
+    Line 538: hit count 2
+    Line 605: hit count 2
+    Line 606: hit count 1
+----------------------------------------
+File: net/gsantner/opoc/util/GsContextUtils.java
+  Only in first dataset lines: [681, 682, 690, 696, 699, 700, 705, 1114, 2131, 2204, 2209, 2210, 2211, 2212, 2213, 2271, 2272, 2273, 2274, 2275, 2284, 2285, 2288, 2291, 2292, 2301, 2302, 2304, 2306, 2307, 2309, 2311, 2316, 2317, 2538, 2539, 2540, 2541]
+    Line 681: hit count 4
+    Line 682: hit count 11
+    Line 690: hit count 2
+    Line 696: hit count 3
+    Line 699: hit count 1
+    Line 700: hit count 10
+    Line 705: hit count 2
+    Line 1114: hit count 3
+    Line 2131: hit count 13
+    Line 2204: hit count 3
+    Line 2209: hit count 5
+    Line 2210: hit count 5
+    Line 2211: hit count 2
+    Line 2212: hit count 2
+    Line 2213: hit count 2
+    Line 2271: hit count 2
+    Line 2272: hit count 2
+    Line 2273: hit count 13
+    Line 2274: hit count 5
+    Line 2275: hit count 4
+    Line 2284: hit count 4
+    Line 2285: hit count 2
+    Line 2288: hit count 6
+    Line 2291: hit count 6
+    Line 2292: hit count 2
+    Line 2301: hit count 2
+    Line 2302: hit count 11
+    Line 2304: hit count 2
+    Line 2306: hit count 2
+    Line 2307: hit count 2
+    Line 2309: hit count 1
+    Line 2311: hit count 2
+    Line 2316: hit count 1
+    Line 2317: hit count 1
+    Line 2538: hit count 10
+    Line 2539: hit count 1
+    Line 2540: hit count 1
+    Line 2541: hit count 1
+----------------------------------------
+File: net/gsantner/opoc/util/GsFileUtils.java
+  Only in first dataset lines: [99, 107, 552, 759, 760, 770]
+    Line 99: hit count 10
+    Line 107: hit count 2
+    Line 552: hit count 2
+    Line 759: hit count 3
+    Line 760: hit count 9
+    Line 770: hit count 6
+----------------------------------------
+File: net/gsantner/opoc/wrapper/GsTextWatcherAdapter.java
+  Only in first dataset lines: [23, 48, 49]
+    Line 23: hit count 1
+    Line 48: hit count 4
+    Line 49: hit count 1
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Input: pljc → Back → Pass: test_create_new_folder → Start: test_create_note → Input: BYCj1LA7qW → Back → Pass: test_create_note → Start: test_create_note → Input: D8PvslM → Back
+
+FAIL continuation:
+Pass: test_create_note → Random operation: SCROLL_BOTTOM_UP → Start: test_search_note → Input: BYCj1LA7qW → Back → Pass: test_search_note → Start: test_modify_note → Input: y7Fgm2uXy → Back → Pass: test_modify_note → Start: test_create_new_folder → Input: soW9 → Input: bgw2ZoRN0m → Back → Swipe → Fail: test_create_new_folder → Start: test_create_new_folder → Input: Dy1iG5 → Input: uE6KQ → Back → Swipe → Fail: test_create_new_folder → Random operation: LONG_CLICK → Start: test_create_new_folder → Input: VcW_blcMJ → Input: uqi → Back → Swipe
+
+## Correct Execution Path
+Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Start: test_create_new_folder → Input: X0t → Input: pljc → Back → Pass: test_create_new_folder → Start: test_create_note → Input: BYCj1LA7qW → Back → Pass: test_create_note → Start: test_create_note → Input: D8PvslM → Back
+
+## Error Execution Path
+Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Start: test_create_new_folder → Input: X0t → Input: pljc → Back → Pass: test_create_new_folder → Start: test_create_note → Input: BYCj1LA7qW → Back → Pass: test_create_note → Start: test_create_note → Input: D8PvslM → Back → Pass: test_create_note → Random operation: SCROLL_BOTTOM_UP → Start: test_search_note → Input: BYCj1LA7qW → Back → Pass: test_search_note → Start: test_modify_note → Input: y7Fgm2uXy → Back → Pass: test_modify_note → Start: test_create_new_folder → Input: soW9 → Input: bgw2ZoRN0m → Back → Swipe → Fail: test_create_new_folder → Start: test_create_new_folder → Input: Dy1iG5 → Input: uE6KQ → Back → Swipe → Fail: test_create_new_folder → Random operation: LONG_CLICK → Start: test_create_new_folder → Input: VcW_blcMJ → Input: uqi → Back → Swipe
+
+## Files to Analyze
+net/gsantner/markor/activity/DocumentActivity.java
+  Differing lines: 89
+
+net/gsantner/markor/activity/DocumentEditAndViewFragment.java
+  Differing lines: 90
+
+net/gsantner/markor/activity/MainActivity.java
+  Differing lines: 13
+
+net/gsantner/markor/activity/MoreFragment.java
+  Differing lines: 1
+
+net/gsantner/markor/format/FormatRegistry.java
+  Differing lines: 7
+
+net/gsantner/markor/frontend/DraggableScrollbarScrollView.java
+  Differing lines: 5
+
+net/gsantner/markor/frontend/MarkorDialogFactory.java
+  Differing lines: 4
+
+net/gsantner/markor/frontend/NewFileDialog.java
+  Differing lines: 24
+
+net/gsantner/markor/frontend/filesearch/FileSearchDialog.java
+  Differing lines: 19
+
+net/gsantner/markor/frontend/filesearch/FileSearchEngine.java
+  Differing lines: 126
+
+net/gsantner/markor/frontend/filesearch/FileSearchResultSelectorDialog.java
+  Differing lines: 61
+
+net/gsantner/markor/frontend/textview/AutoTextFormatter.java
+  Differing lines: 3
+
+net/gsantner/markor/frontend/textview/HighlightingEditor.java
+  Differing lines: 7
+
+net/gsantner/markor/frontend/textview/ListHandler.java
+  Differing lines: 19
+
+net/gsantner/markor/frontend/textview/SyntaxHighlighterBase.java
+  Differing lines: 5
+
+net/gsantner/markor/frontend/textview/TextViewUtils.java
+  Differing lines: 58
+
+net/gsantner/markor/model/AppSettings.java
+  Differing lines: 54
+
+net/gsantner/markor/model/Document.java
+  Differing lines: 6
+
+net/gsantner/markor/util/ShortcutUtils.java
+  Differing lines: 44
+
+net/gsantner/opoc/frontend/base/GsFragmentBase.java
+  Differing lines: 1
+
+net/gsantner/opoc/frontend/base/GsPreferenceFragmentBase.java
+  Differing lines: 3
+
+net/gsantner/opoc/frontend/filebrowser/GsFileBrowserFragment.java
+  Differing lines: 17
+
+net/gsantner/opoc/frontend/filebrowser/GsFileBrowserListAdapter.java
+  Differing lines: 25
+
+net/gsantner/opoc/frontend/textview/TextViewUndoRedo.java
+  Differing lines: 24
+
+net/gsantner/opoc/model/GsSharedPreferencesPropertyBackend.java
+  Differing lines: 31
+
+net/gsantner/opoc/util/GsContextUtils.java
+  Differing lines: 38
+
+net/gsantner/opoc/util/GsFileUtils.java
+  Differing lines: 6
+
+net/gsantner/opoc/wrapper/GsTextWatcherAdapter.java
+  Differing lines: 3
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-20 15:15:05 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-20 15:15:09 [llm] INFO: LLM response: net/gsantner/markor/frontend/NewFileDialog.java
+net/gsantner/markor/activity/DocumentActivity.java
+net/gsantner/markor/activity/DocumentEditAndViewFragment.java
+net/gsantner/markor/activity/MainActivity.java
+net/gsantner/opoc/frontend/filebrowser/GsFileBrowserFragment.java
+net/gsantner/opoc/frontend/filebrowser/GsFileBrowserListAdapter.java
+net/gsantner/markor/model/AppSettings.java
+net/gsantner/markor/model/Document.java
+net/gsantner/opoc/util/GsContextUtils.java
+net/gsantner/opoc/util/GsFileUtils.java
+net/gsantner/markor/util/ShortcutUtils.java
+net/gsantner/markor/frontend/filesearch/FileSearchEngine.java
+net/gsantner/markor/frontend/filesearch/FileSearchResultSelectorDialog.java
+net/gsantner/markor/frontend/filesearch/FileSearchDialog.java
+net/gsantner/markor/frontend/textview/TextViewUtils.java
+net/gsantner/markor/frontend/textview/ListHandler.java
+net/gsantner/markor/frontend/textview/HighlightingEditor.java
+net/gsantner/markor/frontend/textview/SyntaxHighlighterBase.java
+net/gsantner/markor/frontend/textview/AutoTextFormatter.java
+net/gsantner/markor/frontend/DraggableScrollbarScrollView.java
+net/gsantner/markor/frontend/MarkorDialogFactory.java
+net/gsantner/markor/format/FormatRegistry.java
+net/gsantner/markor/activity/MoreFragment.java
+net/gsantner/opoc/frontend/base/GsFragmentBase.java
+net/gsantner/opoc/frontend/base/GsPreferenceFragmentBase.java
+net/gsantner/opoc/frontend/textview/TextViewUndoRedo.java
+net/gsantner/opoc/model/GsSharedPreferencesPropertyBackend.java
+net/gsantner/opoc/wrapper/GsTextWatcherAdapter.java
+2026-06-20 15:15:09 [runner] INFO: Saving ranking to .\report\report_20260620_151457\test_create_new_folder\ranking.txt
+2026-06-20 15:15:09 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260620_151457\index.html
+2026-06-20 15:15:09 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: .\report\report_20260620_151457

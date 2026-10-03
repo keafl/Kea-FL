@@ -1,0 +1,16 @@
+{"startStepsCount": 1, "propName": "omni945.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni945.OmniNotesBugTest.test_create_category_within_note", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni945.OmniNotesBugTest.test_delete_category_information", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni945.OmniNotesBugTest.test_data_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni945.OmniNotesBugTest.test_create_note_with_tag_in_content", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni945.OmniNotesBugTest.test_behavior_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni945.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni945.OmniNotesBugTest.test_delete_category_information", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni945.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni945.OmniNotesBugTest.test_delete_category_information", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni945.py\", line 154, in test_delete_category_information\n    assert (show_comfir_page and count != 0) or (not show_comfir_page and count == 0)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 3, "propName": "omni945.OmniNotesBugTest.test_delete_category_information", "state": "error", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni945.py\", line 136, in test_delete_category_information\n    n = random.choice(range(len(category_names)))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\random.py\", line 347, in choice\n    raise IndexError('Cannot choose from an empty sequence')\nIndexError: Cannot choose from an empty sequence\n"}
+{"startStepsCount": 3, "propName": "omni945.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 7, "propName": "omni945.OmniNotesBugTest.test_create_category_within_note", "state": "pass", "tb": ""}
+{"startStepsCount": 29, "propName": "omni945.OmniNotesBugTest.test_delete_category_information", "state": "pass", "tb": ""}
+{"startStepsCount": 31, "propName": "omni945.OmniNotesBugTest.test_delete_category_information", "state": "error", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni945.py\", line 136, in test_delete_category_information\n    n = random.choice(range(len(category_names)))\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\random.py\", line 347, in choice\n    raise IndexError('Cannot choose from an empty sequence')\nIndexError: Cannot choose from an empty sequence\n"}
+{"startStepsCount": 32, "propName": "omni945.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}

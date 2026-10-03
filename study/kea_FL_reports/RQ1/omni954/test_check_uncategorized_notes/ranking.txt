@@ -1,0 +1,11 @@
+it/feio/android/omninotes/db/DbHelper.java
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/NavigationDrawerFragment.java
+it/feio/android/omninotes/async/MainMenuTask.java
+it/feio/android/omninotes/utils/Navigation.java
+it/feio/android/omninotes/models/NavigationItem.java
+it/feio/android/omninotes/models/adapters/NavDrawerAdapter.java
+it/feio/android/omninotes/async/bus/NavigationUpdatedEvent.java
+it/feio/android/omninotes/async/bus/NavigationUpdatedNavDrawerClosedEvent.java
+it/feio/android/omninotes/BaseActivity.java
+it/feio/android/omninotes/models/views/Fab.java

@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test_search_note Line Coverage Diff Report</title>
+<style>
+    :root {
+        --github-bg: #ffffff;
+        --github-text: #24292f;
+        --github-gray-50: #f9fafb;
+        --github-gray-100: #f1f2f4;
+        --github-gray-200: #e4e7eb;
+        --github-gray-300: #d1d5db;
+        --github-gray-400: #9ca3af;
+        --github-gray-500: #6e7781;
+        --github-gray-600: #4d5663;
+        --github-gray-700: #374151;
+        --github-gray-800: #272e3b;
+        
+        --line-number-bg: #f6f8fa;
+        --line-number-text: #6e7781;
+        --line-number-border: #eaecef;
+        
+        --correct-bg: rgb(218, 251, 225);
+        --correct-border: rgb(172, 238, 187);
+        --correct-line-number-bg: rgb(172, 238, 187); 
+        --correct-line-number-text: #000000;
+        
+        --bug-bg: rgb(255, 235, 233); 
+        --bug-border: rgb(255, 206, 203);           
+        --bug-line-number-bg: rgb(255, 206, 203); 
+        --bug-line-number-text: #000000;            
+        
+        --covered-bg: var(--correct-bg);
+        --covered-border: var(--correct-border);
+        --covered-line-number-bg: var(--correct-line-number-bg);
+        --covered-line-number-text: var(--correct-line-number-text);
+        
+        --sidebar-width: 300px;
+        --sidebar-collapsed-width: 0px;
+        --border-radius: 6px;
+        --transition: all 0.2s ease;
+        --code-line-height: 1.5em;
+        --line-number-width: 4.5rem;
+        --header-height: 60px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.5;
+        color: var(--github-text);
+        background-color: var(--github-gray-50);
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        padding-top: var(--header-height);
+    }
+
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        background-color: var(--github-bg);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--github-gray-800);
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--github-gray-200);
+    }
+
+    p {
+        color: var(--github-gray-600);
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-toggle-btn {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        color: var(--github-gray-700);
+        cursor: pointer;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .sidebar-toggle-btn:hover {
+        background-color: var(--github-gray-50);
+        border-color: var(--github-gray-300);
+        color: var(--github-gray-800);
+    }
+
+    .sidebar {
+        width: var(--sidebar-width);
+        background-color: var(--github-bg);
+        border-right: 1px solid var(--github-gray-200);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        transition: var(--transition);
+        overflow: hidden;
+        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+    }
+
+    .sidebar.collapsed {
+        width: var(--sidebar-collapsed-width);
+        border-right: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .sidebar-resizer {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .file-list-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        color: var(--github-gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid var(--github-gray-200);
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-tree {
+        list-style: none;
+        overflow-y: auto;
+        flex: 1;
+        padding: 0.5rem 0;
+    }
+
+    .dir-item {
+        position: relative;
+    }
+
+    .dir-header {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .dir-header:hover {
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-toggle {
+        width: 1rem;
+        height: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: var(--github-gray-500);
+        margin-right: 0.5rem;
+    }
+
+    .dir-content {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .file-item {
+        padding: 0;
+    }
+
+    .file-link {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .file-link::before {
+        content: "📄";
+        font-size: 0.75rem;
+        margin-right: 0.5rem;
+        opacity: 0.7;
+    }
+
+    .file-link:hover {
+        background-color: var(--github-gray-50);
+        color: #0969da;
+    }
+
+    .file-link.active {
+        color: #0969da;
+        font-weight: 500;
+    }
+
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+        transition: var(--transition);
+        margin-left: var(--sidebar-width);
+        height: 100vh;
+        background-color: var(--github-gray-50);
+        padding-top: 1rem;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: var(--sidebar-collapsed-width) !important;
+    }
+
+    .file-header {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        scroll-margin-top: calc(var(--header-height) + 1rem);
+    }
+
+    .file-header a {
+        color: #0969da;
+        text-decoration: none;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .file-header a:hover {
+        text-decoration: underline;
+    }
+
+    .diff-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        min-height: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .diff-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .diff-panel {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .panel-header {
+        background-color: var(--github-gray-50);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .panel-header::before {
+        content: "";
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .diff-container > .diff-panel:first-child .panel-header::before {
+        background-color: var(--bug-border);
+    }
+
+    .diff-container > .diff-panel:last-child .panel-header::before {
+        background-color: var(--correct-border);
+    }
+
+    .code-container {
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-size: 12px;
+        line-height: var(--code-line-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 600px;
+        flex: 1;
+        width: 100%;
+        background-color: var(--github-bg);
+    }
+
+    .code-line {
+        display: grid;
+        grid-template-columns: var(--line-number-width) 1fr;
+        width: 100%;
+        transition: background-color 0.2s ease;
+        border-left: 3px solid transparent;
+        min-height: var(--code-line-height);
+    }
+
+    .line-number {
+        width: var(--line-number-width);
+        padding: 0 0.75rem;
+        text-align: right;
+        color: var(--line-number-text);
+        user-select: none;
+        background-color: var(--line-number-bg);
+        border-right: 1px solid var(--line-number-border);
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .correct-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 100;
+    }
+
+    .bug-line .line-number {
+        background-color: var(--bug-line-number-bg);
+        color: var(--bug-line-number-text);
+        border-right-color: var(--bug-border);
+        font-weight: 100;
+    }
+
+    .covered-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 600;
+    }
+
+    .code-content {
+        flex: 1;
+        padding: 0 0.75rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: flex-start;
+        padding-top: calc((var(--code-line-height) - 1em) / 2);
+        width: 100%;
+        color: var(--github-text);
+    }
+
+    .correct-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .bug-line {
+        background-color: var(--bug-bg);
+        border-left-color: var(--bug-border);
+    }
+
+    .covered-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .context-line .code-content:empty::before {
+        content: " ";
+    }
+
+    .separator-line {
+        background-color: var(--github-gray-50);
+        color: var(--github-gray-500);
+        text-align: center;
+        padding: 0.5rem 0;
+        font-style: italic;
+        border-top: 1px dashed var(--github-gray-300);
+        border-bottom: 1px dashed var(--github-gray-300);
+        grid-column: 1 / -1;
+    }
+
+    .separator-line .line-number,
+    .separator-line .code-content {
+        height: auto;
+        line-height: 1.5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--github-gray-300);
+        border-radius: 6px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--github-gray-400);
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            position: fixed;
+            z-index: 100;
+        }
+        
+        .main-content {
+            margin-left: 0 !important;
+            padding: 1rem;
+        }
+    }
+
+    .context-line {
+        background-color: var(--github-bg);
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+// Global sidebar toggle function
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("collapsed");
+}
+
+// Directory expand/collapse function
+function toggleDir(dirHeader) {
+    const toggle = dirHeader.querySelector(".dir-toggle");
+    const content = dirHeader.nextElementSibling;
+    
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        toggle.textContent = "−";
+    } else {
+        content.style.display = "none";
+        toggle.textContent = "+";
+    }
+}
+
+// File link click event handler
+document.addEventListener('DOMContentLoaded', () => {
+    const fileLinks = document.querySelectorAll('.file-link');
+    
+    fileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            fileLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    if (fileLinks.length > 0) {
+        fileLinks[0].classList.add('active');
+    }
+});
+</script>
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<div class="fixed-header">
+    <h1>test_search_note Line Coverage Diff Report</h1>
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        File List
+    </button>
+</div>
+<div class="sidebar" id="sidebar">
+<h3 class="file-list-title">File List</h3>
+<ul class="dir-tree">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">net/gsantner</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">markor</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">activity</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-0" class="file-link"><span>DocumentEditFragment.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-1" class="file-link"><span>MainActivity.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-2" class="file-link"><span>MainActivity_ViewBinding.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-3" class="file-link"><span>MoreInfoFragment.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">format/markdown</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-4" class="file-link"><span>MarkdownTextActions.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">ui</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-5" class="file-link"><span>SearchOrCustomTextDialogCreator.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">util</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-6" class="file-link"><span>AppSettings.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">opoc</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">activity</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-7" class="file-link"><span>GsFragmentBase.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">android/dummy</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-8" class="file-link"><span>TextWatcherDummy.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">ui</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-9" class="file-link"><span>FilesystemViewerAdapter.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-10" class="file-link"><span>FilesystemViewerFragment.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-11" class="file-link"><span>SearchOrCustomTextDialog.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">util</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-12" class="file-link"><span>ContextUtils.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-13" class="file-link"><span>FileWithCachedData.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+</ul>
+</div>
+<div class="main-content">
+<p>Generated Time: 2026-06-20 15:10:03</p>
+<h2>Line Coverage Diff</h2>
+<div class="file-header" id="file-0">
+    File: net/gsantner/markor/activity/DocumentEditFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\DocumentEditFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">802</span><span class="code-content">        return _webView;</span></div>
+<div class="code-line context-line"><span class="line-number">803</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">804</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">805</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">806</span><span class="code-content">    protected void onToolbarClicked(View v) {</span></div>
+<div class="code-line bug-line"><span class="line-number">807</span><span class="code-content">        if (!_isPreviewVisible &amp;&amp; _textFormat != null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">808</span><span class="code-content">            _textFormat.getTextActions().runTitleClick();</span></div>
+<div class="code-line context-line"><span class="line-number">809</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">810</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">811</span><span class="code-content">}</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-1">
+    File: net/gsantner/markor/activity/MainActivity.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MainActivity.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">327</span><span class="code-content">        new Handler().postDelayed(() -&gt; _doubleBackToExitPressedOnce = false, 2000);</span></div>
+<div class="code-line context-line"><span class="line-number">328</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">329</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">330</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">331</span><span class="code-content">    public boolean onNavigationItemSelected(@NonNull MenuItem item) {</span></div>
+<div class="code-line bug-line"><span class="line-number">332</span><span class="code-content">        _viewPager.setCurrentItem(tabIdToPos(item.getItemId()));</span></div>
+<div class="code-line bug-line"><span class="line-number">333</span><span class="code-content">        return true;</span></div>
+<div class="code-line context-line"><span class="line-number">334</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">335</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">336</span><span class="code-content">    public void updateFabVisibility(boolean visible) {</span></div>
+<div class="code-line context-line"><span class="line-number">337</span><span class="code-content">        if (visible) {</span></div>
+<div class="code-line context-line"><span class="line-number">338</span><span class="code-content">            _fab.show();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">343</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">344</span><span class="code-content">    public String getFileBrowserTitle() {</span></div>
+<div class="code-line context-line"><span class="line-number">345</span><span class="code-content">        final File file = _appSettings.getFileBrowserLastBrowsedFolder();</span></div>
+<div class="code-line context-line"><span class="line-number">346</span><span class="code-content">        String title = getString(R.string.app_name);</span></div>
+<div class="code-line context-line"><span class="line-number">347</span><span class="code-content">        if (!_appSettings.getNotebookDirectory().getAbsolutePath().equals(file.getAbsolutePath())) {</span></div>
+<div class="code-line bug-line"><span class="line-number">348</span><span class="code-content">            title = &quot;&gt; &quot; + file.getName();</span></div>
+<div class="code-line context-line"><span class="line-number">349</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">350</span><span class="code-content">        return title;</span></div>
+<div class="code-line context-line"><span class="line-number">351</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">352</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">353</span><span class="code-content">    public int tabIdToPos(final int id) {</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-2">
+    File: net/gsantner/markor/activity/MainActivity_ViewBinding.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MainActivity_ViewBinding.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-3">
+    File: net/gsantner/markor/activity/MoreInfoFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MoreInfoFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">146</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">147</span><span class="code-content">    public synchronized void doUpdatePreferences() {</span></div>
+<div class="code-line context-line"><span class="line-number">148</span><span class="code-content">        super.doUpdatePreferences();</span></div>
+<div class="code-line context-line"><span class="line-number">149</span><span class="code-content">        Context context = getContext();</span></div>
+<div class="code-line context-line"><span class="line-number">150</span><span class="code-content">        if (context == null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">151</span><span class="code-content">            return;</span></div>
+<div class="code-line context-line"><span class="line-number">152</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">153</span><span class="code-content">        Locale locale = Locale.getDefault();</span></div>
+<div class="code-line context-line"><span class="line-number">154</span><span class="code-content">        String tmp;</span></div>
+<div class="code-line context-line"><span class="line-number">155</span><span class="code-content">        Preference pref;</span></div>
+<div class="code-line context-line"><span class="line-number">156</span><span class="code-content">        updateSummary(R.string.pref_key__more_info__project_license, getString(R.string.app_license_name));</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-4">
+    File: net/gsantner/markor/format/markdown/MarkdownTextActions.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\format\markdown\MarkdownTextActions.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">196</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">197</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">198</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">199</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">200</span><span class="code-content">    public boolean runTitleClick() {</span></div>
+<div class="code-line bug-line"><span class="line-number">201</span><span class="code-content">        SearchOrCustomTextDialogCreator.showHeadlineDialog(MarkdownReplacePatternGenerator.PREFIX_ATX_HEADING.toString(), _activity, _hlEditor);</span></div>
+<div class="code-line bug-line"><span class="line-number">202</span><span class="code-content">        return true;</span></div>
+<div class="code-line context-line"><span class="line-number">203</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">204</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">205</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">206</span><span class="code-content">    protected void renumberOrderedList(final int position) {</span></div>
+<div class="code-line context-line"><span class="line-number">207</span><span class="code-content">        AutoFormatter.renumberOrderedList(_hlEditor.getText(), position, MarkdownAutoFormat.getPrefixPatterns());</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-5">
+    File: net/gsantner/markor/ui/SearchOrCustomTextDialogCreator.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\ui\SearchOrCustomTextDialogCreator.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">516</span><span class="code-content">        dopt2.positionCallback = (result) -&gt; StringUtils.selectLines(text, result);</span></div>
+<div class="code-line context-line"><span class="line-number">517</span><span class="code-content">        SearchOrCustomTextDialog.showMultiChoiceDialogWithSearchFilterUI(activity, dopt2);</span></div>
+<div class="code-line context-line"><span class="line-number">518</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">519</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">520</span><span class="code-content">    public static void showHeadlineDialog(final String headlineFilterPattern, final Activity activity, final EditText text) {</span></div>
+<div class="code-line bug-line"><span class="line-number">521</span><span class="code-content">        SearchOrCustomTextDialog.DialogOptions dopt2 = new SearchOrCustomTextDialog.DialogOptions();</span></div>
+<div class="code-line bug-line"><span class="line-number">522</span><span class="code-content">        baseConf(activity, dopt2);</span></div>
+<div class="code-line bug-line"><span class="line-number">523</span><span class="code-content">        dopt2.positionCallback = (result) -&gt; StringUtils.selectLines(text, result);</span></div>
+<div class="code-line bug-line"><span class="line-number">524</span><span class="code-content">        dopt2.data = Arrays.asList(text.getText().toString().split(&quot;\n&quot;, -1));</span></div>
+<div class="code-line bug-line"><span class="line-number">525</span><span class="code-content">        dopt2.titleText = R.string.table_of_contents;</span></div>
+<div class="code-line bug-line"><span class="line-number">526</span><span class="code-content">        dopt2.searchHintText = R.string.search;</span></div>
+<div class="code-line bug-line"><span class="line-number">527</span><span class="code-content">        dopt2.extraFilter = headlineFilterPattern;</span></div>
+<div class="code-line bug-line"><span class="line-number">528</span><span class="code-content">        dopt2.isSearchEnabled = true;</span></div>
+<div class="code-line bug-line"><span class="line-number">529</span><span class="code-content">        dopt2.searchIsRegex = false;</span></div>
+<div class="code-line bug-line"><span class="line-number">530</span><span class="code-content">        dopt2.gravity = Gravity.TOP;</span></div>
+<div class="code-line bug-line"><span class="line-number">531</span><span class="code-content">        SearchOrCustomTextDialog.showMultiChoiceDialogWithSearchFilterUI(activity, dopt2);</span></div>
+<div class="code-line bug-line"><span class="line-number">532</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">533</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">534</span><span class="code-content">    public static void showIndentSizeDialog(final Activity activity, final int indent, final Callback.a1&lt;String&gt; callback) {</span></div>
+<div class="code-line context-line"><span class="line-number">535</span><span class="code-content">        SearchOrCustomTextDialog.DialogOptions dopt = new SearchOrCustomTextDialog.DialogOptions();</span></div>
+<div class="code-line context-line"><span class="line-number">536</span><span class="code-content">        baseConf(activity, dopt);</span></div>
+<div class="code-line context-line"><span class="line-number">537</span><span class="code-content">        dopt.callback = callback;</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">669</span><span class="code-content">        dopt.callback = (key) -&gt; callback.callback(FileUtils.readTextFileFast(texts.get(key)));</span></div>
+<div class="code-line context-line"><span class="line-number">670</span><span class="code-content">        SearchOrCustomTextDialog.showMultiChoiceDialogWithSearchFilterUI(activity, dopt);</span></div>
+<div class="code-line context-line"><span class="line-number">671</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">672</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">673</span><span class="code-content">    public static void baseConf(Activity activity, SearchOrCustomTextDialog.DialogOptions dopt) {</span></div>
+<div class="code-line bug-line"><span class="line-number">674</span><span class="code-content">        AppSettings as = new AppSettings(activity);</span></div>
+<div class="code-line bug-line"><span class="line-number">675</span><span class="code-content">        dopt.isDarkDialog = as.isDarkThemeEnabled();</span></div>
+<div class="code-line bug-line"><span class="line-number">676</span><span class="code-content">        dopt.clearInputIcon = R.drawable.ic_baseline_clear_24;</span></div>
+<div class="code-line bug-line"><span class="line-number">677</span><span class="code-content">        dopt.textColor = ContextCompat.getColor(activity, R.color.primary_text);</span></div>
+<div class="code-line bug-line"><span class="line-number">678</span><span class="code-content">        dopt.highlightColor = ContextCompat.getColor(activity, R.color.accent);</span></div>
+<div class="code-line bug-line"><span class="line-number">679</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">680</span><span class="code-content">}</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-6">
+    File: net/gsantner/markor/util/AppSettings.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\util\AppSettings.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">61</span><span class="code-content">    public static AppSettings get() {</span></div>
+<div class="code-line context-line"><span class="line-number">62</span><span class="code-content">        return new AppSettings(App.get());</span></div>
+<div class="code-line context-line"><span class="line-number">63</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">64</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">65</span><span class="code-content">    public boolean isDarkThemeEnabled() {</span></div>
+<div class="code-line bug-line"><span class="line-number">66</span><span class="code-content">        final int currentState = AppCompatDelegate.getDefaultNightMode();</span></div>
+<div class="code-line bug-line"><span class="line-number">67</span><span class="code-content">        if (currentState == AppCompatDelegate.MODE_NIGHT_YES) {</span></div>
+<div class="code-line context-line"><span class="line-number">68</span><span class="code-content">            return true;</span></div>
+<div class="code-line bug-line"><span class="line-number">69</span><span class="code-content">        } else if (currentState == AppCompatDelegate.MODE_NIGHT_NO) {</span></div>
+<div class="code-line context-line"><span class="line-number">70</span><span class="code-content">            return false;</span></div>
+<div class="code-line context-line"><span class="line-number">71</span><span class="code-content">        } else {</span></div>
+<div class="code-line bug-line"><span class="line-number">72</span><span class="code-content">            switch (_context.getResources().getConfiguration().uiMode &amp; Configuration.UI_MODE_NIGHT_MASK) {</span></div>
+<div class="code-line context-line"><span class="line-number">73</span><span class="code-content">                case Configuration.UI_MODE_NIGHT_YES:</span></div>
+<div class="code-line context-line"><span class="line-number">74</span><span class="code-content">                    return true;</span></div>
+<div class="code-line context-line"><span class="line-number">75</span><span class="code-content">                case Configuration.UI_MODE_NIGHT_NO:</span></div>
+<div class="code-line bug-line"><span class="line-number">76</span><span class="code-content">                    return false;</span></div>
+<div class="code-line context-line"><span class="line-number">77</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">78</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">79</span><span class="code-content">        return false;</span></div>
+<div class="code-line context-line"><span class="line-number">80</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">81</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">237</span><span class="code-content">        setBool(R.string.pref_key__is_main_recreate_required, false);</span></div>
+<div class="code-line context-line"><span class="line-number">238</span><span class="code-content">        return ret;</span></div>
+<div class="code-line context-line"><span class="line-number">239</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">240</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">241</span><span class="code-content">    public void setSortMethod(int value) {</span></div>
+<div class="code-line bug-line"><span class="line-number">242</span><span class="code-content">        setInt(R.string.pref_key__sort_method, value);</span></div>
+<div class="code-line bug-line"><span class="line-number">243</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">244</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">245</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">246</span><span class="code-content">    public int getSortMethod() {</span></div>
+<div class="code-line context-line"><span class="line-number">247</span><span class="code-content">        return getInt(R.string.pref_key__sort_method, FilesystemViewerFragment.SORT_BY_NAME);</span></div>
+<div class="code-line context-line"><span class="line-number">248</span><span class="code-content">    }</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-7">
+    File: net/gsantner/opoc/activity/GsFragmentBase.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\activity\GsFragmentBase.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">83</span><span class="code-content">    protected void attachToolbarClickListenersToFragment() {</span></div>
+<div class="code-line context-line"><span class="line-number">84</span><span class="code-content">        final Toolbar toolbar;</span></div>
+<div class="code-line context-line"><span class="line-number">85</span><span class="code-content">        if ((toolbar = getToolbar()) != null &amp;&amp; getUserVisibleHint()) {</span></div>
+<div class="code-line context-line"><span class="line-number">86</span><span class="code-content">            toolbar.setOnLongClickListener(clickView -&gt; getUserVisibleHint() &amp;&amp; onToolbarLongClicked(clickView));</span></div>
+<div class="code-line context-line"><span class="line-number">87</span><span class="code-content">            toolbar.setOnClickListener(clickView -&gt; {</span></div>
+<div class="code-line bug-line"><span class="line-number">88</span><span class="code-content">                if (getUserVisibleHint()) {</span></div>
+<div class="code-line bug-line"><span class="line-number">89</span><span class="code-content">                    onToolbarClicked(clickView);</span></div>
+<div class="code-line context-line"><span class="line-number">90</span><span class="code-content">                }</span></div>
+<div class="code-line bug-line"><span class="line-number">91</span><span class="code-content">            });</span></div>
+<div class="code-line context-line"><span class="line-number">92</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">93</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">94</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">95</span><span class="code-content">    /**</span></div>
+<div class="code-line context-line"><span class="line-number">96</span><span class="code-content">     * Get a tag from the fragment, allows faster distinction</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-8">
+    File: net/gsantner/opoc/android/dummy/TextWatcherDummy.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\android\dummy\TextWatcherDummy.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">17</span><span class="code-content">import android.text.TextWatcher;</span></div>
+<div class="code-line context-line"><span class="line-number">18</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">19</span><span class="code-content">import net.gsantner.opoc.util.Callback;</span></div>
+<div class="code-line context-line"><span class="line-number">20</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">21</span><span class="code-content">@SuppressWarnings({&quot;unused&quot;, &quot;SpellCheckingInspection&quot;})</span></div>
+<div class="code-line bug-line"><span class="line-number">22</span><span class="code-content">public class TextWatcherDummy implements TextWatcher {</span></div>
+<div class="code-line context-line"><span class="line-number">23</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">24</span><span class="code-content">    public void beforeTextChanged(final CharSequence s, final int start, final int count, final int after) {</span></div>
+<div class="code-line bug-line"><span class="line-number">25</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">26</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">27</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">28</span><span class="code-content">    public void onTextChanged(final CharSequence s, final int start, final int before, final int count) {</span></div>
+<div class="code-line bug-line"><span class="line-number">29</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">30</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">31</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">32</span><span class="code-content">    public void afterTextChanged(final Editable s) {</span></div>
+<div class="code-line context-line"><span class="line-number">33</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">34</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">47</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">48</span><span class="code-content">        };</span></div>
+<div class="code-line context-line"><span class="line-number">49</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">50</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">51</span><span class="code-content">    public static TextWatcher after(final Callback.a1&lt;Editable&gt; impl) {</span></div>
+<div class="code-line bug-line"><span class="line-number">52</span><span class="code-content">        return new TextWatcherDummy() {</span></div>
+<div class="code-line context-line"><span class="line-number">53</span><span class="code-content">            public void afterTextChanged(final Editable s) {</span></div>
+<div class="code-line bug-line"><span class="line-number">54</span><span class="code-content">                impl.callback(s);</span></div>
+<div class="code-line bug-line"><span class="line-number">55</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">56</span><span class="code-content">        };</span></div>
+<div class="code-line context-line"><span class="line-number">57</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">58</span><span class="code-content">}</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-9">
+    File: net/gsantner/opoc/ui/FilesystemViewerAdapter.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\ui\FilesystemViewerAdapter.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">321</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">322</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">323</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">324</span><span class="code-content">    @SuppressWarnings(&quot;UnnecessaryReturnStatement&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">325</span><span class="code-content">    public void onClick(View view) {</span></div>
+<div class="code-line bug-line"><span class="line-number">326</span><span class="code-content">        switch (view.getId()) {</span></div>
+<div class="code-line context-line"><span class="line-number">327</span><span class="code-content">            case R.id.opoc_filesystem_item__root: {</span></div>
+<div class="code-line context-line"><span class="line-number">328</span><span class="code-content">                // A own item was clicked</span></div>
+<div class="code-line bug-line"><span class="line-number">329</span><span class="code-content">                TagContainer data = (TagContainer) view.getTag();</span></div>
+<div class="code-line bug-line"><span class="line-number">330</span><span class="code-content">                if (data != null &amp;&amp; data.file != null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">331</span><span class="code-content">                    File file = data.file;</span></div>
+<div class="code-line bug-line"><span class="line-number">332</span><span class="code-content">                    if (_virtualMapping.containsKey(file)) {</span></div>
+<div class="code-line context-line"><span class="line-number">333</span><span class="code-content">                        file = _virtualMapping.get(data.file);</span></div>
+<div class="code-line context-line"><span class="line-number">334</span><span class="code-content">                    }</span></div>
+<div class="code-line bug-line"><span class="line-number">335</span><span class="code-content">                    if (areItemsSelected()) {</span></div>
+<div class="code-line context-line"><span class="line-number">336</span><span class="code-content">                        // There are 1 or more items selected yet</span></div>
+<div class="code-line context-line"><span class="line-number">337</span><span class="code-content">                        if (!toggleSelection(data) &amp;&amp; file.isDirectory()) {</span></div>
+<div class="code-line context-line"><span class="line-number">338</span><span class="code-content">                            loadFolder(file);</span></div>
+<div class="code-line context-line"><span class="line-number">339</span><span class="code-content">                        }</span></div>
+<div class="code-line context-line"><span class="line-number">340</span><span class="code-content">                    } else {</span></div>
+<div class="code-line context-line"><span class="line-number">341</span><span class="code-content">                        // No pre-selection</span></div>
+<div class="code-line bug-line"><span class="line-number">342</span><span class="code-content">                        if (file.isDirectory()) {</span></div>
+<div class="code-line bug-line"><span class="line-number">343</span><span class="code-content">                            loadFolder(file);</span></div>
+<div class="code-line context-line"><span class="line-number">344</span><span class="code-content">                        } else if (file.isFile()) {</span></div>
+<div class="code-line context-line"><span class="line-number">345</span><span class="code-content">                            _dopt.listener.onFsViewerSelected(_dopt.requestId, file, null);</span></div>
+<div class="code-line context-line"><span class="line-number">346</span><span class="code-content">                        } else if (file.equals(VIRTUAL_STORAGE_POPULAR) || file.equals(VIRTUAL_STORAGE_RECENTS) || file.equals(VIRTUAL_STORAGE_FAVOURITE) || file.equals(VIRTUAL_STORAGE_APP_DATA_PRIVATE)) {</span></div>
+<div class="code-line context-line"><span class="line-number">347</span><span class="code-content">                            loadFolder(file);</span></div>
+<div class="code-line context-line"><span class="line-number">348</span><span class="code-content">                        }</span></div>
+<div class="code-line context-line"><span class="line-number">349</span><span class="code-content">                    }</span></div>
+<div class="code-line context-line"><span class="line-number">350</span><span class="code-content">                }</span></div>
+<div class="code-line bug-line"><span class="line-number">351</span><span class="code-content">                return;</span></div>
+<div class="code-line context-line"><span class="line-number">352</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">353</span><span class="code-content">            case R.id.ui__filesystem_dialog__home: {</span></div>
+<div class="code-line context-line"><span class="line-number">354</span><span class="code-content">                _currentSelection.clear();</span></div>
+<div class="code-line context-line"><span class="line-number">355</span><span class="code-content">                loadFolder(_dopt.rootFolder);</span></div>
+<div class="code-line context-line"><span class="line-number">356</span><span class="code-content">                return;</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-10">
+    File: net/gsantner/opoc/ui/FilesystemViewerFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\ui\FilesystemViewerFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">134</span><span class="code-content">        _recyclerList.setAdapter(_filesystemViewerAdapter);</span></div>
+<div class="code-line context-line"><span class="line-number">135</span><span class="code-content">        _filesystemViewerAdapter.getFilter().filter(&quot;&quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">136</span><span class="code-content">        onFsViewerDoUiUpdate(_filesystemViewerAdapter);</span></div>
+<div class="code-line context-line"><span class="line-number">137</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">138</span><span class="code-content">        swipe.setOnRefreshListener(() -&gt; {</span></div>
+<div class="code-line bug-line"><span class="line-number">139</span><span class="code-content">            _filesystemViewerAdapter.reloadCurrentFolder();</span></div>
+<div class="code-line bug-line"><span class="line-number">140</span><span class="code-content">            swipe.setRefreshing(false);</span></div>
+<div class="code-line bug-line"><span class="line-number">141</span><span class="code-content">        });</span></div>
+<div class="code-line context-line"><span class="line-number">142</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">143</span><span class="code-content">        _filesystemViewerAdapter.restoreSavedInstanceState(savedInstanceState);</span></div>
+<div class="code-line context-line"><span class="line-number">144</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">145</span><span class="code-content">        if (SearchEngine.isSearchExecuting) {</span></div>
+<div class="code-line context-line"><span class="line-number">146</span><span class="code-content">            SearchEngine.activity.set(new WeakReference&lt;&gt;(getActivity()));</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">381</span><span class="code-content">                final File file = _filesystemViewerAdapter.getCurrentSelection().iterator().next();</span></div>
+<div class="code-line context-line"><span class="line-number">382</span><span class="code-content">                _shareUtil.createLauncherDesktopShortcut(new Document(file));</span></div>
+<div class="code-line context-line"><span class="line-number">383</span><span class="code-content">                return true;</span></div>
+<div class="code-line context-line"><span class="line-number">384</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">385</span><span class="code-content">            case R.id.action_sort_by_name: {</span></div>
+<div class="code-line bug-line"><span class="line-number">386</span><span class="code-content">                item.setChecked(true);</span></div>
+<div class="code-line bug-line"><span class="line-number">387</span><span class="code-content">                _appSettings.setSortMethod(SORT_BY_NAME);</span></div>
+<div class="code-line bug-line"><span class="line-number">388</span><span class="code-content">                sortAdapter();</span></div>
+<div class="code-line bug-line"><span class="line-number">389</span><span class="code-content">                return true;</span></div>
+<div class="code-line context-line"><span class="line-number">390</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">391</span><span class="code-content">            case R.id.action_sort_by_date: {</span></div>
+<div class="code-line context-line"><span class="line-number">392</span><span class="code-content">                item.setChecked(true);</span></div>
+<div class="code-line context-line"><span class="line-number">393</span><span class="code-content">                _appSettings.setSortMethod(SORT_BY_DATE);</span></div>
+<div class="code-line context-line"><span class="line-number">394</span><span class="code-content">                sortAdapter();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">514</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">515</span><span class="code-content">                return true;</span></div>
+<div class="code-line context-line"><span class="line-number">516</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">517</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">518</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">519</span><span class="code-content">        if (folderToLoad != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">520</span><span class="code-content">            _filesystemViewerAdapter.setCurrentFolder(folderToLoad, true);</span></div>
+<div class="code-line context-line"><span class="line-number">521</span><span class="code-content">            Toast.makeText(getContext(), folderToLoad.getAbsolutePath(), Toast.LENGTH_SHORT).show();</span></div>
+<div class="code-line context-line"><span class="line-number">522</span><span class="code-content">            return true;</span></div>
+<div class="code-line context-line"><span class="line-number">523</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">524</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">525</span><span class="code-content">        return false;</span></div>
+<div class="code-line context-line"><span class="line-number">526</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">527</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">528</span><span class="code-content">    private void executeSearchAction() {</span></div>
+<div class="code-line context-line"><span class="line-number">529</span><span class="code-content">        if (new PermissionChecker(getActivity()).doIfExtStoragePermissionGranted()) {</span></div>
+<div class="code-line context-line"><span class="line-number">530</span><span class="code-content">            final File currentFolder = getCurrentFolder();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">570</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">571</span><span class="code-content">        return comparator;</span></div>
+<div class="code-line context-line"><span class="line-number">572</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">573</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">574</span><span class="code-content">    public void sortAdapter() {</span></div>
+<div class="code-line bug-line"><span class="line-number">575</span><span class="code-content">        _dopt.fileComparable = sortFolder(null);</span></div>
+<div class="code-line bug-line"><span class="line-number">576</span><span class="code-content">        _dopt.folderFirst = _appSettings.isFilesystemListFolderFirst();</span></div>
+<div class="code-line bug-line"><span class="line-number">577</span><span class="code-content">        reloadCurrentFolder();</span></div>
+<div class="code-line bug-line"><span class="line-number">578</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">579</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">580</span><span class="code-content">    public void clearSelection() {</span></div>
+<div class="code-line context-line"><span class="line-number">581</span><span class="code-content">        _filesystemViewerAdapter.unselectAll();</span></div>
+<div class="code-line context-line"><span class="line-number">582</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">583</span><span class="code-content"></span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-11">
+    File: net/gsantner/opoc/ui/SearchOrCustomTextDialog.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\ui\SearchOrCustomTextDialog.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">61</span><span class="code-content">import java.util.regex.Pattern;</span></div>
+<div class="code-line context-line"><span class="line-number">62</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">63</span><span class="code-content">@SuppressLint(&quot;SetTextI18n&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">64</span><span class="code-content">public class SearchOrCustomTextDialog {</span></div>
+<div class="code-line context-line"><span class="line-number">65</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">66</span><span class="code-content">    public static class DialogOptions {</span></div>
+<div class="code-line context-line"><span class="line-number">67</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">68</span><span class="code-content">        // Callback for search text or text of single item</span></div>
+<div class="code-line bug-line"><span class="line-number">69</span><span class="code-content">        @Nullable</span></div>
+<div class="code-line context-line"><span class="line-number">70</span><span class="code-content">        public Callback.a1&lt;String&gt; callback = null;</span></div>
+<div class="code-line context-line"><span class="line-number">71</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">72</span><span class="code-content">        // Callback for indices of selected items.</span></div>
+<div class="code-line context-line"><span class="line-number">73</span><span class="code-content">        // List will contain single item if isMultiSelectEnabled == false;</span></div>
+<div class="code-line bug-line"><span class="line-number">74</span><span class="code-content">        @Nullable</span></div>
+<div class="code-line context-line"><span class="line-number">75</span><span class="code-content">        public Callback.a1&lt;List&lt;Integer&gt;&gt; positionCallback = null;</span></div>
+<div class="code-line context-line"><span class="line-number">76</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">77</span><span class="code-content">        public boolean isMultiSelectEnabled = false;</span></div>
+<div class="code-line bug-line"><span class="line-number">78</span><span class="code-content">        public List&lt;? extends CharSequence&gt; data = null;</span></div>
+<div class="code-line bug-line"><span class="line-number">79</span><span class="code-content">        public List&lt;? extends CharSequence&gt; highlightData = null;</span></div>
+<div class="code-line context-line"><span class="line-number">80</span><span class="code-content">        public List&lt;Integer&gt; iconsForData;</span></div>
+<div class="code-line bug-line"><span class="line-number">81</span><span class="code-content">        public String messageText = &quot;&quot;;</span></div>
+<div class="code-line bug-line"><span class="line-number">82</span><span class="code-content">        public String defaultText = &quot;&quot;;</span></div>
+<div class="code-line bug-line"><span class="line-number">83</span><span class="code-content">        public boolean isSearchEnabled = true;</span></div>
+<div class="code-line bug-line"><span class="line-number">84</span><span class="code-content">        public boolean isDarkDialog = false;</span></div>
+<div class="code-line bug-line"><span class="line-number">85</span><span class="code-content">        public int dialogWidthDp = WindowManager.LayoutParams.MATCH_PARENT;</span></div>
+<div class="code-line bug-line"><span class="line-number">86</span><span class="code-content">        public int dialogHeightDp = WindowManager.LayoutParams.WRAP_CONTENT;</span></div>
+<div class="code-line bug-line"><span class="line-number">87</span><span class="code-content">        public int gravity = Gravity.NO_GRAVITY;</span></div>
+<div class="code-line bug-line"><span class="line-number">88</span><span class="code-content">        public int searchInputType = InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS;</span></div>
+<div class="code-line bug-line"><span class="line-number">89</span><span class="code-content">        public boolean searchIsRegex = false;</span></div>
+<div class="code-line bug-line"><span class="line-number">90</span><span class="code-content">        public Callback.a1&lt;Spannable&gt; highlighter = null;</span></div>
+<div class="code-line bug-line"><span class="line-number">91</span><span class="code-content">        public String extraFilter = null;</span></div>
+<div class="code-line bug-line"><span class="line-number">92</span><span class="code-content">        public List&lt;Integer&gt; preSelected = null;</span></div>
+<div class="code-line context-line"><span class="line-number">93</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">94</span><span class="code-content">        public Callback.a1&lt;AlertDialog&gt; neutralButtonCallback = null;</span></div>
+<div class="code-line context-line"><span class="line-number">95</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">96</span><span class="code-content">        @ColorInt</span></div>
+<div class="code-line context-line"><span class="line-number">97</span><span class="code-content">        public int textColor = 0xFF000000;</span></div>
+<div class="code-line bug-line"><span class="line-number">98</span><span class="code-content">        @ColorInt</span></div>
+<div class="code-line context-line"><span class="line-number">99</span><span class="code-content">        public int highlightColor = 0xFF00FF00;</span></div>
+<div class="code-line bug-line"><span class="line-number">100</span><span class="code-content">        @StringRes</span></div>
+<div class="code-line context-line"><span class="line-number">101</span><span class="code-content">        public int cancelButtonText = android.R.string.cancel;</span></div>
+<div class="code-line bug-line"><span class="line-number">102</span><span class="code-content">        @StringRes</span></div>
+<div class="code-line context-line"><span class="line-number">103</span><span class="code-content">        public int neutralButtonText = 0;</span></div>
+<div class="code-line bug-line"><span class="line-number">104</span><span class="code-content">        @StringRes</span></div>
+<div class="code-line context-line"><span class="line-number">105</span><span class="code-content">        public int okButtonText = android.R.string.ok;</span></div>
+<div class="code-line bug-line"><span class="line-number">106</span><span class="code-content">        @StringRes</span></div>
+<div class="code-line context-line"><span class="line-number">107</span><span class="code-content">        public int titleText = 0;</span></div>
+<div class="code-line bug-line"><span class="line-number">108</span><span class="code-content">        @StringRes</span></div>
+<div class="code-line context-line"><span class="line-number">109</span><span class="code-content">        public int searchHintText = android.R.string.search_go;</span></div>
+<div class="code-line bug-line"><span class="line-number">110</span><span class="code-content">        @DrawableRes</span></div>
+<div class="code-line context-line"><span class="line-number">111</span><span class="code-content">        public int clearInputIcon = android.R.drawable.ic_input_delete;</span></div>
+<div class="code-line context-line"><span class="line-number">112</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">113</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">114</span><span class="code-content">    private static class Adapter extends ArrayAdapter&lt;Integer&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">115</span><span class="code-content">        @LayoutRes</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">120</span><span class="code-content">        private final List&lt;Integer&gt; _filteredItems;</span></div>
+<div class="code-line context-line"><span class="line-number">121</span><span class="code-content">        private final Set&lt;Integer&gt; _selectedItems;</span></div>
+<div class="code-line context-line"><span class="line-number">122</span><span class="code-content">        private final Pattern _extraPattern;</span></div>
+<div class="code-line context-line"><span class="line-number">123</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">124</span><span class="code-content">        public static Adapter create(final Context context, final DialogOptions dopt) {</span></div>
+<div class="code-line bug-line"><span class="line-number">125</span><span class="code-content">            return new Adapter(context, dopt, dopt.isMultiSelectEnabled ? android.R.layout.simple_list_item_multiple_choice : android.R.layout.simple_list_item_1, new ArrayList&lt;&gt;());</span></div>
+<div class="code-line context-line"><span class="line-number">126</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">127</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">128</span><span class="code-content">        private Adapter(final Context context, final DialogOptions dopt, final int layout, final List&lt;Integer&gt; filteredItems) {</span></div>
+<div class="code-line bug-line"><span class="line-number">129</span><span class="code-content">            super(context, layout, filteredItems);</span></div>
+<div class="code-line bug-line"><span class="line-number">130</span><span class="code-content">            _layout = layout;</span></div>
+<div class="code-line bug-line"><span class="line-number">131</span><span class="code-content">            _filteredItems = filteredItems;</span></div>
+<div class="code-line bug-line"><span class="line-number">132</span><span class="code-content">            _inflater = LayoutInflater.from(context);</span></div>
+<div class="code-line bug-line"><span class="line-number">133</span><span class="code-content">            _dopt = dopt;</span></div>
+<div class="code-line bug-line"><span class="line-number">134</span><span class="code-content">            _extraPattern = (_dopt.extraFilter == null ? null : Pattern.compile(_dopt.extraFilter));</span></div>
+<div class="code-line bug-line"><span class="line-number">135</span><span class="code-content">            _selectedItems = new HashSet&lt;&gt;(_dopt.preSelected != null ? _dopt.preSelected : Collections.emptyList());</span></div>
+<div class="code-line bug-line"><span class="line-number">136</span><span class="code-content">            ContextUtils cu = new ContextUtils(context);</span></div>
+<div class="code-line bug-line"><span class="line-number">137</span><span class="code-content">            _layoutHeight = (int) cu.convertDpToPx(36);</span></div>
+<div class="code-line bug-line"><span class="line-number">138</span><span class="code-content">            cu.freeContextRef();</span></div>
+<div class="code-line bug-line"><span class="line-number">139</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">140</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">141</span><span class="code-content">        @NonNull</span></div>
+<div class="code-line context-line"><span class="line-number">142</span><span class="code-content">        @Override</span></div>
+<div class="code-line context-line"><span class="line-number">143</span><span class="code-content">        public View getView(int pos, @Nullable View convertView, @NonNull ViewGroup parent) {</span></div>
+<div class="code-line context-line"><span class="line-number">144</span><span class="code-content">            final int index = getItem(pos);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">185</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">186</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">187</span><span class="code-content">        @NonNull</span></div>
+<div class="code-line context-line"><span class="line-number">188</span><span class="code-content">        @Override</span></div>
+<div class="code-line context-line"><span class="line-number">189</span><span class="code-content">        public Filter getFilter() {</span></div>
+<div class="code-line bug-line"><span class="line-number">190</span><span class="code-content">            return new Filter() {</span></div>
+<div class="code-line context-line"><span class="line-number">191</span><span class="code-content">                @SuppressWarnings(&quot;unchecked&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">192</span><span class="code-content">                @Override</span></div>
+<div class="code-line context-line"><span class="line-number">193</span><span class="code-content">                protected void publishResults(final CharSequence constraint, final FilterResults results) {</span></div>
+<div class="code-line bug-line"><span class="line-number">194</span><span class="code-content">                    _filteredItems.clear();</span></div>
+<div class="code-line bug-line"><span class="line-number">195</span><span class="code-content">                    _filteredItems.addAll((List&lt;Integer&gt;) results.values);</span></div>
+<div class="code-line bug-line"><span class="line-number">196</span><span class="code-content">                    notifyDataSetChanged();</span></div>
+<div class="code-line bug-line"><span class="line-number">197</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">198</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">199</span><span class="code-content">                @Override</span></div>
+<div class="code-line context-line"><span class="line-number">200</span><span class="code-content">                protected FilterResults performFiltering(final CharSequence constraint) {</span></div>
+<div class="code-line bug-line"><span class="line-number">201</span><span class="code-content">                    final List&lt;Integer&gt; resList = new ArrayList&lt;&gt;();</span></div>
+<div class="code-line context-line"><span class="line-number">202</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">203</span><span class="code-content">                    if (_dopt.data != null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">204</span><span class="code-content">                        final String fil = constraint.toString();</span></div>
+<div class="code-line bug-line"><span class="line-number">205</span><span class="code-content">                        final boolean emptySearch = fil.isEmpty();</span></div>
+<div class="code-line bug-line"><span class="line-number">206</span><span class="code-content">                        for (int i = 0; i &lt; _dopt.data.size(); i++) {</span></div>
+<div class="code-line bug-line"><span class="line-number">207</span><span class="code-content">                            final String str = _dopt.data.get(i).toString();</span></div>
+<div class="code-line bug-line"><span class="line-number">208</span><span class="code-content">                            final boolean matchExtra = (_extraPattern == null) || _extraPattern.matcher(str).find();</span></div>
+<div class="code-line bug-line"><span class="line-number">209</span><span class="code-content">                            final Locale locale = Locale.getDefault();</span></div>
+<div class="code-line bug-line"><span class="line-number">210</span><span class="code-content">                            final boolean matchNormal = str.toLowerCase(locale).contains(fil.toLowerCase(locale));</span></div>
+<div class="code-line bug-line"><span class="line-number">211</span><span class="code-content">                            final boolean matchRegex = _dopt.searchIsRegex &amp;&amp; (str.matches(fil));</span></div>
+<div class="code-line bug-line"><span class="line-number">212</span><span class="code-content">                            if (matchExtra &amp;&amp; (matchNormal || matchRegex || emptySearch)) {</span></div>
+<div class="code-line context-line"><span class="line-number">213</span><span class="code-content">                                resList.add(i);</span></div>
+<div class="code-line context-line"><span class="line-number">214</span><span class="code-content">                            }</span></div>
+<div class="code-line context-line"><span class="line-number">215</span><span class="code-content">                        }</span></div>
+<div class="code-line context-line"><span class="line-number">216</span><span class="code-content">                    }</span></div>
+<div class="code-line context-line"><span class="line-number">217</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">218</span><span class="code-content">                    final FilterResults res = new FilterResults();</span></div>
+<div class="code-line bug-line"><span class="line-number">219</span><span class="code-content">                    res.values = resList;</span></div>
+<div class="code-line bug-line"><span class="line-number">220</span><span class="code-content">                    res.count = resList.size();</span></div>
+<div class="code-line bug-line"><span class="line-number">221</span><span class="code-content">                    return res;</span></div>
+<div class="code-line context-line"><span class="line-number">222</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">223</span><span class="code-content">            };</span></div>
+<div class="code-line context-line"><span class="line-number">224</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">225</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">226</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">227</span><span class="code-content">    public static void showMultiChoiceDialogWithSearchFilterUI(final Activity activity, final DialogOptions dopt) {</span></div>
+<div class="code-line bug-line"><span class="line-number">228</span><span class="code-content">        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity, dopt.isDarkDialog</span></div>
+<div class="code-line context-line"><span class="line-number">229</span><span class="code-content">                ? android.support.v7.appcompat.R.style.Theme_AppCompat_Dialog</span></div>
+<div class="code-line context-line"><span class="line-number">230</span><span class="code-content">                : android.support.v7.appcompat.R.style.Theme_AppCompat_Light_Dialog</span></div>
+<div class="code-line context-line"><span class="line-number">231</span><span class="code-content">        );</span></div>
+<div class="code-line bug-line"><span class="line-number">232</span><span class="code-content">        final Adapter listAdapter = Adapter.create(activity, dopt);</span></div>
+<div class="code-line context-line"><span class="line-number">233</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">234</span><span class="code-content">        // Constructing the dialog</span></div>
+<div class="code-line context-line"><span class="line-number">235</span><span class="code-content">        // =========================================================================================</span></div>
+<div class="code-line bug-line"><span class="line-number">236</span><span class="code-content">        if (dopt.titleText != 0 || !TextUtils.isEmpty(dopt.messageText)) {</span></div>
+<div class="code-line context-line"><span class="line-number">237</span><span class="code-content">            // Using a custom view for title and message.</span></div>
+<div class="code-line context-line"><span class="line-number">238</span><span class="code-content">            // This is needed because:</span></div>
+<div class="code-line context-line"><span class="line-number">239</span><span class="code-content">            // 1. https://stackoverflow.com/questions/61339887/alertdialog-doesnt-fit-long-list-view-buttons-if-used-together</span></div>
+<div class="code-line context-line"><span class="line-number">240</span><span class="code-content">            // 2. In order to control spacing</span></div>
+<div class="code-line context-line"><span class="line-number">241</span><span class="code-content">            // And is much less hacky than the other approaches</span></div>
+<div class="code-line bug-line"><span class="line-number">242</span><span class="code-content">            dialogBuilder.setCustomTitle(makeTitleView(activity, dopt));</span></div>
+<div class="code-line context-line"><span class="line-number">243</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">244</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">245</span><span class="code-content">        final LinearLayout mainLayout = new LinearLayout(activity);</span></div>
+<div class="code-line bug-line"><span class="line-number">246</span><span class="code-content">        mainLayout.setOrientation(LinearLayout.VERTICAL);</span></div>
+<div class="code-line context-line"><span class="line-number">247</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">248</span><span class="code-content">        // SearchView is currently constructed even if it isn&#x27;t needed</span></div>
+<div class="code-line bug-line"><span class="line-number">249</span><span class="code-content">        final View searchView = makeSearchView(activity, dopt);</span></div>
+<div class="code-line bug-line"><span class="line-number">250</span><span class="code-content">        final EditText searchEditText = searchView.findViewWithTag(&quot;EDIT&quot;);</span></div>
+<div class="code-line bug-line"><span class="line-number">251</span><span class="code-content">        searchEditText.addTextChangedListener(TextWatcherDummy.after((cbEditable) -&gt; listAdapter.getFilter().filter(cbEditable)));</span></div>
+<div class="code-line context-line"><span class="line-number">252</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">253</span><span class="code-content">        if (dopt.isSearchEnabled) {</span></div>
+<div class="code-line bug-line"><span class="line-number">254</span><span class="code-content">            mainLayout.addView(searchView);</span></div>
+<div class="code-line context-line"><span class="line-number">255</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">256</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">257</span><span class="code-content">        final ListView listView = new ListView(activity);</span></div>
+<div class="code-line bug-line"><span class="line-number">258</span><span class="code-content">        listView.setAdapter(listAdapter);</span></div>
+<div class="code-line bug-line"><span class="line-number">259</span><span class="code-content">        listView.setVisibility(dopt.data != null &amp;&amp; !dopt.data.isEmpty() ? View.VISIBLE : View.GONE);</span></div>
+<div class="code-line bug-line"><span class="line-number">260</span><span class="code-content">        final LinearLayout.LayoutParams listLayout = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0);</span></div>
+<div class="code-line bug-line"><span class="line-number">261</span><span class="code-content">        listLayout.weight = 1;</span></div>
+<div class="code-line bug-line"><span class="line-number">262</span><span class="code-content">        mainLayout.addView(listView, listLayout);</span></div>
+<div class="code-line context-line"><span class="line-number">263</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">264</span><span class="code-content">        dialogBuilder.setView(mainLayout)</span></div>
+<div class="code-line bug-line"><span class="line-number">265</span><span class="code-content">                .setOnCancelListener(null)</span></div>
+<div class="code-line bug-line"><span class="line-number">266</span><span class="code-content">                .setNegativeButton(dopt.cancelButtonText, (dialogInterface, i) -&gt; dialogInterface.dismiss());</span></div>
+<div class="code-line context-line"><span class="line-number">267</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">268</span><span class="code-content">        // =========================================================================================</span></div>
+<div class="code-line context-line"><span class="line-number">269</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">270</span><span class="code-content">        // Ok button action</span></div>
+<div class="code-line bug-line"><span class="line-number">271</span><span class="code-content">        if ((dopt.callback != null) || (dopt.isMultiSelectEnabled)) {</span></div>
+<div class="code-line context-line"><span class="line-number">272</span><span class="code-content">            dialogBuilder.setPositiveButton(dopt.okButtonText, (dialogInterface, i) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">273</span><span class="code-content">                final String searchText = dopt.isSearchEnabled ? searchEditText.getText().toString() : null;</span></div>
+<div class="code-line context-line"><span class="line-number">274</span><span class="code-content">                if (dopt.positionCallback != null &amp;&amp; !listAdapter._selectedItems.isEmpty()) {</span></div>
+<div class="code-line context-line"><span class="line-number">275</span><span class="code-content">                    final List&lt;Integer&gt; sel = new ArrayList&lt;&gt;(listAdapter._selectedItems);</span></div>
+<div class="code-line context-line"><span class="line-number">276</span><span class="code-content">                    Collections.sort(sel);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">279</span><span class="code-content">                    dopt.callback.callback(searchText);</span></div>
+<div class="code-line context-line"><span class="line-number">280</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">281</span><span class="code-content">            });</span></div>
+<div class="code-line context-line"><span class="line-number">282</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">283</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">284</span><span class="code-content">        final AlertDialog dialog = dialogBuilder.create();</span></div>
+<div class="code-line context-line"><span class="line-number">285</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">286</span><span class="code-content">        searchEditText.setOnKeyListener((keyView, keyCode, keyEvent) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">287</span><span class="code-content">            if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &amp;&amp; (keyCode == KeyEvent.KEYCODE_ENTER)) {</span></div>
+<div class="code-line context-line"><span class="line-number">288</span><span class="code-content">                dialog.dismiss();</span></div>
+<div class="code-line context-line"><span class="line-number">289</span><span class="code-content">                if (dopt.callback != null &amp;&amp; !TextUtils.isEmpty(searchEditText.getText().toString())) {</span></div>
+<div class="code-line context-line"><span class="line-number">290</span><span class="code-content">                    dopt.callback.callback(searchEditText.getText().toString());</span></div>
+<div class="code-line context-line"><span class="line-number">291</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">292</span><span class="code-content">                return true;</span></div>
+<div class="code-line context-line"><span class="line-number">293</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">294</span><span class="code-content">            return false;</span></div>
+<div class="code-line context-line"><span class="line-number">295</span><span class="code-content">        });</span></div>
+<div class="code-line context-line"><span class="line-number">296</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">297</span><span class="code-content">        final Window win = dialog.getWindow();</span></div>
+<div class="code-line bug-line"><span class="line-number">298</span><span class="code-content">        if (win != null &amp;&amp; dopt.isSearchEnabled) {</span></div>
+<div class="code-line bug-line"><span class="line-number">299</span><span class="code-content">            win.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE | WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);</span></div>
+<div class="code-line context-line"><span class="line-number">300</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">301</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">302</span><span class="code-content">        dialog.show();</span></div>
+<div class="code-line context-line"><span class="line-number">303</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">304</span><span class="code-content">        if (win != null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">305</span><span class="code-content">            int ds_w = dopt.dialogWidthDp &lt; 100 ? dopt.dialogWidthDp : ((int) (dopt.dialogWidthDp * activity.getResources().getDisplayMetrics().density));</span></div>
+<div class="code-line bug-line"><span class="line-number">306</span><span class="code-content">            int ds_h = dopt.dialogHeightDp &lt; 100 ? dopt.dialogHeightDp : ((int) (dopt.dialogHeightDp * activity.getResources().getDisplayMetrics().density));</span></div>
+<div class="code-line bug-line"><span class="line-number">307</span><span class="code-content">            win.setLayout(ds_w, ds_h);</span></div>
+<div class="code-line context-line"><span class="line-number">308</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">309</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">310</span><span class="code-content">        if (win != null &amp;&amp; dopt.gravity != Gravity.NO_GRAVITY) {</span></div>
+<div class="code-line bug-line"><span class="line-number">311</span><span class="code-content">            WindowManager.LayoutParams wlp = win.getAttributes();</span></div>
+<div class="code-line bug-line"><span class="line-number">312</span><span class="code-content">            wlp.gravity = dopt.gravity;</span></div>
+<div class="code-line bug-line"><span class="line-number">313</span><span class="code-content">            win.setAttributes(wlp);</span></div>
+<div class="code-line context-line"><span class="line-number">314</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">315</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">316</span><span class="code-content">        final Button neutralButton = dialog.getButton(AlertDialog.BUTTON_NEUTRAL);</span></div>
+<div class="code-line bug-line"><span class="line-number">317</span><span class="code-content">        if (neutralButton != null &amp;&amp; dopt.neutralButtonText != 0 &amp;&amp; dopt.neutralButtonCallback != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">318</span><span class="code-content">            neutralButton.setVisibility(Button.VISIBLE);</span></div>
+<div class="code-line context-line"><span class="line-number">319</span><span class="code-content">            neutralButton.setText(dopt.neutralButtonText);</span></div>
+<div class="code-line context-line"><span class="line-number">320</span><span class="code-content">            neutralButton.setOnClickListener((button) -&gt; dopt.neutralButtonCallback.callback(dialog));</span></div>
+<div class="code-line context-line"><span class="line-number">321</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">322</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">323</span><span class="code-content">        if (dopt.isSearchEnabled) {</span></div>
+<div class="code-line bug-line"><span class="line-number">324</span><span class="code-content">            searchEditText.requestFocus();</span></div>
+<div class="code-line context-line"><span class="line-number">325</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">326</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">327</span><span class="code-content">        if (dopt.defaultText != null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">328</span><span class="code-content">            listAdapter.getFilter().filter(searchEditText.getText());</span></div>
+<div class="code-line context-line"><span class="line-number">329</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">330</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">331</span><span class="code-content">        // Helper function to trigger callback with single item</span></div>
+<div class="code-line bug-line"><span class="line-number">332</span><span class="code-content">        final Callback.b1&lt;Integer&gt; directActivate = (position) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">333</span><span class="code-content">            final int index = listAdapter._filteredItems.get(position);</span></div>
+<div class="code-line context-line"><span class="line-number">334</span><span class="code-content">            dialog.dismiss();</span></div>
+<div class="code-line context-line"><span class="line-number">335</span><span class="code-content">            if (dopt.callback != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">336</span><span class="code-content">                dopt.callback.callback(dopt.data.get(index).toString());</span></div>
+<div class="code-line context-line"><span class="line-number">337</span><span class="code-content">            }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">340</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">341</span><span class="code-content">            return true;</span></div>
+<div class="code-line context-line"><span class="line-number">342</span><span class="code-content">        };</span></div>
+<div class="code-line context-line"><span class="line-number">343</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">344</span><span class="code-content">        // Helper function to append selection count to OK button</span></div>
+<div class="code-line bug-line"><span class="line-number">345</span><span class="code-content">        final Button okButton = dialog.getButton(Dialog.BUTTON_POSITIVE);</span></div>
+<div class="code-line bug-line"><span class="line-number">346</span><span class="code-content">        final String okText = activity.getString(dopt.okButtonText) + (dopt.isMultiSelectEnabled ? &quot; (%d)&quot; : &quot;&quot;);</span></div>
+<div class="code-line bug-line"><span class="line-number">347</span><span class="code-content">        final Callback.a0 setOkButtonState = () -&gt; {</span></div>
+<div class="code-line bug-line"><span class="line-number">348</span><span class="code-content">            okButton.setText(okText.replace(&quot;%d&quot;, Integer.toString(listAdapter._selectedItems.size())));</span></div>
+<div class="code-line bug-line"><span class="line-number">349</span><span class="code-content">        };</span></div>
+<div class="code-line context-line"><span class="line-number">350</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">351</span><span class="code-content">        // Set ok button text initially</span></div>
+<div class="code-line bug-line"><span class="line-number">352</span><span class="code-content">        setOkButtonState.callback();</span></div>
+<div class="code-line context-line"><span class="line-number">353</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">354</span><span class="code-content">        // Item click action</span></div>
+<div class="code-line bug-line"><span class="line-number">355</span><span class="code-content">        listView.setOnItemClickListener((parent, textView, pos, id) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">356</span><span class="code-content">            if (dopt.isMultiSelectEnabled) {</span></div>
+<div class="code-line context-line"><span class="line-number">357</span><span class="code-content">                final int index = listAdapter._filteredItems.get(pos);</span></div>
+<div class="code-line context-line"><span class="line-number">358</span><span class="code-content">                if (listAdapter._selectedItems.contains(index)) {</span></div>
+<div class="code-line context-line"><span class="line-number">359</span><span class="code-content">                    listAdapter._selectedItems.remove(index);</span></div>
+<div class="code-line context-line"><span class="line-number">360</span><span class="code-content">                } else {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">368</span><span class="code-content">                directActivate.callback(pos);</span></div>
+<div class="code-line context-line"><span class="line-number">369</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">370</span><span class="code-content">        });</span></div>
+<div class="code-line context-line"><span class="line-number">371</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">372</span><span class="code-content">        // long click always activates</span></div>
+<div class="code-line bug-line"><span class="line-number">373</span><span class="code-content">        listView.setOnItemLongClickListener((parent, view, pos, id) -&gt; directActivate.callback(pos));</span></div>
+<div class="code-line bug-line"><span class="line-number">374</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">375</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">376</span><span class="code-content">    private static View makeTitleView(final Context context, final DialogOptions dopt) {</span></div>
+<div class="code-line bug-line"><span class="line-number">377</span><span class="code-content">        final ContextUtils cu = new ContextUtils(context);</span></div>
+<div class="code-line bug-line"><span class="line-number">378</span><span class="code-content">        final int paddingSide = (int) cu.convertDpToPx(16);</span></div>
+<div class="code-line bug-line"><span class="line-number">379</span><span class="code-content">        final int paddingBetween = (int) cu.convertDpToPx(4);</span></div>
+<div class="code-line bug-line"><span class="line-number">380</span><span class="code-content">        cu.freeContextRef();</span></div>
+<div class="code-line context-line"><span class="line-number">381</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">382</span><span class="code-content">        final LinearLayout titleLayout = new LinearLayout(context);</span></div>
+<div class="code-line bug-line"><span class="line-number">383</span><span class="code-content">        titleLayout.setOrientation(LinearLayout.VERTICAL);</span></div>
+<div class="code-line bug-line"><span class="line-number">384</span><span class="code-content">        titleLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));</span></div>
+<div class="code-line bug-line"><span class="line-number">385</span><span class="code-content">        titleLayout.setGravity(Gravity.CENTER_VERTICAL | Gravity.START);</span></div>
+<div class="code-line bug-line"><span class="line-number">386</span><span class="code-content">        titleLayout.setPadding(paddingSide, paddingSide, paddingSide, paddingBetween);</span></div>
+<div class="code-line context-line"><span class="line-number">387</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">388</span><span class="code-content">        if (dopt.titleText != 0) {</span></div>
+<div class="code-line bug-line"><span class="line-number">389</span><span class="code-content">            final TextView title = new TextView(context, null, android.R.attr.windowTitleStyle);</span></div>
+<div class="code-line bug-line"><span class="line-number">390</span><span class="code-content">            title.setSingleLine();</span></div>
+<div class="code-line bug-line"><span class="line-number">391</span><span class="code-content">            title.setEllipsize(TextUtils.TruncateAt.END);</span></div>
+<div class="code-line bug-line"><span class="line-number">392</span><span class="code-content">            title.setText(dopt.titleText);</span></div>
+<div class="code-line bug-line"><span class="line-number">393</span><span class="code-content">            titleLayout.addView(title, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));</span></div>
+<div class="code-line context-line"><span class="line-number">394</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">395</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">396</span><span class="code-content">        if (!TextUtils.isEmpty(dopt.messageText)) {</span></div>
+<div class="code-line context-line"><span class="line-number">397</span><span class="code-content">            final TextView subTitle = new TextView(context, null, android.R.attr.textAppearanceMedium);</span></div>
+<div class="code-line context-line"><span class="line-number">398</span><span class="code-content">            subTitle.setPadding(0, paddingBetween, 0, 0);</span></div>
+<div class="code-line context-line"><span class="line-number">399</span><span class="code-content">            subTitle.setText(dopt.messageText);</span></div>
+<div class="code-line context-line"><span class="line-number">400</span><span class="code-content">            titleLayout.addView(subTitle, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));</span></div>
+<div class="code-line context-line"><span class="line-number">401</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">402</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">403</span><span class="code-content">        return titleLayout;</span></div>
+<div class="code-line context-line"><span class="line-number">404</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">405</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">406</span><span class="code-content">    private static View makeSearchView(final Context context, final DialogOptions dopt) {</span></div>
+<div class="code-line bug-line"><span class="line-number">407</span><span class="code-content">        final ContextUtils cu = new ContextUtils(context);</span></div>
+<div class="code-line bug-line"><span class="line-number">408</span><span class="code-content">        final int margin = (int) cu.convertDpToPx(8);</span></div>
+<div class="code-line bug-line"><span class="line-number">409</span><span class="code-content">        cu.freeContextRef();</span></div>
+<div class="code-line context-line"><span class="line-number">410</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">411</span><span class="code-content">        // Main layout</span></div>
+<div class="code-line bug-line"><span class="line-number">412</span><span class="code-content">        final LinearLayout searchLayout = new LinearLayout(context);</span></div>
+<div class="code-line bug-line"><span class="line-number">413</span><span class="code-content">        searchLayout.setOrientation(LinearLayout.HORIZONTAL);</span></div>
+<div class="code-line bug-line"><span class="line-number">414</span><span class="code-content">        searchLayout.setPadding(margin, 0, margin, margin / 2);</span></div>
+<div class="code-line bug-line"><span class="line-number">415</span><span class="code-content">        searchLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));</span></div>
+<div class="code-line context-line"><span class="line-number">416</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">417</span><span class="code-content">        // Edit text</span></div>
+<div class="code-line bug-line"><span class="line-number">418</span><span class="code-content">        final AppCompatEditText searchEditText = new AppCompatEditText(context);</span></div>
+<div class="code-line bug-line"><span class="line-number">419</span><span class="code-content">        searchEditText.setText(dopt.defaultText);</span></div>
+<div class="code-line bug-line"><span class="line-number">420</span><span class="code-content">        searchEditText.setSingleLine(true);</span></div>
+<div class="code-line bug-line"><span class="line-number">421</span><span class="code-content">        searchEditText.setMaxLines(1);</span></div>
+<div class="code-line bug-line"><span class="line-number">422</span><span class="code-content">        searchEditText.setTextColor(dopt.textColor);</span></div>
+<div class="code-line bug-line"><span class="line-number">423</span><span class="code-content">        searchEditText.setHintTextColor((dopt.textColor &amp; 0x00FFFFFF) | 0x99000000);</span></div>
+<div class="code-line bug-line"><span class="line-number">424</span><span class="code-content">        searchEditText.setHint(dopt.searchHintText);</span></div>
+<div class="code-line bug-line"><span class="line-number">425</span><span class="code-content">        searchEditText.setInputType(dopt.searchInputType == 0 ? searchEditText.getInputType() : dopt.searchInputType);</span></div>
+<div class="code-line bug-line"><span class="line-number">426</span><span class="code-content">        searchEditText.setTag(&quot;EDIT&quot;); // So we can easily find the search edit text</span></div>
+<div class="code-line context-line"><span class="line-number">427</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">428</span><span class="code-content">        final LinearLayout.LayoutParams editLp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT, 1);</span></div>
+<div class="code-line bug-line"><span class="line-number">429</span><span class="code-content">        editLp.gravity = Gravity.START | Gravity.BOTTOM;</span></div>
+<div class="code-line bug-line"><span class="line-number">430</span><span class="code-content">        searchLayout.addView(searchEditText, editLp);</span></div>
+<div class="code-line context-line"><span class="line-number">431</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">432</span><span class="code-content">        // &#x27;Button to clear the search box&#x27;</span></div>
+<div class="code-line bug-line"><span class="line-number">433</span><span class="code-content">        final ImageView clearButton = new ImageView(context);</span></div>
+<div class="code-line bug-line"><span class="line-number">434</span><span class="code-content">        clearButton.setImageResource(dopt.clearInputIcon);</span></div>
+<div class="code-line bug-line"><span class="line-number">435</span><span class="code-content">        TooltipCompat.setTooltipText(clearButton, context.getString(android.R.string.cancel));</span></div>
+<div class="code-line bug-line"><span class="line-number">436</span><span class="code-content">        clearButton.setColorFilter(dopt.isDarkDialog ? Color.WHITE : Color.parseColor(&quot;#ff505050&quot;));</span></div>
+<div class="code-line bug-line"><span class="line-number">437</span><span class="code-content">        clearButton.setOnClickListener((v) -&gt; searchEditText.setText(&quot;&quot;));</span></div>
+<div class="code-line context-line"><span class="line-number">438</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">439</span><span class="code-content">        final LinearLayout.LayoutParams clearLp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT, 0);</span></div>
+<div class="code-line bug-line"><span class="line-number">440</span><span class="code-content">        clearLp.gravity = Gravity.END | Gravity.CENTER_VERTICAL;</span></div>
+<div class="code-line bug-line"><span class="line-number">441</span><span class="code-content">        clearLp.setMargins(margin, 0, (int) (margin * 1.5), 0);</span></div>
+<div class="code-line bug-line"><span class="line-number">442</span><span class="code-content">        searchLayout.addView(clearButton, clearLp);</span></div>
+<div class="code-line context-line"><span class="line-number">443</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">444</span><span class="code-content">        return searchLayout;</span></div>
+<div class="code-line context-line"><span class="line-number">445</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">446</span><span class="code-content">}</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-12">
+    File: net/gsantner/opoc/util/ContextUtils.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\util\ContextUtils.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">898</span><span class="code-content">     * A {@link InputFilter} for filenames</span></div>
+<div class="code-line context-line"><span class="line-number">899</span><span class="code-content">     */</span></div>
+<div class="code-line context-line"><span class="line-number">900</span><span class="code-content">    @SuppressWarnings(&quot;Convert2Lambda&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">901</span><span class="code-content">    public static final InputFilter INPUTFILTER_FILENAME = new InputFilter() {</span></div>
+<div class="code-line context-line"><span class="line-number">902</span><span class="code-content">        public CharSequence filter(CharSequence src, int start, int end, Spanned dest, int dstart, int dend) {</span></div>
+<div class="code-line bug-line"><span class="line-number">903</span><span class="code-content">            if (src.length() &lt; 1) return null;</span></div>
+<div class="code-line bug-line"><span class="line-number">904</span><span class="code-content">            char last = src.charAt(src.length() - 1);</span></div>
+<div class="code-line bug-line"><span class="line-number">905</span><span class="code-content">            String illegal = &quot;|\\?*&lt;\&quot;:&gt;[]/&#x27;&quot;;</span></div>
+<div class="code-line bug-line"><span class="line-number">906</span><span class="code-content">            if (illegal.indexOf(last) &gt; -1) return src.subSequence(0, src.length() - 1);</span></div>
+<div class="code-line bug-line"><span class="line-number">907</span><span class="code-content">            return null;</span></div>
+<div class="code-line context-line"><span class="line-number">908</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">909</span><span class="code-content">    };</span></div>
+<div class="code-line context-line"><span class="line-number">910</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">911</span><span class="code-content">    /**</span></div>
+<div class="code-line context-line"><span class="line-number">912</span><span class="code-content">     * A simple {@link Runnable} which does a touch event on a view.</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-13">
+    File: net/gsantner/opoc/util/FileWithCachedData.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\util\FileWithCachedData.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">42</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">43</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">44</span><span class="code-content">    @NonNull</span></div>
+<div class="code-line context-line"><span class="line-number">45</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">46</span><span class="code-content">    public synchronized String getAbsolutePath() {</span></div>
+<div class="code-line bug-line"><span class="line-number">47</span><span class="code-content">        if (cAbsolutePath == null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">48</span><span class="code-content">            cAbsolutePath = super.getAbsolutePath();</span></div>
+<div class="code-line context-line"><span class="line-number">49</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">50</span><span class="code-content">        return cAbsolutePath;</span></div>
+<div class="code-line context-line"><span class="line-number">51</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">52</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">53</span><span class="code-content">    @NonNull</span></div>
+<div class="code-line context-line"><span class="line-number">54</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">55</span><span class="code-content">    public File getAbsoluteFile() {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">124</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">125</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">126</span><span class="code-content">    @Nullable</span></div>
+<div class="code-line context-line"><span class="line-number">127</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">128</span><span class="code-content">    public String[] list() {</span></div>
+<div class="code-line bug-line"><span class="line-number">129</span><span class="code-content">        if (cList == null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">130</span><span class="code-content">            cList = super.list();</span></div>
+<div class="code-line context-line"><span class="line-number">131</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">132</span><span class="code-content">        return cList;</span></div>
+<div class="code-line context-line"><span class="line-number">133</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">134</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">135</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">136</span><span class="code-content">    public int hashCode() {</span></div>
+<div class="code-line context-line"><span class="line-number">137</span><span class="code-content">        if (cHashCode == null) {</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

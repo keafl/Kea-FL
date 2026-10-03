@@ -1,0 +1,38 @@
+{
+    "omni939.OmninotesArchive.test_archive_note_removes_from_main_list": {
+        "precond_satisfied": 23,
+        "executed": 2,
+        "fail": 0,
+        "error": 0
+    },
+    "omni939.OmninotesArchive.test_behavior_setting": {
+        "precond_satisfied": 2,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni939.OmninotesArchive.test_create_note_for_archive": {
+        "precond_satisfied": 31,
+        "executed": 8,
+        "fail": 0,
+        "error": 0
+    },
+    "omni939.OmninotesArchive.test_data_setting": {
+        "precond_satisfied": 3,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni939.OmninotesArchive.test_reduced_view": {
+        "precond_satisfied": 23,
+        "executed": 5,
+        "fail": 0,
+        "error": 0
+    },
+    "omni939.OmninotesArchive.test_search_does_not_show_archived_notes": {
+        "precond_satisfied": 33,
+        "executed": 13,
+        "fail": 3,
+        "error": 0
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "driverName": "d",
+    "packageNames": [
+        "it.feio.android.omninotes.alpha"
+    ],
+    "take_screenshots": false,
+    "pre_failure_screenshots": 0,
+    "post_failure_screenshots": 0,
+    "device_output_root": "/sdcard",
+    "log_stamp": "2026041123_3020391584",
+    "test_time": "2026-04-11 23:30:20"
+}

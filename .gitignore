@@ -1,0 +1,18 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dev/
+dist/
+drawio/
+experiments/
+report/
+reports/
+tests/
+wheels/
+*.egg-info
+.api
+
+# Virtual environments
+.venv
+study/app_src/*.7z

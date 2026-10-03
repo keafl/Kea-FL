@@ -1,0 +1,26 @@
+{"startStepsCount": 9, "propName": "activity_diary155.ActivityDiaryTest.test_select_activity", "state": "pass", "tb": ""}
+{"startStepsCount": 44, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "pass", "tb": ""}
+{"startStepsCount": 44, "propName": "activity_diary155.ActivityDiaryTest.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 44, "propName": "activity_diary155.ActivityDiaryTest.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 44, "propName": "activity_diary155.ActivityDiaryTest.test_edit_note", "state": "pass", "tb": ""}
+{"startStepsCount": 44, "propName": "activity_diary155.ActivityDiaryTest.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 44, "propName": "activity_diary155.ActivityDiaryTest.test_edit_note", "state": "pass", "tb": ""}
+{"startStepsCount": 44, "propName": "activity_diary155.ActivityDiaryTest.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 44, "propName": "activity_diary155.ActivityDiaryTest.test_add_activity", "state": "pass", "tb": ""}
+{"startStepsCount": 44, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "pass", "tb": ""}
+{"startStepsCount": 44, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "pass", "tb": ""}
+{"startStepsCount": 46, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "pass", "tb": ""}
+{"startStepsCount": 46, "propName": "activity_diary155.ActivityDiaryTest.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 47, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "pass", "tb": ""}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_add_activity", "state": "pass", "tb": ""}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "pass", "tb": ""}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "pass", "tb": ""}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_edit_note", "state": "pass", "tb": ""}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "pass", "tb": ""}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_app_run\\activity_diary155.py\", line 61, in test_search_activity\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_app_run\\activity_diary155.py\", line 61, in test_search_activity\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_app_run\\activity_diary155.py\", line 61, in test_search_activity\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 48, "propName": "activity_diary155.ActivityDiaryTest.test_search_activity", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_app_run\\activity_diary155.py\", line 61, in test_search_activity\n    assert result\n           ^^^^^^\nAssertionError\n"}

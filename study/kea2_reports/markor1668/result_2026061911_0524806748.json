@@ -1,0 +1,20 @@
+{
+    "markor1668.Markor.test_create_note": {
+        "precond_satisfied": 13,
+        "executed": 3,
+        "fail": 0,
+        "error": 0
+    },
+    "markor1668.Markor.test_modify_note": {
+        "precond_satisfied": 1,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "markor1668.Markor.test_rename_file": {
+        "precond_satisfied": 25,
+        "executed": 11,
+        "fail": 8,
+        "error": 0
+    }
+}

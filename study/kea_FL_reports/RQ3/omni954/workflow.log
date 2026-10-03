@@ -1,0 +1,634 @@
+2026-06-20 15:25:46 [runner] INFO: Building pair test cases...
+2026-06-20 15:25:46 [replayer] INFO: Parse 310 events
+2026-06-20 15:25:46 [replayer] INFO: Parse 8 Monkey actions
+2026-06-20 15:25:46 [reproducer] INFO: Extract 7 pairs test cases
+2026-06-20 15:25:46 [replayer] INFO: Property omni954.OmniNotesBugTest.test_open_uncategorized_category_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:25:46 [replayer] INFO: Property omni954.OmniNotesBugTest.test_delete_category not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:25:46 [replayer] INFO: Property omni954.OmniNotesBugTest.test_create_checklist not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:25:46 [replayer] INFO: Property omni954.OmniNotesBugTest.test_note_info not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:25:46 [reproducer] INFO: Build 3 pairs test cases
+2026-06-20 15:25:46 [reproducer] INFO: Test case [1]: test_create_note_with_new_category
+2026-06-20 15:25:46 [reproducer] INFO:     -happy_path: [preconditions]: 98, [property]: 11
+2026-06-20 15:25:46 [reproducer] INFO:     -bug_path: [preconditions]: 175, [property]: 11
+2026-06-20 15:25:46 [reproducer] INFO: Test case [2]: test_create_note_without_category
+2026-06-20 15:25:46 [reproducer] INFO:     -happy_path: [preconditions]: 2, [property]: 7
+2026-06-20 15:25:46 [reproducer] INFO:     -bug_path: [preconditions]: 212, [property]: 7
+2026-06-20 15:25:46 [reproducer] INFO: Test case [3]: test_check_uncategorized_notes
+2026-06-20 15:25:46 [reproducer] INFO:     -happy_path: [preconditions]: 27, [property]: 6
+2026-06-20 15:25:46 [reproducer] INFO:     -bug_path: [preconditions]: 62, [property]: 6
+2026-06-20 15:25:46 [runner] INFO: Start running full coverage difference analysis...
+2026-06-20 15:25:46 [runner] INFO: Processing pair test case [3]: happy_test_check_uncategorized_notes <-> bug_test_check_uncategorized_notes
+2026-06-20 15:25:46 [runner] INFO: Running pair test case analysis: happy_test_check_uncategorized_notes <-> bug_test_check_uncategorized_notes
+2026-06-20 15:25:46 [runner] INFO: Running property-satisfying path...
+2026-06-20 15:25:46 [reproducer] INFO: Start reproducing test case: happy_test_check_uncategorized_notes
+2026-06-20 15:25:46 [reproducer] INFO: Start executing preconditions for test case: happy_test_check_uncategorized_notes
+2026-06-20 15:25:46 [reproducer] INFO: Preconditions executed for test case: happy_test_check_uncategorized_notes
+2026-06-20 15:25:46 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_check_uncategorized_notes
+2026-06-20 15:25:46 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:25:46 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:25:47 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_precondition/happy_test_check_uncategorized_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java --xml .\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_precondition/happy_test_check_uncategorized_notes.xml
+2026-06-20 15:25:47 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_precondition\happy_test_check_uncategorized_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:25:47 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_precondition/happy_test_check_uncategorized_notes.ec -> .\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_precondition/happy_test_check_uncategorized_notes.xml
+2026-06-20 15:25:47 [reproducer] INFO: Coverage data collected: .\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_precondition/happy_test_check_uncategorized_notes.xml
+2026-06-20 15:25:47 [reproducer] INFO: Start executing property for test case: happy_test_check_uncategorized_notes
+2026-06-20 15:25:47 [reproducer] INFO: Property executed for test case: happy_test_check_uncategorized_notes
+2026-06-20 15:25:47 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_check_uncategorized_notes
+2026-06-20 15:25:47 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:25:47 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:25:47 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_property/happy_test_check_uncategorized_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java --xml .\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_property/happy_test_check_uncategorized_notes.xml
+2026-06-20 15:25:47 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_property\happy_test_check_uncategorized_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:25:47 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_property/happy_test_check_uncategorized_notes.ec -> .\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_property/happy_test_check_uncategorized_notes.xml
+2026-06-20 15:25:47 [reproducer] INFO: Coverage data collected: .\report\report_20260620_152546\test_check_uncategorized_notes\happy_test_check_uncategorized_notes_property/happy_test_check_uncategorized_notes.xml
+2026-06-20 15:25:47 [runner] INFO: Running property-violating path path...
+2026-06-20 15:25:47 [reproducer] INFO: Start reproducing test case: bug_test_check_uncategorized_notes
+2026-06-20 15:25:47 [reproducer] INFO: Start executing preconditions for test case: bug_test_check_uncategorized_notes
+2026-06-20 15:25:47 [reproducer] INFO: Preconditions executed for test case: bug_test_check_uncategorized_notes
+2026-06-20 15:25:47 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_check_uncategorized_notes
+2026-06-20 15:25:47 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:25:47 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:25:47 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_precondition/bug_test_check_uncategorized_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java --xml .\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_precondition/bug_test_check_uncategorized_notes.xml
+2026-06-20 15:25:47 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_precondition\bug_test_check_uncategorized_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:25:47 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_precondition/bug_test_check_uncategorized_notes.ec -> .\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_precondition/bug_test_check_uncategorized_notes.xml
+2026-06-20 15:25:47 [reproducer] INFO: Coverage data collected: .\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_precondition/bug_test_check_uncategorized_notes.xml
+2026-06-20 15:25:47 [reproducer] INFO: Start executing property for test case: bug_test_check_uncategorized_notes
+2026-06-20 15:25:47 [reproducer] INFO: Property executed for test case: bug_test_check_uncategorized_notes
+2026-06-20 15:25:47 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_check_uncategorized_notes
+2026-06-20 15:25:47 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:25:47 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:25:48 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_property/bug_test_check_uncategorized_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java --xml .\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_property/bug_test_check_uncategorized_notes.xml
+2026-06-20 15:25:48 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_property\bug_test_check_uncategorized_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:25:48 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_property/bug_test_check_uncategorized_notes.ec -> .\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_property/bug_test_check_uncategorized_notes.xml
+2026-06-20 15:25:48 [reproducer] INFO: Coverage data collected: .\report\report_20260620_152546\test_check_uncategorized_notes\bug_test_check_uncategorized_notes_property/bug_test_check_uncategorized_notes.xml
+2026-06-20 15:25:48 [runner] INFO: Parsing coverage data...
+2026-06-20 15:25:48 [report_generator] INFO: generate line coverage data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\bug_test_check_uncategorized_notes_pre_line_coverage.md
+2026-06-20 15:25:48 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\bug_test_check_uncategorized_notes_pre_branch_coverage.md
+2026-06-20 15:25:48 [report_generator] INFO: generate line coverage data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\bug_test_check_uncategorized_notes_prop_line_coverage.md
+2026-06-20 15:25:48 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\bug_test_check_uncategorized_notes_prop_branch_coverage.md
+2026-06-20 15:25:48 [report_generator] INFO: generate line coverage data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\happy_test_check_uncategorized_notes_pre_line_coverage.md
+2026-06-20 15:25:48 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\happy_test_check_uncategorized_notes_pre_branch_coverage.md
+2026-06-20 15:25:48 [report_generator] INFO: generate line coverage data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\happy_test_check_uncategorized_notes_prop_line_coverage.md
+2026-06-20 15:25:48 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\happy_test_check_uncategorized_notes_prop_branch_coverage.md
+2026-06-20 15:25:48 [runner] INFO: Calculating incremental coverage...
+2026-06-20 15:25:48 [runner] INFO: Performing incremental coverage analysis...
+2026-06-20 15:25:48 [runner] INFO: Generating pair test case report...
+2026-06-20 15:25:48 [runner] INFO: Saving intermediate data...
+2026-06-20 15:25:48 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\bug_test_check_uncategorized_notes_line_incremental_data.md
+2026-06-20 15:25:48 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\bug_test_check_uncategorized_notes_branch_incremental_data.md
+2026-06-20 15:25:48 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\happy_test_check_uncategorized_notes_line_incremental_data.md
+2026-06-20 15:25:48 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\happy_test_check_uncategorized_notes_branch_incremental_data.md
+2026-06-20 15:25:48 [report_generator] INFO: generate line diff data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\line_diff_data.md
+2026-06-20 15:25:48 [report_generator] INFO: generate branch diff data: .\report\report_20260620_152546\test_check_uncategorized_notes\data\branch_diff_data.md
+2026-06-20 15:25:48 [runner] INFO: Generating diff report...
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\DetailFragment.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\MainActivity.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\NoteInfosActivity.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\async\TextWorkerTask.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\async\notes\NoteLoaderTask.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] ERROR: Source file not found: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\databinding\ActivityNoteInfosBinding.java
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\db\DbHelper.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\helpers\LanguageHelper.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\helpers\NotesHelper.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\helpers\count\CountFactory.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\helpers\count\DefaultWordCounter.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\helpers\count\WordCounter.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\models\Note.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\models\StatsSingleNote.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\NoteAdapter.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\models\misc\DynamicNavigationLookupTable.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\utils\AlphaManager.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\utils\ReminderHelper.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\utils\ShortcutHelper.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\utils\TagsHelper.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\utils\TextHelper.java encoding: utf-8
+2026-06-20 15:25:48 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260620_152546\test_check_uncategorized_notes\test_check_uncategorized_notes_line_diff_report.html
+2026-06-20 15:25:48 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260620_152546\test_check_uncategorized_notes\test_check_uncategorized_notes_branch_diff_report.html
+2026-06-20 15:25:48 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_check_uncategorized_notes
+
+## Code Coverage Summary
+File: it/feio/android/omninotes/DetailFragment.java
+  Only in first dataset lines: [386, 882, 883, 884, 1067, 1071, 1108, 1109, 1120, 1121, 1125, 1129, 1130, 1131, 1132, 1133, 1135, 1182, 1183, 1184, 1185, 1188, 1189, 1190, 1191, 1192, 1193, 1194, 1195, 1196, 1197, 1200, 1201, 1202, 1205, 1207, 1210, 1213, 1214, 1215, 1216, 1217, 1219, 1510, 1515, 1516, 1517, 1518, 1519, 1520, 1521, 1525, 1526, 1652, 1653, 1654, 2051, 2052, 2056, 2059]
+    Line 386: hit count 3
+    Line 882: hit count 5
+    Line 883: hit count 4
+    Line 884: hit count 2
+    Line 1067: hit count 3
+    Line 1071: hit count 3
+    Line 1108: hit count 3
+    Line 1109: hit count 1
+    Line 1120: hit count 2
+    Line 1121: hit count 1
+    Line 1125: hit count 4
+    Line 1129: hit count 5
+    Line 1130: hit count 5
+    Line 1131: hit count 7
+    Line 1132: hit count 6
+    Line 1133: hit count 3
+    Line 1135: hit count 1
+    Line 1182: hit count 4
+    Line 1183: hit count 4
+    Line 1184: hit count 4
+    Line 1185: hit count 1
+    Line 1188: hit count 11
+    Line 1189: hit count 2
+    Line 1190: hit count 3
+    Line 1191: hit count 1
+    Line 1192: hit count 3
+    Line 1193: hit count 3
+    Line 1194: hit count 3
+    Line 1195: hit count 4
+    Line 1196: hit count 2
+    Line 1197: hit count 2
+    Line 1200: hit count 5
+    Line 1201: hit count 5
+    Line 1202: hit count 5
+    Line 1205: hit count 2
+    Line 1207: hit count 6
+    Line 1210: hit count 1
+    Line 1213: hit count 2
+    Line 1214: hit count 6
+    Line 1215: hit count 3
+    Line 1216: hit count 14
+    Line 1217: hit count 11
+    Line 1219: hit count 1
+    Line 1510: hit count 4
+    Line 1515: hit count 5
+    Line 1516: hit count 3
+    Line 1517: hit count 8
+    Line 1518: hit count 6
+    Line 1519: hit count 2
+    Line 1520: hit count 4
+    Line 1521: hit count 5
+    Line 1525: hit count 3
+    Line 1526: hit count 1
+    Line 1652: hit count 3
+    Line 1653: hit count 7
+    Line 1654: hit count 4
+    Line 2051: hit count 2
+    Line 2052: hit count 1
+    Line 2056: hit count 6
+    Line 2059: hit count 6
+----------------------------------------
+File: it/feio/android/omninotes/ListFragment.java
+  Only in first dataset lines: [273, 274, 275, 276, 388, 389]
+    Line 273: hit count 4
+    Line 274: hit count 4
+    Line 275: hit count 4
+    Line 276: hit count 1
+    Line 388: hit count 4
+    Line 389: hit count 3
+----------------------------------------
+File: it/feio/android/omninotes/MainActivity.java
+  Only in first dataset lines: [142, 393]
+    Line 142: hit count 3
+    Line 393: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/NoteInfosActivity.java
+  Only in first dataset lines: [34, 40, 42, 43, 44, 46, 47, 48, 51, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 68, 69, 70, 74, 75, 76, 79, 80, 83, 84, 86, 88]
+    Line 34: hit count 3
+    Line 40: hit count 3
+    Line 42: hit count 5
+    Line 43: hit count 4
+    Line 44: hit count 3
+    Line 46: hit count 9
+    Line 47: hit count 3
+    Line 48: hit count 1
+    Line 51: hit count 3
+    Line 53: hit count 7
+    Line 54: hit count 7
+    Line 55: hit count 7
+    Line 56: hit count 7
+    Line 57: hit count 7
+    Line 58: hit count 8
+    Line 59: hit count 5
+    Line 60: hit count 7
+    Line 61: hit count 7
+    Line 62: hit count 7
+    Line 63: hit count 7
+    Line 64: hit count 7
+    Line 65: hit count 1
+    Line 68: hit count 3
+    Line 69: hit count 8
+    Line 70: hit count 14
+    Line 74: hit count 7
+    Line 75: hit count 4
+    Line 76: hit count 1
+    Line 79: hit count 5
+    Line 80: hit count 1
+    Line 83: hit count 5
+    Line 84: hit count 4
+    Line 86: hit count 5
+    Line 88: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/async/TextWorkerTask.java
+  Only in first dataset lines: [40, 41, 42, 43, 44, 45, 46, 51, 57, 58, 59, 60, 61, 70, 79, 80]
+    Line 40: hit count 2
+    Line 41: hit count 6
+    Line 42: hit count 3
+    Line 43: hit count 3
+    Line 44: hit count 3
+    Line 45: hit count 3
+    Line 46: hit count 1
+    Line 51: hit count 7
+    Line 57: hit count 3
+    Line 58: hit count 6
+    Line 59: hit count 5
+    Line 60: hit count 6
+    Line 61: hit count 5
+    Line 70: hit count 1
+    Line 79: hit count 6
+    Line 80: hit count 4
+----------------------------------------
+File: it/feio/android/omninotes/async/notes/NoteLoaderTask.java
+  Only in first dataset lines: [45]
+    Line 45: hit count 5
+----------------------------------------
+File: it/feio/android/omninotes/databinding/ActivityNoteInfosBinding.java
+  Only in first dataset lines: [61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 79, 84, 90, 91, 94, 103, 104, 105, 109, 110, 111, 115, 116, 117, 121, 122, 123, 127, 128, 129, 133, 134, 135, 139, 140, 141, 145, 146, 147, 151, 152, 153, 157, 158, 159, 163, 164, 165, 169]
+    Line 61: hit count 2
+    Line 62: hit count 3
+    Line 63: hit count 3
+    Line 64: hit count 3
+    Line 65: hit count 3
+    Line 66: hit count 3
+    Line 67: hit count 3
+    Line 68: hit count 3
+    Line 69: hit count 3
+    Line 70: hit count 3
+    Line 71: hit count 3
+    Line 72: hit count 3
+    Line 73: hit count 3
+    Line 74: hit count 1
+    Line 79: hit count 3
+    Line 84: hit count 5
+    Line 90: hit count 6
+    Line 91: hit count 2
+    Line 94: hit count 3
+    Line 103: hit count 2
+    Line 104: hit count 5
+    Line 105: hit count 2
+    Line 109: hit count 2
+    Line 110: hit count 5
+    Line 111: hit count 2
+    Line 115: hit count 2
+    Line 116: hit count 5
+    Line 117: hit count 2
+    Line 121: hit count 2
+    Line 122: hit count 5
+    Line 123: hit count 2
+    Line 127: hit count 2
+    Line 128: hit count 5
+    Line 129: hit count 2
+    Line 133: hit count 2
+    Line 134: hit count 5
+    Line 135: hit count 2
+    Line 139: hit count 2
+    Line 140: hit count 5
+    Line 141: hit count 2
+    Line 145: hit count 2
+    Line 146: hit count 5
+    Line 147: hit count 2
+    Line 151: hit count 2
+    Line 152: hit count 5
+    Line 153: hit count 2
+    Line 157: hit count 2
+    Line 158: hit count 5
+    Line 159: hit count 2
+    Line 163: hit count 2
+    Line 164: hit count 5
+    Line 165: hit count 2
+    Line 169: hit count 17
+----------------------------------------
+File: it/feio/android/omninotes/db/DbHelper.java
+  Only in first dataset lines: [231]
+    Line 231: hit count 4
+----------------------------------------
+File: it/feio/android/omninotes/helpers/LanguageHelper.java
+  Only in first dataset lines: [96, 100, 101]
+    Line 96: hit count 4
+    Line 100: hit count 3
+    Line 101: hit count 7
+----------------------------------------
+File: it/feio/android/omninotes/helpers/NotesHelper.java
+  Only in first dataset lines: [132, 136, 142, 143, 144, 145, 146, 148, 149, 150, 151, 152, 153, 155, 169, 170, 171, 172, 173, 174, 176, 180, 187, 194]
+    Line 132: hit count 4
+    Line 136: hit count 4
+    Line 142: hit count 5
+    Line 143: hit count 3
+    Line 144: hit count 3
+    Line 145: hit count 3
+    Line 146: hit count 3
+    Line 148: hit count 2
+    Line 149: hit count 2
+    Line 150: hit count 2
+    Line 151: hit count 2
+    Line 152: hit count 2
+    Line 153: hit count 2
+    Line 155: hit count 7
+    Line 169: hit count 3
+    Line 170: hit count 3
+    Line 171: hit count 3
+    Line 172: hit count 3
+    Line 173: hit count 3
+    Line 174: hit count 3
+    Line 176: hit count 3
+    Line 180: hit count 2
+    Line 187: hit count 4
+    Line 194: hit count 4
+----------------------------------------
+File: it/feio/android/omninotes/helpers/count/CountFactory.java
+  Only in first dataset lines: [31, 32, 40, 46]
+    Line 31: hit count 3
+    Line 32: hit count 3
+    Line 40: hit count 8
+    Line 46: hit count 4
+----------------------------------------
+File: it/feio/android/omninotes/helpers/count/DefaultWordCounter.java
+  Only in first dataset lines: [23, 27, 28, 29, 30, 31, 32, 33, 35, 36, 38, 39, 40, 42, 43, 47, 52, 53, 54, 55, 56, 57]
+    Line 23: hit count 3
+    Line 27: hit count 2
+    Line 28: hit count 13
+    Line 29: hit count 16
+    Line 30: hit count 5
+    Line 31: hit count 2
+    Line 32: hit count 5
+    Line 33: hit count 8
+    Line 35: hit count 8
+    Line 36: hit count 3
+    Line 38: hit count 7
+    Line 39: hit count 1
+    Line 40: hit count 3
+    Line 42: hit count 8
+    Line 43: hit count 1
+    Line 47: hit count 2
+    Line 52: hit count 13
+    Line 53: hit count 4
+    Line 54: hit count 5
+    Line 55: hit count 2
+    Line 56: hit count 9
+    Line 57: hit count 5
+----------------------------------------
+File: it/feio/android/omninotes/helpers/count/WordCounter.java
+  Only in first dataset lines: [30, 37]
+    Line 30: hit count 5
+    Line 37: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/models/Note.java
+  Only in first dataset lines: [37, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186]
+    Line 37: hit count 5
+    Line 72: hit count 2
+    Line 73: hit count 4
+    Line 74: hit count 4
+    Line 75: hit count 4
+    Line 76: hit count 4
+    Line 77: hit count 4
+    Line 78: hit count 4
+    Line 79: hit count 4
+    Line 80: hit count 4
+    Line 81: hit count 4
+    Line 82: hit count 4
+    Line 83: hit count 4
+    Line 84: hit count 4
+    Line 85: hit count 7
+    Line 86: hit count 4
+    Line 87: hit count 4
+    Line 88: hit count 6
+    Line 89: hit count 1
+    Line 170: hit count 5
+    Line 171: hit count 5
+    Line 172: hit count 4
+    Line 173: hit count 4
+    Line 174: hit count 7
+    Line 175: hit count 7
+    Line 176: hit count 4
+    Line 177: hit count 7
+    Line 178: hit count 4
+    Line 179: hit count 5
+    Line 180: hit count 5
+    Line 181: hit count 4
+    Line 182: hit count 5
+    Line 183: hit count 7
+    Line 184: hit count 7
+    Line 185: hit count 4
+    Line 186: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/StatsSingleNote.java
+  Only in first dataset lines: [21, 39, 43, 44, 47, 51, 52, 55, 59, 60, 67, 68, 71, 75, 76, 79, 83, 84, 87, 91, 92, 95, 99, 100, 103, 107, 108, 111, 119, 127]
+    Line 21: hit count 3
+    Line 39: hit count 3
+    Line 43: hit count 3
+    Line 44: hit count 1
+    Line 47: hit count 3
+    Line 51: hit count 3
+    Line 52: hit count 1
+    Line 55: hit count 3
+    Line 59: hit count 3
+    Line 60: hit count 1
+    Line 67: hit count 3
+    Line 68: hit count 1
+    Line 71: hit count 3
+    Line 75: hit count 3
+    Line 76: hit count 1
+    Line 79: hit count 3
+    Line 83: hit count 3
+    Line 84: hit count 1
+    Line 87: hit count 3
+    Line 91: hit count 3
+    Line 92: hit count 1
+    Line 95: hit count 3
+    Line 99: hit count 3
+    Line 100: hit count 1
+    Line 103: hit count 3
+    Line 107: hit count 3
+    Line 108: hit count 1
+    Line 111: hit count 3
+    Line 119: hit count 3
+    Line 127: hit count 3
+----------------------------------------
+File: it/feio/android/omninotes/models/adapters/NoteAdapter.java
+  Only in first dataset lines: [140, 142, 143]
+    Line 140: hit count 12
+    Line 142: hit count 10
+    Line 143: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/misc/DynamicNavigationLookupTable.java
+  Only in first dataset lines: [59]
+    Line 59: hit count 7
+----------------------------------------
+File: it/feio/android/omninotes/utils/AlphaManager.java
+  Only in first dataset lines: [31, 32, 34]
+    Line 31: hit count 2
+    Line 32: hit count 3
+    Line 34: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/utils/ReminderHelper.java
+  Only in first dataset lines: [82, 90]
+    Line 82: hit count 4
+    Line 90: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/utils/ShortcutHelper.java
+  Only in first dataset lines: [121, 124, 126, 130, 131, 132, 133, 135]
+    Line 121: hit count 3
+    Line 124: hit count 3
+    Line 126: hit count 1
+    Line 130: hit count 5
+    Line 131: hit count 5
+    Line 132: hit count 4
+    Line 133: hit count 1
+    Line 135: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/utils/TagsHelper.java
+  Only in first dataset lines: [48, 49, 50, 51, 52, 53, 58]
+    Line 48: hit count 4
+    Line 49: hit count 17
+    Line 50: hit count 2
+    Line 51: hit count 16
+    Line 52: hit count 3
+    Line 53: hit count 3
+    Line 58: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/utils/TextHelper.java
+  Only in first dataset lines: [67, 68, 69, 70]
+    Line 67: hit count 6
+    Line 68: hit count 3
+    Line 69: hit count 2
+    Line 70: hit count 3
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Input: test content → Back → Pass: test_create_note_without_category → Random operation: CLICK → Start: test_check_uncategorized_notes → Pass: test_check_uncategorized_notes → Start: test_delete_category → Back → Pass: test_delete_category → Start: test_note_info
+
+FAIL continuation:
+Input: 9m1LSIQMmA → Input: 07W6rjRtGMty1nffNmu → Back → Pass: test_note_info → Start: test_check_uncategorized_notes → Pass: test_check_uncategorized_notes → Start: test_create_checklist → Input: hI6ZgN3 → Input: 9KX → Back → Pass: test_create_checklist → Start: test_check_uncategorized_notes → Fail: test_check_uncategorized_notes → Start: test_check_uncategorized_notes → Fail: test_check_uncategorized_notes → Start: test_check_uncategorized_notes → Fail: test_check_uncategorized_notes
+
+## Correct Execution Path
+Random operation: CLICK → Start: test_create_note_without_category → Input: JMWY8 → Input: test content → Back → Pass: test_create_note_without_category → Start: test_open_uncategorized_category_setting → Back → Pass: test_open_uncategorized_category_setting → Start: test_create_note_without_category → Input: Tk8tGNP → Input: test content → Back → Pass: test_create_note_without_category → Random operation: CLICK → Start: test_check_uncategorized_notes → Pass: test_check_uncategorized_notes → Start: test_delete_category → Back → Pass: test_delete_category → Start: test_note_info
+
+## Error Execution Path
+Random operation: CLICK → Start: test_create_note_without_category → Input: JMWY8 → Input: test content → Back → Pass: test_create_note_without_category → Start: test_open_uncategorized_category_setting → Back → Pass: test_open_uncategorized_category_setting → Start: test_create_note_without_category → Input: Tk8tGNP → Input: test content → Back → Pass: test_create_note_without_category → Random operation: CLICK → Start: test_check_uncategorized_notes → Pass: test_check_uncategorized_notes → Start: test_delete_category → Back → Pass: test_delete_category → Start: test_note_info → Input: 9m1LSIQMmA → Input: 07W6rjRtGMty1nffNmu → Back → Pass: test_note_info → Start: test_check_uncategorized_notes → Pass: test_check_uncategorized_notes → Start: test_create_checklist → Input: hI6ZgN3 → Input: 9KX → Back → Pass: test_create_checklist → Start: test_check_uncategorized_notes → Fail: test_check_uncategorized_notes → Start: test_check_uncategorized_notes → Fail: test_check_uncategorized_notes → Start: test_check_uncategorized_notes → Fail: test_check_uncategorized_notes
+
+## Files to Analyze
+it/feio/android/omninotes/DetailFragment.java
+  Differing lines: 60
+
+it/feio/android/omninotes/ListFragment.java
+  Differing lines: 6
+
+it/feio/android/omninotes/MainActivity.java
+  Differing lines: 2
+
+it/feio/android/omninotes/NoteInfosActivity.java
+  Differing lines: 34
+
+it/feio/android/omninotes/async/TextWorkerTask.java
+  Differing lines: 16
+
+it/feio/android/omninotes/async/notes/NoteLoaderTask.java
+  Differing lines: 1
+
+it/feio/android/omninotes/databinding/ActivityNoteInfosBinding.java
+  Differing lines: 53
+
+it/feio/android/omninotes/db/DbHelper.java
+  Differing lines: 1
+
+it/feio/android/omninotes/helpers/LanguageHelper.java
+  Differing lines: 3
+
+it/feio/android/omninotes/helpers/NotesHelper.java
+  Differing lines: 24
+
+it/feio/android/omninotes/helpers/count/CountFactory.java
+  Differing lines: 4
+
+it/feio/android/omninotes/helpers/count/DefaultWordCounter.java
+  Differing lines: 22
+
+it/feio/android/omninotes/helpers/count/WordCounter.java
+  Differing lines: 2
+
+it/feio/android/omninotes/models/Note.java
+  Differing lines: 36
+
+it/feio/android/omninotes/models/StatsSingleNote.java
+  Differing lines: 30
+
+it/feio/android/omninotes/models/adapters/NoteAdapter.java
+  Differing lines: 3
+
+it/feio/android/omninotes/models/misc/DynamicNavigationLookupTable.java
+  Differing lines: 1
+
+it/feio/android/omninotes/utils/AlphaManager.java
+  Differing lines: 3
+
+it/feio/android/omninotes/utils/ReminderHelper.java
+  Differing lines: 2
+
+it/feio/android/omninotes/utils/ShortcutHelper.java
+  Differing lines: 8
+
+it/feio/android/omninotes/utils/TagsHelper.java
+  Differing lines: 7
+
+it/feio/android/omninotes/utils/TextHelper.java
+  Differing lines: 4
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-20 15:25:48 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-20 15:25:51 [llm] INFO: LLM response: it/feio/android/omninotes/DetailFragment.java
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/MainActivity.java
+it/feio/android/omninotes/NoteInfosActivity.java
+it/feio/android/omninotes/helpers/NotesHelper.java
+it/feio/android/omninotes/db/DbHelper.java
+it/feio/android/omninotes/models/Note.java
+it/feio/android/omninotes/utils/TagsHelper.java
+it/feio/android/omninotes/async/notes/NoteLoaderTask.java
+it/feio/android/omninotes/async/TextWorkerTask.java
+it/feio/android/omninotes/models/adapters/NoteAdapter.java
+it/feio/android/omninotes/models/misc/DynamicNavigationLookupTable.java
+it/feio/android/omninotes/utils/TextHelper.java
+it/feio/android/omninotes/helpers/LanguageHelper.java
+it/feio/android/omninotes/helpers/count/CountFactory.java
+it/feio/android/omninotes/helpers/count/DefaultWordCounter.java
+it/feio/android/omninotes/helpers/count/WordCounter.java
+it/feio/android/omninotes/models/StatsSingleNote.java
+it/feio/android/omninotes/utils/ReminderHelper.java
+it/feio/android/omninotes/utils/ShortcutHelper.java
+it/feio/android/omninotes/utils/AlphaManager.java
+it/feio/android/omninotes/databinding/ActivityNoteInfosBinding.java
+2026-06-20 15:25:51 [runner] INFO: Saving ranking to .\report\report_20260620_152546\test_check_uncategorized_notes\ranking.txt
+2026-06-20 15:25:51 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260620_152546\index.html
+2026-06-20 15:25:51 [runner] INFO: Full coverage difference analysis completed, processed 3 pair test cases, results saved to: .\report\report_20260620_152546

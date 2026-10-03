@@ -1,0 +1,14 @@
+{"startStepsCount": 2, "propName": "markor1695.Markor.test_rename_file", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "markor1695.Markor.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 4, "propName": "markor1695.Markor.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "markor1695.Markor.test_modify_note", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "markor1695.Markor.test_rename_file", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor1695.py\", line 104, in test_rename_file\n    assert self.check_file_exists(new_filename)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 6, "propName": "markor1695.Markor.test_rename_file", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor1695.py\", line 104, in test_rename_file\n    assert self.check_file_exists(new_filename)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 6, "propName": "markor1695.Markor.test_rename_file", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "markor1695.Markor.test_rename_file", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "markor1695.Markor.test_rename_file", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "markor1695.Markor.test_rename_file", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "markor1695.Markor.test_rename_file", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "markor1695.Markor.test_rename_file", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "markor1695.Markor.test_rename_file", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "markor1695.Markor.test_rename_file", "state": "pass", "tb": ""}

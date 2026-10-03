@@ -1,0 +1,259 @@
+2026-06-20 15:30:42 [runner] INFO: Building pair test cases...
+2026-06-20 15:30:42 [replayer] INFO: Parse 214 events
+2026-06-20 15:30:42 [replayer] INFO: Parse 12 Monkey actions
+2026-06-20 15:30:42 [reproducer] INFO: Extract 5 pairs test cases
+2026-06-20 15:30:42 [replayer] INFO: Property aard2.Aard2Test.test_open_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:30:42 [replayer] INFO: Property aard2.Aard2Test.test_lookup_word not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:30:42 [replayer] INFO: Property aard2.Aard2Test.test_favorite_word not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:30:42 [replayer] INFO: Property aard2.Aard2Test.test_random_word not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:30:42 [reproducer] INFO: Build 1 pairs test cases
+2026-06-20 15:30:42 [reproducer] INFO: Test case [1]: test_filter_words
+2026-06-20 15:30:42 [reproducer] INFO:     -happy_path: [preconditions]: 11, [property]: 6
+2026-06-20 15:30:42 [reproducer] INFO:     -bug_path: [preconditions]: 61, [property]: 4
+2026-06-20 15:30:42 [runner] INFO: Start running full coverage difference analysis...
+2026-06-20 15:30:42 [runner] INFO: Processing pair test case [1]: happy_test_filter_words <-> bug_test_filter_words
+2026-06-20 15:30:42 [runner] INFO: Running pair test case analysis: happy_test_filter_words <-> bug_test_filter_words
+2026-06-20 15:30:42 [runner] INFO: Running property-satisfying path...
+2026-06-20 15:30:42 [reproducer] INFO: Start reproducing test case: happy_test_filter_words
+2026-06-20 15:30:42 [reproducer] INFO: Start executing preconditions for test case: happy_test_filter_words
+2026-06-20 15:30:42 [reproducer] INFO: Preconditions executed for test case: happy_test_filter_words
+2026-06-20 15:30:42 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_filter_words
+2026-06-20 15:30:42 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:30:42 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:30:42 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_precondition/happy_test_filter_words.ec --classfiles D:\code\android\wait_for_jacoco\aard2_Yes\aard2\build\intermediates\javac\debug\classes --sourcefiles D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src --xml D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_precondition/happy_test_filter_words.xml
+2026-06-20 15:30:42 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_precondition\happy_test_filter_words.ec.
+[INFO] Analyzing 95 classes.
+
+2026-06-20 15:30:42 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_precondition/happy_test_filter_words.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_precondition/happy_test_filter_words.xml
+2026-06-20 15:30:42 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_precondition/happy_test_filter_words.xml
+2026-06-20 15:30:42 [reproducer] INFO: Start executing property for test case: happy_test_filter_words
+2026-06-20 15:30:42 [reproducer] INFO: Property executed for test case: happy_test_filter_words
+2026-06-20 15:30:42 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_filter_words
+2026-06-20 15:30:42 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:30:42 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:30:43 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_property/happy_test_filter_words.ec --classfiles D:\code\android\wait_for_jacoco\aard2_Yes\aard2\build\intermediates\javac\debug\classes --sourcefiles D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src --xml D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_property/happy_test_filter_words.xml
+2026-06-20 15:30:43 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_property\happy_test_filter_words.ec.
+[INFO] Analyzing 95 classes.
+
+2026-06-20 15:30:43 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_property/happy_test_filter_words.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_property/happy_test_filter_words.xml
+2026-06-20 15:30:43 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\happy_test_filter_words_property/happy_test_filter_words.xml
+2026-06-20 15:30:43 [runner] INFO: Running property-violating path path...
+2026-06-20 15:30:43 [reproducer] INFO: Start reproducing test case: bug_test_filter_words
+2026-06-20 15:30:43 [reproducer] INFO: Start executing preconditions for test case: bug_test_filter_words
+2026-06-20 15:30:43 [reproducer] INFO: Preconditions executed for test case: bug_test_filter_words
+2026-06-20 15:30:43 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_filter_words
+2026-06-20 15:30:43 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:30:43 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:30:43 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_precondition/bug_test_filter_words.ec --classfiles D:\code\android\wait_for_jacoco\aard2_Yes\aard2\build\intermediates\javac\debug\classes --sourcefiles D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src --xml D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_precondition/bug_test_filter_words.xml
+2026-06-20 15:30:43 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_precondition\bug_test_filter_words.ec.
+[INFO] Analyzing 95 classes.
+
+2026-06-20 15:30:43 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_precondition/bug_test_filter_words.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_precondition/bug_test_filter_words.xml
+2026-06-20 15:30:43 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_precondition/bug_test_filter_words.xml
+2026-06-20 15:30:43 [reproducer] INFO: Start executing property for test case: bug_test_filter_words
+2026-06-20 15:30:43 [reproducer] INFO: Property executed for test case: bug_test_filter_words
+2026-06-20 15:30:43 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_filter_words
+2026-06-20 15:30:43 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:30:43 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:30:43 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_property/bug_test_filter_words.ec --classfiles D:\code\android\wait_for_jacoco\aard2_Yes\aard2\build\intermediates\javac\debug\classes --sourcefiles D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src --xml D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_property/bug_test_filter_words.xml
+2026-06-20 15:30:43 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_property\bug_test_filter_words.ec.
+[INFO] Analyzing 95 classes.
+
+2026-06-20 15:30:43 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_property/bug_test_filter_words.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_property/bug_test_filter_words.xml
+2026-06-20 15:30:43 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\bug_test_filter_words_property/bug_test_filter_words.xml
+2026-06-20 15:30:43 [runner] INFO: Parsing coverage data...
+2026-06-20 15:30:43 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\bug_test_filter_words_pre_line_coverage.md
+2026-06-20 15:30:43 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\bug_test_filter_words_pre_branch_coverage.md
+2026-06-20 15:30:43 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\bug_test_filter_words_prop_line_coverage.md
+2026-06-20 15:30:43 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\bug_test_filter_words_prop_branch_coverage.md
+2026-06-20 15:30:43 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\happy_test_filter_words_pre_line_coverage.md
+2026-06-20 15:30:43 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\happy_test_filter_words_pre_branch_coverage.md
+2026-06-20 15:30:43 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\happy_test_filter_words_prop_line_coverage.md
+2026-06-20 15:30:43 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\happy_test_filter_words_prop_branch_coverage.md
+2026-06-20 15:30:43 [runner] INFO: Calculating incremental coverage...
+2026-06-20 15:30:43 [runner] INFO: Performing incremental coverage analysis...
+2026-06-20 15:30:43 [runner] INFO: Generating pair test case report...
+2026-06-20 15:30:43 [runner] INFO: Saving intermediate data...
+2026-06-20 15:30:43 [report_generator] INFO: generate bug line coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\bug_test_filter_words_line_incremental_data.md
+2026-06-20 15:30:43 [report_generator] INFO: generate bug branch coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\bug_test_filter_words_branch_incremental_data.md
+2026-06-20 15:30:43 [report_generator] INFO: generate correct line coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\happy_test_filter_words_line_incremental_data.md
+2026-06-20 15:30:43 [report_generator] INFO: generate correct branch coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\happy_test_filter_words_branch_incremental_data.md
+2026-06-20 15:30:43 [report_generator] INFO: generate line diff data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\line_diff_data.md
+2026-06-20 15:30:43 [report_generator] INFO: generate branch diff data: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\data\branch_diff_data.md
+2026-06-20 15:30:43 [runner] INFO: Generating diff report...
+2026-06-20 15:30:43 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src\itkach\aard2\ArticleCollectionActivity.java encoding: utf-8
+2026-06-20 15:30:43 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src\itkach\aard2\ArticleWebView.java encoding: utf-8
+2026-06-20 15:30:43 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src\itkach\aard2\BlobDescriptor.java encoding: utf-8
+2026-06-20 15:30:43 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src\itkach\aard2\BlobDescriptorList.java encoding: utf-8
+2026-06-20 15:30:43 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src\itkach\aard2\BlobDescriptorListAdapter.java encoding: utf-8
+2026-06-20 15:30:43 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src\itkach\aard2\BlobDescriptorListFragment.java encoding: utf-8
+2026-06-20 15:30:43 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src\itkach\aard2\BlobListAdapter.java encoding: utf-8
+2026-06-20 15:30:43 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src\itkach\aard2\LookupFragment.java encoding: utf-8
+2026-06-20 15:30:43 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src\itkach\aard2\MainActivity.java encoding: utf-8
+2026-06-20 15:30:43 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\aard2_Yes\aard2\src\itkach\aard2\Util.java encoding: utf-8
+2026-06-20 15:30:43 [report_generator] INFO: Line Coverage Diff Report Generated: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\test_filter_words_line_diff_report.html
+2026-06-20 15:30:43 [report_generator] INFO: Branch Coverage Diff Report Generated: D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\test_filter_words_branch_diff_report.html
+2026-06-20 15:30:43 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_filter_words
+
+## Code Coverage Summary
+File: itkach/aard2/ArticleCollectionActivity.java
+  Only in first dataset lines: [107, 109, 110, 236, 237, 240, 242, 617]
+    Line 107: hit count 4
+    Line 109: hit count 4
+    Line 110: hit count 7
+    Line 236: hit count 15
+    Line 237: hit count 9
+    Line 240: hit count 7
+    Line 242: hit count 2
+    Line 617: hit count 4
+----------------------------------------
+File: itkach/aard2/ArticleWebView.java
+  Only in first dataset lines: [88]
+    Line 88: hit count 1
+  Only in second dataset lines: [131, 132, 138, 139, 140, 142]
+    Line 131: hit count 3
+    Line 132: hit count 1
+    Line 138: hit count 4
+    Line 139: hit count 2
+    Line 140: hit count 5
+    Line 142: hit count 1
+----------------------------------------
+File: itkach/aard2/BlobDescriptor.java
+  Only in first dataset lines: [32]
+    Line 32: hit count 2
+----------------------------------------
+File: itkach/aard2/BlobDescriptorList.java
+  Only in first dataset lines: [78, 155, 156, 157, 158, 160, 161, 162, 165, 166, 176, 188, 189, 190, 193, 194, 195, 213, 214, 216]
+    Line 78: hit count 6
+    Line 155: hit count 2
+    Line 156: hit count 5
+    Line 157: hit count 4
+    Line 158: hit count 1
+    Line 160: hit count 3
+    Line 161: hit count 4
+    Line 162: hit count 1
+    Line 165: hit count 3
+    Line 166: hit count 4
+    Line 176: hit count 1
+    Line 188: hit count 4
+    Line 189: hit count 2
+    Line 190: hit count 2
+    Line 193: hit count 4
+    Line 194: hit count 5
+    Line 195: hit count 12
+    Line 213: hit count 2
+    Line 214: hit count 3
+    Line 216: hit count 2
+----------------------------------------
+File: itkach/aard2/BlobDescriptorListAdapter.java
+  Only in first dataset lines: [50, 51]
+    Line 50: hit count 5
+    Line 51: hit count 7
+----------------------------------------
+File: itkach/aard2/BlobDescriptorListFragment.java
+  Only in first dataset lines: [140, 142, 143, 144, 145]
+    Line 140: hit count 7
+    Line 142: hit count 6
+    Line 143: hit count 5
+    Line 144: hit count 4
+    Line 145: hit count 1
+----------------------------------------
+File: itkach/aard2/BlobListAdapter.java
+  Only in first dataset lines: [140]
+    Line 140: hit count 3
+----------------------------------------
+File: itkach/aard2/LookupFragment.java
+  Only in first dataset lines: [97, 111]
+    Line 97: hit count 1
+    Line 111: hit count 4
+----------------------------------------
+File: itkach/aard2/MainActivity.java
+  Only in first dataset lines: [230]
+    Line 230: hit count 2
+----------------------------------------
+File: itkach/aard2/Util.java
+  Only in first dataset lines: [15]
+    Line 15: hit count 7
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Random operation: LONG_CLICK → Start: test_lookup_word → Input: kf → Pass: test_lookup_word → Start: test_lookup_word → Input: w → Pass: test_lookup_word → Start: test_filter_words → Input: w → Pass: test_filter_words
+
+FAIL continuation:
+Random operation: LONG_CLICK → Start: test_favorite_word → Start: test_lookup_word → Input: - → Pass: test_lookup_word → Start: test_filter_words → Input: w → Pass: test_filter_words → Start: test_lookup_word → Input: - → Pass: test_lookup_word → Start: test_filter_words → Input: ~ → Pass: test_filter_words → Start: test_filter_words → Input: w → Pass: test_filter_words → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: BACK → Start: test_filter_words → Input: ~ → Pass: test_filter_words → Start: test_filter_words → Input: - → Fail: test_filter_words → Start: test_lookup_word → Input: MN
+
+## Correct Execution Path
+Random operation: LONG_CLICK → Start: test_lookup_word → Input: kf → Pass: test_lookup_word → Start: test_lookup_word → Input: w → Pass: test_lookup_word → Start: test_filter_words → Input: w → Pass: test_filter_words
+
+## Error Execution Path
+Random operation: LONG_CLICK → Start: test_lookup_word → Input: kf → Pass: test_lookup_word → Start: test_lookup_word → Input: w → Pass: test_lookup_word → Start: test_filter_words → Input: w → Pass: test_filter_words → Random operation: LONG_CLICK → Start: test_favorite_word → Start: test_lookup_word → Input: - → Pass: test_lookup_word → Start: test_filter_words → Input: w → Pass: test_filter_words → Start: test_lookup_word → Input: - → Pass: test_lookup_word → Start: test_filter_words → Input: ~ → Pass: test_filter_words → Start: test_filter_words → Input: w → Pass: test_filter_words → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: BACK → Start: test_filter_words → Input: ~ → Pass: test_filter_words → Start: test_filter_words → Input: - → Fail: test_filter_words → Start: test_lookup_word → Input: MN
+
+## Files to Analyze
+itkach/aard2/ArticleCollectionActivity.java
+  Differing lines: 8
+
+itkach/aard2/ArticleWebView.java
+  Differing lines: 7
+
+itkach/aard2/BlobDescriptor.java
+  Differing lines: 1
+
+itkach/aard2/BlobDescriptorList.java
+  Differing lines: 20
+
+itkach/aard2/BlobDescriptorListAdapter.java
+  Differing lines: 2
+
+itkach/aard2/BlobDescriptorListFragment.java
+  Differing lines: 5
+
+itkach/aard2/BlobListAdapter.java
+  Differing lines: 1
+
+itkach/aard2/LookupFragment.java
+  Differing lines: 2
+
+itkach/aard2/MainActivity.java
+  Differing lines: 1
+
+itkach/aard2/Util.java
+  Differing lines: 1
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-20 15:30:49 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-20 15:30:50 [llm] INFO: LLM response: itkach/aard2/BlobDescriptorList.java
+itkach/aard2/ArticleCollectionActivity.java
+itkach/aard2/ArticleWebView.java
+itkach/aard2/BlobDescriptorListFragment.java
+itkach/aard2/BlobDescriptorListAdapter.java
+itkach/aard2/LookupFragment.java
+itkach/aard2/BlobListAdapter.java
+itkach/aard2/BlobDescriptor.java
+itkach/aard2/MainActivity.java
+itkach/aard2/Util.java
+2026-06-20 15:30:50 [runner] INFO: Saving ranking to D:\code\python\Kea-FL_new\report\report_20260620_153042\test_filter_words\ranking.txt
+2026-06-20 15:30:50 [report_generator] INFO: Generated comprehensive analysis report: D:\code\python\Kea-FL_new\report\report_20260620_153042\index.html
+2026-06-20 15:30:50 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: D:\code\python\Kea-FL_new\report\report_20260620_153042

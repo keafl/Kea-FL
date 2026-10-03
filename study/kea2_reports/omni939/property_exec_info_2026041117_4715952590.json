@@ -1,0 +1,30 @@
+{"startStepsCount": 6, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_create_note_for_archive", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_behavior_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_data_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_create_note_for_archive", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_create_note_for_archive", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni939.OmninotesArchive.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_archive_note_removes_from_main_list", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni939.py\", line 111, in test_search_does_not_show_archived_notes\n    assert not self.archived_note_title.intersection(note_titles)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni939.py\", line 111, in test_search_does_not_show_archived_notes\n    assert not self.archived_note_title.intersection(note_titles)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_create_note_for_archive", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_create_note_for_archive", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_create_note_for_archive", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_create_note_for_archive", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_archive_note_removes_from_main_list", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "omni939.OmninotesArchive.test_search_does_not_show_archived_notes", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni939.py\", line 111, in test_search_does_not_show_archived_notes\n    assert not self.archived_note_title.intersection(note_titles)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 12, "propName": "omni939.OmninotesArchive.test_create_note_for_archive", "state": "pass", "tb": ""}

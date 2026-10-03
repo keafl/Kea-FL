@@ -1,0 +1,8 @@
+it/feio/android/omninotes/models/adapters/CategoryRecyclerViewAdapter.java
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/MainActivity.java
+it/feio/android/omninotes/DetailFragment.java
+it/feio/android/omninotes/NavigationDrawerFragment.java
+it/feio/android/omninotes/BaseActivity.java
+it/feio/android/omninotes/models/adapters/NoteAdapter.java
+it/feio/android/omninotes/models/listeners/RecyclerViewItemClickSupport.java

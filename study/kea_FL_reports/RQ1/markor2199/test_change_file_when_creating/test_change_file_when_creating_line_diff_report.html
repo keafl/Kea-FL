@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test_change_file_when_creating Line Coverage Diff Report</title>
+<style>
+    :root {
+        --github-bg: #ffffff;
+        --github-text: #24292f;
+        --github-gray-50: #f9fafb;
+        --github-gray-100: #f1f2f4;
+        --github-gray-200: #e4e7eb;
+        --github-gray-300: #d1d5db;
+        --github-gray-400: #9ca3af;
+        --github-gray-500: #6e7781;
+        --github-gray-600: #4d5663;
+        --github-gray-700: #374151;
+        --github-gray-800: #272e3b;
+        
+        --line-number-bg: #f6f8fa;
+        --line-number-text: #6e7781;
+        --line-number-border: #eaecef;
+        
+        --correct-bg: rgb(218, 251, 225);
+        --correct-border: rgb(172, 238, 187);
+        --correct-line-number-bg: rgb(172, 238, 187); 
+        --correct-line-number-text: #000000;
+        
+        --bug-bg: rgb(255, 235, 233); 
+        --bug-border: rgb(255, 206, 203);           
+        --bug-line-number-bg: rgb(255, 206, 203); 
+        --bug-line-number-text: #000000;            
+        
+        --covered-bg: var(--correct-bg);
+        --covered-border: var(--correct-border);
+        --covered-line-number-bg: var(--correct-line-number-bg);
+        --covered-line-number-text: var(--correct-line-number-text);
+        
+        --sidebar-width: 300px;
+        --sidebar-collapsed-width: 0px;
+        --border-radius: 6px;
+        --transition: all 0.2s ease;
+        --code-line-height: 1.5em;
+        --line-number-width: 4.5rem;
+        --header-height: 60px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.5;
+        color: var(--github-text);
+        background-color: var(--github-gray-50);
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        padding-top: var(--header-height);
+    }
+
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        background-color: var(--github-bg);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--github-gray-800);
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--github-gray-200);
+    }
+
+    p {
+        color: var(--github-gray-600);
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-toggle-btn {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        color: var(--github-gray-700);
+        cursor: pointer;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .sidebar-toggle-btn:hover {
+        background-color: var(--github-gray-50);
+        border-color: var(--github-gray-300);
+        color: var(--github-gray-800);
+    }
+
+    .sidebar {
+        width: var(--sidebar-width);
+        background-color: var(--github-bg);
+        border-right: 1px solid var(--github-gray-200);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        transition: var(--transition);
+        overflow: hidden;
+        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+    }
+
+    .sidebar.collapsed {
+        width: var(--sidebar-collapsed-width);
+        border-right: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .sidebar-resizer {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .file-list-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        color: var(--github-gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid var(--github-gray-200);
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-tree {
+        list-style: none;
+        overflow-y: auto;
+        flex: 1;
+        padding: 0.5rem 0;
+    }
+
+    .dir-item {
+        position: relative;
+    }
+
+    .dir-header {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .dir-header:hover {
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-toggle {
+        width: 1rem;
+        height: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: var(--github-gray-500);
+        margin-right: 0.5rem;
+    }
+
+    .dir-content {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .file-item {
+        padding: 0;
+    }
+
+    .file-link {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .file-link::before {
+        content: "📄";
+        font-size: 0.75rem;
+        margin-right: 0.5rem;
+        opacity: 0.7;
+    }
+
+    .file-link:hover {
+        background-color: var(--github-gray-50);
+        color: #0969da;
+    }
+
+    .file-link.active {
+        color: #0969da;
+        font-weight: 500;
+    }
+
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+        transition: var(--transition);
+        margin-left: var(--sidebar-width);
+        height: 100vh;
+        background-color: var(--github-gray-50);
+        padding-top: 1rem;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: var(--sidebar-collapsed-width) !important;
+    }
+
+    .file-header {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        scroll-margin-top: calc(var(--header-height) + 1rem);
+    }
+
+    .file-header a {
+        color: #0969da;
+        text-decoration: none;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .file-header a:hover {
+        text-decoration: underline;
+    }
+
+    .diff-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        min-height: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .diff-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .diff-panel {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .panel-header {
+        background-color: var(--github-gray-50);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .panel-header::before {
+        content: "";
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .diff-container > .diff-panel:first-child .panel-header::before {
+        background-color: var(--bug-border);
+    }
+
+    .diff-container > .diff-panel:last-child .panel-header::before {
+        background-color: var(--correct-border);
+    }
+
+    .code-container {
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-size: 12px;
+        line-height: var(--code-line-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 600px;
+        flex: 1;
+        width: 100%;
+        background-color: var(--github-bg);
+    }
+
+    .code-line {
+        display: grid;
+        grid-template-columns: var(--line-number-width) 1fr;
+        width: 100%;
+        transition: background-color 0.2s ease;
+        border-left: 3px solid transparent;
+        min-height: var(--code-line-height);
+    }
+
+    .line-number {
+        width: var(--line-number-width);
+        padding: 0 0.75rem;
+        text-align: right;
+        color: var(--line-number-text);
+        user-select: none;
+        background-color: var(--line-number-bg);
+        border-right: 1px solid var(--line-number-border);
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .correct-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 100;
+    }
+
+    .bug-line .line-number {
+        background-color: var(--bug-line-number-bg);
+        color: var(--bug-line-number-text);
+        border-right-color: var(--bug-border);
+        font-weight: 100;
+    }
+
+    .covered-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 600;
+    }
+
+    .code-content {
+        flex: 1;
+        padding: 0 0.75rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: flex-start;
+        padding-top: calc((var(--code-line-height) - 1em) / 2);
+        width: 100%;
+        color: var(--github-text);
+    }
+
+    .correct-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .bug-line {
+        background-color: var(--bug-bg);
+        border-left-color: var(--bug-border);
+    }
+
+    .covered-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .context-line .code-content:empty::before {
+        content: " ";
+    }
+
+    .separator-line {
+        background-color: var(--github-gray-50);
+        color: var(--github-gray-500);
+        text-align: center;
+        padding: 0.5rem 0;
+        font-style: italic;
+        border-top: 1px dashed var(--github-gray-300);
+        border-bottom: 1px dashed var(--github-gray-300);
+        grid-column: 1 / -1;
+    }
+
+    .separator-line .line-number,
+    .separator-line .code-content {
+        height: auto;
+        line-height: 1.5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--github-gray-300);
+        border-radius: 6px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--github-gray-400);
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            position: fixed;
+            z-index: 100;
+        }
+        
+        .main-content {
+            margin-left: 0 !important;
+            padding: 1rem;
+        }
+    }
+
+    .context-line {
+        background-color: var(--github-bg);
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+// Global sidebar toggle function
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("collapsed");
+}
+
+// Directory expand/collapse function
+function toggleDir(dirHeader) {
+    const toggle = dirHeader.querySelector(".dir-toggle");
+    const content = dirHeader.nextElementSibling;
+    
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        toggle.textContent = "−";
+    } else {
+        content.style.display = "none";
+        toggle.textContent = "+";
+    }
+}
+
+// File link click event handler
+document.addEventListener('DOMContentLoaded', () => {
+    const fileLinks = document.querySelectorAll('.file-link');
+    
+    fileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            fileLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    if (fileLinks.length > 0) {
+        fileLinks[0].classList.add('active');
+    }
+});
+</script>
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<div class="fixed-header">
+    <h1>test_change_file_when_creating Line Coverage Diff Report</h1>
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        File List
+    </button>
+</div>
+<div class="sidebar" id="sidebar">
+<h3 class="file-list-title">File List</h3>
+<ul class="dir-tree">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">net/gsantner</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">markor</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">activity</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-0" class="file-link"><span>DocumentEditAndViewFragment.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-1" class="file-link"><span>MainActivity.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">frontend</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-2" class="file-link"><span>MarkorDialogFactory.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-3" class="file-link"><span>NewFileDialog.java</span></a>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">textview</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-4" class="file-link"><span>TextViewUtils.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">model</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-5" class="file-link"><span>AppSettings.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">opoc</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">frontend/filebrowser</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-6" class="file-link"><span>GsFileBrowserFragment.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-7" class="file-link"><span>GsFileBrowserListAdapter.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">util</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-8" class="file-link"><span>GsContextUtils.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-9" class="file-link"><span>GsFileUtils.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">wrapper</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-10" class="file-link"><span>GsAndroidSpinnerOnItemSelectedAdapter.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">other/de</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">stanetz/jpencconverter</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-11" class="file-link"><span>PasswordStore.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+</ul>
+</div>
+<div class="main-content">
+<p>Generated Time: 2026-06-19 10:11:41</p>
+<h2>Line Coverage Diff</h2>
+<div class="file-header" id="file-0">
+    File: net/gsantner/markor/activity/DocumentEditAndViewFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\activity\DocumentEditAndViewFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">242</span><span class="code-content">            _hlEditor.getViewTreeObserver().addOnWindowFocusChangeListener(hasFocus -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">243</span><span class="code-content">                if (hasFocus) {</span></div>
+<div class="code-line context-line"><span class="line-number">244</span><span class="code-content">                    // Restore old state</span></div>
+<div class="code-line context-line"><span class="line-number">245</span><span class="code-content">                    _hlEditor.postDelayed(() -&gt; window.setSoftInputMode(unchanged), 500);</span></div>
+<div class="code-line context-line"><span class="line-number">246</span><span class="code-content">                } else {</span></div>
+<div class="code-line correct-line"><span class="line-number">247</span><span class="code-content">                    final Boolean isOpen = TextViewUtils.isImeOpen(_hlEditor);</span></div>
+<div class="code-line correct-line"><span class="line-number">248</span><span class="code-content">                    if (isOpen != null &amp;&amp; !isOpen) {</span></div>
+<div class="code-line context-line"><span class="line-number">249</span><span class="code-content">                        window.setSoftInputMode(hidden);</span></div>
+<div class="code-line context-line"><span class="line-number">250</span><span class="code-content">                    }</span></div>
+<div class="code-line context-line"><span class="line-number">251</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">252</span><span class="code-content">            });</span></div>
+<div class="code-line context-line"><span class="line-number">253</span><span class="code-content">        }</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-1">
+    File: net/gsantner/markor/activity/MainActivity.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\activity\MainActivity.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">275</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">276</span><span class="code-content">        return true;</span></div>
+<div class="code-line context-line"><span class="line-number">277</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">278</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">279</span><span class="code-content">    public void onClickFab(final View view) {</span></div>
+<div class="code-line correct-line"><span class="line-number">280</span><span class="code-content">        if (_notebook == null || _notebook.getAdapter() == null) {</span></div>
+<div class="code-line context-line"><span class="line-number">281</span><span class="code-content">            return;</span></div>
+<div class="code-line context-line"><span class="line-number">282</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">283</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">284</span><span class="code-content">        if (_notebook.getAdapter().isCurrentFolderVirtual()) {</span></div>
+<div class="code-line context-line"><span class="line-number">285</span><span class="code-content">            _notebook.getAdapter().setCurrentFolder(_appSettings.getNotebookDirectory());</span></div>
+<div class="code-line context-line"><span class="line-number">286</span><span class="code-content">            return;</span></div>
+<div class="code-line context-line"><span class="line-number">287</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">288</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">289</span><span class="code-content">        if (view.getId() == R.id.fab_add_new_item) {</span></div>
+<div class="code-line correct-line"><span class="line-number">290</span><span class="code-content">            if (_cu.isUnderStorageAccessFolder(this, _notebook.getCurrentFolder(), true) &amp;&amp; _cu.getStorageAccessFrameworkTreeUri(this) == null) {</span></div>
+<div class="code-line context-line"><span class="line-number">291</span><span class="code-content">                _cu.showMountSdDialog(this);</span></div>
+<div class="code-line context-line"><span class="line-number">292</span><span class="code-content">                return;</span></div>
+<div class="code-line context-line"><span class="line-number">293</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">294</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">295</span><span class="code-content">            if (!_notebook.getAdapter().isCurrentFolderWriteable()) {</span></div>
+<div class="code-line context-line"><span class="line-number">296</span><span class="code-content">                return;</span></div>
+<div class="code-line context-line"><span class="line-number">297</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">298</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">299</span><span class="code-content">            final NewFileDialog dialog = NewFileDialog.newInstance(_notebook.getCurrentFolder(), true, (ok, f) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">300</span><span class="code-content">                if (ok) {</span></div>
+<div class="code-line context-line"><span class="line-number">301</span><span class="code-content">                    if (f.isFile()) {</span></div>
+<div class="code-line context-line"><span class="line-number">302</span><span class="code-content">                        DocumentActivity.launch(MainActivity.this, f, false, null, null);</span></div>
+<div class="code-line context-line"><span class="line-number">303</span><span class="code-content">                    } else if (f.isDirectory()) {</span></div>
+<div class="code-line context-line"><span class="line-number">304</span><span class="code-content">                        _notebook.getAdapter().showFile(f);</span></div>
+<div class="code-line context-line"><span class="line-number">305</span><span class="code-content">                    }</span></div>
+<div class="code-line context-line"><span class="line-number">306</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">307</span><span class="code-content">            });</span></div>
+<div class="code-line correct-line"><span class="line-number">308</span><span class="code-content">            dialog.show(getSupportFragmentManager(), NewFileDialog.FRAGMENT_TAG);</span></div>
+<div class="code-line context-line"><span class="line-number">309</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">310</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">311</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">312</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">313</span><span class="code-content">    public void onBackPressed() {</span></div>
+<div class="code-line context-line"><span class="line-number">314</span><span class="code-content">        // Exit confirmed with 2xBack</span></div>
+<div class="code-line context-line"><span class="line-number">315</span><span class="code-content">        if (_doubleBackToExitPressedOnce) {</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-2">
+    File: net/gsantner/markor/frontend/MarkorDialogFactory.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\MarkorDialogFactory.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">979</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">980</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">981</span><span class="code-content">    // Read all files in snippets folder with appropriate extension</span></div>
+<div class="code-line context-line"><span class="line-number">982</span><span class="code-content">    // Create a map of snippet title -&gt; text</span></div>
+<div class="code-line context-line"><span class="line-number">983</span><span class="code-content">    public static Map&lt;String, File&gt; getSnippets(final AppSettings as) {</span></div>
+<div class="code-line correct-line"><span class="line-number">984</span><span class="code-content">        final Map&lt;String, File&gt; texts = new TreeMap&lt;&gt;();</span></div>
+<div class="code-line correct-line"><span class="line-number">985</span><span class="code-content">        final File folder = new File(as.getNotebookDirectory(), &quot;.app/snippets&quot;);</span></div>
+<div class="code-line correct-line"><span class="line-number">986</span><span class="code-content">        if ((!folder.exists() || !folder.isDirectory() || !folder.canRead())) {</span></div>
+<div class="code-line context-line"><span class="line-number">987</span><span class="code-content">            if (!folder.mkdirs()) {</span></div>
+<div class="code-line context-line"><span class="line-number">988</span><span class="code-content">                return texts;</span></div>
+<div class="code-line context-line"><span class="line-number">989</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">990</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">991</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">992</span><span class="code-content">        // Read all files in snippets folder with appropriate extension</span></div>
+<div class="code-line context-line"><span class="line-number">993</span><span class="code-content">        // Create a map of snippet title -&gt; text</span></div>
+<div class="code-line correct-line"><span class="line-number">994</span><span class="code-content">        for (final File f : folder.listFiles()) {</span></div>
+<div class="code-line context-line"><span class="line-number">995</span><span class="code-content">            if (f.exists() &amp;&amp; f.canRead() &amp;&amp; FormatRegistry.isFileSupported(f, true)) {</span></div>
+<div class="code-line context-line"><span class="line-number">996</span><span class="code-content">                texts.put(f.getName(), f);</span></div>
+<div class="code-line context-line"><span class="line-number">997</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">998</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">999</span><span class="code-content">        return texts;</span></div>
+<div class="code-line context-line"><span class="line-number">1000</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1001</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1002</span><span class="code-content">    public static void showInsertSnippetDialog(final Activity activity, final GsCallback.a1&lt;String&gt; callback) {</span></div>
+<div class="code-line context-line"><span class="line-number">1003</span><span class="code-content">        final DialogOptions dopt = new DialogOptions();</span></div>
+<div class="code-line context-line"><span class="line-number">1004</span><span class="code-content">        baseConf(activity, dopt);</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-3">
+    File: net/gsantner/markor/frontend/NewFileDialog.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\NewFileDialog.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">54</span><span class="code-content">import java.util.Map;</span></div>
+<div class="code-line context-line"><span class="line-number">55</span><span class="code-content">import java.util.concurrent.atomic.AtomicBoolean;</span></div>
+<div class="code-line context-line"><span class="line-number">56</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">57</span><span class="code-content">import other.de.stanetz.jpencconverter.JavaPasswordbasedCryption;</span></div>
+<div class="code-line context-line"><span class="line-number">58</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">59</span><span class="code-content">public class NewFileDialog extends DialogFragment {</span></div>
+<div class="code-line correct-line"><span class="line-number">60</span><span class="code-content">    public static final String FRAGMENT_TAG = NewFileDialog.class.getName();</span></div>
+<div class="code-line context-line"><span class="line-number">61</span><span class="code-content">    public static final String EXTRA_DIR = &quot;EXTRA_DIR&quot;;</span></div>
+<div class="code-line context-line"><span class="line-number">62</span><span class="code-content">    public static final String EXTRA_ALLOW_CREATE_DIR = &quot;EXTRA_ALLOW_CREATE_DIR&quot;;</span></div>
+<div class="code-line context-line"><span class="line-number">63</span><span class="code-content">    private GsCallback.a2&lt;Boolean, File&gt; callback;</span></div>
+<div class="code-line context-line"><span class="line-number">64</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">65</span><span class="code-content">    public static NewFileDialog newInstance(final File sourceFile, final boolean allowCreateDir, final GsCallback.a2&lt;Boolean, File&gt; callback) {</span></div>
+<div class="code-line correct-line"><span class="line-number">66</span><span class="code-content">        NewFileDialog dialog = new NewFileDialog();</span></div>
+<div class="code-line correct-line"><span class="line-number">67</span><span class="code-content">        Bundle args = new Bundle();</span></div>
+<div class="code-line correct-line"><span class="line-number">68</span><span class="code-content">        args.putSerializable(EXTRA_DIR, sourceFile);</span></div>
+<div class="code-line correct-line"><span class="line-number">69</span><span class="code-content">        args.putSerializable(EXTRA_ALLOW_CREATE_DIR, allowCreateDir);</span></div>
+<div class="code-line correct-line"><span class="line-number">70</span><span class="code-content">        dialog.setArguments(args);</span></div>
+<div class="code-line correct-line"><span class="line-number">71</span><span class="code-content">        dialog.callback = callback;</span></div>
+<div class="code-line correct-line"><span class="line-number">72</span><span class="code-content">        return dialog;</span></div>
+<div class="code-line context-line"><span class="line-number">73</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">74</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">75</span><span class="code-content">    @NonNull</span></div>
+<div class="code-line context-line"><span class="line-number">76</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">77</span><span class="code-content">    public Dialog onCreateDialog(Bundle savedInstanceState) {</span></div>
+<div class="code-line correct-line"><span class="line-number">78</span><span class="code-content">        final File file = (File) getArguments().getSerializable(EXTRA_DIR);</span></div>
+<div class="code-line correct-line"><span class="line-number">79</span><span class="code-content">        final boolean allowCreateDir = getArguments().getBoolean(EXTRA_ALLOW_CREATE_DIR);</span></div>
+<div class="code-line context-line"><span class="line-number">80</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">81</span><span class="code-content">        LayoutInflater inflater = LayoutInflater.from(getActivity());</span></div>
+<div class="code-line correct-line"><span class="line-number">82</span><span class="code-content">        AlertDialog.Builder dialogBuilder = makeDialog(file, allowCreateDir, inflater);</span></div>
+<div class="code-line correct-line"><span class="line-number">83</span><span class="code-content">        AlertDialog dialog = dialogBuilder.show();</span></div>
+<div class="code-line context-line"><span class="line-number">84</span><span class="code-content">        Window w;</span></div>
+<div class="code-line correct-line"><span class="line-number">85</span><span class="code-content">        if ((w = dialog.getWindow()) != null) {</span></div>
+<div class="code-line correct-line"><span class="line-number">86</span><span class="code-content">            w.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);</span></div>
+<div class="code-line context-line"><span class="line-number">87</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">88</span><span class="code-content">        return dialog;</span></div>
+<div class="code-line context-line"><span class="line-number">89</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">90</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">91</span><span class="code-content">    @SuppressLint(&quot;SetTextI18n&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">92</span><span class="code-content">    private AlertDialog.Builder makeDialog(final File basedir, final boolean allowCreateDir, LayoutInflater inflater) {</span></div>
+<div class="code-line context-line"><span class="line-number">93</span><span class="code-content">        View root;</span></div>
+<div class="code-line context-line"><span class="line-number">94</span><span class="code-content">        AlertDialog.Builder dialogBuilder;</span></div>
+<div class="code-line correct-line"><span class="line-number">95</span><span class="code-content">        final AppSettings appSettings = ApplicationObject.settings();</span></div>
+<div class="code-line correct-line"><span class="line-number">96</span><span class="code-content">        dialogBuilder = new AlertDialog.Builder(inflater.getContext(), R.style.Theme_AppCompat_DayNight_Dialog);</span></div>
+<div class="code-line correct-line"><span class="line-number">97</span><span class="code-content">        root = inflater.inflate(R.layout.new_file_dialog, null);</span></div>
+<div class="code-line context-line"><span class="line-number">98</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">99</span><span class="code-content">        final EditText fileNameEdit = root.findViewById(R.id.new_file_dialog__name);</span></div>
+<div class="code-line correct-line"><span class="line-number">100</span><span class="code-content">        final EditText fileExtEdit = root.findViewById(R.id.new_file_dialog__ext);</span></div>
+<div class="code-line correct-line"><span class="line-number">101</span><span class="code-content">        final CheckBox encryptCheckbox = root.findViewById(R.id.new_file_dialog__encrypt);</span></div>
+<div class="code-line correct-line"><span class="line-number">102</span><span class="code-content">        final CheckBox utf8BomCheckbox = root.findViewById(R.id.new_file_dialog__utf8_bom);</span></div>
+<div class="code-line correct-line"><span class="line-number">103</span><span class="code-content">        final Spinner typeSpinner = root.findViewById(R.id.new_file_dialog__type);</span></div>
+<div class="code-line correct-line"><span class="line-number">104</span><span class="code-content">        final Spinner templateSpinner = root.findViewById(R.id.new_file_dialog__template);</span></div>
+<div class="code-line correct-line"><span class="line-number">105</span><span class="code-content">        final String[] typeSpinnerToExtension = getResources().getStringArray(R.array.new_file_types__file_extension);</span></div>
+<div class="code-line context-line"><span class="line-number">106</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">107</span><span class="code-content">        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.M &amp;&amp; appSettings.isDefaultPasswordSet()) {</span></div>
+<div class="code-line context-line"><span class="line-number">108</span><span class="code-content">            encryptCheckbox.setChecked(appSettings.getNewFileDialogLastUsedEncryption());</span></div>
+<div class="code-line context-line"><span class="line-number">109</span><span class="code-content">        } else {</span></div>
+<div class="code-line correct-line"><span class="line-number">110</span><span class="code-content">            encryptCheckbox.setVisibility(View.GONE);</span></div>
+<div class="code-line context-line"><span class="line-number">111</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">112</span><span class="code-content">        utf8BomCheckbox.setChecked(appSettings.getNewFileDialogLastUsedUtf8Bom());</span></div>
+<div class="code-line correct-line"><span class="line-number">113</span><span class="code-content">        utf8BomCheckbox.setVisibility(appSettings.isExperimentalFeaturesEnabled() ? View.VISIBLE : View.GONE);</span></div>
+<div class="code-line correct-line"><span class="line-number">114</span><span class="code-content">        fileExtEdit.setText(appSettings.getNewFileDialogLastUsedExtension());</span></div>
+<div class="code-line correct-line"><span class="line-number">115</span><span class="code-content">        fileNameEdit.requestFocus();</span></div>
+<div class="code-line correct-line"><span class="line-number">116</span><span class="code-content">        new Handler().postDelayed(new GsContextUtils.DoTouchView(fileNameEdit), 200);</span></div>
+<div class="code-line context-line"><span class="line-number">117</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">118</span><span class="code-content">        fileNameEdit.setFilters(new InputFilter[]{GsContextUtils.instance.makeFilenameInputFilter()});</span></div>
+<div class="code-line correct-line"><span class="line-number">119</span><span class="code-content">        fileExtEdit.setFilters(fileNameEdit.getFilters());</span></div>
+<div class="code-line context-line"><span class="line-number">120</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">121</span><span class="code-content">        loadTemplatesIntoSpinner(appSettings, templateSpinner);</span></div>
+<div class="code-line correct-line"><span class="line-number">122</span><span class="code-content">        final AtomicBoolean typeSpinnerNoTriggerOnFirst = new AtomicBoolean(true);</span></div>
+<div class="code-line correct-line"><span class="line-number">123</span><span class="code-content">        typeSpinner.setOnItemSelectedListener(new GsAndroidSpinnerOnItemSelectedAdapter(pos -&gt; {</span></div>
+<div class="code-line correct-line"><span class="line-number">124</span><span class="code-content">            if (pos == 3) { // Wikitext</span></div>
+<div class="code-line context-line"><span class="line-number">125</span><span class="code-content">                templateSpinner.setSelection(7); // Zim empty</span></div>
+<div class="code-line context-line"><span class="line-number">126</span><span class="code-content">            }</span></div>
+<div class="code-line correct-line"><span class="line-number">127</span><span class="code-content">            if (typeSpinnerNoTriggerOnFirst.getAndSet(false)) {</span></div>
+<div class="code-line correct-line"><span class="line-number">128</span><span class="code-content">                return;</span></div>
+<div class="code-line context-line"><span class="line-number">129</span><span class="code-content">            }</span></div>
+<div class="code-line correct-line"><span class="line-number">130</span><span class="code-content">            String ext = pos &lt; typeSpinnerToExtension.length ? typeSpinnerToExtension[pos] : &quot;&quot;;</span></div>
+<div class="code-line context-line"><span class="line-number">131</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">132</span><span class="code-content">            if (ext != null) {</span></div>
+<div class="code-line correct-line"><span class="line-number">133</span><span class="code-content">                if (encryptCheckbox.isChecked()) {</span></div>
+<div class="code-line context-line"><span class="line-number">134</span><span class="code-content">                    fileExtEdit.setText(ext + JavaPasswordbasedCryption.DEFAULT_ENCRYPTION_EXTENSION);</span></div>
+<div class="code-line context-line"><span class="line-number">135</span><span class="code-content">                } else {</span></div>
+<div class="code-line correct-line"><span class="line-number">136</span><span class="code-content">                    fileExtEdit.setText(ext);</span></div>
+<div class="code-line context-line"><span class="line-number">137</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">138</span><span class="code-content">            }</span></div>
+<div class="code-line correct-line"><span class="line-number">139</span><span class="code-content">            fileNameEdit.setSelection(fileNameEdit.length());</span></div>
+<div class="code-line correct-line"><span class="line-number">140</span><span class="code-content">            appSettings.setNewFileDialogLastUsedType(typeSpinner.getSelectedItemPosition());</span></div>
+<div class="code-line correct-line"><span class="line-number">141</span><span class="code-content">        }));</span></div>
+<div class="code-line correct-line"><span class="line-number">142</span><span class="code-content">        typeSpinner.setSelection(appSettings.getNewFileDialogLastUsedType());</span></div>
+<div class="code-line context-line"><span class="line-number">143</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">144</span><span class="code-content">        templateSpinner.setOnItemSelectedListener(new GsAndroidSpinnerOnItemSelectedAdapter(pos -&gt; {</span></div>
+<div class="code-line correct-line"><span class="line-number">145</span><span class="code-content">            String prefix = null;</span></div>
+<div class="code-line context-line"><span class="line-number">146</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">147</span><span class="code-content">            if (pos == 3) { // Jekyll</span></div>
+<div class="code-line context-line"><span class="line-number">148</span><span class="code-content">                prefix = TodoTxtTask.DATEF_YYYY_MM_DD.format(new Date()) + &quot;-&quot;;</span></div>
+<div class="code-line correct-line"><span class="line-number">149</span><span class="code-content">            } else if (pos == 9) { // ZettelKasten</span></div>
+<div class="code-line context-line"><span class="line-number">150</span><span class="code-content">                prefix = new SimpleDateFormat(&quot;yyyyMMddHHmm&quot;, Locale.ROOT).format(new Date()) + &quot;-&quot;;</span></div>
+<div class="code-line context-line"><span class="line-number">151</span><span class="code-content">            }</span></div>
+<div class="code-line correct-line"><span class="line-number">152</span><span class="code-content">            if (!TextUtils.isEmpty(prefix) &amp;&amp; !fileNameEdit.getText().toString().startsWith(prefix)) {</span></div>
+<div class="code-line context-line"><span class="line-number">153</span><span class="code-content">                fileNameEdit.setText(prefix + fileNameEdit.getText().toString());</span></div>
+<div class="code-line context-line"><span class="line-number">154</span><span class="code-content">            }</span></div>
+<div class="code-line correct-line"><span class="line-number">155</span><span class="code-content">            fileNameEdit.setSelection(fileNameEdit.length());</span></div>
+<div class="code-line correct-line"><span class="line-number">156</span><span class="code-content">        }));</span></div>
+<div class="code-line context-line"><span class="line-number">157</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">158</span><span class="code-content">        encryptCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">159</span><span class="code-content">            final String currentExtention = fileExtEdit.getText().toString();</span></div>
+<div class="code-line context-line"><span class="line-number">160</span><span class="code-content">            if (isChecked) {</span></div>
+<div class="code-line context-line"><span class="line-number">161</span><span class="code-content">                if (!currentExtention.endsWith(JavaPasswordbasedCryption.DEFAULT_ENCRYPTION_EXTENSION)) {</span></div>
+<div class="code-line context-line"><span class="line-number">162</span><span class="code-content">                    fileExtEdit.setText(currentExtention + JavaPasswordbasedCryption.DEFAULT_ENCRYPTION_EXTENSION);</span></div>
+<div class="code-line context-line"><span class="line-number">163</span><span class="code-content">                }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">165</span><span class="code-content">                fileExtEdit.setText(currentExtention.replace(JavaPasswordbasedCryption.DEFAULT_ENCRYPTION_EXTENSION, &quot;&quot;));</span></div>
+<div class="code-line context-line"><span class="line-number">166</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">167</span><span class="code-content">            appSettings.setNewFileDialogLastUsedEncryption(isChecked);</span></div>
+<div class="code-line context-line"><span class="line-number">168</span><span class="code-content">        });</span></div>
+<div class="code-line context-line"><span class="line-number">169</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">170</span><span class="code-content">        utf8BomCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">171</span><span class="code-content">            appSettings.setNewFileDialogLastUsedUtf8Bom(isChecked);</span></div>
+<div class="code-line context-line"><span class="line-number">172</span><span class="code-content">        });</span></div>
+<div class="code-line context-line"><span class="line-number">173</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">174</span><span class="code-content">        dialogBuilder.setView(root);</span></div>
+<div class="code-line correct-line"><span class="line-number">175</span><span class="code-content">        fileNameEdit.requestFocus();</span></div>
+<div class="code-line context-line"><span class="line-number">176</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">177</span><span class="code-content">        final MarkorContextUtils cu = new MarkorContextUtils(getContext());</span></div>
+<div class="code-line correct-line"><span class="line-number">178</span><span class="code-content">        dialogBuilder.setNegativeButton(R.string.cancel, (dialogInterface, i) -&gt; dialogInterface.dismiss());</span></div>
+<div class="code-line correct-line"><span class="line-number">179</span><span class="code-content">        dialogBuilder.setPositiveButton(getString(android.R.string.ok), (dialogInterface, i) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">180</span><span class="code-content">            if (ez(fileNameEdit)) {</span></div>
+<div class="code-line context-line"><span class="line-number">181</span><span class="code-content">                return;</span></div>
+<div class="code-line context-line"><span class="line-number">182</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">183</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">184</span><span class="code-content">            appSettings.setNewFileDialogLastUsedExtension(fileExtEdit.getText().toString().trim());</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">203</span><span class="code-content">                callback(arg_ok || f.exists(), f);</span></div>
+<div class="code-line context-line"><span class="line-number">204</span><span class="code-content">                dialogInterface.dismiss();</span></div>
+<div class="code-line context-line"><span class="line-number">205</span><span class="code-content">            });</span></div>
+<div class="code-line context-line"><span class="line-number">206</span><span class="code-content">        });</span></div>
+<div class="code-line context-line"><span class="line-number">207</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">208</span><span class="code-content">        dialogBuilder.setNeutralButton(R.string.folder, (dialogInterface, i) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">209</span><span class="code-content">            if (ez(fileNameEdit)) {</span></div>
+<div class="code-line context-line"><span class="line-number">210</span><span class="code-content">                return;</span></div>
+<div class="code-line context-line"><span class="line-number">211</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">212</span><span class="code-content">            final String usedFoldername = getFileNameWithoutExtension(fileNameEdit.getText().toString().trim(), templateSpinner.getSelectedItemPosition());</span></div>
+<div class="code-line context-line"><span class="line-number">213</span><span class="code-content">            final File f = new File(basedir, usedFoldername);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">218</span><span class="code-content">                callback(f.mkdirs() || f.exists(), f);</span></div>
+<div class="code-line context-line"><span class="line-number">219</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">220</span><span class="code-content">            dialogInterface.dismiss();</span></div>
+<div class="code-line context-line"><span class="line-number">221</span><span class="code-content">        });</span></div>
+<div class="code-line context-line"><span class="line-number">222</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">223</span><span class="code-content">        if (!allowCreateDir) {</span></div>
+<div class="code-line context-line"><span class="line-number">224</span><span class="code-content">            dialogBuilder.setNeutralButton(&quot;&quot;, null);</span></div>
+<div class="code-line context-line"><span class="line-number">225</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">226</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">227</span><span class="code-content">        return dialogBuilder;</span></div>
+<div class="code-line context-line"><span class="line-number">228</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">229</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">230</span><span class="code-content">    private void loadTemplatesIntoSpinner(final AppSettings appSettings, final Spinner templateSpinner) {</span></div>
+<div class="code-line correct-line"><span class="line-number">231</span><span class="code-content">        List&lt;String&gt; templates = new ArrayList&lt;&gt;();</span></div>
+<div class="code-line correct-line"><span class="line-number">232</span><span class="code-content">        for (int i = 0; i &lt; templateSpinner.getCount(); i++) {</span></div>
+<div class="code-line correct-line"><span class="line-number">233</span><span class="code-content">            templates.add((String) templateSpinner.getAdapter().getItem(i));</span></div>
+<div class="code-line context-line"><span class="line-number">234</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">235</span><span class="code-content">        templates.addAll(MarkorDialogFactory.getSnippets(appSettings).keySet());</span></div>
+<div class="code-line correct-line"><span class="line-number">236</span><span class="code-content">        ArrayAdapter&lt;String&gt; adapter = new ArrayAdapter&lt;&gt;(getActivity(), android.R.layout.simple_spinner_item, templates.toArray(new String[0]));</span></div>
+<div class="code-line correct-line"><span class="line-number">237</span><span class="code-content">        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);</span></div>
+<div class="code-line correct-line"><span class="line-number">238</span><span class="code-content">        templateSpinner.setAdapter(adapter);</span></div>
+<div class="code-line correct-line"><span class="line-number">239</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">240</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">241</span><span class="code-content">    private boolean ez(EditText et) {</span></div>
+<div class="code-line context-line"><span class="line-number">242</span><span class="code-content">        return et.getText().toString().trim().isEmpty();</span></div>
+<div class="code-line context-line"><span class="line-number">243</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">244</span><span class="code-content"></span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-4">
+    File: net/gsantner/markor/frontend/textview/TextViewUtils.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\frontend\textview\TextViewUtils.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">817</span><span class="code-content">        return isGlobalVisible &amp;&amp; Rect.intersects(actualPosition, screen);</span></div>
+<div class="code-line context-line"><span class="line-number">818</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">819</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">820</span><span class="code-content">    // Check if keyboard open. Only available after android 11 :(</span></div>
+<div class="code-line context-line"><span class="line-number">821</span><span class="code-content">    public static Boolean isImeOpen(final View view) {</span></div>
+<div class="code-line correct-line"><span class="line-number">822</span><span class="code-content">        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.R) {</span></div>
+<div class="code-line context-line"><span class="line-number">823</span><span class="code-content">            final WindowInsets insets = view.getRootWindowInsets();</span></div>
+<div class="code-line context-line"><span class="line-number">824</span><span class="code-content">            if (insets != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">825</span><span class="code-content">                insets.isVisible(WindowInsets.Type.ime());</span></div>
+<div class="code-line context-line"><span class="line-number">826</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">827</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">828</span><span class="code-content">        return null; // Uncertain</span></div>
+<div class="code-line context-line"><span class="line-number">829</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">830</span><span class="code-content">}</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-5">
+    File: net/gsantner/markor/model/AppSettings.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\markor\model\AppSettings.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">851</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">852</span><span class="code-content">        return extSettingCache.contains(ext) || extSettingCache.contains(&quot;.*&quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">853</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">854</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">855</span><span class="code-content">    public boolean isExperimentalFeaturesEnabled() {</span></div>
+<div class="code-line correct-line"><span class="line-number">856</span><span class="code-content">        return getBool(R.string.pref_key__is_enable_experimental_features, BuildConfig.IS_TEST_BUILD);</span></div>
+<div class="code-line context-line"><span class="line-number">857</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">858</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">859</span><span class="code-content">    public boolean isHighlightBiggerHeadings() {</span></div>
+<div class="code-line context-line"><span class="line-number">860</span><span class="code-content">        return getBool(R.string.pref_key__editor_markdown_bigger_headings_2, false);</span></div>
+<div class="code-line context-line"><span class="line-number">861</span><span class="code-content">    }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">868</span><span class="code-content">        return getString(R.string.pref_key__editor_unordered_list_character, &quot;-&quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">869</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">870</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">871</span><span class="code-content">    @RequiresApi(api = Build.VERSION_CODES.M)</span></div>
+<div class="code-line context-line"><span class="line-number">872</span><span class="code-content">    public char[] getDefaultPassword() {</span></div>
+<div class="code-line correct-line"><span class="line-number">873</span><span class="code-content">        return new PasswordStore(getContext()).loadKey(R.string.pref_key__default_encryption_password);</span></div>
+<div class="code-line context-line"><span class="line-number">874</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">875</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">876</span><span class="code-content">    @RequiresApi(api = Build.VERSION_CODES.M)</span></div>
+<div class="code-line context-line"><span class="line-number">877</span><span class="code-content">    public boolean isDefaultPasswordSet() {</span></div>
+<div class="code-line correct-line"><span class="line-number">878</span><span class="code-content">        final char[] key = getDefaultPassword();</span></div>
+<div class="code-line correct-line"><span class="line-number">879</span><span class="code-content">        return (key != null &amp;&amp; key.length &gt; 0);</span></div>
+<div class="code-line context-line"><span class="line-number">880</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">881</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">882</span><span class="code-content">    @RequiresApi(api = Build.VERSION_CODES.M)</span></div>
+<div class="code-line context-line"><span class="line-number">883</span><span class="code-content">    public void setDefaultPassword(String password) {</span></div>
+<div class="code-line context-line"><span class="line-number">884</span><span class="code-content">        new PasswordStore(getContext()).storeKey(password, R.string.pref_key__default_encryption_password);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">891</span><span class="code-content">    public void setNewFileDialogLastUsedEncryption(boolean b) {</span></div>
+<div class="code-line context-line"><span class="line-number">892</span><span class="code-content">        setBool(R.string.pref_key__new_file_dialog_lastused_encryption, b);</span></div>
+<div class="code-line context-line"><span class="line-number">893</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">894</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">895</span><span class="code-content">    public boolean getNewFileDialogLastUsedUtf8Bom() {</span></div>
+<div class="code-line correct-line"><span class="line-number">896</span><span class="code-content">        return getBool(R.string.pref_key__new_file_dialog_lastused_encryption, false);</span></div>
+<div class="code-line context-line"><span class="line-number">897</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">898</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">899</span><span class="code-content">    public void setNewFileDialogLastUsedUtf8Bom(boolean b) {</span></div>
+<div class="code-line context-line"><span class="line-number">900</span><span class="code-content">        setBool(R.string.pref_key__new_file_dialog_lastused_encryption, b);</span></div>
+<div class="code-line context-line"><span class="line-number">901</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">902</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">903</span><span class="code-content">    public String getNewFileDialogLastUsedExtension() {</span></div>
+<div class="code-line correct-line"><span class="line-number">904</span><span class="code-content">        return getString(R.string.pref_key__new_file_dialog_lastused_extension, &quot;.md&quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">905</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">906</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">907</span><span class="code-content">    public void setNewFileDialogLastUsedExtension(String v) {</span></div>
+<div class="code-line context-line"><span class="line-number">908</span><span class="code-content">        setString(R.string.pref_key__new_file_dialog_lastused_extension, v);</span></div>
+<div class="code-line context-line"><span class="line-number">909</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">910</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">911</span><span class="code-content">    public int getNewFileDialogLastUsedType() {</span></div>
+<div class="code-line correct-line"><span class="line-number">912</span><span class="code-content">        return getInt(R.string.pref_key__new_file_dialog_lastused_type, 0);</span></div>
+<div class="code-line context-line"><span class="line-number">913</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">914</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">915</span><span class="code-content">    public void setNewFileDialogLastUsedType(int i) {</span></div>
+<div class="code-line correct-line"><span class="line-number">916</span><span class="code-content">        setInt(R.string.pref_key__new_file_dialog_lastused_type, i);</span></div>
+<div class="code-line correct-line"><span class="line-number">917</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">918</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">919</span><span class="code-content">    public void setFileBrowserLastBrowsedFolder(File f) {</span></div>
+<div class="code-line context-line"><span class="line-number">920</span><span class="code-content">        setString(R.string.pref_key__file_browser_last_browsed_folder, f.getAbsolutePath());</span></div>
+<div class="code-line context-line"><span class="line-number">921</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">922</span><span class="code-content"></span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-6">
+    File: net/gsantner/opoc/frontend/filebrowser/GsFileBrowserFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\frontend\filebrowser\GsFileBrowserFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">378</span><span class="code-content">        _fragmentMenu = menu;</span></div>
+<div class="code-line context-line"><span class="line-number">379</span><span class="code-content">        updateMenuItems();</span></div>
+<div class="code-line context-line"><span class="line-number">380</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">381</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">382</span><span class="code-content">    public GsFileBrowserListAdapter getAdapter() {</span></div>
+<div class="code-line correct-line"><span class="line-number">383</span><span class="code-content">        return _filesystemViewerAdapter;</span></div>
+<div class="code-line context-line"><span class="line-number">384</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">385</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">386</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">387</span><span class="code-content">    public boolean onOptionsItemSelected(final MenuItem item) {</span></div>
+<div class="code-line context-line"><span class="line-number">388</span><span class="code-content">        final int _id = item.getItemId();</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-7">
+    File: net/gsantner/opoc/frontend/filebrowser/GsFileBrowserListAdapter.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\frontend\filebrowser\GsFileBrowserListAdapter.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">321</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">322</span><span class="code-content">        return _filter;</span></div>
+<div class="code-line context-line"><span class="line-number">323</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">324</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">325</span><span class="code-content">    public boolean isCurrentFolderWriteable() {</span></div>
+<div class="code-line correct-line"><span class="line-number">326</span><span class="code-content">        return canWrite(_currentFolder);</span></div>
+<div class="code-line context-line"><span class="line-number">327</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">328</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">329</span><span class="code-content">    private int getPathLevel(String path) {</span></div>
+<div class="code-line context-line"><span class="line-number">330</span><span class="code-content">        final int end = path.lastIndexOf(&#x27;/&#x27;);</span></div>
+<div class="code-line context-line"><span class="line-number">331</span><span class="code-content">        int level = 0;</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-8">
+    File: net/gsantner/opoc/util/GsContextUtils.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\util\GsContextUtils.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">932</span><span class="code-content">    /**</span></div>
+<div class="code-line context-line"><span class="line-number">933</span><span class="code-content">     * A {@link InputFilter} for filenames</span></div>
+<div class="code-line context-line"><span class="line-number">934</span><span class="code-content">     */</span></div>
+<div class="code-line context-line"><span class="line-number">935</span><span class="code-content">    @SuppressWarnings({&quot;UnnecessaryLocalVariable&quot;, &quot;RedundantSuppression&quot;})</span></div>
+<div class="code-line context-line"><span class="line-number">936</span><span class="code-content">    public InputFilter makeFilenameInputFilter() {</span></div>
+<div class="code-line correct-line"><span class="line-number">937</span><span class="code-content">        return (filterSrc, filterStart, filterEnd, filterDest, filterDstart, filterDend) -&gt; {</span></div>
+<div class="code-line correct-line"><span class="line-number">938</span><span class="code-content">            if (filterSrc != null &amp;&amp; filterSrc.length() &gt; 0) {</span></div>
+<div class="code-line correct-line"><span class="line-number">939</span><span class="code-content">                final String newInput = filterSrc.subSequence(filterStart, filterEnd).toString().replace(&quot; &quot;, &quot;&quot;);</span></div>
+<div class="code-line correct-line"><span class="line-number">940</span><span class="code-content">                final String newInputFiltered = GsFileUtils.getFilteredFilenameWithoutDisallowedChars(newInput);</span></div>
+<div class="code-line correct-line"><span class="line-number">941</span><span class="code-content">                if (!newInput.equals(newInputFiltered)) {</span></div>
+<div class="code-line context-line"><span class="line-number">942</span><span class="code-content">                    return &quot;&quot;;</span></div>
+<div class="code-line context-line"><span class="line-number">943</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">944</span><span class="code-content">            }</span></div>
+<div class="code-line correct-line"><span class="line-number">945</span><span class="code-content">            return null;</span></div>
+<div class="code-line context-line"><span class="line-number">946</span><span class="code-content">        };</span></div>
+<div class="code-line context-line"><span class="line-number">947</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">948</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">949</span><span class="code-content">    /**</span></div>
+<div class="code-line context-line"><span class="line-number">950</span><span class="code-content">     * A simple {@link Runnable} which does a touch event on a view.</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">953</span><span class="code-content">     * Example: new Handler().postDelayed(new DoTouchView(editView), 200);</span></div>
+<div class="code-line context-line"><span class="line-number">954</span><span class="code-content">     */</span></div>
+<div class="code-line context-line"><span class="line-number">955</span><span class="code-content">    public static class DoTouchView implements Runnable {</span></div>
+<div class="code-line context-line"><span class="line-number">956</span><span class="code-content">        private View m_view;</span></div>
+<div class="code-line context-line"><span class="line-number">957</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">958</span><span class="code-content">        public DoTouchView(View view) {</span></div>
+<div class="code-line correct-line"><span class="line-number">959</span><span class="code-content">            m_view = view;</span></div>
+<div class="code-line correct-line"><span class="line-number">960</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">961</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">962</span><span class="code-content">        @Override</span></div>
+<div class="code-line context-line"><span class="line-number">963</span><span class="code-content">        public void run() {</span></div>
+<div class="code-line correct-line"><span class="line-number">964</span><span class="code-content">            m_view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, 0, 0, 0));</span></div>
+<div class="code-line correct-line"><span class="line-number">965</span><span class="code-content">            m_view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, 0, 0, 0));</span></div>
+<div class="code-line correct-line"><span class="line-number">966</span><span class="code-content">            m_view = null;</span></div>
+<div class="code-line correct-line"><span class="line-number">967</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">968</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">969</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">970</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">971</span><span class="code-content">    public String getMimeType(final Context context, final File file) {</span></div>
+<div class="code-line context-line"><span class="line-number">972</span><span class="code-content">        return getMimeType(context, file.getAbsolutePath());</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-9">
+    File: net/gsantner/opoc/util/GsFileUtils.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\util\GsFileUtils.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">668</span><span class="code-content">        final int doti = name.lastIndexOf(&quot;.&quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">669</span><span class="code-content">        return (doti &lt; 0) ? &quot;&quot; : name.substring(doti).toLowerCase();</span></div>
+<div class="code-line context-line"><span class="line-number">670</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">671</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">672</span><span class="code-content">    public static String getFilteredFilenameWithoutDisallowedChars(String str, final boolean... a1NoRCEguard) {</span></div>
+<div class="code-line correct-line"><span class="line-number">673</span><span class="code-content">        final boolean noRCEguard = a1NoRCEguard != null &amp;&amp; a1NoRCEguard.length &gt; 0 &amp;&amp; a1NoRCEguard[0];</span></div>
+<div class="code-line correct-line"><span class="line-number">674</span><span class="code-content">        final String disallowedChars = &quot;&lt;|[\\?*:\&quot;\n\r\t\0]/&gt;&quot; + (noRCEguard ? &quot;&quot; : &quot;`$%;=&amp;#@&quot;);</span></div>
+<div class="code-line correct-line"><span class="line-number">675</span><span class="code-content">        for (char disallowed : disallowedChars.toCharArray()) {</span></div>
+<div class="code-line correct-line"><span class="line-number">676</span><span class="code-content">            str = str.replace(String.valueOf(disallowed), &quot;&quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">677</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">678</span><span class="code-content">        return str.trim();</span></div>
+<div class="code-line context-line"><span class="line-number">679</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">680</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">681</span><span class="code-content">    /**</span></div>
+<div class="code-line context-line"><span class="line-number">682</span><span class="code-content">     * Generate a filename based off current datetime in filename (year, month, day, hour, minute, second)</span></div>
+<div class="code-line context-line"><span class="line-number">683</span><span class="code-content">     * Examples: Screenshot_20210208-184301_Trebuchet.png IMG_20190511-230845.jpg</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-10">
+    File: net/gsantner/opoc/wrapper/GsAndroidSpinnerOnItemSelectedAdapter.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\net\gsantner\opoc\wrapper\GsAndroidSpinnerOnItemSelectedAdapter.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">14</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">15</span><span class="code-content">public class GsAndroidSpinnerOnItemSelectedAdapter implements AdapterView.OnItemSelectedListener {</span></div>
+<div class="code-line context-line"><span class="line-number">16</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">17</span><span class="code-content">    private final GsCallback.a1&lt;Integer&gt; _callback;</span></div>
+<div class="code-line context-line"><span class="line-number">18</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">19</span><span class="code-content">    public GsAndroidSpinnerOnItemSelectedAdapter(final GsCallback.a1&lt;Integer&gt; callback) {</span></div>
+<div class="code-line correct-line"><span class="line-number">20</span><span class="code-content">        _callback = callback;</span></div>
+<div class="code-line correct-line"><span class="line-number">21</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">22</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">23</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">24</span><span class="code-content">    public void onItemSelected(AdapterView&lt;?&gt; parent, View view, int position, long id) {</span></div>
+<div class="code-line correct-line"><span class="line-number">25</span><span class="code-content">        _callback.callback(position);</span></div>
+<div class="code-line correct-line"><span class="line-number">26</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">27</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">28</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">29</span><span class="code-content">    public void onNothingSelected(AdapterView&lt;?&gt; parent) {</span></div>
+<div class="code-line context-line"><span class="line-number">30</span><span class="code-content">        _callback.callback(-1);</span></div>
+<div class="code-line context-line"><span class="line-number">31</span><span class="code-content">    }</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-11">
+    File: other/de/stanetz/jpencconverter/PasswordStore.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-2\app\src\main\java\other\de\stanetz\jpencconverter\PasswordStore.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

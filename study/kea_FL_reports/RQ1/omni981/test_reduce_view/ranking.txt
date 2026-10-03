@@ -1,0 +1,8 @@
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/BaseFragment.java
+it/feio/android/omninotes/MainActivity.java
+it/feio/android/omninotes/async/notes/NoteLoaderTask.java
+it/feio/android/omninotes/async/CategoryMenuTask.java
+it/feio/android/omninotes/models/adapters/NoteAdapter.java
+it/feio/android/omninotes/models/holders/NoteViewHolder.java
+it/feio/android/omninotes/databinding/NoteLayoutBinding.java

@@ -1,0 +1,12 @@
+net/gsantner/markor/frontend/NewFileDialog.java
+net/gsantner/markor/activity/MainActivity.java
+net/gsantner/markor/frontend/MarkorDialogFactory.java
+net/gsantner/markor/activity/DocumentEditAndViewFragment.java
+net/gsantner/markor/model/AppSettings.java
+net/gsantner/opoc/util/GsContextUtils.java
+net/gsantner/opoc/util/GsFileUtils.java
+net/gsantner/opoc/wrapper/GsAndroidSpinnerOnItemSelectedAdapter.java
+net/gsantner/markor/frontend/textview/TextViewUtils.java
+net/gsantner/opoc/frontend/filebrowser/GsFileBrowserFragment.java
+net/gsantner/opoc/frontend/filebrowser/GsFileBrowserListAdapter.java
+other/de/stanetz/jpencconverter/PasswordStore.java

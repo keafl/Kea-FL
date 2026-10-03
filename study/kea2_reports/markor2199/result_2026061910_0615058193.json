@@ -1,0 +1,26 @@
+{
+    "markor2199.Markor.test_change_file_when_creating": {
+        "precond_satisfied": 26,
+        "executed": 16,
+        "fail": 14,
+        "error": 0
+    },
+    "markor2199.Markor.test_create_note": {
+        "precond_satisfied": 2,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "markor2199.Markor.test_modify_note": {
+        "precond_satisfied": 1,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "markor2199.Markor.test_new_folder": {
+        "precond_satisfied": 6,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    }
+}

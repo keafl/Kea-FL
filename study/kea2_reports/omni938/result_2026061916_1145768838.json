@@ -1,0 +1,38 @@
+{
+    "omni938.OmninotesCategory.test_behavior_setting": {
+        "precond_satisfied": 2,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni938.OmninotesCategory.test_category_count_accuracy": {
+        "precond_satisfied": 16,
+        "executed": 3,
+        "fail": 1,
+        "error": 0
+    },
+    "omni938.OmninotesCategory.test_create_note_with_new_category": {
+        "precond_satisfied": 17,
+        "executed": 2,
+        "fail": 0,
+        "error": 0
+    },
+    "omni938.OmninotesCategory.test_create_note_without_category": {
+        "precond_satisfied": 15,
+        "executed": 5,
+        "fail": 0,
+        "error": 0
+    },
+    "omni938.OmninotesCategory.test_data_setting": {
+        "precond_satisfied": 3,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni938.OmninotesCategory.test_reduced_view": {
+        "precond_satisfied": 23,
+        "executed": 9,
+        "fail": 0,
+        "error": 0
+    }
+}

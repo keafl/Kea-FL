@@ -1,0 +1,22 @@
+{"startStepsCount": 1, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni950.OmniNotesBugTest.test_behavior_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni950.OmniNotesBugTest.test_create_note_with_tag_in_content", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni950.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni950.OmniNotesBugTest.test_data_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni950.py\", line 76, in test_create_empty_category\n    assert category_names.count(category_title) == 1\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 2, "propName": "omni950.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni950.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 6, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 12, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 13, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 13, "propName": "omni950.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 13, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 13, "propName": "omni950.OmniNotesBugTest.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 19, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 23, "propName": "omni950.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}

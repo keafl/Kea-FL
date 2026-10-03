@@ -1,0 +1,44 @@
+{
+    "anki_droid.AnkiTest.test_add_card": {
+        "precond_satisfied": 3,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "anki_droid.AnkiTest.test_check_cardbrowser": {
+        "precond_satisfied": 34,
+        "executed": 12,
+        "fail": 3,
+        "error": 0
+    },
+    "anki_droid.AnkiTest.test_create_deck": {
+        "precond_satisfied": 32,
+        "executed": 8,
+        "fail": 0,
+        "error": 0
+    },
+    "anki_droid.AnkiTest.test_create_subdeck": {
+        "precond_satisfied": 4,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "anki_droid.AnkiTest.test_delete_deck": {
+        "precond_satisfied": 4,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "anki_droid.AnkiTest.test_edit_deck_description": {
+        "precond_satisfied": 5,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "anki_droid.AnkiTest.test_rename_deck": {
+        "precond_satisfied": 1,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    }
+}

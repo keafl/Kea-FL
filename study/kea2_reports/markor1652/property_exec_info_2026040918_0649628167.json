@@ -1,0 +1,25 @@
+{"startStepsCount": 9, "propName": "markor1652.Markor.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "markor1652.Markor.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "markor1652.Markor.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "markor1652.Markor.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "markor1652.Markor.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 16, "propName": "markor1652.Markor.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 16, "propName": "markor1652.Markor.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 20, "propName": "markor1652.Markor.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 23, "propName": "markor1652.Markor.test_back_to_root", "state": "pass", "tb": ""}
+{"startStepsCount": 23, "propName": "markor1652.Markor.test_search_note", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor1652.py\", line 84, in test_search_note\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 25, "propName": "markor1652.Markor.test_modify_note", "state": "pass", "tb": ""}
+{"startStepsCount": 25, "propName": "markor1652.Markor.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 25, "propName": "markor1652.Markor.test_back_to_root", "state": "pass", "tb": ""}
+{"startStepsCount": 26, "propName": "markor1652.Markor.test_go_to_note", "state": "pass", "tb": ""}
+{"startStepsCount": 28, "propName": "markor1652.Markor.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 28, "propName": "markor1652.Markor.test_back_to_root", "state": "pass", "tb": ""}
+{"startStepsCount": 29, "propName": "markor1652.Markor.test_search_note", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor1652.py\", line 84, in test_search_note\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 29, "propName": "markor1652.Markor.test_go_to_note", "state": "pass", "tb": ""}
+{"startStepsCount": 42, "propName": "markor1652.Markor.test_back_to_root", "state": "pass", "tb": ""}
+{"startStepsCount": 43, "propName": "markor1652.Markor.test_search_note", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor1652.py\", line 84, in test_search_note\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 46, "propName": "markor1652.Markor.test_search_note", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor1652.py\", line 84, in test_search_note\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 47, "propName": "markor1652.Markor.test_search_note", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor1652.py\", line 84, in test_search_note\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 47, "propName": "markor1652.Markor.test_back_to_root", "state": "pass", "tb": ""}
+{"startStepsCount": 47, "propName": "markor1652.Markor.test_search_note", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor1652.py\", line 84, in test_search_note\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 50, "propName": "markor1652.Markor.test_go_to_note", "state": "error", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor1652.py\", line 106, in test_go_to_note\n    self.d(resourceId=\"net.gsantner.markor_test:id/action_go_to\").click()\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 149, in click\n    self.must_wait(timeout=timeout)\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 338, in must_wait\n    raise UiObjectNotFoundError({'code': -32002, 'data': str(self.selector), 'method': 'wait'})\nuiautomator2.exceptions.UiObjectNotFoundError: {'code': -32002, 'data': \"Selector [resourceId='net.gsantner.markor_test:id/action_go_to']\", 'method': 'wait'}\n"}

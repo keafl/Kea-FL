@@ -1,0 +1,14 @@
+com/amaze/filemanager/utils/DataUtils.java
+com/amaze/filemanager/asynchronous/asynctasks/LoadFilesListTask.java
+com/amaze/filemanager/ui/fragments/MainFragment.java
+com/amaze/filemanager/ui/activities/MainActivity.java
+com/amaze/filemanager/adapters/RecyclerAdapter.java
+com/amaze/filemanager/filesystem/HybridFile.java
+com/amaze/filemanager/ui/views/appbar/BottomBar.java
+com/amaze/filemanager/ui/views/drawer/Drawer.java
+com/amaze/filemanager/utils/MainActivityHelper.java
+com/amaze/filemanager/ui/colors/ColorUtils.java
+com/amaze/filemanager/ui/fragments/TabFragment.java
+com/amaze/filemanager/ui/views/FastScroller.java
+com/amaze/filemanager/ui/views/appbar/SearchView.java
+com/amaze/filemanager/ui/views/drawer/CustomNavigationView.java

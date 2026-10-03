@@ -1,0 +1,12 @@
+{
+    "driverName": "d",
+    "packageNames": [
+        "net.gsantner.markor_test"
+    ],
+    "take_screenshots": false,
+    "pre_failure_screenshots": 0,
+    "post_failure_screenshots": 0,
+    "device_output_root": "/sdcard",
+    "log_stamp": "2026040918_0649628167",
+    "test_time": "2026-04-09 18:06:49"
+}

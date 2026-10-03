@@ -1,0 +1,27 @@
+{"startStepsCount": 1, "propName": "omni981.OmniNotesBugTest.test_reduce_view", "state": "error", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni981.py\", line 107, in test_reduce_view\n    self.d(resourceId=\"it.feio.android.omninotes.alpha:id/title\", text=\"Reduced view\").click()\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 149, in click\n    self.must_wait(timeout=timeout)\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 338, in must_wait\n    raise UiObjectNotFoundError({'code': -32002, 'data': str(self.selector), 'method': 'wait'})\nuiautomator2.exceptions.UiObjectNotFoundError: {'code': -32002, 'data': \"Selector [resourceId='it.feio.android.omninotes.alpha:id/title', text='Reduced view']\", 'method': 'wait'}\n"}
+{"startStepsCount": 1, "propName": "omni981.OmniNotesBugTest.test_reduce_view", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni981.OmniNotesBugTest.test_behavior_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni981.OmniNotesBugTest.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni981.OmniNotesBugTest.test_data_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni981.OmniNotesBugTest.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni981.OmniNotesBugTest.test_click_note", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "omni981.OmniNotesBugTest.test_create_empty_category", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_create_checklist", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_click_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_click_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_click_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_search_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_click_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_reduce_view", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni981.py\", line 119, in test_reduce_view\n    assert notes_before_reduce_view == notes_after_reduce_view\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_click_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_reduce_view", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_click_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_reduce_view", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_click_note", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_reduce_view", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni981.OmniNotesBugTest.test_reduce_view", "state": "pass", "tb": ""}

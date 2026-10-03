@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test_search_task Line Coverage Diff Report</title>
+<style>
+    :root {
+        --github-bg: #ffffff;
+        --github-text: #24292f;
+        --github-gray-50: #f9fafb;
+        --github-gray-100: #f1f2f4;
+        --github-gray-200: #e4e7eb;
+        --github-gray-300: #d1d5db;
+        --github-gray-400: #9ca3af;
+        --github-gray-500: #6e7781;
+        --github-gray-600: #4d5663;
+        --github-gray-700: #374151;
+        --github-gray-800: #272e3b;
+        
+        --line-number-bg: #f6f8fa;
+        --line-number-text: #6e7781;
+        --line-number-border: #eaecef;
+        
+        --correct-bg: rgb(218, 251, 225);
+        --correct-border: rgb(172, 238, 187);
+        --correct-line-number-bg: rgb(172, 238, 187); 
+        --correct-line-number-text: #000000;
+        
+        --bug-bg: rgb(255, 235, 233); 
+        --bug-border: rgb(255, 206, 203);           
+        --bug-line-number-bg: rgb(255, 206, 203); 
+        --bug-line-number-text: #000000;            
+        
+        --covered-bg: var(--correct-bg);
+        --covered-border: var(--correct-border);
+        --covered-line-number-bg: var(--correct-line-number-bg);
+        --covered-line-number-text: var(--correct-line-number-text);
+        
+        --sidebar-width: 300px;
+        --sidebar-collapsed-width: 0px;
+        --border-radius: 6px;
+        --transition: all 0.2s ease;
+        --code-line-height: 1.5em;
+        --line-number-width: 4.5rem;
+        --header-height: 60px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.5;
+        color: var(--github-text);
+        background-color: var(--github-gray-50);
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        padding-top: var(--header-height);
+    }
+
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        background-color: var(--github-bg);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--github-gray-800);
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--github-gray-200);
+    }
+
+    p {
+        color: var(--github-gray-600);
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-toggle-btn {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        color: var(--github-gray-700);
+        cursor: pointer;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .sidebar-toggle-btn:hover {
+        background-color: var(--github-gray-50);
+        border-color: var(--github-gray-300);
+        color: var(--github-gray-800);
+    }
+
+    .sidebar {
+        width: var(--sidebar-width);
+        background-color: var(--github-bg);
+        border-right: 1px solid var(--github-gray-200);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        transition: var(--transition);
+        overflow: hidden;
+        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+    }
+
+    .sidebar.collapsed {
+        width: var(--sidebar-collapsed-width);
+        border-right: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .sidebar-resizer {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .file-list-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        color: var(--github-gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid var(--github-gray-200);
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-tree {
+        list-style: none;
+        overflow-y: auto;
+        flex: 1;
+        padding: 0.5rem 0;
+    }
+
+    .dir-item {
+        position: relative;
+    }
+
+    .dir-header {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .dir-header:hover {
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-toggle {
+        width: 1rem;
+        height: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: var(--github-gray-500);
+        margin-right: 0.5rem;
+    }
+
+    .dir-content {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .file-item {
+        padding: 0;
+    }
+
+    .file-link {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .file-link::before {
+        content: "📄";
+        font-size: 0.75rem;
+        margin-right: 0.5rem;
+        opacity: 0.7;
+    }
+
+    .file-link:hover {
+        background-color: var(--github-gray-50);
+        color: #0969da;
+    }
+
+    .file-link.active {
+        color: #0969da;
+        font-weight: 500;
+    }
+
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+        transition: var(--transition);
+        margin-left: var(--sidebar-width);
+        height: 100vh;
+        background-color: var(--github-gray-50);
+        padding-top: 1rem;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: var(--sidebar-collapsed-width) !important;
+    }
+
+    .file-header {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        scroll-margin-top: calc(var(--header-height) + 1rem);
+    }
+
+    .file-header a {
+        color: #0969da;
+        text-decoration: none;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .file-header a:hover {
+        text-decoration: underline;
+    }
+
+    .diff-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        min-height: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .diff-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .diff-panel {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .panel-header {
+        background-color: var(--github-gray-50);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .panel-header::before {
+        content: "";
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .diff-container > .diff-panel:first-child .panel-header::before {
+        background-color: var(--bug-border);
+    }
+
+    .diff-container > .diff-panel:last-child .panel-header::before {
+        background-color: var(--correct-border);
+    }
+
+    .code-container {
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-size: 12px;
+        line-height: var(--code-line-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 600px;
+        flex: 1;
+        width: 100%;
+        background-color: var(--github-bg);
+    }
+
+    .code-line {
+        display: grid;
+        grid-template-columns: var(--line-number-width) 1fr;
+        width: 100%;
+        transition: background-color 0.2s ease;
+        border-left: 3px solid transparent;
+        min-height: var(--code-line-height);
+    }
+
+    .line-number {
+        width: var(--line-number-width);
+        padding: 0 0.75rem;
+        text-align: right;
+        color: var(--line-number-text);
+        user-select: none;
+        background-color: var(--line-number-bg);
+        border-right: 1px solid var(--line-number-border);
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .correct-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 100;
+    }
+
+    .bug-line .line-number {
+        background-color: var(--bug-line-number-bg);
+        color: var(--bug-line-number-text);
+        border-right-color: var(--bug-border);
+        font-weight: 100;
+    }
+
+    .covered-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 600;
+    }
+
+    .code-content {
+        flex: 1;
+        padding: 0 0.75rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: flex-start;
+        padding-top: calc((var(--code-line-height) - 1em) / 2);
+        width: 100%;
+        color: var(--github-text);
+    }
+
+    .correct-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .bug-line {
+        background-color: var(--bug-bg);
+        border-left-color: var(--bug-border);
+    }
+
+    .covered-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .context-line .code-content:empty::before {
+        content: " ";
+    }
+
+    .separator-line {
+        background-color: var(--github-gray-50);
+        color: var(--github-gray-500);
+        text-align: center;
+        padding: 0.5rem 0;
+        font-style: italic;
+        border-top: 1px dashed var(--github-gray-300);
+        border-bottom: 1px dashed var(--github-gray-300);
+        grid-column: 1 / -1;
+    }
+
+    .separator-line .line-number,
+    .separator-line .code-content {
+        height: auto;
+        line-height: 1.5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--github-gray-300);
+        border-radius: 6px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--github-gray-400);
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            position: fixed;
+            z-index: 100;
+        }
+        
+        .main-content {
+            margin-left: 0 !important;
+            padding: 1rem;
+        }
+    }
+
+    .context-line {
+        background-color: var(--github-bg);
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+// Global sidebar toggle function
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("collapsed");
+}
+
+// Directory expand/collapse function
+function toggleDir(dirHeader) {
+    const toggle = dirHeader.querySelector(".dir-toggle");
+    const content = dirHeader.nextElementSibling;
+    
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        toggle.textContent = "−";
+    } else {
+        content.style.display = "none";
+        toggle.textContent = "+";
+    }
+}
+
+// File link click event handler
+document.addEventListener('DOMContentLoaded', () => {
+    const fileLinks = document.querySelectorAll('.file-link');
+    
+    fileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            fileLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    if (fileLinks.length > 0) {
+        fileLinks[0].classList.add('active');
+    }
+});
+</script>
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<div class="fixed-header">
+    <h1>test_search_task Line Coverage Diff Report</h1>
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        File List
+    </button>
+</div>
+<div class="sidebar" id="sidebar">
+<h3 class="file-list-title">File List</h3>
+<ul class="dir-tree">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">com/todoroo</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">astrid</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">activity</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-0" class="file-link"><span>MainActivity.kt</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-1" class="file-link"><span>MainActivityViewModel.kt</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-2" class="file-link"><span>TaskEditFragment.kt</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-3" class="file-link"><span>TaskListFragment.kt</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">api</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-4" class="file-link"><span>SearchFilter.kt</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">service</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-5" class="file-link"><span>TaskCreator.kt</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-6" class="file-link"><span>Upgrader.kt</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">org/tasks</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">backup</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-7" class="file-link"><span>BackupContainer.kt</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-8" class="file-link"><span>TasksJsonExporter.kt</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">caldav</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-9" class="file-link"><span>iCalendar.kt</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">compose/edit</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-10" class="file-link"><span>DescriptionRow.kt</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">files</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-11" class="file-link"><span>FileHelper.kt</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">injection</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-12" class="file-link"><span>ApplicationModule.kt</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">jobs</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-13" class="file-link"><span>BackupWork.kt</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-14" class="file-link"><span>WorkManagerImpl.kt</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">preferences</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-15" class="file-link"><span>DefaultFilterProvider.kt</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-16" class="file-link"><span>IconPreference.kt</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-17" class="file-link"><span>Preferences.kt</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">ui</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-18" class="file-link"><span>TaskEditViewModel.kt</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-19" class="file-link"><span>TaskListViewModel.kt</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+</ul>
+</div>
+<div class="main-content">
+<p>Generated Time: 2026-06-20 15:32:54</p>
+<h2>Line Coverage Diff</h2>
+<div class="file-header" id="file-0">
+    File: com/todoroo/astrid/activity/MainActivity.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\activity\MainActivity.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">142</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">143</span><span class="code-content">        lifecycleScope.launch {</span></div>
+<div class="code-line context-line"><span class="line-number">144</span><span class="code-content">            lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {</span></div>
+<div class="code-line context-line"><span class="line-number">145</span><span class="code-content">                updateSystemBars(viewModel.state.value.filter)</span></div>
+<div class="code-line context-line"><span class="line-number">146</span><span class="code-content">            }</span></div>
+<div class="code-line bug-line"><span class="line-number">147</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">148</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">149</span><span class="code-content">        viewModel</span></div>
+<div class="code-line context-line"><span class="line-number">150</span><span class="code-content">            .state</span></div>
+<div class="code-line context-line"><span class="line-number">151</span><span class="code-content">            .flowWithLifecycle(lifecycle)</span></div>
+<div class="code-line context-line"><span class="line-number">152</span><span class="code-content">            .map { it.filter to it.task }</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-1">
+    File: com/todoroo/astrid/activity/MainActivityViewModel.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\activity\MainActivityViewModel.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">114</span><span class="code-content">        localBroadcastManager.registerRefreshListReceiver(refreshReceiver)</span></div>
+<div class="code-line context-line"><span class="line-number">115</span><span class="code-content">        updateFilters()</span></div>
+<div class="code-line context-line"><span class="line-number">116</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">117</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">118</span><span class="code-content">    override fun onCleared() {</span></div>
+<div class="code-line bug-line"><span class="line-number">119</span><span class="code-content">        localBroadcastManager.unregisterReceiver(refreshReceiver)</span></div>
+<div class="code-line bug-line"><span class="line-number">120</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">121</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">122</span><span class="code-content">    fun updateFilters() = viewModelScope.launch(Dispatchers.Default) {</span></div>
+<div class="code-line context-line"><span class="line-number">123</span><span class="code-content">        val selected = state.value.filter</span></div>
+<div class="code-line context-line"><span class="line-number">124</span><span class="code-content">        filterProvider</span></div>
+<div class="code-line context-line"><span class="line-number">125</span><span class="code-content">            .drawerItems()</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-2">
+    File: com/todoroo/astrid/activity/TaskEditFragment.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\activity\TaskEditFragment.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">407</span><span class="code-content">                .setNegativeButton(R.string.cancel, null)</span></div>
+<div class="code-line context-line"><span class="line-number">408</span><span class="code-content">                .show()</span></div>
+<div class="code-line context-line"><span class="line-number">409</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">410</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">411</span><span class="code-content">    private fun discard() = lifecycleScope.launch {</span></div>
+<div class="code-line bug-line"><span class="line-number">412</span><span class="code-content">        editViewModel.discard()</span></div>
+<div class="code-line bug-line"><span class="line-number">413</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">414</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">415</span><span class="code-content">    private fun delete() = lifecycleScope.launch {</span></div>
+<div class="code-line context-line"><span class="line-number">416</span><span class="code-content">        editViewModel.delete()</span></div>
+<div class="code-line context-line"><span class="line-number">417</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">418</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">478</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">479</span><span class="code-content">    @Composable</span></div>
+<div class="code-line context-line"><span class="line-number">480</span><span class="code-content">    private fun DescriptionRow() {</span></div>
+<div class="code-line context-line"><span class="line-number">481</span><span class="code-content">        DescriptionRow(</span></div>
+<div class="code-line context-line"><span class="line-number">482</span><span class="code-content">            text = editViewModel.description.stripCarriageReturns(),</span></div>
+<div class="code-line bug-line"><span class="line-number">483</span><span class="code-content">            onChanged = { text -&gt; editViewModel.description = text.toString().trim { it &lt;= &#x27; &#x27; } },</span></div>
+<div class="code-line context-line"><span class="line-number">484</span><span class="code-content">            linkify = if (preferences.linkify) linkify else null,</span></div>
+<div class="code-line context-line"><span class="line-number">485</span><span class="code-content">            markdownProvider = markdownProvider,</span></div>
+<div class="code-line context-line"><span class="line-number">486</span><span class="code-content">        )</span></div>
+<div class="code-line context-line"><span class="line-number">487</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">488</span><span class="code-content"></span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-3">
+    File: com/todoroo/astrid/activity/TaskListFragment.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\activity\TaskListFragment.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">251</span><span class="code-content">            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {</span></div>
+<div class="code-line context-line"><span class="line-number">252</span><span class="code-content">        requireActivity().onBackPressedDispatcher.addCallback(owner = viewLifecycleOwner) {</span></div>
+<div class="code-line context-line"><span class="line-number">253</span><span class="code-content">            if (search.isActionViewExpanded) {</span></div>
+<div class="code-line context-line"><span class="line-number">254</span><span class="code-content">                search.collapseActionView()</span></div>
+<div class="code-line context-line"><span class="line-number">255</span><span class="code-content">            } else {</span></div>
+<div class="code-line bug-line"><span class="line-number">256</span><span class="code-content">                requireActivity().finish()</span></div>
+<div class="code-line bug-line"><span class="line-number">257</span><span class="code-content">                if (!preferences.getBoolean(R.string.p_open_last_viewed_list, true)) {</span></div>
+<div class="code-line context-line"><span class="line-number">258</span><span class="code-content">                    runBlocking {</span></div>
+<div class="code-line context-line"><span class="line-number">259</span><span class="code-content">                        mainViewModel.resetFilter()</span></div>
+<div class="code-line context-line"><span class="line-number">260</span><span class="code-content">                    }</span></div>
+<div class="code-line context-line"><span class="line-number">261</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">262</span><span class="code-content">            }</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-4">
+    File: com/todoroo/astrid/api/SearchFilter.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\api\SearchFilter.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">11</span><span class="code-content">import org.tasks.data.entity.Geofence</span></div>
+<div class="code-line context-line"><span class="line-number">12</span><span class="code-content">import org.tasks.data.entity.Place</span></div>
+<div class="code-line context-line"><span class="line-number">13</span><span class="code-content">import org.tasks.data.entity.Tag</span></div>
+<div class="code-line context-line"><span class="line-number">14</span><span class="code-content">import org.tasks.data.entity.UserActivity</span></div>
+<div class="code-line context-line"><span class="line-number">15</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">16</span><span class="code-content">@Parcelize</span></div>
+<div class="code-line bug-line"><span class="line-number">17</span><span class="code-content">data class SearchFilter(</span></div>
+<div class="code-line bug-line"><span class="line-number">18</span><span class="code-content">    override val title: String,</span></div>
+<div class="code-line bug-line"><span class="line-number">19</span><span class="code-content">    val query: String,</span></div>
+<div class="code-line context-line"><span class="line-number">20</span><span class="code-content">) : Filter {</span></div>
+<div class="code-line context-line"><span class="line-number">21</span><span class="code-content">    override val sql: String</span></div>
+<div class="code-line context-line"><span class="line-number">22</span><span class="code-content">        get() {</span></div>
+<div class="code-line bug-line"><span class="line-number">23</span><span class="code-content">            val matcher = &quot;%$query%&quot;</span></div>
+<div class="code-line bug-line"><span class="line-number">24</span><span class="code-content">            return QueryTemplate()</span></div>
+<div class="code-line bug-line"><span class="line-number">25</span><span class="code-content">                .where(</span></div>
+<div class="code-line bug-line"><span class="line-number">26</span><span class="code-content">                    Criterion.and(</span></div>
+<div class="code-line bug-line"><span class="line-number">27</span><span class="code-content">                        Task.DELETION_DATE.eq(0),</span></div>
+<div class="code-line bug-line"><span class="line-number">28</span><span class="code-content">                        Criterion.or(</span></div>
+<div class="code-line bug-line"><span class="line-number">29</span><span class="code-content">                            Task.NOTES.like(matcher),</span></div>
+<div class="code-line bug-line"><span class="line-number">30</span><span class="code-content">                            Task.TITLE.like(matcher),</span></div>
+<div class="code-line bug-line"><span class="line-number">31</span><span class="code-content">                            Task.ID.`in`(</span></div>
+<div class="code-line bug-line"><span class="line-number">32</span><span class="code-content">                                Query.select(Tag.TASK)</span></div>
+<div class="code-line bug-line"><span class="line-number">33</span><span class="code-content">                                    .from(Tag.TABLE)</span></div>
+<div class="code-line bug-line"><span class="line-number">34</span><span class="code-content">                                    .where(Tag.NAME.like(matcher))</span></div>
+<div class="code-line context-line"><span class="line-number">35</span><span class="code-content">                            ),</span></div>
+<div class="code-line bug-line"><span class="line-number">36</span><span class="code-content">                            Task.UUID.`in`(</span></div>
+<div class="code-line bug-line"><span class="line-number">37</span><span class="code-content">                                Query.select(UserActivity.TASK)</span></div>
+<div class="code-line bug-line"><span class="line-number">38</span><span class="code-content">                                    .from(UserActivity.TABLE)</span></div>
+<div class="code-line bug-line"><span class="line-number">39</span><span class="code-content">                                    .where(UserActivity.MESSAGE.like(matcher))</span></div>
+<div class="code-line context-line"><span class="line-number">40</span><span class="code-content">                            ),</span></div>
+<div class="code-line bug-line"><span class="line-number">41</span><span class="code-content">                            Task.ID.`in`(</span></div>
+<div class="code-line bug-line"><span class="line-number">42</span><span class="code-content">                                Query.select(Geofence.TASK)</span></div>
+<div class="code-line bug-line"><span class="line-number">43</span><span class="code-content">                                    .from(Geofence.TABLE)</span></div>
+<div class="code-line bug-line"><span class="line-number">44</span><span class="code-content">                                    .join(Join.inner(Place.TABLE, Place.UID.eq(Geofence.PLACE)))</span></div>
+<div class="code-line bug-line"><span class="line-number">45</span><span class="code-content">                                    .where(</span></div>
+<div class="code-line bug-line"><span class="line-number">46</span><span class="code-content">                                        Criterion.or(</span></div>
+<div class="code-line bug-line"><span class="line-number">47</span><span class="code-content">                                            Place.NAME.like(matcher),</span></div>
+<div class="code-line bug-line"><span class="line-number">48</span><span class="code-content">                                            Place.ADDRESS.like(matcher)</span></div>
+<div class="code-line context-line"><span class="line-number">49</span><span class="code-content">                                        )</span></div>
+<div class="code-line context-line"><span class="line-number">50</span><span class="code-content">                                    )</span></div>
+<div class="code-line context-line"><span class="line-number">51</span><span class="code-content">                            ),</span></div>
+<div class="code-line bug-line"><span class="line-number">52</span><span class="code-content">                            Task.ID.`in`(</span></div>
+<div class="code-line bug-line"><span class="line-number">53</span><span class="code-content">                                Query.select(CaldavTask.TASK)</span></div>
+<div class="code-line bug-line"><span class="line-number">54</span><span class="code-content">                                    .from(CaldavTask.TABLE)</span></div>
+<div class="code-line bug-line"><span class="line-number">55</span><span class="code-content">                                    .join(</span></div>
+<div class="code-line bug-line"><span class="line-number">56</span><span class="code-content">                                        Join.inner(</span></div>
+<div class="code-line bug-line"><span class="line-number">57</span><span class="code-content">                                            CaldavCalendar.TABLE,</span></div>
+<div class="code-line bug-line"><span class="line-number">58</span><span class="code-content">                                            CaldavCalendar.UUID.eq(CaldavTask.CALENDAR)</span></div>
+<div class="code-line context-line"><span class="line-number">59</span><span class="code-content">                                        )</span></div>
+<div class="code-line context-line"><span class="line-number">60</span><span class="code-content">                                    )</span></div>
+<div class="code-line bug-line"><span class="line-number">61</span><span class="code-content">                                    .where(CaldavCalendar.NAME.like(matcher))</span></div>
+<div class="code-line context-line"><span class="line-number">62</span><span class="code-content">                            ),</span></div>
+<div class="code-line context-line"><span class="line-number">63</span><span class="code-content">                        )</span></div>
+<div class="code-line context-line"><span class="line-number">64</span><span class="code-content">                    )</span></div>
+<div class="code-line context-line"><span class="line-number">65</span><span class="code-content">                )</span></div>
+<div class="code-line bug-line"><span class="line-number">66</span><span class="code-content">                .toString()</span></div>
+<div class="code-line context-line"><span class="line-number">67</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">68</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">69</span><span class="code-content">    override fun areItemsTheSame(other: FilterListItem): Boolean {</span></div>
+<div class="code-line context-line"><span class="line-number">70</span><span class="code-content">        return other is SearchFilter</span></div>
+<div class="code-line context-line"><span class="line-number">71</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">72</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">73</span><span class="code-content">    override fun supportsHiddenTasks() = false</span></div>
+<div class="code-line context-line"><span class="line-number">74</span><span class="code-content">}</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-5">
+    File: com/todoroo/astrid/service/TaskCreator.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\service\TaskCreator.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">158</span><span class="code-content">                ?.takeIf { it.isNotBlank() }</span></div>
+<div class="code-line context-line"><span class="line-number">159</span><span class="code-content">                ?.let { task.putTransitory(Place.KEY, it) }</span></div>
+<div class="code-line context-line"><span class="line-number">160</span><span class="code-content">        task.setDefaultReminders(preferences)</span></div>
+<div class="code-line context-line"><span class="line-number">161</span><span class="code-content">        val tags = ArrayList&lt;String&gt;()</span></div>
+<div class="code-line context-line"><span class="line-number">162</span><span class="code-content">        values?.entries?.forEach { (key, value) -&gt;</span></div>
+<div class="code-line bug-line"><span class="line-number">163</span><span class="code-content">            when (key) {</span></div>
+<div class="code-line bug-line"><span class="line-number">164</span><span class="code-content">                Tag.KEY -&gt; tags.add(value as String)</span></div>
+<div class="code-line bug-line"><span class="line-number">165</span><span class="code-content">                GoogleTask.KEY, CaldavTask.KEY, Place.KEY -&gt; task.putTransitory(key, value)</span></div>
+<div class="code-line context-line"><span class="line-number">166</span><span class="code-content">                DUE_DATE.name -&gt; value.substitute()?.toLongOrNull()?.let { task.dueDate =</span></div>
+<div class="code-line context-line"><span class="line-number">167</span><span class="code-content">                    createDueDate(Task.URGENCY_SPECIFIC_DAY, it) }</span></div>
+<div class="code-line context-line"><span class="line-number">168</span><span class="code-content">                IMPORTANCE.name -&gt; value.substitute()?.toIntOrNull()?.let { task.priority = it }</span></div>
+<div class="code-line context-line"><span class="line-number">169</span><span class="code-content">                HIDE_UNTIL.name -&gt;</span></div>
+<div class="code-line context-line"><span class="line-number">170</span><span class="code-content">                    value.substitute()?.toLongOrNull()?.let { task.hideUntil = it.startOfDay() }</span></div>
+<div class="code-line context-line"><span class="line-number">171</span><span class="code-content">            }</span></div>
+<div class="code-line bug-line"><span class="line-number">172</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">173</span><span class="code-content">        if (values?.containsKey(DUE_DATE.name) != true) {</span></div>
+<div class="code-line context-line"><span class="line-number">174</span><span class="code-content">            task.dueDate = createDueDate(</span></div>
+<div class="code-line context-line"><span class="line-number">175</span><span class="code-content">                    preferences.getIntegerFromString(R.string.p_default_urgency_key, Task.URGENCY_NONE),</span></div>
+<div class="code-line context-line"><span class="line-number">176</span><span class="code-content">                    0)</span></div>
+<div class="code-line context-line"><span class="line-number">177</span><span class="code-content">        }</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-6">
+    File: com/todoroo/astrid/service/Upgrader.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\service\Upgrader.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">39</span><span class="code-content">import org.tasks.widget.AppWidgetManager</span></div>
+<div class="code-line context-line"><span class="line-number">40</span><span class="code-content">import org.tasks.widget.WidgetPreferences</span></div>
+<div class="code-line context-line"><span class="line-number">41</span><span class="code-content">import java.io.File</span></div>
+<div class="code-line context-line"><span class="line-number">42</span><span class="code-content">import javax.inject.Inject</span></div>
+<div class="code-line context-line"><span class="line-number">43</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">44</span><span class="code-content">class Upgrader @Inject constructor(</span></div>
+<div class="code-line bug-line"><span class="line-number">45</span><span class="code-content">    @param:ApplicationContext private val context: Context,</span></div>
+<div class="code-line bug-line"><span class="line-number">46</span><span class="code-content">    private val preferences: Preferences,</span></div>
+<div class="code-line bug-line"><span class="line-number">47</span><span class="code-content">    private val tagDataDao: TagDataDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">48</span><span class="code-content">    private val tagDao: TagDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">49</span><span class="code-content">    private val filterDao: FilterDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">50</span><span class="code-content">    private val defaultFilterProvider: DefaultFilterProvider,</span></div>
+<div class="code-line bug-line"><span class="line-number">51</span><span class="code-content">    private val googleTaskListDao: GoogleTaskListDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">52</span><span class="code-content">    private val userActivityDao: UserActivityDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">53</span><span class="code-content">    private val taskAttachmentDao: TaskAttachmentDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">54</span><span class="code-content">    private val caldavDao: CaldavDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">55</span><span class="code-content">    private val taskDao: TaskDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">56</span><span class="code-content">    private val locationDao: LocationDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">57</span><span class="code-content">    private val iCal: iCalendar,</span></div>
+<div class="code-line bug-line"><span class="line-number">58</span><span class="code-content">    private val widgetManager: AppWidgetManager,</span></div>
+<div class="code-line bug-line"><span class="line-number">59</span><span class="code-content">    private val taskMover: TaskMover,</span></div>
+<div class="code-line bug-line"><span class="line-number">60</span><span class="code-content">    private val upgraderDao: UpgraderDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">61</span><span class="code-content">    private val vtodoCache: VtodoCache,</span></div>
+<div class="code-line bug-line"><span class="line-number">62</span><span class="code-content">    private val upgrade_11_3: Lazy&lt;Upgrade_11_3&gt;,</span></div>
+<div class="code-line bug-line"><span class="line-number">63</span><span class="code-content">    private val upgrade_11_12_3: Lazy&lt;Upgrade_11_12_3&gt;,</span></div>
+<div class="code-line bug-line"><span class="line-number">64</span><span class="code-content">    private val upgrade_12_4: Lazy&lt;Upgrade_12_4&gt;,</span></div>
+<div class="code-line bug-line"><span class="line-number">65</span><span class="code-content">    private val upgrade_13_2: Lazy&lt;Upgrade_13_2&gt;,</span></div>
+<div class="code-line context-line"><span class="line-number">66</span><span class="code-content">) {</span></div>
+<div class="code-line context-line"><span class="line-number">67</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">68</span><span class="code-content">    fun upgrade(from: Int, to: Int) {</span></div>
+<div class="code-line bug-line"><span class="line-number">69</span><span class="code-content">        if (from &gt; 0) {</span></div>
+<div class="code-line context-line"><span class="line-number">70</span><span class="code-content">            run(from, V4_9_5) { removeDuplicateTags() }</span></div>
+<div class="code-line context-line"><span class="line-number">71</span><span class="code-content">            run(from, V5_3_0) { migrateFilters() }</span></div>
+<div class="code-line context-line"><span class="line-number">72</span><span class="code-content">            run(from, V6_0_beta_1) { migrateDefaultSyncList() }</span></div>
+<div class="code-line context-line"><span class="line-number">73</span><span class="code-content">            run(from, V6_4) { migrateUris() }</span></div>
+<div class="code-line context-line"><span class="line-number">74</span><span class="code-content">            run(from, V6_7) { this.migrateGoogleTaskFilters() }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">113</span><span class="code-content">                caldavDao.updateParents()</span></div>
+<div class="code-line context-line"><span class="line-number">114</span><span class="code-content">                upgrade_13_2.get().rebuildFilters()</span></div>
+<div class="code-line context-line"><span class="line-number">115</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">116</span><span class="code-content">            preferences.setBoolean(R.string.p_just_updated, true)</span></div>
+<div class="code-line context-line"><span class="line-number">117</span><span class="code-content">        } else {</span></div>
+<div class="code-line bug-line"><span class="line-number">118</span><span class="code-content">            setInstallDetails(to)</span></div>
+<div class="code-line context-line"><span class="line-number">119</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">120</span><span class="code-content">        preferences.lastSubscribeRequest = 0L</span></div>
+<div class="code-line bug-line"><span class="line-number">121</span><span class="code-content">        preferences.setCurrentVersion(to)</span></div>
+<div class="code-line bug-line"><span class="line-number">122</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">123</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">124</span><span class="code-content">    private fun setInstallDetails(version: Int) {</span></div>
+<div class="code-line bug-line"><span class="line-number">125</span><span class="code-content">        preferences.installVersion = version</span></div>
+<div class="code-line bug-line"><span class="line-number">126</span><span class="code-content">        preferences.installDate = currentTimeMillis()</span></div>
+<div class="code-line bug-line"><span class="line-number">127</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">128</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">129</span><span class="code-content">    private fun run(from: Int, version: Int, runnable: suspend () -&gt; Unit) {</span></div>
+<div class="code-line context-line"><span class="line-number">130</span><span class="code-content">        if (from &lt; version) {</span></div>
+<div class="code-line context-line"><span class="line-number">131</span><span class="code-content">            runBlocking {</span></div>
+<div class="code-line context-line"><span class="line-number">132</span><span class="code-content">                runnable()</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-7">
+    File: org/tasks/backup/BackupContainer.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\backup\BackupContainer.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">18</span><span class="code-content">import org.tasks.data.entity.Task</span></div>
+<div class="code-line context-line"><span class="line-number">19</span><span class="code-content">import org.tasks.data.entity.TaskAttachment</span></div>
+<div class="code-line context-line"><span class="line-number">20</span><span class="code-content">import org.tasks.data.entity.TaskListMetadata</span></div>
+<div class="code-line context-line"><span class="line-number">21</span><span class="code-content">import org.tasks.data.entity.UserActivity</span></div>
+<div class="code-line context-line"><span class="line-number">22</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">23</span><span class="code-content">@Suppress(&quot;PLATFORM_CLASS_MAPPED_TO_KOTLIN&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">24</span><span class="code-content">@Serializable</span></div>
+<div class="code-line bug-line"><span class="line-number">25</span><span class="code-content">class BackupContainer(</span></div>
+<div class="code-line bug-line"><span class="line-number">26</span><span class="code-content">    val tasks: List&lt;TaskBackup&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">27</span><span class="code-content">    val places: List&lt;Place&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">28</span><span class="code-content">    val tags: List&lt;TagData&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">29</span><span class="code-content">    val filters: List&lt;Filter&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">30</span><span class="code-content">    val caldavAccounts: List&lt;CaldavAccount&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">31</span><span class="code-content">    val caldavCalendars: List&lt;CaldavCalendar&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">32</span><span class="code-content">    val taskListMetadata: List&lt;TaskListMetadata&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">33</span><span class="code-content">    val taskAttachments: List&lt;TaskAttachment&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">34</span><span class="code-content">    val intPrefs: Map&lt;String, Integer&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">35</span><span class="code-content">    val longPrefs: Map&lt;String, java.lang.Long&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">36</span><span class="code-content">    val stringPrefs: Map&lt;String, String&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">37</span><span class="code-content">    val boolPrefs: Map&lt;String, java.lang.Boolean&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">38</span><span class="code-content">    val setPrefs: Map&lt;String, java.util.Set&lt;String&gt;&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">39</span><span class="code-content">    val googleTaskAccounts: List&lt;GoogleTaskAccount&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">40</span><span class="code-content">    val googleTaskLists: List&lt;GoogleTaskList&gt;? = null,</span></div>
+<div class="code-line context-line"><span class="line-number">41</span><span class="code-content">) {</span></div>
+<div class="code-line bug-line"><span class="line-number">42</span><span class="code-content">    @Serializable</span></div>
+<div class="code-line context-line"><span class="line-number">43</span><span class="code-content">    class TaskBackup(</span></div>
+<div class="code-line context-line"><span class="line-number">44</span><span class="code-content">        val task: Task,</span></div>
+<div class="code-line context-line"><span class="line-number">45</span><span class="code-content">        val alarms: List&lt;Alarm&gt;? = null,</span></div>
+<div class="code-line context-line"><span class="line-number">46</span><span class="code-content">        val geofences: List&lt;Geofence&gt;? = null,</span></div>
+<div class="code-line context-line"><span class="line-number">47</span><span class="code-content">        val tags: List&lt;Tag&gt;? = null,</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">49</span><span class="code-content">        val attachments: List&lt;Attachment&gt;? = null,</span></div>
+<div class="code-line context-line"><span class="line-number">50</span><span class="code-content">        val caldavTasks: List&lt;CaldavTask&gt;? = null,</span></div>
+<div class="code-line context-line"><span class="line-number">51</span><span class="code-content">        val vtodo: String? = null,</span></div>
+<div class="code-line context-line"><span class="line-number">52</span><span class="code-content">        val google: List&lt;GoogleTask&gt;? = null,</span></div>
+<div class="code-line context-line"><span class="line-number">53</span><span class="code-content">        val locations: List&lt;LegacyLocation&gt;? = null,</span></div>
+<div class="code-line bug-line"><span class="line-number">54</span><span class="code-content">    )</span></div>
+<div class="code-line bug-line"><span class="line-number">55</span><span class="code-content">}</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-8">
+    File: org/tasks/backup/TasksJsonExporter.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\backup\TasksJsonExporter.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">41</span><span class="code-content">import java.io.OutputStream</span></div>
+<div class="code-line context-line"><span class="line-number">42</span><span class="code-content">import java.io.OutputStreamWriter</span></div>
+<div class="code-line context-line"><span class="line-number">43</span><span class="code-content">import java.nio.charset.Charset</span></div>
+<div class="code-line context-line"><span class="line-number">44</span><span class="code-content">import javax.inject.Inject</span></div>
+<div class="code-line context-line"><span class="line-number">45</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">46</span><span class="code-content">class TasksJsonExporter @Inject constructor(</span></div>
+<div class="code-line bug-line"><span class="line-number">47</span><span class="code-content">    private val tagDataDao: TagDataDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">48</span><span class="code-content">    private val taskDao: TaskDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">49</span><span class="code-content">    private val userActivityDao: UserActivityDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">50</span><span class="code-content">    private val preferences: Preferences,</span></div>
+<div class="code-line bug-line"><span class="line-number">51</span><span class="code-content">    private val alarmDao: AlarmDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">52</span><span class="code-content">    private val locationDao: LocationDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">53</span><span class="code-content">    private val tagDao: TagDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">54</span><span class="code-content">    private val filterDao: FilterDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">55</span><span class="code-content">    private val taskAttachmentDao: TaskAttachmentDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">56</span><span class="code-content">    private val caldavDao: CaldavDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">57</span><span class="code-content">    private val workManager: WorkManager,</span></div>
+<div class="code-line bug-line"><span class="line-number">58</span><span class="code-content">    private val taskListMetadataDao: TaskListMetadataDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">59</span><span class="code-content">    private val vtodoCache: VtodoCache,</span></div>
+<div class="code-line context-line"><span class="line-number">60</span><span class="code-content">    ) {</span></div>
+<div class="code-line context-line"><span class="line-number">61</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">62</span><span class="code-content">    private var context: Context? = null</span></div>
+<div class="code-line context-line"><span class="line-number">63</span><span class="code-content">    private var exportCount = 0</span></div>
+<div class="code-line context-line"><span class="line-number">64</span><span class="code-content">    private var progressDialog: ProgressDialog? = null</span></div>
+<div class="code-line context-line"><span class="line-number">65</span><span class="code-content">    private var handler: Handler? = null</span></div>
+<div class="code-line context-line"><span class="line-number">66</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">67</span><span class="code-content">    private fun post(runnable: () -&gt; Unit) = handler?.post(runnable)</span></div>
+<div class="code-line context-line"><span class="line-number">68</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">69</span><span class="code-content">    private fun setProgress(taskNumber: Int, total: Int) = post {</span></div>
+<div class="code-line context-line"><span class="line-number">70</span><span class="code-content">        progressDialog?.max = total</span></div>
+<div class="code-line context-line"><span class="line-number">71</span><span class="code-content">        progressDialog?.progress = taskNumber</span></div>
+<div class="code-line context-line"><span class="line-number">72</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">73</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">74</span><span class="code-content">    suspend fun exportTasks(context: Context?, exportType: ExportType, progressDialog: ProgressDialog?) {</span></div>
+<div class="code-line bug-line"><span class="line-number">75</span><span class="code-content">        this.context = context</span></div>
+<div class="code-line bug-line"><span class="line-number">76</span><span class="code-content">        exportCount = 0</span></div>
+<div class="code-line bug-line"><span class="line-number">77</span><span class="code-content">        this.progressDialog = progressDialog</span></div>
+<div class="code-line bug-line"><span class="line-number">78</span><span class="code-content">        if (exportType == ExportType.EXPORT_TYPE_MANUAL) {</span></div>
+<div class="code-line context-line"><span class="line-number">79</span><span class="code-content">            handler = Handler()</span></div>
+<div class="code-line context-line"><span class="line-number">80</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">81</span><span class="code-content">        runBackup(exportType)</span></div>
+<div class="code-line context-line"><span class="line-number">82</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">83</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">84</span><span class="code-content">    private suspend fun runBackup(exportType: ExportType) {</span></div>
+<div class="code-line bug-line"><span class="line-number">85</span><span class="code-content">        try {</span></div>
+<div class="code-line bug-line"><span class="line-number">86</span><span class="code-content">            val filename = getFileName(exportType)</span></div>
+<div class="code-line bug-line"><span class="line-number">87</span><span class="code-content">            val tasks = taskDao.getAll()</span></div>
+<div class="code-line bug-line"><span class="line-number">88</span><span class="code-content">            val file = File(String.format(&quot;%s/%s&quot;, context!!.filesDir, BackupConstants.INTERNAL_BACKUP))</span></div>
+<div class="code-line bug-line"><span class="line-number">89</span><span class="code-content">            file.delete()</span></div>
+<div class="code-line bug-line"><span class="line-number">90</span><span class="code-content">            file.createNewFile()</span></div>
+<div class="code-line bug-line"><span class="line-number">91</span><span class="code-content">            val internalStorageBackup = Uri.fromFile(file)</span></div>
+<div class="code-line bug-line"><span class="line-number">92</span><span class="code-content">            val os = context!!.contentResolver.openOutputStream(internalStorageBackup)</span></div>
+<div class="code-line bug-line"><span class="line-number">93</span><span class="code-content">            doTasksExport(os, tasks)</span></div>
+<div class="code-line bug-line"><span class="line-number">94</span><span class="code-content">            os!!.close()</span></div>
+<div class="code-line bug-line"><span class="line-number">95</span><span class="code-content">            val externalStorageBackup = FileHelper.newFile(</span></div>
+<div class="code-line bug-line"><span class="line-number">96</span><span class="code-content">                    context!!,</span></div>
+<div class="code-line bug-line"><span class="line-number">97</span><span class="code-content">                    preferences.backupDirectory!!,</span></div>
+<div class="code-line bug-line"><span class="line-number">98</span><span class="code-content">                    MIME,</span></div>
+<div class="code-line bug-line"><span class="line-number">99</span><span class="code-content">                    Files.getNameWithoutExtension(filename),</span></div>
+<div class="code-line bug-line"><span class="line-number">100</span><span class="code-content">                    EXTENSION)</span></div>
+<div class="code-line bug-line"><span class="line-number">101</span><span class="code-content">            FileHelper.copyStream(context!!, internalStorageBackup, externalStorageBackup)</span></div>
+<div class="code-line bug-line"><span class="line-number">102</span><span class="code-content">            workManager.scheduleDriveUpload(externalStorageBackup, exportType == ExportType.EXPORT_TYPE_SERVICE)</span></div>
+<div class="code-line bug-line"><span class="line-number">103</span><span class="code-content">            BackupManager(context).dataChanged()</span></div>
+<div class="code-line bug-line"><span class="line-number">104</span><span class="code-content">            if (exportType == ExportType.EXPORT_TYPE_MANUAL) {</span></div>
+<div class="code-line context-line"><span class="line-number">105</span><span class="code-content">                onFinishExport(filename)</span></div>
+<div class="code-line context-line"><span class="line-number">106</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">107</span><span class="code-content">        } catch (e: IOException) {</span></div>
+<div class="code-line context-line"><span class="line-number">108</span><span class="code-content">            Timber.e(e)</span></div>
+<div class="code-line context-line"><span class="line-number">109</span><span class="code-content">        } finally {</span></div>
+<div class="code-line bug-line"><span class="line-number">110</span><span class="code-content">            post {</span></div>
+<div class="code-line context-line"><span class="line-number">111</span><span class="code-content">                if (progressDialog != null &amp;&amp; progressDialog!!.isShowing</span></div>
+<div class="code-line context-line"><span class="line-number">112</span><span class="code-content">                        &amp;&amp; context is Activity) {</span></div>
+<div class="code-line context-line"><span class="line-number">113</span><span class="code-content">                    DialogUtilities.dismissDialog(context as Activity?, progressDialog)</span></div>
+<div class="code-line context-line"><span class="line-number">114</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">115</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">116</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">117</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">118</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">119</span><span class="code-content">    @Throws(IOException::class)</span></div>
+<div class="code-line bug-line"><span class="line-number">120</span><span class="code-content">    private suspend fun doTasksExport(os: OutputStream?, tasks: List&lt;Task&gt;) {</span></div>
+<div class="code-line bug-line"><span class="line-number">121</span><span class="code-content">        val taskBackups: MutableList&lt;TaskBackup&gt; = ArrayList()</span></div>
+<div class="code-line bug-line"><span class="line-number">122</span><span class="code-content">        for (task in tasks) {</span></div>
+<div class="code-line context-line"><span class="line-number">123</span><span class="code-content">            setProgress(taskBackups.size, tasks.size)</span></div>
+<div class="code-line context-line"><span class="line-number">124</span><span class="code-content">            val taskId = task.id</span></div>
+<div class="code-line context-line"><span class="line-number">125</span><span class="code-content">            val caldavTasks = caldavDao.getTasks(taskId)</span></div>
+<div class="code-line context-line"><span class="line-number">126</span><span class="code-content">            taskBackups.add(</span></div>
+<div class="code-line context-line"><span class="line-number">127</span><span class="code-content">                    TaskBackup(</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">134</span><span class="code-content">                        caldavTasks = caldavTasks,</span></div>
+<div class="code-line context-line"><span class="line-number">135</span><span class="code-content">                        vtodo = vtodoCache.getVtodo(caldavTasks.firstOrNull { !it.isDeleted() })</span></div>
+<div class="code-line context-line"><span class="line-number">136</span><span class="code-content">                    )</span></div>
+<div class="code-line context-line"><span class="line-number">137</span><span class="code-content">            )</span></div>
+<div class="code-line context-line"><span class="line-number">138</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">139</span><span class="code-content">        val data = JsonObject(</span></div>
+<div class="code-line bug-line"><span class="line-number">140</span><span class="code-content">            mapOf(</span></div>
+<div class="code-line bug-line"><span class="line-number">141</span><span class="code-content">                &quot;version&quot; to JsonPrimitive(BuildConfig.VERSION_CODE),</span></div>
+<div class="code-line bug-line"><span class="line-number">142</span><span class="code-content">                &quot;timestamp&quot; to JsonPrimitive(currentTimeMillis()),</span></div>
+<div class="code-line bug-line"><span class="line-number">143</span><span class="code-content">                &quot;data&quot; to Json.encodeToJsonElement(</span></div>
+<div class="code-line bug-line"><span class="line-number">144</span><span class="code-content">                    BackupContainer(</span></div>
+<div class="code-line bug-line"><span class="line-number">145</span><span class="code-content">                        taskBackups,</span></div>
+<div class="code-line bug-line"><span class="line-number">146</span><span class="code-content">                        locationDao.getPlaces(),</span></div>
+<div class="code-line bug-line"><span class="line-number">147</span><span class="code-content">                        tagDataDao.getAll(),</span></div>
+<div class="code-line bug-line"><span class="line-number">148</span><span class="code-content">                        filterDao.getFilters(),</span></div>
+<div class="code-line bug-line"><span class="line-number">149</span><span class="code-content">                        caldavDao.getAccounts(),</span></div>
+<div class="code-line bug-line"><span class="line-number">150</span><span class="code-content">                        caldavDao.getCalendars(),</span></div>
+<div class="code-line bug-line"><span class="line-number">151</span><span class="code-content">                        taskListMetadataDao.getAll(),</span></div>
+<div class="code-line bug-line"><span class="line-number">152</span><span class="code-content">                        taskAttachmentDao.getAttachments(),</span></div>
+<div class="code-line bug-line"><span class="line-number">153</span><span class="code-content">                        preferences.getPrefs(Integer::class.java),</span></div>
+<div class="code-line bug-line"><span class="line-number">154</span><span class="code-content">                        preferences.getPrefs(java.lang.Long::class.java),</span></div>
+<div class="code-line bug-line"><span class="line-number">155</span><span class="code-content">                        preferences.getPrefs(String::class.java),</span></div>
+<div class="code-line bug-line"><span class="line-number">156</span><span class="code-content">                        preferences.getPrefs(java.lang.Boolean::class.java),</span></div>
+<div class="code-line bug-line"><span class="line-number">157</span><span class="code-content">                        preferences.getPrefs(java.util.Set::class.java) as Map&lt;String, java.util.Set&lt;String&gt;&gt;,</span></div>
+<div class="code-line context-line"><span class="line-number">158</span><span class="code-content">                    )</span></div>
+<div class="code-line context-line"><span class="line-number">159</span><span class="code-content">                )</span></div>
+<div class="code-line context-line"><span class="line-number">160</span><span class="code-content">            )</span></div>
+<div class="code-line context-line"><span class="line-number">161</span><span class="code-content">        )</span></div>
+<div class="code-line bug-line"><span class="line-number">162</span><span class="code-content">        val out = OutputStreamWriter(os, UTF_8)</span></div>
+<div class="code-line bug-line"><span class="line-number">163</span><span class="code-content">        val json = if (BuildConfig.DEBUG) Json { prettyPrint = true } else Json</span></div>
+<div class="code-line bug-line"><span class="line-number">164</span><span class="code-content">        out.write(json.encodeToString(data))</span></div>
+<div class="code-line bug-line"><span class="line-number">165</span><span class="code-content">        out.close()</span></div>
+<div class="code-line bug-line"><span class="line-number">166</span><span class="code-content">        exportCount = taskBackups.size</span></div>
+<div class="code-line bug-line"><span class="line-number">167</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">168</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">169</span><span class="code-content">    private fun onFinishExport(outputFile: String) = post {</span></div>
+<div class="code-line context-line"><span class="line-number">170</span><span class="code-content">        context?.toast(</span></div>
+<div class="code-line context-line"><span class="line-number">171</span><span class="code-content">            R.string.export_toast,</span></div>
+<div class="code-line context-line"><span class="line-number">172</span><span class="code-content">            context!!</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">176</span><span class="code-content">        )</span></div>
+<div class="code-line context-line"><span class="line-number">177</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">178</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">179</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">180</span><span class="code-content">    private fun getFileName(type: ExportType): String =</span></div>
+<div class="code-line bug-line"><span class="line-number">181</span><span class="code-content">        when (type) {</span></div>
+<div class="code-line bug-line"><span class="line-number">182</span><span class="code-content">            ExportType.EXPORT_TYPE_SERVICE -&gt; String.format(BackupConstants.BACKUP_FILE_NAME, dateForExport)</span></div>
+<div class="code-line context-line"><span class="line-number">183</span><span class="code-content">            ExportType.EXPORT_TYPE_MANUAL -&gt; String.format(BackupConstants.EXPORT_FILE_NAME, dateForExport)</span></div>
+<div class="code-line bug-line"><span class="line-number">184</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">185</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">186</span><span class="code-content">    enum class ExportType {</span></div>
+<div class="code-line bug-line"><span class="line-number">187</span><span class="code-content">        EXPORT_TYPE_SERVICE, EXPORT_TYPE_MANUAL</span></div>
+<div class="code-line context-line"><span class="line-number">188</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">189</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">190</span><span class="code-content">    companion object {</span></div>
+<div class="code-line bug-line"><span class="line-number">191</span><span class="code-content">        val UTF_8: Charset = Charset.forName(&quot;UTF-8&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">192</span><span class="code-content">        private const val MIME = &quot;application/json&quot;</span></div>
+<div class="code-line context-line"><span class="line-number">193</span><span class="code-content">        private const val EXTENSION = &quot;.json&quot;</span></div>
+<div class="code-line context-line"><span class="line-number">194</span><span class="code-content">        private val dateForExport: String</span></div>
+<div class="code-line bug-line"><span class="line-number">195</span><span class="code-content">            get() = newDateTime().toString(&quot;yyyyMMdd&#x27;T&#x27;HHmm&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">196</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">197</span><span class="code-content">}</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-9">
+    File: org/tasks/caldav/iCalendar.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\caldav\iCalendar.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">69</span><span class="code-content">import java.util.regex.Pattern</span></div>
+<div class="code-line context-line"><span class="line-number">70</span><span class="code-content">import javax.inject.Inject</span></div>
+<div class="code-line context-line"><span class="line-number">71</span><span class="code-content">import kotlin.math.max</span></div>
+<div class="code-line context-line"><span class="line-number">72</span><span class="code-content">import kotlin.math.min</span></div>
+<div class="code-line context-line"><span class="line-number">73</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">74</span><span class="code-content">@Suppress(&quot;ClassName&quot;)</span></div>
+<div class="code-line bug-line"><span class="line-number">75</span><span class="code-content">class iCalendar @Inject constructor(</span></div>
+<div class="code-line bug-line"><span class="line-number">76</span><span class="code-content">    private val tagDataDao: TagDataDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">77</span><span class="code-content">    private val preferences: Preferences,</span></div>
+<div class="code-line bug-line"><span class="line-number">78</span><span class="code-content">    private val locationDao: LocationDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">79</span><span class="code-content">    private val workManager: WorkManager,</span></div>
+<div class="code-line bug-line"><span class="line-number">80</span><span class="code-content">    private val geofenceApi: GeofenceApi,</span></div>
+<div class="code-line bug-line"><span class="line-number">81</span><span class="code-content">    private val taskCreator: TaskCreator,</span></div>
+<div class="code-line bug-line"><span class="line-number">82</span><span class="code-content">    private val tagDao: TagDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">83</span><span class="code-content">    private val taskDao: TaskDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">84</span><span class="code-content">    private val caldavDao: CaldavDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">85</span><span class="code-content">    private val alarmDao: AlarmDao,</span></div>
+<div class="code-line bug-line"><span class="line-number">86</span><span class="code-content">    private val alarmService: AlarmService,</span></div>
+<div class="code-line bug-line"><span class="line-number">87</span><span class="code-content">    private val vtodoCache: VtodoCache,</span></div>
+<div class="code-line bug-line"><span class="line-number">88</span><span class="code-content">    private val notificationManager: NotificationManager,</span></div>
+<div class="code-line context-line"><span class="line-number">89</span><span class="code-content">) {</span></div>
+<div class="code-line context-line"><span class="line-number">90</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">91</span><span class="code-content">    suspend fun setPlace(taskId: Long, geo: Geo?) {</span></div>
+<div class="code-line context-line"><span class="line-number">92</span><span class="code-content">        if (geo == null) {</span></div>
+<div class="code-line context-line"><span class="line-number">93</span><span class="code-content">            locationDao.getActiveGeofences(taskId).forEach {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">287</span><span class="code-content">        private const val APPLE_SORT_ORDER = &quot;X-APPLE-SORT-ORDER&quot;</span></div>
+<div class="code-line context-line"><span class="line-number">288</span><span class="code-content">        private const val OC_HIDESUBTASKS = &quot;X-OC-HIDESUBTASKS&quot;</span></div>
+<div class="code-line context-line"><span class="line-number">289</span><span class="code-content">        private const val MOZ_SNOOZE_TIME = &quot;X-MOZ-SNOOZE-TIME&quot;</span></div>
+<div class="code-line context-line"><span class="line-number">290</span><span class="code-content">        private const val MOZ_LASTACK = &quot;X-MOZ-LASTACK&quot;</span></div>
+<div class="code-line context-line"><span class="line-number">291</span><span class="code-content">        private const val HIDE_SUBTASKS = &quot;1&quot;</span></div>
+<div class="code-line bug-line"><span class="line-number">292</span><span class="code-content">        private val PRODID_MATCHER = &quot;.*?PRODID:(.*?)\n.*&quot;.toPattern(Pattern.DOTALL)</span></div>
+<div class="code-line context-line"><span class="line-number">293</span><span class="code-content">        // VALARM extensions: https://datatracker.ietf.org/doc/html/rfc9074</span></div>
+<div class="code-line bug-line"><span class="line-number">294</span><span class="code-content">        private val IGNORE_ALARM = DateTime(&quot;19760401T005545Z&quot;)</span></div>
+<div class="code-line bug-line"><span class="line-number">295</span><span class="code-content">        private val IS_PARENT = { r: RelatedTo -&gt;</span></div>
+<div class="code-line context-line"><span class="line-number">296</span><span class="code-content">            r.parameters.getParameter&lt;RelType&gt;(Parameter.RELTYPE).let {</span></div>
+<div class="code-line context-line"><span class="line-number">297</span><span class="code-content">                it === RelType.PARENT || it == null || it.value.isNullOrBlank()</span></div>
+<div class="code-line context-line"><span class="line-number">298</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">299</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">300</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">301</span><span class="code-content">        internal val IS_APPLE_SORT_ORDER = { x: Property? -&gt; x?.name.equals(APPLE_SORT_ORDER, true) }</span></div>
+<div class="code-line bug-line"><span class="line-number">302</span><span class="code-content">        private val IS_OC_HIDESUBTASKS = { x: Property? -&gt; x?.name.equals(OC_HIDESUBTASKS, true) }</span></div>
+<div class="code-line bug-line"><span class="line-number">303</span><span class="code-content">        private val IS_MOZ_SNOOZE_TIME = { x: Property? -&gt; x?.name.equals(MOZ_SNOOZE_TIME, true) }</span></div>
+<div class="code-line bug-line"><span class="line-number">304</span><span class="code-content">        private val IS_MOZ_LASTACK = { x: Property? -&gt; x?.name.equals(MOZ_LASTACK, true) }</span></div>
+<div class="code-line context-line"><span class="line-number">305</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">306</span><span class="code-content">        fun Due?.apply(task: org.tasks.data.entity.Task) {</span></div>
+<div class="code-line context-line"><span class="line-number">307</span><span class="code-content">            task.dueDate = toMillis()</span></div>
+<div class="code-line context-line"><span class="line-number">308</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">309</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">336</span><span class="code-content">            CLIENTS_WITH_REMINDER_SYNC.any { contains(it) }</span></div>
+<div class="code-line context-line"><span class="line-number">337</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">338</span><span class="code-content">        fun String.prodId(): String? =</span></div>
+<div class="code-line context-line"><span class="line-number">339</span><span class="code-content">            PRODID_MATCHER.matcher(this).takeIf { it.matches() }?.group(1)</span></div>
+<div class="code-line context-line"><span class="line-number">340</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">341</span><span class="code-content">        private val CLIENTS_WITH_REMINDER_SYNC = listOf(</span></div>
+<div class="code-line bug-line"><span class="line-number">342</span><span class="code-content">            &quot;tasks.org&quot;,</span></div>
+<div class="code-line bug-line"><span class="line-number">343</span><span class="code-content">            &quot;Mozilla.org&quot;,</span></div>
+<div class="code-line bug-line"><span class="line-number">344</span><span class="code-content">            &quot;Apple Inc.&quot;,</span></div>
+<div class="code-line context-line"><span class="line-number">345</span><span class="code-content">        )</span></div>
+<div class="code-line context-line"><span class="line-number">346</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">347</span><span class="code-content">        internal fun getLocal(property: DateProperty): Long =</span></div>
+<div class="code-line context-line"><span class="line-number">348</span><span class="code-content">                org.tasks.time.DateTime.from(property.date)?.toLocal()?.millis ?: 0</span></div>
+<div class="code-line context-line"><span class="line-number">349</span><span class="code-content"></span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-10">
+    File: org/tasks/compose/edit/DescriptionRow.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\compose\edit\DescriptionRow.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">42</span><span class="code-content">                        EditText(context).apply {</span></div>
+<div class="code-line context-line"><span class="line-number">43</span><span class="code-content">                            setText(text)</span></div>
+<div class="code-line context-line"><span class="line-number">44</span><span class="code-content">                            val textWatcher =</span></div>
+<div class="code-line context-line"><span class="line-number">45</span><span class="code-content">                                markdownProvider?.markdown(linkify != null)?.textWatcher(this)</span></div>
+<div class="code-line context-line"><span class="line-number">46</span><span class="code-content">                            addTextChangedListener(</span></div>
+<div class="code-line bug-line"><span class="line-number">47</span><span class="code-content">                                onTextChanged = { text, _, _, _ -&gt; onChanged(text) },</span></div>
+<div class="code-line bug-line"><span class="line-number">48</span><span class="code-content">                                afterTextChanged = { editable -&gt; textWatcher?.invoke(editable) }</span></div>
+<div class="code-line context-line"><span class="line-number">49</span><span class="code-content">                            )</span></div>
+<div class="code-line context-line"><span class="line-number">50</span><span class="code-content">                            setBackgroundColor(context.getColor(android.R.color.transparent))</span></div>
+<div class="code-line context-line"><span class="line-number">51</span><span class="code-content">                            textAlignment = View.TEXT_ALIGNMENT_VIEW_START</span></div>
+<div class="code-line context-line"><span class="line-number">52</span><span class="code-content">                            imeOptions = EditorInfo.IME_FLAG_NO_EXTRACT_UI</span></div>
+<div class="code-line context-line"><span class="line-number">53</span><span class="code-content">                            inputType =</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-11">
+    File: org/tasks/files/FileHelper.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\files\FileHelper.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">154</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">155</span><span class="code-content">    @JvmStatic</span></div>
+<div class="code-line context-line"><span class="line-number">156</span><span class="code-content">    @Throws(IOException::class)</span></div>
+<div class="code-line context-line"><span class="line-number">157</span><span class="code-content">    fun newFile(</span></div>
+<div class="code-line context-line"><span class="line-number">158</span><span class="code-content">            context: Context, destination: Uri, mimeType: String?, baseName: String, extension: String?): Uri {</span></div>
+<div class="code-line bug-line"><span class="line-number">159</span><span class="code-content">        val filename = getNonCollidingFileName(context, destination, baseName, extension)</span></div>
+<div class="code-line bug-line"><span class="line-number">160</span><span class="code-content">        return when (destination.scheme) {</span></div>
+<div class="code-line context-line"><span class="line-number">161</span><span class="code-content">            &quot;content&quot; -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">162</span><span class="code-content">                val tree = DocumentFile.fromTreeUri(context, destination)</span></div>
+<div class="code-line context-line"><span class="line-number">163</span><span class="code-content">                val f1 = tree!!.createFile(mimeType!!, filename)</span></div>
+<div class="code-line context-line"><span class="line-number">164</span><span class="code-content">                        ?: throw FileNotFoundException(&quot;Failed to create $filename&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">165</span><span class="code-content">                f1.uri</span></div>
+<div class="code-line context-line"><span class="line-number">166</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">167</span><span class="code-content">            &quot;file&quot; -&gt; {</span></div>
+<div class="code-line bug-line"><span class="line-number">168</span><span class="code-content">                val dir = File(destination.path)</span></div>
+<div class="code-line bug-line"><span class="line-number">169</span><span class="code-content">                if (!dir.exists() &amp;&amp; !dir.mkdirs()) {</span></div>
+<div class="code-line context-line"><span class="line-number">170</span><span class="code-content">                    throw IOException(&quot;Failed to create %s&quot; + dir.absolutePath)</span></div>
+<div class="code-line context-line"><span class="line-number">171</span><span class="code-content">                }</span></div>
+<div class="code-line bug-line"><span class="line-number">172</span><span class="code-content">                val f2 = File(dir.absolutePath + File.separator + filename)</span></div>
+<div class="code-line bug-line"><span class="line-number">173</span><span class="code-content">                if (f2.createNewFile()) {</span></div>
+<div class="code-line bug-line"><span class="line-number">174</span><span class="code-content">                    return Uri.fromFile(f2)</span></div>
+<div class="code-line context-line"><span class="line-number">175</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">176</span><span class="code-content">                throw FileNotFoundException(&quot;Failed to create $filename&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">177</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">178</span><span class="code-content">            else -&gt; throw IllegalArgumentException(&quot;Unknown URI scheme: &quot; + destination.scheme)</span></div>
+<div class="code-line context-line"><span class="line-number">179</span><span class="code-content">        }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">196</span><span class="code-content">            throw IllegalStateException(e)</span></div>
+<div class="code-line context-line"><span class="line-number">197</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">198</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">199</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">200</span><span class="code-content">    fun copyStream(context: Context, input: Uri?, output: Uri?) {</span></div>
+<div class="code-line bug-line"><span class="line-number">201</span><span class="code-content">        val contentResolver = context.contentResolver</span></div>
+<div class="code-line bug-line"><span class="line-number">202</span><span class="code-content">        try {</span></div>
+<div class="code-line bug-line"><span class="line-number">203</span><span class="code-content">            val inputStream = contentResolver.openInputStream(input!!)</span></div>
+<div class="code-line bug-line"><span class="line-number">204</span><span class="code-content">            val outputStream = contentResolver.openOutputStream(output!!)</span></div>
+<div class="code-line bug-line"><span class="line-number">205</span><span class="code-content">            ByteStreams.copy(inputStream!!, outputStream!!)</span></div>
+<div class="code-line bug-line"><span class="line-number">206</span><span class="code-content">            inputStream.close()</span></div>
+<div class="code-line bug-line"><span class="line-number">207</span><span class="code-content">            outputStream.close()</span></div>
+<div class="code-line context-line"><span class="line-number">208</span><span class="code-content">        } catch (e: IOException) {</span></div>
+<div class="code-line context-line"><span class="line-number">209</span><span class="code-content">            throw IllegalStateException(e)</span></div>
+<div class="code-line context-line"><span class="line-number">210</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">211</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">212</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">213</span><span class="code-content">    private fun getNonCollidingFileName(</span></div>
+<div class="code-line context-line"><span class="line-number">214</span><span class="code-content">            context: Context, uri: Uri, baseName: String, extension: String?): String {</span></div>
+<div class="code-line bug-line"><span class="line-number">215</span><span class="code-content">        var extension = extension</span></div>
+<div class="code-line bug-line"><span class="line-number">216</span><span class="code-content">        var tries = 1</span></div>
+<div class="code-line bug-line"><span class="line-number">217</span><span class="code-content">        if (!extension!!.startsWith(&quot;.&quot;)) {</span></div>
+<div class="code-line context-line"><span class="line-number">218</span><span class="code-content">            extension = &quot;.$extension&quot;</span></div>
+<div class="code-line context-line"><span class="line-number">219</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">220</span><span class="code-content">        var tempName = baseName</span></div>
+<div class="code-line bug-line"><span class="line-number">221</span><span class="code-content">        when (uri.scheme) {</span></div>
+<div class="code-line context-line"><span class="line-number">222</span><span class="code-content">            ContentResolver.SCHEME_CONTENT -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">223</span><span class="code-content">                val dir = DocumentFile.fromTreeUri(context, uri)</span></div>
+<div class="code-line context-line"><span class="line-number">224</span><span class="code-content">                val documentFiles = listOf(*dir!!.listFiles())</span></div>
+<div class="code-line context-line"><span class="line-number">225</span><span class="code-content">                while (true) {</span></div>
+<div class="code-line context-line"><span class="line-number">226</span><span class="code-content">                    val result = tempName + extension</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">231</span><span class="code-content">                        break</span></div>
+<div class="code-line context-line"><span class="line-number">232</span><span class="code-content">                    }</span></div>
+<div class="code-line context-line"><span class="line-number">233</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">234</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">235</span><span class="code-content">            ContentResolver.SCHEME_FILE -&gt; {</span></div>
+<div class="code-line bug-line"><span class="line-number">236</span><span class="code-content">                var f = File(uri.path, baseName + extension)</span></div>
+<div class="code-line bug-line"><span class="line-number">237</span><span class="code-content">                while (f.exists()) {</span></div>
+<div class="code-line context-line"><span class="line-number">238</span><span class="code-content">                    tempName = &quot;$baseName-$tries&quot; // $NON-NLS-1$</span></div>
+<div class="code-line context-line"><span class="line-number">239</span><span class="code-content">                    f = File(uri.path, tempName + extension)</span></div>
+<div class="code-line context-line"><span class="line-number">240</span><span class="code-content">                    tries++</span></div>
+<div class="code-line context-line"><span class="line-number">241</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">242</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">243</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">244</span><span class="code-content">        return tempName + extension</span></div>
+<div class="code-line context-line"><span class="line-number">245</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">246</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">247</span><span class="code-content">    fun uri2String(uri: Uri?): String {</span></div>
+<div class="code-line context-line"><span class="line-number">248</span><span class="code-content">        if (uri == null) {</span></div>
+<div class="code-line context-line"><span class="line-number">249</span><span class="code-content">            return &quot;&quot;</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-12">
+    File: org/tasks/injection/ApplicationModule.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\injection\ApplicationModule.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">108</span><span class="code-content">    @Singleton</span></div>
+<div class="code-line context-line"><span class="line-number">109</span><span class="code-content">    fun getContentProviderDao(db: Database): ContentProviderDao = db.contentProviderDao()</span></div>
+<div class="code-line context-line"><span class="line-number">110</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">111</span><span class="code-content">    @Provides</span></div>
+<div class="code-line context-line"><span class="line-number">112</span><span class="code-content">    @Singleton</span></div>
+<div class="code-line bug-line"><span class="line-number">113</span><span class="code-content">    fun getUpgraderDao(db: Database) = db.upgraderDao()</span></div>
+<div class="code-line context-line"><span class="line-number">114</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">115</span><span class="code-content">    @Provides</span></div>
+<div class="code-line context-line"><span class="line-number">116</span><span class="code-content">    @Singleton</span></div>
+<div class="code-line context-line"><span class="line-number">117</span><span class="code-content">    fun getPrincipalDao(db: Database) = db.principalDao()</span></div>
+<div class="code-line context-line"><span class="line-number">118</span><span class="code-content"></span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-13">
+    File: org/tasks/jobs/BackupWork.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\jobs\BackupWork.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">17</span><span class="code-content">import timber.log.Timber</span></div>
+<div class="code-line context-line"><span class="line-number">18</span><span class="code-content">import java.io.File</span></div>
+<div class="code-line context-line"><span class="line-number">19</span><span class="code-content">import java.io.FileFilter</span></div>
+<div class="code-line context-line"><span class="line-number">20</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">21</span><span class="code-content">@HiltWorker</span></div>
+<div class="code-line bug-line"><span class="line-number">22</span><span class="code-content">class BackupWork @AssistedInject constructor(</span></div>
+<div class="code-line context-line"><span class="line-number">23</span><span class="code-content">        @Assisted context: Context,</span></div>
+<div class="code-line context-line"><span class="line-number">24</span><span class="code-content">        @Assisted workerParams: WorkerParameters,</span></div>
+<div class="code-line context-line"><span class="line-number">25</span><span class="code-content">        firebase: Firebase,</span></div>
+<div class="code-line bug-line"><span class="line-number">26</span><span class="code-content">        private val tasksJsonExporter: TasksJsonExporter,</span></div>
+<div class="code-line bug-line"><span class="line-number">27</span><span class="code-content">        private val preferences: Preferences,</span></div>
+<div class="code-line bug-line"><span class="line-number">28</span><span class="code-content">        private val workManager: WorkManager) : RepeatingWorker(context, workerParams, firebase) {</span></div>
+<div class="code-line context-line"><span class="line-number">29</span><span class="code-content">    </span></div>
+<div class="code-line context-line"><span class="line-number">30</span><span class="code-content">    override suspend fun run(): Result {</span></div>
+<div class="code-line bug-line"><span class="line-number">31</span><span class="code-content">        preferences.setLong(R.string.p_last_backup, currentTimeMillis())</span></div>
+<div class="code-line bug-line"><span class="line-number">32</span><span class="code-content">        startBackup(context)</span></div>
+<div class="code-line bug-line"><span class="line-number">33</span><span class="code-content">        return Result.success()</span></div>
+<div class="code-line context-line"><span class="line-number">34</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">35</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">36</span><span class="code-content">    override suspend fun scheduleNext() = workManager.scheduleBackup()</span></div>
+<div class="code-line context-line"><span class="line-number">37</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">38</span><span class="code-content">    private suspend fun startBackup(context: Context?) {</span></div>
+<div class="code-line bug-line"><span class="line-number">39</span><span class="code-content">        if (!preferences.getBoolean(R.string.p_backups_enabled, true)) {</span></div>
+<div class="code-line context-line"><span class="line-number">40</span><span class="code-content">            Timber.d(&quot;Automatic backups disabled&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">41</span><span class="code-content">            return</span></div>
+<div class="code-line context-line"><span class="line-number">42</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">43</span><span class="code-content">        try {</span></div>
+<div class="code-line bug-line"><span class="line-number">44</span><span class="code-content">            deleteOldLocalBackups()</span></div>
+<div class="code-line context-line"><span class="line-number">45</span><span class="code-content">        } catch (e: Exception) {</span></div>
+<div class="code-line context-line"><span class="line-number">46</span><span class="code-content">            Timber.e(e)</span></div>
+<div class="code-line context-line"><span class="line-number">47</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">48</span><span class="code-content">        try {</span></div>
+<div class="code-line bug-line"><span class="line-number">49</span><span class="code-content">            tasksJsonExporter.exportTasks(</span></div>
+<div class="code-line bug-line"><span class="line-number">50</span><span class="code-content">                    context, TasksJsonExporter.ExportType.EXPORT_TYPE_SERVICE, null)</span></div>
+<div class="code-line context-line"><span class="line-number">51</span><span class="code-content">        } catch (e: Exception) {</span></div>
+<div class="code-line context-line"><span class="line-number">52</span><span class="code-content">            Timber.e(e)</span></div>
+<div class="code-line context-line"><span class="line-number">53</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">54</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">55</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">56</span><span class="code-content">    private fun deleteOldLocalBackups() {</span></div>
+<div class="code-line bug-line"><span class="line-number">57</span><span class="code-content">        val uri = preferences.backupDirectory</span></div>
+<div class="code-line bug-line"><span class="line-number">58</span><span class="code-content">        when (uri?.scheme) {</span></div>
+<div class="code-line context-line"><span class="line-number">59</span><span class="code-content">            ContentResolver.SCHEME_CONTENT -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">60</span><span class="code-content">                val dir = DocumentFile.fromTreeUri(context, uri)</span></div>
+<div class="code-line context-line"><span class="line-number">61</span><span class="code-content">                for (file in getDeleteList(dir?.listFiles())) {</span></div>
+<div class="code-line context-line"><span class="line-number">62</span><span class="code-content">                    if (!file.delete()) {</span></div>
+<div class="code-line context-line"><span class="line-number">63</span><span class="code-content">                        Timber.e(&quot;Unable to delete: %s&quot;, file)</span></div>
+<div class="code-line context-line"><span class="line-number">64</span><span class="code-content">                    }</span></div>
+<div class="code-line context-line"><span class="line-number">65</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">66</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">67</span><span class="code-content">            ContentResolver.SCHEME_FILE -&gt; {</span></div>
+<div class="code-line bug-line"><span class="line-number">68</span><span class="code-content">                val astridDir = File(uri.path)</span></div>
+<div class="code-line bug-line"><span class="line-number">69</span><span class="code-content">                val fileArray = astridDir.listFiles(FILE_FILTER)</span></div>
+<div class="code-line bug-line"><span class="line-number">70</span><span class="code-content">                for (file in getDeleteList(fileArray, DAYS_TO_KEEP_BACKUP)) {</span></div>
+<div class="code-line context-line"><span class="line-number">71</span><span class="code-content">                    if (!file.delete()) {</span></div>
+<div class="code-line context-line"><span class="line-number">72</span><span class="code-content">                        Timber.e(&quot;Unable to delete: %s&quot;, file)</span></div>
+<div class="code-line context-line"><span class="line-number">73</span><span class="code-content">                    }</span></div>
+<div class="code-line context-line"><span class="line-number">74</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">75</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">76</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">77</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">78</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">79</span><span class="code-content">    companion object {</span></div>
+<div class="code-line context-line"><span class="line-number">80</span><span class="code-content">        const val DAYS_TO_KEEP_BACKUP = 7</span></div>
+<div class="code-line bug-line"><span class="line-number">81</span><span class="code-content">        private val FILENAME_FILTER = { f: String -&gt; f.matches(BACKUP_CLEANUP_MATCHER) }</span></div>
+<div class="code-line bug-line"><span class="line-number">82</span><span class="code-content">        val FILE_FILTER = FileFilter { f: File -&gt; FILENAME_FILTER(f.name) }</span></div>
+<div class="code-line bug-line"><span class="line-number">83</span><span class="code-content">        private val BY_LAST_MODIFIED = { f1: File, f2: File -&gt;</span></div>
+<div class="code-line context-line"><span class="line-number">84</span><span class="code-content">            BackupConstants.getTimestamp(f2).compareTo(BackupConstants.getTimestamp(f1))</span></div>
+<div class="code-line context-line"><span class="line-number">85</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">86</span><span class="code-content">        private val DOCUMENT_FILE_COMPARATOR = Comparator { d1: DocumentFile, d2: DocumentFile -&gt; d2.lastModified().compareTo(d1.lastModified()) }</span></div>
+<div class="code-line context-line"><span class="line-number">87</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">88</span><span class="code-content">        fun getDeleteList(fileArray: Array&lt;File&gt;?, keepNewest: Int) =</span></div>
+<div class="code-line bug-line"><span class="line-number">89</span><span class="code-content">                fileArray?.sortedWith(BY_LAST_MODIFIED)?.drop(keepNewest) ?: emptyList()</span></div>
+<div class="code-line context-line"><span class="line-number">90</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">91</span><span class="code-content">        private fun getDeleteList(fileArray: Array&lt;DocumentFile&gt;?) =</span></div>
+<div class="code-line context-line"><span class="line-number">92</span><span class="code-content">                fileArray</span></div>
+<div class="code-line context-line"><span class="line-number">93</span><span class="code-content">                        ?.filter { FILENAME_FILTER(it.name!!) }</span></div>
+<div class="code-line context-line"><span class="line-number">94</span><span class="code-content">                        ?.sortedWith(DOCUMENT_FILE_COMPARATOR)</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-14">
+    File: org/tasks/jobs/WorkManagerImpl.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\jobs\WorkManagerImpl.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">190</span><span class="code-content">                            .build())</span></div>
+<div class="code-line context-line"><span class="line-number">191</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">192</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">193</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">194</span><span class="code-content">    override fun scheduleDriveUpload(uri: Uri, purge: Boolean) {</span></div>
+<div class="code-line bug-line"><span class="line-number">195</span><span class="code-content">        if (!preferences.getBoolean(R.string.p_google_drive_backup, false)) {</span></div>
+<div class="code-line bug-line"><span class="line-number">196</span><span class="code-content">            return</span></div>
+<div class="code-line context-line"><span class="line-number">197</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">198</span><span class="code-content">        val builder = OneTimeWorkRequest.Builder(DriveUploader::class.java)</span></div>
+<div class="code-line context-line"><span class="line-number">199</span><span class="code-content">            .setInputData(</span></div>
+<div class="code-line context-line"><span class="line-number">200</span><span class="code-content">                EXTRA_URI to uri.toString(),</span></div>
+<div class="code-line context-line"><span class="line-number">201</span><span class="code-content">                EXTRA_PURGE to purge,</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-15">
+    File: org/tasks/preferences/DefaultFilterProvider.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\preferences\DefaultFilterProvider.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">168</span><span class="code-content">                val googleTaskList = googleTaskListDao.getByRemoteId(listId)</span></div>
+<div class="code-line context-line"><span class="line-number">169</span><span class="code-content">                if (googleTaskList != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">170</span><span class="code-content">                    originalList = GtasksFilter(googleTaskList)</span></div>
+<div class="code-line context-line"><span class="line-number">171</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">172</span><span class="code-content">            } else if (task.hasTransitory(CaldavTask.KEY)) {</span></div>
+<div class="code-line bug-line"><span class="line-number">173</span><span class="code-content">                val caldav = caldavDao.getCalendarByUuid(task.getTransitory(CaldavTask.KEY)!!)</span></div>
+<div class="code-line bug-line"><span class="line-number">174</span><span class="code-content">                    ?.takeIf { it.access != ACCESS_READ_ONLY }</span></div>
+<div class="code-line bug-line"><span class="line-number">175</span><span class="code-content">                if (caldav != null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">176</span><span class="code-content">                    originalList = CaldavFilter(caldav)</span></div>
+<div class="code-line context-line"><span class="line-number">177</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">178</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">179</span><span class="code-content">        } else {</span></div>
+<div class="code-line context-line"><span class="line-number">180</span><span class="code-content">            val googleTask = googleTaskDao.getByTaskId(task.id)</span></div>
+<div class="code-line context-line"><span class="line-number">181</span><span class="code-content">            val caldavTask = caldavDao.getTask(task.id)</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-16">
+    File: org/tasks/preferences/IconPreference.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\preferences\IconPreference.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">7</span><span class="code-content">import android.widget.ImageView</span></div>
+<div class="code-line context-line"><span class="line-number">8</span><span class="code-content">import androidx.preference.Preference</span></div>
+<div class="code-line context-line"><span class="line-number">9</span><span class="code-content">import androidx.preference.PreferenceViewHolder</span></div>
+<div class="code-line context-line"><span class="line-number">10</span><span class="code-content">import org.tasks.R</span></div>
+<div class="code-line context-line"><span class="line-number">11</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">12</span><span class="code-content">class IconPreference(context: Context, attrs: AttributeSet? = null) : Preference(context, attrs) {</span></div>
+<div class="code-line context-line"><span class="line-number">13</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">14</span><span class="code-content">    private var imageView: ImageView? = null</span></div>
+<div class="code-line context-line"><span class="line-number">15</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">16</span><span class="code-content">    override fun onBindViewHolder(holder: PreferenceViewHolder) {</span></div>
+<div class="code-line context-line"><span class="line-number">17</span><span class="code-content">        super.onBindViewHolder(holder)</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">49</span><span class="code-content">        drawable?.let { imageView?.setImageDrawable(drawable) }</span></div>
+<div class="code-line context-line"><span class="line-number">50</span><span class="code-content">        iconClickListener?.let { imageView?.setOnClickListener(it) }</span></div>
+<div class="code-line context-line"><span class="line-number">51</span><span class="code-content">        tint?.let { imageView?.setColorFilter(it) }</span></div>
+<div class="code-line context-line"><span class="line-number">52</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">53</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">54</span><span class="code-content">    init {</span></div>
+<div class="code-line bug-line"><span class="line-number">55</span><span class="code-content">        widgetLayoutResource = R.layout.preference_icon</span></div>
+<div class="code-line bug-line"><span class="line-number">56</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">57</span><span class="code-content">}</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-17">
+    File: org/tasks/preferences/Preferences.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\preferences\Preferences.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">183</span><span class="code-content">    fun clear() {</span></div>
+<div class="code-line context-line"><span class="line-number">184</span><span class="code-content">        prefs.edit().clear().commit()</span></div>
+<div class="code-line context-line"><span class="line-number">185</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">186</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">187</span><span class="code-content">    fun setDefaults() {</span></div>
+<div class="code-line bug-line"><span class="line-number">188</span><span class="code-content">        PreferenceManager.setDefaultValues(context, R.xml.preferences, true)</span></div>
+<div class="code-line bug-line"><span class="line-number">189</span><span class="code-content">        PreferenceManager.setDefaultValues(context, R.xml.preferences_look_and_feel, true)</span></div>
+<div class="code-line bug-line"><span class="line-number">190</span><span class="code-content">        PreferenceManager.setDefaultValues(context, R.xml.preferences_notifications, true)</span></div>
+<div class="code-line bug-line"><span class="line-number">191</span><span class="code-content">        PreferenceManager.setDefaultValues(context, R.xml.preferences_task_defaults, true)</span></div>
+<div class="code-line bug-line"><span class="line-number">192</span><span class="code-content">        PreferenceManager.setDefaultValues(context, R.xml.preferences_date_and_time, true)</span></div>
+<div class="code-line bug-line"><span class="line-number">193</span><span class="code-content">        PreferenceManager.setDefaultValues(context, R.xml.preferences_navigation_drawer, true)</span></div>
+<div class="code-line bug-line"><span class="line-number">194</span><span class="code-content">        PreferenceManager.setDefaultValues(context, R.xml.preferences_backups, true)</span></div>
+<div class="code-line bug-line"><span class="line-number">195</span><span class="code-content">        PreferenceManager.setDefaultValues(context, R.xml.preferences_advanced, true)</span></div>
+<div class="code-line bug-line"><span class="line-number">196</span><span class="code-content">        PreferenceManager.setDefaultValues(context, R.xml.help_and_feedback, true)</span></div>
+<div class="code-line bug-line"><span class="line-number">197</span><span class="code-content">        BeastModePreferences.setDefaultOrder(this, context)</span></div>
+<div class="code-line bug-line"><span class="line-number">198</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">199</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">200</span><span class="code-content">    fun reset() {</span></div>
+<div class="code-line context-line"><span class="line-number">201</span><span class="code-content">        clear()</span></div>
+<div class="code-line context-line"><span class="line-number">202</span><span class="code-content">        setDefaults()</span></div>
+<div class="code-line context-line"><span class="line-number">203</span><span class="code-content">    }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">236</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">237</span><span class="code-content">    fun getIntegerFromString(keyResource: String?, defaultValue: Int): Int =</span></div>
+<div class="code-line context-line"><span class="line-number">238</span><span class="code-content">        getStringValue(keyResource)?.toIntOrNull() ?: defaultValue</span></div>
+<div class="code-line context-line"><span class="line-number">239</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">240</span><span class="code-content">    private fun getUri(key: Int): Uri? {</span></div>
+<div class="code-line bug-line"><span class="line-number">241</span><span class="code-content">        val uri = getStringValue(key)</span></div>
+<div class="code-line bug-line"><span class="line-number">242</span><span class="code-content">        return if (isNullOrEmpty(uri)) null else Uri.parse(uri)</span></div>
+<div class="code-line context-line"><span class="line-number">243</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">244</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">245</span><span class="code-content">    fun setUri(key: Int, uri: URI) {</span></div>
+<div class="code-line context-line"><span class="line-number">246</span><span class="code-content">        setString(key, uri.toString())</span></div>
+<div class="code-line context-line"><span class="line-number">247</span><span class="code-content">    }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">305</span><span class="code-content">            getInt(context.getString(resourceId), defValue)</span></div>
+<div class="code-line context-line"><span class="line-number">306</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">307</span><span class="code-content">    fun getInt(key: String?, defValue: Int): Int = prefs.getInt(key, defValue)</span></div>
+<div class="code-line context-line"><span class="line-number">308</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">309</span><span class="code-content">    fun setInt(resourceId: Int, value: Int) {</span></div>
+<div class="code-line bug-line"><span class="line-number">310</span><span class="code-content">        setInt(context.getString(resourceId), value)</span></div>
+<div class="code-line bug-line"><span class="line-number">311</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">312</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">313</span><span class="code-content">    fun setInt(key: String?, value: Int) {</span></div>
+<div class="code-line bug-line"><span class="line-number">314</span><span class="code-content">        val editor = prefs.edit()</span></div>
+<div class="code-line bug-line"><span class="line-number">315</span><span class="code-content">        editor.putInt(key, value)</span></div>
+<div class="code-line bug-line"><span class="line-number">316</span><span class="code-content">        editor.apply()</span></div>
+<div class="code-line bug-line"><span class="line-number">317</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">318</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">319</span><span class="code-content">    fun getLong(resourceId: Int, defValue: Long): Long =</span></div>
+<div class="code-line context-line"><span class="line-number">320</span><span class="code-content">            getLong(context.getString(resourceId), defValue)</span></div>
+<div class="code-line context-line"><span class="line-number">321</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">322</span><span class="code-content">    fun getLong(key: String?, defValue: Long): Long = prefs.getLong(key, defValue)</span></div>
+<div class="code-line context-line"><span class="line-number">323</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">324</span><span class="code-content">    fun setLong(resourceId: Int, value: Long) {</span></div>
+<div class="code-line bug-line"><span class="line-number">325</span><span class="code-content">        setLong(context.getString(resourceId), value)</span></div>
+<div class="code-line bug-line"><span class="line-number">326</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">327</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">328</span><span class="code-content">    fun setLong(key: String?, value: Long) {</span></div>
+<div class="code-line bug-line"><span class="line-number">329</span><span class="code-content">        val editor = prefs.edit()</span></div>
+<div class="code-line bug-line"><span class="line-number">330</span><span class="code-content">        editor.putLong(key, value)</span></div>
+<div class="code-line bug-line"><span class="line-number">331</span><span class="code-content">        editor.apply()</span></div>
+<div class="code-line bug-line"><span class="line-number">332</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">333</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">334</span><span class="code-content">    fun clear(key: String?) {</span></div>
+<div class="code-line context-line"><span class="line-number">335</span><span class="code-content">        val editor = prefs.edit()</span></div>
+<div class="code-line context-line"><span class="line-number">336</span><span class="code-content">        editor.remove(key)</span></div>
+<div class="code-line context-line"><span class="line-number">337</span><span class="code-content">        editor.apply()</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">339</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">340</span><span class="code-content">    val lastSetVersion: Int</span></div>
+<div class="code-line context-line"><span class="line-number">341</span><span class="code-content">        get() = getInt(R.string.p_current_version, 0)</span></div>
+<div class="code-line context-line"><span class="line-number">342</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">343</span><span class="code-content">    fun setCurrentVersion(version: Int) {</span></div>
+<div class="code-line bug-line"><span class="line-number">344</span><span class="code-content">        setInt(R.string.p_current_version, version)</span></div>
+<div class="code-line bug-line"><span class="line-number">345</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">346</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">347</span><span class="code-content">    var installVersion: Int</span></div>
+<div class="code-line context-line"><span class="line-number">348</span><span class="code-content">        get() = getInt(R.string.p_install_version, 0)</span></div>
+<div class="code-line bug-line"><span class="line-number">349</span><span class="code-content">        set(value) = setInt(R.string.p_install_version, value)</span></div>
+<div class="code-line context-line"><span class="line-number">350</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">351</span><span class="code-content">    var installDate: Long</span></div>
+<div class="code-line context-line"><span class="line-number">352</span><span class="code-content">        get() = getLong(R.string.p_install_date, 0L)</span></div>
+<div class="code-line bug-line"><span class="line-number">353</span><span class="code-content">        set(value) = setLong(R.string.p_install_date, value)</span></div>
+<div class="code-line context-line"><span class="line-number">354</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">355</span><span class="code-content">    override var sortMode: Int</span></div>
+<div class="code-line context-line"><span class="line-number">356</span><span class="code-content">        get() = getInt(R.string.p_sort_mode, SortHelper.SORT_AUTO)</span></div>
+<div class="code-line context-line"><span class="line-number">357</span><span class="code-content">        set(value) { setInt(R.string.p_sort_mode, value) }</span></div>
+<div class="code-line context-line"><span class="line-number">358</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">383</span><span class="code-content">    override var completedTasksAtBottom: Boolean</span></div>
+<div class="code-line context-line"><span class="line-number">384</span><span class="code-content">        get() = getBoolean(R.string.p_completed_tasks_at_bottom, true)</span></div>
+<div class="code-line context-line"><span class="line-number">385</span><span class="code-content">        set(value) { setBoolean(R.string.p_completed_tasks_at_bottom, value) }</span></div>
+<div class="code-line context-line"><span class="line-number">386</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">387</span><span class="code-content">    val backupDirectory: Uri?</span></div>
+<div class="code-line bug-line"><span class="line-number">388</span><span class="code-content">        get() = getDirectory(R.string.p_backup_dir, &quot;backups&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">389</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">390</span><span class="code-content">    val externalStorage: Uri</span></div>
+<div class="code-line context-line"><span class="line-number">391</span><span class="code-content">        get() = root.uri</span></div>
+<div class="code-line context-line"><span class="line-number">392</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">393</span><span class="code-content">    val attachmentsDirectory: Uri?</span></div>
+<div class="code-line context-line"><span class="line-number">394</span><span class="code-content">        get() = getDirectory(R.string.p_attachment_dir, TaskAttachment.FILES_DIRECTORY_DEFAULT)</span></div>
+<div class="code-line context-line"><span class="line-number">395</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">396</span><span class="code-content">    private fun getDirectory(pref: Int, name: String): Uri? {</span></div>
+<div class="code-line bug-line"><span class="line-number">397</span><span class="code-content">        val uri = getUri(pref)</span></div>
+<div class="code-line bug-line"><span class="line-number">398</span><span class="code-content">        if (uri != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">399</span><span class="code-content">            when (uri.scheme) {</span></div>
+<div class="code-line context-line"><span class="line-number">400</span><span class="code-content">                ContentResolver.SCHEME_FILE -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">401</span><span class="code-content">                    val file = File(uri.path)</span></div>
+<div class="code-line context-line"><span class="line-number">402</span><span class="code-content">                    try {</span></div>
+<div class="code-line context-line"><span class="line-number">403</span><span class="code-content">                        if (file.canWrite()) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">409</span><span class="code-content">                ContentResolver.SCHEME_CONTENT -&gt; if (hasWritePermission(context, uri)) {</span></div>
+<div class="code-line context-line"><span class="line-number">410</span><span class="code-content">                    return uri</span></div>
+<div class="code-line context-line"><span class="line-number">411</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">412</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">413</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">414</span><span class="code-content">        return getDefaultDirectory(name)</span></div>
+<div class="code-line context-line"><span class="line-number">415</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">416</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">417</span><span class="code-content">    private fun getDefaultDirectory(name: String): Uri? =</span></div>
+<div class="code-line bug-line"><span class="line-number">418</span><span class="code-content">            root</span></div>
+<div class="code-line bug-line"><span class="line-number">419</span><span class="code-content">                    .createDirectory(name)</span></div>
+<div class="code-line bug-line"><span class="line-number">420</span><span class="code-content">                    ?.uri</span></div>
+<div class="code-line bug-line"><span class="line-number">421</span><span class="code-content">                    ?: getDefaultFileLocation(name)?.let { Uri.fromFile(it) }</span></div>
+<div class="code-line context-line"><span class="line-number">422</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">423</span><span class="code-content">    private val root: DocumentFile</span></div>
+<div class="code-line bug-line"><span class="line-number">424</span><span class="code-content">        get() = DocumentFile.fromFile(context.getExternalFilesDir(null)!!)</span></div>
+<div class="code-line context-line"><span class="line-number">425</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">426</span><span class="code-content">    private fun getDefaultFileLocation(type: String): File? {</span></div>
+<div class="code-line context-line"><span class="line-number">427</span><span class="code-content">        val externalFilesDir = context.getExternalFilesDir(null) ?: return null</span></div>
+<div class="code-line context-line"><span class="line-number">428</span><span class="code-content">        val path = String.format(&quot;%s/%s&quot;, externalFilesDir.absolutePath, type)</span></div>
+<div class="code-line context-line"><span class="line-number">429</span><span class="code-content">        val file = File(path)</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">489</span><span class="code-content">        set(value) {</span></div>
+<div class="code-line context-line"><span class="line-number">490</span><span class="code-content">            setLong(R.string.p_last_sync, value)</span></div>
+<div class="code-line context-line"><span class="line-number">491</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">492</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">493</span><span class="code-content">    fun &lt;T&gt; getPrefs(c: Class&lt;T&gt;): Map&lt;String, T&gt; =</span></div>
+<div class="code-line bug-line"><span class="line-number">494</span><span class="code-content">        prefs.all.filter { (_, value) -&gt; c.isInstance(value) } as Map&lt;String, T&gt;</span></div>
+<div class="code-line context-line"><span class="line-number">495</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">496</span><span class="code-content">    val isFlipperEnabled: Boolean</span></div>
+<div class="code-line context-line"><span class="line-number">497</span><span class="code-content">        get() = BuildConfig.DEBUG &amp;&amp; getBoolean(R.string.p_flipper, false)</span></div>
+<div class="code-line context-line"><span class="line-number">498</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">499</span><span class="code-content">    var isPositionHackEnabled: Boolean</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">570</span><span class="code-content">        get() = getLong(R.string.p_last_review_request, 0L)</span></div>
+<div class="code-line context-line"><span class="line-number">571</span><span class="code-content">        set(value) = setLong(R.string.p_last_review_request, value)</span></div>
+<div class="code-line context-line"><span class="line-number">572</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">573</span><span class="code-content">    var lastSubscribeRequest: Long</span></div>
+<div class="code-line context-line"><span class="line-number">574</span><span class="code-content">        get() = getLong(R.string.p_last_subscribe_request, 0L)</span></div>
+<div class="code-line bug-line"><span class="line-number">575</span><span class="code-content">        set(value) = setLong(R.string.p_last_subscribe_request, value)</span></div>
+<div class="code-line context-line"><span class="line-number">576</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">577</span><span class="code-content">    var shownBeastModeHint: Boolean</span></div>
+<div class="code-line context-line"><span class="line-number">578</span><span class="code-content">        get() = getBoolean(R.string.p_shown_beast_mode_hint, false)</span></div>
+<div class="code-line context-line"><span class="line-number">579</span><span class="code-content">        set(value) = setBoolean(R.string.p_shown_beast_mode_hint, value)</span></div>
+<div class="code-line context-line"><span class="line-number">580</span><span class="code-content"></span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-18">
+    File: org/tasks/ui/TaskEditViewModel.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\ui\TaskEditViewModel.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">216</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">217</span><span class="code-content">    fun hasChanges(): Boolean =</span></div>
+<div class="code-line context-line"><span class="line-number">218</span><span class="code-content">        (task.title != title || (isNew &amp;&amp; title?.isNotBlank() == true)) ||</span></div>
+<div class="code-line context-line"><span class="line-number">219</span><span class="code-content">                task.isCompleted != completed ||</span></div>
+<div class="code-line context-line"><span class="line-number">220</span><span class="code-content">                task.dueDate != dueDate.value ||</span></div>
+<div class="code-line bug-line"><span class="line-number">221</span><span class="code-content">                task.priority != priority.value ||</span></div>
+<div class="code-line bug-line"><span class="line-number">222</span><span class="code-content">                if (task.notes.isNullOrBlank()) {</span></div>
+<div class="code-line bug-line"><span class="line-number">223</span><span class="code-content">                    !description.isNullOrBlank()</span></div>
+<div class="code-line context-line"><span class="line-number">224</span><span class="code-content">                } else {</span></div>
+<div class="code-line bug-line"><span class="line-number">225</span><span class="code-content">                    task.notes != description</span></div>
+<div class="code-line context-line"><span class="line-number">226</span><span class="code-content">                } ||</span></div>
+<div class="code-line bug-line"><span class="line-number">227</span><span class="code-content">                task.hideUntil != startDate.value ||</span></div>
+<div class="code-line bug-line"><span class="line-number">228</span><span class="code-content">                if (task.recurrence.isNullOrBlank()) {</span></div>
+<div class="code-line bug-line"><span class="line-number">229</span><span class="code-content">                    !recurrence.value.isNullOrBlank()</span></div>
+<div class="code-line context-line"><span class="line-number">230</span><span class="code-content">                } else {</span></div>
+<div class="code-line bug-line"><span class="line-number">231</span><span class="code-content">                    task.recurrence != recurrence.value</span></div>
+<div class="code-line context-line"><span class="line-number">232</span><span class="code-content">                } ||</span></div>
+<div class="code-line bug-line"><span class="line-number">233</span><span class="code-content">                task.repeatAfterCompletion() != repeatAfterCompletion.value ||</span></div>
+<div class="code-line bug-line"><span class="line-number">234</span><span class="code-content">                originalCalendar != selectedCalendar.value ||</span></div>
+<div class="code-line bug-line"><span class="line-number">235</span><span class="code-content">                if (task.calendarURI.isNullOrBlank()) {</span></div>
+<div class="code-line bug-line"><span class="line-number">236</span><span class="code-content">                    !eventUri.value.isNullOrBlank()</span></div>
+<div class="code-line context-line"><span class="line-number">237</span><span class="code-content">                } else {</span></div>
+<div class="code-line bug-line"><span class="line-number">238</span><span class="code-content">                    task.calendarURI != eventUri.value</span></div>
+<div class="code-line context-line"><span class="line-number">239</span><span class="code-content">                } ||</span></div>
+<div class="code-line bug-line"><span class="line-number">240</span><span class="code-content">                task.elapsedSeconds != elapsedSeconds.value ||</span></div>
+<div class="code-line bug-line"><span class="line-number">241</span><span class="code-content">                task.estimatedSeconds != estimatedSeconds.value ||</span></div>
+<div class="code-line bug-line"><span class="line-number">242</span><span class="code-content">                originalList != selectedList.value ||</span></div>
+<div class="code-line bug-line"><span class="line-number">243</span><span class="code-content">                originalLocation != selectedLocation.value ||</span></div>
+<div class="code-line bug-line"><span class="line-number">244</span><span class="code-content">                originalTags.toHashSet() != selectedTags.value.toHashSet() ||</span></div>
+<div class="code-line bug-line"><span class="line-number">245</span><span class="code-content">                (::originalAttachments.isInitialized &amp;&amp;</span></div>
+<div class="code-line bug-line"><span class="line-number">246</span><span class="code-content">                        originalAttachments.toHashSet() != selectedAttachments.value.toHashSet()) ||</span></div>
+<div class="code-line bug-line"><span class="line-number">247</span><span class="code-content">                newSubtasks.value.isNotEmpty() ||</span></div>
+<div class="code-line bug-line"><span class="line-number">248</span><span class="code-content">                getRingFlags() != when {</span></div>
+<div class="code-line bug-line"><span class="line-number">249</span><span class="code-content">                    task.isNotifyModeFive -&gt; NOTIFY_MODE_FIVE</span></div>
+<div class="code-line bug-line"><span class="line-number">250</span><span class="code-content">                    task.isNotifyModeNonstop -&gt; NOTIFY_MODE_NONSTOP</span></div>
+<div class="code-line bug-line"><span class="line-number">251</span><span class="code-content">                    else -&gt; 0</span></div>
+<div class="code-line context-line"><span class="line-number">252</span><span class="code-content">                } ||</span></div>
+<div class="code-line context-line"><span class="line-number">253</span><span class="code-content">                originalAlarms.toHashSet() != selectedAlarms.value.toHashSet()</span></div>
+<div class="code-line context-line"><span class="line-number">254</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">255</span><span class="code-content">    @MainThread</span></div>
+<div class="code-line context-line"><span class="line-number">256</span><span class="code-content">    suspend fun save(remove: Boolean = true): Boolean = withContext(NonCancellable) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">316</span><span class="code-content">            selectedAlarms.value = selectedAlarms.value.filterNot { a -&gt; a.type == TYPE_REL_END }</span></div>
+<div class="code-line context-line"><span class="line-number">317</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">318</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">319</span><span class="code-content">        if (</span></div>
+<div class="code-line context-line"><span class="line-number">320</span><span class="code-content">            selectedAlarms.value.toHashSet() != originalAlarms.toHashSet() ||</span></div>
+<div class="code-line bug-line"><span class="line-number">321</span><span class="code-content">            (isNew &amp;&amp; selectedAlarms.value.isNotEmpty())</span></div>
+<div class="code-line context-line"><span class="line-number">322</span><span class="code-content">        ) {</span></div>
+<div class="code-line context-line"><span class="line-number">323</span><span class="code-content">            alarmService.synchronizeAlarms(task.id, selectedAlarms.value.toMutableSet())</span></div>
+<div class="code-line context-line"><span class="line-number">324</span><span class="code-content">            task.putTransitory(FORCE_CALDAV_SYNC, true)</span></div>
+<div class="code-line context-line"><span class="line-number">325</span><span class="code-content">            task.modificationDate = currentTimeMillis()</span></div>
+<div class="code-line context-line"><span class="line-number">326</span><span class="code-content">        }</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-19">
+    File: org/tasks/ui/TaskListViewModel.kt
+    <a href="file:///D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\ui\TaskListViewModel.kt" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">144</span><span class="code-content">            .throttleLatest(333)</span></div>
+<div class="code-line context-line"><span class="line-number">145</span><span class="code-content">            .map {</span></div>
+<div class="code-line context-line"><span class="line-number">146</span><span class="code-content">                val filter = when {</span></div>
+<div class="code-line context-line"><span class="line-number">147</span><span class="code-content">                    it.searchQuery == null -&gt; it.filter</span></div>
+<div class="code-line context-line"><span class="line-number">148</span><span class="code-content">                    it.searchQuery.isBlank() -&gt; BuiltInFilterExposer.getMyTasksFilter(context.resources)</span></div>
+<div class="code-line bug-line"><span class="line-number">149</span><span class="code-content">                    else -&gt; context.createSearchQuery(it.searchQuery)</span></div>
+<div class="code-line context-line"><span class="line-number">150</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">151</span><span class="code-content">                taskDao.fetchTasks { getQuery(preferences, filter) }</span></div>
+<div class="code-line context-line"><span class="line-number">152</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">153</span><span class="code-content">            .onEach { tasks -&gt;</span></div>
+<div class="code-line context-line"><span class="line-number">154</span><span class="code-content">                _state.update {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">202</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">203</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">204</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">205</span><span class="code-content">    companion object {</span></div>
+<div class="code-line context-line"><span class="line-number">206</span><span class="code-content">        fun Context.createSearchQuery(query: String): Filter =</span></div>
+<div class="code-line bug-line"><span class="line-number">207</span><span class="code-content">            SearchFilter(getString(R.string.FLA_search_filter, query), query)</span></div>
+<div class="code-line context-line"><span class="line-number">208</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">209</span><span class="code-content">}</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

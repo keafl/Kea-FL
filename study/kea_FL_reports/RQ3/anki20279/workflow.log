@@ -1,0 +1,3441 @@
+2026-06-20 15:31:20 [runner] INFO: Building pair test cases...
+2026-06-20 15:31:20 [replayer] INFO: Parse 217 events
+2026-06-20 15:31:20 [replayer] INFO: Parse 53 Monkey actions
+2026-06-20 15:31:20 [reproducer] INFO: Extract 7 pairs test cases
+2026-06-20 15:31:20 [replayer] INFO: Property anki_droid.AnkiTest.test_create_subdeck not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:31:20 [replayer] INFO: Property anki_droid.AnkiTest.test_edit_deck_description not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:31:20 [replayer] INFO: Property anki_droid.AnkiTest.test_delete_deck not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:31:20 [replayer] INFO: Property anki_droid.AnkiTest.test_add_card not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:31:20 [replayer] INFO: Property anki_droid.AnkiTest.test_rename_deck not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:31:20 [replayer] INFO: Property anki_droid.AnkiTest.test_create_deck not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:31:20 [reproducer] INFO: Build 1 pairs test cases
+2026-06-20 15:31:20 [reproducer] INFO: Test case [1]: test_check_cardbrowser
+2026-06-20 15:31:20 [reproducer] INFO:     -happy_path: [preconditions]: 7, [property]: 8
+2026-06-20 15:31:20 [reproducer] INFO:     -bug_path: [preconditions]: 106, [property]: 9
+2026-06-20 15:31:20 [runner] INFO: Start running full coverage difference analysis...
+2026-06-20 15:31:20 [runner] INFO: Processing pair test case [1]: happy_test_check_cardbrowser <-> bug_test_check_cardbrowser
+2026-06-20 15:31:20 [runner] INFO: Running pair test case analysis: happy_test_check_cardbrowser <-> bug_test_check_cardbrowser
+2026-06-20 15:31:20 [runner] INFO: Running property-satisfying path...
+2026-06-20 15:31:20 [reproducer] INFO: Start reproducing test case: happy_test_check_cardbrowser
+2026-06-20 15:31:20 [reproducer] INFO: Start executing preconditions for test case: happy_test_check_cardbrowser
+2026-06-20 15:31:20 [reproducer] INFO: Preconditions executed for test case: happy_test_check_cardbrowser
+2026-06-20 15:31:20 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_check_cardbrowser
+2026-06-20 15:31:20 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:31:20 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:31:23 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_precondition/happy_test_check_cardbrowser.ec --classfiles D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\build\tmp\kotlin-classes\playDebug --sourcefiles D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_precondition/happy_test_check_cardbrowser.xml
+2026-06-20 15:31:23 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_precondition\happy_test_check_cardbrowser.ec.
+[INFO] Analyzing 2289 classes.
+
+2026-06-20 15:31:23 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_precondition/happy_test_check_cardbrowser.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_precondition/happy_test_check_cardbrowser.xml
+2026-06-20 15:31:23 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_precondition/happy_test_check_cardbrowser.xml
+2026-06-20 15:31:23 [reproducer] INFO: Start executing property for test case: happy_test_check_cardbrowser
+2026-06-20 15:31:23 [reproducer] INFO: Property executed for test case: happy_test_check_cardbrowser
+2026-06-20 15:31:23 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_check_cardbrowser
+2026-06-20 15:31:23 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:31:23 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:31:24 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_property/happy_test_check_cardbrowser.ec --classfiles D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\build\tmp\kotlin-classes\playDebug --sourcefiles D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_property/happy_test_check_cardbrowser.xml
+2026-06-20 15:31:24 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_property\happy_test_check_cardbrowser.ec.
+[INFO] Analyzing 2289 classes.
+
+2026-06-20 15:31:24 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_property/happy_test_check_cardbrowser.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_property/happy_test_check_cardbrowser.xml
+2026-06-20 15:31:24 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\happy_test_check_cardbrowser_property/happy_test_check_cardbrowser.xml
+2026-06-20 15:31:24 [runner] INFO: Running property-violating path path...
+2026-06-20 15:31:24 [reproducer] INFO: Start reproducing test case: bug_test_check_cardbrowser
+2026-06-20 15:31:24 [reproducer] INFO: Start executing preconditions for test case: bug_test_check_cardbrowser
+2026-06-20 15:31:24 [reproducer] INFO: Preconditions executed for test case: bug_test_check_cardbrowser
+2026-06-20 15:31:24 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_check_cardbrowser
+2026-06-20 15:31:24 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:31:24 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:31:25 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_precondition/bug_test_check_cardbrowser.ec --classfiles D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\build\tmp\kotlin-classes\playDebug --sourcefiles D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_precondition/bug_test_check_cardbrowser.xml
+2026-06-20 15:31:25 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_precondition\bug_test_check_cardbrowser.ec.
+[INFO] Analyzing 2289 classes.
+
+2026-06-20 15:31:25 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_precondition/bug_test_check_cardbrowser.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_precondition/bug_test_check_cardbrowser.xml
+2026-06-20 15:31:25 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_precondition/bug_test_check_cardbrowser.xml
+2026-06-20 15:31:25 [reproducer] INFO: Start executing property for test case: bug_test_check_cardbrowser
+2026-06-20 15:31:25 [reproducer] INFO: Property executed for test case: bug_test_check_cardbrowser
+2026-06-20 15:31:25 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_check_cardbrowser
+2026-06-20 15:31:25 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:31:25 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:31:26 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_property/bug_test_check_cardbrowser.ec --classfiles D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\build\tmp\kotlin-classes\playDebug --sourcefiles D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_property/bug_test_check_cardbrowser.xml
+2026-06-20 15:31:26 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_property\bug_test_check_cardbrowser.ec.
+[INFO] Analyzing 2289 classes.
+
+2026-06-20 15:31:26 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_property/bug_test_check_cardbrowser.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_property/bug_test_check_cardbrowser.xml
+2026-06-20 15:31:26 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\bug_test_check_cardbrowser_property/bug_test_check_cardbrowser.xml
+2026-06-20 15:31:26 [runner] INFO: Parsing coverage data...
+2026-06-20 15:31:26 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\bug_test_check_cardbrowser_pre_line_coverage.md
+2026-06-20 15:31:26 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\bug_test_check_cardbrowser_pre_branch_coverage.md
+2026-06-20 15:31:26 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\bug_test_check_cardbrowser_prop_line_coverage.md
+2026-06-20 15:31:26 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\bug_test_check_cardbrowser_prop_branch_coverage.md
+2026-06-20 15:31:26 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\happy_test_check_cardbrowser_pre_line_coverage.md
+2026-06-20 15:31:26 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\happy_test_check_cardbrowser_pre_branch_coverage.md
+2026-06-20 15:31:26 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\happy_test_check_cardbrowser_prop_line_coverage.md
+2026-06-20 15:31:27 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\happy_test_check_cardbrowser_prop_branch_coverage.md
+2026-06-20 15:31:27 [runner] INFO: Calculating incremental coverage...
+2026-06-20 15:31:27 [runner] INFO: Performing incremental coverage analysis...
+2026-06-20 15:31:27 [runner] INFO: Generating pair test case report...
+2026-06-20 15:31:27 [runner] INFO: Saving intermediate data...
+2026-06-20 15:31:27 [report_generator] INFO: generate bug line coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\bug_test_check_cardbrowser_line_incremental_data.md
+2026-06-20 15:31:27 [report_generator] INFO: generate bug branch coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\bug_test_check_cardbrowser_branch_incremental_data.md
+2026-06-20 15:31:27 [report_generator] INFO: generate correct line coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\happy_test_check_cardbrowser_line_incremental_data.md
+2026-06-20 15:31:27 [report_generator] INFO: generate correct branch coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\happy_test_check_cardbrowser_branch_incremental_data.md
+2026-06-20 15:31:27 [report_generator] INFO: generate line diff data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\line_diff_data.md
+2026-06-20 15:31:27 [report_generator] INFO: generate branch diff data: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\data\branch_diff_data.md
+2026-06-20 15:31:27 [runner] INFO: Generating diff report...
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\AnkiActivity.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\AnkiDroidApp.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\AppLifecycleObserver.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\CardBrowser.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\CardTemplateNotetype.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\CollectionHelper.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\CoroutineHelpers.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\CrashReportService.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\CustomActionModeCallback.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\DayRolloverHandler.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\DeckPicker.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\FieldEditLine.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\FieldEditText.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\NavigationDrawerActivity.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\NoteEditorActivity.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\NoteEditorFragment.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\NoteFieldsCheckResult.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\SingleFragmentActivity.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\StudyOptionsActivity.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\StudyOptionsFragment.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\Sync.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\UIUtils.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\backend\HtmlUtils.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\browser\BrowserMultiColumnAdapter.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\browser\CardBrowserFragment.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\browser\CardBrowserViewModel.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\browser\CardOrNoteId.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\contextmenu\DeckPickerMenuContentProvider.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\deckpicker\DeckPickerViewModel.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\deckpicker\DisplayDeckNode.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\dialogs\BackupPromptDialog.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\dialogs\CreateDeckDialog.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\dialogs\DeckPickerContextMenu.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\dialogs\DeckSelectionDialog.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\dialogs\EditDeckDescriptionDialog.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\dialogs\EditDeckDescriptionDialogViewModel.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\dialogs\customstudy\CustomStudyDialog.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\dialogs\customstudy\CustomStudyViewModel.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\logging\FragmentLifecycleLogger.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\noteeditor\CustomToolbarButton.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\noteeditor\FieldState.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\noteeditor\NoteEditorLauncher.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\noteeditor\Toolbar.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\observability\ChangeManager.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\observability\OpChangesNotifier.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\pages\AnkiServer.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\pages\DeckOptions.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\pages\PageChromeClient.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\pages\PageFragment.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\pages\PageWebViewClient.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\pages\PostRequestHandler.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\servicelayer\LanguageHintService.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\servicelayer\NoteService.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\servicelayer\ScopedStorageService.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\snackbar\SensibleSwipeDismissBehavior.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\snackbar\Snackbars.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\snackbar\SwipeDismissBehaviorFix.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\ui\NoteTypeSpinnerUtils.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\ui\RecyclerFastScroller.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\ui\internationalization\SentenceCase.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\ui\windows\managespace\FileUtils.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\utils\Dialog.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\utils\OnlyOnce.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\utils\ShortcutUtils.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\utils\ext\BundleUtils.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\utils\ext\Deck.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\utils\ext\Fragment.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\utils\ext\FragmentActivity.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\utils\ext\Int.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\widgets\DeckAdapter.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\workarounds\SafeWebViewClient.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\anki\workarounds\SafeWebViewLayout.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\compat\CompatHelper.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\compat\CompatV26.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\compat\CompatV33.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\themes\Themes.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\ui\FixedEditText.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\ui\FixedTextView.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\ui\RtlCompliantActionProvider.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\utils\AlertDialogFacade.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\utils\AndroidUiUtils.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\utils\AssetHelper.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\utils\Colour.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\utils\FragmentFactoryUtils.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\utils\HashUtil.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\utils\NoteFieldDecorator.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\utils\TimeUtil.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\utils\ViewGroupUtils.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\utils\ViewUtils.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\widget\Id.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\widget\WidgetStatus.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\widget\cardanalysis\CardAnalysisWidget.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\Anki-Android-98336f4696b8bece226398497de8189795ba4847\AnkiDroid\src\main\java\com\ichi2\widget\deckpicker\DeckPickerWidget.kt encoding: utf-8
+2026-06-20 15:31:27 [report_generator] INFO: Line Coverage Diff Report Generated: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\test_check_cardbrowser_line_diff_report.html
+2026-06-20 15:31:27 [report_generator] INFO: Branch Coverage Diff Report Generated: D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\test_check_cardbrowser_branch_diff_report.html
+2026-06-20 15:31:27 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_check_cardbrowser
+
+## Code Coverage Summary
+File: com/ichi2/anki/AnkiActivity.kt
+  Only in first dataset lines: [105, 203, 204, 213, 216, 218, 220, 251]
+    Line 105: hit count 2
+    Line 203: hit count 8
+    Line 204: hit count 1
+    Line 213: hit count 9
+    Line 216: hit count 4
+    Line 218: hit count 1
+    Line 220: hit count 3
+    Line 251: hit count 1
+----------------------------------------
+File: com/ichi2/anki/AnkiDroidApp.kt
+  Only in first dataset lines: [361, 362, 363, 364, 368]
+    Line 361: hit count 11
+    Line 362: hit count 3
+    Line 363: hit count 4
+    Line 364: hit count 5
+    Line 368: hit count 1
+----------------------------------------
+File: com/ichi2/anki/AppLifecycleObserver.kt
+  Only in second dataset lines: [30, 32, 33, 34, 39]
+    Line 30: hit count 2
+    Line 32: hit count 8
+    Line 33: hit count 1
+    Line 34: hit count 5
+    Line 39: hit count 1
+----------------------------------------
+File: com/ichi2/anki/CardBrowser.kt
+  Only in first dataset lines: [549, 550, 1408, 1409]
+    Line 549: hit count 2
+    Line 550: hit count 8
+    Line 1408: hit count 8
+    Line 1409: hit count 1
+----------------------------------------
+File: com/ichi2/anki/CardTemplateNotetype.kt
+  Only in first dataset lines: [408, 409, 410, 411, 420]
+    Line 408: hit count 2
+    Line 409: hit count 21
+    Line 410: hit count 3
+    Line 411: hit count 11
+    Line 420: hit count 2
+----------------------------------------
+File: com/ichi2/anki/CollectionHelper.kt
+  Only in first dataset lines: [262, 275]
+    Line 262: hit count 6
+    Line 275: hit count 11
+----------------------------------------
+File: com/ichi2/anki/CoroutineHelpers.kt
+  Only in first dataset lines: [145, 183, 188, 189, 190, 271, 273, 275, 277, 278, 279, 280, 281, 282, 285, 289, 291, 292, 300, 301, 302, 303, 309, 340, 341, 342, 343, 345, 346, 348, 349, 350, 359, 361, 362, 365, 366, 367, 369, 376, 378, 379, 380, 382, 383, 408, 409, 411, 445, 449, 510, 515, 516, 517, 518, 519, 521, 523, 524, 525, 526, 533, 534, 535, 537, 538, 546, 547, 549, 551, 552, 684]
+    Line 145: hit count 9
+    Line 183: hit count 6
+    Line 188: hit count 2
+    Line 189: hit count 3
+    Line 190: hit count 2
+    Line 271: hit count 4
+    Line 273: hit count 5
+    Line 275: hit count 1
+    Line 277: hit count 4
+    Line 278: hit count 5
+    Line 279: hit count 8
+    Line 280: hit count 8
+    Line 281: hit count 9
+    Line 282: hit count 6
+    Line 285: hit count 6
+    Line 289: hit count 7
+    Line 291: hit count 5
+    Line 292: hit count 9
+    Line 300: hit count 1
+    Line 301: hit count 3
+    Line 302: hit count 2
+    Line 303: hit count 1
+    Line 309: hit count 1
+    Line 340: hit count 12
+    Line 341: hit count 1
+    Line 342: hit count 17
+    Line 343: hit count 12
+    Line 345: hit count 1
+    Line 346: hit count 15
+    Line 348: hit count 6
+    Line 349: hit count 1
+    Line 350: hit count 1
+    Line 359: hit count 14
+    Line 361: hit count 2
+    Line 362: hit count 2
+    Line 365: hit count 3
+    Line 366: hit count 18
+    Line 367: hit count 2
+    Line 369: hit count 2
+    Line 376: hit count 1
+    Line 378: hit count 21
+    Line 379: hit count 2
+    Line 380: hit count 5
+    Line 382: hit count 8
+    Line 383: hit count 1
+    Line 408: hit count 9
+    Line 409: hit count 7
+    Line 411: hit count 11
+    Line 445: hit count 4
+    Line 449: hit count 1
+    Line 510: hit count 3
+    Line 515: hit count 12
+    Line 516: hit count 1
+    Line 517: hit count 3
+    Line 518: hit count 28
+    Line 519: hit count 4
+    Line 521: hit count 4
+    Line 523: hit count 29
+    Line 524: hit count 6
+    Line 525: hit count 2
+    Line 526: hit count 19
+    Line 533: hit count 14
+    Line 534: hit count 10
+    Line 535: hit count 12
+    Line 537: hit count 8
+    Line 538: hit count 1
+    Line 546: hit count 1
+    Line 547: hit count 6
+    Line 549: hit count 1
+    Line 551: hit count 7
+    Line 552: hit count 1
+    Line 684: hit count 3
+----------------------------------------
+File: com/ichi2/anki/CrashReportService.kt
+  Only in first dataset lines: [407, 409]
+    Line 407: hit count 8
+    Line 409: hit count 2
+----------------------------------------
+File: com/ichi2/anki/CustomActionModeCallback.kt
+  Only in first dataset lines: [30, 31, 32, 33, 34, 36]
+    Line 30: hit count 3
+    Line 31: hit count 3
+    Line 32: hit count 3
+    Line 33: hit count 3
+    Line 34: hit count 3
+    Line 36: hit count 3
+----------------------------------------
+File: com/ichi2/anki/DayRolloverHandler.kt
+  Only in first dataset lines: [76, 78, 85, 86, 87, 89, 90, 91, 101, 103, 105, 108, 109]
+    Line 76: hit count 10
+    Line 78: hit count 16
+    Line 85: hit count 7
+    Line 86: hit count 3
+    Line 87: hit count 1
+    Line 89: hit count 2
+    Line 90: hit count 11
+    Line 91: hit count 2
+    Line 101: hit count 6
+    Line 103: hit count 15
+    Line 105: hit count 2
+    Line 108: hit count 2
+    Line 109: hit count 2
+----------------------------------------
+File: com/ichi2/anki/DeckPicker.kt
+  Only in first dataset lines: [340, 341, 423, 426, 430, 431, 449, 450, 451, 452, 458, 459, 462, 463, 464, 465, 466, 467, 468, 469, 470, 472, 473, 474, 475, 476, 477, 478, 479, 482, 483, 563, 619, 620, 622, 624, 663, 664, 665, 666, 680, 681, 740, 883, 885, 891, 892, 893, 909, 910, 911, 933, 934, 935, 943, 944, 945, 948, 949, 957, 1429, 1433, 2114, 2117, 2118, 2119, 2120, 2121, 2124, 2129, 2132, 2134, 2142, 2162, 2163, 2165, 2166, 2169, 2170, 2171, 2172, 2224, 2225, 2226, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2241, 2242, 2263, 2264, 2265, 2266, 2267, 2302, 2303, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2418, 2419, 2421, 2422, 2423, 2424, 2426, 2429]
+    Line 340: hit count 4
+    Line 341: hit count 2
+    Line 423: hit count 4
+    Line 426: hit count 4
+    Line 430: hit count 5
+    Line 431: hit count 1
+    Line 449: hit count 12
+    Line 450: hit count 16
+    Line 451: hit count 12
+    Line 452: hit count 5
+    Line 458: hit count 2
+    Line 459: hit count 1
+    Line 462: hit count 16
+    Line 463: hit count 15
+    Line 464: hit count 10
+    Line 465: hit count 4
+    Line 466: hit count 3
+    Line 467: hit count 7
+    Line 468: hit count 5
+    Line 469: hit count 4
+    Line 470: hit count 1
+    Line 472: hit count 2
+    Line 473: hit count 3
+    Line 474: hit count 4
+    Line 475: hit count 3
+    Line 476: hit count 2
+    Line 477: hit count 1
+    Line 478: hit count 3
+    Line 479: hit count 3
+    Line 482: hit count 2
+    Line 483: hit count 1
+    Line 563: hit count 6
+    Line 619: hit count 2
+    Line 620: hit count 11
+    Line 622: hit count 4
+    Line 624: hit count 2
+    Line 663: hit count 10
+    Line 664: hit count 6
+    Line 665: hit count 2
+    Line 666: hit count 1
+    Line 680: hit count 6
+    Line 681: hit count 1
+    Line 740: hit count 6
+    Line 883: hit count 6
+    Line 885: hit count 5
+    Line 891: hit count 5
+    Line 892: hit count 3
+    Line 893: hit count 5
+    Line 909: hit count 5
+    Line 910: hit count 3
+    Line 911: hit count 4
+    Line 933: hit count 5
+    Line 934: hit count 3
+    Line 935: hit count 4
+    Line 943: hit count 5
+    Line 944: hit count 7
+    Line 945: hit count 4
+    Line 948: hit count 12
+    Line 949: hit count 8
+    Line 957: hit count 1
+    Line 1429: hit count 3
+    Line 1433: hit count 1
+    Line 2114: hit count 3
+    Line 2117: hit count 5
+    Line 2118: hit count 4
+    Line 2119: hit count 6
+    Line 2120: hit count 4
+    Line 2121: hit count 1
+    Line 2124: hit count 6
+    Line 2129: hit count 3
+    Line 2132: hit count 1
+    Line 2134: hit count 2
+    Line 2142: hit count 5
+    Line 2162: hit count 20
+    Line 2163: hit count 6
+    Line 2165: hit count 2
+    Line 2166: hit count 5
+    Line 2169: hit count 20
+    Line 2170: hit count 9
+    Line 2171: hit count 3
+    Line 2172: hit count 2
+    Line 2224: hit count 8
+    Line 2225: hit count 6
+    Line 2226: hit count 1
+    Line 2229: hit count 17
+    Line 2230: hit count 18
+    Line 2231: hit count 1
+    Line 2232: hit count 9
+    Line 2233: hit count 3
+    Line 2234: hit count 5
+    Line 2235: hit count 3
+    Line 2236: hit count 4
+    Line 2237: hit count 2
+    Line 2238: hit count 3
+    Line 2239: hit count 2
+    Line 2240: hit count 3
+    Line 2241: hit count 2
+    Line 2242: hit count 1
+    Line 2263: hit count 14
+    Line 2264: hit count 26
+    Line 2265: hit count 12
+    Line 2266: hit count 3
+    Line 2267: hit count 4
+    Line 2302: hit count 10
+    Line 2303: hit count 4
+    Line 2305: hit count 3
+    Line 2306: hit count 4
+    Line 2307: hit count 2
+    Line 2308: hit count 3
+    Line 2309: hit count 2
+    Line 2310: hit count 2
+    Line 2311: hit count 3
+    Line 2312: hit count 1
+    Line 2418: hit count 16
+    Line 2419: hit count 8
+    Line 2421: hit count 4
+    Line 2422: hit count 2
+    Line 2423: hit count 10
+    Line 2424: hit count 3
+    Line 2426: hit count 2
+    Line 2429: hit count 1
+  Only in second dataset lines: [403, 404, 405, 406, 407, 408, 409, 1564, 1568, 1684, 1689]
+    Line 403: hit count 5
+    Line 404: hit count 12
+    Line 405: hit count 9
+    Line 406: hit count 8
+    Line 407: hit count 2
+    Line 408: hit count 2
+    Line 409: hit count 1
+    Line 1564: hit count 10
+    Line 1568: hit count 2
+    Line 1684: hit count 1
+    Line 1689: hit count 4
+----------------------------------------
+File: com/ichi2/anki/FieldEditLine.kt
+  Only in first dataset lines: [43, 45, 47, 49, 55, 56, 58, 73, 74, 75, 76, 77, 95, 97, 99, 103, 106, 107, 108, 111, 114, 120, 121, 124, 125, 128, 130, 131, 132, 133, 139, 140, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 192, 193, 194, 195, 196, 197, 199, 232, 246, 247]
+    Line 43: hit count 15
+    Line 45: hit count 3
+    Line 47: hit count 7
+    Line 49: hit count 4
+    Line 55: hit count 1
+    Line 56: hit count 12
+    Line 58: hit count 3
+    Line 73: hit count 2
+    Line 74: hit count 6
+    Line 75: hit count 4
+    Line 76: hit count 15
+    Line 77: hit count 1
+    Line 95: hit count 7
+    Line 97: hit count 8
+    Line 99: hit count 1
+    Line 103: hit count 9
+    Line 106: hit count 5
+    Line 107: hit count 5
+    Line 108: hit count 1
+    Line 111: hit count 2
+    Line 114: hit count 1
+    Line 120: hit count 6
+    Line 121: hit count 1
+    Line 124: hit count 5
+    Line 125: hit count 1
+    Line 128: hit count 3
+    Line 130: hit count 3
+    Line 131: hit count 6
+    Line 132: hit count 6
+    Line 133: hit count 1
+    Line 139: hit count 3
+    Line 140: hit count 1
+    Line 149: hit count 2
+    Line 150: hit count 5
+    Line 151: hit count 5
+    Line 152: hit count 6
+    Line 153: hit count 6
+    Line 154: hit count 6
+    Line 155: hit count 6
+    Line 156: hit count 10
+    Line 157: hit count 6
+    Line 159: hit count 4
+    Line 160: hit count 3
+    Line 192: hit count 7
+    Line 193: hit count 4
+    Line 194: hit count 4
+    Line 195: hit count 4
+    Line 196: hit count 4
+    Line 197: hit count 4
+    Line 199: hit count 4
+    Line 232: hit count 9
+    Line 246: hit count 6
+    Line 247: hit count 13
+----------------------------------------
+File: com/ichi2/anki/FieldEditText.kt
+  Only in first dataset lines: [51, 60, 64, 65, 69, 71, 81, 82, 86, 87, 90, 92, 93, 94, 95, 96, 98, 99, 102, 103, 109, 113, 116, 117, 135, 136, 142, 143, 145, 146, 150, 151, 154, 155, 210, 211, 212, 213, 217, 223, 224, 225, 226, 244]
+    Line 51: hit count 7
+    Line 60: hit count 7
+    Line 64: hit count 1
+    Line 65: hit count 3
+    Line 69: hit count 1
+    Line 71: hit count 10
+    Line 81: hit count 1
+    Line 82: hit count 11
+    Line 86: hit count 3
+    Line 87: hit count 4
+    Line 90: hit count 2
+    Line 92: hit count 1
+    Line 93: hit count 1
+    Line 94: hit count 2
+    Line 95: hit count 1
+    Line 96: hit count 4
+    Line 98: hit count 3
+    Line 99: hit count 1
+    Line 102: hit count 3
+    Line 103: hit count 1
+    Line 109: hit count 3
+    Line 113: hit count 1
+    Line 116: hit count 3
+    Line 117: hit count 1
+    Line 135: hit count 4
+    Line 136: hit count 1
+    Line 142: hit count 1
+    Line 143: hit count 2
+    Line 145: hit count 2
+    Line 146: hit count 15
+    Line 150: hit count 4
+    Line 151: hit count 1
+    Line 154: hit count 2
+    Line 155: hit count 8
+    Line 210: hit count 3
+    Line 211: hit count 2
+    Line 212: hit count 2
+    Line 213: hit count 4
+    Line 217: hit count 1
+    Line 223: hit count 1
+    Line 224: hit count 3
+    Line 225: hit count 3
+    Line 226: hit count 3
+    Line 244: hit count 8
+----------------------------------------
+File: com/ichi2/anki/NavigationDrawerActivity.kt
+  Only in second dataset lines: [435, 459, 460]
+    Line 435: hit count 5
+    Line 459: hit count 4
+    Line 460: hit count 4
+----------------------------------------
+File: com/ichi2/anki/NoteEditorActivity.kt
+  Only in first dataset lines: [57, 58, 63, 65, 68, 88, 93, 94, 96, 97, 101, 102, 104, 105, 107, 109, 111, 112, 113, 114, 120, 121, 122, 123, 124, 130, 134, 135, 136, 137, 139, 159, 160, 330, 331, 332, 333, 342, 344, 347, 353, 359, 370, 376, 391, 429, 432, 433, 449, 451, 452, 453, 455]
+    Line 57: hit count 1
+    Line 58: hit count 5
+    Line 63: hit count 8
+    Line 65: hit count 8
+    Line 68: hit count 8
+    Line 88: hit count 7
+    Line 93: hit count 4
+    Line 94: hit count 1
+    Line 96: hit count 2
+    Line 97: hit count 3
+    Line 101: hit count 8
+    Line 102: hit count 7
+    Line 104: hit count 6
+    Line 105: hit count 14
+    Line 107: hit count 8
+    Line 109: hit count 5
+    Line 111: hit count 2
+    Line 112: hit count 6
+    Line 113: hit count 9
+    Line 114: hit count 4
+    Line 120: hit count 5
+    Line 121: hit count 10
+    Line 122: hit count 5
+    Line 123: hit count 1
+    Line 124: hit count 1
+    Line 130: hit count 3
+    Line 134: hit count 5
+    Line 135: hit count 5
+    Line 136: hit count 3
+    Line 137: hit count 1
+    Line 139: hit count 3
+    Line 159: hit count 2
+    Line 160: hit count 1
+    Line 330: hit count 2
+    Line 331: hit count 5
+    Line 332: hit count 2
+    Line 333: hit count 1
+    Line 342: hit count 1
+    Line 344: hit count 3
+    Line 347: hit count 1
+    Line 353: hit count 4
+    Line 359: hit count 4
+    Line 370: hit count 4
+    Line 376: hit count 4
+    Line 391: hit count 7
+    Line 429: hit count 4
+    Line 432: hit count 3
+    Line 433: hit count 1
+    Line 449: hit count 1
+    Line 451: hit count 12
+    Line 452: hit count 5
+    Line 453: hit count 1
+    Line 455: hit count 6
+----------------------------------------
+File: com/ichi2/anki/NoteEditorFragment.kt
+  Only in first dataset lines: [215, 219, 230, 234, 257, 261, 271, 279, 286, 290, 294, 298, 305, 308, 315, 318, 319, 320, 328, 329, 330, 345, 346, 347, 382, 383, 393, 394, 395, 411, 440, 441, 466, 467, 495, 496, 507, 508, 509, 510, 512, 520, 521, 522, 523, 524, 536, 537, 544, 550, 552, 553, 555, 556, 557, 563, 564, 565, 566, 567, 570, 571, 573, 574, 582, 583, 584, 585, 588, 589, 592, 593, 594, 595, 597, 718, 719, 720, 721, 722, 723, 724, 728, 729, 730, 731, 732, 733, 734, 736, 737, 742, 743, 744, 767, 790, 791, 793, 795, 800, 809, 836, 837, 840, 842, 846, 847, 850, 853, 854, 868, 869, 870, 873, 874, 875, 876, 877, 878, 879, 881, 882, 884, 886, 901, 914, 916, 917, 919, 924, 928, 934, 935, 936, 937, 942, 947, 949, 952, 955, 967, 968, 969, 970, 973, 992, 1230, 1236, 1243, 1245, 1249, 1257, 1262, 1267, 1270, 1278, 1279, 1280, 1281, 1282, 1284, 1285, 1287, 1289, 1292, 1293, 1296, 1303, 1304, 1306, 1308, 1310, 1311, 1312, 1313, 1314, 1317, 1318, 1319, 1325, 1326, 1329, 1332, 1334, 1335, 1338, 1339, 1340, 1344, 1347, 1348, 1349, 1354, 1355, 1356, 1432, 1433, 1472, 1473, 1474, 1480, 1481, 1482, 1483, 1484, 1490, 1491, 1492, 1493, 1496, 1497, 1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508, 1509, 1510, 1511, 1519, 1520, 1521, 1522, 1533, 1534, 1535, 1536, 1537, 1540, 1541, 1542, 1549, 1550, 1551, 1552, 1554, 1723, 1726, 1728, 1740, 1741, 1742, 1743, 1747, 1748, 1750, 1751, 1753, 1754, 1760, 1761, 1762, 1767, 1770, 1775, 1778, 1779, 1780, 1781, 1782, 1784, 1787, 1789, 1790, 1864, 1867, 1872, 1875, 1876, 1877, 1879, 1886, 1887, 1888, 1889, 1891, 1892, 1904, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1922, 1923, 1924, 1925, 1927, 1928, 1929, 1930, 1931, 1932, 1934, 1942, 1943, 1946, 1947, 1948, 1949, 1950, 1951, 1954, 1955, 1956, 1958, 1963, 1968, 1970, 1975, 1977, 1978, 1983, 1986, 1987, 1988, 1989, 1991, 1992, 1994, 2000, 2001, 2002, 2003, 2004, 2013, 2220, 2223, 2225, 2226, 2230, 2236, 2262, 2270, 2273, 2274, 2280, 2281, 2339, 2340, 2341, 2343, 2344, 2346, 2348, 2349, 2350, 2354, 2355, 2356, 2363, 2367, 2376, 2377, 2380, 2383, 2384, 2385, 2390, 2413, 2414, 2416, 2418, 2420, 2422, 2425, 2428, 2429, 2443, 2444, 2449, 2474, 2475, 2476, 2477, 2478, 2479, 2483, 2484, 2491, 2492, 2493, 2494, 2495, 2500, 2501, 2504, 2505, 2506, 2507, 2508, 2510, 2515, 2516, 2517, 2518, 2520, 2521, 2522, 2525, 2544, 2545, 2546, 2549, 2550, 2551, 2553, 2554, 2555, 2556, 2560, 2562, 2563, 2575, 2576, 2605, 2606, 2607, 2608, 2609, 2610, 2614, 2615, 2616, 2617, 2618, 2734, 2736, 2737, 2755, 2758, 2759, 2760, 2761, 2762, 2763, 2764, 2766, 2771, 2772, 2773, 2775, 2776, 2777, 2779, 2787, 2788, 2793, 2796, 2797, 2798, 2799, 2801, 2804, 2805, 2806, 2807, 2808, 2810, 2813, 2817, 2818, 2819, 2820, 2821, 2842, 2844, 2872, 2873, 2875, 2876, 2902, 2912, 2913, 2915, 2916, 3017, 3044, 3045, 3048, 3050, 3051, 3053, 3054, 3056, 3065, 3074, 3124, 3139, 3140, 3141, 3144, 3145, 3146, 3157, 3158, 3159]
+    Line 215: hit count 1
+    Line 219: hit count 3
+    Line 230: hit count 9
+    Line 234: hit count 3
+    Line 257: hit count 3
+    Line 261: hit count 5
+    Line 271: hit count 3
+    Line 279: hit count 5
+    Line 286: hit count 3
+    Line 290: hit count 5
+    Line 294: hit count 5
+    Line 298: hit count 5
+    Line 305: hit count 5
+    Line 308: hit count 11
+    Line 315: hit count 5
+    Line 318: hit count 9
+    Line 319: hit count 4
+    Line 320: hit count 5
+    Line 328: hit count 9
+    Line 329: hit count 4
+    Line 330: hit count 5
+    Line 345: hit count 9
+    Line 346: hit count 4
+    Line 347: hit count 5
+    Line 382: hit count 9
+    Line 383: hit count 4
+    Line 393: hit count 9
+    Line 394: hit count 4
+    Line 395: hit count 5
+    Line 411: hit count 4
+    Line 440: hit count 6
+    Line 441: hit count 3
+    Line 466: hit count 3
+    Line 467: hit count 1
+    Line 495: hit count 3
+    Line 496: hit count 1
+    Line 507: hit count 7
+    Line 508: hit count 9
+    Line 509: hit count 12
+    Line 510: hit count 5
+    Line 512: hit count 2
+    Line 520: hit count 15
+    Line 521: hit count 2
+    Line 522: hit count 4
+    Line 523: hit count 4
+    Line 524: hit count 2
+    Line 536: hit count 10
+    Line 537: hit count 4
+    Line 544: hit count 1
+    Line 550: hit count 12
+    Line 552: hit count 12
+    Line 553: hit count 3
+    Line 555: hit count 9
+    Line 556: hit count 9
+    Line 557: hit count 4
+    Line 563: hit count 2
+    Line 564: hit count 1
+    Line 565: hit count 2
+    Line 566: hit count 1
+    Line 567: hit count 1
+    Line 570: hit count 7
+    Line 571: hit count 1
+    Line 573: hit count 1
+    Line 574: hit count 5
+    Line 582: hit count 12
+    Line 583: hit count 5
+    Line 584: hit count 2
+    Line 585: hit count 2
+    Line 588: hit count 4
+    Line 589: hit count 7
+    Line 592: hit count 7
+    Line 593: hit count 2
+    Line 594: hit count 2
+    Line 595: hit count 1
+    Line 597: hit count 1
+    Line 718: hit count 4
+    Line 719: hit count 12
+    Line 720: hit count 4
+    Line 721: hit count 7
+    Line 722: hit count 7
+    Line 723: hit count 7
+    Line 724: hit count 7
+    Line 728: hit count 7
+    Line 729: hit count 7
+    Line 730: hit count 7
+    Line 731: hit count 7
+    Line 732: hit count 7
+    Line 733: hit count 7
+    Line 734: hit count 7
+    Line 736: hit count 1
+    Line 737: hit count 11
+    Line 742: hit count 3
+    Line 743: hit count 3
+    Line 744: hit count 7
+    Line 767: hit count 4
+    Line 790: hit count 3
+    Line 791: hit count 7
+    Line 793: hit count 11
+    Line 795: hit count 8
+    Line 800: hit count 8
+    Line 809: hit count 8
+    Line 836: hit count 7
+    Line 837: hit count 13
+    Line 840: hit count 6
+    Line 842: hit count 3
+    Line 846: hit count 8
+    Line 847: hit count 3
+    Line 850: hit count 7
+    Line 853: hit count 6
+    Line 854: hit count 5
+    Line 868: hit count 15
+    Line 869: hit count 11
+    Line 870: hit count 4
+    Line 873: hit count 1
+    Line 874: hit count 5
+    Line 875: hit count 4
+    Line 876: hit count 8
+    Line 877: hit count 3
+    Line 878: hit count 10
+    Line 879: hit count 5
+    Line 881: hit count 2
+    Line 882: hit count 5
+    Line 884: hit count 1
+    Line 886: hit count 3
+    Line 901: hit count 3
+    Line 914: hit count 5
+    Line 916: hit count 5
+    Line 917: hit count 5
+    Line 919: hit count 4
+    Line 924: hit count 7
+    Line 928: hit count 3
+    Line 934: hit count 3
+    Line 935: hit count 2
+    Line 936: hit count 1
+    Line 937: hit count 13
+    Line 942: hit count 3
+    Line 947: hit count 9
+    Line 949: hit count 8
+    Line 952: hit count 9
+    Line 955: hit count 4
+    Line 967: hit count 6
+    Line 968: hit count 6
+    Line 969: hit count 1
+    Line 970: hit count 1
+    Line 973: hit count 13
+    Line 992: hit count 13
+    Line 1230: hit count 3
+    Line 1236: hit count 3
+    Line 1243: hit count 3
+    Line 1245: hit count 16
+    Line 1249: hit count 3
+    Line 1257: hit count 3
+    Line 1262: hit count 3
+    Line 1267: hit count 3
+    Line 1270: hit count 6
+    Line 1278: hit count 2
+    Line 1279: hit count 2
+    Line 1280: hit count 3
+    Line 1281: hit count 3
+    Line 1282: hit count 6
+    Line 1284: hit count 11
+    Line 1285: hit count 10
+    Line 1287: hit count 7
+    Line 1289: hit count 4
+    Line 1292: hit count 6
+    Line 1293: hit count 11
+    Line 1296: hit count 2
+    Line 1303: hit count 3
+    Line 1304: hit count 3
+    Line 1306: hit count 1
+    Line 1308: hit count 1
+    Line 1310: hit count 1
+    Line 1311: hit count 24
+    Line 1312: hit count 12
+    Line 1313: hit count 9
+    Line 1314: hit count 1
+    Line 1317: hit count 4
+    Line 1318: hit count 6
+    Line 1319: hit count 2
+    Line 1325: hit count 6
+    Line 1326: hit count 3
+    Line 1329: hit count 2
+    Line 1332: hit count 3
+    Line 1334: hit count 19
+    Line 1335: hit count 5
+    Line 1338: hit count 13
+    Line 1339: hit count 4
+    Line 1340: hit count 9
+    Line 1344: hit count 3
+    Line 1347: hit count 12
+    Line 1348: hit count 11
+    Line 1349: hit count 3
+    Line 1354: hit count 4
+    Line 1355: hit count 12
+    Line 1356: hit count 3
+    Line 1432: hit count 6
+    Line 1433: hit count 2
+    Line 1472: hit count 4
+    Line 1473: hit count 3
+    Line 1474: hit count 1
+    Line 1480: hit count 7
+    Line 1481: hit count 3
+    Line 1482: hit count 6
+    Line 1483: hit count 7
+    Line 1484: hit count 8
+    Line 1490: hit count 3
+    Line 1491: hit count 14
+    Line 1492: hit count 9
+    Line 1493: hit count 11
+    Line 1496: hit count 9
+    Line 1497: hit count 6
+    Line 1501: hit count 5
+    Line 1502: hit count 5
+    Line 1503: hit count 5
+    Line 1504: hit count 6
+    Line 1505: hit count 9
+    Line 1506: hit count 3
+    Line 1507: hit count 6
+    Line 1508: hit count 3
+    Line 1509: hit count 5
+    Line 1510: hit count 1
+    Line 1511: hit count 1
+    Line 1519: hit count 1
+    Line 1520: hit count 6
+    Line 1521: hit count 1
+    Line 1522: hit count 1
+    Line 1533: hit count 1
+    Line 1534: hit count 13
+    Line 1535: hit count 6
+    Line 1536: hit count 1
+    Line 1537: hit count 1
+    Line 1540: hit count 5
+    Line 1541: hit count 3
+    Line 1542: hit count 3
+    Line 1549: hit count 3
+    Line 1550: hit count 5
+    Line 1551: hit count 3
+    Line 1552: hit count 25
+    Line 1554: hit count 2
+    Line 1723: hit count 3
+    Line 1726: hit count 5
+    Line 1728: hit count 1
+    Line 1740: hit count 11
+    Line 1741: hit count 1
+    Line 1742: hit count 3
+    Line 1743: hit count 2
+    Line 1747: hit count 3
+    Line 1748: hit count 5
+    Line 1750: hit count 3
+    Line 1751: hit count 5
+    Line 1753: hit count 4
+    Line 1754: hit count 1
+    Line 1760: hit count 8
+    Line 1761: hit count 2
+    Line 1762: hit count 5
+    Line 1767: hit count 3
+    Line 1770: hit count 3
+    Line 1775: hit count 5
+    Line 1778: hit count 1
+    Line 1779: hit count 2
+    Line 1780: hit count 2
+    Line 1781: hit count 1
+    Line 1782: hit count 1
+    Line 1784: hit count 2
+    Line 1787: hit count 2
+    Line 1789: hit count 1
+    Line 1790: hit count 1
+    Line 1864: hit count 10
+    Line 1867: hit count 7
+    Line 1872: hit count 3
+    Line 1875: hit count 7
+    Line 1876: hit count 14
+    Line 1877: hit count 6
+    Line 1879: hit count 2
+    Line 1886: hit count 5
+    Line 1887: hit count 5
+    Line 1888: hit count 3
+    Line 1889: hit count 11
+    Line 1891: hit count 5
+    Line 1892: hit count 3
+    Line 1904: hit count 5
+    Line 1906: hit count 2
+    Line 1907: hit count 5
+    Line 1908: hit count 11
+    Line 1909: hit count 5
+    Line 1910: hit count 7
+    Line 1911: hit count 7
+    Line 1912: hit count 17
+    Line 1913: hit count 11
+    Line 1914: hit count 9
+    Line 1922: hit count 2
+    Line 1923: hit count 3
+    Line 1924: hit count 6
+    Line 1925: hit count 2
+    Line 1927: hit count 3
+    Line 1928: hit count 2
+    Line 1929: hit count 2
+    Line 1930: hit count 9
+    Line 1931: hit count 4
+    Line 1932: hit count 2
+    Line 1934: hit count 3
+    Line 1942: hit count 2
+    Line 1943: hit count 6
+    Line 1946: hit count 6
+    Line 1947: hit count 6
+    Line 1948: hit count 8
+    Line 1949: hit count 7
+    Line 1950: hit count 4
+    Line 1951: hit count 5
+    Line 1954: hit count 6
+    Line 1955: hit count 7
+    Line 1956: hit count 7
+    Line 1958: hit count 2
+    Line 1963: hit count 2
+    Line 1968: hit count 3
+    Line 1970: hit count 5
+    Line 1975: hit count 3
+    Line 1977: hit count 3
+    Line 1978: hit count 5
+    Line 1983: hit count 3
+    Line 1986: hit count 2
+    Line 1987: hit count 13
+    Line 1988: hit count 2
+    Line 1989: hit count 13
+    Line 1991: hit count 13
+    Line 1992: hit count 7
+    Line 1994: hit count 1
+    Line 2000: hit count 4
+    Line 2001: hit count 2
+    Line 2002: hit count 6
+    Line 2003: hit count 1
+    Line 2004: hit count 4
+    Line 2013: hit count 1
+    Line 2220: hit count 6
+    Line 2223: hit count 7
+    Line 2225: hit count 6
+    Line 2226: hit count 5
+    Line 2230: hit count 6
+    Line 2236: hit count 1
+    Line 2262: hit count 10
+    Line 2270: hit count 1
+    Line 2273: hit count 3
+    Line 2274: hit count 9
+    Line 2280: hit count 3
+    Line 2281: hit count 1
+    Line 2339: hit count 10
+    Line 2340: hit count 2
+    Line 2341: hit count 4
+    Line 2343: hit count 1
+    Line 2344: hit count 2
+    Line 2346: hit count 1
+    Line 2348: hit count 1
+    Line 2349: hit count 2
+    Line 2350: hit count 14
+    Line 2354: hit count 4
+    Line 2355: hit count 4
+    Line 2356: hit count 4
+    Line 2363: hit count 1
+    Line 2367: hit count 2
+    Line 2376: hit count 3
+    Line 2377: hit count 1
+    Line 2380: hit count 10
+    Line 2383: hit count 1
+    Line 2384: hit count 2
+    Line 2385: hit count 11
+    Line 2390: hit count 7
+    Line 2413: hit count 3
+    Line 2414: hit count 11
+    Line 2416: hit count 9
+    Line 2418: hit count 4
+    Line 2420: hit count 8
+    Line 2422: hit count 3
+    Line 2425: hit count 2
+    Line 2428: hit count 9
+    Line 2429: hit count 1
+    Line 2443: hit count 11
+    Line 2444: hit count 3
+    Line 2449: hit count 8
+    Line 2474: hit count 5
+    Line 2475: hit count 16
+    Line 2476: hit count 19
+    Line 2477: hit count 14
+    Line 2478: hit count 2
+    Line 2479: hit count 1
+    Line 2483: hit count 4
+    Line 2484: hit count 1
+    Line 2491: hit count 2
+    Line 2492: hit count 2
+    Line 2493: hit count 7
+    Line 2494: hit count 7
+    Line 2495: hit count 7
+    Line 2500: hit count 3
+    Line 2501: hit count 7
+    Line 2504: hit count 2
+    Line 2505: hit count 3
+    Line 2506: hit count 2
+    Line 2507: hit count 7
+    Line 2508: hit count 2
+    Line 2510: hit count 4
+    Line 2515: hit count 11
+    Line 2516: hit count 12
+    Line 2517: hit count 2
+    Line 2518: hit count 1
+    Line 2520: hit count 4
+    Line 2521: hit count 4
+    Line 2522: hit count 2
+    Line 2525: hit count 1
+    Line 2544: hit count 5
+    Line 2545: hit count 1
+    Line 2546: hit count 3
+    Line 2549: hit count 2
+    Line 2550: hit count 2
+    Line 2551: hit count 1
+    Line 2553: hit count 7
+    Line 2554: hit count 3
+    Line 2555: hit count 4
+    Line 2556: hit count 3
+    Line 2560: hit count 5
+    Line 2562: hit count 4
+    Line 2563: hit count 7
+    Line 2575: hit count 3
+    Line 2576: hit count 9
+    Line 2605: hit count 6
+    Line 2606: hit count 9
+    Line 2607: hit count 9
+    Line 2608: hit count 7
+    Line 2609: hit count 8
+    Line 2610: hit count 1
+    Line 2614: hit count 1
+    Line 2615: hit count 2
+    Line 2616: hit count 1
+    Line 2617: hit count 6
+    Line 2618: hit count 6
+    Line 2734: hit count 13
+    Line 2736: hit count 7
+    Line 2737: hit count 1
+    Line 2755: hit count 3
+    Line 2758: hit count 5
+    Line 2759: hit count 4
+    Line 2760: hit count 1
+    Line 2761: hit count 6
+    Line 2762: hit count 13
+    Line 2763: hit count 3
+    Line 2764: hit count 7
+    Line 2766: hit count 1
+    Line 2771: hit count 5
+    Line 2772: hit count 5
+    Line 2773: hit count 4
+    Line 2775: hit count 13
+    Line 2776: hit count 20
+    Line 2777: hit count 5
+    Line 2779: hit count 3
+    Line 2787: hit count 4
+    Line 2788: hit count 6
+    Line 2793: hit count 3
+    Line 2796: hit count 5
+    Line 2797: hit count 2
+    Line 2798: hit count 13
+    Line 2799: hit count 1
+    Line 2801: hit count 1
+    Line 2804: hit count 10
+    Line 2805: hit count 6
+    Line 2806: hit count 11
+    Line 2807: hit count 10
+    Line 2808: hit count 2
+    Line 2810: hit count 2
+    Line 2813: hit count 13
+    Line 2817: hit count 9
+    Line 2818: hit count 12
+    Line 2819: hit count 5
+    Line 2820: hit count 1
+    Line 2821: hit count 1
+    Line 2842: hit count 6
+    Line 2844: hit count 10
+    Line 2872: hit count 9
+    Line 2873: hit count 12
+    Line 2875: hit count 4
+    Line 2876: hit count 1
+    Line 2902: hit count 6
+    Line 2912: hit count 4
+    Line 2913: hit count 12
+    Line 2915: hit count 7
+    Line 2916: hit count 1
+    Line 3017: hit count 6
+    Line 3044: hit count 6
+    Line 3045: hit count 3
+    Line 3048: hit count 7
+    Line 3050: hit count 4
+    Line 3051: hit count 4
+    Line 3053: hit count 3
+    Line 3054: hit count 3
+    Line 3056: hit count 1
+    Line 3065: hit count 1
+    Line 3074: hit count 1
+    Line 3124: hit count 13
+    Line 3139: hit count 9
+    Line 3140: hit count 4
+    Line 3141: hit count 2
+    Line 3144: hit count 3
+    Line 3145: hit count 1
+    Line 3146: hit count 4
+    Line 3157: hit count 5
+    Line 3158: hit count 1
+    Line 3159: hit count 4
+----------------------------------------
+File: com/ichi2/anki/NoteFieldsCheckResult.kt
+  Only in first dataset lines: [50, 51, 52, 54, 56]
+    Line 50: hit count 2
+    Line 51: hit count 5
+    Line 52: hit count 15
+    Line 54: hit count 7
+    Line 56: hit count 3
+----------------------------------------
+File: com/ichi2/anki/SingleFragmentActivity.kt
+  Only in first dataset lines: [48, 49, 56, 57, 60, 61, 64, 68, 71, 75, 76, 80, 83, 85, 86, 87, 88, 89, 90, 91, 93, 101, 114, 124, 128, 130, 131, 132, 133, 134]
+    Line 48: hit count 1
+    Line 49: hit count 4
+    Line 56: hit count 4
+    Line 57: hit count 1
+    Line 60: hit count 2
+    Line 61: hit count 3
+    Line 64: hit count 3
+    Line 68: hit count 2
+    Line 71: hit count 5
+    Line 75: hit count 1
+    Line 76: hit count 2
+    Line 80: hit count 3
+    Line 83: hit count 11
+    Line 85: hit count 1
+    Line 86: hit count 14
+    Line 87: hit count 6
+    Line 88: hit count 1
+    Line 89: hit count 6
+    Line 90: hit count 6
+    Line 91: hit count 1
+    Line 93: hit count 6
+    Line 101: hit count 1
+    Line 114: hit count 5
+    Line 124: hit count 13
+    Line 128: hit count 2
+    Line 130: hit count 11
+    Line 131: hit count 6
+    Line 132: hit count 5
+    Line 133: hit count 4
+    Line 134: hit count 2
+----------------------------------------
+File: com/ichi2/anki/StudyOptionsActivity.kt
+  Only in first dataset lines: [40, 41, 43, 46, 47, 49, 50, 51, 52, 54, 56, 64, 72, 75, 76, 77, 78, 79, 85, 86, 87, 89, 90, 91, 92, 96, 97, 101, 111, 113, 118, 119, 120, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 143, 144, 146, 147, 148, 149]
+    Line 40: hit count 1
+    Line 41: hit count 4
+    Line 43: hit count 9
+    Line 46: hit count 4
+    Line 47: hit count 1
+    Line 49: hit count 2
+    Line 50: hit count 10
+    Line 51: hit count 2
+    Line 52: hit count 2
+    Line 54: hit count 3
+    Line 56: hit count 6
+    Line 64: hit count 6
+    Line 72: hit count 1
+    Line 75: hit count 4
+    Line 76: hit count 6
+    Line 77: hit count 6
+    Line 78: hit count 1
+    Line 79: hit count 1
+    Line 85: hit count 5
+    Line 86: hit count 4
+    Line 87: hit count 10
+    Line 89: hit count 7
+    Line 90: hit count 6
+    Line 91: hit count 7
+    Line 92: hit count 2
+    Line 96: hit count 3
+    Line 97: hit count 3
+    Line 101: hit count 3
+    Line 111: hit count 1
+    Line 113: hit count 3
+    Line 118: hit count 1
+    Line 119: hit count 2
+    Line 120: hit count 1
+    Line 131: hit count 17
+    Line 132: hit count 1
+    Line 133: hit count 8
+    Line 134: hit count 3
+    Line 135: hit count 2
+    Line 136: hit count 2
+    Line 137: hit count 1
+    Line 139: hit count 6
+    Line 140: hit count 4
+    Line 141: hit count 3
+    Line 143: hit count 2
+    Line 144: hit count 1
+    Line 146: hit count 13
+    Line 147: hit count 8
+    Line 148: hit count 8
+    Line 149: hit count 1
+----------------------------------------
+File: com/ichi2/anki/StudyOptionsFragment.kt
+  Only in first dataset lines: [69, 70, 93, 112, 113, 114, 115, 116, 117, 118, 125, 126, 127, 133, 134, 137, 138, 139, 154, 155, 156, 157, 158, 160, 161, 162, 164, 165, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 185, 186, 187, 190, 191, 192, 193, 199, 200, 201, 202, 203, 205, 207, 208, 209, 210, 270, 271, 272, 274, 280, 281, 282, 283, 286, 290, 292, 310, 313, 314, 316, 322, 323, 324, 326, 327, 331, 336, 337, 339, 340, 341, 342, 343, 345, 346, 348, 352, 356, 360, 361, 362, 363, 364, 368, 373, 374, 382, 383, 384, 387, 389, 394, 396, 397, 401, 403, 405, 406, 407, 408, 409, 411, 414, 417, 420, 423, 424, 428, 438, 439, 440, 441, 445, 447, 450, 451, 455, 458, 459, 460, 466, 467, 468, 471, 474, 475, 476, 477, 484, 486, 487, 488, 489, 490, 491, 493, 494, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 511, 512, 513, 514, 515, 516, 517, 518, 519, 543, 545, 546, 547, 555, 556, 558]
+    Line 69: hit count 1
+    Line 70: hit count 2
+    Line 93: hit count 4
+    Line 112: hit count 5
+    Line 113: hit count 6
+    Line 114: hit count 9
+    Line 115: hit count 5
+    Line 116: hit count 2
+    Line 117: hit count 7
+    Line 118: hit count 2
+    Line 125: hit count 3
+    Line 126: hit count 11
+    Line 127: hit count 1
+    Line 133: hit count 4
+    Line 134: hit count 1
+    Line 137: hit count 1
+    Line 138: hit count 2
+    Line 139: hit count 1
+    Line 154: hit count 4
+    Line 155: hit count 4
+    Line 156: hit count 9
+    Line 157: hit count 9
+    Line 158: hit count 9
+    Line 160: hit count 5
+    Line 161: hit count 2
+    Line 162: hit count 15
+    Line 164: hit count 6
+    Line 165: hit count 2
+    Line 167: hit count 9
+    Line 168: hit count 9
+    Line 169: hit count 9
+    Line 170: hit count 9
+    Line 171: hit count 9
+    Line 172: hit count 9
+    Line 173: hit count 9
+    Line 174: hit count 9
+    Line 175: hit count 9
+    Line 176: hit count 2
+    Line 177: hit count 15
+    Line 178: hit count 4
+    Line 179: hit count 2
+    Line 180: hit count 9
+    Line 181: hit count 9
+    Line 182: hit count 1
+    Line 185: hit count 9
+    Line 186: hit count 8
+    Line 187: hit count 1
+    Line 190: hit count 3
+    Line 191: hit count 3
+    Line 192: hit count 5
+    Line 193: hit count 13
+    Line 199: hit count 1
+    Line 200: hit count 1
+    Line 201: hit count 13
+    Line 202: hit count 5
+    Line 203: hit count 4
+    Line 205: hit count 2
+    Line 207: hit count 3
+    Line 208: hit count 5
+    Line 209: hit count 2
+    Line 210: hit count 2
+    Line 270: hit count 2
+    Line 271: hit count 5
+    Line 272: hit count 1
+    Line 274: hit count 16
+    Line 280: hit count 9
+    Line 281: hit count 9
+    Line 282: hit count 9
+    Line 283: hit count 9
+    Line 286: hit count 4
+    Line 290: hit count 10
+    Line 292: hit count 19
+    Line 310: hit count 1
+    Line 313: hit count 13
+    Line 314: hit count 5
+    Line 316: hit count 3
+    Line 322: hit count 2
+    Line 323: hit count 1
+    Line 324: hit count 10
+    Line 326: hit count 6
+    Line 327: hit count 8
+    Line 331: hit count 1
+    Line 336: hit count 5
+    Line 337: hit count 10
+    Line 339: hit count 2
+    Line 340: hit count 15
+    Line 341: hit count 3
+    Line 342: hit count 14
+    Line 343: hit count 4
+    Line 345: hit count 2
+    Line 346: hit count 1
+    Line 348: hit count 3
+    Line 352: hit count 6
+    Line 356: hit count 6
+    Line 360: hit count 6
+    Line 361: hit count 6
+    Line 362: hit count 6
+    Line 363: hit count 6
+    Line 364: hit count 6
+    Line 368: hit count 6
+    Line 373: hit count 1
+    Line 374: hit count 3
+    Line 382: hit count 1
+    Line 383: hit count 9
+    Line 384: hit count 1
+    Line 387: hit count 11
+    Line 389: hit count 3
+    Line 394: hit count 5
+    Line 396: hit count 1
+    Line 397: hit count 4
+    Line 401: hit count 3
+    Line 403: hit count 4
+    Line 405: hit count 4
+    Line 406: hit count 6
+    Line 407: hit count 4
+    Line 408: hit count 7
+    Line 409: hit count 7
+    Line 411: hit count 4
+    Line 414: hit count 4
+    Line 417: hit count 4
+    Line 420: hit count 7
+    Line 423: hit count 3
+    Line 424: hit count 3
+    Line 428: hit count 9
+    Line 438: hit count 3
+    Line 439: hit count 5
+    Line 440: hit count 5
+    Line 441: hit count 5
+    Line 445: hit count 1
+    Line 447: hit count 2
+    Line 450: hit count 4
+    Line 451: hit count 3
+    Line 455: hit count 2
+    Line 458: hit count 7
+    Line 459: hit count 8
+    Line 460: hit count 6
+    Line 466: hit count 8
+    Line 467: hit count 8
+    Line 468: hit count 8
+    Line 471: hit count 18
+    Line 474: hit count 9
+    Line 475: hit count 2
+    Line 476: hit count 1
+    Line 477: hit count 2
+    Line 484: hit count 2
+    Line 486: hit count 1
+    Line 487: hit count 7
+    Line 488: hit count 7
+    Line 489: hit count 7
+    Line 490: hit count 8
+    Line 491: hit count 8
+    Line 493: hit count 6
+    Line 494: hit count 1
+    Line 500: hit count 5
+    Line 501: hit count 4
+    Line 502: hit count 2
+    Line 503: hit count 2
+    Line 504: hit count 2
+    Line 505: hit count 6
+    Line 506: hit count 2
+    Line 507: hit count 6
+    Line 508: hit count 6
+    Line 509: hit count 6
+    Line 511: hit count 4
+    Line 512: hit count 2
+    Line 513: hit count 2
+    Line 514: hit count 2
+    Line 515: hit count 1
+    Line 516: hit count 1
+    Line 517: hit count 1
+    Line 518: hit count 3
+    Line 519: hit count 12
+    Line 543: hit count 3
+    Line 545: hit count 8
+    Line 546: hit count 8
+    Line 547: hit count 7
+    Line 555: hit count 3
+    Line 556: hit count 2
+    Line 558: hit count 1
+----------------------------------------
+File: com/ichi2/anki/Sync.kt
+  Only in first dataset lines: [94]
+    Line 94: hit count 11
+----------------------------------------
+File: com/ichi2/anki/UIUtils.kt
+  Only in first dataset lines: [36]
+    Line 36: hit count 7
+----------------------------------------
+File: com/ichi2/anki/backend/HtmlUtils.kt
+  Only in first dataset lines: [27, 28, 29, 30, 31, 32, 33, 73, 74, 75, 76]
+    Line 27: hit count 3
+    Line 28: hit count 3
+    Line 29: hit count 3
+    Line 30: hit count 3
+    Line 31: hit count 3
+    Line 32: hit count 3
+    Line 33: hit count 4
+    Line 73: hit count 5
+    Line 74: hit count 4
+    Line 75: hit count 5
+    Line 76: hit count 7
+----------------------------------------
+File: com/ichi2/anki/browser/BrowserMultiColumnAdapter.kt
+  Only in first dataset lines: [69, 77, 78, 79, 80, 82, 86, 87, 89, 91, 94, 95, 96, 100, 101, 103, 104, 110, 117, 125, 131, 145, 146, 149, 150, 156, 157, 158, 160, 165, 166, 169, 170, 171, 172, 173, 174, 176, 177, 183, 184, 185, 186, 187, 188, 189, 192, 193, 196, 197, 200, 204, 205, 207, 210, 211, 214, 216, 220, 221, 222, 225, 229, 236, 237, 238, 247, 248, 249, 255, 256, 260, 261, 262, 263, 264, 266, 267, 269, 270, 271, 274, 276, 277, 287, 288, 289, 290, 293, 307, 308, 321, 322]
+    Line 69: hit count 3
+    Line 77: hit count 4
+    Line 78: hit count 3
+    Line 79: hit count 5
+    Line 80: hit count 4
+    Line 82: hit count 9
+    Line 86: hit count 4
+    Line 87: hit count 3
+    Line 89: hit count 16
+    Line 91: hit count 5
+    Line 94: hit count 3
+    Line 95: hit count 10
+    Line 96: hit count 10
+    Line 100: hit count 9
+    Line 101: hit count 1
+    Line 103: hit count 1
+    Line 104: hit count 7
+    Line 110: hit count 7
+    Line 117: hit count 5
+    Line 125: hit count 8
+    Line 131: hit count 1
+    Line 145: hit count 12
+    Line 146: hit count 1
+    Line 149: hit count 5
+    Line 150: hit count 1
+    Line 156: hit count 3
+    Line 157: hit count 2
+    Line 158: hit count 2
+    Line 160: hit count 2
+    Line 165: hit count 4
+    Line 166: hit count 4
+    Line 169: hit count 6
+    Line 170: hit count 1
+    Line 171: hit count 3
+    Line 172: hit count 3
+    Line 173: hit count 15
+    Line 174: hit count 8
+    Line 176: hit count 4
+    Line 177: hit count 1
+    Line 183: hit count 1
+    Line 184: hit count 9
+    Line 185: hit count 14
+    Line 186: hit count 6
+    Line 187: hit count 1
+    Line 188: hit count 5
+    Line 189: hit count 1
+    Line 192: hit count 10
+    Line 193: hit count 1
+    Line 196: hit count 10
+    Line 197: hit count 1
+    Line 200: hit count 2
+    Line 204: hit count 3
+    Line 205: hit count 3
+    Line 207: hit count 1
+    Line 210: hit count 2
+    Line 211: hit count 2
+    Line 214: hit count 4
+    Line 216: hit count 1
+    Line 220: hit count 3
+    Line 221: hit count 6
+    Line 222: hit count 4
+    Line 225: hit count 5
+    Line 229: hit count 1
+    Line 236: hit count 4
+    Line 237: hit count 8
+    Line 238: hit count 6
+    Line 247: hit count 1
+    Line 248: hit count 2
+    Line 249: hit count 6
+    Line 255: hit count 1
+    Line 256: hit count 14
+    Line 260: hit count 2
+    Line 261: hit count 7
+    Line 262: hit count 3
+    Line 263: hit count 1
+    Line 264: hit count 4
+    Line 266: hit count 10
+    Line 267: hit count 11
+    Line 269: hit count 3
+    Line 270: hit count 1
+    Line 271: hit count 9
+    Line 274: hit count 7
+    Line 276: hit count 3
+    Line 277: hit count 4
+    Line 287: hit count 5
+    Line 288: hit count 5
+    Line 289: hit count 4
+    Line 290: hit count 1
+    Line 293: hit count 6
+    Line 307: hit count 5
+    Line 308: hit count 1
+    Line 321: hit count 2
+    Line 322: hit count 6
+----------------------------------------
+File: com/ichi2/anki/browser/CardBrowserFragment.kt
+  Only in first dataset lines: [386, 387, 388, 390, 1035]
+    Line 386: hit count 1
+    Line 387: hit count 3
+    Line 388: hit count 4
+    Line 390: hit count 1
+    Line 1035: hit count 3
+----------------------------------------
+File: com/ichi2/anki/browser/CardBrowserViewModel.kt
+  Only in first dataset lines: [190, 191, 243, 302, 337, 379, 778, 779, 780, 820, 1216, 1458, 1459]
+    Line 190: hit count 6
+    Line 191: hit count 25
+    Line 243: hit count 6
+    Line 302: hit count 3
+    Line 337: hit count 1
+    Line 379: hit count 2
+    Line 778: hit count 5
+    Line 779: hit count 6
+    Line 780: hit count 7
+    Line 820: hit count 4
+    Line 1216: hit count 20
+    Line 1458: hit count 3
+    Line 1459: hit count 6
+----------------------------------------
+File: com/ichi2/anki/browser/CardOrNoteId.kt
+  Only in first dataset lines: [47, 48, 53]
+    Line 47: hit count 6
+    Line 48: hit count 3
+    Line 53: hit count 1
+----------------------------------------
+File: com/ichi2/anki/contextmenu/DeckPickerMenuContentProvider.kt
+  Only in first dataset lines: [71, 72, 73, 74, 78, 79, 80, 82, 83, 84, 86, 87, 90, 91, 92, 94, 97, 98]
+    Line 71: hit count 10
+    Line 72: hit count 4
+    Line 73: hit count 4
+    Line 74: hit count 2
+    Line 78: hit count 4
+    Line 79: hit count 2
+    Line 80: hit count 4
+    Line 82: hit count 4
+    Line 83: hit count 2
+    Line 84: hit count 4
+    Line 86: hit count 4
+    Line 87: hit count 2
+    Line 90: hit count 4
+    Line 91: hit count 2
+    Line 92: hit count 4
+    Line 94: hit count 3
+    Line 97: hit count 4
+    Line 98: hit count 2
+----------------------------------------
+File: com/ichi2/anki/deckpicker/DeckPickerViewModel.kt
+  Only in first dataset lines: [206, 207, 208, 211, 213, 214, 216, 288, 289, 290, 292, 293, 432, 464, 465, 466, 467, 615, 616, 617, 625, 626, 627, 628]
+    Line 206: hit count 19
+    Line 207: hit count 18
+    Line 208: hit count 23
+    Line 211: hit count 5
+    Line 213: hit count 15
+    Line 214: hit count 8
+    Line 216: hit count 4
+    Line 288: hit count 10
+    Line 289: hit count 6
+    Line 290: hit count 20
+    Line 292: hit count 18
+    Line 293: hit count 4
+    Line 432: hit count 1
+    Line 464: hit count 9
+    Line 465: hit count 20
+    Line 466: hit count 17
+    Line 467: hit count 4
+    Line 615: hit count 3
+    Line 616: hit count 3
+    Line 617: hit count 3
+    Line 625: hit count 3
+    Line 626: hit count 2
+    Line 627: hit count 2
+    Line 628: hit count 1
+----------------------------------------
+File: com/ichi2/anki/deckpicker/DisplayDeckNode.kt
+  Only in first dataset lines: [51, 52, 53]
+    Line 51: hit count 27
+    Line 52: hit count 4
+    Line 53: hit count 2
+----------------------------------------
+File: com/ichi2/anki/dialogs/BackupPromptDialog.kt
+  Only in first dataset lines: [67, 73, 75, 76, 77, 80, 92, 94, 95, 96, 97, 100, 101, 111, 112, 114, 121, 122, 123, 124, 131, 132, 133, 134, 135, 136, 141, 148, 149, 150, 151, 163, 164, 165, 172, 173, 174, 257, 263, 264, 265, 274]
+    Line 67: hit count 6
+    Line 73: hit count 7
+    Line 75: hit count 2
+    Line 76: hit count 2
+    Line 77: hit count 7
+    Line 80: hit count 7
+    Line 92: hit count 7
+    Line 94: hit count 2
+    Line 95: hit count 2
+    Line 96: hit count 6
+    Line 97: hit count 1
+    Line 100: hit count 5
+    Line 101: hit count 3
+    Line 111: hit count 6
+    Line 112: hit count 4
+    Line 114: hit count 1
+    Line 121: hit count 4
+    Line 122: hit count 2
+    Line 123: hit count 9
+    Line 124: hit count 9
+    Line 131: hit count 2
+    Line 132: hit count 10
+    Line 133: hit count 6
+    Line 134: hit count 8
+    Line 135: hit count 8
+    Line 136: hit count 13
+    Line 141: hit count 3
+    Line 148: hit count 14
+    Line 149: hit count 4
+    Line 150: hit count 2
+    Line 151: hit count 1
+    Line 163: hit count 2
+    Line 164: hit count 7
+    Line 165: hit count 10
+    Line 172: hit count 4
+    Line 173: hit count 1
+    Line 174: hit count 3
+    Line 257: hit count 2
+    Line 263: hit count 5
+    Line 264: hit count 5
+    Line 265: hit count 2
+    Line 274: hit count 14
+----------------------------------------
+File: com/ichi2/anki/dialogs/CreateDeckDialog.kt
+  Only in first dataset lines: [87, 88, 89, 101, 185, 192, 193, 194, 259, 263, 274, 278, 279, 280, 281, 282, 283, 285, 293, 294]
+    Line 87: hit count 3
+    Line 88: hit count 3
+    Line 89: hit count 1
+    Line 101: hit count 2
+    Line 185: hit count 12
+    Line 192: hit count 7
+    Line 193: hit count 5
+    Line 194: hit count 1
+    Line 259: hit count 5
+    Line 263: hit count 10
+    Line 274: hit count 4
+    Line 278: hit count 5
+    Line 279: hit count 1
+    Line 280: hit count 4
+    Line 281: hit count 10
+    Line 282: hit count 9
+    Line 283: hit count 6
+    Line 285: hit count 13
+    Line 293: hit count 6
+    Line 294: hit count 1
+----------------------------------------
+File: com/ichi2/anki/dialogs/DeckPickerContextMenu.kt
+  Only in first dataset lines: [30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 44, 45, 46, 47, 48, 51, 55, 56, 57, 58, 102, 103, 104, 105, 106, 107, 108, 110]
+    Line 30: hit count 3
+    Line 32: hit count 2
+    Line 33: hit count 5
+    Line 34: hit count 5
+    Line 35: hit count 5
+    Line 36: hit count 5
+    Line 37: hit count 3
+    Line 38: hit count 1
+    Line 39: hit count 6
+    Line 40: hit count 8
+    Line 41: hit count 4
+    Line 42: hit count 16
+    Line 44: hit count 3
+    Line 45: hit count 1
+    Line 46: hit count 1
+    Line 47: hit count 16
+    Line 48: hit count 6
+    Line 51: hit count 6
+    Line 55: hit count 2
+    Line 56: hit count 4
+    Line 57: hit count 4
+    Line 58: hit count 1
+    Line 102: hit count 9
+    Line 103: hit count 2
+    Line 104: hit count 1
+    Line 105: hit count 17
+    Line 106: hit count 4
+    Line 107: hit count 5
+    Line 108: hit count 5
+    Line 110: hit count 2
+----------------------------------------
+File: com/ichi2/anki/dialogs/DeckSelectionDialog.kt
+  Only in first dataset lines: [350, 351, 352, 353, 354, 355]
+    Line 350: hit count 10
+    Line 351: hit count 3
+    Line 352: hit count 9
+    Line 353: hit count 11
+    Line 354: hit count 3
+    Line 355: hit count 1
+----------------------------------------
+File: com/ichi2/anki/dialogs/EditDeckDescriptionDialog.kt
+  Only in first dataset lines: [57, 58, 67, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 103, 104, 105, 106, 107, 109, 110, 113, 114, 115, 116, 117, 119, 120, 121, 124, 125, 126, 127, 135, 137, 138, 141, 142, 143, 144, 145, 146, 147, 148, 149, 153, 156, 159, 160, 161, 166, 167, 168, 169, 172, 173, 174, 175, 176, 177, 178, 179, 182, 183, 188, 189, 190, 191, 192, 194, 205, 206, 207, 208, 210]
+    Line 57: hit count 3
+    Line 58: hit count 12
+    Line 67: hit count 10
+    Line 78: hit count 8
+    Line 79: hit count 7
+    Line 80: hit count 4
+    Line 81: hit count 8
+    Line 82: hit count 10
+    Line 83: hit count 10
+    Line 84: hit count 8
+    Line 85: hit count 3
+    Line 86: hit count 5
+    Line 87: hit count 10
+    Line 88: hit count 5
+    Line 89: hit count 8
+    Line 90: hit count 1
+    Line 91: hit count 3
+    Line 92: hit count 3
+    Line 93: hit count 8
+    Line 94: hit count 2
+    Line 95: hit count 10
+    Line 96: hit count 1
+    Line 103: hit count 3
+    Line 104: hit count 8
+    Line 105: hit count 5
+    Line 106: hit count 5
+    Line 107: hit count 2
+    Line 109: hit count 1
+    Line 110: hit count 1
+    Line 113: hit count 10
+    Line 114: hit count 7
+    Line 115: hit count 1
+    Line 116: hit count 1
+    Line 117: hit count 1
+    Line 119: hit count 10
+    Line 120: hit count 4
+    Line 121: hit count 1
+    Line 124: hit count 10
+    Line 125: hit count 2
+    Line 126: hit count 14
+    Line 127: hit count 4
+    Line 135: hit count 1
+    Line 137: hit count 2
+    Line 138: hit count 1
+    Line 141: hit count 16
+    Line 142: hit count 5
+    Line 143: hit count 1
+    Line 144: hit count 12
+    Line 145: hit count 2
+    Line 146: hit count 4
+    Line 147: hit count 3
+    Line 148: hit count 7
+    Line 149: hit count 9
+    Line 153: hit count 5
+    Line 156: hit count 2
+    Line 159: hit count 16
+    Line 160: hit count 16
+    Line 161: hit count 12
+    Line 166: hit count 16
+    Line 167: hit count 16
+    Line 168: hit count 7
+    Line 169: hit count 2
+    Line 172: hit count 16
+    Line 173: hit count 16
+    Line 174: hit count 4
+    Line 175: hit count 11
+    Line 176: hit count 14
+    Line 177: hit count 9
+    Line 178: hit count 1
+    Line 179: hit count 2
+    Line 182: hit count 16
+    Line 183: hit count 16
+    Line 188: hit count 16
+    Line 189: hit count 16
+    Line 190: hit count 7
+    Line 191: hit count 5
+    Line 192: hit count 2
+    Line 194: hit count 1
+    Line 205: hit count 9
+    Line 206: hit count 2
+    Line 207: hit count 1
+    Line 208: hit count 11
+    Line 210: hit count 2
+----------------------------------------
+File: com/ichi2/anki/dialogs/EditDeckDescriptionDialogViewModel.kt
+  Only in first dataset lines: [33, 34, 35, 37, 41, 43, 44, 48, 50, 52, 55, 57, 58, 59, 60, 63, 65, 66, 67, 68, 72, 73, 74, 75, 77, 79, 81, 83, 84, 85, 86, 88, 89, 90, 91, 92, 93, 94, 95, 97, 98, 99, 119, 120, 121, 122, 123, 126, 127, 128, 129, 130, 131, 132, 133, 136, 137, 138, 139, 140, 141, 142, 147, 148, 159, 160, 161, 166, 168]
+    Line 33: hit count 1
+    Line 34: hit count 3
+    Line 35: hit count 2
+    Line 37: hit count 9
+    Line 41: hit count 10
+    Line 43: hit count 6
+    Line 44: hit count 1
+    Line 48: hit count 8
+    Line 50: hit count 15
+    Line 52: hit count 16
+    Line 55: hit count 5
+    Line 57: hit count 3
+    Line 58: hit count 5
+    Line 59: hit count 4
+    Line 60: hit count 1
+    Line 63: hit count 6
+    Line 65: hit count 3
+    Line 66: hit count 6
+    Line 67: hit count 5
+    Line 68: hit count 1
+    Line 72: hit count 3
+    Line 73: hit count 2
+    Line 74: hit count 2
+    Line 75: hit count 1
+    Line 77: hit count 7
+    Line 79: hit count 11
+    Line 81: hit count 8
+    Line 83: hit count 3
+    Line 84: hit count 24
+    Line 85: hit count 1
+    Line 86: hit count 1
+    Line 88: hit count 1
+    Line 89: hit count 15
+    Line 90: hit count 29
+    Line 91: hit count 18
+    Line 92: hit count 4
+    Line 93: hit count 8
+    Line 94: hit count 8
+    Line 95: hit count 4
+    Line 97: hit count 14
+    Line 98: hit count 3
+    Line 99: hit count 1
+    Line 119: hit count 14
+    Line 120: hit count 8
+    Line 121: hit count 6
+    Line 122: hit count 10
+    Line 123: hit count 4
+    Line 126: hit count 5
+    Line 127: hit count 11
+    Line 128: hit count 3
+    Line 129: hit count 2
+    Line 130: hit count 2
+    Line 131: hit count 1
+    Line 132: hit count 1
+    Line 133: hit count 1
+    Line 136: hit count 5
+    Line 137: hit count 5
+    Line 138: hit count 7
+    Line 139: hit count 5
+    Line 140: hit count 5
+    Line 141: hit count 2
+    Line 142: hit count 2
+    Line 147: hit count 5
+    Line 148: hit count 11
+    Line 159: hit count 3
+    Line 160: hit count 6
+    Line 161: hit count 6
+    Line 166: hit count 4
+    Line 168: hit count 4
+----------------------------------------
+File: com/ichi2/anki/dialogs/customstudy/CustomStudyDialog.kt
+  Only in first dataset lines: [126, 127, 128, 129, 132, 139, 145, 146, 155, 181, 182, 183, 184, 185, 187, 188, 190, 191, 199, 202, 203, 204, 210, 211, 212, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 229, 230, 233, 234, 235, 236, 238, 240, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 262, 265, 266, 267, 268, 269, 270, 271, 274, 275, 276, 277, 278, 279, 288, 296, 298, 299, 301, 302, 307, 308, 309, 310, 311, 312, 314, 315, 316, 317, 324, 325, 327, 328, 329, 330, 332, 333, 335, 336, 338, 339, 340, 342, 343, 347, 348, 349, 350, 352, 353, 354, 355, 356, 357, 358, 359, 360, 362, 364, 368, 369, 422, 424, 429, 430, 493, 494, 495, 496, 497, 508, 509, 517, 522, 523, 524, 541, 542, 544, 545, 546, 547, 590, 591, 592, 593, 595, 598, 601, 604, 607, 610, 614, 615, 616, 618, 619, 620, 621, 632, 633, 634, 635, 639, 655, 657, 669, 681, 691, 704, 705, 708, 713, 715, 716, 717, 718, 721, 722, 723, 724, 726, 727, 745, 751, 752, 753, 754, 756, 768, 769, 770, 771, 772, 774]
+    Line 126: hit count 1
+    Line 127: hit count 2
+    Line 128: hit count 7
+    Line 129: hit count 1
+    Line 132: hit count 12
+    Line 139: hit count 20
+    Line 145: hit count 2
+    Line 146: hit count 8
+    Line 155: hit count 1
+    Line 181: hit count 2
+    Line 182: hit count 3
+    Line 183: hit count 6
+    Line 184: hit count 5
+    Line 185: hit count 5
+    Line 187: hit count 32
+    Line 188: hit count 4
+    Line 190: hit count 6
+    Line 191: hit count 4
+    Line 199: hit count 2
+    Line 202: hit count 3
+    Line 203: hit count 27
+    Line 204: hit count 7
+    Line 210: hit count 7
+    Line 211: hit count 8
+    Line 212: hit count 2
+    Line 215: hit count 6
+    Line 216: hit count 1
+    Line 217: hit count 6
+    Line 218: hit count 5
+    Line 219: hit count 3
+    Line 220: hit count 11
+    Line 221: hit count 1
+    Line 222: hit count 2
+    Line 223: hit count 2
+    Line 224: hit count 4
+    Line 225: hit count 1
+    Line 226: hit count 1
+    Line 229: hit count 4
+    Line 230: hit count 8
+    Line 233: hit count 3
+    Line 234: hit count 3
+    Line 235: hit count 3
+    Line 236: hit count 1
+    Line 238: hit count 3
+    Line 240: hit count 4
+    Line 242: hit count 12
+    Line 243: hit count 3
+    Line 244: hit count 3
+    Line 245: hit count 12
+    Line 246: hit count 6
+    Line 247: hit count 4
+    Line 248: hit count 9
+    Line 249: hit count 9
+    Line 251: hit count 12
+    Line 252: hit count 3
+    Line 253: hit count 4
+    Line 254: hit count 3
+    Line 255: hit count 5
+    Line 256: hit count 28
+    Line 257: hit count 1
+    Line 258: hit count 8
+    Line 259: hit count 1
+    Line 260: hit count 1
+    Line 262: hit count 4
+    Line 265: hit count 4
+    Line 266: hit count 16
+    Line 267: hit count 5
+    Line 268: hit count 8
+    Line 269: hit count 4
+    Line 270: hit count 7
+    Line 271: hit count 2
+    Line 274: hit count 1
+    Line 275: hit count 6
+    Line 276: hit count 11
+    Line 277: hit count 2
+    Line 278: hit count 9
+    Line 279: hit count 4
+    Line 288: hit count 7
+    Line 296: hit count 9
+    Line 298: hit count 7
+    Line 299: hit count 7
+    Line 301: hit count 15
+    Line 302: hit count 9
+    Line 307: hit count 2
+    Line 308: hit count 4
+    Line 309: hit count 3
+    Line 310: hit count 1
+    Line 311: hit count 1
+    Line 312: hit count 8
+    Line 314: hit count 7
+    Line 315: hit count 1
+    Line 316: hit count 12
+    Line 317: hit count 6
+    Line 324: hit count 5
+    Line 325: hit count 4
+    Line 327: hit count 7
+    Line 328: hit count 1
+    Line 329: hit count 9
+    Line 330: hit count 5
+    Line 332: hit count 3
+    Line 333: hit count 3
+    Line 335: hit count 3
+    Line 336: hit count 3
+    Line 338: hit count 1
+    Line 339: hit count 1
+    Line 340: hit count 3
+    Line 342: hit count 4
+    Line 343: hit count 3
+    Line 347: hit count 1
+    Line 348: hit count 8
+    Line 349: hit count 9
+    Line 350: hit count 1
+    Line 352: hit count 8
+    Line 353: hit count 1
+    Line 354: hit count 13
+    Line 355: hit count 1
+    Line 356: hit count 1
+    Line 357: hit count 1
+    Line 358: hit count 1
+    Line 359: hit count 7
+    Line 360: hit count 8
+    Line 362: hit count 2
+    Line 364: hit count 7
+    Line 368: hit count 7
+    Line 369: hit count 7
+    Line 422: hit count 1
+    Line 424: hit count 10
+    Line 429: hit count 7
+    Line 430: hit count 2
+    Line 493: hit count 11
+    Line 494: hit count 14
+    Line 495: hit count 20
+    Line 496: hit count 1
+    Line 497: hit count 1
+    Line 508: hit count 3
+    Line 509: hit count 6
+    Line 517: hit count 1
+    Line 522: hit count 6
+    Line 523: hit count 4
+    Line 524: hit count 7
+    Line 541: hit count 8
+    Line 542: hit count 4
+    Line 544: hit count 2
+    Line 545: hit count 2
+    Line 546: hit count 2
+    Line 547: hit count 2
+    Line 590: hit count 14
+    Line 591: hit count 6
+    Line 592: hit count 8
+    Line 593: hit count 1
+    Line 595: hit count 16
+    Line 598: hit count 16
+    Line 601: hit count 14
+    Line 604: hit count 14
+    Line 607: hit count 14
+    Line 610: hit count 21
+    Line 614: hit count 5
+    Line 615: hit count 6
+    Line 616: hit count 3
+    Line 618: hit count 12
+    Line 619: hit count 12
+    Line 620: hit count 12
+    Line 621: hit count 24
+    Line 632: hit count 3
+    Line 633: hit count 6
+    Line 634: hit count 6
+    Line 635: hit count 3
+    Line 639: hit count 7
+    Line 655: hit count 3
+    Line 657: hit count 6
+    Line 669: hit count 3
+    Line 681: hit count 3
+    Line 691: hit count 2
+    Line 704: hit count 3
+    Line 705: hit count 4
+    Line 708: hit count 1
+    Line 713: hit count 3
+    Line 715: hit count 3
+    Line 716: hit count 2
+    Line 717: hit count 2
+    Line 718: hit count 2
+    Line 721: hit count 3
+    Line 722: hit count 2
+    Line 723: hit count 2
+    Line 724: hit count 2
+    Line 726: hit count 5
+    Line 727: hit count 1
+    Line 745: hit count 5
+    Line 751: hit count 9
+    Line 752: hit count 2
+    Line 753: hit count 1
+    Line 754: hit count 11
+    Line 756: hit count 2
+    Line 768: hit count 9
+    Line 769: hit count 2
+    Line 770: hit count 1
+    Line 771: hit count 13
+    Line 772: hit count 6
+    Line 774: hit count 2
+----------------------------------------
+File: com/ichi2/anki/dialogs/customstudy/CustomStudyViewModel.kt
+  Only in first dataset lines: [27, 28, 29, 34, 35, 37, 38, 39, 43]
+    Line 27: hit count 1
+    Line 28: hit count 3
+    Line 29: hit count 2
+    Line 34: hit count 3
+    Line 35: hit count 12
+    Line 37: hit count 3
+    Line 38: hit count 6
+    Line 39: hit count 1
+    Line 43: hit count 10
+----------------------------------------
+File: com/ichi2/anki/logging/FragmentLifecycleLogger.kt
+  Only in first dataset lines: [88, 89]
+    Line 88: hit count 14
+    Line 89: hit count 1
+----------------------------------------
+File: com/ichi2/anki/noteeditor/CustomToolbarButton.kt
+  Only in first dataset lines: [56, 57, 63, 64, 67]
+    Line 56: hit count 6
+    Line 57: hit count 6
+    Line 63: hit count 5
+    Line 64: hit count 9
+    Line 67: hit count 2
+----------------------------------------
+File: com/ichi2/anki/noteeditor/FieldState.kt
+  Only in first dataset lines: [35, 36, 41, 42, 45, 46, 47, 49, 52, 61, 67, 78, 79, 80, 81, 82, 83, 84, 85, 87, 91, 96, 100, 101, 104, 105, 106, 129, 131, 136, 141, 142, 143, 144, 145, 146, 152]
+    Line 35: hit count 3
+    Line 36: hit count 3
+    Line 41: hit count 1
+    Line 42: hit count 7
+    Line 45: hit count 9
+    Line 46: hit count 10
+    Line 47: hit count 4
+    Line 49: hit count 1
+    Line 52: hit count 4
+    Line 61: hit count 4
+    Line 67: hit count 2
+    Line 78: hit count 4
+    Line 79: hit count 8
+    Line 80: hit count 11
+    Line 81: hit count 10
+    Line 82: hit count 4
+    Line 83: hit count 7
+    Line 84: hit count 9
+    Line 85: hit count 3
+    Line 87: hit count 2
+    Line 91: hit count 4
+    Line 96: hit count 4
+    Line 100: hit count 8
+    Line 101: hit count 1
+    Line 104: hit count 3
+    Line 105: hit count 6
+    Line 106: hit count 6
+    Line 129: hit count 5
+    Line 131: hit count 5
+    Line 136: hit count 6
+    Line 141: hit count 6
+    Line 142: hit count 6
+    Line 143: hit count 6
+    Line 144: hit count 6
+    Line 145: hit count 6
+    Line 146: hit count 13
+    Line 152: hit count 6
+----------------------------------------
+File: com/ichi2/anki/noteeditor/NoteEditorLauncher.kt
+  Only in first dataset lines: [39, 51, 52, 53, 54, 81, 82, 84, 91, 92, 95, 96, 97, 98, 99]
+    Line 39: hit count 5
+    Line 51: hit count 11
+    Line 52: hit count 5
+    Line 53: hit count 5
+    Line 54: hit count 2
+    Line 81: hit count 3
+    Line 82: hit count 3
+    Line 84: hit count 3
+    Line 91: hit count 12
+    Line 92: hit count 3
+    Line 95: hit count 2
+    Line 96: hit count 12
+    Line 97: hit count 5
+    Line 98: hit count 12
+    Line 99: hit count 2
+----------------------------------------
+File: com/ichi2/anki/noteeditor/Toolbar.kt
+  Only in first dataset lines: [80, 85, 86, 91, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 120, 126, 128, 129, 130, 131, 132, 133, 134, 135, 140, 141, 142, 143, 144, 203, 204, 205, 206, 216, 217, 218, 220, 221, 222, 223, 224, 225, 227, 228, 229, 230, 231, 232, 236, 237, 240, 241, 242, 243, 244, 245, 246, 247, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 264, 271, 276, 277, 279, 280, 357, 400, 401, 402, 403, 404]
+    Line 80: hit count 4
+    Line 85: hit count 6
+    Line 86: hit count 6
+    Line 91: hit count 5
+    Line 100: hit count 1
+    Line 101: hit count 9
+    Line 102: hit count 2
+    Line 103: hit count 17
+    Line 104: hit count 11
+    Line 105: hit count 3
+    Line 106: hit count 3
+    Line 107: hit count 2
+    Line 108: hit count 9
+    Line 109: hit count 9
+    Line 110: hit count 2
+    Line 111: hit count 1
+    Line 120: hit count 8
+    Line 126: hit count 1
+    Line 128: hit count 5
+    Line 129: hit count 5
+    Line 130: hit count 5
+    Line 131: hit count 5
+    Line 132: hit count 5
+    Line 133: hit count 6
+    Line 134: hit count 6
+    Line 135: hit count 6
+    Line 140: hit count 5
+    Line 141: hit count 8
+    Line 142: hit count 4
+    Line 143: hit count 1
+    Line 144: hit count 1
+    Line 203: hit count 3
+    Line 204: hit count 5
+    Line 205: hit count 3
+    Line 206: hit count 3
+    Line 216: hit count 4
+    Line 217: hit count 7
+    Line 218: hit count 4
+    Line 220: hit count 7
+    Line 221: hit count 6
+    Line 222: hit count 3
+    Line 223: hit count 4
+    Line 224: hit count 11
+    Line 225: hit count 6
+    Line 227: hit count 1
+    Line 228: hit count 3
+    Line 229: hit count 1
+    Line 230: hit count 3
+    Line 231: hit count 2
+    Line 232: hit count 9
+    Line 236: hit count 5
+    Line 237: hit count 4
+    Line 240: hit count 4
+    Line 241: hit count 10
+    Line 242: hit count 3
+    Line 243: hit count 6
+    Line 244: hit count 2
+    Line 245: hit count 6
+    Line 246: hit count 4
+    Line 247: hit count 2
+    Line 253: hit count 4
+    Line 254: hit count 3
+    Line 255: hit count 1
+    Line 256: hit count 10
+    Line 257: hit count 1
+    Line 258: hit count 2
+    Line 259: hit count 1
+    Line 260: hit count 6
+    Line 261: hit count 2
+    Line 262: hit count 1
+    Line 264: hit count 12
+    Line 271: hit count 3
+    Line 276: hit count 11
+    Line 277: hit count 9
+    Line 279: hit count 3
+    Line 280: hit count 1
+    Line 357: hit count 14
+    Line 400: hit count 1
+    Line 401: hit count 6
+    Line 402: hit count 10
+    Line 403: hit count 6
+    Line 404: hit count 1
+----------------------------------------
+File: com/ichi2/anki/observability/ChangeManager.kt
+  Only in first dataset lines: [89, 116, 117, 118, 119, 120, 125, 128, 129, 135, 136, 139, 151, 152, 153, 154, 161, 162]
+    Line 89: hit count 4
+    Line 116: hit count 5
+    Line 117: hit count 13
+    Line 118: hit count 1
+    Line 119: hit count 2
+    Line 120: hit count 5
+    Line 125: hit count 2
+    Line 128: hit count 1
+    Line 129: hit count 5
+    Line 135: hit count 5
+    Line 136: hit count 6
+    Line 139: hit count 1
+    Line 151: hit count 1
+    Line 152: hit count 2
+    Line 153: hit count 6
+    Line 154: hit count 7
+    Line 161: hit count 6
+    Line 162: hit count 1
+----------------------------------------
+File: com/ichi2/anki/observability/OpChangesNotifier.kt
+  Only in first dataset lines: [27, 28, 31, 32, 33, 34, 35, 36, 37]
+    Line 27: hit count 9
+    Line 28: hit count 2
+    Line 31: hit count 15
+    Line 32: hit count 4
+    Line 33: hit count 5
+    Line 34: hit count 32
+    Line 35: hit count 6
+    Line 36: hit count 2
+    Line 37: hit count 2
+----------------------------------------
+File: com/ichi2/anki/pages/AnkiServer.kt
+  Only in first dataset lines: [25, 26, 27, 28, 29, 33, 36, 38, 39, 40, 42, 43, 44, 47, 50, 51, 52, 58, 60, 62, 63, 65, 67, 68, 69, 79, 80, 81, 82]
+    Line 25: hit count 8
+    Line 26: hit count 3
+    Line 27: hit count 2
+    Line 28: hit count 5
+    Line 29: hit count 4
+    Line 33: hit count 2
+    Line 36: hit count 3
+    Line 38: hit count 3
+    Line 39: hit count 11
+    Line 40: hit count 4
+    Line 42: hit count 1
+    Line 43: hit count 33
+    Line 44: hit count 9
+    Line 47: hit count 2
+    Line 50: hit count 5
+    Line 51: hit count 12
+    Line 52: hit count 5
+    Line 58: hit count 1
+    Line 60: hit count 12
+    Line 62: hit count 2
+    Line 63: hit count 3
+    Line 65: hit count 2
+    Line 67: hit count 4
+    Line 68: hit count 8
+    Line 69: hit count 1
+    Line 79: hit count 9
+    Line 80: hit count 3
+    Line 81: hit count 7
+    Line 82: hit count 2
+----------------------------------------
+File: com/ichi2/anki/pages/DeckOptions.kt
+  Only in first dataset lines: [49, 51, 52, 54, 55, 56, 65, 78, 122, 144, 166, 167, 168, 169, 170, 171, 172, 176, 177, 178, 182, 183, 185, 187, 188, 193, 208, 209, 210, 211, 214, 215, 216, 217, 231, 232, 233, 234, 235, 239, 240, 242, 243, 244, 247, 248, 249, 250, 251, 260, 264, 265, 266, 267, 269, 270, 272, 273, 274, 275, 277, 278, 279, 292, 310, 311, 318, 319]
+    Line 49: hit count 1
+    Line 51: hit count 5
+    Line 52: hit count 18
+    Line 54: hit count 12
+    Line 55: hit count 5
+    Line 56: hit count 3
+    Line 65: hit count 10
+    Line 78: hit count 10
+    Line 122: hit count 10
+    Line 144: hit count 6
+    Line 166: hit count 8
+    Line 167: hit count 3
+    Line 168: hit count 17
+    Line 169: hit count 17
+    Line 170: hit count 8
+    Line 171: hit count 2
+    Line 172: hit count 1
+    Line 176: hit count 8
+    Line 177: hit count 5
+    Line 178: hit count 1
+    Line 182: hit count 14
+    Line 183: hit count 14
+    Line 185: hit count 14
+    Line 187: hit count 9
+    Line 188: hit count 6
+    Line 193: hit count 1
+    Line 208: hit count 6
+    Line 209: hit count 6
+    Line 210: hit count 13
+    Line 211: hit count 5
+    Line 214: hit count 4
+    Line 215: hit count 2
+    Line 216: hit count 1
+    Line 217: hit count 1
+    Line 231: hit count 1
+    Line 232: hit count 1
+    Line 233: hit count 1
+    Line 234: hit count 3
+    Line 235: hit count 1
+    Line 239: hit count 4
+    Line 240: hit count 4
+    Line 242: hit count 7
+    Line 243: hit count 7
+    Line 244: hit count 1
+    Line 247: hit count 5
+    Line 248: hit count 3
+    Line 249: hit count 8
+    Line 250: hit count 8
+    Line 251: hit count 1
+    Line 260: hit count 21
+    Line 264: hit count 1
+    Line 265: hit count 1
+    Line 266: hit count 21
+    Line 267: hit count 22
+    Line 269: hit count 13
+    Line 270: hit count 2
+    Line 272: hit count 15
+    Line 273: hit count 15
+    Line 274: hit count 1
+    Line 275: hit count 1
+    Line 277: hit count 23
+    Line 278: hit count 30
+    Line 279: hit count 3
+    Line 292: hit count 6
+    Line 310: hit count 3
+    Line 311: hit count 13
+    Line 318: hit count 3
+    Line 319: hit count 2
+----------------------------------------
+File: com/ichi2/anki/pages/PageChromeClient.kt
+  Only in first dataset lines: [32]
+    Line 32: hit count 3
+----------------------------------------
+File: com/ichi2/anki/pages/PageFragment.kt
+  Only in first dataset lines: [38, 39, 40, 43, 54, 71, 77, 78, 103, 104, 106, 110, 111, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 134, 138, 140, 141, 142, 143, 147, 152, 158, 159, 160, 161]
+    Line 38: hit count 7
+    Line 39: hit count 2
+    Line 40: hit count 4
+    Line 43: hit count 8
+    Line 54: hit count 9
+    Line 71: hit count 6
+    Line 77: hit count 4
+    Line 78: hit count 1
+    Line 103: hit count 17
+    Line 104: hit count 9
+    Line 106: hit count 10
+    Line 110: hit count 3
+    Line 111: hit count 1
+    Line 114: hit count 4
+    Line 115: hit count 8
+    Line 116: hit count 3
+    Line 117: hit count 6
+    Line 118: hit count 3
+    Line 119: hit count 3
+    Line 120: hit count 3
+    Line 121: hit count 3
+    Line 122: hit count 1
+    Line 123: hit count 4
+    Line 124: hit count 6
+    Line 125: hit count 3
+    Line 126: hit count 2
+    Line 127: hit count 1
+    Line 128: hit count 5
+    Line 129: hit count 12
+    Line 130: hit count 6
+    Line 131: hit count 8
+    Line 132: hit count 1
+    Line 134: hit count 2
+    Line 138: hit count 5
+    Line 140: hit count 1
+    Line 141: hit count 22
+    Line 142: hit count 7
+    Line 143: hit count 5
+    Line 147: hit count 27
+    Line 152: hit count 1
+    Line 158: hit count 4
+    Line 159: hit count 4
+    Line 160: hit count 1
+    Line 161: hit count 1
+----------------------------------------
+File: com/ichi2/anki/pages/PageWebViewClient.kt
+  Only in first dataset lines: [37, 38, 44, 45, 46, 50, 51, 52, 53, 54, 56, 59, 60, 61, 62, 63, 64, 66, 78, 79, 80, 81, 82, 85, 86, 104, 105, 106, 109, 110, 114, 115, 125, 126, 130, 132, 134, 137, 145, 146, 148]
+    Line 37: hit count 3
+    Line 38: hit count 9
+    Line 44: hit count 4
+    Line 45: hit count 9
+    Line 46: hit count 4
+    Line 50: hit count 1
+    Line 51: hit count 7
+    Line 52: hit count 8
+    Line 53: hit count 8
+    Line 54: hit count 2
+    Line 56: hit count 2
+    Line 59: hit count 1
+    Line 60: hit count 4
+    Line 61: hit count 9
+    Line 62: hit count 7
+    Line 63: hit count 9
+    Line 64: hit count 6
+    Line 66: hit count 2
+    Line 78: hit count 4
+    Line 79: hit count 7
+    Line 80: hit count 6
+    Line 81: hit count 5
+    Line 82: hit count 2
+    Line 85: hit count 1
+    Line 86: hit count 1
+    Line 104: hit count 3
+    Line 105: hit count 2
+    Line 106: hit count 11
+    Line 109: hit count 3
+    Line 110: hit count 1
+    Line 114: hit count 7
+    Line 115: hit count 10
+    Line 125: hit count 2
+    Line 126: hit count 1
+    Line 130: hit count 8
+    Line 132: hit count 2
+    Line 134: hit count 2
+    Line 137: hit count 2
+    Line 145: hit count 1
+    Line 146: hit count 1
+    Line 148: hit count 1
+----------------------------------------
+File: com/ichi2/anki/pages/PostRequestHandler.kt
+  Only in first dataset lines: [68, 69, 72, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 130, 136, 137, 138, 139, 146, 147, 148, 149, 150, 151, 153, 154, 155, 160, 165, 166, 171, 183, 184, 185, 199, 204, 207, 212, 213, 214, 224, 234]
+    Line 68: hit count 7
+    Line 69: hit count 7
+    Line 72: hit count 1
+    Line 91: hit count 2
+    Line 92: hit count 72
+    Line 93: hit count 4
+    Line 94: hit count 4
+    Line 95: hit count 4
+    Line 96: hit count 4
+    Line 97: hit count 4
+    Line 98: hit count 4
+    Line 99: hit count 4
+    Line 100: hit count 4
+    Line 101: hit count 4
+    Line 102: hit count 4
+    Line 103: hit count 4
+    Line 104: hit count 8
+    Line 105: hit count 4
+    Line 106: hit count 4
+    Line 107: hit count 4
+    Line 108: hit count 4
+    Line 109: hit count 4
+    Line 110: hit count 4
+    Line 111: hit count 4
+    Line 112: hit count 4
+    Line 113: hit count 4
+    Line 114: hit count 4
+    Line 115: hit count 4
+    Line 116: hit count 4
+    Line 117: hit count 4
+    Line 118: hit count 4
+    Line 119: hit count 4
+    Line 120: hit count 4
+    Line 121: hit count 4
+    Line 122: hit count 4
+    Line 124: hit count 4
+    Line 130: hit count 23
+    Line 136: hit count 3
+    Line 137: hit count 28
+    Line 138: hit count 32
+    Line 139: hit count 4
+    Line 146: hit count 4
+    Line 147: hit count 15
+    Line 148: hit count 15
+    Line 149: hit count 6
+    Line 150: hit count 1
+    Line 151: hit count 1
+    Line 153: hit count 4
+    Line 154: hit count 4
+    Line 155: hit count 4
+    Line 160: hit count 4
+    Line 165: hit count 27
+    Line 166: hit count 4
+    Line 171: hit count 4
+    Line 183: hit count 1
+    Line 184: hit count 6
+    Line 185: hit count 3
+    Line 199: hit count 2
+    Line 204: hit count 10
+    Line 207: hit count 2
+    Line 212: hit count 24
+    Line 213: hit count 2
+    Line 214: hit count 4
+    Line 224: hit count 4
+    Line 234: hit count 5
+----------------------------------------
+File: com/ichi2/anki/servicelayer/LanguageHintService.kt
+  Only in first dataset lines: [56]
+    Line 56: hit count 9
+----------------------------------------
+File: com/ichi2/anki/servicelayer/NoteService.kt
+  Only in first dataset lines: [153, 156, 157]
+    Line 153: hit count 2
+    Line 156: hit count 8
+    Line 157: hit count 1
+----------------------------------------
+File: com/ichi2/anki/servicelayer/ScopedStorageService.kt
+  Only in first dataset lines: [181, 182, 183]
+    Line 181: hit count 4
+    Line 182: hit count 1
+    Line 183: hit count 1
+----------------------------------------
+File: com/ichi2/anki/snackbar/SensibleSwipeDismissBehavior.kt
+  Only in first dataset lines: [65, 66]
+    Line 65: hit count 5
+    Line 66: hit count 5
+----------------------------------------
+File: com/ichi2/anki/snackbar/Snackbars.kt
+  Only in first dataset lines: [260, 263, 265, 266, 267, 268, 269, 270, 334, 336, 337, 339, 340, 341]
+    Line 260: hit count 12
+    Line 263: hit count 2
+    Line 265: hit count 14
+    Line 266: hit count 14
+    Line 267: hit count 8
+    Line 268: hit count 4
+    Line 269: hit count 11
+    Line 270: hit count 2
+    Line 334: hit count 12
+    Line 336: hit count 2
+    Line 337: hit count 2
+    Line 339: hit count 8
+    Line 340: hit count 6
+    Line 341: hit count 1
+----------------------------------------
+File: com/ichi2/anki/snackbar/SwipeDismissBehaviorFix.kt
+  Only in first dataset lines: [68, 69]
+    Line 68: hit count 4
+    Line 69: hit count 5
+----------------------------------------
+File: com/ichi2/anki/ui/NoteTypeSpinnerUtils.kt
+  Only in first dataset lines: [31, 32, 34, 35, 36, 37, 38, 39, 42, 43, 45]
+    Line 31: hit count 9
+    Line 32: hit count 10
+    Line 34: hit count 2
+    Line 35: hit count 4
+    Line 36: hit count 1
+    Line 37: hit count 1
+    Line 38: hit count 1
+    Line 39: hit count 7
+    Line 42: hit count 3
+    Line 43: hit count 2
+    Line 45: hit count 11
+----------------------------------------
+File: com/ichi2/anki/ui/RecyclerFastScroller.kt
+  Only in first dataset lines: [244, 245, 246, 265, 267, 269, 270, 301]
+    Line 244: hit count 4
+    Line 245: hit count 4
+    Line 246: hit count 1
+    Line 265: hit count 2
+    Line 267: hit count 6
+    Line 269: hit count 3
+    Line 270: hit count 1
+    Line 301: hit count 1
+----------------------------------------
+File: com/ichi2/anki/ui/internationalization/SentenceCase.kt
+  Only in first dataset lines: [40]
+    Line 40: hit count 9
+----------------------------------------
+File: com/ichi2/anki/ui/windows/managespace/FileUtils.kt
+  Only in first dataset lines: [161, 163, 167]
+    Line 161: hit count 12
+    Line 163: hit count 17
+    Line 167: hit count 2
+----------------------------------------
+File: com/ichi2/anki/utils/Dialog.kt
+  Only in first dataset lines: [38, 39, 40, 41, 44, 45, 46, 47]
+    Line 38: hit count 6
+    Line 39: hit count 4
+    Line 40: hit count 2
+    Line 41: hit count 4
+    Line 44: hit count 4
+    Line 45: hit count 5
+    Line 46: hit count 3
+    Line 47: hit count 1
+----------------------------------------
+File: com/ichi2/anki/utils/OnlyOnce.kt
+  Only in first dataset lines: [62, 63, 68, 72, 73]
+    Line 62: hit count 3
+    Line 63: hit count 3
+    Line 68: hit count 7
+    Line 72: hit count 10
+    Line 73: hit count 1
+----------------------------------------
+File: com/ichi2/anki/utils/ShortcutUtils.kt
+  Only in first dataset lines: [47, 49, 50, 51, 52, 53, 54, 55]
+    Line 47: hit count 3
+    Line 49: hit count 8
+    Line 50: hit count 9
+    Line 51: hit count 1
+    Line 52: hit count 6
+    Line 53: hit count 5
+    Line 54: hit count 1
+    Line 55: hit count 1
+----------------------------------------
+File: com/ichi2/anki/utils/ext/BundleUtils.kt
+  Only in first dataset lines: [58, 59, 61, 62, 89]
+    Line 58: hit count 4
+    Line 59: hit count 2
+    Line 61: hit count 4
+    Line 62: hit count 1
+    Line 89: hit count 17
+----------------------------------------
+File: com/ichi2/anki/utils/ext/Deck.kt
+  Only in first dataset lines: [27, 28, 29, 30]
+    Line 27: hit count 6
+    Line 28: hit count 4
+    Line 29: hit count 3
+    Line 30: hit count 1
+----------------------------------------
+File: com/ichi2/anki/utils/ext/Fragment.kt
+  Only in first dataset lines: [26, 40]
+    Line 26: hit count 7
+    Line 40: hit count 7
+----------------------------------------
+File: com/ichi2/anki/utils/ext/FragmentActivity.kt
+  Only in first dataset lines: [41, 42, 43, 44, 49, 50, 51, 52, 55]
+    Line 41: hit count 5
+    Line 42: hit count 7
+    Line 43: hit count 1
+    Line 44: hit count 1
+    Line 49: hit count 4
+    Line 50: hit count 3
+    Line 51: hit count 1
+    Line 52: hit count 1
+    Line 55: hit count 1
+----------------------------------------
+File: com/ichi2/anki/utils/ext/Int.kt
+  Only in first dataset lines: [27]
+    Line 27: hit count 1
+----------------------------------------
+File: com/ichi2/anki/widgets/DeckAdapter.kt
+  Only in first dataset lines: [117, 118, 120, 135, 136, 138, 145, 156, 157, 181, 182, 205, 206, 207, 208, 209, 215, 216, 219, 220, 270]
+    Line 117: hit count 2
+    Line 118: hit count 15
+    Line 120: hit count 1
+    Line 135: hit count 9
+    Line 136: hit count 4
+    Line 138: hit count 39
+    Line 145: hit count 8
+    Line 156: hit count 6
+    Line 157: hit count 3
+    Line 181: hit count 7
+    Line 182: hit count 2
+    Line 205: hit count 3
+    Line 206: hit count 3
+    Line 207: hit count 3
+    Line 208: hit count 4
+    Line 209: hit count 8
+    Line 215: hit count 3
+    Line 216: hit count 3
+    Line 219: hit count 7
+    Line 220: hit count 1
+    Line 270: hit count 4
+----------------------------------------
+File: com/ichi2/anki/workarounds/SafeWebViewClient.kt
+  Only in first dataset lines: [29, 44, 45]
+    Line 29: hit count 3
+    Line 44: hit count 3
+    Line 45: hit count 1
+----------------------------------------
+File: com/ichi2/anki/workarounds/SafeWebViewLayout.kt
+  Only in first dataset lines: [37, 38, 40, 42, 48, 50, 51, 52, 54, 61, 62, 63, 67, 68, 74, 75, 76, 82, 85, 96, 140, 142, 143, 144, 160, 169, 178, 179, 183, 184, 185, 197, 199, 200, 201, 202, 203, 205, 206, 209, 210, 213, 214, 216]
+    Line 37: hit count 6
+    Line 38: hit count 6
+    Line 40: hit count 4
+    Line 42: hit count 5
+    Line 48: hit count 6
+    Line 50: hit count 1
+    Line 51: hit count 6
+    Line 52: hit count 1
+    Line 54: hit count 7
+    Line 61: hit count 4
+    Line 62: hit count 5
+    Line 63: hit count 1
+    Line 67: hit count 4
+    Line 68: hit count 1
+    Line 74: hit count 6
+    Line 75: hit count 9
+    Line 76: hit count 2
+    Line 82: hit count 6
+    Line 85: hit count 5
+    Line 96: hit count 6
+    Line 140: hit count 1
+    Line 142: hit count 1
+    Line 143: hit count 2
+    Line 144: hit count 5
+    Line 160: hit count 3
+    Line 169: hit count 1
+    Line 178: hit count 6
+    Line 179: hit count 1
+    Line 183: hit count 5
+    Line 184: hit count 1
+    Line 185: hit count 1
+    Line 197: hit count 5
+    Line 199: hit count 7
+    Line 200: hit count 9
+    Line 201: hit count 2
+    Line 202: hit count 3
+    Line 203: hit count 3
+    Line 205: hit count 3
+    Line 206: hit count 1
+    Line 209: hit count 7
+    Line 210: hit count 2
+    Line 213: hit count 6
+    Line 214: hit count 7
+    Line 216: hit count 1
+----------------------------------------
+File: com/ichi2/compat/CompatHelper.kt
+  Only in first dataset lines: [85]
+    Line 85: hit count 1
+----------------------------------------
+File: com/ichi2/compat/CompatV26.kt
+  Only in first dataset lines: [44]
+    Line 44: hit count 1
+----------------------------------------
+File: com/ichi2/compat/CompatV33.kt
+  Only in first dataset lines: [55]
+    Line 55: hit count 5
+----------------------------------------
+File: com/ichi2/themes/Themes.kt
+  Only in first dataset lines: [48, 127, 148, 149, 150, 151]
+    Line 48: hit count 3
+    Line 127: hit count 5
+    Line 148: hit count 9
+    Line 149: hit count 6
+    Line 150: hit count 4
+    Line 151: hit count 1
+----------------------------------------
+File: com/ichi2/ui/FixedEditText.kt
+  Only in first dataset lines: [53, 56, 57, 58, 59, 60, 61, 63, 64, 97, 98, 110, 113, 114, 117, 118, 142, 143, 144]
+    Line 53: hit count 5
+    Line 56: hit count 1
+    Line 57: hit count 1
+    Line 58: hit count 1
+    Line 59: hit count 2
+    Line 60: hit count 1
+    Line 61: hit count 4
+    Line 63: hit count 3
+    Line 64: hit count 1
+    Line 97: hit count 2
+    Line 98: hit count 3
+    Line 110: hit count 1
+    Line 113: hit count 2
+    Line 114: hit count 4
+    Line 117: hit count 1
+    Line 118: hit count 1
+    Line 142: hit count 9
+    Line 143: hit count 5
+    Line 144: hit count 1
+----------------------------------------
+File: com/ichi2/ui/FixedTextView.kt
+  Only in first dataset lines: [79, 80, 95, 96]
+    Line 79: hit count 2
+    Line 80: hit count 3
+    Line 95: hit count 1
+    Line 96: hit count 1
+----------------------------------------
+File: com/ichi2/ui/RtlCompliantActionProvider.kt
+  Only in first dataset lines: [44, 45, 46, 47, 48, 49, 50, 56]
+    Line 44: hit count 8
+    Line 45: hit count 5
+    Line 46: hit count 8
+    Line 47: hit count 3
+    Line 48: hit count 3
+    Line 49: hit count 1
+    Line 50: hit count 5
+    Line 56: hit count 3
+----------------------------------------
+File: com/ichi2/utils/AlertDialogFacade.kt
+  Only in first dataset lines: [62, 70, 71, 75, 76, 77, 79, 82, 83, 84, 85, 97, 99, 106, 107, 141, 165, 176, 379, 381, 394, 395, 399, 405]
+    Line 62: hit count 2
+    Line 70: hit count 4
+    Line 71: hit count 4
+    Line 75: hit count 11
+    Line 76: hit count 2
+    Line 77: hit count 2
+    Line 79: hit count 4
+    Line 82: hit count 8
+    Line 83: hit count 4
+    Line 84: hit count 4
+    Line 85: hit count 3
+    Line 97: hit count 2
+    Line 99: hit count 2
+    Line 106: hit count 4
+    Line 107: hit count 8
+    Line 141: hit count 7
+    Line 165: hit count 3
+    Line 176: hit count 2
+    Line 379: hit count 7
+    Line 381: hit count 4
+    Line 394: hit count 1
+    Line 395: hit count 5
+    Line 399: hit count 12
+    Line 405: hit count 1
+----------------------------------------
+File: com/ichi2/utils/AndroidUiUtils.kt
+  Only in first dataset lines: [62, 63, 64, 65, 66, 67, 68]
+    Line 62: hit count 6
+    Line 63: hit count 3
+    Line 64: hit count 9
+    Line 65: hit count 5
+    Line 66: hit count 6
+    Line 67: hit count 2
+    Line 68: hit count 1
+----------------------------------------
+File: com/ichi2/utils/AssetHelper.kt
+  Only in first dataset lines: [52, 53, 54, 56, 68, 70, 72, 73]
+    Line 52: hit count 2
+    Line 53: hit count 16
+    Line 54: hit count 9
+    Line 56: hit count 1
+    Line 68: hit count 11
+    Line 70: hit count 2
+    Line 72: hit count 5
+    Line 73: hit count 1
+----------------------------------------
+File: com/ichi2/utils/Colour.kt
+  Only in first dataset lines: [25]
+    Line 25: hit count 26
+----------------------------------------
+File: com/ichi2/utils/FragmentFactoryUtils.kt
+  Only in first dataset lines: [30, 31]
+    Line 30: hit count 1
+    Line 31: hit count 1
+----------------------------------------
+File: com/ichi2/utils/HashUtil.kt
+  Only in first dataset lines: [27, 29]
+    Line 27: hit count 10
+    Line 29: hit count 7
+----------------------------------------
+File: com/ichi2/utils/NoteFieldDecorator.kt
+  Only in first dataset lines: [24, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 68, 69, 70, 75, 81, 82, 84, 85, 86, 87, 88, 89, 91, 92, 94, 97, 99, 101]
+    Line 24: hit count 4
+    Line 26: hit count 1
+    Line 27: hit count 28
+    Line 28: hit count 2
+    Line 29: hit count 2
+    Line 30: hit count 2
+    Line 31: hit count 2
+    Line 32: hit count 2
+    Line 33: hit count 2
+    Line 34: hit count 2
+    Line 35: hit count 2
+    Line 36: hit count 2
+    Line 37: hit count 2
+    Line 40: hit count 2
+    Line 41: hit count 54
+    Line 42: hit count 2
+    Line 43: hit count 2
+    Line 44: hit count 2
+    Line 45: hit count 2
+    Line 46: hit count 2
+    Line 47: hit count 2
+    Line 48: hit count 2
+    Line 49: hit count 2
+    Line 50: hit count 2
+    Line 51: hit count 2
+    Line 52: hit count 2
+    Line 53: hit count 2
+    Line 54: hit count 2
+    Line 55: hit count 2
+    Line 56: hit count 2
+    Line 57: hit count 2
+    Line 58: hit count 2
+    Line 59: hit count 2
+    Line 60: hit count 2
+    Line 61: hit count 2
+    Line 62: hit count 2
+    Line 63: hit count 2
+    Line 64: hit count 2
+    Line 68: hit count 4
+    Line 69: hit count 16
+    Line 70: hit count 5
+    Line 75: hit count 2
+    Line 81: hit count 12
+    Line 82: hit count 2
+    Line 84: hit count 4
+    Line 85: hit count 14
+    Line 86: hit count 2
+    Line 87: hit count 2
+    Line 88: hit count 10
+    Line 89: hit count 6
+    Line 91: hit count 10
+    Line 92: hit count 6
+    Line 94: hit count 5
+    Line 97: hit count 5
+    Line 99: hit count 4
+    Line 101: hit count 3
+----------------------------------------
+File: com/ichi2/utils/TimeUtil.kt
+  Only in first dataset lines: [56, 60, 61, 62, 63, 64, 65, 66, 68]
+    Line 56: hit count 1
+    Line 60: hit count 4
+    Line 61: hit count 16
+    Line 62: hit count 4
+    Line 63: hit count 2
+    Line 64: hit count 1
+    Line 65: hit count 21
+    Line 66: hit count 5
+    Line 68: hit count 2
+----------------------------------------
+File: com/ichi2/utils/ViewGroupUtils.kt
+  Only in first dataset lines: [29, 30, 31, 32, 34, 87, 88, 89, 90]
+    Line 29: hit count 3
+    Line 30: hit count 6
+    Line 31: hit count 7
+    Line 32: hit count 9
+    Line 34: hit count 2
+    Line 87: hit count 9
+    Line 88: hit count 3
+    Line 89: hit count 1
+    Line 90: hit count 1
+----------------------------------------
+File: com/ichi2/utils/ViewUtils.kt
+  Only in first dataset lines: [80]
+    Line 80: hit count 7
+----------------------------------------
+File: com/ichi2/widget/Id.kt
+  Only in first dataset lines: [64, 127]
+    Line 64: hit count 6
+    Line 127: hit count 8
+----------------------------------------
+File: com/ichi2/widget/WidgetStatus.kt
+  Only in second dataset lines: [54, 55, 56, 58, 66, 67, 68, 69, 70, 74, 77]
+    Line 54: hit count 3
+    Line 55: hit count 5
+    Line 56: hit count 5
+    Line 58: hit count 3
+    Line 66: hit count 1
+    Line 67: hit count 2
+    Line 68: hit count 8
+    Line 69: hit count 2
+    Line 70: hit count 4
+    Line 74: hit count 12
+    Line 77: hit count 1
+----------------------------------------
+File: com/ichi2/widget/cardanalysis/CardAnalysisWidget.kt
+  Only in first dataset lines: [217, 219, 220, 222, 223, 225, 229]
+    Line 217: hit count 3
+    Line 219: hit count 6
+    Line 220: hit count 7
+    Line 222: hit count 6
+    Line 223: hit count 18
+    Line 225: hit count 6
+    Line 229: hit count 1
+----------------------------------------
+File: com/ichi2/widget/deckpicker/DeckPickerWidget.kt
+  Only in first dataset lines: [226, 228, 229, 231, 232, 234, 239]
+    Line 226: hit count 3
+    Line 228: hit count 6
+    Line 229: hit count 7
+    Line 231: hit count 6
+    Line 232: hit count 18
+    Line 234: hit count 6
+    Line 239: hit count 1
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Random operation: BACK → Start: test_create_deck → Input: > → Pass: test_create_deck → Start: test_check_cardbrowser → Pass: test_check_cardbrowser
+
+FAIL continuation:
+Start: test_rename_deck → Input: 2eLLEzh → Pass: test_rename_deck → Start: test_check_cardbrowser → Pass: test_check_cardbrowser → Start: test_add_card → Input: ,Ii7 → Input: \NWGylWe0l → Pass: test_add_card → Start: test_create_subdeck → Input: K!IP%:x → Pass: test_create_subdeck → Start: test_edit_deck_description → Input: LC3Ap~L%pb → Pass: test_edit_deck_description → Start: test_check_cardbrowser → Pass: test_check_cardbrowser → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: BACK → Start: test_delete_deck → Pass: test_delete_deck → Start: test_check_cardbrowser → Pass: test_check_cardbrowser → Start: test_check_cardbrowser → Pass: test_check_cardbrowser → Random operation: CLICK → Start: test_create_deck → Input: \t → Pass: test_create_deck → Start: test_check_cardbrowser → Fail: test_check_cardbrowser → Random operation: CLICK → Start: test_create_deck → Input: 2_(O'it+ → Pass: test_create_deck → Start: test_create_deck → Input: C,~TF!tN → Pass: test_create_deck
+
+## Correct Execution Path
+Random operation: BACK → Start: test_create_deck → Input: > → Pass: test_create_deck → Start: test_check_cardbrowser → Pass: test_check_cardbrowser
+
+## Error Execution Path
+Random operation: BACK → Start: test_create_deck → Input: > → Pass: test_create_deck → Start: test_check_cardbrowser → Pass: test_check_cardbrowser → Start: test_rename_deck → Input: 2eLLEzh → Pass: test_rename_deck → Start: test_check_cardbrowser → Pass: test_check_cardbrowser → Start: test_add_card → Input: ,Ii7 → Input: \NWGylWe0l → Pass: test_add_card → Start: test_create_subdeck → Input: K!IP%:x → Pass: test_create_subdeck → Start: test_edit_deck_description → Input: LC3Ap~L%pb → Pass: test_edit_deck_description → Start: test_check_cardbrowser → Pass: test_check_cardbrowser → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: BACK → Start: test_delete_deck → Pass: test_delete_deck → Start: test_check_cardbrowser → Pass: test_check_cardbrowser → Start: test_check_cardbrowser → Pass: test_check_cardbrowser → Random operation: CLICK → Start: test_create_deck → Input: \t → Pass: test_create_deck → Start: test_check_cardbrowser → Fail: test_check_cardbrowser → Random operation: CLICK → Start: test_create_deck → Input: 2_(O'it+ → Pass: test_create_deck → Start: test_create_deck → Input: C,~TF!tN → Pass: test_create_deck
+
+## Files to Analyze
+com/ichi2/anki/AnkiActivity.kt
+  Differing lines: 8
+
+com/ichi2/anki/AnkiDroidApp.kt
+  Differing lines: 5
+
+com/ichi2/anki/AppLifecycleObserver.kt
+  Differing lines: 5
+
+com/ichi2/anki/CardBrowser.kt
+  Differing lines: 4
+
+com/ichi2/anki/CardTemplateNotetype.kt
+  Differing lines: 5
+
+com/ichi2/anki/CollectionHelper.kt
+  Differing lines: 2
+
+com/ichi2/anki/CoroutineHelpers.kt
+  Differing lines: 72
+
+com/ichi2/anki/CrashReportService.kt
+  Differing lines: 2
+
+com/ichi2/anki/CustomActionModeCallback.kt
+  Differing lines: 6
+
+com/ichi2/anki/DayRolloverHandler.kt
+  Differing lines: 13
+
+com/ichi2/anki/DeckPicker.kt
+  Differing lines: 132
+
+com/ichi2/anki/FieldEditLine.kt
+  Differing lines: 53
+
+com/ichi2/anki/FieldEditText.kt
+  Differing lines: 44
+
+com/ichi2/anki/NavigationDrawerActivity.kt
+  Differing lines: 3
+
+com/ichi2/anki/NoteEditorActivity.kt
+  Differing lines: 53
+
+com/ichi2/anki/NoteEditorFragment.kt
+  Differing lines: 504
+
+com/ichi2/anki/NoteFieldsCheckResult.kt
+  Differing lines: 5
+
+com/ichi2/anki/SingleFragmentActivity.kt
+  Differing lines: 30
+
+com/ichi2/anki/StudyOptionsActivity.kt
+  Differing lines: 49
+
+com/ichi2/anki/StudyOptionsFragment.kt
+  Differing lines: 179
+
+com/ichi2/anki/Sync.kt
+  Differing lines: 1
+
+com/ichi2/anki/UIUtils.kt
+  Differing lines: 1
+
+com/ichi2/anki/backend/HtmlUtils.kt
+  Differing lines: 11
+
+com/ichi2/anki/browser/BrowserMultiColumnAdapter.kt
+  Differing lines: 93
+
+com/ichi2/anki/browser/CardBrowserFragment.kt
+  Differing lines: 5
+
+com/ichi2/anki/browser/CardBrowserViewModel.kt
+  Differing lines: 13
+
+com/ichi2/anki/browser/CardOrNoteId.kt
+  Differing lines: 3
+
+com/ichi2/anki/contextmenu/DeckPickerMenuContentProvider.kt
+  Differing lines: 18
+
+com/ichi2/anki/deckpicker/DeckPickerViewModel.kt
+  Differing lines: 24
+
+com/ichi2/anki/deckpicker/DisplayDeckNode.kt
+  Differing lines: 3
+
+com/ichi2/anki/dialogs/BackupPromptDialog.kt
+  Differing lines: 42
+
+com/ichi2/anki/dialogs/CreateDeckDialog.kt
+  Differing lines: 20
+
+com/ichi2/anki/dialogs/DeckPickerContextMenu.kt
+  Differing lines: 30
+
+com/ichi2/anki/dialogs/DeckSelectionDialog.kt
+  Differing lines: 6
+
+com/ichi2/anki/dialogs/EditDeckDescriptionDialog.kt
+  Differing lines: 83
+
+com/ichi2/anki/dialogs/EditDeckDescriptionDialogViewModel.kt
+  Differing lines: 69
+
+com/ichi2/anki/dialogs/customstudy/CustomStudyDialog.kt
+  Differing lines: 199
+
+com/ichi2/anki/dialogs/customstudy/CustomStudyViewModel.kt
+  Differing lines: 9
+
+com/ichi2/anki/logging/FragmentLifecycleLogger.kt
+  Differing lines: 2
+
+com/ichi2/anki/noteeditor/CustomToolbarButton.kt
+  Differing lines: 5
+
+com/ichi2/anki/noteeditor/FieldState.kt
+  Differing lines: 37
+
+com/ichi2/anki/noteeditor/NoteEditorLauncher.kt
+  Differing lines: 15
+
+com/ichi2/anki/noteeditor/Toolbar.kt
+  Differing lines: 82
+
+com/ichi2/anki/observability/ChangeManager.kt
+  Differing lines: 18
+
+com/ichi2/anki/observability/OpChangesNotifier.kt
+  Differing lines: 9
+
+com/ichi2/anki/pages/AnkiServer.kt
+  Differing lines: 29
+
+com/ichi2/anki/pages/DeckOptions.kt
+  Differing lines: 68
+
+com/ichi2/anki/pages/PageChromeClient.kt
+  Differing lines: 1
+
+com/ichi2/anki/pages/PageFragment.kt
+  Differing lines: 44
+
+com/ichi2/anki/pages/PageWebViewClient.kt
+  Differing lines: 41
+
+com/ichi2/anki/pages/PostRequestHandler.kt
+  Differing lines: 65
+
+com/ichi2/anki/servicelayer/LanguageHintService.kt
+  Differing lines: 1
+
+com/ichi2/anki/servicelayer/NoteService.kt
+  Differing lines: 3
+
+com/ichi2/anki/servicelayer/ScopedStorageService.kt
+  Differing lines: 3
+
+com/ichi2/anki/snackbar/SensibleSwipeDismissBehavior.kt
+  Differing lines: 2
+
+com/ichi2/anki/snackbar/Snackbars.kt
+  Differing lines: 14
+
+com/ichi2/anki/snackbar/SwipeDismissBehaviorFix.kt
+  Differing lines: 2
+
+com/ichi2/anki/ui/NoteTypeSpinnerUtils.kt
+  Differing lines: 11
+
+com/ichi2/anki/ui/RecyclerFastScroller.kt
+  Differing lines: 8
+
+com/ichi2/anki/ui/internationalization/SentenceCase.kt
+  Differing lines: 1
+
+com/ichi2/anki/ui/windows/managespace/FileUtils.kt
+  Differing lines: 3
+
+com/ichi2/anki/utils/Dialog.kt
+  Differing lines: 8
+
+com/ichi2/anki/utils/OnlyOnce.kt
+  Differing lines: 5
+
+com/ichi2/anki/utils/ShortcutUtils.kt
+  Differing lines: 8
+
+com/ichi2/anki/utils/ext/BundleUtils.kt
+  Differing lines: 5
+
+com/ichi2/anki/utils/ext/Deck.kt
+  Differing lines: 4
+
+com/ichi2/anki/utils/ext/Fragment.kt
+  Differing lines: 2
+
+com/ichi2/anki/utils/ext/FragmentActivity.kt
+  Differing lines: 9
+
+com/ichi2/anki/utils/ext/Int.kt
+  Differing lines: 1
+
+com/ichi2/anki/widgets/DeckAdapter.kt
+  Differing lines: 21
+
+com/ichi2/anki/workarounds/SafeWebViewClient.kt
+  Differing lines: 3
+
+com/ichi2/anki/workarounds/SafeWebViewLayout.kt
+  Differing lines: 44
+
+com/ichi2/compat/CompatHelper.kt
+  Differing lines: 1
+
+com/ichi2/compat/CompatV26.kt
+  Differing lines: 1
+
+com/ichi2/compat/CompatV33.kt
+  Differing lines: 1
+
+com/ichi2/themes/Themes.kt
+  Differing lines: 6
+
+com/ichi2/ui/FixedEditText.kt
+  Differing lines: 19
+
+com/ichi2/ui/FixedTextView.kt
+  Differing lines: 4
+
+com/ichi2/ui/RtlCompliantActionProvider.kt
+  Differing lines: 8
+
+com/ichi2/utils/AlertDialogFacade.kt
+  Differing lines: 24
+
+com/ichi2/utils/AndroidUiUtils.kt
+  Differing lines: 7
+
+com/ichi2/utils/AssetHelper.kt
+  Differing lines: 8
+
+com/ichi2/utils/Colour.kt
+  Differing lines: 1
+
+com/ichi2/utils/FragmentFactoryUtils.kt
+  Differing lines: 2
+
+com/ichi2/utils/HashUtil.kt
+  Differing lines: 2
+
+com/ichi2/utils/NoteFieldDecorator.kt
+  Differing lines: 56
+
+com/ichi2/utils/TimeUtil.kt
+  Differing lines: 9
+
+com/ichi2/utils/ViewGroupUtils.kt
+  Differing lines: 9
+
+com/ichi2/utils/ViewUtils.kt
+  Differing lines: 1
+
+com/ichi2/widget/Id.kt
+  Differing lines: 2
+
+com/ichi2/widget/WidgetStatus.kt
+  Differing lines: 11
+
+com/ichi2/widget/cardanalysis/CardAnalysisWidget.kt
+  Differing lines: 7
+
+com/ichi2/widget/deckpicker/DeckPickerWidget.kt
+  Differing lines: 7
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-20 15:31:32 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-20 15:31:41 [llm] INFO: LLM response: com/ichi2/anki/CardBrowser.kt
+com/ichi2/anki/browser/CardBrowserFragment.kt
+com/ichi2/anki/browser/CardBrowserViewModel.kt
+com/ichi2/anki/DeckPicker.kt
+com/ichi2/anki/CollectionHelper.kt
+com/ichi2/anki/AnkiActivity.kt
+com/ichi2/anki/AnkiDroidApp.kt
+com/ichi2/anki/AppLifecycleObserver.kt
+com/ichi2/anki/NavigationDrawerActivity.kt
+com/ichi2/anki/CoroutineHelpers.kt
+com/ichi2/anki/browser/BrowserMultiColumnAdapter.kt
+com/ichi2/anki/browser/CardOrNoteId.kt
+com/ichi2/anki/NoteEditorFragment.kt
+com/ichi2/anki/NoteEditorActivity.kt
+com/ichi2/anki/FieldEditLine.kt
+com/ichi2/anki/FieldEditText.kt
+com/ichi2/anki/noteeditor/FieldState.kt
+com/ichi2/anki/noteeditor/Toolbar.kt
+com/ichi2/anki/noteeditor/NoteEditorLauncher.kt
+com/ichi2/anki/noteeditor/CustomToolbarButton.kt
+com/ichi2/anki/CardTemplateNotetype.kt
+com/ichi2/anki/NoteFieldsCheckResult.kt
+com/ichi2/anki/StudyOptionsFragment.kt
+com/ichi2/anki/StudyOptionsActivity.kt
+com/ichi2/anki/SingleFragmentActivity.kt
+com/ichi2/anki/DayRolloverHandler.kt
+com/ichi2/anki/CrashReportService.kt
+com/ichi2/anki/CustomActionModeCallback.kt
+com/ichi2/anki/Sync.kt
+com/ichi2/anki/UIUtils.kt
+com/ichi2/anki/backend/HtmlUtils.kt
+com/ichi2/anki/contextmenu/DeckPickerMenuContentProvider.kt
+com/ichi2/anki/deckpicker/DeckPickerViewModel.kt
+com/ichi2/anki/deckpicker/DisplayDeckNode.kt
+com/ichi2/anki/dialogs/BackupPromptDialog.kt
+com/ichi2/anki/dialogs/CreateDeckDialog.kt
+com/ichi2/anki/dialogs/DeckPickerContextMenu.kt
+com/ichi2/anki/dialogs/DeckSelectionDialog.kt
+com/ichi2/anki/dialogs/EditDeckDescriptionDialog.kt
+com/ichi2/anki/dialogs/EditDeckDescriptionDialogViewModel.kt
+com/ichi2/anki/dialogs/customstudy/CustomStudyDialog.kt
+com/ichi2/anki/dialogs/customstudy/CustomStudyViewModel.kt
+com/ichi2/anki/logging/FragmentLifecycleLogger.kt
+com/ichi2/anki/observability/ChangeManager.kt
+com/ichi2/anki/observability/OpChangesNotifier.kt
+com/ichi2/anki/pages/AnkiServer.kt
+com/ichi2/anki/pages/DeckOptions.kt
+com/ichi2/anki/pages/PageChromeClient.kt
+com/ichi2/anki/pages/PageFragment.kt
+com/ichi2/anki/pages/PageWebViewClient.kt
+com/ichi2/anki/pages/PostRequestHandler.kt
+com/ichi2/anki/servicelayer/LanguageHintService.kt
+com/ichi2/anki/servicelayer/NoteService.kt
+com/ichi2/anki/servicelayer/ScopedStorageService.kt
+com/ichi2/anki/snackbar/SensibleSwipeDismissBehavior.kt
+com/ichi2/anki/snackbar/Snackbars.kt
+com/ichi2/anki/snackbar/SwipeDismissBehaviorFix.kt
+com/ichi2/anki/ui/NoteTypeSpinnerUtils.kt
+com/ichi2/anki/ui/RecyclerFastScroller.kt
+com/ichi2/anki/ui/internationalization/SentenceCase.kt
+com/ichi2/anki/ui/windows/managespace/FileUtils.kt
+com/ichi2/anki/utils/Dialog.kt
+com/ichi2/anki/utils/OnlyOnce.kt
+com/ichi2/anki/utils/ShortcutUtils.kt
+com/ichi2/anki/utils/ext/BundleUtils.kt
+com/ichi2/anki/utils/ext/Deck.kt
+com/ichi2/anki/utils/ext/Fragment.kt
+com/ichi2/anki/utils/ext/FragmentActivity.kt
+com/ichi2/anki/utils/ext/Int.kt
+com/ichi2/anki/widgets/DeckAdapter.kt
+com/ichi2/anki/workarounds/SafeWebViewClient.kt
+com/ichi2/anki/workarounds/SafeWebViewLayout.kt
+com/ichi2/compat/CompatHelper.kt
+com/ichi2/compat/CompatV26.kt
+com/ichi2/compat/CompatV33.kt
+com/ichi2/themes/Themes.kt
+com/ichi2/ui/FixedEditText.kt
+com/ichi2/ui/FixedTextView.kt
+com/ichi2/ui/RtlCompliantActionProvider.kt
+com/ichi2/utils/AlertDialogFacade.kt
+com/ichi2/utils/AndroidUiUtils.kt
+com/ichi2/utils/AssetHelper.kt
+com/ichi2/utils/Colour.kt
+com/ichi2/utils/FragmentFactoryUtils.kt
+com/ichi2/utils/HashUtil.kt
+com/ichi2/utils/NoteFieldDecorator.kt
+com/ichi2/utils/TimeUtil.kt
+com/ichi2/utils/ViewGroupUtils.kt
+com/ichi2/utils/ViewUtils.kt
+com/ichi2/widget/Id.kt
+com/ichi2/widget/WidgetStatus.kt
+com/ichi2/widget/cardanalysis/CardAnalysisWidget.kt
+com/ichi2/widget/deckpicker/DeckPickerWidget.kt
+2026-06-20 15:31:41 [runner] INFO: Saving ranking to D:\code\python\Kea-FL_new\report\report_20260620_153120\test_check_cardbrowser\ranking.txt
+2026-06-20 15:31:41 [report_generator] INFO: Generated comprehensive analysis report: D:\code\python\Kea-FL_new\report\report_20260620_153120\index.html
+2026-06-20 15:31:41 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: D:\code\python\Kea-FL_new\report\report_20260620_153120

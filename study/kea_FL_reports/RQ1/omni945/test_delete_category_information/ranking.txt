@@ -1,0 +1,5 @@
+it/feio/android/omninotes/CategoryActivity.java
+it/feio/android/omninotes/async/CategoryMenuTask.java
+it/feio/android/omninotes/models/adapters/CategoryBaseAdapter.java
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/MainActivity.java

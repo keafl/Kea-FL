@@ -1,0 +1,2 @@
+net/gsantner/opoc/ui/FilesystemViewerAdapter.java
+net/gsantner/markor/util/AppSettings.java

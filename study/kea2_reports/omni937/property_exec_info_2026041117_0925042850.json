@@ -1,0 +1,24 @@
+{"startStepsCount": 1, "propName": "omni937.Omninotes937.test_create_note_with_tag_text_in_content", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni937.Omninotes937.test_create_note_with_tag_text_in_content", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni937.Omninotes937.test_search_by_empty_tag_selection", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni937.Omninotes937.test_data_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni937.Omninotes937.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni937.Omninotes937.test_behavior_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni937.Omninotes937.test_search_by_empty_tag_selection", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni937.Omninotes937.test_create_note_with_tag_text_in_content", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni937.Omninotes937.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "omni937.Omninotes937.test_search_by_empty_tag_selection", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni937.Omninotes937.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni937.Omninotes937.test_search_by_empty_tag_selection", "state": "pass", "tb": ""}
+{"startStepsCount": 3, "propName": "omni937.Omninotes937.test_create_note_with_tag_text_in_content", "state": "pass", "tb": ""}
+{"startStepsCount": 5, "propName": "omni937.Omninotes937.test_search_by_empty_tag_selection", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni937.py\", line 149, in test_search_by_empty_tag_selection\n    assert False\n           ^^^^^\nAssertionError\n"}
+{"startStepsCount": 9, "propName": "omni937.Omninotes937.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "omni937.Omninotes937.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "omni937.Omninotes937.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "omni937.Omninotes937.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "omni937.Omninotes937.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "omni937.Omninotes937.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "omni937.Omninotes937.test_search_by_empty_tag_selection", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni937.py\", line 149, in test_search_by_empty_tag_selection\n    assert False\n           ^^^^^\nAssertionError\n"}
+{"startStepsCount": 10, "propName": "omni937.Omninotes937.test_reduced_view", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "omni937.Omninotes937.test_search_by_empty_tag_selection", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni937.py\", line 149, in test_search_by_empty_tag_selection\n    assert False\n           ^^^^^\nAssertionError\n"}
+{"startStepsCount": 10, "propName": "omni937.Omninotes937.test_search_by_empty_tag_selection", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\omni937.py\", line 149, in test_search_by_empty_tag_selection\n    assert False\n           ^^^^^\nAssertionError\n"}

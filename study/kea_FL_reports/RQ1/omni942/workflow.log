@@ -1,0 +1,560 @@
+2026-06-19 16:24:01 [runner] INFO: Building pair test cases...
+2026-06-19 16:24:01 [replayer] INFO: Parse 179 events
+2026-06-19 16:24:01 [replayer] INFO: Parse 5 Monkey actions
+2026-06-19 16:24:01 [reproducer] INFO: Extract 7 pairs test cases
+2026-06-19 16:24:01 [replayer] INFO: Property omni942.OmninotesTag.test_data_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:24:01 [replayer] INFO: Property omni942.OmninotesTag.test_open_existing_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:24:01 [replayer] INFO: Property omni942.OmninotesTag.test_create_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:24:01 [replayer] INFO: Property omni942.OmninotesTag.test_reduced_view not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:24:01 [replayer] INFO: Property omni942.OmninotesTag.test_create_note_with_tag_in_content not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:24:01 [replayer] INFO: Property omni942.OmninotesTag.test_behavior_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:24:01 [reproducer] INFO: Build 1 pairs test cases
+2026-06-19 16:24:01 [reproducer] INFO: Test case [1]: test_add_and_remove_tag
+2026-06-19 16:24:01 [reproducer] INFO:     -happy_path: [preconditions]: 17, [property]: 9
+2026-06-19 16:24:01 [reproducer] INFO:     -bug_path: [preconditions]: 58, [property]: 9
+2026-06-19 16:24:01 [runner] INFO: Start running full coverage difference analysis...
+2026-06-19 16:24:01 [runner] INFO: Processing pair test case [1]: happy_test_add_and_remove_tag <-> bug_test_add_and_remove_tag
+2026-06-19 16:24:01 [runner] INFO: Running pair test case analysis: happy_test_add_and_remove_tag <-> bug_test_add_and_remove_tag
+2026-06-19 16:24:01 [runner] INFO: Running property-satisfying path...
+2026-06-19 16:24:01 [reproducer] INFO: Start reproducing test case: happy_test_add_and_remove_tag
+2026-06-19 16:24:01 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 16:24:01 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:24:02 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 16:24:02 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 16:24:03 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: it.feio.android.omninotes.alpha
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=7ms (0ms mobile, 0ms wifi, 7ms not connected)
+
+2026-06-19 16:24:03 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 16:24:03 [reproducer] INFO: Init operation executed
+2026-06-19 16:24:06 [reproducer] INFO: Test environment setup completed
+2026-06-19 16:24:06 [reproducer] INFO: Start executing preconditions for test case: happy_test_add_and_remove_tag
+2026-06-19 16:24:06 [replayer] INFO: [1] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 16:24:06 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1140.0, wait_duration=0.0)
+2026-06-19 16:24:06 [replayer] INFO: Press coordinate at: (540.0, 1140.0)
+2026-06-19 16:24:06 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1140.0, wait_duration=0.0)
+2026-06-19 16:24:06 [replayer] INFO: Move coordinate to: (540.0, 1140.0)
+2026-06-19 16:24:06 [replayer] INFO: Touch: Touch(touch_type='move', x=593.9, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:06 [replayer] INFO: Move coordinate to: (593.9, 1140.0)
+2026-06-19 16:24:06 [replayer] INFO: Touch: Touch(touch_type='move', x=647.8, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:06 [replayer] INFO: Move coordinate to: (647.8, 1140.0)
+2026-06-19 16:24:06 [replayer] INFO: Touch: Touch(touch_type='move', x=701.7, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:06 [replayer] INFO: Move coordinate to: (701.7, 1140.0)
+2026-06-19 16:24:06 [replayer] INFO: Touch: Touch(touch_type='move', x=755.6, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:06 [replayer] INFO: Move coordinate to: (755.6, 1140.0)
+2026-06-19 16:24:06 [replayer] INFO: Touch: Touch(touch_type='move', x=809.5, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:06 [replayer] INFO: Move coordinate to: (809.5, 1140.0)
+2026-06-19 16:24:06 [replayer] INFO: Touch: Touch(touch_type='move', x=863.4, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:06 [replayer] INFO: Move coordinate to: (863.4, 1140.0)
+2026-06-19 16:24:06 [replayer] INFO: Touch: Touch(touch_type='move', x=917.3, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:06 [replayer] INFO: Move coordinate to: (917.3, 1140.0)
+2026-06-19 16:24:06 [replayer] INFO: Touch: Touch(touch_type='move', x=971.2, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:06 [replayer] INFO: Move coordinate to: (971.2, 1140.0)
+2026-06-19 16:24:06 [replayer] INFO: Touch: Touch(touch_type='move', x=1025.1, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:06 [replayer] INFO: Move coordinate to: (1025.1, 1140.0)
+2026-06-19 16:24:07 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:07 [replayer] INFO: Release coordinate at: (1079.0, 1140.0)
+2026-06-19 16:24:08 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_create_note - start
+2026-06-19 16:24:08 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:08 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:24:09 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:09 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:24:10 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:24:10 [replayer] INFO: Set text to: 1nvrOrCjS
+2026-06-19 16:24:11 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:24:11 [replayer] INFO: Press key: back
+2026-06-19 16:24:12 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_create_note - pass
+2026-06-19 16:24:12 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_create_note_with_tag_in_content - start
+2026-06-19 16:24:12 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:12 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:24:13 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:14 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:24:15 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:24:15 [replayer] INFO: Set text to: rkjsYWO
+2026-06-19 16:24:16 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:24:16 [replayer] INFO: Set text to: #tag1
+2026-06-19 16:24:17 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:24:17 [replayer] INFO: Press key: back
+2026-06-19 16:24:18 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_create_note_with_tag_in_content - pass
+2026-06-19 16:24:18 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_open_existing_note - start
+2026-06-19 16:24:18 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:18 [replayer] INFO: Click coordinate: (536.0, 608.5)
+2026-06-19 16:24:19 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_open_existing_note - pass
+2026-06-19 16:24:19 [reproducer] INFO: Preconditions executed for test case: happy_test_add_and_remove_tag
+2026-06-19 16:24:19 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_add_and_remove_tag
+2026-06-19 16:24:19 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:24:19 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:24:19 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:24:20 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition/happy_test_add_and_remove_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition/happy_test_add_and_remove_tag.xml
+2026-06-19 16:24:20 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition\happy_test_add_and_remove_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:24:20 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition/happy_test_add_and_remove_tag.ec -> .\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition/happy_test_add_and_remove_tag.xml
+2026-06-19 16:24:20 [reproducer] INFO: Coverage data collected: .\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition/happy_test_add_and_remove_tag.xml
+2026-06-19 16:24:20 [reproducer] INFO: Start executing property for test case: happy_test_add_and_remove_tag
+2026-06-19 16:24:20 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_add_and_remove_tag - start
+2026-06-19 16:24:20 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:20 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:24:21 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:21 [replayer] INFO: Click coordinate: (360.5, 1106.0)
+2026-06-19 16:24:22 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:22 [replayer] INFO: Click coordinate: (843.5, 1250.0)
+2026-06-19 16:24:23 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:23 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:24:24 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:24 [replayer] INFO: Click coordinate: (360.5, 1106.0)
+2026-06-19 16:24:25 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:26 [replayer] INFO: Click coordinate: (843.5, 1250.0)
+2026-06-19 16:24:27 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:24:27 [replayer] INFO: Press key: back
+2026-06-19 16:24:28 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_add_and_remove_tag - pass
+2026-06-19 16:24:28 [reproducer] INFO: Property executed for test case: happy_test_add_and_remove_tag
+2026-06-19 16:24:28 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_add_and_remove_tag
+2026-06-19 16:24:28 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:24:28 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:24:28 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:24:28 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_property/happy_test_add_and_remove_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_property/happy_test_add_and_remove_tag.xml
+2026-06-19 16:24:28 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_property\happy_test_add_and_remove_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:24:28 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_property/happy_test_add_and_remove_tag.ec -> .\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_property/happy_test_add_and_remove_tag.xml
+2026-06-19 16:24:28 [reproducer] INFO: Coverage data collected: .\report\report_20260619_162401\test_add_and_remove_tag\happy_test_add_and_remove_tag_property/happy_test_add_and_remove_tag.xml
+2026-06-19 16:24:28 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 16:24:28 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:24:28 [reproducer] INFO: Test environment reset completed
+2026-06-19 16:24:28 [runner] INFO: Running property-violating path path...
+2026-06-19 16:24:28 [reproducer] INFO: Start reproducing test case: bug_test_add_and_remove_tag
+2026-06-19 16:24:40 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 16:24:40 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:24:40 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 16:24:41 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 16:24:41 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: it.feio.android.omninotes.alpha
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=19ms (0ms mobile, 0ms wifi, 19ms not connected)
+
+2026-06-19 16:24:41 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 16:24:41 [reproducer] INFO: Init operation executed
+2026-06-19 16:24:44 [reproducer] INFO: Test environment setup completed
+2026-06-19 16:24:44 [reproducer] INFO: Start executing preconditions for test case: bug_test_add_and_remove_tag
+2026-06-19 16:24:44 [replayer] INFO: [1] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 16:24:44 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1140.0, wait_duration=0.0)
+2026-06-19 16:24:44 [replayer] INFO: Press coordinate at: (540.0, 1140.0)
+2026-06-19 16:24:44 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1140.0, wait_duration=0.0)
+2026-06-19 16:24:44 [replayer] INFO: Move coordinate to: (540.0, 1140.0)
+2026-06-19 16:24:44 [replayer] INFO: Touch: Touch(touch_type='move', x=593.9, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:44 [replayer] INFO: Move coordinate to: (593.9, 1140.0)
+2026-06-19 16:24:44 [replayer] INFO: Touch: Touch(touch_type='move', x=647.8, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:44 [replayer] INFO: Move coordinate to: (647.8, 1140.0)
+2026-06-19 16:24:44 [replayer] INFO: Touch: Touch(touch_type='move', x=701.7, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:44 [replayer] INFO: Move coordinate to: (701.7, 1140.0)
+2026-06-19 16:24:44 [replayer] INFO: Touch: Touch(touch_type='move', x=755.6, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:44 [replayer] INFO: Move coordinate to: (755.6, 1140.0)
+2026-06-19 16:24:44 [replayer] INFO: Touch: Touch(touch_type='move', x=809.5, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:44 [replayer] INFO: Move coordinate to: (809.5, 1140.0)
+2026-06-19 16:24:44 [replayer] INFO: Touch: Touch(touch_type='move', x=863.4, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:45 [replayer] INFO: Move coordinate to: (863.4, 1140.0)
+2026-06-19 16:24:45 [replayer] INFO: Touch: Touch(touch_type='move', x=917.3, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:45 [replayer] INFO: Move coordinate to: (917.3, 1140.0)
+2026-06-19 16:24:45 [replayer] INFO: Touch: Touch(touch_type='move', x=971.2, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:45 [replayer] INFO: Move coordinate to: (971.2, 1140.0)
+2026-06-19 16:24:45 [replayer] INFO: Touch: Touch(touch_type='move', x=1025.1, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:45 [replayer] INFO: Move coordinate to: (1025.1, 1140.0)
+2026-06-19 16:24:45 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1140.0, wait_duration=0.02)
+2026-06-19 16:24:45 [replayer] INFO: Release coordinate at: (1079.0, 1140.0)
+2026-06-19 16:24:46 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_create_note - start
+2026-06-19 16:24:46 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:46 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:24:47 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:47 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:24:48 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:24:48 [replayer] INFO: Set text to: 1nvrOrCjS
+2026-06-19 16:24:49 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:24:49 [replayer] INFO: Press key: back
+2026-06-19 16:24:50 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_create_note - pass
+2026-06-19 16:24:50 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_create_note_with_tag_in_content - start
+2026-06-19 16:24:50 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:51 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:24:52 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:52 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:24:53 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:24:53 [replayer] INFO: Set text to: rkjsYWO
+2026-06-19 16:24:54 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:24:54 [replayer] INFO: Set text to: #tag1
+2026-06-19 16:24:55 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:24:55 [replayer] INFO: Press key: back
+2026-06-19 16:24:56 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_create_note_with_tag_in_content - pass
+2026-06-19 16:24:56 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_open_existing_note - start
+2026-06-19 16:24:56 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:56 [replayer] INFO: Click coordinate: (536.0, 608.5)
+2026-06-19 16:24:57 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_open_existing_note - pass
+2026-06-19 16:24:57 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_add_and_remove_tag - start
+2026-06-19 16:24:57 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:58 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:24:59 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:24:59 [replayer] INFO: Click coordinate: (360.5, 1106.0)
+2026-06-19 16:25:00 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:00 [replayer] INFO: Click coordinate: (843.5, 1250.0)
+2026-06-19 16:25:01 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:01 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:25:02 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:02 [replayer] INFO: Click coordinate: (360.5, 1106.0)
+2026-06-19 16:25:03 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:03 [replayer] INFO: Click coordinate: (843.5, 1250.0)
+2026-06-19 16:25:04 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:25:04 [replayer] INFO: Press key: back
+2026-06-19 16:25:05 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_add_and_remove_tag - pass
+2026-06-19 16:25:05 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_behavior_setting - start
+2026-06-19 16:25:05 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:06 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:25:07 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:07 [replayer] INFO: Click coordinate: (478.5, 639.0)
+2026-06-19 16:25:08 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:08 [replayer] INFO: Click coordinate: (140.5, 892.5)
+2026-06-19 16:25:09 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:09 [replayer] INFO: Click coordinate: (972.0, 510.0)
+2026-06-19 16:25:10 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:10 [replayer] INFO: Click coordinate: (972.0, 510.0)
+2026-06-19 16:25:11 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:25:11 [replayer] INFO: Press key: back
+2026-06-19 16:25:12 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:25:13 [replayer] INFO: Press key: back
+2026-06-19 16:25:14 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:25:14 [replayer] INFO: Press key: back
+2026-06-19 16:25:15 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_behavior_setting - pass
+2026-06-19 16:25:15 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_open_existing_note - start
+2026-06-19 16:25:15 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:15 [replayer] INFO: Click coordinate: (536.0, 308.5)
+2026-06-19 16:25:16 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_open_existing_note - pass
+2026-06-19 16:25:16 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_add_and_remove_tag - start
+2026-06-19 16:25:16 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:16 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:25:17 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:17 [replayer] INFO: Click coordinate: (360.5, 1106.0)
+2026-06-19 16:25:18 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:19 [replayer] INFO: Click coordinate: (843.5, 1250.0)
+2026-06-19 16:25:20 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:20 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:25:21 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:21 [replayer] INFO: Click coordinate: (360.5, 1106.0)
+2026-06-19 16:25:22 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:22 [replayer] INFO: Click coordinate: (843.5, 1250.0)
+2026-06-19 16:25:23 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:25:23 [replayer] INFO: Press key: back
+2026-06-19 16:25:24 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_add_and_remove_tag - pass
+2026-06-19 16:25:24 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_create_note - start
+2026-06-19 16:25:24 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:24 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:25:25 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:25 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:25:26 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:25:27 [replayer] INFO: Set text to: BRha2sY9g
+2026-06-19 16:25:28 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:25:28 [replayer] INFO: Set text to: abc123
+2026-06-19 16:25:29 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:25:29 [replayer] INFO: Press key: back
+2026-06-19 16:25:30 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_create_note - pass
+2026-06-19 16:25:30 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_open_existing_note - start
+2026-06-19 16:25:30 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:30 [replayer] INFO: Click coordinate: (536.0, 608.5)
+2026-06-19 16:25:31 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_open_existing_note - pass
+2026-06-19 16:25:31 [reproducer] INFO: Preconditions executed for test case: bug_test_add_and_remove_tag
+2026-06-19 16:25:31 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_add_and_remove_tag
+2026-06-19 16:25:31 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:25:31 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:25:31 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:25:32 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition/bug_test_add_and_remove_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition/bug_test_add_and_remove_tag.xml
+2026-06-19 16:25:32 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition\bug_test_add_and_remove_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:25:32 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition/bug_test_add_and_remove_tag.ec -> .\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition/bug_test_add_and_remove_tag.xml
+2026-06-19 16:25:32 [reproducer] INFO: Coverage data collected: .\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition/bug_test_add_and_remove_tag.xml
+2026-06-19 16:25:32 [reproducer] INFO: Start executing property for test case: bug_test_add_and_remove_tag
+2026-06-19 16:25:32 [replayer] INFO: Script execution start state: omni942.OmninotesTag.test_add_and_remove_tag - start
+2026-06-19 16:25:32 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:32 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:25:33 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:33 [replayer] INFO: Click coordinate: (360.5, 1106.0)
+2026-06-19 16:25:34 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:34 [replayer] INFO: Click coordinate: (843.5, 1250.0)
+2026-06-19 16:25:35 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:35 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:25:36 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:36 [replayer] INFO: Click coordinate: (360.5, 1106.0)
+2026-06-19 16:25:37 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:25:37 [replayer] INFO: Click coordinate: (843.5, 1250.0)
+2026-06-19 16:25:38 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:25:39 [replayer] INFO: Press key: back
+2026-06-19 16:25:40 [replayer] INFO: Script execution end state: omni942.OmninotesTag.test_add_and_remove_tag - fail
+2026-06-19 16:25:40 [reproducer] INFO: Property executed for test case: bug_test_add_and_remove_tag
+2026-06-19 16:25:40 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_add_and_remove_tag
+2026-06-19 16:25:40 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:25:40 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:25:40 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:25:40 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_property/bug_test_add_and_remove_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_property/bug_test_add_and_remove_tag.xml
+2026-06-19 16:25:40 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_property\bug_test_add_and_remove_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:25:40 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_property/bug_test_add_and_remove_tag.ec -> .\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_property/bug_test_add_and_remove_tag.xml
+2026-06-19 16:25:40 [reproducer] INFO: Coverage data collected: .\report\report_20260619_162401\test_add_and_remove_tag\bug_test_add_and_remove_tag_property/bug_test_add_and_remove_tag.xml
+2026-06-19 16:25:40 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 16:25:40 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:25:40 [reproducer] INFO: Test environment reset completed
+2026-06-19 16:25:40 [runner] INFO: Parsing coverage data...
+2026-06-19 16:25:40 [report_generator] INFO: generate line coverage data: .\report\report_20260619_162401\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_pre_line_coverage.md
+2026-06-19 16:25:40 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_162401\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_pre_branch_coverage.md
+2026-06-19 16:25:40 [report_generator] INFO: generate line coverage data: .\report\report_20260619_162401\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_prop_line_coverage.md
+2026-06-19 16:25:40 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_162401\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_prop_branch_coverage.md
+2026-06-19 16:25:40 [report_generator] INFO: generate line coverage data: .\report\report_20260619_162401\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_pre_line_coverage.md
+2026-06-19 16:25:40 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_162401\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_pre_branch_coverage.md
+2026-06-19 16:25:40 [report_generator] INFO: generate line coverage data: .\report\report_20260619_162401\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_prop_line_coverage.md
+2026-06-19 16:25:40 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_162401\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_prop_branch_coverage.md
+2026-06-19 16:25:40 [runner] INFO: Calculating incremental coverage...
+2026-06-19 16:25:40 [runner] INFO: Performing incremental coverage analysis...
+2026-06-19 16:25:40 [runner] INFO: Generating pair test case report...
+2026-06-19 16:25:40 [runner] INFO: Saving intermediate data...
+2026-06-19 16:25:40 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260619_162401\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_line_incremental_data.md
+2026-06-19 16:25:40 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260619_162401\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_branch_incremental_data.md
+2026-06-19 16:25:40 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260619_162401\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_line_incremental_data.md
+2026-06-19 16:25:40 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260619_162401\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_branch_incremental_data.md
+2026-06-19 16:25:40 [report_generator] INFO: generate line diff data: .\report\report_20260619_162401\test_add_and_remove_tag\data\line_diff_data.md
+2026-06-19 16:25:40 [report_generator] INFO: generate branch diff data: .\report\report_20260619_162401\test_add_and_remove_tag\data\branch_diff_data.md
+2026-06-19 16:25:40 [runner] INFO: Generating diff report...
+2026-06-19 16:25:40 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\BaseFragment.java encoding: utf-8
+2026-06-19 16:25:40 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\DetailFragment.java encoding: utf-8
+2026-06-19 16:25:40 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\db\DbHelper.java encoding: utf-8
+2026-06-19 16:25:40 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\Tag.java encoding: utf-8
+2026-06-19 16:25:40 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\TagsHelper.java encoding: utf-8
+2026-06-19 16:25:40 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260619_162401\test_add_and_remove_tag\test_add_and_remove_tag_line_diff_report.html
+2026-06-19 16:25:40 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\BaseFragment.java encoding: utf-8
+2026-06-19 16:25:40 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\DetailFragment.java encoding: utf-8
+2026-06-19 16:25:40 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\db\DbHelper.java encoding: utf-8
+2026-06-19 16:25:40 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\TagsHelper.java encoding: utf-8
+2026-06-19 16:25:40 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260619_162401\test_add_and_remove_tag\test_add_and_remove_tag_branch_diff_report.html
+2026-06-19 16:25:40 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_add_and_remove_tag
+
+## Code Coverage Summary
+File: it/feio/android/omninotes/BaseFragment.java
+  Only in second dataset lines: [30, 33, 34]
+    Line 30: hit count 7
+    Line 33: hit count 3
+    Line 34: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/DetailFragment.java
+  Only in second dataset lines: [1067, 1071, 1076, 1077, 1125, 1565, 1566, 1567, 1569, 2058, 2068, 2070, 2072, 2077, 2078, 2079, 2080, 2083, 2084, 2085, 2086, 2087, 2088, 2089, 2090, 2091, 2092, 2093, 2096, 2099, 2112, 2113, 2119, 2120, 2121, 2123, 2124, 2128, 2129, 2132, 2133, 2136, 2137, 2141, 2142, 2143, 2144, 2146, 2149, 2152, 2156]
+    Line 1067: hit count 3
+    Line 1071: hit count 3
+    Line 1076: hit count 2
+    Line 1077: hit count 1
+    Line 1125: hit count 4
+    Line 1565: hit count 3
+    Line 1566: hit count 3
+    Line 1567: hit count 3
+    Line 1569: hit count 1
+    Line 2058: hit count 6
+    Line 2068: hit count 4
+    Line 2070: hit count 2
+    Line 2072: hit count 3
+    Line 2077: hit count 4
+    Line 2078: hit count 4
+    Line 2079: hit count 4
+    Line 2080: hit count 4
+    Line 2083: hit count 6
+    Line 2084: hit count 2
+    Line 2085: hit count 2
+    Line 2086: hit count 7
+    Line 2087: hit count 1
+    Line 2088: hit count 2
+    Line 2089: hit count 5
+    Line 2090: hit count 2
+    Line 2091: hit count 2
+    Line 2092: hit count 2
+    Line 2093: hit count 1
+    Line 2096: hit count 5
+    Line 2099: hit count 6
+    Line 2112: hit count 6
+    Line 2113: hit count 6
+    Line 2119: hit count 5
+    Line 2120: hit count 5
+    Line 2121: hit count 3
+    Line 2123: hit count 6
+    Line 2124: hit count 7
+    Line 2128: hit count 5
+    Line 2129: hit count 1
+    Line 2132: hit count 3
+    Line 2133: hit count 1
+    Line 2136: hit count 6
+    Line 2137: hit count 2
+    Line 2141: hit count 5
+    Line 2142: hit count 5
+    Line 2143: hit count 5
+    Line 2144: hit count 6
+    Line 2146: hit count 2
+    Line 2149: hit count 1
+    Line 2152: hit count 6
+    Line 2156: hit count 6
+----------------------------------------
+File: it/feio/android/omninotes/db/DbHelper.java
+  Only in second dataset lines: [691, 699, 700, 702, 703, 705, 706, 707, 709, 710, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723]
+    Line 691: hit count 4
+    Line 699: hit count 4
+    Line 700: hit count 4
+    Line 702: hit count 5
+    Line 703: hit count 18
+    Line 705: hit count 3
+    Line 706: hit count 6
+    Line 707: hit count 5
+    Line 709: hit count 10
+    Line 710: hit count 3
+    Line 711: hit count 11
+    Line 712: hit count 7
+    Line 713: hit count 7
+    Line 714: hit count 1
+    Line 715: hit count 1
+    Line 717: hit count 11
+    Line 718: hit count 10
+    Line 719: hit count 4
+    Line 720: hit count 1
+    Line 722: hit count 3
+    Line 723: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/models/Tag.java
+  Only in second dataset lines: [38, 39, 57, 65]
+    Line 38: hit count 5
+    Line 39: hit count 1
+    Line 57: hit count 3
+    Line 65: hit count 8
+----------------------------------------
+File: it/feio/android/omninotes/utils/TagsHelper.java
+  Only in second dataset lines: [42, 47, 48, 49, 50, 51, 52, 53, 54, 57, 62, 63, 64, 66, 67, 68, 69, 70, 73, 74, 77, 81, 85, 86, 87, 90, 94, 97, 98, 99, 103, 104, 105, 106, 107, 108, 112, 113, 114, 118, 119, 120, 122, 126, 127, 128, 129, 130, 131, 134, 135]
+    Line 42: hit count 3
+    Line 47: hit count 4
+    Line 48: hit count 17
+    Line 49: hit count 2
+    Line 50: hit count 16
+    Line 51: hit count 3
+    Line 52: hit count 3
+    Line 53: hit count 7
+    Line 54: hit count 7
+    Line 57: hit count 2
+    Line 62: hit count 4
+    Line 63: hit count 4
+    Line 64: hit count 3
+    Line 66: hit count 3
+    Line 67: hit count 8
+    Line 68: hit count 7
+    Line 69: hit count 5
+    Line 70: hit count 8
+    Line 73: hit count 5
+    Line 74: hit count 3
+    Line 77: hit count 6
+    Line 81: hit count 5
+    Line 85: hit count 11
+    Line 86: hit count 5
+    Line 87: hit count 2
+    Line 90: hit count 2
+    Line 94: hit count 3
+    Line 97: hit count 7
+    Line 98: hit count 14
+    Line 99: hit count 4
+    Line 103: hit count 7
+    Line 104: hit count 6
+    Line 105: hit count 1
+    Line 106: hit count 2
+    Line 107: hit count 2
+    Line 108: hit count 1
+    Line 112: hit count 13
+    Line 113: hit count 6
+    Line 114: hit count 1
+    Line 118: hit count 4
+    Line 119: hit count 8
+    Line 120: hit count 25
+    Line 122: hit count 2
+    Line 126: hit count 4
+    Line 127: hit count 12
+    Line 128: hit count 10
+    Line 129: hit count 5
+    Line 130: hit count 7
+    Line 131: hit count 1
+    Line 134: hit count 1
+    Line 135: hit count 6
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Start: test_create_note_with_tag_in_content → Input: rkjsYWO → Input: #tag1 → Back → Pass: test_create_note_with_tag_in_content → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Pass: test_add_and_remove_tag
+
+FAIL continuation:
+Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Pass: test_add_and_remove_tag → Start: test_create_note → Input: BRha2sY9g → Input: abc123 → Back → Pass: test_create_note → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Fail: test_add_and_remove_tag → Start: test_create_note → Input: 478e
+
+## Correct Execution Path
+Random operation: SCROLL_LEFT_RIGHT → Start: test_create_note → Input: 1nvrOrCjS → Back → Pass: test_create_note → Start: test_create_note_with_tag_in_content → Input: rkjsYWO → Input: #tag1 → Back → Pass: test_create_note_with_tag_in_content → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Pass: test_add_and_remove_tag
+
+## Error Execution Path
+Random operation: SCROLL_LEFT_RIGHT → Start: test_create_note → Input: 1nvrOrCjS → Back → Pass: test_create_note → Start: test_create_note_with_tag_in_content → Input: rkjsYWO → Input: #tag1 → Back → Pass: test_create_note_with_tag_in_content → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Pass: test_add_and_remove_tag → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Pass: test_add_and_remove_tag → Start: test_create_note → Input: BRha2sY9g → Input: abc123 → Back → Pass: test_create_note → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Fail: test_add_and_remove_tag → Start: test_create_note → Input: 478e
+
+## Files to Analyze
+it/feio/android/omninotes/BaseFragment.java
+  Differing lines: 3
+
+it/feio/android/omninotes/DetailFragment.java
+  Differing lines: 51
+
+it/feio/android/omninotes/db/DbHelper.java
+  Differing lines: 21
+
+it/feio/android/omninotes/models/Tag.java
+  Differing lines: 4
+
+it/feio/android/omninotes/utils/TagsHelper.java
+  Differing lines: 51
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-19 16:25:41 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-19 16:25:42 [llm] INFO: LLM response: it/feio/android/omninotes/utils/TagsHelper.java
+it/feio/android/omninotes/db/DbHelper.java
+it/feio/android/omninotes/DetailFragment.java
+it/feio/android/omninotes/models/Tag.java
+it/feio/android/omninotes/BaseFragment.java
+2026-06-19 16:25:42 [runner] INFO: Saving ranking to .\report\report_20260619_162401\test_add_and_remove_tag\ranking.txt
+2026-06-19 16:25:42 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260619_162401\index.html
+2026-06-19 16:25:42 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: .\report\report_20260619_162401

@@ -1,0 +1,38 @@
+{
+    "tasks3426.TasksTest.test_change_priority": {
+        "precond_satisfied": 31,
+        "executed": 2,
+        "fail": 0,
+        "error": 0
+    },
+    "tasks3426.TasksTest.test_create_tag": {
+        "precond_satisfied": 34,
+        "executed": 1,
+        "fail": 0,
+        "error": 1
+    },
+    "tasks3426.TasksTest.test_create_task": {
+        "precond_satisfied": 31,
+        "executed": 9,
+        "fail": 0,
+        "error": 0
+    },
+    "tasks3426.TasksTest.test_delete_task": {
+        "precond_satisfied": 31,
+        "executed": 6,
+        "fail": 0,
+        "error": 1
+    },
+    "tasks3426.TasksTest.test_search_task": {
+        "precond_satisfied": 20,
+        "executed": 3,
+        "fail": 1,
+        "error": 0
+    },
+    "tasks3426.TasksTest.test_update_description": {
+        "precond_satisfied": 31,
+        "executed": 8,
+        "fail": 0,
+        "error": 1
+    }
+}

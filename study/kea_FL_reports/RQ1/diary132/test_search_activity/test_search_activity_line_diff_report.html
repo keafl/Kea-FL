@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test_search_activity Line Coverage Diff Report</title>
+<style>
+    :root {
+        --github-bg: #ffffff;
+        --github-text: #24292f;
+        --github-gray-50: #f9fafb;
+        --github-gray-100: #f1f2f4;
+        --github-gray-200: #e4e7eb;
+        --github-gray-300: #d1d5db;
+        --github-gray-400: #9ca3af;
+        --github-gray-500: #6e7781;
+        --github-gray-600: #4d5663;
+        --github-gray-700: #374151;
+        --github-gray-800: #272e3b;
+        
+        --line-number-bg: #f6f8fa;
+        --line-number-text: #6e7781;
+        --line-number-border: #eaecef;
+        
+        --correct-bg: rgb(218, 251, 225);
+        --correct-border: rgb(172, 238, 187);
+        --correct-line-number-bg: rgb(172, 238, 187); 
+        --correct-line-number-text: #000000;
+        
+        --bug-bg: rgb(255, 235, 233); 
+        --bug-border: rgb(255, 206, 203);           
+        --bug-line-number-bg: rgb(255, 206, 203); 
+        --bug-line-number-text: #000000;            
+        
+        --covered-bg: var(--correct-bg);
+        --covered-border: var(--correct-border);
+        --covered-line-number-bg: var(--correct-line-number-bg);
+        --covered-line-number-text: var(--correct-line-number-text);
+        
+        --sidebar-width: 300px;
+        --sidebar-collapsed-width: 0px;
+        --border-radius: 6px;
+        --transition: all 0.2s ease;
+        --code-line-height: 1.5em;
+        --line-number-width: 4.5rem;
+        --header-height: 60px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.5;
+        color: var(--github-text);
+        background-color: var(--github-gray-50);
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        padding-top: var(--header-height);
+    }
+
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        background-color: var(--github-bg);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--github-gray-800);
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--github-gray-200);
+    }
+
+    p {
+        color: var(--github-gray-600);
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-toggle-btn {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        color: var(--github-gray-700);
+        cursor: pointer;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .sidebar-toggle-btn:hover {
+        background-color: var(--github-gray-50);
+        border-color: var(--github-gray-300);
+        color: var(--github-gray-800);
+    }
+
+    .sidebar {
+        width: var(--sidebar-width);
+        background-color: var(--github-bg);
+        border-right: 1px solid var(--github-gray-200);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        transition: var(--transition);
+        overflow: hidden;
+        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+    }
+
+    .sidebar.collapsed {
+        width: var(--sidebar-collapsed-width);
+        border-right: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .sidebar-resizer {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .file-list-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        color: var(--github-gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid var(--github-gray-200);
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-tree {
+        list-style: none;
+        overflow-y: auto;
+        flex: 1;
+        padding: 0.5rem 0;
+    }
+
+    .dir-item {
+        position: relative;
+    }
+
+    .dir-header {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .dir-header:hover {
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-toggle {
+        width: 1rem;
+        height: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: var(--github-gray-500);
+        margin-right: 0.5rem;
+    }
+
+    .dir-content {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .file-item {
+        padding: 0;
+    }
+
+    .file-link {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .file-link::before {
+        content: "📄";
+        font-size: 0.75rem;
+        margin-right: 0.5rem;
+        opacity: 0.7;
+    }
+
+    .file-link:hover {
+        background-color: var(--github-gray-50);
+        color: #0969da;
+    }
+
+    .file-link.active {
+        color: #0969da;
+        font-weight: 500;
+    }
+
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+        transition: var(--transition);
+        margin-left: var(--sidebar-width);
+        height: 100vh;
+        background-color: var(--github-gray-50);
+        padding-top: 1rem;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: var(--sidebar-collapsed-width) !important;
+    }
+
+    .file-header {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        scroll-margin-top: calc(var(--header-height) + 1rem);
+    }
+
+    .file-header a {
+        color: #0969da;
+        text-decoration: none;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .file-header a:hover {
+        text-decoration: underline;
+    }
+
+    .diff-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        min-height: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .diff-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .diff-panel {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .panel-header {
+        background-color: var(--github-gray-50);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .panel-header::before {
+        content: "";
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .diff-container > .diff-panel:first-child .panel-header::before {
+        background-color: var(--bug-border);
+    }
+
+    .diff-container > .diff-panel:last-child .panel-header::before {
+        background-color: var(--correct-border);
+    }
+
+    .code-container {
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-size: 12px;
+        line-height: var(--code-line-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 600px;
+        flex: 1;
+        width: 100%;
+        background-color: var(--github-bg);
+    }
+
+    .code-line {
+        display: grid;
+        grid-template-columns: var(--line-number-width) 1fr;
+        width: 100%;
+        transition: background-color 0.2s ease;
+        border-left: 3px solid transparent;
+        min-height: var(--code-line-height);
+    }
+
+    .line-number {
+        width: var(--line-number-width);
+        padding: 0 0.75rem;
+        text-align: right;
+        color: var(--line-number-text);
+        user-select: none;
+        background-color: var(--line-number-bg);
+        border-right: 1px solid var(--line-number-border);
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .correct-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 100;
+    }
+
+    .bug-line .line-number {
+        background-color: var(--bug-line-number-bg);
+        color: var(--bug-line-number-text);
+        border-right-color: var(--bug-border);
+        font-weight: 100;
+    }
+
+    .covered-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 600;
+    }
+
+    .code-content {
+        flex: 1;
+        padding: 0 0.75rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: flex-start;
+        padding-top: calc((var(--code-line-height) - 1em) / 2);
+        width: 100%;
+        color: var(--github-text);
+    }
+
+    .correct-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .bug-line {
+        background-color: var(--bug-bg);
+        border-left-color: var(--bug-border);
+    }
+
+    .covered-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .context-line .code-content:empty::before {
+        content: " ";
+    }
+
+    .separator-line {
+        background-color: var(--github-gray-50);
+        color: var(--github-gray-500);
+        text-align: center;
+        padding: 0.5rem 0;
+        font-style: italic;
+        border-top: 1px dashed var(--github-gray-300);
+        border-bottom: 1px dashed var(--github-gray-300);
+        grid-column: 1 / -1;
+    }
+
+    .separator-line .line-number,
+    .separator-line .code-content {
+        height: auto;
+        line-height: 1.5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--github-gray-300);
+        border-radius: 6px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--github-gray-400);
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            position: fixed;
+            z-index: 100;
+        }
+        
+        .main-content {
+            margin-left: 0 !important;
+            padding: 1rem;
+        }
+    }
+
+    .context-line {
+        background-color: var(--github-bg);
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+// Global sidebar toggle function
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("collapsed");
+}
+
+// Directory expand/collapse function
+function toggleDir(dirHeader) {
+    const toggle = dirHeader.querySelector(".dir-toggle");
+    const content = dirHeader.nextElementSibling;
+    
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        toggle.textContent = "−";
+    } else {
+        content.style.display = "none";
+        toggle.textContent = "+";
+    }
+}
+
+// File link click event handler
+document.addEventListener('DOMContentLoaded', () => {
+    const fileLinks = document.querySelectorAll('.file-link');
+    
+    fileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            fileLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    if (fileLinks.length > 0) {
+        fileLinks[0].classList.add('active');
+    }
+});
+</script>
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<div class="fixed-header">
+    <h1>test_search_activity Line Coverage Diff Report</h1>
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        File List
+    </button>
+</div>
+<div class="sidebar" id="sidebar">
+<h3 class="file-list-title">File List</h3>
+<ul class="dir-tree">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">de/rampro</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">activitydiary</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">helpers</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-0" class="file-link"><span>ActivityHelper.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">ui/main</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-1" class="file-link"><span>MainActivity.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+</ul>
+</div>
+<div class="main-content">
+<p>Generated Time: 2026-06-19 20:48:38</p>
+<h2>Line Coverage Diff</h2>
+<div class="file-header" id="file-0">
+    File: de/rampro/activitydiary/helpers/ActivityHelper.java
+    <a href="file:///D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\src\main\java\de\rampro\activitydiary\helpers\ActivityHelper.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">169</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">170</span><span class="code-content">// TODO: do we need to keep track on the scheduled jobs, or is a waiting job with the same ID as a new one automatically canceled?</span></div>
+<div class="code-line context-line"><span class="line-number">171</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">172</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">173</span><span class="code-content">    public ArrayList&lt;DiaryActivity&gt; sortedActivities(String query) {</span></div>
+<div class="code-line correct-line"><span class="line-number">174</span><span class="code-content">        ArrayList&lt;DiaryActivity&gt; filtered = new ArrayList&lt;DiaryActivity&gt;(ActivityHelper.helper.getActivities().size());</span></div>
+<div class="code-line correct-line"><span class="line-number">175</span><span class="code-content">        ArrayList&lt;Integer&gt; filteredDist = new ArrayList&lt;Integer&gt;(ActivityHelper.helper.getActivities().size());</span></div>
+<div class="code-line context-line"><span class="line-number">176</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">177</span><span class="code-content">        for(DiaryActivity a : ActivityHelper.helper.getActivities()){</span></div>
+<div class="code-line correct-line"><span class="line-number">178</span><span class="code-content">            int dist = ActivityHelper.searchDistance(query, a.getName());</span></div>
+<div class="code-line correct-line"><span class="line-number">179</span><span class="code-content">            int pos = 0;</span></div>
+<div class="code-line context-line"><span class="line-number">180</span><span class="code-content">            // search where to enter it</span></div>
+<div class="code-line correct-line"><span class="line-number">181</span><span class="code-content">            for(Integer i : filteredDist){</span></div>
+<div class="code-line correct-line"><span class="line-number">182</span><span class="code-content">                if(dist &gt; i.intValue()){</span></div>
+<div class="code-line correct-line"><span class="line-number">183</span><span class="code-content">                    pos++;</span></div>
+<div class="code-line context-line"><span class="line-number">184</span><span class="code-content">                }else{</span></div>
+<div class="code-line context-line"><span class="line-number">185</span><span class="code-content">                    break;</span></div>
+<div class="code-line context-line"><span class="line-number">186</span><span class="code-content">                }</span></div>
+<div class="code-line correct-line"><span class="line-number">187</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">188</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">189</span><span class="code-content">            filteredDist.add(pos, Integer.valueOf(dist));</span></div>
+<div class="code-line correct-line"><span class="line-number">190</span><span class="code-content">            filtered.add(pos, a);</span></div>
+<div class="code-line correct-line"><span class="line-number">191</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">192</span><span class="code-content">        return filtered;</span></div>
+<div class="code-line context-line"><span class="line-number">193</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">194</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">195</span><span class="code-content">    public interface DataChangedListener{</span></div>
+<div class="code-line context-line"><span class="line-number">196</span><span class="code-content">        /**</span></div>
+<div class="code-line context-line"><span class="line-number">197</span><span class="code-content">         * Called when the data has changed and no further specification is possible.</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">615</span><span class="code-content">     *</span></div>
+<div class="code-line context-line"><span class="line-number">616</span><span class="code-content">     * Code based on Levensthein distance from https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance#Java</span></div>
+<div class="code-line context-line"><span class="line-number">617</span><span class="code-content">     */</span></div>
+<div class="code-line context-line"><span class="line-number">618</span><span class="code-content">    public static int searchDistance(CharSequence search, CharSequence model) {</span></div>
+<div class="code-line context-line"><span class="line-number">619</span><span class="code-content">        int result;</span></div>
+<div class="code-line correct-line"><span class="line-number">620</span><span class="code-content">        int len0 = search.length() + 1;</span></div>
+<div class="code-line correct-line"><span class="line-number">621</span><span class="code-content">        int len1 = model.length() + 1;</span></div>
+<div class="code-line context-line"><span class="line-number">622</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">623</span><span class="code-content">        // the array of distances</span></div>
+<div class="code-line correct-line"><span class="line-number">624</span><span class="code-content">        int[] cost = new int[len0];</span></div>
+<div class="code-line correct-line"><span class="line-number">625</span><span class="code-content">        int[] newcost = new int[len0];</span></div>
+<div class="code-line context-line"><span class="line-number">626</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">627</span><span class="code-content">        // initial cost of skipping prefix in String s0</span></div>
+<div class="code-line correct-line"><span class="line-number">628</span><span class="code-content">        for (int i = 0; i &lt; len0; i++) cost[i] = i;</span></div>
+<div class="code-line context-line"><span class="line-number">629</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">630</span><span class="code-content">        // dynamically computing the array of distances</span></div>
+<div class="code-line context-line"><span class="line-number">631</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">632</span><span class="code-content">        // transformation cost for each letter in s1</span></div>
+<div class="code-line correct-line"><span class="line-number">633</span><span class="code-content">        for (int j = 1; j &lt; len1; j++) {</span></div>
+<div class="code-line context-line"><span class="line-number">634</span><span class="code-content">            // initial cost of skipping prefix in String s1</span></div>
+<div class="code-line correct-line"><span class="line-number">635</span><span class="code-content">            newcost[0] = j;</span></div>
+<div class="code-line context-line"><span class="line-number">636</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">637</span><span class="code-content">            // transformation cost for each letter in s0</span></div>
+<div class="code-line correct-line"><span class="line-number">638</span><span class="code-content">            for(int i = 1; i &lt; len0; i++) {</span></div>
+<div class="code-line context-line"><span class="line-number">639</span><span class="code-content">                // matching current letters in both strings</span></div>
+<div class="code-line correct-line"><span class="line-number">640</span><span class="code-content">                int match = (search.charAt(i - 1) == model.charAt(j - 1)) ? 0 : 1;</span></div>
+<div class="code-line context-line"><span class="line-number">641</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">642</span><span class="code-content">                // computing cost for each transformation</span></div>
+<div class="code-line correct-line"><span class="line-number">643</span><span class="code-content">                int cost_replace = cost[i - 1] + match;</span></div>
+<div class="code-line correct-line"><span class="line-number">644</span><span class="code-content">                int cost_insert  = cost[i] + 1;</span></div>
+<div class="code-line correct-line"><span class="line-number">645</span><span class="code-content">                int cost_delete  = newcost[i - 1] + 1;</span></div>
+<div class="code-line context-line"><span class="line-number">646</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">647</span><span class="code-content">                // keep minimum cost</span></div>
+<div class="code-line correct-line"><span class="line-number">648</span><span class="code-content">                newcost[i] = Math.min(Math.min(cost_insert, cost_delete), cost_replace);</span></div>
+<div class="code-line context-line"><span class="line-number">649</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">650</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">651</span><span class="code-content">            // swap cost/newcost arrays</span></div>
+<div class="code-line correct-line"><span class="line-number">652</span><span class="code-content">            int[] swap = cost; cost = newcost; newcost = swap;</span></div>
+<div class="code-line context-line"><span class="line-number">653</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">654</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">655</span><span class="code-content">        // the distance is the cost for transforming all letters in both strings</span></div>
+<div class="code-line correct-line"><span class="line-number">656</span><span class="code-content">        result = cost[len0 - 1];</span></div>
+<div class="code-line context-line"><span class="line-number">657</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">658</span><span class="code-content">        // we want to give some preference for true substrings and character occurrences</span></div>
+<div class="code-line correct-line"><span class="line-number">659</span><span class="code-content">        String mStr = model.toString();</span></div>
+<div class="code-line correct-line"><span class="line-number">660</span><span class="code-content">        String sStr = search.toString();</span></div>
+<div class="code-line correct-line"><span class="line-number">661</span><span class="code-content">        if(mStr.contains(search)){</span></div>
+<div class="code-line correct-line"><span class="line-number">662</span><span class="code-content">            result = result - 20;</span></div>
+<div class="code-line context-line"><span class="line-number">663</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">664</span><span class="code-content">        if(mStr.toLowerCase(Locale.getDefault()).contains(sStr.toLowerCase(Locale.getDefault()))){</span></div>
+<div class="code-line correct-line"><span class="line-number">665</span><span class="code-content">            result = result - 20;</span></div>
+<div class="code-line context-line"><span class="line-number">666</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">667</span><span class="code-content">        for(int i = 0; i &lt; search.length(); i++){</span></div>
+<div class="code-line correct-line"><span class="line-number">668</span><span class="code-content">            int idx = mStr.indexOf(search.charAt(i));</span></div>
+<div class="code-line correct-line"><span class="line-number">669</span><span class="code-content">            if(idx &lt; 0){</span></div>
+<div class="code-line correct-line"><span class="line-number">670</span><span class="code-content">                result = result + 4;</span></div>
+<div class="code-line context-line"><span class="line-number">671</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">672</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">673</span><span class="code-content">        return result;</span></div>
+<div class="code-line context-line"><span class="line-number">674</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">675</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">676</span><span class="code-content">    /* reevaluate ALL conditions, very heavy operation, do not trigger without need */</span></div>
+<div class="code-line context-line"><span class="line-number">677</span><span class="code-content">    public void evaluateAllConditions() {</span></div>
+<div class="code-line context-line"><span class="line-number">678</span><span class="code-content">        for (Condition c : conditions) {</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-1">
+    File: de/rampro/activitydiary/ui/main/MainActivity.java
+    <a href="file:///D:\code\android\wait_for_jacoco\ActivityDiary-00d65a1cca455e25ab2f1a35a4095d8d45596bcb\app\src\main\java\de\rampro\activitydiary\ui\main\MainActivity.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">128</span><span class="code-content">    private SearchView searchView;</span></div>
+<div class="code-line context-line"><span class="line-number">129</span><span class="code-content">    private MenuItem searchMenuItem;</span></div>
+<div class="code-line context-line"><span class="line-number">130</span><span class="code-content">    private View.OnClickListener headerClickHandler;</span></div>
+<div class="code-line context-line"><span class="line-number">131</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">132</span><span class="code-content">    private void setSearchMode(boolean searchMode){</span></div>
+<div class="code-line correct-line"><span class="line-number">133</span><span class="code-content">        if(searchMode){</span></div>
+<div class="code-line correct-line"><span class="line-number">134</span><span class="code-content">            headerView.setVisibility(View.GONE);</span></div>
+<div class="code-line correct-line"><span class="line-number">135</span><span class="code-content">            fabNoteEdit.setVisibility(View.GONE);</span></div>
+<div class="code-line correct-line"><span class="line-number">136</span><span class="code-content">            fabAttachPicture.setVisibility(View.GONE);</span></div>
+<div class="code-line correct-line"><span class="line-number">137</span><span class="code-content">            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);</span></div>
+<div class="code-line correct-line"><span class="line-number">138</span><span class="code-content">            ((StaggeredGridLayoutManager)selectRecyclerView.getLayoutManager()).setSpanCount(searchRowCount);</span></div>
+<div class="code-line context-line"><span class="line-number">139</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">140</span><span class="code-content">        }else{</span></div>
+<div class="code-line correct-line"><span class="line-number">141</span><span class="code-content">            ((StaggeredGridLayoutManager)selectRecyclerView.getLayoutManager()).setSpanCount(normalRowCount);</span></div>
+<div class="code-line context-line"><span class="line-number">142</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">143</span><span class="code-content">            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);</span></div>
+<div class="code-line correct-line"><span class="line-number">144</span><span class="code-content">            headerView.setVisibility(View.VISIBLE);</span></div>
+<div class="code-line correct-line"><span class="line-number">145</span><span class="code-content">            fabNoteEdit.setVisibility(View.VISIBLE);</span></div>
+<div class="code-line correct-line"><span class="line-number">146</span><span class="code-content">            fabAttachPicture.setVisibility(View.VISIBLE);</span></div>
+<div class="code-line context-line"><span class="line-number">147</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">148</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">149</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">150</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">151</span><span class="code-content">    private class QHandler extends AsyncQueryHandler{</span></div>
+<div class="code-line context-line"><span class="line-number">152</span><span class="code-content">        private QHandler(){</span></div>
+<div class="code-line context-line"><span class="line-number">153</span><span class="code-content">            super(ActivityDiaryApplication.getAppContext().getContentResolver());</span></div>
+<div class="code-line context-line"><span class="line-number">154</span><span class="code-content">        }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">612</span><span class="code-content">        // setOnSuggestionListener -&gt; for selection of a suggestion</span></div>
+<div class="code-line context-line"><span class="line-number">613</span><span class="code-content">        // setSuggestionsAdapter</span></div>
+<div class="code-line context-line"><span class="line-number">614</span><span class="code-content">        searchView.setOnSearchClickListener(new View.OnClickListener() {</span></div>
+<div class="code-line context-line"><span class="line-number">615</span><span class="code-content">            @Override</span></div>
+<div class="code-line context-line"><span class="line-number">616</span><span class="code-content">            public void onClick(View v) {</span></div>
+<div class="code-line correct-line"><span class="line-number">617</span><span class="code-content">                setSearchMode(true);</span></div>
+<div class="code-line correct-line"><span class="line-number">618</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">619</span><span class="code-content">        });</span></div>
+<div class="code-line context-line"><span class="line-number">620</span><span class="code-content">        return true;</span></div>
+<div class="code-line context-line"><span class="line-number">621</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">622</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">623</span><span class="code-content">    @Override</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">644</span><span class="code-content">            ActivityHelper.helper.setCurrentActivity(ActivityHelper.helper.activityWithId(id));</span></div>
+<div class="code-line context-line"><span class="line-number">645</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">646</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">647</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">648</span><span class="code-content">    private void filterActivityView(String query){</span></div>
+<div class="code-line correct-line"><span class="line-number">649</span><span class="code-content">        this.filter = query;</span></div>
+<div class="code-line context-line"><span class="line-number">650</span><span class="code-content">        // TODO: do in separate thread?</span></div>
+<div class="code-line correct-line"><span class="line-number">651</span><span class="code-content">        ArrayList&lt;DiaryActivity&gt; filtered = ActivityHelper.helper.sortedActivities(query);</span></div>
+<div class="code-line context-line"><span class="line-number">652</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">653</span><span class="code-content">        selectAdapter = new SelectRecyclerViewAdapter(MainActivity.this, filtered);</span></div>
+<div class="code-line correct-line"><span class="line-number">654</span><span class="code-content">        selectRecyclerView.swapAdapter(selectAdapter, false);</span></div>
+<div class="code-line correct-line"><span class="line-number">655</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">656</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">657</span><span class="code-content">    private void likelyhoodSort() {</span></div>
+<div class="code-line context-line"><span class="line-number">658</span><span class="code-content">        selectAdapter = new SelectRecyclerViewAdapter(MainActivity.this, ActivityHelper.helper.getActivities());</span></div>
+<div class="code-line context-line"><span class="line-number">659</span><span class="code-content">        selectRecyclerView.swapAdapter(selectAdapter, false);</span></div>
+<div class="code-line context-line"><span class="line-number">660</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">661</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">662</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">663</span><span class="code-content">    public boolean onClose() {</span></div>
+<div class="code-line correct-line"><span class="line-number">664</span><span class="code-content">        setSearchMode(false);</span></div>
+<div class="code-line correct-line"><span class="line-number">665</span><span class="code-content">        likelyhoodSort();</span></div>
+<div class="code-line correct-line"><span class="line-number">666</span><span class="code-content">        return false; /* we wanna clear and close the search */</span></div>
+<div class="code-line context-line"><span class="line-number">667</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">668</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">669</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">670</span><span class="code-content">    public boolean onQueryTextSubmit(String query) {</span></div>
+<div class="code-line context-line"><span class="line-number">671</span><span class="code-content">        setSearchMode(false);</span></div>
+<div class="code-line context-line"><span class="line-number">672</span><span class="code-content">        return false;</span></div>
+<div class="code-line context-line"><span class="line-number">673</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">674</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">675</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">676</span><span class="code-content">    public boolean onQueryTextChange(String newText) {</span></div>
+<div class="code-line correct-line"><span class="line-number">677</span><span class="code-content">        filterActivityView(newText);</span></div>
+<div class="code-line correct-line"><span class="line-number">678</span><span class="code-content">        return true; /* we handle the search directly, so no suggestions need to be show even if #70 is implemented */</span></div>
+<div class="code-line context-line"><span class="line-number">679</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">680</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">681</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">682</span><span class="code-content">    public void onNoteEditPositiveClock(String str, DialogFragment dialog) {</span></div>
+<div class="code-line context-line"><span class="line-number">683</span><span class="code-content">        ContentValues values = new ContentValues();</span></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

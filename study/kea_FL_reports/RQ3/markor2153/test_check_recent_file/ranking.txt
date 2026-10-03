@@ -1,0 +1,10 @@
+net/gsantner/markor/util/AppSettings.java
+net/gsantner/markor/util/ShortcutUtils.java
+net/gsantner/markor/activity/MainActivity.java
+net/gsantner/opoc/preference/SharedPreferencesPropertyBackend.java
+net/gsantner/opoc/util/ContextUtils.java
+net/gsantner/opoc/activity/GsFragmentBase.java
+net/gsantner/opoc/preference/GsPreferenceFragmentCompat.java
+net/gsantner/markor/activity/MoreInfoFragment.java
+net/gsantner/markor/activity/MainActivity_ViewBinding.java
+net/gsantner/markor/activity/MoreFragment.java

@@ -1,0 +1,44 @@
+{"startStepsCount": 1, "propName": "aard2.Aard2Test.test_lookup_word", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "aard2.Aard2Test.test_lookup_word", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "aard2.Aard2Test.test_favorite_word", "state": "error", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_app_run\\aard2.py\", line 108, in test_favorite_word\n    word = random.choice([item.get_text() for item in word_items])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\random.py\", line 347, in choice\n    raise IndexError('Cannot choose from an empty sequence')\nIndexError: Cannot choose from an empty sequence\n"}
+{"startStepsCount": 2, "propName": "aard2.Aard2Test.test_lookup_word", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "aard2.Aard2Test.test_lookup_word", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 7, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 7, "propName": "aard2.Aard2Test.test_filter_words", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_app_run\\aard2.py\", line 92, in test_filter_words\n    assert self.d(resourceId=\"itkach.aard2:id/blob_descriptor_key\").exists\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 7, "propName": "aard2.Aard2Test.test_lookup_word", "state": "pass", "tb": ""}
+{"startStepsCount": 7, "propName": "aard2.Aard2Test.test_random_word", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 8, "propName": "aard2.Aard2Test.test_lookup_word", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_favorite_word", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_random_word", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_lookup_word", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_random_word", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_lookup_word", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_lookup_word", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_random_word", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_favorite_word", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_random_word", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "aard2.Aard2Test.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "aard2.Aard2Test.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "aard2.Aard2Test.test_lookup_word", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "aard2.Aard2Test.test_filter_words", "state": "pass", "tb": ""}
+{"startStepsCount": 11, "propName": "aard2.Aard2Test.test_random_word", "state": "error", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_app_run\\aard2.py\", line 159, in test_random_word\n    self.d(resourceId=\"android:id/up\").click()\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 149, in click\n    self.must_wait(timeout=timeout)\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 338, in must_wait\n    raise UiObjectNotFoundError({'code': -32002, 'data': str(self.selector), 'method': 'wait'})\nuiautomator2.exceptions.UiObjectNotFoundError: {'code': -32002, 'data': \"Selector [resourceId='android:id/up']\", 'method': 'wait'}\n"}
+{"startStepsCount": 11, "propName": "aard2.Aard2Test.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 12, "propName": "aard2.Aard2Test.test_open_setting", "state": "pass", "tb": ""}
+{"startStepsCount": 12, "propName": "aard2.Aard2Test.test_random_word", "state": "error", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_app_run\\aard2.py\", line 159, in test_random_word\n    self.d(resourceId=\"android:id/up\").click()\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 149, in click\n    self.must_wait(timeout=timeout)\n  File \"C:\\Users\\hardwell\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\uiautomator2\\_selector.py\", line 338, in must_wait\n    raise UiObjectNotFoundError({'code': -32002, 'data': str(self.selector), 'method': 'wait'})\nuiautomator2.exceptions.UiObjectNotFoundError: {'code': -32002, 'data': \"Selector [resourceId='android:id/up']\", 'method': 'wait'}\n"}

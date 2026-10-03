@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test_rename_file Line Coverage Diff Report</title>
+<style>
+    :root {
+        --github-bg: #ffffff;
+        --github-text: #24292f;
+        --github-gray-50: #f9fafb;
+        --github-gray-100: #f1f2f4;
+        --github-gray-200: #e4e7eb;
+        --github-gray-300: #d1d5db;
+        --github-gray-400: #9ca3af;
+        --github-gray-500: #6e7781;
+        --github-gray-600: #4d5663;
+        --github-gray-700: #374151;
+        --github-gray-800: #272e3b;
+        
+        --line-number-bg: #f6f8fa;
+        --line-number-text: #6e7781;
+        --line-number-border: #eaecef;
+        
+        --correct-bg: rgb(218, 251, 225);
+        --correct-border: rgb(172, 238, 187);
+        --correct-line-number-bg: rgb(172, 238, 187); 
+        --correct-line-number-text: #000000;
+        
+        --bug-bg: rgb(255, 235, 233); 
+        --bug-border: rgb(255, 206, 203);           
+        --bug-line-number-bg: rgb(255, 206, 203); 
+        --bug-line-number-text: #000000;            
+        
+        --covered-bg: var(--correct-bg);
+        --covered-border: var(--correct-border);
+        --covered-line-number-bg: var(--correct-line-number-bg);
+        --covered-line-number-text: var(--correct-line-number-text);
+        
+        --sidebar-width: 300px;
+        --sidebar-collapsed-width: 0px;
+        --border-radius: 6px;
+        --transition: all 0.2s ease;
+        --code-line-height: 1.5em;
+        --line-number-width: 4.5rem;
+        --header-height: 60px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.5;
+        color: var(--github-text);
+        background-color: var(--github-gray-50);
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        padding-top: var(--header-height);
+    }
+
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        background-color: var(--github-bg);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--github-gray-800);
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--github-gray-200);
+    }
+
+    p {
+        color: var(--github-gray-600);
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-toggle-btn {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        color: var(--github-gray-700);
+        cursor: pointer;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .sidebar-toggle-btn:hover {
+        background-color: var(--github-gray-50);
+        border-color: var(--github-gray-300);
+        color: var(--github-gray-800);
+    }
+
+    .sidebar {
+        width: var(--sidebar-width);
+        background-color: var(--github-bg);
+        border-right: 1px solid var(--github-gray-200);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        transition: var(--transition);
+        overflow: hidden;
+        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+    }
+
+    .sidebar.collapsed {
+        width: var(--sidebar-collapsed-width);
+        border-right: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .sidebar-resizer {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .file-list-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        color: var(--github-gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid var(--github-gray-200);
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-tree {
+        list-style: none;
+        overflow-y: auto;
+        flex: 1;
+        padding: 0.5rem 0;
+    }
+
+    .dir-item {
+        position: relative;
+    }
+
+    .dir-header {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .dir-header:hover {
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-toggle {
+        width: 1rem;
+        height: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: var(--github-gray-500);
+        margin-right: 0.5rem;
+    }
+
+    .dir-content {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .file-item {
+        padding: 0;
+    }
+
+    .file-link {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .file-link::before {
+        content: "📄";
+        font-size: 0.75rem;
+        margin-right: 0.5rem;
+        opacity: 0.7;
+    }
+
+    .file-link:hover {
+        background-color: var(--github-gray-50);
+        color: #0969da;
+    }
+
+    .file-link.active {
+        color: #0969da;
+        font-weight: 500;
+    }
+
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+        transition: var(--transition);
+        margin-left: var(--sidebar-width);
+        height: 100vh;
+        background-color: var(--github-gray-50);
+        padding-top: 1rem;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: var(--sidebar-collapsed-width) !important;
+    }
+
+    .file-header {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        scroll-margin-top: calc(var(--header-height) + 1rem);
+    }
+
+    .file-header a {
+        color: #0969da;
+        text-decoration: none;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .file-header a:hover {
+        text-decoration: underline;
+    }
+
+    .diff-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        min-height: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .diff-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .diff-panel {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .panel-header {
+        background-color: var(--github-gray-50);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .panel-header::before {
+        content: "";
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .diff-container > .diff-panel:first-child .panel-header::before {
+        background-color: var(--bug-border);
+    }
+
+    .diff-container > .diff-panel:last-child .panel-header::before {
+        background-color: var(--correct-border);
+    }
+
+    .code-container {
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-size: 12px;
+        line-height: var(--code-line-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 600px;
+        flex: 1;
+        width: 100%;
+        background-color: var(--github-bg);
+    }
+
+    .code-line {
+        display: grid;
+        grid-template-columns: var(--line-number-width) 1fr;
+        width: 100%;
+        transition: background-color 0.2s ease;
+        border-left: 3px solid transparent;
+        min-height: var(--code-line-height);
+    }
+
+    .line-number {
+        width: var(--line-number-width);
+        padding: 0 0.75rem;
+        text-align: right;
+        color: var(--line-number-text);
+        user-select: none;
+        background-color: var(--line-number-bg);
+        border-right: 1px solid var(--line-number-border);
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .correct-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 100;
+    }
+
+    .bug-line .line-number {
+        background-color: var(--bug-line-number-bg);
+        color: var(--bug-line-number-text);
+        border-right-color: var(--bug-border);
+        font-weight: 100;
+    }
+
+    .covered-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 600;
+    }
+
+    .code-content {
+        flex: 1;
+        padding: 0 0.75rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: flex-start;
+        padding-top: calc((var(--code-line-height) - 1em) / 2);
+        width: 100%;
+        color: var(--github-text);
+    }
+
+    .correct-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .bug-line {
+        background-color: var(--bug-bg);
+        border-left-color: var(--bug-border);
+    }
+
+    .covered-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .context-line .code-content:empty::before {
+        content: " ";
+    }
+
+    .separator-line {
+        background-color: var(--github-gray-50);
+        color: var(--github-gray-500);
+        text-align: center;
+        padding: 0.5rem 0;
+        font-style: italic;
+        border-top: 1px dashed var(--github-gray-300);
+        border-bottom: 1px dashed var(--github-gray-300);
+        grid-column: 1 / -1;
+    }
+
+    .separator-line .line-number,
+    .separator-line .code-content {
+        height: auto;
+        line-height: 1.5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--github-gray-300);
+        border-radius: 6px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--github-gray-400);
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            position: fixed;
+            z-index: 100;
+        }
+        
+        .main-content {
+            margin-left: 0 !important;
+            padding: 1rem;
+        }
+    }
+
+    .context-line {
+        background-color: var(--github-bg);
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+// Global sidebar toggle function
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("collapsed");
+}
+
+// Directory expand/collapse function
+function toggleDir(dirHeader) {
+    const toggle = dirHeader.querySelector(".dir-toggle");
+    const content = dirHeader.nextElementSibling;
+    
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        toggle.textContent = "−";
+    } else {
+        content.style.display = "none";
+        toggle.textContent = "+";
+    }
+}
+
+// File link click event handler
+document.addEventListener('DOMContentLoaded', () => {
+    const fileLinks = document.querySelectorAll('.file-link');
+    
+    fileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            fileLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    if (fileLinks.length > 0) {
+        fileLinks[0].classList.add('active');
+    }
+});
+</script>
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<div class="fixed-header">
+    <h1>test_rename_file Line Coverage Diff Report</h1>
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        File List
+    </button>
+</div>
+<div class="sidebar" id="sidebar">
+<h3 class="file-list-title">File List</h3>
+<ul class="dir-tree">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">net/gsantner</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">markor</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">activity</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-0" class="file-link"><span>MainActivity.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">format</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-1" class="file-link"><span>TextFormat.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">opoc</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">ui</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-2" class="file-link"><span>FilesystemViewerAdapter.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-3" class="file-link"><span>FilesystemViewerData.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-4" class="file-link"><span>FilesystemViewerFragment.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">util</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-5" class="file-link"><span>FileUtils.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-6" class="file-link"><span>FileWithCachedData.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">other/writeily</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">ui</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-7" class="file-link"><span>WrRenameDialog.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+</ul>
+</div>
+<div class="main-content">
+<p>Generated Time: 2026-06-19 11:16:20</p>
+<h2>Line Coverage Diff</h2>
+<div class="file-header" id="file-0">
+    File: net/gsantner/markor/activity/MainActivity.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MainActivity.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">333</span><span class="code-content">        return true;</span></div>
+<div class="code-line context-line"><span class="line-number">334</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">335</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">336</span><span class="code-content">    public void updateFabVisibility(boolean visible) {</span></div>
+<div class="code-line context-line"><span class="line-number">337</span><span class="code-content">        if (visible) {</span></div>
+<div class="code-line bug-line"><span class="line-number">338</span><span class="code-content">            _fab.show();</span></div>
+<div class="code-line context-line"><span class="line-number">339</span><span class="code-content">        } else {</span></div>
+<div class="code-line context-line"><span class="line-number">340</span><span class="code-content">            _fab.hide();</span></div>
+<div class="code-line context-line"><span class="line-number">341</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">342</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">343</span><span class="code-content"></span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">174</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">175</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">176</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">177</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">178</span><span class="code-content">    public boolean onOptionsItemSelected(MenuItem item) {</span></div>
+<div class="code-line correct-line"><span class="line-number">179</span><span class="code-content">        super.onOptionsItemSelected(item);</span></div>
+<div class="code-line correct-line"><span class="line-number">180</span><span class="code-content">        if (item.getItemId() == R.id.action_settings) {</span></div>
+<div class="code-line context-line"><span class="line-number">181</span><span class="code-content">            new ActivityUtils(this).animateToActivity(SettingsActivity.class, false, null).freeContextRef();</span></div>
+<div class="code-line context-line"><span class="line-number">182</span><span class="code-content">            return true;</span></div>
+<div class="code-line context-line"><span class="line-number">183</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">184</span><span class="code-content">        return false;</span></div>
+<div class="code-line context-line"><span class="line-number">185</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">186</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">187</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">188</span><span class="code-content">    public boolean onCreateOptionsMenu(final Menu menu) {</span></div>
+<div class="code-line context-line"><span class="line-number">189</span><span class="code-content">        getMenuInflater().inflate(R.menu.main__menu, menu);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">327</span><span class="code-content">        new Handler().postDelayed(() -&gt; _doubleBackToExitPressedOnce = false, 2000);</span></div>
+<div class="code-line context-line"><span class="line-number">328</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">329</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">330</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">331</span><span class="code-content">    public boolean onNavigationItemSelected(@NonNull MenuItem item) {</span></div>
+<div class="code-line correct-line"><span class="line-number">332</span><span class="code-content">        _viewPager.setCurrentItem(tabIdToPos(item.getItemId()));</span></div>
+<div class="code-line correct-line"><span class="line-number">333</span><span class="code-content">        return true;</span></div>
+<div class="code-line context-line"><span class="line-number">334</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">335</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">336</span><span class="code-content">    public void updateFabVisibility(boolean visible) {</span></div>
+<div class="code-line context-line"><span class="line-number">337</span><span class="code-content">        if (visible) {</span></div>
+<div class="code-line context-line"><span class="line-number">338</span><span class="code-content">            _fab.show();</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-1">
+    File: net/gsantner/markor/format/TextFormat.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\format\TextFormat.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">66</span><span class="code-content">    public static boolean isTextFile(final String absolutePath) {</span></div>
+<div class="code-line context-line"><span class="line-number">67</span><span class="code-content">        return isTextFile(new File(absolutePath));</span></div>
+<div class="code-line context-line"><span class="line-number">68</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">69</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">70</span><span class="code-content">    public static boolean isTextFile(final File file) {</span></div>
+<div class="code-line correct-line"><span class="line-number">71</span><span class="code-content">        if (file == null) {</span></div>
+<div class="code-line context-line"><span class="line-number">72</span><span class="code-content">            return false;</span></div>
+<div class="code-line context-line"><span class="line-number">73</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">74</span><span class="code-content">        final String path = file.getAbsolutePath().toLowerCase(Locale.ROOT);</span></div>
+<div class="code-line correct-line"><span class="line-number">75</span><span class="code-content">        for (TextConverter converter : CONVERTERS) {</span></div>
+<div class="code-line correct-line"><span class="line-number">76</span><span class="code-content">            if (converter.isFileOutOfThisFormat(path)) {</span></div>
+<div class="code-line correct-line"><span class="line-number">77</span><span class="code-content">                return true;</span></div>
+<div class="code-line context-line"><span class="line-number">78</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">79</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">80</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">81</span><span class="code-content">        return FileUtils.isTextFile(file);</span></div>
+<div class="code-line context-line"><span class="line-number">82</span><span class="code-content">    }</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-2">
+    File: net/gsantner/opoc/ui/FilesystemViewerAdapter.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\ui\FilesystemViewerAdapter.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">261</span><span class="code-content">    public void reloadCurrentFolder() {</span></div>
+<div class="code-line context-line"><span class="line-number">262</span><span class="code-content">        restoreSavedInstanceState(saveInstanceState(null));</span></div>
+<div class="code-line context-line"><span class="line-number">263</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">264</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">265</span><span class="code-content">    public void setCurrentFolder(File folder, boolean reload) {</span></div>
+<div class="code-line correct-line"><span class="line-number">266</span><span class="code-content">        _currentFolder = folder;</span></div>
+<div class="code-line correct-line"><span class="line-number">267</span><span class="code-content">        if (reload) {</span></div>
+<div class="code-line correct-line"><span class="line-number">268</span><span class="code-content">            reloadCurrentFolder();</span></div>
+<div class="code-line context-line"><span class="line-number">269</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">270</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">271</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">272</span><span class="code-content">    public void reconfigure() {</span></div>
+<div class="code-line context-line"><span class="line-number">273</span><span class="code-content">        if (_dopt.listener != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">274</span><span class="code-content">            _dopt.listener.onFsViewerConfig(_dopt);</span></div>
+<div class="code-line context-line"><span class="line-number">275</span><span class="code-content">            reloadCurrentFolder();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">376</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">377</span><span class="code-content">    public void unselectAll() {</span></div>
+<div class="code-line context-line"><span class="line-number">378</span><span class="code-content">        for (int i = 0; i &lt; _adapterDataFiltered.size(); i++) {</span></div>
+<div class="code-line context-line"><span class="line-number">379</span><span class="code-content">            TagContainer data = new TagContainer(_adapterDataFiltered.get(i), i);</span></div>
+<div class="code-line context-line"><span class="line-number">380</span><span class="code-content">            if (_currentSelection.contains(data.file)) {</span></div>
+<div class="code-line correct-line"><span class="line-number">381</span><span class="code-content">                _currentSelection.remove(data.file);</span></div>
+<div class="code-line correct-line"><span class="line-number">382</span><span class="code-content">                notifyItemChanged(data.position);</span></div>
+<div class="code-line context-line"><span class="line-number">383</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">384</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">385</span><span class="code-content">        _dopt.listener.onFsViewerDoUiUpdate(this);</span></div>
+<div class="code-line context-line"><span class="line-number">386</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">387</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">393</span><span class="code-content">        return _currentSelection;</span></div>
+<div class="code-line context-line"><span class="line-number">394</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">395</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">396</span><span class="code-content">    public boolean isFilesOnlySelected() {</span></div>
+<div class="code-line context-line"><span class="line-number">397</span><span class="code-content">        for (File f : _currentSelection) {</span></div>
+<div class="code-line correct-line"><span class="line-number">398</span><span class="code-content">            if (f.isDirectory()) {</span></div>
+<div class="code-line context-line"><span class="line-number">399</span><span class="code-content">                return false;</span></div>
+<div class="code-line context-line"><span class="line-number">400</span><span class="code-content">            }</span></div>
+<div class="code-line correct-line"><span class="line-number">401</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">402</span><span class="code-content">        return true;</span></div>
+<div class="code-line context-line"><span class="line-number">403</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">404</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">405</span><span class="code-content">    public boolean toggleSelection(TagContainer data) {</span></div>
+<div class="code-line correct-line"><span class="line-number">406</span><span class="code-content">        boolean clickHandled = false;</span></div>
+<div class="code-line correct-line"><span class="line-number">407</span><span class="code-content">        if (data != null &amp;&amp; data.file != null &amp;&amp; getCurrentFolder() != null) {</span></div>
+<div class="code-line correct-line"><span class="line-number">408</span><span class="code-content">            if (data.file.isDirectory() &amp;&amp; getCurrentFolder().getParentFile() != null &amp;&amp; getCurrentFolder().getParentFile().equals(data.file)) {</span></div>
+<div class="code-line context-line"><span class="line-number">409</span><span class="code-content">                // goUp</span></div>
+<div class="code-line context-line"><span class="line-number">410</span><span class="code-content">                clickHandled = true;</span></div>
+<div class="code-line correct-line"><span class="line-number">411</span><span class="code-content">            } else if (_currentSelection.contains(data.file)) {</span></div>
+<div class="code-line context-line"><span class="line-number">412</span><span class="code-content">                // Single selection</span></div>
+<div class="code-line context-line"><span class="line-number">413</span><span class="code-content">                _currentSelection.remove(data.file);</span></div>
+<div class="code-line context-line"><span class="line-number">414</span><span class="code-content">                clickHandled = true;</span></div>
+<div class="code-line correct-line"><span class="line-number">415</span><span class="code-content">            } else if (_dopt.doSelectMultiple) {</span></div>
+<div class="code-line context-line"><span class="line-number">416</span><span class="code-content">                // Multi selection</span></div>
+<div class="code-line correct-line"><span class="line-number">417</span><span class="code-content">                if (_dopt.doSelectFile &amp;&amp; !data.file.isDirectory()) {</span></div>
+<div class="code-line context-line"><span class="line-number">418</span><span class="code-content">                    // Multi selection - file</span></div>
+<div class="code-line correct-line"><span class="line-number">419</span><span class="code-content">                    _currentSelection.add(data.file);</span></div>
+<div class="code-line correct-line"><span class="line-number">420</span><span class="code-content">                    clickHandled = true;</span></div>
+<div class="code-line context-line"><span class="line-number">421</span><span class="code-content">                }</span></div>
+<div class="code-line correct-line"><span class="line-number">422</span><span class="code-content">                if (_dopt.doSelectFolder &amp;&amp; data.file.isDirectory()) {</span></div>
+<div class="code-line context-line"><span class="line-number">423</span><span class="code-content">                    // Multi selection - folder</span></div>
+<div class="code-line context-line"><span class="line-number">424</span><span class="code-content">                    _currentSelection.add(data.file);</span></div>
+<div class="code-line context-line"><span class="line-number">425</span><span class="code-content">                    clickHandled = true;</span></div>
+<div class="code-line context-line"><span class="line-number">426</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">427</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">428</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">429</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">430</span><span class="code-content">        notifyItemChanged(data.position);</span></div>
+<div class="code-line correct-line"><span class="line-number">431</span><span class="code-content">        _dopt.listener.onFsViewerDoUiUpdate(this);</span></div>
+<div class="code-line correct-line"><span class="line-number">432</span><span class="code-content">        return clickHandled;</span></div>
+<div class="code-line context-line"><span class="line-number">433</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">434</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">435</span><span class="code-content">    public boolean goUp() {</span></div>
+<div class="code-line context-line"><span class="line-number">436</span><span class="code-content">        if (canGoUp()) {</span></div>
+<div class="code-line context-line"><span class="line-number">437</span><span class="code-content">            if (_currentFolder != null &amp;&amp; _currentFolder.getAbsolutePath() != null &amp;&amp; _currentFolder.getParentFile() != null &amp;&amp; !_currentFolder.getParentFile().getAbsolutePath().equals(_currentFolder.getAbsolutePath())) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">453</span><span class="code-content">        return parentFolder != null &amp;&amp; (!_dopt.mustStartWithRootFolder || parentFolder.getAbsolutePath().startsWith(_dopt.rootFolder.getAbsolutePath()));</span></div>
+<div class="code-line context-line"><span class="line-number">454</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">455</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">456</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">457</span><span class="code-content">    public boolean onLongClick(View view) {</span></div>
+<div class="code-line correct-line"><span class="line-number">458</span><span class="code-content">        switch (view.getId()) {</span></div>
+<div class="code-line context-line"><span class="line-number">459</span><span class="code-content">            case R.id.opoc_filesystem_item__root: {</span></div>
+<div class="code-line correct-line"><span class="line-number">460</span><span class="code-content">                TagContainer data = (TagContainer) view.getTag();</span></div>
+<div class="code-line correct-line"><span class="line-number">461</span><span class="code-content">                toggleSelection(data);</span></div>
+<div class="code-line correct-line"><span class="line-number">462</span><span class="code-content">                _dopt.listener.onFsViewerItemLongPressed(data.file, _dopt.doSelectMultiple);</span></div>
+<div class="code-line correct-line"><span class="line-number">463</span><span class="code-content">                return true;</span></div>
+<div class="code-line context-line"><span class="line-number">464</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">465</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">466</span><span class="code-content">        return false;</span></div>
+<div class="code-line context-line"><span class="line-number">467</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">468</span><span class="code-content"></span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-3">
+    File: net/gsantner/opoc/ui/FilesystemViewerData.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\ui\FilesystemViewerData.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">135</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">136</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">137</span><span class="code-content">        @Override</span></div>
+<div class="code-line context-line"><span class="line-number">138</span><span class="code-content">        public void onFsViewerItemLongPressed(File file, boolean doSelectMultiple) {</span></div>
+<div class="code-line context-line"><span class="line-number">139</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">140</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">141</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">142</span><span class="code-content">}</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-4">
+    File: net/gsantner/opoc/ui/FilesystemViewerFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\ui\FilesystemViewerFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">240</span><span class="code-content">        boolean isFavourite = false;</span></div>
+<div class="code-line context-line"><span class="line-number">241</span><span class="code-content">        boolean selTextFilesOnly = true;</span></div>
+<div class="code-line context-line"><span class="line-number">242</span><span class="code-content">        boolean selDirectoriesOnly = true;</span></div>
+<div class="code-line context-line"><span class="line-number">243</span><span class="code-content">        boolean selWritable = (!curFilepath.equals(&quot;/storage&quot;) &amp;&amp; !curFilepath.equals(&quot;/storage/emulated&quot;));</span></div>
+<div class="code-line context-line"><span class="line-number">244</span><span class="code-content">        if (selMulti1) {</span></div>
+<div class="code-line correct-line"><span class="line-number">245</span><span class="code-content">            for (File favourite : _dopt.favouriteFiles == null ? new ArrayList&lt;File&gt;() : _dopt.favouriteFiles) {</span></div>
+<div class="code-line context-line"><span class="line-number">246</span><span class="code-content">                if (selFiles.contains(favourite)) {</span></div>
+<div class="code-line context-line"><span class="line-number">247</span><span class="code-content">                    isFavourite = true;</span></div>
+<div class="code-line context-line"><span class="line-number">248</span><span class="code-content">                    break;</span></div>
+<div class="code-line context-line"><span class="line-number">249</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">250</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">251</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">252</span><span class="code-content">        for (final File f : _filesystemViewerAdapter.getCurrentSelection()) {</span></div>
+<div class="code-line correct-line"><span class="line-number">253</span><span class="code-content">            selTextFilesOnly &amp;= TextFormat.isTextFile(f);</span></div>
+<div class="code-line correct-line"><span class="line-number">254</span><span class="code-content">            selWritable &amp;= f.canWrite();</span></div>
+<div class="code-line correct-line"><span class="line-number">255</span><span class="code-content">            selDirectoriesOnly &amp;= f.isDirectory();</span></div>
+<div class="code-line correct-line"><span class="line-number">256</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">257</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">258</span><span class="code-content">        if (_fragmentMenu != null &amp;&amp; _fragmentMenu.findItem(R.id.action_delete_selected_items) != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">259</span><span class="code-content">            _fragmentMenu.findItem(R.id.action_search).setVisible(selFiles.isEmpty() &amp;&amp; !_filesystemViewerAdapter.isCurrentFolderVirtual());</span></div>
+<div class="code-line context-line"><span class="line-number">260</span><span class="code-content">            _fragmentMenu.findItem(R.id.action_delete_selected_items).setVisible((selMulti1 || selMultiMore) &amp;&amp; selWritable);</span></div>
+<div class="code-line context-line"><span class="line-number">261</span><span class="code-content">            _fragmentMenu.findItem(R.id.action_rename_selected_item).setVisible(selMulti1 &amp;&amp; selWritable);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">274</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">275</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">276</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">277</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">278</span><span class="code-content">    public void onFsViewerItemLongPressed(File file, boolean doSelectMultiple) {</span></div>
+<div class="code-line correct-line"><span class="line-number">279</span><span class="code-content">        if (_callback != null) {</span></div>
+<div class="code-line correct-line"><span class="line-number">280</span><span class="code-content">            _callback.onFsViewerItemLongPressed(file, doSelectMultiple);</span></div>
+<div class="code-line context-line"><span class="line-number">281</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">282</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">283</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">284</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">285</span><span class="code-content">    public boolean onBackPressed() {</span></div>
+<div class="code-line context-line"><span class="line-number">286</span><span class="code-content">        if (_filesystemViewerAdapter.canGoUp() &amp;&amp; !_filesystemViewerAdapter.isCurrentFolderHome()) {</span></div>
+<div class="code-line context-line"><span class="line-number">287</span><span class="code-content">            _filesystemViewerAdapter.goUp();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">370</span><span class="code-content">        return _filesystemViewerAdapter;</span></div>
+<div class="code-line context-line"><span class="line-number">371</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">372</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">373</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">374</span><span class="code-content">    public boolean onOptionsItemSelected(MenuItem item) {</span></div>
+<div class="code-line correct-line"><span class="line-number">375</span><span class="code-content">        final PermissionChecker permc = new PermissionChecker(getActivity());</span></div>
+<div class="code-line context-line"><span class="line-number">376</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">377</span><span class="code-content">        File folderToLoad = null;</span></div>
+<div class="code-line context-line"><span class="line-number">378</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">379</span><span class="code-content">        switch (item.getItemId()) {</span></div>
+<div class="code-line context-line"><span class="line-number">380</span><span class="code-content">            case R.id.action_create_shortcut: {</span></div>
+<div class="code-line context-line"><span class="line-number">381</span><span class="code-content">                final File file = _filesystemViewerAdapter.getCurrentSelection().iterator().next();</span></div>
+<div class="code-line context-line"><span class="line-number">382</span><span class="code-content">                _shareUtil.createLauncherDesktopShortcut(new Document(file));</span></div>
+<div class="code-line context-line"><span class="line-number">383</span><span class="code-content">                return true;</span></div>
+<div class="code-line context-line"><span class="line-number">384</span><span class="code-content">            }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">438</span><span class="code-content">            case R.id.action_go_to_appdata_private:</span></div>
+<div class="code-line context-line"><span class="line-number">439</span><span class="code-content">            case R.id.action_go_to_storage:</span></div>
+<div class="code-line context-line"><span class="line-number">440</span><span class="code-content">            case R.id.action_go_to_appdata_sdcard_1:</span></div>
+<div class="code-line context-line"><span class="line-number">441</span><span class="code-content">            case R.id.action_go_to_appdata_sdcard_2:</span></div>
+<div class="code-line context-line"><span class="line-number">442</span><span class="code-content">            case R.id.action_go_to_appdata_public: {</span></div>
+<div class="code-line correct-line"><span class="line-number">443</span><span class="code-content">                folderToLoad = _appSettings.getFolderToLoadByMenuId(item.getItemId());</span></div>
+<div class="code-line correct-line"><span class="line-number">444</span><span class="code-content">                break;</span></div>
+<div class="code-line context-line"><span class="line-number">445</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">446</span><span class="code-content">            case R.id.action_favourite:</span></div>
+<div class="code-line context-line"><span class="line-number">447</span><span class="code-content">            case R.id.action_favourite_remove: {</span></div>
+<div class="code-line context-line"><span class="line-number">448</span><span class="code-content">                if (_filesystemViewerAdapter.areItemsSelected()) {</span></div>
+<div class="code-line context-line"><span class="line-number">449</span><span class="code-content">                    _appSettings.toggleFavouriteFile(new ArrayList&lt;&gt;(_filesystemViewerAdapter.getCurrentSelection()).get(0));</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">493</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">494</span><span class="code-content">                return true;</span></div>
+<div class="code-line context-line"><span class="line-number">495</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">496</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">497</span><span class="code-content">            case R.id.action_rename_selected_item: {</span></div>
+<div class="code-line correct-line"><span class="line-number">498</span><span class="code-content">                if (_filesystemViewerAdapter.areItemsSelected()) {</span></div>
+<div class="code-line correct-line"><span class="line-number">499</span><span class="code-content">                    File file = new ArrayList&lt;&gt;(_filesystemViewerAdapter.getCurrentSelection()).get(0);</span></div>
+<div class="code-line correct-line"><span class="line-number">500</span><span class="code-content">                    WrRenameDialog renameDialog = WrRenameDialog.newInstance(file, renamedFile -&gt; reloadCurrentFolder());</span></div>
+<div class="code-line correct-line"><span class="line-number">501</span><span class="code-content">                    renameDialog.show(getFragmentManager(), WrRenameDialog.FRAGMENT_TAG);</span></div>
+<div class="code-line context-line"><span class="line-number">502</span><span class="code-content">                }</span></div>
+<div class="code-line correct-line"><span class="line-number">503</span><span class="code-content">                return true;</span></div>
+<div class="code-line context-line"><span class="line-number">504</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">505</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">506</span><span class="code-content">            case R.id.action_fs_copy_to_clipboard: {</span></div>
+<div class="code-line context-line"><span class="line-number">507</span><span class="code-content">                if (_filesystemViewerAdapter.areItemsSelected()) {</span></div>
+<div class="code-line context-line"><span class="line-number">508</span><span class="code-content">                    File file = new ArrayList&lt;&gt;(_filesystemViewerAdapter.getCurrentSelection()).get(0);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">514</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">515</span><span class="code-content">                return true;</span></div>
+<div class="code-line context-line"><span class="line-number">516</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">517</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">518</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">519</span><span class="code-content">        if (folderToLoad != null) {</span></div>
+<div class="code-line correct-line"><span class="line-number">520</span><span class="code-content">            _filesystemViewerAdapter.setCurrentFolder(folderToLoad, true);</span></div>
+<div class="code-line correct-line"><span class="line-number">521</span><span class="code-content">            Toast.makeText(getContext(), folderToLoad.getAbsolutePath(), Toast.LENGTH_SHORT).show();</span></div>
+<div class="code-line correct-line"><span class="line-number">522</span><span class="code-content">            return true;</span></div>
+<div class="code-line context-line"><span class="line-number">523</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">524</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">525</span><span class="code-content">        return false;</span></div>
+<div class="code-line context-line"><span class="line-number">526</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">527</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">528</span><span class="code-content">    private void executeSearchAction() {</span></div>
+<div class="code-line context-line"><span class="line-number">529</span><span class="code-content">        if (new PermissionChecker(getActivity()).doIfExtStoragePermissionGranted()) {</span></div>
+<div class="code-line context-line"><span class="line-number">530</span><span class="code-content">            final File currentFolder = getCurrentFolder();</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-5">
+    File: net/gsantner/opoc/util/FileUtils.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\util\FileUtils.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">192</span><span class="code-content">        return writeFile(file, data.getBytes());</span></div>
+<div class="code-line context-line"><span class="line-number">193</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">194</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">195</span><span class="code-content">    public static boolean copyFile(final File src, final File dst) {</span></div>
+<div class="code-line context-line"><span class="line-number">196</span><span class="code-content">        // Just touch file if src is empty</span></div>
+<div class="code-line bug-line"><span class="line-number">197</span><span class="code-content">        if (src.length() == 0) {</span></div>
+<div class="code-line context-line"><span class="line-number">198</span><span class="code-content">            return touch(dst);</span></div>
+<div class="code-line context-line"><span class="line-number">199</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">200</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">201</span><span class="code-content">        InputStream is = null;</span></div>
+<div class="code-line bug-line"><span class="line-number">202</span><span class="code-content">        FileOutputStream os = null;</span></div>
+<div class="code-line context-line"><span class="line-number">203</span><span class="code-content">        try {</span></div>
+<div class="code-line context-line"><span class="line-number">204</span><span class="code-content">            try {</span></div>
+<div class="code-line bug-line"><span class="line-number">205</span><span class="code-content">                is = new FileInputStream(src);</span></div>
+<div class="code-line context-line"><span class="line-number">206</span><span class="code-content">                os = new FileOutputStream(dst);</span></div>
+<div class="code-line context-line"><span class="line-number">207</span><span class="code-content">                byte[] buf = new byte[BUFFER_SIZE];</span></div>
+<div class="code-line context-line"><span class="line-number">208</span><span class="code-content">                int len;</span></div>
+<div class="code-line context-line"><span class="line-number">209</span><span class="code-content">                while ((len = is.read(buf)) &gt; 0) {</span></div>
+<div class="code-line context-line"><span class="line-number">210</span><span class="code-content">                    os.write(buf, 0, len);</span></div>
+<div class="code-line context-line"><span class="line-number">211</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">212</span><span class="code-content">                return true;</span></div>
+<div class="code-line context-line"><span class="line-number">213</span><span class="code-content">            } finally {</span></div>
+<div class="code-line bug-line"><span class="line-number">214</span><span class="code-content">                if (is != null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">215</span><span class="code-content">                    is.close();</span></div>
+<div class="code-line context-line"><span class="line-number">216</span><span class="code-content">                }</span></div>
+<div class="code-line bug-line"><span class="line-number">217</span><span class="code-content">                if (os != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">218</span><span class="code-content">                    os.close();</span></div>
+<div class="code-line context-line"><span class="line-number">219</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">220</span><span class="code-content">            }</span></div>
+<div class="code-line bug-line"><span class="line-number">221</span><span class="code-content">        } catch (IOException ex) {</span></div>
+<div class="code-line bug-line"><span class="line-number">222</span><span class="code-content">            return false;</span></div>
+<div class="code-line context-line"><span class="line-number">223</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">224</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">225</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">226</span><span class="code-content">    public static boolean copyFile(final File src, final FileOutputStream os) {</span></div>
+<div class="code-line context-line"><span class="line-number">227</span><span class="code-content">        InputStream is = null;</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">309</span><span class="code-content">                srcFile = tmpFile;</span></div>
+<div class="code-line context-line"><span class="line-number">310</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">311</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">312</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">313</span><span class="code-content">        if (!srcFile.renameTo(destFile)) {</span></div>
+<div class="code-line bug-line"><span class="line-number">314</span><span class="code-content">            if (copyFile(srcFile, destFile) &amp;&amp; !srcFile.delete()) {</span></div>
+<div class="code-line context-line"><span class="line-number">315</span><span class="code-content">                if (!destFile.delete()) {</span></div>
+<div class="code-line context-line"><span class="line-number">316</span><span class="code-content">                    return false;</span></div>
+<div class="code-line context-line"><span class="line-number">317</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">318</span><span class="code-content">                return false;</span></div>
+<div class="code-line context-line"><span class="line-number">319</span><span class="code-content">            }</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">295</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">296</span><span class="code-content">        return false;</span></div>
+<div class="code-line context-line"><span class="line-number">297</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">298</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">299</span><span class="code-content">    public static boolean renameFile(File srcFile, File destFile) {</span></div>
+<div class="code-line correct-line"><span class="line-number">300</span><span class="code-content">        if (srcFile.getAbsolutePath().equals(destFile.getAbsolutePath())) {</span></div>
+<div class="code-line context-line"><span class="line-number">301</span><span class="code-content">            return false;</span></div>
+<div class="code-line context-line"><span class="line-number">302</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">303</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">304</span><span class="code-content">        // renameTo will fail in case of case-changed filename in same dir.Even on case-sensitive FS!!!</span></div>
+<div class="code-line correct-line"><span class="line-number">305</span><span class="code-content">        if (srcFile.getParent().equals(destFile.getParent()) &amp;&amp; srcFile.getName().toLowerCase(Locale.getDefault()).equals(destFile.getName().toLowerCase(Locale.getDefault()))) {</span></div>
+<div class="code-line context-line"><span class="line-number">306</span><span class="code-content">            File tmpFile = new File(destFile.getParent(), UUID.randomUUID().getLeastSignificantBits() + &quot;.tmp&quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">307</span><span class="code-content">            if (!tmpFile.exists()) {</span></div>
+<div class="code-line context-line"><span class="line-number">308</span><span class="code-content">                renameFile(srcFile, tmpFile);</span></div>
+<div class="code-line context-line"><span class="line-number">309</span><span class="code-content">                srcFile = tmpFile;</span></div>
+<div class="code-line context-line"><span class="line-number">310</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">311</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">312</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">313</span><span class="code-content">        if (!srcFile.renameTo(destFile)) {</span></div>
+<div class="code-line context-line"><span class="line-number">314</span><span class="code-content">            if (copyFile(srcFile, destFile) &amp;&amp; !srcFile.delete()) {</span></div>
+<div class="code-line context-line"><span class="line-number">315</span><span class="code-content">                if (!destFile.delete()) {</span></div>
+<div class="code-line context-line"><span class="line-number">316</span><span class="code-content">                    return false;</span></div>
+<div class="code-line context-line"><span class="line-number">317</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">318</span><span class="code-content">                return false;</span></div>
+<div class="code-line context-line"><span class="line-number">319</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">320</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">321</span><span class="code-content">        return true;</span></div>
+<div class="code-line context-line"><span class="line-number">322</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">323</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">324</span><span class="code-content">    @SuppressWarnings(&quot;ResultOfMethodCallIgnored&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">325</span><span class="code-content">    public static boolean renameFileInSameFolder(File srcFile, String destFilename) {</span></div>
+<div class="code-line correct-line"><span class="line-number">326</span><span class="code-content">        return renameFile(srcFile, new File(srcFile.getParent(), destFilename));</span></div>
+<div class="code-line context-line"><span class="line-number">327</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">328</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">329</span><span class="code-content">    public static boolean touch(File file) {</span></div>
+<div class="code-line context-line"><span class="line-number">330</span><span class="code-content">        try {</span></div>
+<div class="code-line context-line"><span class="line-number">331</span><span class="code-content">            if (!file.exists()) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">529</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">530</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">531</span><span class="code-content">    // Return true if the target file exists, false if there is an issue with the file or it&#x27;s parent directories</span></div>
+<div class="code-line context-line"><span class="line-number">532</span><span class="code-content">    public static boolean fileExists(final File checkFile) {</span></div>
+<div class="code-line context-line"><span class="line-number">533</span><span class="code-content">        File[] files;</span></div>
+<div class="code-line correct-line"><span class="line-number">534</span><span class="code-content">        if (checkFile != null &amp;&amp; checkFile.getParentFile() != null &amp;&amp; (files = checkFile.getParentFile().listFiles()) != null) {</span></div>
+<div class="code-line correct-line"><span class="line-number">535</span><span class="code-content">            final String checkFilename = checkFile.getName();</span></div>
+<div class="code-line correct-line"><span class="line-number">536</span><span class="code-content">            for (final File f : files) {</span></div>
+<div class="code-line correct-line"><span class="line-number">537</span><span class="code-content">                if (f.getName().equals(checkFilename)) {</span></div>
+<div class="code-line context-line"><span class="line-number">538</span><span class="code-content">                    return true;</span></div>
+<div class="code-line context-line"><span class="line-number">539</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">540</span><span class="code-content">            }</span></div>
+<div class="code-line context-line"><span class="line-number">541</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">542</span><span class="code-content">        return false;</span></div>
+<div class="code-line context-line"><span class="line-number">543</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">544</span><span class="code-content">}</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-6">
+    File: net/gsantner/opoc/util/FileWithCachedData.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\util\FileWithCachedData.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">115</span><span class="code-content">        return cLastModified;</span></div>
+<div class="code-line context-line"><span class="line-number">116</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">117</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">118</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">119</span><span class="code-content">    public long length() {</span></div>
+<div class="code-line bug-line"><span class="line-number">120</span><span class="code-content">        if (cLength == null) {</span></div>
+<div class="code-line bug-line"><span class="line-number">121</span><span class="code-content">            cLength = super.length();</span></div>
+<div class="code-line context-line"><span class="line-number">122</span><span class="code-content">        }</span></div>
+<div class="code-line bug-line"><span class="line-number">123</span><span class="code-content">        return cLength;</span></div>
+<div class="code-line context-line"><span class="line-number">124</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">125</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">126</span><span class="code-content">    @Nullable</span></div>
+<div class="code-line context-line"><span class="line-number">127</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">128</span><span class="code-content">    public String[] list() {</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">42</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">43</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">44</span><span class="code-content">    @NonNull</span></div>
+<div class="code-line context-line"><span class="line-number">45</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">46</span><span class="code-content">    public synchronized String getAbsolutePath() {</span></div>
+<div class="code-line correct-line"><span class="line-number">47</span><span class="code-content">        if (cAbsolutePath == null) {</span></div>
+<div class="code-line correct-line"><span class="line-number">48</span><span class="code-content">            cAbsolutePath = super.getAbsolutePath();</span></div>
+<div class="code-line context-line"><span class="line-number">49</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">50</span><span class="code-content">        return cAbsolutePath;</span></div>
+<div class="code-line context-line"><span class="line-number">51</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">52</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">53</span><span class="code-content">    @NonNull</span></div>
+<div class="code-line context-line"><span class="line-number">54</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">55</span><span class="code-content">    public File getAbsoluteFile() {</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-7">
+    File: other/writeily/ui/WrRenameDialog.java
+    <a href="file:///D:\code\python\Kea-FL\example\markor-1\app\src\main\java\other\writeily\ui\WrRenameDialog.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

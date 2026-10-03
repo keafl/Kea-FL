@@ -1,0 +1,532 @@
+2026-06-19 20:17:59 [runner] INFO: Building pair test cases...
+2026-06-19 20:17:59 [replayer] INFO: Parse 163 events
+2026-06-19 20:17:59 [replayer] INFO: Parse 9 Monkey actions
+2026-06-19 20:17:59 [reproducer] INFO: Extract 8 pairs test cases
+2026-06-19 20:17:59 [replayer] INFO: Property omni956.OmniNotesBugTest.test_create_empty_category not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 20:17:59 [replayer] INFO: Property omni956.OmniNotesBugTest.test_data_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 20:17:59 [replayer] INFO: Property omni956.OmniNotesBugTest.test_behavior_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 20:17:59 [replayer] INFO: Property omni956.OmniNotesBugTest.test_create_checklist not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 20:17:59 [replayer] INFO: Property omni956.OmniNotesBugTest.test_lock_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 20:17:59 [replayer] INFO: Property omni956.OmniNotesBugTest.test_reduced_view not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 20:17:59 [replayer] INFO: Property omni956.OmniNotesBugTest.test_create_note_with_tags not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 20:17:59 [reproducer] INFO: Build 1 pairs test cases
+2026-06-19 20:17:59 [reproducer] INFO: Test case [1]: test_search_tag
+2026-06-19 20:17:59 [reproducer] INFO:     -happy_path: [preconditions]: 30, [property]: 6
+2026-06-19 20:17:59 [reproducer] INFO:     -bug_path: [preconditions]: 98, [property]: 6
+2026-06-19 20:17:59 [runner] INFO: Start running full coverage difference analysis...
+2026-06-19 20:17:59 [runner] INFO: Processing pair test case [1]: happy_test_search_tag <-> bug_test_search_tag
+2026-06-19 20:17:59 [runner] INFO: Running pair test case analysis: happy_test_search_tag <-> bug_test_search_tag
+2026-06-19 20:17:59 [runner] INFO: Running property-satisfying path...
+2026-06-19 20:17:59 [reproducer] INFO: Start reproducing test case: happy_test_search_tag
+2026-06-19 20:18:00 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 20:18:00 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 20:18:00 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 20:18:01 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 20:18:01 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: it.feio.android.omninotes.alpha
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=14ms (0ms mobile, 0ms wifi, 14ms not connected)
+
+2026-06-19 20:18:01 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 20:18:01 [reproducer] INFO: Init operation executed
+2026-06-19 20:18:04 [reproducer] INFO: Test environment setup completed
+2026-06-19 20:18:04 [reproducer] INFO: Start executing preconditions for test case: happy_test_search_tag
+2026-06-19 20:18:04 [replayer] INFO: [1] Execute Monkey event: CLICK
+2026-06-19 20:18:04 [replayer] INFO: Touch: Touch(touch_type='down', x=815.0, y=228.0, wait_duration=0.0)
+2026-06-19 20:18:04 [replayer] INFO: Press coordinate at: (815.0, 228.0)
+2026-06-19 20:18:04 [replayer] INFO: Touch: Touch(touch_type='up', x=815.0, y=228.0, wait_duration=0.0)
+2026-06-19 20:18:04 [replayer] INFO: Release coordinate at: (815.0, 228.0)
+2026-06-19 20:18:05 [replayer] INFO: [2] Execute Monkey event: CLICK
+2026-06-19 20:18:05 [replayer] INFO: Touch: Touch(touch_type='down', x=34.0, y=241.0, wait_duration=0.0)
+2026-06-19 20:18:05 [replayer] INFO: Press coordinate at: (34.0, 241.0)
+2026-06-19 20:18:05 [replayer] INFO: Touch: Touch(touch_type='up', x=34.0, y=241.0, wait_duration=0.0)
+2026-06-19 20:18:05 [replayer] INFO: Release coordinate at: (34.0, 241.0)
+2026-06-19 20:18:06 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_create_note_with_tags - start
+2026-06-19 20:18:06 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:06 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 20:18:07 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:07 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 20:18:08 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:18:09 [replayer] INFO: Set text to: K5hVy2GKT
+2026-06-19 20:18:10 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:18:10 [replayer] INFO: Set text to: #HAXx
+2026-06-19 20:18:11 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:18:11 [replayer] INFO: Press key: back
+2026-06-19 20:18:12 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_create_note_with_tags - pass
+2026-06-19 20:18:12 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_create_note_with_tags - start
+2026-06-19 20:18:12 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:12 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 20:18:13 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:13 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 20:18:14 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:18:14 [replayer] INFO: Set text to: 1UzxZJf
+2026-06-19 20:18:15 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:18:16 [replayer] INFO: Set text to: #fut
+2026-06-19 20:18:17 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:18:17 [replayer] INFO: Press key: back
+2026-06-19 20:18:18 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_create_note_with_tags - pass
+2026-06-19 20:18:18 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_create_note_with_tags - start
+2026-06-19 20:18:18 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:18 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 20:18:19 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:19 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 20:18:20 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:18:20 [replayer] INFO: Set text to: f8Z#
+2026-06-19 20:18:21 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:18:21 [replayer] INFO: Set text to: #XpL
+2026-06-19 20:18:22 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:18:22 [replayer] INFO: Press key: back
+2026-06-19 20:18:23 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_create_note_with_tags - pass
+2026-06-19 20:18:23 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_create_note_with_tags - start
+2026-06-19 20:18:23 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:24 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 20:18:25 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:25 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 20:18:26 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:18:26 [replayer] INFO: Set text to: CZ7DZprK#
+2026-06-19 20:18:27 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:18:27 [replayer] INFO: Set text to: #mv1Vq
+2026-06-19 20:18:28 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:18:28 [replayer] INFO: Press key: back
+2026-06-19 20:18:29 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_create_note_with_tags - pass
+2026-06-19 20:18:29 [reproducer] INFO: Preconditions executed for test case: happy_test_search_tag
+2026-06-19 20:18:29 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_search_tag
+2026-06-19 20:18:29 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 20:18:29 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 20:18:29 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 20:18:30 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_201759\test_search_tag\happy_test_search_tag_precondition/happy_test_search_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java --xml .\report\report_20260619_201759\test_search_tag\happy_test_search_tag_precondition/happy_test_search_tag.xml
+2026-06-19 20:18:30 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_201759\test_search_tag\happy_test_search_tag_precondition\happy_test_search_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 20:18:30 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_201759\test_search_tag\happy_test_search_tag_precondition/happy_test_search_tag.ec -> .\report\report_20260619_201759\test_search_tag\happy_test_search_tag_precondition/happy_test_search_tag.xml
+2026-06-19 20:18:30 [reproducer] INFO: Coverage data collected: .\report\report_20260619_201759\test_search_tag\happy_test_search_tag_precondition/happy_test_search_tag.xml
+2026-06-19 20:18:30 [reproducer] INFO: Start executing property for test case: happy_test_search_tag
+2026-06-19 20:18:30 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_search_tag - start
+2026-06-19 20:18:30 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:30 [replayer] INFO: Click coordinate: (771.0, 209.0)
+2026-06-19 20:18:31 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:31 [replayer] INFO: Click coordinate: (507.0, 209.0)
+2026-06-19 20:18:32 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:32 [replayer] INFO: Click coordinate: (1014.0, 209.0)
+2026-06-19 20:18:33 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:18:34 [replayer] INFO: Press key: back
+2026-06-19 20:18:35 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_search_tag - pass
+2026-06-19 20:18:35 [reproducer] INFO: Property executed for test case: happy_test_search_tag
+2026-06-19 20:18:35 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_search_tag
+2026-06-19 20:18:35 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 20:18:35 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 20:18:35 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 20:18:36 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_201759\test_search_tag\happy_test_search_tag_property/happy_test_search_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java --xml .\report\report_20260619_201759\test_search_tag\happy_test_search_tag_property/happy_test_search_tag.xml
+2026-06-19 20:18:36 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_201759\test_search_tag\happy_test_search_tag_property\happy_test_search_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 20:18:36 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_201759\test_search_tag\happy_test_search_tag_property/happy_test_search_tag.ec -> .\report\report_20260619_201759\test_search_tag\happy_test_search_tag_property/happy_test_search_tag.xml
+2026-06-19 20:18:36 [reproducer] INFO: Coverage data collected: .\report\report_20260619_201759\test_search_tag\happy_test_search_tag_property/happy_test_search_tag.xml
+2026-06-19 20:18:36 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 20:18:36 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 20:18:36 [reproducer] INFO: Test environment reset completed
+2026-06-19 20:18:36 [runner] INFO: Running property-violating path path...
+2026-06-19 20:18:36 [reproducer] INFO: Start reproducing test case: bug_test_search_tag
+2026-06-19 20:18:48 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 20:18:48 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 20:18:48 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 20:18:48 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 20:18:49 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: it.feio.android.omninotes.alpha
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=18ms (0ms mobile, 0ms wifi, 18ms not connected)
+
+2026-06-19 20:18:49 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 20:18:49 [reproducer] INFO: Init operation executed
+2026-06-19 20:18:52 [reproducer] INFO: Test environment setup completed
+2026-06-19 20:18:52 [reproducer] INFO: Start executing preconditions for test case: bug_test_search_tag
+2026-06-19 20:18:52 [replayer] INFO: [1] Execute Monkey event: CLICK
+2026-06-19 20:18:52 [replayer] INFO: Touch: Touch(touch_type='down', x=815.0, y=228.0, wait_duration=0.0)
+2026-06-19 20:18:52 [replayer] INFO: Press coordinate at: (815.0, 228.0)
+2026-06-19 20:18:52 [replayer] INFO: Touch: Touch(touch_type='up', x=815.0, y=228.0, wait_duration=0.0)
+2026-06-19 20:18:52 [replayer] INFO: Release coordinate at: (815.0, 228.0)
+2026-06-19 20:18:53 [replayer] INFO: [2] Execute Monkey event: CLICK
+2026-06-19 20:18:53 [replayer] INFO: Touch: Touch(touch_type='down', x=34.0, y=241.0, wait_duration=0.0)
+2026-06-19 20:18:53 [replayer] INFO: Press coordinate at: (34.0, 241.0)
+2026-06-19 20:18:53 [replayer] INFO: Touch: Touch(touch_type='up', x=34.0, y=241.0, wait_duration=0.0)
+2026-06-19 20:18:53 [replayer] INFO: Release coordinate at: (34.0, 241.0)
+2026-06-19 20:18:54 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_create_note_with_tags - start
+2026-06-19 20:18:54 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:54 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 20:18:55 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:18:55 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 20:18:56 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:18:56 [replayer] INFO: Set text to: K5hVy2GKT
+2026-06-19 20:18:57 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:18:58 [replayer] INFO: Set text to: #HAXx
+2026-06-19 20:18:59 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:18:59 [replayer] INFO: Press key: back
+2026-06-19 20:19:00 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_create_note_with_tags - pass
+2026-06-19 20:19:00 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_create_note_with_tags - start
+2026-06-19 20:19:00 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:00 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 20:19:01 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:01 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 20:19:02 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:19:02 [replayer] INFO: Set text to: 1UzxZJf
+2026-06-19 20:19:03 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:19:03 [replayer] INFO: Set text to: #fut
+2026-06-19 20:19:04 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:19:04 [replayer] INFO: Press key: back
+2026-06-19 20:19:05 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_create_note_with_tags - pass
+2026-06-19 20:19:05 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_create_note_with_tags - start
+2026-06-19 20:19:05 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:05 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 20:19:06 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:07 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 20:19:08 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:19:08 [replayer] INFO: Set text to: f8Z#
+2026-06-19 20:19:09 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:19:09 [replayer] INFO: Set text to: #XpL
+2026-06-19 20:19:10 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:19:10 [replayer] INFO: Press key: back
+2026-06-19 20:19:11 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_create_note_with_tags - pass
+2026-06-19 20:19:11 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_create_note_with_tags - start
+2026-06-19 20:19:11 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:11 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 20:19:12 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:12 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 20:19:13 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:19:14 [replayer] INFO: Set text to: CZ7DZprK#
+2026-06-19 20:19:15 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:19:15 [replayer] INFO: Set text to: #mv1Vq
+2026-06-19 20:19:16 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:19:16 [replayer] INFO: Press key: back
+2026-06-19 20:19:17 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_create_note_with_tags - pass
+2026-06-19 20:19:17 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_search_tag - start
+2026-06-19 20:19:17 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:17 [replayer] INFO: Click coordinate: (771.0, 209.0)
+2026-06-19 20:19:18 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:18 [replayer] INFO: Click coordinate: (507.0, 209.0)
+2026-06-19 20:19:19 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:19 [replayer] INFO: Click coordinate: (1014.0, 209.0)
+2026-06-19 20:19:20 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:19:21 [replayer] INFO: Press key: back
+2026-06-19 20:19:22 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_search_tag - pass
+2026-06-19 20:19:22 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_create_empty_category - start
+2026-06-19 20:19:22 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:23 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 20:19:24 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:24 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 20:19:25 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:25 [replayer] INFO: Click coordinate: (639.0, 209.0)
+2026-06-19 20:19:26 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:26 [replayer] INFO: Click coordinate: (768.5, 1215.0)
+2026-06-19 20:19:27 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 20:19:27 [replayer] INFO: Set text to: Wf8GSHZer
+2026-06-19 20:19:28 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:28 [replayer] INFO: Click coordinate: (659.5, 1409.5)
+2026-06-19 20:19:29 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:19:30 [replayer] INFO: Press key: back
+2026-06-19 20:19:31 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 20:19:31 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 20:19:32 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 20:19:32 [replayer] INFO: Press key: back
+2026-06-19 20:19:33 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_create_empty_category - pass
+2026-06-19 20:19:33 [replayer] INFO: [3] Execute Monkey event: CLICK
+2026-06-19 20:19:33 [replayer] INFO: Touch: Touch(touch_type='down', x=236.0, y=340.0, wait_duration=0.0)
+2026-06-19 20:19:33 [replayer] INFO: Press coordinate at: (236.0, 340.0)
+2026-06-19 20:19:33 [replayer] INFO: Touch: Touch(touch_type='up', x=236.0, y=340.0, wait_duration=0.0)
+2026-06-19 20:19:33 [replayer] INFO: Release coordinate at: (236.0, 340.0)
+2026-06-19 20:19:34 [replayer] INFO: [4] Execute Monkey event: CLICK
+2026-06-19 20:19:34 [replayer] INFO: Touch: Touch(touch_type='down', x=524.0, y=1695.0, wait_duration=0.0)
+2026-06-19 20:19:34 [replayer] INFO: Press coordinate at: (524.0, 1695.0)
+2026-06-19 20:19:34 [replayer] INFO: Touch: Touch(touch_type='up', x=524.0, y=1695.0, wait_duration=0.0)
+2026-06-19 20:19:34 [replayer] INFO: Release coordinate at: (524.0, 1695.0)
+2026-06-19 20:19:35 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_lock_note - start
+2026-06-19 20:19:35 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:19:35 [replayer] INFO: Click coordinate: (536.0, 657.5)
+2026-06-19 20:19:36 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:19:40 [replayer] INFO: Click coordinate: (1024.5, 209.0)
+2026-06-19 20:19:41 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:19:41 [replayer] INFO: Click coordinate: (799.5, 363.5)
+2026-06-19 20:19:42 [replayer] INFO: [4] Execute Script event: setText
+2026-06-19 20:19:42 [replayer] INFO: Set text to: 1
+2026-06-19 20:19:43 [replayer] INFO: [4] Execute Script event: setText
+2026-06-19 20:19:43 [replayer] INFO: Set text to: 1
+2026-06-19 20:19:44 [replayer] INFO: [4] Execute Script event: setText
+2026-06-19 20:19:44 [replayer] INFO: Set text to: 1
+2026-06-19 20:19:45 [replayer] INFO: [4] Execute Script event: setText
+2026-06-19 20:19:46 [replayer] INFO: Set text to: 1
+2026-06-19 20:19:47 [replayer] INFO: [4] Execute Script event: setText
+2026-06-19 20:19:47 [replayer] INFO: Set text to: 1
+2026-06-19 20:19:48 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:19:48 [replayer] INFO: Click coordinate: (807.0, 1891.0)
+2026-06-19 20:19:49 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:19:49 [replayer] INFO: Press key: back
+2026-06-19 20:19:50 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:19:50 [replayer] INFO: Press key: back
+2026-06-19 20:19:51 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:19:51 [replayer] INFO: Click coordinate: (536.0, 657.5)
+2026-06-19 20:19:52 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:19:52 [replayer] INFO: Press key: back
+2026-06-19 20:19:53 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_lock_note - pass
+2026-06-19 20:19:53 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_reduced_view - start
+2026-06-19 20:19:53 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:19:54 [replayer] INFO: Click coordinate: (1024.5, 209.0)
+2026-06-19 20:19:55 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:19:55 [replayer] INFO: Click coordinate: (799.5, 231.5)
+2026-06-19 20:19:56 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:19:56 [replayer] INFO: Click coordinate: (1024.5, 209.0)
+2026-06-19 20:19:57 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:19:57 [replayer] INFO: Click coordinate: (799.5, 231.5)
+2026-06-19 20:19:58 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_reduced_view - pass
+2026-06-19 20:19:58 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_behavior_setting - start
+2026-06-19 20:19:58 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:19:58 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 20:19:59 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:19:59 [replayer] INFO: Click coordinate: (478.5, 819.0)
+2026-06-19 20:20:00 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:01 [replayer] INFO: Click coordinate: (140.5, 941.5)
+2026-06-19 20:20:02 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:02 [replayer] INFO: Click coordinate: (972.0, 559.0)
+2026-06-19 20:20:03 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:03 [replayer] INFO: Click coordinate: (972.0, 559.0)
+2026-06-19 20:20:04 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:20:04 [replayer] INFO: Press key: back
+2026-06-19 20:20:05 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:20:06 [replayer] INFO: Press key: back
+2026-06-19 20:20:07 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:20:07 [replayer] INFO: Press key: back
+2026-06-19 20:20:08 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_behavior_setting - pass
+2026-06-19 20:20:08 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_create_checklist - start
+2026-06-19 20:20:08 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:08 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 20:20:09 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:09 [replayer] INFO: Click coordinate: (957.5, 1662.5)
+2026-06-19 20:20:10 [replayer] INFO: [4] Execute Script event: setText
+2026-06-19 20:20:10 [replayer] INFO: Set text to: R7nCz qza
+2026-06-19 20:20:11 [replayer] INFO: [4] Execute Script event: setText
+2026-06-19 20:20:11 [replayer] INFO: Set text to: Pf6
+2026-06-19 20:20:12 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:13 [replayer] INFO: Click coordinate: (215.0, 514.0)
+2026-06-19 20:20:14 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:20:14 [replayer] INFO: Press key: back
+2026-06-19 20:20:15 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_create_checklist - pass
+2026-06-19 20:20:15 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_data_setting - start
+2026-06-19 20:20:15 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:15 [replayer] INFO: Click coordinate: (77.0, 209.0)
+2026-06-19 20:20:16 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:16 [replayer] INFO: Click coordinate: (478.5, 819.0)
+2026-06-19 20:20:17 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:17 [replayer] INFO: Click coordinate: (89.5, 500.5)
+2026-06-19 20:20:18 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:18 [replayer] INFO: Click coordinate: (222.5, 359.5)
+2026-06-19 20:20:19 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:20:19 [replayer] INFO: Press key: back
+2026-06-19 20:20:20 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:20:20 [replayer] INFO: Press key: back
+2026-06-19 20:20:21 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:20:22 [replayer] INFO: Press key: back
+2026-06-19 20:20:23 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:20:23 [replayer] INFO: Press key: back
+2026-06-19 20:20:24 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_data_setting - pass
+2026-06-19 20:20:24 [reproducer] INFO: Preconditions executed for test case: bug_test_search_tag
+2026-06-19 20:20:24 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_search_tag
+2026-06-19 20:20:24 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 20:20:24 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 20:20:24 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 20:20:25 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_201759\test_search_tag\bug_test_search_tag_precondition/bug_test_search_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java --xml .\report\report_20260619_201759\test_search_tag\bug_test_search_tag_precondition/bug_test_search_tag.xml
+2026-06-19 20:20:25 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_201759\test_search_tag\bug_test_search_tag_precondition\bug_test_search_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 20:20:25 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_201759\test_search_tag\bug_test_search_tag_precondition/bug_test_search_tag.ec -> .\report\report_20260619_201759\test_search_tag\bug_test_search_tag_precondition/bug_test_search_tag.xml
+2026-06-19 20:20:25 [reproducer] INFO: Coverage data collected: .\report\report_20260619_201759\test_search_tag\bug_test_search_tag_precondition/bug_test_search_tag.xml
+2026-06-19 20:20:25 [reproducer] INFO: Start executing property for test case: bug_test_search_tag
+2026-06-19 20:20:25 [replayer] INFO: Script execution start state: omni956.OmniNotesBugTest.test_search_tag - start
+2026-06-19 20:20:25 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:25 [replayer] INFO: Click coordinate: (771.0, 209.0)
+2026-06-19 20:20:26 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:26 [replayer] INFO: Click coordinate: (507.0, 209.0)
+2026-06-19 20:20:27 [replayer] INFO: [4] Execute Script event: click
+2026-06-19 20:20:27 [replayer] INFO: Click coordinate: (1014.0, 209.0)
+2026-06-19 20:20:28 [replayer] INFO: [4] Execute Script event: pressKey
+2026-06-19 20:20:29 [replayer] INFO: Press key: back
+2026-06-19 20:20:30 [replayer] INFO: Script execution end state: omni956.OmniNotesBugTest.test_search_tag - fail
+2026-06-19 20:20:30 [reproducer] INFO: Property executed for test case: bug_test_search_tag
+2026-06-19 20:20:30 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_search_tag
+2026-06-19 20:20:30 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 20:20:30 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 20:20:30 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 20:20:31 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_201759\test_search_tag\bug_test_search_tag_property/bug_test_search_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java --xml .\report\report_20260619_201759\test_search_tag\bug_test_search_tag_property/bug_test_search_tag.xml
+2026-06-19 20:20:31 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_201759\test_search_tag\bug_test_search_tag_property\bug_test_search_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 20:20:31 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_201759\test_search_tag\bug_test_search_tag_property/bug_test_search_tag.ec -> .\report\report_20260619_201759\test_search_tag\bug_test_search_tag_property/bug_test_search_tag.xml
+2026-06-19 20:20:31 [reproducer] INFO: Coverage data collected: .\report\report_20260619_201759\test_search_tag\bug_test_search_tag_property/bug_test_search_tag.xml
+2026-06-19 20:20:31 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 20:20:31 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 20:20:31 [reproducer] INFO: Test environment reset completed
+2026-06-19 20:20:31 [runner] INFO: Parsing coverage data...
+2026-06-19 20:20:31 [report_generator] INFO: generate line coverage data: .\report\report_20260619_201759\test_search_tag\data\bug_test_search_tag_pre_line_coverage.md
+2026-06-19 20:20:31 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_201759\test_search_tag\data\bug_test_search_tag_pre_branch_coverage.md
+2026-06-19 20:20:31 [report_generator] INFO: generate line coverage data: .\report\report_20260619_201759\test_search_tag\data\bug_test_search_tag_prop_line_coverage.md
+2026-06-19 20:20:31 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_201759\test_search_tag\data\bug_test_search_tag_prop_branch_coverage.md
+2026-06-19 20:20:31 [report_generator] INFO: generate line coverage data: .\report\report_20260619_201759\test_search_tag\data\happy_test_search_tag_pre_line_coverage.md
+2026-06-19 20:20:31 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_201759\test_search_tag\data\happy_test_search_tag_pre_branch_coverage.md
+2026-06-19 20:20:31 [report_generator] INFO: generate line coverage data: .\report\report_20260619_201759\test_search_tag\data\happy_test_search_tag_prop_line_coverage.md
+2026-06-19 20:20:31 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_201759\test_search_tag\data\happy_test_search_tag_prop_branch_coverage.md
+2026-06-19 20:20:31 [runner] INFO: Calculating incremental coverage...
+2026-06-19 20:20:31 [runner] INFO: Performing incremental coverage analysis...
+2026-06-19 20:20:31 [runner] INFO: Generating pair test case report...
+2026-06-19 20:20:31 [runner] INFO: Saving intermediate data...
+2026-06-19 20:20:31 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260619_201759\test_search_tag\data\bug_test_search_tag_line_incremental_data.md
+2026-06-19 20:20:31 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260619_201759\test_search_tag\data\bug_test_search_tag_branch_incremental_data.md
+2026-06-19 20:20:31 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260619_201759\test_search_tag\data\happy_test_search_tag_line_incremental_data.md
+2026-06-19 20:20:31 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260619_201759\test_search_tag\data\happy_test_search_tag_branch_incremental_data.md
+2026-06-19 20:20:31 [report_generator] INFO: generate line diff data: .\report\report_20260619_201759\test_search_tag\data\line_diff_data.md
+2026-06-19 20:20:31 [report_generator] INFO: generate branch diff data: .\report\report_20260619_201759\test_search_tag\data\branch_diff_data.md
+2026-06-19 20:20:31 [runner] INFO: Generating diff report...
+2026-06-19 20:20:31 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java encoding: utf-8
+2026-06-19 20:20:31 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\db\DbHelper.java encoding: utf-8
+2026-06-19 20:20:31 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\models\Tag.java encoding: utf-8
+2026-06-19 20:20:31 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\utils\TagsHelper.java encoding: utf-8
+2026-06-19 20:20:31 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260619_201759\test_search_tag\test_search_tag_line_diff_report.html
+2026-06-19 20:20:31 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java encoding: utf-8
+2026-06-19 20:20:31 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\db\DbHelper.java encoding: utf-8
+2026-06-19 20:20:31 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-2\omniNotes\src\main\java\it\feio\android\omninotes\utils\TagsHelper.java encoding: utf-8
+2026-06-19 20:20:31 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260619_201759\test_search_tag\test_search_tag_branch_diff_report.html
+2026-06-19 20:20:31 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_search_tag
+
+## Code Coverage Summary
+File: it/feio/android/omninotes/ListFragment.java
+  Only in second dataset lines: [834, 835, 1805, 1807, 1812, 1813, 1814, 1835, 1838, 1839, 1840, 1841]
+    Line 834: hit count 2
+    Line 835: hit count 1
+    Line 1805: hit count 2
+    Line 1807: hit count 3
+    Line 1812: hit count 6
+    Line 1813: hit count 5
+    Line 1814: hit count 2
+    Line 1835: hit count 4
+    Line 1838: hit count 2
+    Line 1839: hit count 2
+    Line 1840: hit count 5
+    Line 1841: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/db/DbHelper.java
+  Only in second dataset lines: [691, 699, 700, 702, 703, 705, 706, 707, 709, 710, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723]
+    Line 691: hit count 4
+    Line 699: hit count 4
+    Line 700: hit count 4
+    Line 702: hit count 5
+    Line 703: hit count 18
+    Line 705: hit count 3
+    Line 706: hit count 6
+    Line 707: hit count 5
+    Line 709: hit count 10
+    Line 710: hit count 3
+    Line 711: hit count 11
+    Line 712: hit count 7
+    Line 713: hit count 7
+    Line 714: hit count 1
+    Line 715: hit count 1
+    Line 717: hit count 11
+    Line 718: hit count 10
+    Line 719: hit count 4
+    Line 720: hit count 1
+    Line 722: hit count 9
+    Line 723: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/models/Tag.java
+  Only in second dataset lines: [38, 39, 65]
+    Line 38: hit count 5
+    Line 39: hit count 1
+    Line 65: hit count 8
+----------------------------------------
+File: it/feio/android/omninotes/utils/TagsHelper.java
+  Only in second dataset lines: [43, 48, 49, 50, 51, 52, 53, 54, 55, 58, 124, 125, 126, 128]
+    Line 43: hit count 3
+    Line 48: hit count 4
+    Line 49: hit count 17
+    Line 50: hit count 2
+    Line 51: hit count 16
+    Line 52: hit count 3
+    Line 53: hit count 3
+    Line 54: hit count 7
+    Line 55: hit count 7
+    Line 58: hit count 2
+    Line 124: hit count 4
+    Line 125: hit count 8
+    Line 126: hit count 25
+    Line 128: hit count 2
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Pass: test_create_note_with_tags → Start: test_create_note_with_tags → Input: CZ7DZprK# → Input: #mv1Vq → Back → Pass: test_create_note_with_tags → Start: test_search_tag → Back → Pass: test_search_tag → Start: test_create_empty_category
+
+FAIL continuation:
+Input: Wf8GSHZer → Back → Pass: test_create_empty_category → Random operation: CLICK → Start: test_lock_note → Input: 1 → Back → Pass: test_lock_note → Start: test_reduced_view → Pass: test_reduced_view → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_create_checklist → Input: R7nCz qza → Input: Pf6 → Back → Pass: test_create_checklist → Start: test_data_setting → Back → Pass: test_data_setting → Start: test_search_tag → Back → Fail: test_search_tag → Start: test_lock_note → Back → Pass: test_lock_note → Start: test_reduced_view → Pass: test_reduced_view → Start: test_reduced_view → Pass: test_reduced_view → Start: test_reduced_view → Pass: test_reduced_view → Start: test_reduced_view → Pass: test_reduced_view → Random operation: LONG_CLICK → Start: test_search_tag → Back
+
+## Correct Execution Path
+Random operation: CLICK → Start: test_create_note_with_tags → Input: K5hVy2GKT → Input: #HAXx → Back → Pass: test_create_note_with_tags → Start: test_create_note_with_tags → Input: 1UzxZJf → Input: #fut → Back → Pass: test_create_note_with_tags → Start: test_create_note_with_tags → Input: f8Z# → Input: #XpL → Back → Pass: test_create_note_with_tags → Start: test_create_note_with_tags → Input: CZ7DZprK# → Input: #mv1Vq → Back → Pass: test_create_note_with_tags → Start: test_search_tag → Back → Pass: test_search_tag → Start: test_create_empty_category
+
+## Error Execution Path
+Random operation: CLICK → Start: test_create_note_with_tags → Input: K5hVy2GKT → Input: #HAXx → Back → Pass: test_create_note_with_tags → Start: test_create_note_with_tags → Input: 1UzxZJf → Input: #fut → Back → Pass: test_create_note_with_tags → Start: test_create_note_with_tags → Input: f8Z# → Input: #XpL → Back → Pass: test_create_note_with_tags → Start: test_create_note_with_tags → Input: CZ7DZprK# → Input: #mv1Vq → Back → Pass: test_create_note_with_tags → Start: test_search_tag → Back → Pass: test_search_tag → Start: test_create_empty_category → Input: Wf8GSHZer → Back → Pass: test_create_empty_category → Random operation: CLICK → Start: test_lock_note → Input: 1 → Back → Pass: test_lock_note → Start: test_reduced_view → Pass: test_reduced_view → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_create_checklist → Input: R7nCz qza → Input: Pf6 → Back → Pass: test_create_checklist → Start: test_data_setting → Back → Pass: test_data_setting → Start: test_search_tag → Back → Fail: test_search_tag → Start: test_lock_note → Back → Pass: test_lock_note → Start: test_reduced_view → Pass: test_reduced_view → Start: test_reduced_view → Pass: test_reduced_view → Start: test_reduced_view → Pass: test_reduced_view → Start: test_reduced_view → Pass: test_reduced_view → Random operation: LONG_CLICK → Start: test_search_tag → Back
+
+## Files to Analyze
+it/feio/android/omninotes/ListFragment.java
+  Differing lines: 12
+
+it/feio/android/omninotes/db/DbHelper.java
+  Differing lines: 21
+
+it/feio/android/omninotes/models/Tag.java
+  Differing lines: 3
+
+it/feio/android/omninotes/utils/TagsHelper.java
+  Differing lines: 14
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-19 20:20:37 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-19 20:20:38 [llm] INFO: LLM response: it/feio/android/omninotes/utils/TagsHelper.java
+it/feio/android/omninotes/db/DbHelper.java
+it/feio/android/omninotes/models/Tag.java
+it/feio/android/omninotes/ListFragment.java
+2026-06-19 20:20:38 [runner] INFO: Saving ranking to .\report\report_20260619_201759\test_search_tag\ranking.txt
+2026-06-19 20:20:38 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260619_201759\index.html
+2026-06-19 20:20:38 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: .\report\report_20260619_201759

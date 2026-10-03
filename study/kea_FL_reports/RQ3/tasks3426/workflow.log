@@ -1,0 +1,728 @@
+2026-06-20 15:32:50 [runner] INFO: Building pair test cases...
+2026-06-20 15:32:50 [replayer] INFO: Parse 254 events
+2026-06-20 15:32:50 [replayer] INFO: Parse 98 Monkey actions
+2026-06-20 15:32:50 [reproducer] INFO: Extract 6 pairs test cases
+2026-06-20 15:32:50 [replayer] INFO: Property tasks3426.TasksTest.test_create_tag not found, skip: [happy_path] = False, [bug_path] = False
+2026-06-20 15:32:50 [replayer] INFO: Property tasks3426.TasksTest.test_delete_task not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:32:50 [replayer] INFO: Property tasks3426.TasksTest.test_update_description not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:32:50 [replayer] INFO: Property tasks3426.TasksTest.test_create_task not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:32:50 [replayer] INFO: Property tasks3426.TasksTest.test_change_priority not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:32:50 [reproducer] INFO: Build 1 pairs test cases
+2026-06-20 15:32:50 [reproducer] INFO: Test case [1]: test_search_task
+2026-06-20 15:32:50 [reproducer] INFO:     -happy_path: [preconditions]: 103, [property]: 7
+2026-06-20 15:32:50 [reproducer] INFO:     -bug_path: [preconditions]: 146, [property]: 6
+2026-06-20 15:32:50 [runner] INFO: Start running full coverage difference analysis...
+2026-06-20 15:32:50 [runner] INFO: Processing pair test case [1]: happy_test_search_task <-> bug_test_search_task
+2026-06-20 15:32:50 [runner] INFO: Running pair test case analysis: happy_test_search_task <-> bug_test_search_task
+2026-06-20 15:32:50 [runner] INFO: Running property-satisfying path...
+2026-06-20 15:32:50 [reproducer] INFO: Start reproducing test case: happy_test_search_task
+2026-06-20 15:32:50 [reproducer] INFO: Start executing preconditions for test case: happy_test_search_task
+2026-06-20 15:32:50 [reproducer] INFO: Preconditions executed for test case: happy_test_search_task
+2026-06-20 15:32:50 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_search_task
+2026-06-20 15:32:50 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:32:50 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:32:51 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_precondition/happy_test_search_task.ec --classfiles D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\build\tmp\kotlin-classes\googleplayDebug --sourcefiles D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_precondition/happy_test_search_task.xml
+2026-06-20 15:32:51 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_precondition\happy_test_search_task.ec.
+[WARN] Some classes do not match with execution data.
+[WARN] For report generation the same class files must be used as at runtime.
+[WARN] Execution data for class org/tasks/dialogs/FilterPicker does not match.
+[WARN] Execution data for class org/tasks/widget/TasksWidget does not match.
+[WARN] Execution data for class com/todoroo/astrid/ui/ReminderControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/ui/StartDateControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/tags/TagsControlSet does not match.
+[WARN] Execution data for class org/tasks/ui/LocationControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/timers/TimerControlSet does not match.
+[WARN] Execution data for class org/tasks/scheduling/NotificationSchedulerIntentService does not match.
+[WARN] Execution data for class org/tasks/fragments/CommentBarFragment does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/TaskEditFragment does not match.
+[WARN] Execution data for class org/tasks/receivers/RefreshReceiver does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/MainActivity does not match.
+[WARN] Execution data for class org/tasks/dialogs/StartDatePicker does not match.
+[WARN] Execution data for class org/tasks/tags/TagPickerActivity does not match.
+[WARN] Execution data for class org/tasks/dialogs/MyTimePickerDialog does not match.
+[WARN] Execution data for class org/tasks/dialogs/AddAttachmentDialog does not match.
+[WARN] Execution data for class com/todoroo/astrid/repeats/RepeatControlSet does not match.
+[WARN] Execution data for class org/tasks/ui/CalendarControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/files/FilesControlSet does not match.
+[WARN] Execution data for class org/tasks/dialogs/SortSettingsActivity does not match.
+[WARN] Execution data for class org/tasks/repeats/BasicRecurrenceDialog does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/TaskListFragment does not match.
+[WARN] Execution data for class org/tasks/Tasks does not match.
+[WARN] Execution data for class org/tasks/ui/SubtaskControlSet does not match.
+[INFO] Analyzing 1943 classes.
+
+2026-06-20 15:32:51 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_precondition/happy_test_search_task.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_precondition/happy_test_search_task.xml
+2026-06-20 15:32:51 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_precondition/happy_test_search_task.xml
+2026-06-20 15:32:51 [reproducer] INFO: Start executing property for test case: happy_test_search_task
+2026-06-20 15:32:51 [reproducer] INFO: Property executed for test case: happy_test_search_task
+2026-06-20 15:32:51 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_search_task
+2026-06-20 15:32:51 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:32:51 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:32:51 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_property/happy_test_search_task.ec --classfiles D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\build\tmp\kotlin-classes\googleplayDebug --sourcefiles D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_property/happy_test_search_task.xml
+2026-06-20 15:32:51 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_property\happy_test_search_task.ec.
+[WARN] Some classes do not match with execution data.
+[WARN] For report generation the same class files must be used as at runtime.
+[WARN] Execution data for class org/tasks/dialogs/FilterPicker does not match.
+[WARN] Execution data for class org/tasks/widget/TasksWidget does not match.
+[WARN] Execution data for class com/todoroo/astrid/ui/ReminderControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/ui/StartDateControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/tags/TagsControlSet does not match.
+[WARN] Execution data for class org/tasks/ui/LocationControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/timers/TimerControlSet does not match.
+[WARN] Execution data for class org/tasks/scheduling/NotificationSchedulerIntentService does not match.
+[WARN] Execution data for class org/tasks/fragments/CommentBarFragment does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/TaskEditFragment does not match.
+[WARN] Execution data for class org/tasks/receivers/RefreshReceiver does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/MainActivity does not match.
+[WARN] Execution data for class org/tasks/dialogs/StartDatePicker does not match.
+[WARN] Execution data for class org/tasks/tags/TagPickerActivity does not match.
+[WARN] Execution data for class org/tasks/dialogs/MyTimePickerDialog does not match.
+[WARN] Execution data for class org/tasks/dialogs/AddAttachmentDialog does not match.
+[WARN] Execution data for class com/todoroo/astrid/repeats/RepeatControlSet does not match.
+[WARN] Execution data for class org/tasks/ui/CalendarControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/files/FilesControlSet does not match.
+[WARN] Execution data for class org/tasks/dialogs/SortSettingsActivity does not match.
+[WARN] Execution data for class org/tasks/repeats/BasicRecurrenceDialog does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/TaskListFragment does not match.
+[WARN] Execution data for class org/tasks/Tasks does not match.
+[WARN] Execution data for class org/tasks/ui/SubtaskControlSet does not match.
+[INFO] Analyzing 1943 classes.
+
+2026-06-20 15:32:51 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_property/happy_test_search_task.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_property/happy_test_search_task.xml
+2026-06-20 15:32:51 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\happy_test_search_task_property/happy_test_search_task.xml
+2026-06-20 15:32:51 [runner] INFO: Running property-violating path path...
+2026-06-20 15:32:51 [reproducer] INFO: Start reproducing test case: bug_test_search_task
+2026-06-20 15:32:51 [reproducer] INFO: Start executing preconditions for test case: bug_test_search_task
+2026-06-20 15:32:51 [reproducer] INFO: Preconditions executed for test case: bug_test_search_task
+2026-06-20 15:32:51 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_search_task
+2026-06-20 15:32:51 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:32:51 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:32:52 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_precondition/bug_test_search_task.ec --classfiles D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\build\tmp\kotlin-classes\googleplayDebug --sourcefiles D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_precondition/bug_test_search_task.xml
+2026-06-20 15:32:52 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_precondition\bug_test_search_task.ec.
+[WARN] Some classes do not match with execution data.
+[WARN] For report generation the same class files must be used as at runtime.
+[WARN] Execution data for class org/tasks/dialogs/FilterPicker does not match.
+[WARN] Execution data for class org/tasks/widget/TasksWidget does not match.
+[WARN] Execution data for class com/todoroo/astrid/ui/ReminderControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/ui/StartDateControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/tags/TagsControlSet does not match.
+[WARN] Execution data for class org/tasks/ui/LocationControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/timers/TimerControlSet does not match.
+[WARN] Execution data for class org/tasks/scheduling/NotificationSchedulerIntentService does not match.
+[WARN] Execution data for class org/tasks/fragments/CommentBarFragment does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/TaskEditFragment does not match.
+[WARN] Execution data for class org/tasks/receivers/RefreshReceiver does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/MainActivity does not match.
+[WARN] Execution data for class org/tasks/dialogs/StartDatePicker does not match.
+[WARN] Execution data for class org/tasks/tags/TagPickerActivity does not match.
+[WARN] Execution data for class org/tasks/dialogs/MyTimePickerDialog does not match.
+[WARN] Execution data for class org/tasks/dialogs/AddAttachmentDialog does not match.
+[WARN] Execution data for class com/todoroo/astrid/repeats/RepeatControlSet does not match.
+[WARN] Execution data for class org/tasks/ui/CalendarControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/files/FilesControlSet does not match.
+[WARN] Execution data for class org/tasks/dialogs/SortSettingsActivity does not match.
+[WARN] Execution data for class org/tasks/repeats/BasicRecurrenceDialog does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/TaskListFragment does not match.
+[WARN] Execution data for class org/tasks/Tasks does not match.
+[WARN] Execution data for class org/tasks/ui/SubtaskControlSet does not match.
+[INFO] Analyzing 1943 classes.
+
+2026-06-20 15:32:52 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_precondition/bug_test_search_task.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_precondition/bug_test_search_task.xml
+2026-06-20 15:32:52 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_precondition/bug_test_search_task.xml
+2026-06-20 15:32:52 [reproducer] INFO: Start executing property for test case: bug_test_search_task
+2026-06-20 15:32:52 [reproducer] INFO: Property executed for test case: bug_test_search_task
+2026-06-20 15:32:52 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_search_task
+2026-06-20 15:32:52 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:32:52 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:32:53 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_property/bug_test_search_task.ec --classfiles D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\build\tmp\kotlin-classes\googleplayDebug --sourcefiles D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java --xml D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_property/bug_test_search_task.xml
+2026-06-20 15:32:53 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_property\bug_test_search_task.ec.
+[WARN] Some classes do not match with execution data.
+[WARN] For report generation the same class files must be used as at runtime.
+[WARN] Execution data for class org/tasks/dialogs/FilterPicker does not match.
+[WARN] Execution data for class org/tasks/widget/TasksWidget does not match.
+[WARN] Execution data for class com/todoroo/astrid/ui/ReminderControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/ui/StartDateControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/tags/TagsControlSet does not match.
+[WARN] Execution data for class org/tasks/ui/LocationControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/timers/TimerControlSet does not match.
+[WARN] Execution data for class org/tasks/scheduling/NotificationSchedulerIntentService does not match.
+[WARN] Execution data for class org/tasks/fragments/CommentBarFragment does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/TaskEditFragment does not match.
+[WARN] Execution data for class org/tasks/receivers/RefreshReceiver does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/MainActivity does not match.
+[WARN] Execution data for class org/tasks/dialogs/StartDatePicker does not match.
+[WARN] Execution data for class org/tasks/tags/TagPickerActivity does not match.
+[WARN] Execution data for class org/tasks/dialogs/MyTimePickerDialog does not match.
+[WARN] Execution data for class org/tasks/dialogs/AddAttachmentDialog does not match.
+[WARN] Execution data for class com/todoroo/astrid/repeats/RepeatControlSet does not match.
+[WARN] Execution data for class org/tasks/ui/CalendarControlSet does not match.
+[WARN] Execution data for class com/todoroo/astrid/files/FilesControlSet does not match.
+[WARN] Execution data for class org/tasks/dialogs/SortSettingsActivity does not match.
+[WARN] Execution data for class org/tasks/repeats/BasicRecurrenceDialog does not match.
+[WARN] Execution data for class com/todoroo/astrid/activity/TaskListFragment does not match.
+[WARN] Execution data for class org/tasks/Tasks does not match.
+[WARN] Execution data for class org/tasks/ui/SubtaskControlSet does not match.
+[INFO] Analyzing 1943 classes.
+
+2026-06-20 15:32:53 [reproducer] INFO: Coverage file converted successfully: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_property/bug_test_search_task.ec -> D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_property/bug_test_search_task.xml
+2026-06-20 15:32:53 [reproducer] INFO: Coverage data collected: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\bug_test_search_task_property/bug_test_search_task.xml
+2026-06-20 15:32:53 [runner] INFO: Parsing coverage data...
+2026-06-20 15:32:53 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\bug_test_search_task_pre_line_coverage.md
+2026-06-20 15:32:53 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\bug_test_search_task_pre_branch_coverage.md
+2026-06-20 15:32:53 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\bug_test_search_task_prop_line_coverage.md
+2026-06-20 15:32:54 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\bug_test_search_task_prop_branch_coverage.md
+2026-06-20 15:32:54 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\happy_test_search_task_pre_line_coverage.md
+2026-06-20 15:32:54 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\happy_test_search_task_pre_branch_coverage.md
+2026-06-20 15:32:54 [report_generator] INFO: generate line coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\happy_test_search_task_prop_line_coverage.md
+2026-06-20 15:32:54 [report_generator] INFO: generate branch coverage data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\happy_test_search_task_prop_branch_coverage.md
+2026-06-20 15:32:54 [runner] INFO: Calculating incremental coverage...
+2026-06-20 15:32:54 [runner] INFO: Performing incremental coverage analysis...
+2026-06-20 15:32:54 [runner] INFO: Generating pair test case report...
+2026-06-20 15:32:54 [runner] INFO: Saving intermediate data...
+2026-06-20 15:32:54 [report_generator] INFO: generate bug line coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\bug_test_search_task_line_incremental_data.md
+2026-06-20 15:32:54 [report_generator] INFO: generate bug branch coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\bug_test_search_task_branch_incremental_data.md
+2026-06-20 15:32:54 [report_generator] INFO: generate correct line coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\happy_test_search_task_line_incremental_data.md
+2026-06-20 15:32:54 [report_generator] INFO: generate correct branch coverage increment data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\happy_test_search_task_branch_incremental_data.md
+2026-06-20 15:32:54 [report_generator] INFO: generate line diff data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\line_diff_data.md
+2026-06-20 15:32:54 [report_generator] INFO: generate branch diff data: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\data\branch_diff_data.md
+2026-06-20 15:32:54 [runner] INFO: Generating diff report...
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\activity\MainActivity.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\activity\MainActivityViewModel.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\activity\TaskEditFragment.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\activity\TaskListFragment.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\api\SearchFilter.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\service\TaskCreator.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\com\todoroo\astrid\service\Upgrader.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\backup\BackupContainer.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\backup\TasksJsonExporter.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\caldav\iCalendar.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\compose\edit\DescriptionRow.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\files\FileHelper.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\injection\ApplicationModule.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\jobs\BackupWork.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\jobs\WorkManagerImpl.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\preferences\DefaultFilterProvider.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\preferences\IconPreference.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\preferences\Preferences.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\ui\TaskEditViewModel.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Successfully read source file: D:\code\android\wait_for_jacoco\tasks-13.9.9-Yes\app\src\main\java\org\tasks\ui\TaskListViewModel.kt encoding: utf-8
+2026-06-20 15:32:54 [report_generator] INFO: Line Coverage Diff Report Generated: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\test_search_task_line_diff_report.html
+2026-06-20 15:32:54 [report_generator] INFO: Branch Coverage Diff Report Generated: D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\test_search_task_branch_diff_report.html
+2026-06-20 15:32:54 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_search_task
+
+## Code Coverage Summary
+File: com/todoroo/astrid/activity/MainActivity.kt
+  Only in first dataset lines: [147]
+    Line 147: hit count 3
+----------------------------------------
+File: com/todoroo/astrid/activity/MainActivityViewModel.kt
+  Only in first dataset lines: [119, 120]
+    Line 119: hit count 6
+    Line 120: hit count 1
+----------------------------------------
+File: com/todoroo/astrid/activity/TaskEditFragment.kt
+  Only in first dataset lines: [412, 413, 483]
+    Line 412: hit count 12
+    Line 413: hit count 3
+    Line 483: hit count 16
+----------------------------------------
+File: com/todoroo/astrid/activity/TaskListFragment.kt
+  Only in first dataset lines: [256, 257]
+    Line 256: hit count 4
+    Line 257: hit count 7
+----------------------------------------
+File: com/todoroo/astrid/api/SearchFilter.kt
+  Only in first dataset lines: [16, 17, 18, 19, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 52, 53, 54, 55, 56, 57, 58, 61, 66, 73]
+    Line 16: hit count 2
+    Line 17: hit count 1
+    Line 18: hit count 6
+    Line 19: hit count 3
+    Line 23: hit count 4
+    Line 24: hit count 4
+    Line 25: hit count 1
+    Line 26: hit count 2
+    Line 27: hit count 4
+    Line 28: hit count 9
+    Line 29: hit count 4
+    Line 30: hit count 18
+    Line 31: hit count 3
+    Line 32: hit count 10
+    Line 33: hit count 2
+    Line 34: hit count 4
+    Line 36: hit count 4
+    Line 37: hit count 10
+    Line 38: hit count 2
+    Line 39: hit count 4
+    Line 41: hit count 3
+    Line 42: hit count 10
+    Line 43: hit count 2
+    Line 44: hit count 21
+    Line 45: hit count 1
+    Line 46: hit count 2
+    Line 47: hit count 3
+    Line 48: hit count 10
+    Line 52: hit count 3
+    Line 53: hit count 10
+    Line 54: hit count 2
+    Line 55: hit count 1
+    Line 56: hit count 9
+    Line 57: hit count 2
+    Line 58: hit count 11
+    Line 61: hit count 4
+    Line 66: hit count 1
+    Line 73: hit count 2
+----------------------------------------
+File: com/todoroo/astrid/service/TaskCreator.kt
+  Only in first dataset lines: [163, 164, 165, 172]
+    Line 163: hit count 2
+    Line 164: hit count 4
+    Line 165: hit count 16
+    Line 172: hit count 1
+----------------------------------------
+File: com/todoroo/astrid/service/Upgrader.kt
+  Only in first dataset lines: [44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 69, 118, 120, 121, 122, 125, 126, 127]
+    Line 44: hit count 3
+    Line 45: hit count 3
+    Line 46: hit count 3
+    Line 47: hit count 3
+    Line 48: hit count 3
+    Line 49: hit count 3
+    Line 50: hit count 3
+    Line 51: hit count 3
+    Line 52: hit count 3
+    Line 53: hit count 3
+    Line 54: hit count 3
+    Line 55: hit count 3
+    Line 56: hit count 3
+    Line 57: hit count 3
+    Line 58: hit count 3
+    Line 59: hit count 3
+    Line 60: hit count 3
+    Line 61: hit count 3
+    Line 62: hit count 3
+    Line 63: hit count 3
+    Line 64: hit count 3
+    Line 65: hit count 3
+    Line 69: hit count 2
+    Line 118: hit count 3
+    Line 120: hit count 4
+    Line 121: hit count 4
+    Line 122: hit count 1
+    Line 125: hit count 4
+    Line 126: hit count 4
+    Line 127: hit count 1
+----------------------------------------
+File: org/tasks/backup/BackupContainer.kt
+  Only in first dataset lines: [23, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 42, 54, 55]
+    Line 23: hit count 230
+    Line 25: hit count 63
+    Line 26: hit count 3
+    Line 27: hit count 3
+    Line 28: hit count 3
+    Line 29: hit count 3
+    Line 30: hit count 3
+    Line 31: hit count 3
+    Line 32: hit count 3
+    Line 33: hit count 3
+    Line 34: hit count 3
+    Line 35: hit count 3
+    Line 36: hit count 3
+    Line 37: hit count 3
+    Line 38: hit count 3
+    Line 39: hit count 5
+    Line 40: hit count 5
+    Line 42: hit count 53
+    Line 54: hit count 1
+    Line 55: hit count 2
+----------------------------------------
+File: org/tasks/backup/TasksJsonExporter.kt
+  Only in first dataset lines: [46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 67, 75, 76, 77, 78, 81, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 110, 117, 120, 121, 122, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 162, 163, 164, 165, 166, 167, 181, 182, 184, 187, 191, 195]
+    Line 46: hit count 3
+    Line 47: hit count 3
+    Line 48: hit count 3
+    Line 49: hit count 3
+    Line 50: hit count 3
+    Line 51: hit count 3
+    Line 52: hit count 3
+    Line 53: hit count 3
+    Line 54: hit count 3
+    Line 55: hit count 3
+    Line 56: hit count 3
+    Line 57: hit count 3
+    Line 58: hit count 3
+    Line 59: hit count 3
+    Line 67: hit count 7
+    Line 75: hit count 3
+    Line 76: hit count 3
+    Line 77: hit count 3
+    Line 78: hit count 3
+    Line 81: hit count 4
+    Line 84: hit count 2
+    Line 85: hit count 1
+    Line 86: hit count 4
+    Line 87: hit count 16
+    Line 88: hit count 34
+    Line 89: hit count 3
+    Line 90: hit count 3
+    Line 91: hit count 3
+    Line 92: hit count 8
+    Line 93: hit count 23
+    Line 94: hit count 5
+    Line 95: hit count 2
+    Line 96: hit count 4
+    Line 97: hit count 5
+    Line 98: hit count 1
+    Line 99: hit count 5
+    Line 100: hit count 1
+    Line 101: hit count 8
+    Line 102: hit count 9
+    Line 103: hit count 6
+    Line 104: hit count 3
+    Line 110: hit count 8
+    Line 117: hit count 2
+    Line 120: hit count 115
+    Line 121: hit count 5
+    Line 122: hit count 6
+    Line 139: hit count 6
+    Line 140: hit count 1
+    Line 141: hit count 17
+    Line 142: hit count 7
+    Line 143: hit count 8
+    Line 144: hit count 42
+    Line 145: hit count 5
+    Line 146: hit count 49
+    Line 147: hit count 37
+    Line 148: hit count 40
+    Line 149: hit count 43
+    Line 150: hit count 46
+    Line 151: hit count 49
+    Line 152: hit count 52
+    Line 153: hit count 4
+    Line 154: hit count 4
+    Line 155: hit count 4
+    Line 156: hit count 4
+    Line 157: hit count 7
+    Line 162: hit count 6
+    Line 163: hit count 14
+    Line 164: hit count 7
+    Line 165: hit count 2
+    Line 166: hit count 4
+    Line 167: hit count 2
+    Line 181: hit count 6
+    Line 182: hit count 24
+    Line 184: hit count 1
+    Line 187: hit count 19
+    Line 191: hit count 7
+    Line 195: hit count 7
+----------------------------------------
+File: org/tasks/caldav/iCalendar.kt
+  Only in first dataset lines: [74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 292, 294, 295, 301, 302, 303, 304, 341, 342, 343, 344]
+    Line 74: hit count 2
+    Line 75: hit count 1
+    Line 76: hit count 3
+    Line 77: hit count 3
+    Line 78: hit count 3
+    Line 79: hit count 3
+    Line 80: hit count 3
+    Line 81: hit count 3
+    Line 82: hit count 3
+    Line 83: hit count 3
+    Line 84: hit count 3
+    Line 85: hit count 3
+    Line 86: hit count 3
+    Line 87: hit count 3
+    Line 88: hit count 3
+    Line 292: hit count 7
+    Line 294: hit count 5
+    Line 295: hit count 3
+    Line 301: hit count 3
+    Line 302: hit count 3
+    Line 303: hit count 3
+    Line 304: hit count 3
+    Line 341: hit count 3
+    Line 342: hit count 12
+    Line 343: hit count 2
+    Line 344: hit count 2
+----------------------------------------
+File: org/tasks/compose/edit/DescriptionRow.kt
+  Only in first dataset lines: [47, 48]
+    Line 47: hit count 1
+    Line 48: hit count 1
+----------------------------------------
+File: org/tasks/files/FileHelper.kt
+  Only in first dataset lines: [159, 160, 168, 169, 172, 173, 174, 201, 202, 203, 204, 205, 206, 207, 211, 215, 216, 217, 220, 221, 236, 237, 244]
+    Line 159: hit count 7
+    Line 160: hit count 12
+    Line 168: hit count 6
+    Line 169: hit count 3
+    Line 172: hit count 9
+    Line 173: hit count 3
+    Line 174: hit count 6
+    Line 201: hit count 3
+    Line 202: hit count 1
+    Line 203: hit count 6
+    Line 204: hit count 6
+    Line 205: hit count 8
+    Line 206: hit count 2
+    Line 207: hit count 3
+    Line 211: hit count 1
+    Line 215: hit count 2
+    Line 216: hit count 2
+    Line 217: hit count 9
+    Line 220: hit count 2
+    Line 221: hit count 12
+    Line 236: hit count 9
+    Line 237: hit count 3
+    Line 244: hit count 4
+----------------------------------------
+File: org/tasks/injection/ApplicationModule.kt
+  Only in first dataset lines: [113]
+    Line 113: hit count 3
+----------------------------------------
+File: org/tasks/jobs/BackupWork.kt
+  Only in first dataset lines: [22, 26, 27, 28, 31, 32, 33, 36, 39, 43, 44, 48, 49, 50, 54, 57, 58, 68, 69, 70, 77, 81, 82, 83, 86, 89]
+    Line 22: hit count 1
+    Line 26: hit count 3
+    Line 27: hit count 3
+    Line 28: hit count 8
+    Line 31: hit count 5
+    Line 32: hit count 8
+    Line 33: hit count 6
+    Line 36: hit count 5
+    Line 39: hit count 6
+    Line 43: hit count 1
+    Line 44: hit count 3
+    Line 48: hit count 1
+    Line 49: hit count 8
+    Line 50: hit count 4
+    Line 54: hit count 2
+    Line 57: hit count 4
+    Line 58: hit count 15
+    Line 68: hit count 6
+    Line 69: hit count 4
+    Line 70: hit count 9
+    Line 77: hit count 1
+    Line 81: hit count 3
+    Line 82: hit count 2
+    Line 83: hit count 3
+    Line 86: hit count 3
+    Line 89: hit count 14
+----------------------------------------
+File: org/tasks/jobs/WorkManagerImpl.kt
+  Only in first dataset lines: [195, 196]
+    Line 195: hit count 6
+    Line 196: hit count 1
+----------------------------------------
+File: org/tasks/preferences/DefaultFilterProvider.kt
+  Only in first dataset lines: [173, 174, 175, 176]
+    Line 173: hit count 19
+    Line 174: hit count 13
+    Line 175: hit count 2
+    Line 176: hit count 11
+----------------------------------------
+File: org/tasks/preferences/IconPreference.kt
+  Only in first dataset lines: [12, 54, 55, 56]
+    Line 12: hit count 5
+    Line 54: hit count 1
+    Line 55: hit count 3
+    Line 56: hit count 1
+----------------------------------------
+File: org/tasks/preferences/Preferences.kt
+  Only in first dataset lines: [188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 241, 242, 310, 311, 314, 315, 316, 317, 325, 326, 329, 330, 331, 332, 344, 345, 349, 353, 388, 397, 398, 414, 418, 419, 420, 421, 424, 494, 575]
+    Line 188: hit count 5
+    Line 189: hit count 5
+    Line 190: hit count 5
+    Line 191: hit count 5
+    Line 192: hit count 5
+    Line 193: hit count 5
+    Line 194: hit count 5
+    Line 195: hit count 5
+    Line 196: hit count 5
+    Line 197: hit count 4
+    Line 198: hit count 1
+    Line 241: hit count 4
+    Line 242: hit count 6
+    Line 310: hit count 7
+    Line 311: hit count 1
+    Line 314: hit count 4
+    Line 315: hit count 5
+    Line 316: hit count 2
+    Line 317: hit count 1
+    Line 325: hit count 7
+    Line 326: hit count 1
+    Line 329: hit count 4
+    Line 330: hit count 5
+    Line 331: hit count 2
+    Line 332: hit count 1
+    Line 344: hit count 4
+    Line 345: hit count 1
+    Line 349: hit count 5
+    Line 353: hit count 5
+    Line 388: hit count 5
+    Line 397: hit count 4
+    Line 398: hit count 2
+    Line 414: hit count 4
+    Line 418: hit count 7
+    Line 419: hit count 4
+    Line 420: hit count 3
+    Line 421: hit count 1
+    Line 424: hit count 11
+    Line 494: hit count 16
+    Line 575: hit count 5
+----------------------------------------
+File: org/tasks/ui/TaskEditViewModel.kt
+  Only in first dataset lines: [221, 222, 223, 225, 227, 228, 229, 231, 233, 234, 235, 236, 238, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 321]
+    Line 221: hit count 9
+    Line 222: hit count 14
+    Line 223: hit count 17
+    Line 225: hit count 10
+    Line 227: hit count 10
+    Line 228: hit count 10
+    Line 229: hit count 12
+    Line 231: hit count 1
+    Line 233: hit count 9
+    Line 234: hit count 7
+    Line 235: hit count 10
+    Line 236: hit count 12
+    Line 238: hit count 1
+    Line 240: hit count 9
+    Line 241: hit count 9
+    Line 242: hit count 7
+    Line 243: hit count 7
+    Line 244: hit count 11
+    Line 245: hit count 3
+    Line 246: hit count 12
+    Line 247: hit count 8
+    Line 248: hit count 2
+    Line 249: hit count 4
+    Line 250: hit count 4
+    Line 251: hit count 2
+    Line 321: hit count 4
+----------------------------------------
+File: org/tasks/ui/TaskListViewModel.kt
+  Only in first dataset lines: [149, 207]
+    Line 149: hit count 1
+    Line 207: hit count 20
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Swipe → Input: gbOfw → Pass: test_update_description → Start: test_search_task → Input: Iv → Back → Fail: test_search_task → Random operation: LONG_CLICK → Random operation: CLICK → Start: test_create_tag
+
+FAIL continuation:
+Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Start: test_delete_task → Pass: test_delete_task → Start: test_search_task → Input: → Back → Pass: test_search_task → Start: test_change_priority → Pass: test_change_priority → Start: test_delete_task → Pass: test_delete_task → Random operation: CLICK → Start: test_delete_task → Start: test_update_description → Swipe → Input: cHnHfj → Pass: test_update_description → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_BOTTOM_UP → Start: test_update_description → Swipe → Input: arAsQdPNFJ → Pass: test_update_description → Start: test_delete_task → Pass: test_delete_task → Start: test_update_description → Swipe
+
+## Correct Execution Path
+Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Start: test_create_task → Input: q → Pass: test_create_task → Start: test_create_task → Input: jXL → Pass: test_create_task → Start: test_create_task → Input: Iv → Pass: test_create_task → Random operation: LONG_CLICK → Start: test_create_task → Input: Ho → Pass: test_create_task → Start: test_create_task → Input: U → Pass: test_create_task → Random operation: CLICK → Start: test_create_task → Input: Z → Pass: test_create_task → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: BACK → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: LONG_CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_search_task → Input:   → Back → Pass: test_search_task → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_BOTTOM_UP → Random operation: BACK → Start: test_delete_task → Pass: test_delete_task → Start: test_update_description → Swipe → Input: J → Pass: test_update_description → Start: test_update_description → Swipe → Input: Dj → Pass: test_update_description → Start: test_create_task → Input: paR → Pass: test_create_task → Random operation: SCROLL_LEFT_RIGHT → Start: test_update_description → Swipe → Input: gbOfw → Pass: test_update_description → Start: test_search_task → Input: Iv → Back → Fail: test_search_task → Random operation: LONG_CLICK → Random operation: CLICK → Start: test_create_tag
+
+## Error Execution Path
+Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Start: test_create_task → Input: q → Pass: test_create_task → Start: test_create_task → Input: jXL → Pass: test_create_task → Start: test_create_task → Input: Iv → Pass: test_create_task → Random operation: LONG_CLICK → Start: test_create_task → Input: Ho → Pass: test_create_task → Start: test_create_task → Input: U → Pass: test_create_task → Random operation: CLICK → Start: test_create_task → Input: Z → Pass: test_create_task → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: BACK → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Random operation: LONG_CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_search_task → Input:   → Back → Pass: test_search_task → Random operation: SCROLL_RIGHT_LEFT → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_BOTTOM_UP → Random operation: BACK → Start: test_delete_task → Pass: test_delete_task → Start: test_update_description → Swipe → Input: J → Pass: test_update_description → Start: test_update_description → Swipe → Input: Dj → Pass: test_update_description → Start: test_create_task → Input: paR → Pass: test_create_task → Random operation: SCROLL_LEFT_RIGHT → Start: test_update_description → Swipe → Input: gbOfw → Pass: test_update_description → Start: test_search_task → Input: Iv → Back → Fail: test_search_task → Random operation: LONG_CLICK → Random operation: CLICK → Start: test_create_tag → Random operation: CLICK → Random operation: SCROLL_BOTTOM_UP → Start: test_delete_task → Pass: test_delete_task → Start: test_search_task → Input:   → Back → Pass: test_search_task → Start: test_change_priority → Pass: test_change_priority → Start: test_delete_task → Pass: test_delete_task → Random operation: CLICK → Start: test_delete_task → Start: test_update_description → Swipe → Input: cHnHfj → Pass: test_update_description → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_BOTTOM_UP → Start: test_update_description → Swipe → Input: arAsQdPNFJ → Pass: test_update_description → Start: test_delete_task → Pass: test_delete_task → Start: test_update_description → Swipe
+
+## Files to Analyze
+com/todoroo/astrid/activity/MainActivity.kt
+  Differing lines: 1
+
+com/todoroo/astrid/activity/MainActivityViewModel.kt
+  Differing lines: 2
+
+com/todoroo/astrid/activity/TaskEditFragment.kt
+  Differing lines: 3
+
+com/todoroo/astrid/activity/TaskListFragment.kt
+  Differing lines: 2
+
+com/todoroo/astrid/api/SearchFilter.kt
+  Differing lines: 38
+
+com/todoroo/astrid/service/TaskCreator.kt
+  Differing lines: 4
+
+com/todoroo/astrid/service/Upgrader.kt
+  Differing lines: 30
+
+org/tasks/backup/BackupContainer.kt
+  Differing lines: 20
+
+org/tasks/backup/TasksJsonExporter.kt
+  Differing lines: 77
+
+org/tasks/caldav/iCalendar.kt
+  Differing lines: 26
+
+org/tasks/compose/edit/DescriptionRow.kt
+  Differing lines: 2
+
+org/tasks/files/FileHelper.kt
+  Differing lines: 23
+
+org/tasks/injection/ApplicationModule.kt
+  Differing lines: 1
+
+org/tasks/jobs/BackupWork.kt
+  Differing lines: 26
+
+org/tasks/jobs/WorkManagerImpl.kt
+  Differing lines: 2
+
+org/tasks/preferences/DefaultFilterProvider.kt
+  Differing lines: 4
+
+org/tasks/preferences/IconPreference.kt
+  Differing lines: 4
+
+org/tasks/preferences/Preferences.kt
+  Differing lines: 40
+
+org/tasks/ui/TaskEditViewModel.kt
+  Differing lines: 26
+
+org/tasks/ui/TaskListViewModel.kt
+  Differing lines: 2
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-20 15:32:54 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-20 15:32:56 [llm] INFO: LLM response: com/todoroo/astrid/api/SearchFilter.kt
+org/tasks/ui/TaskEditViewModel.kt
+org/tasks/preferences/Preferences.kt
+com/todoroo/astrid/activity/TaskEditFragment.kt
+com/todoroo/astrid/activity/MainActivityViewModel.kt
+com/todoroo/astrid/activity/TaskListFragment.kt
+com/todoroo/astrid/service/TaskCreator.kt
+org/tasks/ui/TaskListViewModel.kt
+org/tasks/compose/edit/DescriptionRow.kt
+org/tasks/preferences/DefaultFilterProvider.kt
+org/tasks/preferences/IconPreference.kt
+com/todoroo/astrid/activity/MainActivity.kt
+com/todoroo/astrid/service/Upgrader.kt
+org/tasks/backup/BackupContainer.kt
+org/tasks/backup/TasksJsonExporter.kt
+org/tasks/caldav/iCalendar.kt
+org/tasks/files/FileHelper.kt
+org/tasks/injection/ApplicationModule.kt
+org/tasks/jobs/BackupWork.kt
+org/tasks/jobs/WorkManagerImpl.kt
+2026-06-20 15:32:56 [runner] INFO: Saving ranking to D:\code\python\Kea-FL_new\report\report_20260620_153249\test_search_task\ranking.txt
+2026-06-20 15:32:56 [report_generator] INFO: Generated comprehensive analysis report: D:\code\python\Kea-FL_new\report\report_20260620_153249\index.html
+2026-06-20 15:32:56 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: D:\code\python\Kea-FL_new\report\report_20260620_153249

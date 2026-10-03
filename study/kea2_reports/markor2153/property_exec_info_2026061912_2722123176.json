@@ -1,0 +1,16 @@
+{"startStepsCount": 1, "propName": "markor2153.Markor.test_open_file", "state": "pass", "tb": ""}
+{"startStepsCount": 1, "propName": "markor2153.Markor.test_check_recent_file", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "markor2153.Markor.test_open_file", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "markor2153.Markor.test_check_recent_file", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor2153.py\", line 107, in test_check_recent_file\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 9, "propName": "markor2153.Markor.test_stop_start", "state": "pass", "tb": ""}
+{"startStepsCount": 9, "propName": "markor2153.Markor.test_check_recent_file", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor2153.py\", line 107, in test_check_recent_file\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 10, "propName": "markor2153.Markor.test_check_recent_file", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\markor2153.py\", line 107, in test_check_recent_file\n    assert result\n           ^^^^^^\nAssertionError\n"}
+{"startStepsCount": 10, "propName": "markor2153.Markor.test_create_note", "state": "pass", "tb": ""}
+{"startStepsCount": 10, "propName": "markor2153.Markor.test_modify_note", "state": "pass", "tb": ""}
+{"startStepsCount": 25, "propName": "markor2153.Markor.test_new_folder", "state": "pass", "tb": ""}
+{"startStepsCount": 62, "propName": "markor2153.Markor.test_check_recent_file", "state": "pass", "tb": ""}
+{"startStepsCount": 62, "propName": "markor2153.Markor.test_check_recent_file", "state": "pass", "tb": ""}
+{"startStepsCount": 62, "propName": "markor2153.Markor.test_check_recent_file", "state": "pass", "tb": ""}
+{"startStepsCount": 102, "propName": "markor2153.Markor.test_check_recent_file", "state": "pass", "tb": ""}
+{"startStepsCount": 102, "propName": "markor2153.Markor.test_check_recent_file", "state": "pass", "tb": ""}
+{"startStepsCount": 102, "propName": "markor2153.Markor.test_check_recent_file", "state": "pass", "tb": ""}

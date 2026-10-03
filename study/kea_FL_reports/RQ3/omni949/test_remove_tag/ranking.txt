@@ -1,0 +1,14 @@
+it/feio/android/omninotes/CategoryActivity.java
+it/feio/android/omninotes/db/DbHelper.java
+it/feio/android/omninotes/models/Category.java
+it/feio/android/omninotes/models/adapters/CategoryBaseAdapter.java
+it/feio/android/omninotes/DetailFragment.java
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/MainActivity.java
+it/feio/android/omninotes/NavigationDrawerFragment.java
+it/feio/android/omninotes/async/CategoryMenuTask.java
+it/feio/android/omninotes/databinding/ActivityCategoryBinding.java
+it/feio/android/omninotes/databinding/DrawerListItemBinding.java
+it/feio/android/omninotes/models/adapters/category/CategoryViewHolder.java
+it/feio/android/omninotes/models/listeners/RecyclerViewItemClickSupport.java
+it/feio/android/omninotes/utils/KeyboardUtils.java

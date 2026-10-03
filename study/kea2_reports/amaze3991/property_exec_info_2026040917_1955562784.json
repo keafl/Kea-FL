@@ -1,0 +1,17 @@
+{"startStepsCount": 2, "propName": "amaze3991.Amaze3991.test_modify_file", "state": "pass", "tb": ""}
+{"startStepsCount": 2, "propName": "amaze3991.Amaze3991.test_check_recent_file", "state": "pass", "tb": ""}
+{"startStepsCount": 23, "propName": "amaze3991.Amaze3991.test_create_folder", "state": "pass", "tb": ""}
+{"startStepsCount": 23, "propName": "amaze3991.Amaze3991.test_modify_file", "state": "pass", "tb": ""}
+{"startStepsCount": 23, "propName": "amaze3991.Amaze3991.test_check_recent_file", "state": "pass", "tb": ""}
+{"startStepsCount": 23, "propName": "amaze3991.Amaze3991.test_modify_file", "state": "pass", "tb": ""}
+{"startStepsCount": 23, "propName": "amaze3991.Amaze3991.test_check_recent_file", "state": "pass", "tb": ""}
+{"startStepsCount": 23, "propName": "amaze3991.Amaze3991.test_delete_file", "state": "pass", "tb": ""}
+{"startStepsCount": 23, "propName": "amaze3991.Amaze3991.test_create_file", "state": "pass", "tb": ""}
+{"startStepsCount": 23, "propName": "amaze3991.Amaze3991.test_check_recent_file", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\amaze3991.py\", line 221, in test_check_recent_file\n    self.check_recent_file()\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\amaze3991.py\", line 207, in check_recent_file\n    assert self.check_file_exists(Amaze3991.last_modified_file_name)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 24, "propName": "amaze3991.Amaze3991.test_create_file", "state": "pass", "tb": ""}
+{"startStepsCount": 24, "propName": "amaze3991.Amaze3991.test_check_recent_file", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\amaze3991.py\", line 221, in test_check_recent_file\n    self.check_recent_file()\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\amaze3991.py\", line 207, in check_recent_file\n    assert self.check_file_exists(Amaze3991.last_modified_file_name)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 39, "propName": "amaze3991.Amaze3991.test_create_file", "state": "pass", "tb": ""}
+{"startStepsCount": 39, "propName": "amaze3991.Amaze3991.test_check_recent_file", "state": "fail", "tb": "Traceback (most recent call last):\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\amaze3991.py\", line 221, in test_check_recent_file\n    self.check_recent_file()\n  File \"D:\\code\\python\\Kea-FL_EN_opt\\kea2_test\\amaze3991.py\", line 207, in check_recent_file\n    assert self.check_file_exists(Amaze3991.last_modified_file_name)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"}
+{"startStepsCount": 39, "propName": "amaze3991.Amaze3991.test_modify_file", "state": "pass", "tb": ""}
+{"startStepsCount": 39, "propName": "amaze3991.Amaze3991.test_check_recent_file", "state": "pass", "tb": ""}
+{"startStepsCount": 39, "propName": "amaze3991.Amaze3991.test_create_file", "state": "pass", "tb": ""}

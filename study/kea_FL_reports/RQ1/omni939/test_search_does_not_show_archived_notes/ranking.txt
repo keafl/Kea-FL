@@ -1,0 +1,9 @@
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/db/DbHelper.java
+it/feio/android/omninotes/async/notes/NoteProcessorArchive.java
+it/feio/android/omninotes/async/notes/NoteProcessor.java
+it/feio/android/omninotes/models/adapters/NoteAdapter.java
+it/feio/android/omninotes/MainActivity.java
+it/feio/android/omninotes/models/NavigationItem.java
+it/feio/android/omninotes/models/adapters/NavDrawerAdapter.java
+it/feio/android/omninotes/models/misc/DynamicNavigationLookupTable.java

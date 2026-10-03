@@ -1,0 +1,2 @@
+de/rampro/activitydiary/helpers/ActivityHelper.java
+de/rampro/activitydiary/ui/main/MainActivity.java

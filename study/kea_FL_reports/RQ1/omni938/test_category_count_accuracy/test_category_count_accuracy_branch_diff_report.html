@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test_category_count_accuracy Branch Coverage Diff Report</title>
+<style>
+    :root {
+        --github-bg: #ffffff;
+        --github-text: #24292f;
+        --github-gray-50: #f9fafb;
+        --github-gray-100: #f1f2f4;
+        --github-gray-200: #e4e7eb;
+        --github-gray-300: #d1d5db;
+        --github-gray-400: #9ca3af;
+        --github-gray-500: #6e7781;
+        --github-gray-600: #4d5663;
+        --github-gray-700: #374151;
+        --github-gray-800: #272e3b;
+        
+        --line-number-bg: #f6f8fa;
+        --line-number-text: #6e7781;
+        --line-number-border: #eaecef;
+        
+        --correct-bg: rgb(218, 251, 225);           
+        --correct-border: rgb(172, 238, 187);       
+        --correct-line-number-bg: rgb(172, 238, 187); 
+        --correct-line-number-text: #000000; 
+        
+        --bug-bg: rgb(255, 235, 233);               
+        --bug-border: rgb(255, 206, 203);           
+        --bug-line-number-bg: rgb(255, 206, 203);   
+        --bug-line-number-text: #000000; 
+        
+        --covered-bg: var(--correct-bg);
+        --covered-border: var(--correct-border);
+        --covered-line-number-bg: var(--correct-line-number-bg);
+        --covered-line-number-text: var(--correct-line-number-text);
+        
+        --sidebar-width: 300px;
+        --sidebar-collapsed-width: 0px;
+        --border-radius: 6px;
+        --transition: all 0.2s ease;
+        --code-line-height: 1.5em;
+        --line-number-width: 4.5rem;
+        --header-height: 60px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.5;
+        color: var(--github-text);
+        background-color: var(--github-gray-50);
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        padding-top: var(--header-height);
+    }
+
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        background-color: var(--github-bg);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--github-gray-800);
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--github-gray-200);
+    }
+
+    p {
+        color: var(--github-gray-600);
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-toggle-btn {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        color: var(--github-gray-700);
+        cursor: pointer;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .sidebar-toggle-btn:hover {
+        background-color: var(--github-gray-50);
+        border-color: var(--github-gray-300);
+        color: var(--github-gray-800);
+    }
+
+    .sidebar {
+        width: var(--sidebar-width);
+        background-color: var(--github-bg);
+        border-right: 1px solid var(--github-gray-200);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        transition: var(--transition);
+        overflow: hidden;
+        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+    }
+
+    .sidebar.collapsed {
+        width: var(--sidebar-collapsed-width);
+        border-right: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .sidebar-resizer {
+        display: none;
+    }
+
+
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .file-list-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        color: var(--github-gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid var(--github-gray-200);
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-tree {
+        list-style: none;
+        overflow-y: auto;
+        flex: 1;
+        padding: 0.5rem 0;
+    }
+
+    .dir-item {
+        position: relative;
+    }
+
+    .dir-header {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .dir-header:hover {
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-toggle {
+        width: 1rem;
+        height: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: var(--github-gray-500);
+        margin-right: 0.5rem;
+    }
+
+    .dir-content {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .file-item {
+        padding: 0;
+    }
+
+    .file-link {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .file-link::before {
+        content: "📄";
+        font-size: 0.75rem;
+        margin-right: 0.5rem;
+        opacity: 0.7;
+    }
+
+    .file-link:hover {
+        background-color: var(--github-gray-50);
+        color: #0969da;
+    }
+
+    .file-link.active {
+        color: #0969da;
+        font-weight: 500;
+    }
+
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+        transition: var(--transition);
+        margin-left: var(--sidebar-width);
+        height: 100vh;
+        background-color: var(--github-gray-50);
+        padding-top: 1rem;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: var(--sidebar-collapsed-width) !important;
+    }
+
+    .file-header {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        scroll-margin-top: calc(var(--header-height) + 1rem);
+    }
+
+    .file-header a {
+        color: #0969da;
+        text-decoration: none;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .file-header a:hover {
+        text-decoration: underline;
+    }
+
+    .diff-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        min-height: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .diff-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .diff-panel {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .panel-header {
+        background-color: var(--github-gray-50);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .panel-header::before {
+        content: "";
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .diff-container > .diff-panel:first-child .panel-header::before {
+        background-color: var(--bug-border);
+    }
+
+    .diff-container > .diff-panel:last-child .panel-header::before {
+        background-color: var(--correct-border);
+    }
+
+    .code-container {
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-size: 12px;
+        line-height: var(--code-line-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 600px;
+        flex: 1;
+        width: 100%;
+        background-color: var(--github-bg);
+    }
+
+    .code-line {
+        display: grid;
+        grid-template-columns: var(--line-number-width) 1fr;
+        width: 100%;
+        transition: background-color 0.2s ease;
+        border-left: 3px solid transparent;
+        min-height: var(--code-line-height);
+    }
+
+    .line-number {
+        width: var(--line-number-width);
+        padding: 0 0.75rem;
+        text-align: right;
+        color: var(--line-number-text);
+        user-select: none;
+        background-color: var(--line-number-bg);
+        border-right: 1px solid var(--line-number-border);
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .correct-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 100;
+    }
+
+    .bug-line .line-number {
+        background-color: var(--bug-line-number-bg);
+        color: var(--bug-line-number-text);
+        border-right-color: var(--bug-border);
+        font-weight: 100;
+    }
+
+    .covered-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 600;
+    }
+
+    .code-content {
+        flex: 1;
+        padding: 0 0.75rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: flex-start;
+        padding-top: calc((var(--code-line-height) - 1em) / 2);
+        width: 100%;
+        color: var(--github-text);
+    }
+
+    .correct-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .bug-line {
+        background-color: var(--bug-bg);
+        border-left-color: var(--bug-border);
+    }
+
+    .covered-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .context-line .code-content:empty::before {
+        content: " ";
+    }
+
+    .separator-line {
+        background-color: var(--github-gray-50);
+        color: var(--github-gray-500);
+        text-align: center;
+        padding: 0.5rem 0;
+        font-style: italic;
+        border-top: 1px dashed var(--github-gray-300);
+        border-bottom: 1px dashed var(--github-gray-300);
+        grid-column: 1 / -1;
+    }
+
+    .separator-line .line-number,
+    .separator-line .code-content {
+        height: auto;
+        line-height: 1.5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--github-gray-300);
+        border-radius: 6px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--github-gray-400);
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            position: fixed;
+            z-index: 100;
+        }
+        
+        .main-content {
+            margin-left: 0 !important;
+            padding: 1rem;
+        }
+    }
+
+    .context-line {
+        background-color: var(--github-bg);
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+// Global sidebar toggle function
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("collapsed");
+}
+
+// Directory expand/collapse function
+function toggleDir(dirHeader) {
+    const toggle = dirHeader.querySelector(".dir-toggle");
+    const content = dirHeader.nextElementSibling;
+    
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        toggle.textContent = "−";
+    } else {
+        content.style.display = "none";
+        toggle.textContent = "+";
+    }
+}
+
+// File link click event handler
+document.addEventListener('DOMContentLoaded', () => {
+    const fileLinks = document.querySelectorAll('.file-link');
+    
+    fileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            fileLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    if (fileLinks.length > 0) {
+        fileLinks[0].classList.add('active');
+    }
+});
+</script>
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<div class="fixed-header">
+    <h1>test_category_count_accuracy Branch Coverage Diff Report</h1>
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        File List
+    </button>
+</div>
+<div class="sidebar" id="sidebar">
+<h3 class="file-list-title">File List</h3>
+<ul class="dir-tree">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">it/feio</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">android/omninotes</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-0" class="file-link"><span>BaseActivity.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-1" class="file-link"><span>DetailFragment.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-2" class="file-link"><span>ListFragment.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-3" class="file-link"><span>MainActivity.java</span></a>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">models</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">adapters</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-4" class="file-link"><span>CategoryRecyclerViewAdapter.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">listeners</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-5" class="file-link"><span>RecyclerViewItemClickSupport.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+</ul>
+</div>
+<div class="main-content">
+<p>Generated Time: 2026-06-19 16:17:16</p>
+<h2>Branch Coverage Diff</h2>
+<div class="file-header" id="file-0">
+    File: it/feio/android/omninotes/BaseActivity.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\BaseActivity.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">168</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">169</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">170</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">171</span><span class="code-content">  @Override</span></div>
+<div class="code-line context-line"><span class="line-number">172</span><span class="code-content">  public boolean onKeyDown(int keyCode, KeyEvent event) {</span></div>
+<div class="code-line bug-line"><span class="line-number">173</span><span class="code-content">    return keyCode == KeyEvent.KEYCODE_MENU || super.onKeyDown(keyCode, event); // Branch: Covered 2/4</span></div>
+<div class="code-line context-line"><span class="line-number">174</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">175</span><span class="code-content">}</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-1">
+    File: it/feio/android/omninotes/DetailFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\DetailFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">547</span><span class="code-content">      importAttachments(i);</span></div>
+<div class="code-line context-line"><span class="line-number">548</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">549</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">550</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">551</span><span class="code-content">    if (IntentChecker</span></div>
+<div class="code-line bug-line"><span class="line-number">552</span><span class="code-content">        .checkAction(i, Intent.ACTION_MAIN, ACTION_WIDGET_SHOW_LIST, ACTION_SHORTCUT_WIDGET, // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">553</span><span class="code-content">            ACTION_WIDGET)) {</span></div>
+<div class="code-line context-line"><span class="line-number">554</span><span class="code-content">      showKeyboard = true;</span></div>
+<div class="code-line context-line"><span class="line-number">555</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">556</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">557</span><span class="code-content">    i.setAction(null);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">613</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">614</span><span class="code-content">  private void initViewFooter() {</span></div>
+<div class="code-line context-line"><span class="line-number">615</span><span class="code-content">    String creation = DateHelper</span></div>
+<div class="code-line context-line"><span class="line-number">616</span><span class="code-content">        .getFormattedDate(noteTmp.getCreation(), Prefs.getBoolean(PREF_PRETTIFIED_DATES, true));</span></div>
+<div class="code-line context-line"><span class="line-number">617</span><span class="code-content">    binding.creation</span></div>
+<div class="code-line bug-line"><span class="line-number">618</span><span class="code-content">        .append(creation.length() &gt; 0 ? getString(R.string.creation) + &quot; &quot; + creation : &quot;&quot;); // Branch: Covered 2/2</span></div>
+<div class="code-line bug-line"><span class="line-number">619</span><span class="code-content">    if (binding.creation.getText().length() == 0) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">620</span><span class="code-content">      binding.creation.setVisibility(View.GONE);</span></div>
+<div class="code-line context-line"><span class="line-number">621</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">622</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">623</span><span class="code-content">    String lastModification = DateHelper</span></div>
+<div class="code-line context-line"><span class="line-number">624</span><span class="code-content">        .getFormattedDate(noteTmp.getLastModification(), Prefs.getBoolean(</span></div>
+<div class="code-line context-line"><span class="line-number">625</span><span class="code-content">            PREF_PRETTIFIED_DATES, true));</span></div>
+<div class="code-line context-line"><span class="line-number">626</span><span class="code-content">    binding.lastModification</span></div>
+<div class="code-line bug-line"><span class="line-number">627</span><span class="code-content">        .append(lastModification.length() &gt; 0 ? getString(R.string.last_update) + &quot; &quot; + // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">628</span><span class="code-content">            lastModification : &quot;&quot;);</span></div>
+<div class="code-line bug-line"><span class="line-number">629</span><span class="code-content">    if (binding.lastModification.getText().length() == 0) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">630</span><span class="code-content">      binding.lastModification.setVisibility(View.GONE);</span></div>
+<div class="code-line context-line"><span class="line-number">631</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">632</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">633</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">634</span><span class="code-content">  private void initViewReminder() {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">889</span><span class="code-content">   * Force focus and shows soft keyboard. Only happens if it&#x27;s a new note, without shared content.</span></div>
+<div class="code-line context-line"><span class="line-number">890</span><span class="code-content">   * {@link showKeyboard} is used to check if the note is created from shared content.</span></div>
+<div class="code-line context-line"><span class="line-number">891</span><span class="code-content">   */</span></div>
+<div class="code-line context-line"><span class="line-number">892</span><span class="code-content">  @SuppressWarnings(&quot;JavadocReference&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">893</span><span class="code-content">  private void requestFocus(final EditText view) {</span></div>
+<div class="code-line bug-line"><span class="line-number">894</span><span class="code-content">    if (note.get_id() == null &amp;&amp; !noteTmp.isChanged(note) &amp;&amp; showKeyboard) { // Branch: Covered 4/6</span></div>
+<div class="code-line context-line"><span class="line-number">895</span><span class="code-content">      KeyboardUtils.showKeyboard(view);</span></div>
+<div class="code-line context-line"><span class="line-number">896</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">897</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">898</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">899</span><span class="code-content">  /**</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1001</span><span class="code-content">    MenuItem searchMenuItem = menu.findItem(R.id.menu_search);</span></div>
+<div class="code-line context-line"><span class="line-number">1002</span><span class="code-content">    if (searchMenuItem != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">1003</span><span class="code-content">      searchMenuItem.collapseActionView();</span></div>
+<div class="code-line context-line"><span class="line-number">1004</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1005</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">1006</span><span class="code-content">    boolean newNote = noteTmp.get_id() == null; // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">1007</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1008</span><span class="code-content">    menu.findItem(R.id.menu_checklist_on).setVisible(!noteTmp.isChecklist());</span></div>
+<div class="code-line context-line"><span class="line-number">1009</span><span class="code-content">    menu.findItem(R.id.menu_checklist_off).setVisible(noteTmp.isChecklist());</span></div>
+<div class="code-line context-line"><span class="line-number">1010</span><span class="code-content">    menu.findItem(R.id.menu_checklist_moveToBottom)</span></div>
+<div class="code-line context-line"><span class="line-number">1011</span><span class="code-content">        .setVisible(noteTmp.isChecklist() &amp;&amp; mChecklistManager.getCheckedCount() &gt; 0);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1016</span><span class="code-content">      menu.findItem(R.id.menu_untrash).setVisible(true);</span></div>
+<div class="code-line context-line"><span class="line-number">1017</span><span class="code-content">      menu.findItem(R.id.menu_delete).setVisible(true);</span></div>
+<div class="code-line context-line"><span class="line-number">1018</span><span class="code-content">      // Otherwise all other actions will be available</span></div>
+<div class="code-line context-line"><span class="line-number">1019</span><span class="code-content">    } else {</span></div>
+<div class="code-line context-line"><span class="line-number">1020</span><span class="code-content">      // Temporary removed until fixed on Oreo and following</span></div>
+<div class="code-line bug-line"><span class="line-number">1021</span><span class="code-content">      menu.findItem(R.id.menu_add_shortcut).setVisible(!newNote); // Branch: Covered 2/2</span></div>
+<div class="code-line bug-line"><span class="line-number">1022</span><span class="code-content">      menu.findItem(R.id.menu_pin_note).setVisible(!newNote); // Branch: Covered 2/2</span></div>
+<div class="code-line bug-line"><span class="line-number">1023</span><span class="code-content">      menu.findItem(R.id.menu_archive).setVisible(!newNote &amp;&amp; !noteTmp.isArchived()); // Branch: Covered 3/4</span></div>
+<div class="code-line bug-line"><span class="line-number">1024</span><span class="code-content">      menu.findItem(R.id.menu_unarchive).setVisible(!newNote &amp;&amp; noteTmp.isArchived()); // Branch: Covered 3/4</span></div>
+<div class="code-line bug-line"><span class="line-number">1025</span><span class="code-content">      menu.findItem(R.id.menu_trash).setVisible(!newNote); // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">1026</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1027</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1028</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1029</span><span class="code-content">  @SuppressLint(&quot;NewApi&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">1030</span><span class="code-content">  private boolean goHome() {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1038</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">1039</span><span class="code-content">      mainActivity.finish();</span></div>
+<div class="code-line context-line"><span class="line-number">1040</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1041</span><span class="code-content">    } else {</span></div>
+<div class="code-line context-line"><span class="line-number">1042</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">1043</span><span class="code-content">      if (!TextUtils.isEmpty(exitMessage) &amp;&amp; exitCroutonStyle != null) { // Branch: Covered 3/4</span></div>
+<div class="code-line context-line"><span class="line-number">1044</span><span class="code-content">        mainActivity.showMessage(exitMessage, exitCroutonStyle);</span></div>
+<div class="code-line context-line"><span class="line-number">1045</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">1046</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1047</span><span class="code-content">      // Otherwise the result is passed to ListActivity</span></div>
+<div class="code-line context-line"><span class="line-number">1048</span><span class="code-content">      if (mainActivity != null) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1223</span><span class="code-content">      mChecklistManager.moveCheckedToBottom();</span></div>
+<div class="code-line context-line"><span class="line-number">1224</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1225</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1226</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1227</span><span class="code-content">  private void categorizeNote() {</span></div>
+<div class="code-line bug-line"><span class="line-number">1228</span><span class="code-content">    var currentCategory = noteTmp.getCategory() != null ? String.valueOf(noteTmp.getCategory().getId()) : null; // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">1229</span><span class="code-content">    final var categories = Observable.from(DbHelper.getInstance().getCategories())</span></div>
+<div class="code-line context-line"><span class="line-number">1230</span><span class="code-content">        .map(category -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">1231</span><span class="code-content">          if (String.valueOf(category.getId()).equals(currentCategory)) {</span></div>
+<div class="code-line context-line"><span class="line-number">1232</span><span class="code-content">            category.setCount(category.getCount() + 1);</span></div>
+<div class="code-line context-line"><span class="line-number">1233</span><span class="code-content">          }</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1248</span><span class="code-content">        .onNegative((dialog12, which) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">1249</span><span class="code-content">          noteTmp.setCategory(null);</span></div>
+<div class="code-line context-line"><span class="line-number">1250</span><span class="code-content">          setTagMarkerColor(null);</span></div>
+<div class="code-line context-line"><span class="line-number">1251</span><span class="code-content">        });</span></div>
+<div class="code-line context-line"><span class="line-number">1252</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">1253</span><span class="code-content">    if (CollectionUtils.isNotEmpty(categories)) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">1254</span><span class="code-content">      dialogBuilder.adapter(new CategoryRecyclerViewAdapter(mainActivity, categories), null);</span></div>
+<div class="code-line context-line"><span class="line-number">1255</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1256</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1257</span><span class="code-content">    final var dialog = dialogBuilder.build();</span></div>
+<div class="code-line context-line"><span class="line-number">1258</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">1259</span><span class="code-content">    if (CollectionUtils.isNotEmpty(categories)) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">1260</span><span class="code-content">      RecyclerViewItemClickSupport.addTo(dialog.getRecyclerView())</span></div>
+<div class="code-line context-line"><span class="line-number">1261</span><span class="code-content">          .setOnItemClickListener((recyclerView, position, v) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">1262</span><span class="code-content">            noteTmp.setCategory(categories.get(position));</span></div>
+<div class="code-line context-line"><span class="line-number">1263</span><span class="code-content">            setTagMarkerColor(categories.get(position));</span></div>
+<div class="code-line context-line"><span class="line-number">1264</span><span class="code-content">            dialog.dismiss();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1559</span><span class="code-content">      exitCroutonStyle = ONStyle.INFO;</span></div>
+<div class="code-line context-line"><span class="line-number">1560</span><span class="code-content">      goHome();</span></div>
+<div class="code-line context-line"><span class="line-number">1561</span><span class="code-content">      return;</span></div>
+<div class="code-line context-line"><span class="line-number">1562</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1563</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">1564</span><span class="code-content">    if (saveNotNeeded()) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">1565</span><span class="code-content">      exitMessage = &quot;&quot;;</span></div>
+<div class="code-line bug-line"><span class="line-number">1566</span><span class="code-content">      if (goBack) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">1567</span><span class="code-content">        goHome();</span></div>
+<div class="code-line context-line"><span class="line-number">1568</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">1569</span><span class="code-content">      return;</span></div>
+<div class="code-line context-line"><span class="line-number">1570</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1571</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1581</span><span class="code-content">  private boolean saveNotNeeded() {</span></div>
+<div class="code-line context-line"><span class="line-number">1582</span><span class="code-content">    if (noteTmp.get_id() == null &amp;&amp; Prefs.getBoolean(PREF_AUTO_LOCATION, false)) {</span></div>
+<div class="code-line context-line"><span class="line-number">1583</span><span class="code-content">      note.setLatitude(noteTmp.getLatitude());</span></div>
+<div class="code-line context-line"><span class="line-number">1584</span><span class="code-content">      note.setLongitude(noteTmp.getLongitude());</span></div>
+<div class="code-line context-line"><span class="line-number">1585</span><span class="code-content">    }</span></div>
+<div class="code-line bug-line"><span class="line-number">1586</span><span class="code-content">    return !noteTmp.isChanged(note) || (noteTmp.isLocked() &amp;&amp; !noteTmp.isPasswordChecked()); // Branch: Covered 3/6</span></div>
+<div class="code-line context-line"><span class="line-number">1587</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1588</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1589</span><span class="code-content">  /**</span></div>
+<div class="code-line context-line"><span class="line-number">1590</span><span class="code-content">   * Checks if only tag, archive or trash status have been changed and then force to not update last</span></div>
+<div class="code-line context-line"><span class="line-number">1591</span><span class="code-content">   * modification date*</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-2">
+    File: it/feio/android/omninotes/ListFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">371</span><span class="code-content">    if(binding != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">372</span><span class="code-content">      listViewPosition = ((LinearLayoutManager) binding.list.getLayoutManager())</span></div>
+<div class="code-line context-line"><span class="line-number">373</span><span class="code-content">          .findFirstVisibleItemPosition();</span></div>
+<div class="code-line context-line"><span class="line-number">374</span><span class="code-content">      View v = binding.list.getChildAt(0);</span></div>
+<div class="code-line context-line"><span class="line-number">375</span><span class="code-content">      listViewPositionOffset =</span></div>
+<div class="code-line bug-line"><span class="line-number">376</span><span class="code-content">          (v == null) ? (int) getResources().getDimension(R.dimen.vertical_margin) : v.getTop(); // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">377</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">378</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">379</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">380</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">381</span><span class="code-content">  @Override</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">451</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">452</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">453</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">454</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">455</span><span class="code-content">  public void finishActionMode() {</span></div>
+<div class="code-line bug-line"><span class="line-number">456</span><span class="code-content">    if (getActionMode() != null) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">457</span><span class="code-content">      getActionMode().finish();</span></div>
+<div class="code-line context-line"><span class="line-number">458</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">459</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">460</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">461</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">489</span><span class="code-content">  private void initListView() {</span></div>
+<div class="code-line context-line"><span class="line-number">490</span><span class="code-content">    // Note long click to start CAB mode</span></div>
+<div class="code-line context-line"><span class="line-number">491</span><span class="code-content">    RecyclerViewItemClickSupport.addTo(binding.list)</span></div>
+<div class="code-line context-line"><span class="line-number">492</span><span class="code-content">        // Note single click listener managed by the activity itself</span></div>
+<div class="code-line context-line"><span class="line-number">493</span><span class="code-content">        .setOnItemClickListener((recyclerView, position, view) -&gt; {</span></div>
+<div class="code-line bug-line"><span class="line-number">494</span><span class="code-content">          if (getActionMode() == null) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">495</span><span class="code-content">            editNote(listAdapter.getItem(position), view);</span></div>
+<div class="code-line context-line"><span class="line-number">496</span><span class="code-content">            return;</span></div>
+<div class="code-line context-line"><span class="line-number">497</span><span class="code-content">          }</span></div>
+<div class="code-line context-line"><span class="line-number">498</span><span class="code-content">          // If in CAB mode</span></div>
+<div class="code-line context-line"><span class="line-number">499</span><span class="code-content">          toggleListViewItem(view, position);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">519</span><span class="code-content">  private ImageView getZoomListItemView(View view, Note note) {</span></div>
+<div class="code-line context-line"><span class="line-number">520</span><span class="code-content">    View targetView = null;</span></div>
+<div class="code-line context-line"><span class="line-number">521</span><span class="code-content">    if (!note.getAttachmentsList().isEmpty()) {</span></div>
+<div class="code-line context-line"><span class="line-number">522</span><span class="code-content">      targetView = view.findViewById(R.id.attachmentThumbnail);</span></div>
+<div class="code-line context-line"><span class="line-number">523</span><span class="code-content">    }</span></div>
+<div class="code-line bug-line"><span class="line-number">524</span><span class="code-content">    if (targetView == null &amp;&amp; note.getCategory() != null) { // Branch: Covered 3/4</span></div>
+<div class="code-line context-line"><span class="line-number">525</span><span class="code-content">      targetView = view.findViewById(R.id.category_marker);</span></div>
+<div class="code-line context-line"><span class="line-number">526</span><span class="code-content">    }</span></div>
+<div class="code-line bug-line"><span class="line-number">527</span><span class="code-content">    if (targetView == null) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">528</span><span class="code-content">      targetView = new ImageView(mainActivity);</span></div>
+<div class="code-line context-line"><span class="line-number">529</span><span class="code-content">      targetView.setBackgroundColor(Color.WHITE);</span></div>
+<div class="code-line context-line"><span class="line-number">530</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">531</span><span class="code-content">    targetView.setDrawingCacheEnabled(true);</span></div>
+<div class="code-line context-line"><span class="line-number">532</span><span class="code-content">    targetView.buildDrawingCache();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">929</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">930</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">931</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">932</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">933</span><span class="code-content">  void editNote2(Note note) {</span></div>
+<div class="code-line bug-line"><span class="line-number">934</span><span class="code-content">    if (note.get_id() == null) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">935</span><span class="code-content">      LogDelegate.d(&quot;Adding new note&quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">936</span><span class="code-content">      // if navigation is a category it will be set into note</span></div>
+<div class="code-line context-line"><span class="line-number">937</span><span class="code-content">      try {</span></div>
+<div class="code-line context-line"><span class="line-number">938</span><span class="code-content">        if (checkNavigation(Navigation.CATEGORY) || !isEmpty(mainActivity.navigationTmp)) {</span></div>
+<div class="code-line context-line"><span class="line-number">939</span><span class="code-content">          String categoryId = ObjectUtils.defaultIfNull(mainActivity.navigationTmp,</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-3">
+    File: it/feio/android/omninotes/MainActivity.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\MainActivity.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">273</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">274</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">275</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">276</span><span class="code-content">  public void commitPending() {</span></div>
+<div class="code-line context-line"><span class="line-number">277</span><span class="code-content">    Fragment f = checkFragmentInstance(R.id.fragment_container, ListFragment.class);</span></div>
+<div class="code-line bug-line"><span class="line-number">278</span><span class="code-content">    if (f != null) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">279</span><span class="code-content">      ((ListFragment) f).commitPending();</span></div>
+<div class="code-line context-line"><span class="line-number">280</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">281</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">282</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">283</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">285</span><span class="code-content">   * Checks if allocated fragment is of the required type and then returns it or returns null</span></div>
+<div class="code-line context-line"><span class="line-number">286</span><span class="code-content">   */</span></div>
+<div class="code-line context-line"><span class="line-number">287</span><span class="code-content">  private Fragment checkFragmentInstance(int id, Object instanceClass) {</span></div>
+<div class="code-line context-line"><span class="line-number">288</span><span class="code-content">    Fragment result = null;</span></div>
+<div class="code-line context-line"><span class="line-number">289</span><span class="code-content">    Fragment fragment = getFragmentManagerInstance().findFragmentById(id);</span></div>
+<div class="code-line bug-line"><span class="line-number">290</span><span class="code-content">    if (fragment != null &amp;&amp; instanceClass.equals(fragment.getClass())) { // Branch: Covered 3/4</span></div>
+<div class="code-line context-line"><span class="line-number">291</span><span class="code-content">      result = fragment;</span></div>
+<div class="code-line context-line"><span class="line-number">292</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">293</span><span class="code-content">    return result;</span></div>
+<div class="code-line context-line"><span class="line-number">294</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">295</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">296</span><span class="code-content">  @Override</span></div>
+<div class="code-line context-line"><span class="line-number">297</span><span class="code-content">  public void onBackPressed() {</span></div>
+<div class="code-line context-line"><span class="line-number">298</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">299</span><span class="code-content">    // SketchFragment</span></div>
+<div class="code-line context-line"><span class="line-number">300</span><span class="code-content">    Fragment f = checkFragmentInstance(R.id.fragment_container, SketchFragment.class);</span></div>
+<div class="code-line bug-line"><span class="line-number">301</span><span class="code-content">    if (f != null) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">302</span><span class="code-content">      ((SketchFragment) f).save();</span></div>
+<div class="code-line context-line"><span class="line-number">303</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">304</span><span class="code-content">      // Removes forced portrait orientation for this fragment</span></div>
+<div class="code-line context-line"><span class="line-number">305</span><span class="code-content">      setRequestedOrientation(</span></div>
+<div class="code-line context-line"><span class="line-number">306</span><span class="code-content">          ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">309</span><span class="code-content">      return;</span></div>
+<div class="code-line context-line"><span class="line-number">310</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">311</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">312</span><span class="code-content">    // DetailFragment</span></div>
+<div class="code-line context-line"><span class="line-number">313</span><span class="code-content">    f = checkFragmentInstance(R.id.fragment_container, DetailFragment.class);</span></div>
+<div class="code-line bug-line"><span class="line-number">314</span><span class="code-content">    if (f != null) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">315</span><span class="code-content">      ((DetailFragment) f).goBack = true;</span></div>
+<div class="code-line context-line"><span class="line-number">316</span><span class="code-content">      ((DetailFragment) f).saveAndExit((DetailFragment) f);</span></div>
+<div class="code-line context-line"><span class="line-number">317</span><span class="code-content">      return;</span></div>
+<div class="code-line context-line"><span class="line-number">318</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">319</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">320</span><span class="code-content">    // ListFragment</span></div>
+<div class="code-line context-line"><span class="line-number">321</span><span class="code-content">    f = checkFragmentInstance(R.id.fragment_container, ListFragment.class);</span></div>
+<div class="code-line bug-line"><span class="line-number">322</span><span class="code-content">    if (f != null) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">323</span><span class="code-content">      // Before exiting from app the navigation drawer is opened</span></div>
+<div class="code-line bug-line"><span class="line-number">324</span><span class="code-content">      if (Prefs.getBoolean(&quot;settings_navdrawer_on_exit&quot;, false) &amp;&amp; getDrawerLayout() != null &amp;&amp; // Branch: Covered 1/4</span></div>
+<div class="code-line context-line"><span class="line-number">325</span><span class="code-content">          !getDrawerLayout().isDrawerOpen(GravityCompat.START)) {</span></div>
+<div class="code-line context-line"><span class="line-number">326</span><span class="code-content">        getDrawerLayout().openDrawer(GravityCompat.START);</span></div>
+<div class="code-line bug-line"><span class="line-number">327</span><span class="code-content">      } else if (!Prefs.getBoolean(&quot;settings_navdrawer_on_exit&quot;, false) &amp;&amp; getDrawerLayout() != null // Branch: Covered 2/4</span></div>
+<div class="code-line context-line"><span class="line-number">328</span><span class="code-content">          &amp;&amp;</span></div>
+<div class="code-line bug-line"><span class="line-number">329</span><span class="code-content">          getDrawerLayout().isDrawerOpen(GravityCompat.START)) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">330</span><span class="code-content">        getDrawerLayout().closeDrawer(GravityCompat.START);</span></div>
+<div class="code-line context-line"><span class="line-number">331</span><span class="code-content">      } else {</span></div>
+<div class="code-line context-line"><span class="line-number">332</span><span class="code-content">        if (!((ListFragment) f).closeFab()) {</span></div>
+<div class="code-line context-line"><span class="line-number">333</span><span class="code-content">          isPasswordAccepted = false;</span></div>
+<div class="code-line context-line"><span class="line-number">334</span><span class="code-content">          super.onBackPressed();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">373</span><span class="code-content">   * Finishes multiselection mode started by ListFragment</span></div>
+<div class="code-line context-line"><span class="line-number">374</span><span class="code-content">   */</span></div>
+<div class="code-line context-line"><span class="line-number">375</span><span class="code-content">  public void finishActionMode() {</span></div>
+<div class="code-line context-line"><span class="line-number">376</span><span class="code-content">    ListFragment fragment = (ListFragment) getFragmentManagerInstance()</span></div>
+<div class="code-line context-line"><span class="line-number">377</span><span class="code-content">        .findFragmentByTag(FRAGMENT_LIST_TAG);</span></div>
+<div class="code-line bug-line"><span class="line-number">378</span><span class="code-content">    if (fragment != null) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">379</span><span class="code-content">      fragment.finishActionMode();</span></div>
+<div class="code-line context-line"><span class="line-number">380</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">381</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">382</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">383</span><span class="code-content"></span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-4">
+    File: it/feio/android/omninotes/models/adapters/CategoryRecyclerViewAdapter.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\CategoryRecyclerViewAdapter.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">69</span><span class="code-content">  public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {</span></div>
+<div class="code-line context-line"><span class="line-number">70</span><span class="code-content">    var category = categories.get(position);</span></div>
+<div class="code-line context-line"><span class="line-number">71</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">72</span><span class="code-content">    holder.txtTitle.setText(category.getName());</span></div>
+<div class="code-line context-line"><span class="line-number">73</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">74</span><span class="code-content">    if (isSelected(position)) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">75</span><span class="code-content">      holder.txtTitle.setTypeface(null, Typeface.BOLD);</span></div>
+<div class="code-line context-line"><span class="line-number">76</span><span class="code-content">      holder.txtTitle.setTextColor(parseInt(category.getColor()));</span></div>
+<div class="code-line context-line"><span class="line-number">77</span><span class="code-content">    } else {</span></div>
+<div class="code-line context-line"><span class="line-number">78</span><span class="code-content">      holder.txtTitle.setTypeface(null, Typeface.NORMAL);</span></div>
+<div class="code-line context-line"><span class="line-number">79</span><span class="code-content">      holder.txtTitle.setTextColor(mActivity.getResources().getColor(R.color.drawer_text));</span></div>
+<div class="code-line context-line"><span class="line-number">80</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">81</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">82</span><span class="code-content">    // Set the results into ImageView checking if an icon is present before</span></div>
+<div class="code-line bug-line"><span class="line-number">83</span><span class="code-content">    if (category.getColor() != null &amp;&amp; category.getColor().length() &gt; 0) { // Branch: Covered 2/4</span></div>
+<div class="code-line context-line"><span class="line-number">84</span><span class="code-content">      var img = mActivity.getResources().getDrawable(R.drawable.ic_folder_special_black_24dp);</span></div>
+<div class="code-line context-line"><span class="line-number">85</span><span class="code-content">      var cf = new LightingColorFilter(parseColor(&quot;#000000&quot;), parseInt(category.getColor()));</span></div>
+<div class="code-line context-line"><span class="line-number">86</span><span class="code-content">      img.mutate().setColorFilter(cf);</span></div>
+<div class="code-line context-line"><span class="line-number">87</span><span class="code-content">      holder.imgIcon.setImageDrawable(img);</span></div>
+<div class="code-line context-line"><span class="line-number">88</span><span class="code-content">      holder.imgIcon.setPadding(4, 4, 4, 4);</span></div>
+<div class="code-line context-line"><span class="line-number">89</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">90</span><span class="code-content">    showCategoryCounter(holder, category);</span></div>
+<div class="code-line context-line"><span class="line-number">91</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">92</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">93</span><span class="code-content">  private void showCategoryCounter(@NonNull CategoryViewHolder holder, Category category) {</span></div>
+<div class="code-line bug-line"><span class="line-number">94</span><span class="code-content">    if (Prefs.getBoolean(&quot;settings_show_category_count&quot;, true)) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">95</span><span class="code-content">      holder.count.setText(String.valueOf(category.getCount()));</span></div>
+<div class="code-line context-line"><span class="line-number">96</span><span class="code-content">      holder.count.setVisibility(View.VISIBLE);</span></div>
+<div class="code-line context-line"><span class="line-number">97</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">98</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">99</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">105</span><span class="code-content">  private boolean isSelected(int position) {</span></div>
+<div class="code-line context-line"><span class="line-number">106</span><span class="code-content">    var navigationListCodes = mActivity.getResources()</span></div>
+<div class="code-line context-line"><span class="line-number">107</span><span class="code-content">        .getStringArray(R.array.navigation_list_codes);</span></div>
+<div class="code-line context-line"><span class="line-number">108</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">109</span><span class="code-content">    // Managing temporary navigation indicator when coming from a widget</span></div>
+<div class="code-line bug-line"><span class="line-number">110</span><span class="code-content">    var navigationTmpLocal = MainActivity.class.isAssignableFrom(mActivity.getClass()) // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">111</span><span class="code-content">        ? ((MainActivity) mActivity).getNavigationTmp()</span></div>
+<div class="code-line context-line"><span class="line-number">112</span><span class="code-content">        : null;</span></div>
+<div class="code-line bug-line"><span class="line-number">113</span><span class="code-content">    navigationTmpLocal = this.navigationTmp != null ? this.navigationTmp : navigationTmpLocal; // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">114</span><span class="code-content"></span></div>
+<div class="code-line bug-line"><span class="line-number">115</span><span class="code-content">    var navigation = navigationTmp != null // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">116</span><span class="code-content">        ? navigationTmpLocal</span></div>
+<div class="code-line context-line"><span class="line-number">117</span><span class="code-content">        : Prefs.getString(PREF_NAVIGATION, navigationListCodes[0]);</span></div>
+<div class="code-line context-line"><span class="line-number">118</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">119</span><span class="code-content">    return navigation.equals(String.valueOf(categories.get(position).getId()));</span></div>
+<div class="code-line context-line"><span class="line-number">120</span><span class="code-content">  }</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-5">
+    File: it/feio/android/omninotes/models/listeners/RecyclerViewItemClickSupport.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\listeners\RecyclerViewItemClickSupport.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">28</span><span class="code-content">  private OnItemClickListener mOnItemClickListener;</span></div>
+<div class="code-line context-line"><span class="line-number">29</span><span class="code-content">  private OnItemLongClickListener mOnItemLongClickListener;</span></div>
+<div class="code-line context-line"><span class="line-number">30</span><span class="code-content">  private final View.OnClickListener mOnClickListener = new View.OnClickListener() {</span></div>
+<div class="code-line context-line"><span class="line-number">31</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">32</span><span class="code-content">    public void onClick(View v) {</span></div>
+<div class="code-line bug-line"><span class="line-number">33</span><span class="code-content">      if (mOnItemClickListener != null) { // Branch: Covered 1/2</span></div>
+<div class="code-line context-line"><span class="line-number">34</span><span class="code-content">        var holder = mRecyclerView.getChildViewHolder(v);</span></div>
+<div class="code-line context-line"><span class="line-number">35</span><span class="code-content">        mOnItemClickListener.onItemClicked(mRecyclerView, holder.getAdapterPosition(), v);</span></div>
+<div class="code-line context-line"><span class="line-number">36</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">37</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">38</span><span class="code-content">  };</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">52</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">53</span><span class="code-content">    public void onChildViewAttachedToWindow(@NonNull View view) {</span></div>
+<div class="code-line context-line"><span class="line-number">54</span><span class="code-content">      if (mOnItemClickListener != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">55</span><span class="code-content">        view.setOnClickListener(mOnClickListener);</span></div>
+<div class="code-line context-line"><span class="line-number">56</span><span class="code-content">      }</span></div>
+<div class="code-line bug-line"><span class="line-number">57</span><span class="code-content">      if (mOnItemLongClickListener != null) { // Branch: Covered 2/2</span></div>
+<div class="code-line context-line"><span class="line-number">58</span><span class="code-content">        view.setOnLongClickListener(mOnLongClickListener);</span></div>
+<div class="code-line context-line"><span class="line-number">59</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">60</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">61</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">62</span><span class="code-content">    @Override</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

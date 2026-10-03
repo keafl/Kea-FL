@@ -1,0 +1,767 @@
+2026-06-19 16:20:01 [runner] INFO: Building pair test cases...
+2026-06-19 16:20:01 [replayer] INFO: Parse 173 events
+2026-06-19 16:20:01 [replayer] INFO: Parse 12 Monkey actions
+2026-06-19 16:20:01 [reproducer] INFO: Extract 6 pairs test cases
+2026-06-19 16:20:01 [replayer] INFO: Property omni939.OmninotesArchive.test_data_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:20:01 [replayer] INFO: Property omni939.OmninotesArchive.test_behavior_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:20:01 [replayer] INFO: Property omni939.OmninotesArchive.test_archive_note_removes_from_main_list not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:20:01 [replayer] INFO: Property omni939.OmninotesArchive.test_create_note_for_archive not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:20:01 [replayer] INFO: Property omni939.OmninotesArchive.test_reduced_view not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:20:01 [reproducer] INFO: Build 1 pairs test cases
+2026-06-19 16:20:01 [reproducer] INFO: Test case [1]: test_search_does_not_show_archived_notes
+2026-06-19 16:20:01 [reproducer] INFO:     -happy_path: [preconditions]: 6, [property]: 4
+2026-06-19 16:20:01 [reproducer] INFO:     -bug_path: [preconditions]: 97, [property]: 4
+2026-06-19 16:20:01 [runner] INFO: Start running full coverage difference analysis...
+2026-06-19 16:20:01 [runner] INFO: Processing pair test case [1]: happy_test_search_does_not_show_archived_notes <-> bug_test_search_does_not_show_archived_notes
+2026-06-19 16:20:01 [runner] INFO: Running pair test case analysis: happy_test_search_does_not_show_archived_notes <-> bug_test_search_does_not_show_archived_notes
+2026-06-19 16:20:01 [runner] INFO: Running property-satisfying path...
+2026-06-19 16:20:01 [reproducer] INFO: Start reproducing test case: happy_test_search_does_not_show_archived_notes
+2026-06-19 16:20:01 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 16:20:01 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:20:01 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 16:20:01 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 16:20:02 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: it.feio.android.omninotes.alpha
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=14ms (0ms mobile, 0ms wifi, 14ms not connected)
+
+2026-06-19 16:20:02 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 16:20:02 [reproducer] INFO: Init operation executed
+2026-06-19 16:20:05 [reproducer] INFO: Test environment setup completed
+2026-06-19 16:20:05 [reproducer] INFO: Start executing preconditions for test case: happy_test_search_does_not_show_archived_notes
+2026-06-19 16:20:05 [replayer] INFO: [1] Execute Monkey event: CLICK
+2026-06-19 16:20:05 [replayer] INFO: Touch: Touch(touch_type='down', x=1004.0, y=181.0, wait_duration=0.0)
+2026-06-19 16:20:05 [replayer] INFO: Press coordinate at: (1004.0, 181.0)
+2026-06-19 16:20:05 [replayer] INFO: Touch: Touch(touch_type='up', x=1004.0, y=181.0, wait_duration=0.0)
+2026-06-19 16:20:05 [replayer] INFO: Release coordinate at: (1004.0, 181.0)
+2026-06-19 16:20:06 [replayer] INFO: [2] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 16:20:06 [replayer] INFO: Touch: Touch(touch_type='down', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:06 [replayer] INFO: Press coordinate at: (777.5, 161.0)
+2026-06-19 16:20:06 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:06 [replayer] INFO: Move coordinate to: (777.5, 161.0)
+2026-06-19 16:20:06 [replayer] INFO: Touch: Touch(touch_type='move', x=807.65, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:06 [replayer] INFO: Move coordinate to: (807.65, 161.0)
+2026-06-19 16:20:06 [replayer] INFO: Touch: Touch(touch_type='move', x=837.8, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:06 [replayer] INFO: Move coordinate to: (837.8, 161.0)
+2026-06-19 16:20:06 [replayer] INFO: Touch: Touch(touch_type='move', x=867.95, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:06 [replayer] INFO: Move coordinate to: (867.95, 161.0)
+2026-06-19 16:20:06 [replayer] INFO: Touch: Touch(touch_type='move', x=898.1, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:06 [replayer] INFO: Move coordinate to: (898.1, 161.0)
+2026-06-19 16:20:06 [replayer] INFO: Touch: Touch(touch_type='move', x=928.25, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:06 [replayer] INFO: Move coordinate to: (928.25, 161.0)
+2026-06-19 16:20:06 [replayer] INFO: Touch: Touch(touch_type='move', x=958.4, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:07 [replayer] INFO: Move coordinate to: (958.4, 161.0)
+2026-06-19 16:20:07 [replayer] INFO: Touch: Touch(touch_type='move', x=988.55, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:07 [replayer] INFO: Move coordinate to: (988.55, 161.0)
+2026-06-19 16:20:07 [replayer] INFO: Touch: Touch(touch_type='move', x=1018.7, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:07 [replayer] INFO: Move coordinate to: (1018.7, 161.0)
+2026-06-19 16:20:07 [replayer] INFO: Touch: Touch(touch_type='move', x=1048.85, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:07 [replayer] INFO: Move coordinate to: (1048.85, 161.0)
+2026-06-19 16:20:07 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:07 [replayer] INFO: Release coordinate at: (1079.0, 161.0)
+2026-06-19 16:20:08 [replayer] INFO: [3] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 16:20:08 [replayer] INFO: Touch: Touch(touch_type='down', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:08 [replayer] INFO: Press coordinate at: (777.5, 161.0)
+2026-06-19 16:20:08 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:08 [replayer] INFO: Move coordinate to: (777.5, 161.0)
+2026-06-19 16:20:08 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=155.9, wait_duration=0.02)
+2026-06-19 16:20:08 [replayer] INFO: Move coordinate to: (777.5, 155.9)
+2026-06-19 16:20:08 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=150.8, wait_duration=0.02)
+2026-06-19 16:20:08 [replayer] INFO: Move coordinate to: (777.5, 150.8)
+2026-06-19 16:20:08 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=145.7, wait_duration=0.02)
+2026-06-19 16:20:08 [replayer] INFO: Move coordinate to: (777.5, 145.7)
+2026-06-19 16:20:08 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=140.6, wait_duration=0.02)
+2026-06-19 16:20:08 [replayer] INFO: Move coordinate to: (777.5, 140.6)
+2026-06-19 16:20:08 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=135.5, wait_duration=0.02)
+2026-06-19 16:20:08 [replayer] INFO: Move coordinate to: (777.5, 135.5)
+2026-06-19 16:20:08 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=130.4, wait_duration=0.02)
+2026-06-19 16:20:08 [replayer] INFO: Move coordinate to: (777.5, 130.4)
+2026-06-19 16:20:08 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=125.3, wait_duration=0.02)
+2026-06-19 16:20:08 [replayer] INFO: Move coordinate to: (777.5, 125.3)
+2026-06-19 16:20:08 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=126.0, wait_duration=0.02)
+2026-06-19 16:20:09 [replayer] INFO: Move coordinate to: (777.5, 126.0)
+2026-06-19 16:20:09 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=126.0, wait_duration=0.02)
+2026-06-19 16:20:09 [replayer] INFO: Move coordinate to: (777.5, 126.0)
+2026-06-19 16:20:09 [replayer] INFO: Touch: Touch(touch_type='up', x=777.5, y=126.0, wait_duration=0.02)
+2026-06-19 16:20:09 [replayer] INFO: Release coordinate at: (777.5, 126.0)
+2026-06-19 16:20:10 [replayer] INFO: [4] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-19 16:20:10 [replayer] INFO: Touch: Touch(touch_type='down', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:10 [replayer] INFO: Press coordinate at: (777.5, 161.0)
+2026-06-19 16:20:10 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:10 [replayer] INFO: Move coordinate to: (777.5, 161.0)
+2026-06-19 16:20:10 [replayer] INFO: Touch: Touch(touch_type='move', x=699.75, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:10 [replayer] INFO: Move coordinate to: (699.75, 161.0)
+2026-06-19 16:20:10 [replayer] INFO: Touch: Touch(touch_type='move', x=622.0, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:10 [replayer] INFO: Move coordinate to: (622.0, 161.0)
+2026-06-19 16:20:10 [replayer] INFO: Touch: Touch(touch_type='move', x=544.25, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:10 [replayer] INFO: Move coordinate to: (544.25, 161.0)
+2026-06-19 16:20:10 [replayer] INFO: Touch: Touch(touch_type='move', x=466.5, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:10 [replayer] INFO: Move coordinate to: (466.5, 161.0)
+2026-06-19 16:20:10 [replayer] INFO: Touch: Touch(touch_type='move', x=388.75, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:10 [replayer] INFO: Move coordinate to: (388.75, 161.0)
+2026-06-19 16:20:10 [replayer] INFO: Touch: Touch(touch_type='move', x=310.99997, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:10 [replayer] INFO: Move coordinate to: (310.99997, 161.0)
+2026-06-19 16:20:10 [replayer] INFO: Touch: Touch(touch_type='move', x=233.25, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:10 [replayer] INFO: Move coordinate to: (233.25, 161.0)
+2026-06-19 16:20:10 [replayer] INFO: Touch: Touch(touch_type='move', x=155.5, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:10 [replayer] INFO: Move coordinate to: (155.5, 161.0)
+2026-06-19 16:20:10 [replayer] INFO: Touch: Touch(touch_type='move', x=77.75, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:11 [replayer] INFO: Move coordinate to: (77.75, 161.0)
+2026-06-19 16:20:11 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:11 [replayer] INFO: Release coordinate at: (0.0, 161.0)
+2026-06-19 16:20:12 [replayer] INFO: [5] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 16:20:12 [replayer] INFO: Touch: Touch(touch_type='down', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:12 [replayer] INFO: Press coordinate at: (777.5, 161.0)
+2026-06-19 16:20:12 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:12 [replayer] INFO: Move coordinate to: (777.5, 161.0)
+2026-06-19 16:20:12 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=359.6, wait_duration=0.02)
+2026-06-19 16:20:12 [replayer] INFO: Move coordinate to: (777.5, 359.6)
+2026-06-19 16:20:12 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=558.2, wait_duration=0.02)
+2026-06-19 16:20:12 [replayer] INFO: Move coordinate to: (777.5, 558.2)
+2026-06-19 16:20:12 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=756.80005, wait_duration=0.02)
+2026-06-19 16:20:12 [replayer] INFO: Move coordinate to: (777.5, 756.80005)
+2026-06-19 16:20:12 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=955.4, wait_duration=0.02)
+2026-06-19 16:20:12 [replayer] INFO: Move coordinate to: (777.5, 955.4)
+2026-06-19 16:20:12 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=1154.0, wait_duration=0.02)
+2026-06-19 16:20:12 [replayer] INFO: Move coordinate to: (777.5, 1154.0)
+2026-06-19 16:20:12 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=1352.6001, wait_duration=0.02)
+2026-06-19 16:20:12 [replayer] INFO: Move coordinate to: (777.5, 1352.6001)
+2026-06-19 16:20:12 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=1551.2, wait_duration=0.02)
+2026-06-19 16:20:12 [replayer] INFO: Move coordinate to: (777.5, 1551.2)
+2026-06-19 16:20:12 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=1749.8, wait_duration=0.02)
+2026-06-19 16:20:13 [replayer] INFO: Move coordinate to: (777.5, 1749.8)
+2026-06-19 16:20:13 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=1948.3999, wait_duration=0.02)
+2026-06-19 16:20:13 [replayer] INFO: Move coordinate to: (777.5, 1948.3999)
+2026-06-19 16:20:13 [replayer] INFO: Touch: Touch(touch_type='up', x=777.5, y=2147.0, wait_duration=0.02)
+2026-06-19 16:20:13 [replayer] INFO: Release coordinate at: (777.5, 2147.0)
+2026-06-19 16:20:14 [replayer] INFO: [6] Execute Monkey event: CLICK
+2026-06-19 16:20:14 [replayer] INFO: Touch: Touch(touch_type='down', x=729.0, y=199.0, wait_duration=0.0)
+2026-06-19 16:20:14 [replayer] INFO: Press coordinate at: (729.0, 199.0)
+2026-06-19 16:20:14 [replayer] INFO: Touch: Touch(touch_type='up', x=729.0, y=199.0, wait_duration=0.0)
+2026-06-19 16:20:14 [replayer] INFO: Release coordinate at: (729.0, 199.0)
+2026-06-19 16:20:15 [reproducer] INFO: Preconditions executed for test case: happy_test_search_does_not_show_archived_notes
+2026-06-19 16:20:15 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_search_does_not_show_archived_notes
+2026-06-19 16:20:15 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:20:15 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:20:15 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:20:15 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition/happy_test_search_does_not_show_archived_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition/happy_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:20:15 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition\happy_test_search_does_not_show_archived_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:20:15 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition/happy_test_search_does_not_show_archived_notes.ec -> .\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition/happy_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:20:15 [reproducer] INFO: Coverage data collected: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition/happy_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:20:15 [reproducer] INFO: Start executing property for test case: happy_test_search_does_not_show_archived_notes
+2026-06-19 16:20:15 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - start
+2026-06-19 16:20:15 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:20:15 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:20:16 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:20:17 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:20:18 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - pass
+2026-06-19 16:20:18 [reproducer] INFO: Property executed for test case: happy_test_search_does_not_show_archived_notes
+2026-06-19 16:20:18 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_search_does_not_show_archived_notes
+2026-06-19 16:20:18 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:20:18 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:20:18 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:20:18 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property/happy_test_search_does_not_show_archived_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property/happy_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:20:18 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property\happy_test_search_does_not_show_archived_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:20:18 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property/happy_test_search_does_not_show_archived_notes.ec -> .\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property/happy_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:20:18 [reproducer] INFO: Coverage data collected: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property/happy_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:20:18 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 16:20:18 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:20:18 [reproducer] INFO: Test environment reset completed
+2026-06-19 16:20:18 [runner] INFO: Running property-violating path path...
+2026-06-19 16:20:18 [reproducer] INFO: Start reproducing test case: bug_test_search_does_not_show_archived_notes
+2026-06-19 16:20:30 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 16:20:30 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:20:30 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 16:20:31 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 16:20:31 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: it.feio.android.omninotes.alpha
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=13ms (0ms mobile, 0ms wifi, 13ms not connected)
+
+2026-06-19 16:20:31 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 16:20:31 [reproducer] INFO: Init operation executed
+2026-06-19 16:20:34 [reproducer] INFO: Test environment setup completed
+2026-06-19 16:20:34 [reproducer] INFO: Start executing preconditions for test case: bug_test_search_does_not_show_archived_notes
+2026-06-19 16:20:34 [replayer] INFO: [1] Execute Monkey event: CLICK
+2026-06-19 16:20:34 [replayer] INFO: Touch: Touch(touch_type='down', x=1004.0, y=181.0, wait_duration=0.0)
+2026-06-19 16:20:34 [replayer] INFO: Press coordinate at: (1004.0, 181.0)
+2026-06-19 16:20:34 [replayer] INFO: Touch: Touch(touch_type='up', x=1004.0, y=181.0, wait_duration=0.0)
+2026-06-19 16:20:34 [replayer] INFO: Release coordinate at: (1004.0, 181.0)
+2026-06-19 16:20:35 [replayer] INFO: [2] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-19 16:20:35 [replayer] INFO: Touch: Touch(touch_type='down', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:35 [replayer] INFO: Press coordinate at: (777.5, 161.0)
+2026-06-19 16:20:35 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:35 [replayer] INFO: Move coordinate to: (777.5, 161.0)
+2026-06-19 16:20:35 [replayer] INFO: Touch: Touch(touch_type='move', x=807.65, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:35 [replayer] INFO: Move coordinate to: (807.65, 161.0)
+2026-06-19 16:20:35 [replayer] INFO: Touch: Touch(touch_type='move', x=837.8, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:35 [replayer] INFO: Move coordinate to: (837.8, 161.0)
+2026-06-19 16:20:35 [replayer] INFO: Touch: Touch(touch_type='move', x=867.95, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:36 [replayer] INFO: Move coordinate to: (867.95, 161.0)
+2026-06-19 16:20:36 [replayer] INFO: Touch: Touch(touch_type='move', x=898.1, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:36 [replayer] INFO: Move coordinate to: (898.1, 161.0)
+2026-06-19 16:20:36 [replayer] INFO: Touch: Touch(touch_type='move', x=928.25, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:36 [replayer] INFO: Move coordinate to: (928.25, 161.0)
+2026-06-19 16:20:36 [replayer] INFO: Touch: Touch(touch_type='move', x=958.4, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:36 [replayer] INFO: Move coordinate to: (958.4, 161.0)
+2026-06-19 16:20:36 [replayer] INFO: Touch: Touch(touch_type='move', x=988.55, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:36 [replayer] INFO: Move coordinate to: (988.55, 161.0)
+2026-06-19 16:20:36 [replayer] INFO: Touch: Touch(touch_type='move', x=1018.7, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:36 [replayer] INFO: Move coordinate to: (1018.7, 161.0)
+2026-06-19 16:20:36 [replayer] INFO: Touch: Touch(touch_type='move', x=1048.85, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:36 [replayer] INFO: Move coordinate to: (1048.85, 161.0)
+2026-06-19 16:20:36 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:36 [replayer] INFO: Release coordinate at: (1079.0, 161.0)
+2026-06-19 16:20:37 [replayer] INFO: [3] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 16:20:37 [replayer] INFO: Touch: Touch(touch_type='down', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:37 [replayer] INFO: Press coordinate at: (777.5, 161.0)
+2026-06-19 16:20:37 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:37 [replayer] INFO: Move coordinate to: (777.5, 161.0)
+2026-06-19 16:20:37 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=155.9, wait_duration=0.02)
+2026-06-19 16:20:37 [replayer] INFO: Move coordinate to: (777.5, 155.9)
+2026-06-19 16:20:37 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=150.8, wait_duration=0.02)
+2026-06-19 16:20:37 [replayer] INFO: Move coordinate to: (777.5, 150.8)
+2026-06-19 16:20:37 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=145.7, wait_duration=0.02)
+2026-06-19 16:20:38 [replayer] INFO: Move coordinate to: (777.5, 145.7)
+2026-06-19 16:20:38 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=140.6, wait_duration=0.02)
+2026-06-19 16:20:38 [replayer] INFO: Move coordinate to: (777.5, 140.6)
+2026-06-19 16:20:38 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=135.5, wait_duration=0.02)
+2026-06-19 16:20:38 [replayer] INFO: Move coordinate to: (777.5, 135.5)
+2026-06-19 16:20:38 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=130.4, wait_duration=0.02)
+2026-06-19 16:20:38 [replayer] INFO: Move coordinate to: (777.5, 130.4)
+2026-06-19 16:20:38 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=125.3, wait_duration=0.02)
+2026-06-19 16:20:38 [replayer] INFO: Move coordinate to: (777.5, 125.3)
+2026-06-19 16:20:38 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=126.0, wait_duration=0.02)
+2026-06-19 16:20:38 [replayer] INFO: Move coordinate to: (777.5, 126.0)
+2026-06-19 16:20:38 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=126.0, wait_duration=0.02)
+2026-06-19 16:20:38 [replayer] INFO: Move coordinate to: (777.5, 126.0)
+2026-06-19 16:20:38 [replayer] INFO: Touch: Touch(touch_type='up', x=777.5, y=126.0, wait_duration=0.02)
+2026-06-19 16:20:38 [replayer] INFO: Release coordinate at: (777.5, 126.0)
+2026-06-19 16:20:39 [replayer] INFO: [4] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-19 16:20:39 [replayer] INFO: Touch: Touch(touch_type='down', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:39 [replayer] INFO: Press coordinate at: (777.5, 161.0)
+2026-06-19 16:20:39 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:39 [replayer] INFO: Move coordinate to: (777.5, 161.0)
+2026-06-19 16:20:39 [replayer] INFO: Touch: Touch(touch_type='move', x=699.75, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:39 [replayer] INFO: Move coordinate to: (699.75, 161.0)
+2026-06-19 16:20:39 [replayer] INFO: Touch: Touch(touch_type='move', x=622.0, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:39 [replayer] INFO: Move coordinate to: (622.0, 161.0)
+2026-06-19 16:20:39 [replayer] INFO: Touch: Touch(touch_type='move', x=544.25, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:39 [replayer] INFO: Move coordinate to: (544.25, 161.0)
+2026-06-19 16:20:39 [replayer] INFO: Touch: Touch(touch_type='move', x=466.5, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:39 [replayer] INFO: Move coordinate to: (466.5, 161.0)
+2026-06-19 16:20:39 [replayer] INFO: Touch: Touch(touch_type='move', x=388.75, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:40 [replayer] INFO: Move coordinate to: (388.75, 161.0)
+2026-06-19 16:20:40 [replayer] INFO: Touch: Touch(touch_type='move', x=310.99997, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:40 [replayer] INFO: Move coordinate to: (310.99997, 161.0)
+2026-06-19 16:20:40 [replayer] INFO: Touch: Touch(touch_type='move', x=233.25, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:40 [replayer] INFO: Move coordinate to: (233.25, 161.0)
+2026-06-19 16:20:40 [replayer] INFO: Touch: Touch(touch_type='move', x=155.5, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:40 [replayer] INFO: Move coordinate to: (155.5, 161.0)
+2026-06-19 16:20:40 [replayer] INFO: Touch: Touch(touch_type='move', x=77.75, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:40 [replayer] INFO: Move coordinate to: (77.75, 161.0)
+2026-06-19 16:20:40 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=161.0, wait_duration=0.02)
+2026-06-19 16:20:40 [replayer] INFO: Release coordinate at: (0.0, 161.0)
+2026-06-19 16:20:41 [replayer] INFO: [5] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 16:20:41 [replayer] INFO: Touch: Touch(touch_type='down', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:41 [replayer] INFO: Press coordinate at: (777.5, 161.0)
+2026-06-19 16:20:41 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=161.0, wait_duration=0.0)
+2026-06-19 16:20:41 [replayer] INFO: Move coordinate to: (777.5, 161.0)
+2026-06-19 16:20:41 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=359.6, wait_duration=0.02)
+2026-06-19 16:20:41 [replayer] INFO: Move coordinate to: (777.5, 359.6)
+2026-06-19 16:20:41 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=558.2, wait_duration=0.02)
+2026-06-19 16:20:41 [replayer] INFO: Move coordinate to: (777.5, 558.2)
+2026-06-19 16:20:41 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=756.80005, wait_duration=0.02)
+2026-06-19 16:20:41 [replayer] INFO: Move coordinate to: (777.5, 756.80005)
+2026-06-19 16:20:41 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=955.4, wait_duration=0.02)
+2026-06-19 16:20:42 [replayer] INFO: Move coordinate to: (777.5, 955.4)
+2026-06-19 16:20:42 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=1154.0, wait_duration=0.02)
+2026-06-19 16:20:42 [replayer] INFO: Move coordinate to: (777.5, 1154.0)
+2026-06-19 16:20:42 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=1352.6001, wait_duration=0.02)
+2026-06-19 16:20:42 [replayer] INFO: Move coordinate to: (777.5, 1352.6001)
+2026-06-19 16:20:42 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=1551.2, wait_duration=0.02)
+2026-06-19 16:20:42 [replayer] INFO: Move coordinate to: (777.5, 1551.2)
+2026-06-19 16:20:42 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=1749.8, wait_duration=0.02)
+2026-06-19 16:20:42 [replayer] INFO: Move coordinate to: (777.5, 1749.8)
+2026-06-19 16:20:42 [replayer] INFO: Touch: Touch(touch_type='move', x=777.5, y=1948.3999, wait_duration=0.02)
+2026-06-19 16:20:42 [replayer] INFO: Move coordinate to: (777.5, 1948.3999)
+2026-06-19 16:20:42 [replayer] INFO: Touch: Touch(touch_type='up', x=777.5, y=2147.0, wait_duration=0.02)
+2026-06-19 16:20:42 [replayer] INFO: Release coordinate at: (777.5, 2147.0)
+2026-06-19 16:20:43 [replayer] INFO: [6] Execute Monkey event: CLICK
+2026-06-19 16:20:43 [replayer] INFO: Touch: Touch(touch_type='down', x=729.0, y=199.0, wait_duration=0.0)
+2026-06-19 16:20:43 [replayer] INFO: Press coordinate at: (729.0, 199.0)
+2026-06-19 16:20:43 [replayer] INFO: Touch: Touch(touch_type='up', x=729.0, y=199.0, wait_duration=0.0)
+2026-06-19 16:20:43 [replayer] INFO: Release coordinate at: (729.0, 199.0)
+2026-06-19 16:20:44 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - start
+2026-06-19 16:20:44 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:20:44 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:20:45 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:20:46 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:20:47 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - pass
+2026-06-19 16:20:47 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - start
+2026-06-19 16:20:47 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:20:47 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:20:48 [replayer] INFO: [6] Execute Script event: click
+2026-06-19 16:20:48 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:20:49 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - pass
+2026-06-19 16:20:49 [replayer] INFO: [7] Execute Monkey event: CLICK
+2026-06-19 16:20:49 [replayer] INFO: Touch: Touch(touch_type='down', x=862.0, y=140.0, wait_duration=0.0)
+2026-06-19 16:20:49 [replayer] INFO: Press coordinate at: (862.0, 140.0)
+2026-06-19 16:20:49 [replayer] INFO: Touch: Touch(touch_type='up', x=862.0, y=140.0, wait_duration=0.0)
+2026-06-19 16:20:49 [replayer] INFO: Release coordinate at: (862.0, 140.0)
+2026-06-19 16:20:50 [replayer] INFO: [8] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 16:20:50 [replayer] INFO: Touch: Touch(touch_type='down', x=729.0, y=359.0, wait_duration=0.0)
+2026-06-19 16:20:50 [replayer] INFO: Press coordinate at: (729.0, 359.0)
+2026-06-19 16:20:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=359.0, wait_duration=0.0)
+2026-06-19 16:20:50 [replayer] INFO: Move coordinate to: (729.0, 359.0)
+2026-06-19 16:20:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=537.8, wait_duration=0.02)
+2026-06-19 16:20:50 [replayer] INFO: Move coordinate to: (729.0, 537.8)
+2026-06-19 16:20:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=716.6, wait_duration=0.02)
+2026-06-19 16:20:50 [replayer] INFO: Move coordinate to: (729.0, 716.6)
+2026-06-19 16:20:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=895.4, wait_duration=0.02)
+2026-06-19 16:20:50 [replayer] INFO: Move coordinate to: (729.0, 895.4)
+2026-06-19 16:20:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1074.2, wait_duration=0.02)
+2026-06-19 16:20:50 [replayer] INFO: Move coordinate to: (729.0, 1074.2)
+2026-06-19 16:20:50 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1253.0, wait_duration=0.02)
+2026-06-19 16:20:51 [replayer] INFO: Move coordinate to: (729.0, 1253.0)
+2026-06-19 16:20:51 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1431.8, wait_duration=0.02)
+2026-06-19 16:20:51 [replayer] INFO: Move coordinate to: (729.0, 1431.8)
+2026-06-19 16:20:51 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1610.6, wait_duration=0.02)
+2026-06-19 16:20:51 [replayer] INFO: Move coordinate to: (729.0, 1610.6)
+2026-06-19 16:20:51 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1789.4, wait_duration=0.02)
+2026-06-19 16:20:51 [replayer] INFO: Move coordinate to: (729.0, 1789.4)
+2026-06-19 16:20:51 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=1968.2, wait_duration=0.02)
+2026-06-19 16:20:51 [replayer] INFO: Move coordinate to: (729.0, 1968.2)
+2026-06-19 16:20:51 [replayer] INFO: Touch: Touch(touch_type='up', x=729.0, y=2147.0, wait_duration=0.02)
+2026-06-19 16:20:51 [replayer] INFO: Release coordinate at: (729.0, 2147.0)
+2026-06-19 16:20:52 [replayer] INFO: [9] Execute Monkey event: SCROLL_BOTTOM_UP
+2026-06-19 16:20:52 [replayer] INFO: Touch: Touch(touch_type='down', x=729.0, y=359.0, wait_duration=0.0)
+2026-06-19 16:20:52 [replayer] INFO: Press coordinate at: (729.0, 359.0)
+2026-06-19 16:20:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=359.0, wait_duration=0.0)
+2026-06-19 16:20:52 [replayer] INFO: Move coordinate to: (729.0, 359.0)
+2026-06-19 16:20:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=334.1, wait_duration=0.02)
+2026-06-19 16:20:52 [replayer] INFO: Move coordinate to: (729.0, 334.1)
+2026-06-19 16:20:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=309.2, wait_duration=0.02)
+2026-06-19 16:20:52 [replayer] INFO: Move coordinate to: (729.0, 309.2)
+2026-06-19 16:20:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=284.3, wait_duration=0.02)
+2026-06-19 16:20:52 [replayer] INFO: Move coordinate to: (729.0, 284.3)
+2026-06-19 16:20:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=259.4, wait_duration=0.02)
+2026-06-19 16:20:52 [replayer] INFO: Move coordinate to: (729.0, 259.4)
+2026-06-19 16:20:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=234.5, wait_duration=0.02)
+2026-06-19 16:20:52 [replayer] INFO: Move coordinate to: (729.0, 234.5)
+2026-06-19 16:20:52 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=209.59999, wait_duration=0.02)
+2026-06-19 16:20:53 [replayer] INFO: Move coordinate to: (729.0, 209.59999)
+2026-06-19 16:20:53 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=184.7, wait_duration=0.02)
+2026-06-19 16:20:53 [replayer] INFO: Move coordinate to: (729.0, 184.7)
+2026-06-19 16:20:53 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=159.8, wait_duration=0.02)
+2026-06-19 16:20:53 [replayer] INFO: Move coordinate to: (729.0, 159.8)
+2026-06-19 16:20:53 [replayer] INFO: Touch: Touch(touch_type='move', x=729.0, y=134.90001, wait_duration=0.02)
+2026-06-19 16:20:53 [replayer] INFO: Move coordinate to: (729.0, 134.90001)
+2026-06-19 16:20:53 [replayer] INFO: Touch: Touch(touch_type='up', x=729.0, y=126.0, wait_duration=0.02)
+2026-06-19 16:20:53 [replayer] INFO: Release coordinate at: (729.0, 126.0)
+2026-06-19 16:20:54 [replayer] INFO: [10] Execute Monkey event: CLICK
+2026-06-19 16:20:54 [replayer] INFO: Touch: Touch(touch_type='down', x=665.0, y=126.0, wait_duration=0.0)
+2026-06-19 16:20:54 [replayer] INFO: Press coordinate at: (665.0, 126.0)
+2026-06-19 16:20:54 [replayer] INFO: Touch: Touch(touch_type='up', x=665.0, y=126.0, wait_duration=0.0)
+2026-06-19 16:20:54 [replayer] INFO: Release coordinate at: (665.0, 126.0)
+2026-06-19 16:20:55 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - start
+2026-06-19 16:20:55 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:20:55 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:20:56 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:20:56 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:20:57 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - pass
+2026-06-19 16:20:57 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - start
+2026-06-19 16:20:57 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:20:58 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:20:59 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:20:59 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:21:00 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - pass
+2026-06-19 16:21:00 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - start
+2026-06-19 16:21:00 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:00 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:21:01 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:01 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:21:02 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - pass
+2026-06-19 16:21:02 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_create_note_for_archive - start
+2026-06-19 16:21:02 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:02 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:21:03 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:03 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:21:04 [replayer] INFO: [10] Execute Script event: setText
+2026-06-19 16:21:05 [replayer] INFO: Set text to: PK1NFn
+2026-06-19 16:21:06 [replayer] INFO: [10] Execute Script event: pressKey
+2026-06-19 16:21:06 [replayer] INFO: Press key: back
+2026-06-19 16:21:07 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_create_note_for_archive - pass
+2026-06-19 16:21:07 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - start
+2026-06-19 16:21:07 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:07 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:21:08 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:08 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:21:09 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - pass
+2026-06-19 16:21:09 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - start
+2026-06-19 16:21:09 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:09 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:21:10 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:10 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:21:11 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - pass
+2026-06-19 16:21:11 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_behavior_setting - start
+2026-06-19 16:21:11 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:11 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:21:12 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:13 [replayer] INFO: Click coordinate: (478.5, 639.0)
+2026-06-19 16:21:14 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:14 [replayer] INFO: Click coordinate: (140.5, 892.5)
+2026-06-19 16:21:15 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:15 [replayer] INFO: Click coordinate: (972.0, 510.0)
+2026-06-19 16:21:16 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:16 [replayer] INFO: Click coordinate: (972.0, 510.0)
+2026-06-19 16:21:17 [replayer] INFO: [10] Execute Script event: pressKey
+2026-06-19 16:21:17 [replayer] INFO: Press key: back
+2026-06-19 16:21:18 [replayer] INFO: [10] Execute Script event: pressKey
+2026-06-19 16:21:19 [replayer] INFO: Press key: back
+2026-06-19 16:21:20 [replayer] INFO: [10] Execute Script event: pressKey
+2026-06-19 16:21:20 [replayer] INFO: Press key: back
+2026-06-19 16:21:21 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_behavior_setting - pass
+2026-06-19 16:21:21 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_data_setting - start
+2026-06-19 16:21:21 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:21 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:21:22 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:22 [replayer] INFO: Click coordinate: (478.5, 639.0)
+2026-06-19 16:21:23 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:23 [replayer] INFO: Click coordinate: (89.5, 451.5)
+2026-06-19 16:21:24 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:25 [replayer] INFO: Click coordinate: (222.5, 310.5)
+2026-06-19 16:21:26 [replayer] INFO: [10] Execute Script event: pressKey
+2026-06-19 16:21:26 [replayer] INFO: Press key: back
+2026-06-19 16:21:27 [replayer] INFO: [10] Execute Script event: pressKey
+2026-06-19 16:21:27 [replayer] INFO: Press key: back
+2026-06-19 16:21:28 [replayer] INFO: [10] Execute Script event: pressKey
+2026-06-19 16:21:28 [replayer] INFO: Press key: back
+2026-06-19 16:21:29 [replayer] INFO: [10] Execute Script event: pressKey
+2026-06-19 16:21:29 [replayer] INFO: Press key: back
+2026-06-19 16:21:30 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_data_setting - pass
+2026-06-19 16:21:30 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_create_note_for_archive - start
+2026-06-19 16:21:30 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:30 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:21:31 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:32 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:21:33 [replayer] INFO: [10] Execute Script event: setText
+2026-06-19 16:21:33 [replayer] INFO: Set text to: ybRO77I
+2026-06-19 16:21:34 [replayer] INFO: [10] Execute Script event: pressKey
+2026-06-19 16:21:34 [replayer] INFO: Press key: back
+2026-06-19 16:21:35 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_create_note_for_archive - pass
+2026-06-19 16:21:35 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - start
+2026-06-19 16:21:35 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:35 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:21:36 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:36 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:21:37 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - pass
+2026-06-19 16:21:37 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_create_note_for_archive - start
+2026-06-19 16:21:37 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:37 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:21:38 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:38 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:21:39 [replayer] INFO: [10] Execute Script event: setText
+2026-06-19 16:21:40 [replayer] INFO: Set text to: tkRMFlCd
+2026-06-19 16:21:41 [replayer] INFO: [10] Execute Script event: pressKey
+2026-06-19 16:21:41 [replayer] INFO: Press key: back
+2026-06-19 16:21:42 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_create_note_for_archive - pass
+2026-06-19 16:21:42 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - start
+2026-06-19 16:21:42 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:42 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:21:43 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:43 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:21:44 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - pass
+2026-06-19 16:21:44 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_reduced_view - start
+2026-06-19 16:21:44 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:44 [replayer] INFO: Click coordinate: (1024.5, 160.0)
+2026-06-19 16:21:45 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:45 [replayer] INFO: Click coordinate: (799.5, 182.5)
+2026-06-19 16:21:46 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:47 [replayer] INFO: Click coordinate: (799.5, 182.5)
+2026-06-19 16:21:48 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:48 [replayer] INFO: Click coordinate: (1024.5, 160.0)
+2026-06-19 16:21:49 [replayer] INFO: [10] Execute Script event: click
+2026-06-19 16:21:49 [replayer] INFO: Click coordinate: (799.5, 182.5)
+2026-06-19 16:21:50 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_reduced_view - pass
+2026-06-19 16:21:50 [replayer] INFO: [11] Execute Monkey event: LONG_CLICK
+2026-06-19 16:21:50 [replayer] INFO: Touch: Touch(touch_type='down', x=1020.0, y=143.0, wait_duration=0.0)
+2026-06-19 16:21:50 [replayer] INFO: Press coordinate at: (1020.0, 143.0)
+2026-06-19 16:21:50 [replayer] INFO: Touch: Touch(touch_type='up', x=1020.0, y=143.0, wait_duration=1.0)
+2026-06-19 16:21:50 [replayer] INFO: Release coordinate at: (1020.0, 143.0)
+2026-06-19 16:21:52 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_archive_note_removes_from_main_list - start
+2026-06-19 16:21:52 [replayer] INFO: [11] Execute Script event: click
+2026-06-19 16:21:53 [replayer] INFO: Click coordinate: (536.0, 308.5)
+2026-06-19 16:21:54 [replayer] INFO: [11] Execute Script event: click
+2026-06-19 16:21:54 [replayer] INFO: Click coordinate: (1024.5, 160.0)
+2026-06-19 16:21:55 [replayer] INFO: [11] Execute Script event: click
+2026-06-19 16:21:55 [replayer] INFO: Click coordinate: (799.5, 446.5)
+2026-06-19 16:21:56 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_archive_note_removes_from_main_list - pass
+2026-06-19 16:21:56 [reproducer] INFO: Preconditions executed for test case: bug_test_search_does_not_show_archived_notes
+2026-06-19 16:21:56 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_search_does_not_show_archived_notes
+2026-06-19 16:21:56 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:21:56 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:21:56 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:21:56 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition/bug_test_search_does_not_show_archived_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition/bug_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:21:56 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition\bug_test_search_does_not_show_archived_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:21:56 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition/bug_test_search_does_not_show_archived_notes.ec -> .\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition/bug_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:21:56 [reproducer] INFO: Coverage data collected: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition/bug_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:21:56 [reproducer] INFO: Start executing property for test case: bug_test_search_does_not_show_archived_notes
+2026-06-19 16:21:56 [replayer] INFO: Script execution start state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - start
+2026-06-19 16:21:56 [replayer] INFO: [11] Execute Script event: click
+2026-06-19 16:21:57 [replayer] INFO: Click coordinate: (771.0, 160.0)
+2026-06-19 16:21:58 [replayer] INFO: [11] Execute Script event: click
+2026-06-19 16:21:58 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:21:59 [replayer] INFO: Script execution end state: omni939.OmninotesArchive.test_search_does_not_show_archived_notes - fail
+2026-06-19 16:21:59 [reproducer] INFO: Property executed for test case: bug_test_search_does_not_show_archived_notes
+2026-06-19 16:21:59 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_search_does_not_show_archived_notes
+2026-06-19 16:21:59 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:21:59 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:21:59 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:21:59 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property/bug_test_search_does_not_show_archived_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property/bug_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:21:59 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property\bug_test_search_does_not_show_archived_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:21:59 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property/bug_test_search_does_not_show_archived_notes.ec -> .\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property/bug_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:21:59 [reproducer] INFO: Coverage data collected: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property/bug_test_search_does_not_show_archived_notes.xml
+2026-06-19 16:21:59 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 16:22:00 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:22:00 [reproducer] INFO: Test environment reset completed
+2026-06-19 16:22:00 [runner] INFO: Parsing coverage data...
+2026-06-19 16:22:00 [report_generator] INFO: generate line coverage data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_pre_line_coverage.md
+2026-06-19 16:22:00 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_pre_branch_coverage.md
+2026-06-19 16:22:00 [report_generator] INFO: generate line coverage data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_prop_line_coverage.md
+2026-06-19 16:22:00 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_prop_branch_coverage.md
+2026-06-19 16:22:00 [report_generator] INFO: generate line coverage data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_pre_line_coverage.md
+2026-06-19 16:22:00 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_pre_branch_coverage.md
+2026-06-19 16:22:00 [report_generator] INFO: generate line coverage data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_prop_line_coverage.md
+2026-06-19 16:22:00 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_prop_branch_coverage.md
+2026-06-19 16:22:00 [runner] INFO: Calculating incremental coverage...
+2026-06-19 16:22:00 [runner] INFO: Performing incremental coverage analysis...
+2026-06-19 16:22:00 [runner] INFO: Generating pair test case report...
+2026-06-19 16:22:00 [runner] INFO: Saving intermediate data...
+2026-06-19 16:22:00 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_line_incremental_data.md
+2026-06-19 16:22:00 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_branch_incremental_data.md
+2026-06-19 16:22:00 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_line_incremental_data.md
+2026-06-19 16:22:00 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_branch_incremental_data.md
+2026-06-19 16:22:00 [report_generator] INFO: generate line diff data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\line_diff_data.md
+2026-06-19 16:22:00 [report_generator] INFO: generate branch diff data: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\data\branch_diff_data.md
+2026-06-19 16:22:00 [runner] INFO: Generating diff report...
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\MainActivity.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\notes\NoteProcessor.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\notes\NoteProcessorArchive.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\db\DbHelper.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\NavigationItem.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\NavDrawerAdapter.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\NoteAdapter.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\misc\DynamicNavigationLookupTable.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\test_search_does_not_show_archived_notes_line_diff_report.html
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\MainActivity.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\MainMenuTask.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\notes\NoteProcessor.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\db\DbHelper.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\NavDrawerAdapter.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\NoteAdapter.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\misc\DynamicNavigationLookupTable.java encoding: utf-8
+2026-06-19 16:22:00 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260619_162000\test_search_does_not_show_archived_notes\test_search_does_not_show_archived_notes_branch_diff_report.html
+2026-06-19 16:22:00 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_search_does_not_show_archived_notes
+
+## Code Coverage Summary
+File: it/feio/android/omninotes/ListFragment.java
+  Only in first dataset lines: [1456, 1457, 1458, 1460, 1461, 1690, 1691, 1693, 1694, 1699, 1700, 1701, 1702, 1705, 1706, 1707, 1708, 1710, 1711, 1713]
+    Line 1456: hit count 6
+    Line 1457: hit count 3
+    Line 1458: hit count 4
+    Line 1460: hit count 12
+    Line 1461: hit count 1
+    Line 1690: hit count 7
+    Line 1691: hit count 3
+    Line 1693: hit count 3
+    Line 1694: hit count 6
+    Line 1699: hit count 3
+    Line 1700: hit count 3
+    Line 1701: hit count 3
+    Line 1702: hit count 3
+    Line 1705: hit count 3
+    Line 1706: hit count 3
+    Line 1707: hit count 3
+    Line 1708: hit count 3
+    Line 1710: hit count 4
+    Line 1711: hit count 3
+    Line 1713: hit count 2
+  Only in second dataset lines: [679, 689, 690, 693, 694, 695, 696, 703, 714, 722, 723, 727, 847]
+    Line 679: hit count 5
+    Line 689: hit count 4
+    Line 690: hit count 6
+    Line 693: hit count 7
+    Line 694: hit count 7
+    Line 695: hit count 4
+    Line 696: hit count 2
+    Line 703: hit count 14
+    Line 714: hit count 4
+    Line 722: hit count 4
+    Line 723: hit count 2
+    Line 727: hit count 2
+    Line 847: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/MainActivity.java
+  Only in first dataset lines: [142]
+    Line 142: hit count 3
+----------------------------------------
+File: it/feio/android/omninotes/async/notes/NoteProcessor.java
+  Only in first dataset lines: [33, 34, 35, 39, 40, 41, 47, 51, 52, 53, 54, 55, 61, 62, 67, 68]
+    Line 33: hit count 2
+    Line 34: hit count 6
+    Line 35: hit count 1
+    Line 39: hit count 5
+    Line 40: hit count 11
+    Line 41: hit count 1
+    Line 47: hit count 6
+    Line 51: hit count 4
+    Line 52: hit count 10
+    Line 53: hit count 4
+    Line 54: hit count 1
+    Line 55: hit count 2
+    Line 61: hit count 4
+    Line 62: hit count 1
+    Line 67: hit count 6
+    Line 68: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/async/notes/NoteProcessorArchive.java
+  Only in first dataset lines: [31, 32, 33, 38, 39]
+    Line 31: hit count 3
+    Line 32: hit count 3
+    Line 33: hit count 1
+    Line 38: hit count 5
+    Line 39: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/db/DbHelper.java
+  Only in first dataset lines: [231, 501, 502, 503]
+    Line 231: hit count 4
+    Line 501: hit count 4
+    Line 502: hit count 5
+    Line 503: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/NavigationItem.java
+  Only in first dataset lines: [58]
+    Line 58: hit count 3
+----------------------------------------
+File: it/feio/android/omninotes/models/adapters/NavDrawerAdapter.java
+  Only in first dataset lines: [95, 96, 97]
+    Line 95: hit count 9
+    Line 96: hit count 5
+    Line 97: hit count 8
+----------------------------------------
+File: it/feio/android/omninotes/models/adapters/NoteAdapter.java
+  Only in first dataset lines: [275, 276, 277, 278]
+    Line 275: hit count 10
+    Line 276: hit count 3
+    Line 277: hit count 1
+    Line 278: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/misc/DynamicNavigationLookupTable.java
+  Only in first dataset lines: [61]
+    Line 61: hit count 7
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes
+
+FAIL continuation:
+Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_create_note_for_archive → Input: PK1NFn → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_data_setting → Back → Pass: test_data_setting → Start: test_create_note_for_archive → Input: ybRO77I → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_create_note_for_archive → Input: tkRMFlCd → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_reduced_view → Pass: test_reduced_view → Random operation: LONG_CLICK → Start: test_archive_note_removes_from_main_list → Pass: test_archive_note_removes_from_main_list → Start: test_search_does_not_show_archived_notes → Fail: test_search_does_not_show_archived_notes → Start: test_reduced_view → Pass: test_reduced_view → Start: test_search_does_not_show_archived_notes → Fail: test_search_does_not_show_archived_notes → Start: test_reduced_view
+
+## Correct Execution Path
+Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes
+
+## Error Execution Path
+Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_create_note_for_archive → Input: PK1NFn → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_data_setting → Back → Pass: test_data_setting → Start: test_create_note_for_archive → Input: ybRO77I → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_create_note_for_archive → Input: tkRMFlCd → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_reduced_view → Pass: test_reduced_view → Random operation: LONG_CLICK → Start: test_archive_note_removes_from_main_list → Pass: test_archive_note_removes_from_main_list → Start: test_search_does_not_show_archived_notes → Fail: test_search_does_not_show_archived_notes → Start: test_reduced_view → Pass: test_reduced_view → Start: test_search_does_not_show_archived_notes → Fail: test_search_does_not_show_archived_notes → Start: test_reduced_view
+
+## Files to Analyze
+it/feio/android/omninotes/ListFragment.java
+  Differing lines: 33
+
+it/feio/android/omninotes/MainActivity.java
+  Differing lines: 1
+
+it/feio/android/omninotes/async/notes/NoteProcessor.java
+  Differing lines: 16
+
+it/feio/android/omninotes/async/notes/NoteProcessorArchive.java
+  Differing lines: 5
+
+it/feio/android/omninotes/db/DbHelper.java
+  Differing lines: 4
+
+it/feio/android/omninotes/models/NavigationItem.java
+  Differing lines: 1
+
+it/feio/android/omninotes/models/adapters/NavDrawerAdapter.java
+  Differing lines: 3
+
+it/feio/android/omninotes/models/adapters/NoteAdapter.java
+  Differing lines: 4
+
+it/feio/android/omninotes/models/misc/DynamicNavigationLookupTable.java
+  Differing lines: 1
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-19 16:22:01 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-19 16:22:02 [llm] INFO: LLM response: it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/db/DbHelper.java
+it/feio/android/omninotes/async/notes/NoteProcessorArchive.java
+it/feio/android/omninotes/async/notes/NoteProcessor.java
+it/feio/android/omninotes/models/adapters/NoteAdapter.java
+it/feio/android/omninotes/MainActivity.java
+it/feio/android/omninotes/models/NavigationItem.java
+it/feio/android/omninotes/models/adapters/NavDrawerAdapter.java
+it/feio/android/omninotes/models/misc/DynamicNavigationLookupTable.java
+2026-06-19 16:22:02 [runner] INFO: Saving ranking to .\report\report_20260619_162000\test_search_does_not_show_archived_notes\ranking.txt
+2026-06-19 16:22:02 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260619_162000\index.html
+2026-06-19 16:22:02 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: .\report\report_20260619_162000

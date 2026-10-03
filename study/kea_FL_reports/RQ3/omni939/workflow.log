@@ -1,0 +1,1875 @@
+2026-06-20 15:18:15 [runner] INFO: Building pair test cases...
+2026-06-20 15:18:15 [replayer] INFO: Parse 173 events
+2026-06-20 15:18:15 [replayer] INFO: Parse 12 Monkey actions
+2026-06-20 15:18:15 [reproducer] INFO: Extract 6 pairs test cases
+2026-06-20 15:18:15 [replayer] INFO: Property omni939.OmninotesArchive.test_archive_note_removes_from_main_list not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:18:15 [replayer] INFO: Property omni939.OmninotesArchive.test_behavior_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:18:15 [replayer] INFO: Property omni939.OmninotesArchive.test_reduced_view not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:18:15 [replayer] INFO: Property omni939.OmninotesArchive.test_create_note_for_archive not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:18:15 [replayer] INFO: Property omni939.OmninotesArchive.test_data_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:18:15 [reproducer] INFO: Build 1 pairs test cases
+2026-06-20 15:18:15 [reproducer] INFO: Test case [1]: test_search_does_not_show_archived_notes
+2026-06-20 15:18:15 [reproducer] INFO:     -happy_path: [preconditions]: 6, [property]: 4
+2026-06-20 15:18:15 [reproducer] INFO:     -bug_path: [preconditions]: 97, [property]: 4
+2026-06-20 15:18:15 [runner] INFO: Start running full coverage difference analysis...
+2026-06-20 15:18:15 [runner] INFO: Processing pair test case [1]: happy_test_search_does_not_show_archived_notes <-> bug_test_search_does_not_show_archived_notes
+2026-06-20 15:18:15 [runner] INFO: Running pair test case analysis: happy_test_search_does_not_show_archived_notes <-> bug_test_search_does_not_show_archived_notes
+2026-06-20 15:18:15 [runner] INFO: Running property-satisfying path...
+2026-06-20 15:18:15 [reproducer] INFO: Start reproducing test case: happy_test_search_does_not_show_archived_notes
+2026-06-20 15:18:15 [reproducer] INFO: Start executing preconditions for test case: happy_test_search_does_not_show_archived_notes
+2026-06-20 15:18:15 [reproducer] INFO: Preconditions executed for test case: happy_test_search_does_not_show_archived_notes
+2026-06-20 15:18:15 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_search_does_not_show_archived_notes
+2026-06-20 15:18:15 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:18:15 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:18:15 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition/happy_test_search_does_not_show_archived_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition/happy_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:15 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition\happy_test_search_does_not_show_archived_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:18:15 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition/happy_test_search_does_not_show_archived_notes.ec -> .\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition/happy_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:15 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_precondition/happy_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:15 [reproducer] INFO: Start executing property for test case: happy_test_search_does_not_show_archived_notes
+2026-06-20 15:18:15 [reproducer] INFO: Property executed for test case: happy_test_search_does_not_show_archived_notes
+2026-06-20 15:18:15 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_search_does_not_show_archived_notes
+2026-06-20 15:18:15 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:18:15 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:18:16 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property/happy_test_search_does_not_show_archived_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property/happy_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:16 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property\happy_test_search_does_not_show_archived_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:18:16 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property/happy_test_search_does_not_show_archived_notes.ec -> .\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property/happy_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:16 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\happy_test_search_does_not_show_archived_notes_property/happy_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:16 [runner] INFO: Running property-violating path path...
+2026-06-20 15:18:16 [reproducer] INFO: Start reproducing test case: bug_test_search_does_not_show_archived_notes
+2026-06-20 15:18:16 [reproducer] INFO: Start executing preconditions for test case: bug_test_search_does_not_show_archived_notes
+2026-06-20 15:18:16 [reproducer] INFO: Preconditions executed for test case: bug_test_search_does_not_show_archived_notes
+2026-06-20 15:18:16 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_search_does_not_show_archived_notes
+2026-06-20 15:18:16 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:18:16 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:18:16 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition/bug_test_search_does_not_show_archived_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition/bug_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:16 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition\bug_test_search_does_not_show_archived_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:18:16 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition/bug_test_search_does_not_show_archived_notes.ec -> .\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition/bug_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:16 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_precondition/bug_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:16 [reproducer] INFO: Start executing property for test case: bug_test_search_does_not_show_archived_notes
+2026-06-20 15:18:16 [reproducer] INFO: Property executed for test case: bug_test_search_does_not_show_archived_notes
+2026-06-20 15:18:16 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_search_does_not_show_archived_notes
+2026-06-20 15:18:16 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:18:16 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:18:16 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property/bug_test_search_does_not_show_archived_notes.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property/bug_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:16 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property\bug_test_search_does_not_show_archived_notes.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:18:16 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property/bug_test_search_does_not_show_archived_notes.ec -> .\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property/bug_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:16 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\bug_test_search_does_not_show_archived_notes_property/bug_test_search_does_not_show_archived_notes.xml
+2026-06-20 15:18:16 [runner] INFO: Parsing coverage data...
+2026-06-20 15:18:16 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_pre_line_coverage.md
+2026-06-20 15:18:16 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_pre_branch_coverage.md
+2026-06-20 15:18:16 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_prop_line_coverage.md
+2026-06-20 15:18:16 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_prop_branch_coverage.md
+2026-06-20 15:18:16 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_pre_line_coverage.md
+2026-06-20 15:18:16 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_pre_branch_coverage.md
+2026-06-20 15:18:17 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_prop_line_coverage.md
+2026-06-20 15:18:17 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_prop_branch_coverage.md
+2026-06-20 15:18:17 [runner] INFO: Calculating incremental coverage...
+2026-06-20 15:18:17 [runner] INFO: Performing incremental coverage analysis...
+2026-06-20 15:18:17 [runner] INFO: Generating pair test case report...
+2026-06-20 15:18:17 [runner] INFO: Saving intermediate data...
+2026-06-20 15:18:17 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_line_incremental_data.md
+2026-06-20 15:18:17 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\bug_test_search_does_not_show_archived_notes_branch_incremental_data.md
+2026-06-20 15:18:17 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_line_incremental_data.md
+2026-06-20 15:18:17 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\happy_test_search_does_not_show_archived_notes_branch_incremental_data.md
+2026-06-20 15:18:17 [report_generator] INFO: generate line diff data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\line_diff_data.md
+2026-06-20 15:18:17 [report_generator] INFO: generate branch diff data: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\data\branch_diff_data.md
+2026-06-20 15:18:17 [runner] INFO: Generating diff report...
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\BaseActivity.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\DetailFragment.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\MainActivity.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\NavigationDrawerFragment.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\SettingsActivity.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\SettingsFragment.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\CategoryMenuTask.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\UpdateWidgetsTask.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\bus\NotesUpdatedEvent.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\bus\SwitchFragmentEvent.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\notes\NoteLoaderTask.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\notes\NoteProcessor.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\notes\NoteProcessorArchive.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\notes\SaveNoteTask.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] ERROR: Source file not found: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\databinding\ActivitySettingsBinding.java
+2026-06-20 15:18:17 [report_generator] ERROR: Source file not found: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\databinding\FragmentDetailBinding.java
+2026-06-20 15:18:17 [report_generator] ERROR: Source file not found: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\databinding\FragmentDetailContentBinding.java
+2026-06-20 15:18:17 [report_generator] ERROR: Source file not found: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\databinding\NoteLayoutBinding.java
+2026-06-20 15:18:17 [report_generator] ERROR: Source file not found: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\databinding\NoteLayoutExpandedBinding.java
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\db\DbHelper.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\helpers\AppVersionHelper.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\helpers\BackupHelper.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\helpers\date\DateHelper.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\NavigationItem.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\Note.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\ONStyle.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\PasswordValidator.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\UndoBarController.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\AttachmentAdapter.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\NavDrawerAdapter.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\NoteAdapter.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\holders\NoteViewHolder.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\listeners\RecyclerViewItemClickSupport.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\misc\DynamicNavigationLookupTable.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\views\ExpandableHeightGridView.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\views\Fab.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\views\InterceptorLinearLayout.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\views\RecyclerViewEmptySupport.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\views\SquareImageView.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\AnimationsHelper.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\GeocodeHelper.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\IntentChecker.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\KeyboardUtils.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\Navigation.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\ResourcesUtils.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\TagsHelper.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\TextHelper.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\date\DateUtils.java encoding: utf-8
+2026-06-20 15:18:17 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\test_search_does_not_show_archived_notes_line_diff_report.html
+2026-06-20 15:18:17 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260620_151815\test_search_does_not_show_archived_notes\test_search_does_not_show_archived_notes_branch_diff_report.html
+2026-06-20 15:18:17 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_search_does_not_show_archived_notes
+
+## Code Coverage Summary
+File: it/feio/android/omninotes/BaseActivity.java
+  Only in first dataset lines: [92, 97, 98, 99, 103, 104, 107, 109, 128, 129, 130, 131, 134, 135, 140, 141, 144, 148, 173]
+    Line 92: hit count 4
+    Line 97: hit count 2
+    Line 98: hit count 10
+    Line 99: hit count 5
+    Line 103: hit count 1
+    Line 104: hit count 2
+    Line 107: hit count 3
+    Line 109: hit count 1
+    Line 128: hit count 3
+    Line 129: hit count 8
+    Line 130: hit count 10
+    Line 131: hit count 4
+    Line 134: hit count 8
+    Line 135: hit count 1
+    Line 140: hit count 3
+    Line 141: hit count 7
+    Line 144: hit count 2
+    Line 148: hit count 1
+    Line 173: hit count 11
+----------------------------------------
+File: it/feio/android/omninotes/DetailFragment.java
+  Only in first dataset lines: [193, 208, 219, 220, 221, 222, 227, 230, 231, 239, 245, 281, 282, 283, 287, 288, 289, 293, 294, 295, 299, 300, 301, 302, 306, 307, 312, 314, 316, 317, 320, 323, 326, 328, 331, 332, 334, 335, 336, 339, 349, 352, 359, 377, 380, 382, 385, 389, 390, 391, 393, 406, 408, 409, 412, 413, 416, 417, 420, 425, 426, 460, 462, 472, 486, 514, 519, 520, 551, 552, 554, 557, 558, 596, 599, 601, 603, 605, 607, 609, 611, 612, 615, 616, 617, 618, 619, 620, 623, 624, 626, 627, 628, 629, 630, 632, 635, 641, 657, 658, 663, 667, 669, 680, 684, 695, 708, 719, 722, 724, 727, 730, 731, 734, 790, 810, 857, 858, 859, 861, 863, 869, 870, 873, 874, 875, 877, 880, 881, 886, 894, 895, 897, 904, 907, 910, 911, 915, 919, 924, 925, 926, 929, 993, 994, 995, 1001, 1002, 1003, 1006, 1008, 1009, 1010, 1011, 1012, 1013, 1015, 1021, 1022, 1023, 1024, 1025, 1027, 1031, 1035, 1043, 1044, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1056, 1061, 1537, 1538, 1539, 1540, 1541, 1543, 1551, 1552, 1555, 1564, 1572, 1574, 1576, 1582, 1586, 1594, 1595, 1596, 1597, 1598, 1603, 1604, 1605, 1606, 1610, 1611, 1612, 1614, 1617, 1618, 1626, 1629, 1630, 1637, 1638, 1641, 1642, 1643, 1647, 1653, 1709, 1710, 1781, 1791, 2168, 2171]
+    Line 193: hit count 2
+    Line 208: hit count 3
+    Line 219: hit count 3
+    Line 220: hit count 3
+    Line 221: hit count 3
+    Line 222: hit count 3
+    Line 227: hit count 3
+    Line 230: hit count 3
+    Line 231: hit count 3
+    Line 239: hit count 3
+    Line 245: hit count 5
+    Line 281: hit count 3
+    Line 282: hit count 3
+    Line 283: hit count 1
+    Line 287: hit count 3
+    Line 288: hit count 6
+    Line 289: hit count 1
+    Line 293: hit count 2
+    Line 294: hit count 1
+    Line 295: hit count 1
+    Line 299: hit count 2
+    Line 300: hit count 3
+    Line 301: hit count 3
+    Line 302: hit count 1
+    Line 306: hit count 6
+    Line 307: hit count 4
+    Line 312: hit count 3
+    Line 314: hit count 5
+    Line 316: hit count 5
+    Line 317: hit count 6
+    Line 320: hit count 2
+    Line 323: hit count 5
+    Line 326: hit count 3
+    Line 328: hit count 2
+    Line 331: hit count 6
+    Line 332: hit count 2
+    Line 334: hit count 3
+    Line 335: hit count 3
+    Line 336: hit count 1
+    Line 339: hit count 4
+    Line 349: hit count 1
+    Line 352: hit count 2
+    Line 359: hit count 1
+    Line 377: hit count 2
+    Line 380: hit count 3
+    Line 382: hit count 3
+    Line 385: hit count 3
+    Line 389: hit count 3
+    Line 390: hit count 3
+    Line 391: hit count 4
+    Line 393: hit count 1
+    Line 406: hit count 2
+    Line 408: hit count 3
+    Line 409: hit count 7
+    Line 412: hit count 3
+    Line 413: hit count 7
+    Line 416: hit count 3
+    Line 417: hit count 7
+    Line 420: hit count 6
+    Line 425: hit count 2
+    Line 426: hit count 1
+    Line 460: hit count 4
+    Line 462: hit count 4
+    Line 472: hit count 13
+    Line 486: hit count 13
+    Line 514: hit count 4
+    Line 519: hit count 19
+    Line 520: hit count 2
+    Line 551: hit count 19
+    Line 552: hit count 2
+    Line 554: hit count 3
+    Line 557: hit count 4
+    Line 558: hit count 1
+    Line 596: hit count 5
+    Line 599: hit count 5
+    Line 601: hit count 2
+    Line 603: hit count 2
+    Line 605: hit count 2
+    Line 607: hit count 2
+    Line 609: hit count 2
+    Line 611: hit count 2
+    Line 612: hit count 1
+    Line 615: hit count 2
+    Line 616: hit count 6
+    Line 617: hit count 3
+    Line 618: hit count 5
+    Line 619: hit count 6
+    Line 620: hit count 5
+    Line 623: hit count 2
+    Line 624: hit count 6
+    Line 626: hit count 3
+    Line 627: hit count 4
+    Line 628: hit count 1
+    Line 629: hit count 6
+    Line 630: hit count 5
+    Line 632: hit count 1
+    Line 635: hit count 7
+    Line 641: hit count 7
+    Line 657: hit count 5
+    Line 658: hit count 3
+    Line 663: hit count 1
+    Line 667: hit count 2
+    Line 669: hit count 3
+    Line 680: hit count 4
+    Line 684: hit count 7
+    Line 695: hit count 7
+    Line 708: hit count 1
+    Line 719: hit count 4
+    Line 722: hit count 5
+    Line 724: hit count 8
+    Line 727: hit count 10
+    Line 730: hit count 5
+    Line 731: hit count 3
+    Line 734: hit count 5
+    Line 790: hit count 5
+    Line 810: hit count 1
+    Line 857: hit count 7
+    Line 858: hit count 4
+    Line 859: hit count 6
+    Line 861: hit count 5
+    Line 863: hit count 6
+    Line 869: hit count 5
+    Line 870: hit count 1
+    Line 873: hit count 8
+    Line 874: hit count 5
+    Line 875: hit count 7
+    Line 877: hit count 6
+    Line 880: hit count 6
+    Line 881: hit count 5
+    Line 886: hit count 1
+    Line 894: hit count 13
+    Line 895: hit count 2
+    Line 897: hit count 1
+    Line 904: hit count 4
+    Line 907: hit count 4
+    Line 910: hit count 4
+    Line 911: hit count 4
+    Line 915: hit count 6
+    Line 919: hit count 2
+    Line 924: hit count 10
+    Line 925: hit count 4
+    Line 926: hit count 1
+    Line 929: hit count 1
+    Line 993: hit count 4
+    Line 994: hit count 4
+    Line 995: hit count 1
+    Line 1001: hit count 4
+    Line 1002: hit count 2
+    Line 1003: hit count 3
+    Line 1006: hit count 7
+    Line 1008: hit count 12
+    Line 1009: hit count 9
+    Line 1010: hit count 5
+    Line 1011: hit count 6
+    Line 1012: hit count 12
+    Line 1013: hit count 9
+    Line 1015: hit count 5
+    Line 1021: hit count 8
+    Line 1022: hit count 8
+    Line 1023: hit count 8
+    Line 1024: hit count 8
+    Line 1025: hit count 8
+    Line 1027: hit count 1
+    Line 1031: hit count 2
+    Line 1035: hit count 3
+    Line 1043: hit count 7
+    Line 1044: hit count 7
+    Line 1048: hit count 3
+    Line 1049: hit count 4
+    Line 1050: hit count 4
+    Line 1051: hit count 6
+    Line 1052: hit count 5
+    Line 1053: hit count 4
+    Line 1054: hit count 5
+    Line 1056: hit count 6
+    Line 1061: hit count 2
+    Line 1537: hit count 3
+    Line 1538: hit count 5
+    Line 1539: hit count 3
+    Line 1540: hit count 3
+    Line 1541: hit count 3
+    Line 1543: hit count 1
+    Line 1551: hit count 5
+    Line 1552: hit count 5
+    Line 1555: hit count 8
+    Line 1564: hit count 3
+    Line 1572: hit count 6
+    Line 1574: hit count 16
+    Line 1576: hit count 1
+    Line 1582: hit count 8
+    Line 1586: hit count 13
+    Line 1594: hit count 6
+    Line 1595: hit count 6
+    Line 1596: hit count 6
+    Line 1597: hit count 6
+    Line 1598: hit count 6
+    Line 1603: hit count 3
+    Line 1604: hit count 7
+    Line 1605: hit count 4
+    Line 1606: hit count 4
+    Line 1610: hit count 6
+    Line 1611: hit count 3
+    Line 1612: hit count 3
+    Line 1614: hit count 1
+    Line 1617: hit count 4
+    Line 1618: hit count 2
+    Line 1626: hit count 1
+    Line 1629: hit count 6
+    Line 1630: hit count 6
+    Line 1637: hit count 2
+    Line 1638: hit count 6
+    Line 1641: hit count 6
+    Line 1642: hit count 3
+    Line 1643: hit count 6
+    Line 1647: hit count 1
+    Line 1653: hit count 2
+    Line 1709: hit count 4
+    Line 1710: hit count 2
+    Line 1781: hit count 3
+    Line 1791: hit count 1
+    Line 2168: hit count 5
+    Line 2171: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/ListFragment.java
+  Only in first dataset lines: [192, 193, 194, 201, 202, 203, 204, 205, 207, 240, 261, 262, 275, 277, 283, 284, 333, 340, 345, 346, 347, 348, 349, 350, 351, 352, 356, 361, 362, 363, 364, 365, 366, 367, 371, 372, 373, 374, 375, 376, 378, 385, 386, 393, 398, 399, 400, 401, 402, 403, 412, 413, 416, 417, 418, 420, 421, 425, 426, 427, 432, 433, 439, 440, 441, 443, 444, 446, 450, 456, 457, 459, 466, 467, 468, 469, 470, 471, 477, 479, 483, 502, 506, 507, 508, 509, 520, 521, 524, 527, 528, 529, 531, 532, 533, 534, 536, 544, 547, 548, 555, 556, 557, 595, 596, 597, 600, 604, 608, 609, 610, 611, 612, 613, 614, 615, 618, 619, 620, 621, 624, 625, 626, 627, 628, 630, 632, 633, 637, 642, 643, 644, 646, 754, 755, 831, 832, 837, 838, 852, 866, 867, 918, 927, 928, 930, 934, 935, 938, 945, 951, 954, 955, 1178, 1181, 1277, 1278, 1279, 1283, 1330, 1397, 1399, 1401, 1404, 1407, 1409, 1411, 1415, 1419, 1424, 1426, 1427, 1430, 1431, 1432, 1435, 1436, 1437, 1438, 1442, 1449, 1450, 1451, 1452, 1456, 1457, 1458, 1460, 1461, 1688, 1690, 1691, 1693, 1694, 1699, 1700, 1701, 1702, 1705, 1706, 1707, 1708, 1710, 1711, 1713, 1715, 1716, 1803, 1805, 1806, 1807]
+    Line 192: hit count 2
+    Line 193: hit count 3
+    Line 194: hit count 1
+    Line 201: hit count 4
+    Line 202: hit count 5
+    Line 203: hit count 5
+    Line 204: hit count 5
+    Line 205: hit count 5
+    Line 207: hit count 3
+    Line 240: hit count 6
+    Line 261: hit count 5
+    Line 262: hit count 2
+    Line 275: hit count 6
+    Line 277: hit count 1
+    Line 283: hit count 3
+    Line 284: hit count 2
+    Line 333: hit count 3
+    Line 340: hit count 1
+    Line 345: hit count 2
+    Line 346: hit count 4
+    Line 347: hit count 2
+    Line 348: hit count 1
+    Line 349: hit count 3
+    Line 350: hit count 3
+    Line 351: hit count 2
+    Line 352: hit count 3
+    Line 356: hit count 1
+    Line 361: hit count 3
+    Line 362: hit count 2
+    Line 363: hit count 5
+    Line 364: hit count 5
+    Line 365: hit count 5
+    Line 366: hit count 5
+    Line 367: hit count 1
+    Line 371: hit count 3
+    Line 372: hit count 6
+    Line 373: hit count 2
+    Line 374: hit count 6
+    Line 375: hit count 1
+    Line 376: hit count 11
+    Line 378: hit count 1
+    Line 385: hit count 4
+    Line 386: hit count 3
+    Line 393: hit count 6
+    Line 398: hit count 3
+    Line 399: hit count 4
+    Line 400: hit count 4
+    Line 401: hit count 7
+    Line 402: hit count 4
+    Line 403: hit count 2
+    Line 412: hit count 11
+    Line 413: hit count 7
+    Line 416: hit count 4
+    Line 417: hit count 4
+    Line 418: hit count 4
+    Line 420: hit count 8
+    Line 421: hit count 5
+    Line 425: hit count 4
+    Line 426: hit count 2
+    Line 427: hit count 1
+    Line 432: hit count 3
+    Line 433: hit count 2
+    Line 439: hit count 13
+    Line 440: hit count 7
+    Line 441: hit count 15
+    Line 443: hit count 4
+    Line 444: hit count 5
+    Line 446: hit count 1
+    Line 450: hit count 2
+    Line 456: hit count 3
+    Line 457: hit count 3
+    Line 459: hit count 1
+    Line 466: hit count 5
+    Line 467: hit count 5
+    Line 468: hit count 5
+    Line 469: hit count 5
+    Line 470: hit count 5
+    Line 471: hit count 7
+    Line 477: hit count 2
+    Line 479: hit count 4
+    Line 483: hit count 1
+    Line 502: hit count 3
+    Line 506: hit count 8
+    Line 507: hit count 4
+    Line 508: hit count 2
+    Line 509: hit count 2
+    Line 520: hit count 2
+    Line 521: hit count 4
+    Line 524: hit count 5
+    Line 527: hit count 2
+    Line 528: hit count 6
+    Line 529: hit count 3
+    Line 531: hit count 3
+    Line 532: hit count 2
+    Line 533: hit count 3
+    Line 534: hit count 6
+    Line 536: hit count 4
+    Line 544: hit count 15
+    Line 547: hit count 5
+    Line 548: hit count 1
+    Line 555: hit count 10
+    Line 556: hit count 2
+    Line 557: hit count 1
+    Line 595: hit count 4
+    Line 596: hit count 2
+    Line 597: hit count 5
+    Line 600: hit count 11
+    Line 604: hit count 3
+    Line 608: hit count 4
+    Line 609: hit count 6
+    Line 610: hit count 6
+    Line 611: hit count 6
+    Line 612: hit count 10
+    Line 613: hit count 1
+    Line 614: hit count 5
+    Line 615: hit count 4
+    Line 618: hit count 6
+    Line 619: hit count 6
+    Line 620: hit count 6
+    Line 621: hit count 6
+    Line 624: hit count 6
+    Line 625: hit count 6
+    Line 626: hit count 6
+    Line 627: hit count 6
+    Line 628: hit count 6
+    Line 630: hit count 6
+    Line 632: hit count 2
+    Line 633: hit count 1
+    Line 637: hit count 4
+    Line 642: hit count 3
+    Line 643: hit count 3
+    Line 644: hit count 5
+    Line 646: hit count 1
+    Line 754: hit count 4
+    Line 755: hit count 3
+    Line 831: hit count 2
+    Line 832: hit count 1
+    Line 837: hit count 2
+    Line 838: hit count 1
+    Line 852: hit count 3
+    Line 866: hit count 3
+    Line 867: hit count 1
+    Line 918: hit count 4
+    Line 927: hit count 13
+    Line 928: hit count 1
+    Line 930: hit count 1
+    Line 934: hit count 3
+    Line 935: hit count 2
+    Line 938: hit count 8
+    Line 945: hit count 1
+    Line 951: hit count 2
+    Line 954: hit count 4
+    Line 955: hit count 1
+    Line 1178: hit count 3
+    Line 1181: hit count 2
+    Line 1277: hit count 6
+    Line 1278: hit count 7
+    Line 1279: hit count 13
+    Line 1283: hit count 1
+    Line 1330: hit count 3
+    Line 1397: hit count 4
+    Line 1399: hit count 3
+    Line 1401: hit count 2
+    Line 1404: hit count 4
+    Line 1407: hit count 11
+    Line 1409: hit count 2
+    Line 1411: hit count 7
+    Line 1415: hit count 3
+    Line 1419: hit count 5
+    Line 1424: hit count 1
+    Line 1426: hit count 3
+    Line 1427: hit count 2
+    Line 1430: hit count 5
+    Line 1431: hit count 5
+    Line 1432: hit count 5
+    Line 1435: hit count 2
+    Line 1436: hit count 17
+    Line 1437: hit count 3
+    Line 1438: hit count 4
+    Line 1442: hit count 1
+    Line 1449: hit count 10
+    Line 1450: hit count 10
+    Line 1451: hit count 1
+    Line 1452: hit count 1
+    Line 1456: hit count 6
+    Line 1457: hit count 3
+    Line 1458: hit count 4
+    Line 1460: hit count 12
+    Line 1461: hit count 1
+    Line 1688: hit count 9
+    Line 1690: hit count 7
+    Line 1691: hit count 3
+    Line 1693: hit count 3
+    Line 1694: hit count 6
+    Line 1699: hit count 3
+    Line 1700: hit count 3
+    Line 1701: hit count 3
+    Line 1702: hit count 3
+    Line 1705: hit count 3
+    Line 1706: hit count 3
+    Line 1707: hit count 3
+    Line 1708: hit count 3
+    Line 1710: hit count 4
+    Line 1711: hit count 3
+    Line 1713: hit count 2
+    Line 1715: hit count 3
+    Line 1716: hit count 1
+    Line 1803: hit count 2
+    Line 1805: hit count 3
+    Line 1806: hit count 5
+    Line 1807: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/MainActivity.java
+  Only in first dataset lines: [94, 142, 151, 152, 153, 277, 278, 279, 281, 288, 289, 290, 291, 293, 300, 301, 313, 314, 315, 316, 317, 321, 322, 324, 327, 329, 330, 337, 345, 346, 347, 352, 353, 354, 363, 364, 376, 377, 378, 379, 381, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 514, 591, 592, 593, 597, 598, 603, 604, 605]
+    Line 94: hit count 3
+    Line 142: hit count 3
+    Line 151: hit count 2
+    Line 152: hit count 3
+    Line 153: hit count 1
+    Line 277: hit count 5
+    Line 278: hit count 2
+    Line 279: hit count 3
+    Line 281: hit count 1
+    Line 288: hit count 2
+    Line 289: hit count 5
+    Line 290: hit count 7
+    Line 291: hit count 2
+    Line 293: hit count 2
+    Line 300: hit count 5
+    Line 301: hit count 2
+    Line 313: hit count 5
+    Line 314: hit count 2
+    Line 315: hit count 4
+    Line 316: hit count 5
+    Line 317: hit count 1
+    Line 321: hit count 5
+    Line 322: hit count 2
+    Line 324: hit count 4
+    Line 327: hit count 8
+    Line 329: hit count 4
+    Line 330: hit count 5
+    Line 337: hit count 1
+    Line 345: hit count 3
+    Line 346: hit count 5
+    Line 347: hit count 1
+    Line 352: hit count 2
+    Line 353: hit count 1
+    Line 354: hit count 1
+    Line 363: hit count 5
+    Line 364: hit count 7
+    Line 376: hit count 3
+    Line 377: hit count 3
+    Line 378: hit count 2
+    Line 379: hit count 2
+    Line 381: hit count 1
+    Line 498: hit count 4
+    Line 499: hit count 4
+    Line 500: hit count 4
+    Line 501: hit count 4
+    Line 502: hit count 4
+    Line 503: hit count 3
+    Line 504: hit count 5
+    Line 505: hit count 6
+    Line 506: hit count 1
+    Line 507: hit count 3
+    Line 514: hit count 1
+    Line 591: hit count 8
+    Line 592: hit count 2
+    Line 593: hit count 1
+    Line 597: hit count 6
+    Line 598: hit count 1
+    Line 603: hit count 6
+    Line 604: hit count 10
+    Line 605: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/NavigationDrawerFragment.java
+  Only in first dataset lines: [77, 78, 79, 106, 117, 118, 136, 137, 139, 141, 184, 185, 189, 190, 191, 229, 230, 233, 234, 235, 236, 237, 238, 239, 240, 242]
+    Line 77: hit count 2
+    Line 78: hit count 3
+    Line 79: hit count 1
+    Line 106: hit count 2
+    Line 117: hit count 3
+    Line 118: hit count 1
+    Line 136: hit count 5
+    Line 137: hit count 4
+    Line 139: hit count 3
+    Line 141: hit count 1
+    Line 184: hit count 4
+    Line 185: hit count 1
+    Line 189: hit count 4
+    Line 190: hit count 4
+    Line 191: hit count 1
+    Line 229: hit count 3
+    Line 230: hit count 5
+    Line 233: hit count 18
+    Line 234: hit count 4
+    Line 235: hit count 5
+    Line 236: hit count 6
+    Line 237: hit count 1
+    Line 238: hit count 5
+    Line 239: hit count 4
+    Line 240: hit count 2
+    Line 242: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/SettingsActivity.java
+  Only in first dataset lines: [33, 36, 43, 45, 46, 47, 49, 50, 51, 52, 56, 57, 58, 59, 60, 72, 75, 77, 97, 98, 100, 101, 102, 103, 104, 106, 107, 108, 109, 110]
+    Line 33: hit count 2
+    Line 36: hit count 6
+    Line 43: hit count 3
+    Line 45: hit count 5
+    Line 46: hit count 4
+    Line 47: hit count 3
+    Line 49: hit count 2
+    Line 50: hit count 7
+    Line 51: hit count 3
+    Line 52: hit count 1
+    Line 56: hit count 6
+    Line 57: hit count 7
+    Line 58: hit count 4
+    Line 59: hit count 4
+    Line 60: hit count 1
+    Line 72: hit count 4
+    Line 75: hit count 2
+    Line 77: hit count 1
+    Line 97: hit count 4
+    Line 98: hit count 5
+    Line 100: hit count 6
+    Line 101: hit count 2
+    Line 102: hit count 1
+    Line 103: hit count 3
+    Line 104: hit count 4
+    Line 106: hit count 5
+    Line 107: hit count 2
+    Line 108: hit count 1
+    Line 109: hit count 2
+    Line 110: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/SettingsFragment.java
+  Only in first dataset lines: [91, 102, 103, 104, 106, 107, 109, 110, 115, 118, 119, 120, 121, 122, 123, 124, 125, 128, 129, 130, 132, 147, 149, 152, 153, 154, 155, 167, 168, 169, 170, 172, 183, 184, 185, 186, 249, 250, 251, 285, 286, 287, 292, 293, 294, 296, 309, 310, 315, 316, 317, 321, 322, 323, 324, 325, 334, 335, 336, 344, 345, 346, 347, 348, 352, 363, 364, 377, 378, 395, 396, 397, 398, 399, 400, 401, 402, 414, 415, 434, 435, 467, 468, 482, 484, 489, 490, 491, 495, 499, 500, 501, 523, 524, 540, 541, 542, 552]
+    Line 91: hit count 3
+    Line 102: hit count 3
+    Line 103: hit count 2
+    Line 104: hit count 8
+    Line 106: hit count 5
+    Line 107: hit count 4
+    Line 109: hit count 3
+    Line 110: hit count 1
+    Line 115: hit count 1
+    Line 118: hit count 4
+    Line 119: hit count 8
+    Line 120: hit count 5
+    Line 121: hit count 3
+    Line 122: hit count 6
+    Line 123: hit count 5
+    Line 124: hit count 2
+    Line 125: hit count 7
+    Line 128: hit count 6
+    Line 129: hit count 2
+    Line 130: hit count 3
+    Line 132: hit count 1
+    Line 147: hit count 2
+    Line 149: hit count 2
+    Line 152: hit count 4
+    Line 153: hit count 2
+    Line 154: hit count 3
+    Line 155: hit count 4
+    Line 167: hit count 4
+    Line 168: hit count 2
+    Line 169: hit count 5
+    Line 170: hit count 5
+    Line 172: hit count 4
+    Line 183: hit count 4
+    Line 184: hit count 2
+    Line 185: hit count 3
+    Line 186: hit count 4
+    Line 249: hit count 4
+    Line 250: hit count 2
+    Line 251: hit count 4
+    Line 285: hit count 5
+    Line 286: hit count 2
+    Line 287: hit count 4
+    Line 292: hit count 3
+    Line 293: hit count 2
+    Line 294: hit count 4
+    Line 296: hit count 5
+    Line 309: hit count 5
+    Line 310: hit count 2
+    Line 315: hit count 5
+    Line 316: hit count 2
+    Line 317: hit count 3
+    Line 321: hit count 5
+    Line 322: hit count 2
+    Line 323: hit count 14
+    Line 324: hit count 4
+    Line 325: hit count 5
+    Line 334: hit count 4
+    Line 335: hit count 2
+    Line 336: hit count 4
+    Line 344: hit count 5
+    Line 345: hit count 2
+    Line 346: hit count 4
+    Line 347: hit count 3
+    Line 348: hit count 4
+    Line 352: hit count 5
+    Line 363: hit count 5
+    Line 364: hit count 2
+    Line 377: hit count 5
+    Line 378: hit count 2
+    Line 395: hit count 5
+    Line 396: hit count 2
+    Line 397: hit count 3
+    Line 398: hit count 3
+    Line 399: hit count 3
+    Line 400: hit count 4
+    Line 401: hit count 3
+    Line 402: hit count 5
+    Line 414: hit count 5
+    Line 415: hit count 2
+    Line 434: hit count 4
+    Line 435: hit count 2
+    Line 467: hit count 5
+    Line 468: hit count 2
+    Line 482: hit count 4
+    Line 484: hit count 2
+    Line 489: hit count 4
+    Line 490: hit count 2
+    Line 491: hit count 4
+    Line 495: hit count 5
+    Line 499: hit count 4
+    Line 500: hit count 2
+    Line 501: hit count 4
+    Line 523: hit count 5
+    Line 524: hit count 2
+    Line 540: hit count 4
+    Line 541: hit count 2
+    Line 542: hit count 4
+    Line 552: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/async/CategoryMenuTask.java
+  Only in first dataset lines: [135, 136, 137]
+    Line 135: hit count 7
+    Line 136: hit count 4
+    Line 137: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/async/UpdateWidgetsTask.java
+  Only in first dataset lines: [31, 32, 33, 37, 38, 43, 44, 45, 48, 49, 50]
+    Line 31: hit count 2
+    Line 32: hit count 6
+    Line 33: hit count 1
+    Line 37: hit count 5
+    Line 38: hit count 2
+    Line 43: hit count 5
+    Line 44: hit count 3
+    Line 45: hit count 1
+    Line 48: hit count 6
+    Line 49: hit count 3
+    Line 50: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/async/bus/NotesUpdatedEvent.java
+  Only in first dataset lines: [34, 35, 36, 37]
+    Line 34: hit count 2
+    Line 35: hit count 4
+    Line 36: hit count 3
+    Line 37: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/async/bus/SwitchFragmentEvent.java
+  Only in first dataset lines: [26, 27, 30, 34, 35, 36, 37]
+    Line 26: hit count 3
+    Line 27: hit count 12
+    Line 30: hit count 3
+    Line 34: hit count 2
+    Line 35: hit count 4
+    Line 36: hit count 3
+    Line 37: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/async/notes/NoteLoaderTask.java
+  Only in first dataset lines: [45]
+    Line 45: hit count 5
+----------------------------------------
+File: it/feio/android/omninotes/async/notes/NoteProcessor.java
+  Only in first dataset lines: [33, 34, 35, 39, 40, 41, 47, 51, 52, 53, 54, 55, 61, 62, 67, 68]
+    Line 33: hit count 2
+    Line 34: hit count 6
+    Line 35: hit count 1
+    Line 39: hit count 5
+    Line 40: hit count 11
+    Line 41: hit count 1
+    Line 47: hit count 6
+    Line 51: hit count 4
+    Line 52: hit count 10
+    Line 53: hit count 4
+    Line 54: hit count 1
+    Line 55: hit count 2
+    Line 61: hit count 4
+    Line 62: hit count 1
+    Line 67: hit count 6
+    Line 68: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/async/notes/NoteProcessorArchive.java
+  Only in first dataset lines: [31, 32, 33, 38, 39]
+    Line 31: hit count 3
+    Line 32: hit count 3
+    Line 33: hit count 1
+    Line 38: hit count 5
+    Line 39: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/async/notes/SaveNoteTask.java
+  Only in first dataset lines: [37, 47, 48, 49, 50, 51, 56, 57, 58, 59, 62, 63, 66, 71, 72, 82, 86, 102, 103, 104, 106]
+    Line 37: hit count 3
+    Line 47: hit count 2
+    Line 48: hit count 3
+    Line 49: hit count 3
+    Line 50: hit count 3
+    Line 51: hit count 1
+    Line 56: hit count 4
+    Line 57: hit count 3
+    Line 58: hit count 4
+    Line 59: hit count 2
+    Line 62: hit count 6
+    Line 63: hit count 2
+    Line 66: hit count 2
+    Line 71: hit count 3
+    Line 72: hit count 7
+    Line 82: hit count 6
+    Line 86: hit count 1
+    Line 102: hit count 3
+    Line 103: hit count 3
+    Line 104: hit count 4
+    Line 106: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/databinding/ActivitySettingsBinding.java
+  Only in first dataset lines: [33, 34, 35, 36, 37, 38, 43, 48, 54, 55, 58, 67, 68, 69, 73, 74, 75, 78, 80, 81, 82, 85, 87]
+    Line 33: hit count 2
+    Line 34: hit count 3
+    Line 35: hit count 3
+    Line 36: hit count 3
+    Line 37: hit count 3
+    Line 38: hit count 1
+    Line 43: hit count 3
+    Line 48: hit count 5
+    Line 54: hit count 6
+    Line 55: hit count 2
+    Line 58: hit count 3
+    Line 67: hit count 2
+    Line 68: hit count 5
+    Line 69: hit count 2
+    Line 73: hit count 2
+    Line 74: hit count 4
+    Line 75: hit count 2
+    Line 78: hit count 3
+    Line 80: hit count 2
+    Line 81: hit count 4
+    Line 82: hit count 2
+    Line 85: hit count 3
+    Line 87: hit count 9
+----------------------------------------
+File: it/feio/android/omninotes/databinding/FragmentDetailBinding.java
+  Only in first dataset lines: [80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 102, 113, 114, 117, 126, 127, 128, 132, 133, 134, 138, 139, 140, 144, 145, 146, 150, 151, 152, 156, 157, 158, 162, 163, 164, 168, 169, 170, 174, 175, 176, 180, 181, 182, 186, 187, 188, 191, 193, 194, 195, 199, 200, 201, 205, 206, 207, 211, 212, 213, 217]
+    Line 80: hit count 2
+    Line 81: hit count 3
+    Line 82: hit count 3
+    Line 83: hit count 3
+    Line 84: hit count 3
+    Line 85: hit count 3
+    Line 86: hit count 3
+    Line 87: hit count 3
+    Line 88: hit count 3
+    Line 89: hit count 3
+    Line 90: hit count 3
+    Line 91: hit count 3
+    Line 92: hit count 3
+    Line 93: hit count 3
+    Line 94: hit count 3
+    Line 95: hit count 3
+    Line 96: hit count 3
+    Line 97: hit count 1
+    Line 102: hit count 3
+    Line 113: hit count 6
+    Line 114: hit count 2
+    Line 117: hit count 3
+    Line 126: hit count 2
+    Line 127: hit count 5
+    Line 128: hit count 2
+    Line 132: hit count 2
+    Line 133: hit count 5
+    Line 134: hit count 2
+    Line 138: hit count 2
+    Line 139: hit count 5
+    Line 140: hit count 2
+    Line 144: hit count 2
+    Line 145: hit count 5
+    Line 146: hit count 2
+    Line 150: hit count 2
+    Line 151: hit count 5
+    Line 152: hit count 2
+    Line 156: hit count 2
+    Line 157: hit count 5
+    Line 158: hit count 2
+    Line 162: hit count 2
+    Line 163: hit count 5
+    Line 164: hit count 2
+    Line 168: hit count 2
+    Line 169: hit count 5
+    Line 170: hit count 2
+    Line 174: hit count 2
+    Line 175: hit count 5
+    Line 176: hit count 2
+    Line 180: hit count 2
+    Line 181: hit count 5
+    Line 182: hit count 2
+    Line 186: hit count 2
+    Line 187: hit count 4
+    Line 188: hit count 2
+    Line 191: hit count 3
+    Line 193: hit count 2
+    Line 194: hit count 5
+    Line 195: hit count 2
+    Line 199: hit count 2
+    Line 200: hit count 5
+    Line 201: hit count 2
+    Line 205: hit count 2
+    Line 206: hit count 4
+    Line 207: hit count 2
+    Line 211: hit count 2
+    Line 212: hit count 5
+    Line 213: hit count 2
+    Line 217: hit count 21
+----------------------------------------
+File: it/feio/android/omninotes/databinding/FragmentDetailContentBinding.java
+  Only in first dataset lines: [41, 42, 43, 44, 45, 46, 47, 48, 77, 78, 79, 83, 84, 85, 89, 90, 91, 95, 96, 97, 101, 102, 103, 107]
+    Line 41: hit count 2
+    Line 42: hit count 3
+    Line 43: hit count 3
+    Line 44: hit count 3
+    Line 45: hit count 3
+    Line 46: hit count 3
+    Line 47: hit count 3
+    Line 48: hit count 1
+    Line 77: hit count 2
+    Line 78: hit count 5
+    Line 79: hit count 2
+    Line 83: hit count 2
+    Line 84: hit count 5
+    Line 85: hit count 2
+    Line 89: hit count 2
+    Line 90: hit count 5
+    Line 91: hit count 2
+    Line 95: hit count 2
+    Line 96: hit count 5
+    Line 97: hit count 2
+    Line 101: hit count 2
+    Line 102: hit count 5
+    Line 103: hit count 2
+    Line 107: hit count 11
+----------------------------------------
+File: it/feio/android/omninotes/databinding/NoteLayoutBinding.java
+  Only in first dataset lines: [61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 103, 104, 105, 109, 110, 111, 115, 116, 117, 121, 122, 123, 127, 128, 129, 133, 134, 135, 139, 140, 141, 145, 146, 147, 151, 152, 153, 157, 158, 159, 163, 165]
+    Line 61: hit count 2
+    Line 62: hit count 3
+    Line 63: hit count 3
+    Line 64: hit count 3
+    Line 65: hit count 3
+    Line 66: hit count 3
+    Line 67: hit count 3
+    Line 68: hit count 3
+    Line 69: hit count 3
+    Line 70: hit count 3
+    Line 71: hit count 3
+    Line 72: hit count 3
+    Line 73: hit count 3
+    Line 74: hit count 1
+    Line 103: hit count 2
+    Line 104: hit count 5
+    Line 105: hit count 2
+    Line 109: hit count 2
+    Line 110: hit count 5
+    Line 111: hit count 2
+    Line 115: hit count 2
+    Line 116: hit count 5
+    Line 117: hit count 2
+    Line 121: hit count 2
+    Line 122: hit count 5
+    Line 123: hit count 2
+    Line 127: hit count 2
+    Line 128: hit count 4
+    Line 129: hit count 2
+    Line 133: hit count 2
+    Line 134: hit count 5
+    Line 135: hit count 2
+    Line 139: hit count 2
+    Line 140: hit count 5
+    Line 141: hit count 2
+    Line 145: hit count 2
+    Line 146: hit count 5
+    Line 147: hit count 2
+    Line 151: hit count 2
+    Line 152: hit count 5
+    Line 153: hit count 2
+    Line 157: hit count 2
+    Line 158: hit count 5
+    Line 159: hit count 2
+    Line 163: hit count 3
+    Line 165: hit count 17
+----------------------------------------
+File: it/feio/android/omninotes/databinding/NoteLayoutExpandedBinding.java
+  Only in first dataset lines: [62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 104, 105, 106, 110, 111, 112, 116, 117, 118, 122, 123, 124, 128, 129, 130, 134, 135, 136, 140, 141, 142, 146, 147, 148, 152, 153, 154, 158, 159, 160, 164, 166]
+    Line 62: hit count 2
+    Line 63: hit count 3
+    Line 64: hit count 3
+    Line 65: hit count 3
+    Line 66: hit count 3
+    Line 67: hit count 3
+    Line 68: hit count 3
+    Line 69: hit count 3
+    Line 70: hit count 3
+    Line 71: hit count 3
+    Line 72: hit count 3
+    Line 73: hit count 3
+    Line 74: hit count 3
+    Line 75: hit count 1
+    Line 104: hit count 2
+    Line 105: hit count 5
+    Line 106: hit count 2
+    Line 110: hit count 2
+    Line 111: hit count 5
+    Line 112: hit count 2
+    Line 116: hit count 2
+    Line 117: hit count 5
+    Line 118: hit count 2
+    Line 122: hit count 2
+    Line 123: hit count 5
+    Line 124: hit count 2
+    Line 128: hit count 2
+    Line 129: hit count 4
+    Line 130: hit count 2
+    Line 134: hit count 2
+    Line 135: hit count 5
+    Line 136: hit count 2
+    Line 140: hit count 2
+    Line 141: hit count 5
+    Line 142: hit count 2
+    Line 146: hit count 2
+    Line 147: hit count 5
+    Line 148: hit count 2
+    Line 152: hit count 2
+    Line 153: hit count 5
+    Line 154: hit count 2
+    Line 158: hit count 2
+    Line 159: hit count 5
+    Line 160: hit count 2
+    Line 164: hit count 3
+    Line 166: hit count 17
+----------------------------------------
+File: it/feio/android/omninotes/db/DbHelper.java
+  Only in first dataset lines: [216, 218, 220, 223, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 246, 247, 250, 251, 257, 262, 263, 266, 267, 268, 270, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 468, 474, 475, 482, 485, 487, 501, 502, 503, 647, 648, 691, 699, 700, 702, 703, 705, 706, 707, 709, 717, 722, 723, 799, 800, 811, 814, 817, 828, 829, 832]
+    Line 216: hit count 5
+    Line 218: hit count 5
+    Line 220: hit count 3
+    Line 223: hit count 3
+    Line 225: hit count 4
+    Line 226: hit count 5
+    Line 227: hit count 4
+    Line 228: hit count 3
+    Line 229: hit count 10
+    Line 230: hit count 5
+    Line 231: hit count 4
+    Line 232: hit count 3
+    Line 233: hit count 5
+    Line 234: hit count 5
+    Line 235: hit count 5
+    Line 236: hit count 5
+    Line 237: hit count 5
+    Line 238: hit count 5
+    Line 239: hit count 5
+    Line 240: hit count 5
+    Line 241: hit count 5
+    Line 242: hit count 7
+    Line 243: hit count 12
+    Line 244: hit count 12
+    Line 246: hit count 8
+    Line 247: hit count 12
+    Line 250: hit count 3
+    Line 251: hit count 7
+    Line 257: hit count 6
+    Line 262: hit count 3
+    Line 263: hit count 3
+    Line 266: hit count 2
+    Line 267: hit count 9
+    Line 268: hit count 5
+    Line 270: hit count 2
+    Line 450: hit count 2
+    Line 451: hit count 4
+    Line 452: hit count 7
+    Line 453: hit count 7
+    Line 454: hit count 6
+    Line 455: hit count 6
+    Line 456: hit count 9
+    Line 457: hit count 9
+    Line 458: hit count 6
+    Line 459: hit count 6
+    Line 460: hit count 6
+    Line 461: hit count 6
+    Line 462: hit count 6
+    Line 463: hit count 6
+    Line 464: hit count 9
+    Line 465: hit count 9
+    Line 468: hit count 5
+    Line 474: hit count 5
+    Line 475: hit count 4
+    Line 482: hit count 5
+    Line 485: hit count 4
+    Line 487: hit count 3
+    Line 501: hit count 4
+    Line 502: hit count 5
+    Line 503: hit count 1
+    Line 647: hit count 10
+    Line 648: hit count 4
+    Line 691: hit count 4
+    Line 699: hit count 4
+    Line 700: hit count 4
+    Line 702: hit count 5
+    Line 703: hit count 18
+    Line 705: hit count 3
+    Line 706: hit count 6
+    Line 707: hit count 5
+    Line 709: hit count 6
+    Line 717: hit count 7
+    Line 722: hit count 3
+    Line 723: hit count 2
+    Line 799: hit count 4
+    Line 800: hit count 9
+    Line 811: hit count 2
+    Line 814: hit count 6
+    Line 817: hit count 3
+    Line 828: hit count 2
+    Line 829: hit count 2
+    Line 832: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/helpers/AppVersionHelper.java
+  Only in first dataset lines: [58]
+    Line 58: hit count 8
+----------------------------------------
+File: it/feio/android/omninotes/helpers/BackupHelper.java
+  Only in first dataset lines: [324, 325, 326]
+    Line 324: hit count 4
+    Line 325: hit count 6
+    Line 326: hit count 7
+----------------------------------------
+File: it/feio/android/omninotes/helpers/date/DateHelper.java
+  Only in first dataset lines: [113, 114]
+    Line 113: hit count 2
+    Line 114: hit count 3
+----------------------------------------
+File: it/feio/android/omninotes/models/NavigationItem.java
+  Only in first dataset lines: [58]
+    Line 58: hit count 3
+----------------------------------------
+File: it/feio/android/omninotes/models/Note.java
+  Only in first dataset lines: [34, 46, 50, 51, 67, 68, 69, 102, 122, 130, 134, 135, 140, 147, 150, 151]
+    Line 34: hit count 8
+    Line 46: hit count 6
+    Line 50: hit count 2
+    Line 51: hit count 1
+    Line 67: hit count 3
+    Line 68: hit count 4
+    Line 69: hit count 1
+    Line 102: hit count 3
+    Line 122: hit count 3
+    Line 130: hit count 3
+    Line 134: hit count 3
+    Line 135: hit count 1
+    Line 140: hit count 4
+    Line 147: hit count 2
+    Line 150: hit count 3
+    Line 151: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/ONStyle.java
+  Only in first dataset lines: [51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84]
+    Line 51: hit count 4
+    Line 52: hit count 2
+    Line 53: hit count 2
+    Line 54: hit count 1
+    Line 55: hit count 2
+    Line 56: hit count 4
+    Line 57: hit count 2
+    Line 58: hit count 2
+    Line 59: hit count 2
+    Line 60: hit count 2
+    Line 61: hit count 1
+    Line 62: hit count 2
+    Line 63: hit count 4
+    Line 64: hit count 2
+    Line 65: hit count 2
+    Line 66: hit count 2
+    Line 67: hit count 2
+    Line 68: hit count 1
+    Line 69: hit count 2
+    Line 70: hit count 4
+    Line 71: hit count 2
+    Line 72: hit count 2
+    Line 73: hit count 2
+    Line 74: hit count 2
+    Line 75: hit count 1
+    Line 76: hit count 2
+    Line 77: hit count 4
+    Line 78: hit count 2
+    Line 79: hit count 2
+    Line 80: hit count 2
+    Line 81: hit count 2
+    Line 82: hit count 1
+    Line 83: hit count 2
+    Line 84: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/PasswordValidator.java
+  Only in first dataset lines: [22, 23]
+    Line 22: hit count 3
+    Line 23: hit count 18
+----------------------------------------
+File: it/feio/android/omninotes/models/UndoBarController.java
+  Only in first dataset lines: [81, 82, 83, 89, 90, 94, 95, 96, 97, 98, 99, 100, 102, 103]
+    Line 81: hit count 3
+    Line 82: hit count 3
+    Line 83: hit count 5
+    Line 89: hit count 4
+    Line 90: hit count 2
+    Line 94: hit count 3
+    Line 95: hit count 3
+    Line 96: hit count 3
+    Line 97: hit count 2
+    Line 98: hit count 2
+    Line 99: hit count 2
+    Line 100: hit count 2
+    Line 102: hit count 3
+    Line 103: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/adapters/AttachmentAdapter.java
+  Only in first dataset lines: [51, 52, 53, 56, 57, 58, 61]
+    Line 51: hit count 2
+    Line 52: hit count 3
+    Line 53: hit count 2
+    Line 56: hit count 3
+    Line 57: hit count 6
+    Line 58: hit count 1
+    Line 61: hit count 4
+----------------------------------------
+File: it/feio/android/omninotes/models/adapters/NavDrawerAdapter.java
+  Only in first dataset lines: [95, 96, 97]
+    Line 95: hit count 9
+    Line 96: hit count 5
+    Line 97: hit count 8
+----------------------------------------
+File: it/feio/android/omninotes/models/adapters/NoteAdapter.java
+  Only in first dataset lines: [75, 79, 81, 86, 88, 89, 90, 103, 112, 113, 114, 119, 121, 122, 123, 126, 128, 130, 131, 132, 134, 139, 144, 145, 146, 147, 148, 152, 157, 158, 188, 193, 194, 203, 204, 213, 214, 215, 216, 217, 218, 219, 233, 236, 239, 242, 255, 258, 275, 276, 277, 278, 281, 282, 283, 284, 286, 289, 293, 305, 306, 307, 309, 312, 317, 318, 319, 320, 321, 322, 323]
+    Line 75: hit count 5
+    Line 79: hit count 6
+    Line 81: hit count 1
+    Line 86: hit count 6
+    Line 88: hit count 5
+    Line 89: hit count 3
+    Line 90: hit count 5
+    Line 103: hit count 1
+    Line 112: hit count 7
+    Line 113: hit count 4
+    Line 114: hit count 1
+    Line 119: hit count 8
+    Line 121: hit count 2
+    Line 122: hit count 4
+    Line 123: hit count 1
+    Line 126: hit count 7
+    Line 128: hit count 8
+    Line 130: hit count 3
+    Line 131: hit count 2
+    Line 132: hit count 6
+    Line 134: hit count 1
+    Line 139: hit count 4
+    Line 144: hit count 5
+    Line 145: hit count 6
+    Line 146: hit count 6
+    Line 147: hit count 6
+    Line 148: hit count 5
+    Line 152: hit count 4
+    Line 157: hit count 1
+    Line 158: hit count 1
+    Line 188: hit count 3
+    Line 193: hit count 6
+    Line 194: hit count 1
+    Line 203: hit count 3
+    Line 204: hit count 1
+    Line 213: hit count 3
+    Line 214: hit count 3
+    Line 215: hit count 3
+    Line 216: hit count 3
+    Line 217: hit count 6
+    Line 218: hit count 5
+    Line 219: hit count 1
+    Line 233: hit count 4
+    Line 236: hit count 4
+    Line 239: hit count 4
+    Line 242: hit count 3
+    Line 255: hit count 5
+    Line 258: hit count 1
+    Line 275: hit count 10
+    Line 276: hit count 3
+    Line 277: hit count 1
+    Line 278: hit count 1
+    Line 281: hit count 4
+    Line 282: hit count 2
+    Line 283: hit count 5
+    Line 284: hit count 3
+    Line 286: hit count 1
+    Line 289: hit count 5
+    Line 293: hit count 6
+    Line 305: hit count 3
+    Line 306: hit count 6
+    Line 307: hit count 3
+    Line 309: hit count 8
+    Line 312: hit count 7
+    Line 317: hit count 6
+    Line 318: hit count 4
+    Line 319: hit count 4
+    Line 320: hit count 4
+    Line 321: hit count 4
+    Line 322: hit count 5
+    Line 323: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/holders/NoteViewHolder.java
+  Only in first dataset lines: [50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 84]
+    Line 50: hit count 3
+    Line 52: hit count 2
+    Line 53: hit count 3
+    Line 54: hit count 4
+    Line 55: hit count 4
+    Line 56: hit count 4
+    Line 57: hit count 4
+    Line 58: hit count 4
+    Line 59: hit count 4
+    Line 60: hit count 4
+    Line 61: hit count 4
+    Line 62: hit count 4
+    Line 63: hit count 4
+    Line 64: hit count 4
+    Line 65: hit count 4
+    Line 66: hit count 4
+    Line 67: hit count 1
+    Line 68: hit count 3
+    Line 69: hit count 4
+    Line 70: hit count 4
+    Line 71: hit count 4
+    Line 72: hit count 4
+    Line 73: hit count 4
+    Line 74: hit count 4
+    Line 75: hit count 4
+    Line 76: hit count 4
+    Line 77: hit count 4
+    Line 78: hit count 4
+    Line 79: hit count 4
+    Line 80: hit count 4
+    Line 81: hit count 4
+    Line 84: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/listeners/RecyclerViewItemClickSupport.java
+  Only in first dataset lines: [42, 43, 44, 45, 54, 55, 57, 58, 60, 65]
+    Line 42: hit count 4
+    Line 43: hit count 6
+    Line 44: hit count 8
+    Line 45: hit count 3
+    Line 54: hit count 4
+    Line 55: hit count 5
+    Line 57: hit count 4
+    Line 58: hit count 5
+    Line 60: hit count 1
+    Line 65: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/misc/DynamicNavigationLookupTable.java
+  Only in first dataset lines: [58, 60, 61, 62, 65, 66, 76, 77]
+    Line 58: hit count 8
+    Line 60: hit count 8
+    Line 61: hit count 7
+    Line 62: hit count 6
+    Line 65: hit count 6
+    Line 66: hit count 6
+    Line 76: hit count 2
+    Line 77: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/views/ExpandableHeightGridView.java
+  Only in first dataset lines: [37, 38, 56, 58, 60, 61, 65, 75, 76, 78, 83]
+    Line 37: hit count 4
+    Line 38: hit count 1
+    Line 56: hit count 4
+    Line 58: hit count 4
+    Line 60: hit count 3
+    Line 61: hit count 4
+    Line 65: hit count 1
+    Line 75: hit count 4
+    Line 76: hit count 5
+    Line 78: hit count 3
+    Line 83: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/models/views/Fab.java
+  Only in first dataset lines: [64, 67, 69, 82, 84, 88, 90, 106, 107, 108, 127, 128, 129, 131, 132, 134, 163, 164, 165, 166, 168]
+    Line 64: hit count 6
+    Line 67: hit count 2
+    Line 69: hit count 1
+    Line 82: hit count 2
+    Line 84: hit count 2
+    Line 88: hit count 2
+    Line 90: hit count 1
+    Line 106: hit count 8
+    Line 107: hit count 3
+    Line 108: hit count 1
+    Line 127: hit count 6
+    Line 128: hit count 3
+    Line 129: hit count 12
+    Line 131: hit count 3
+    Line 132: hit count 3
+    Line 134: hit count 1
+    Line 163: hit count 2
+    Line 164: hit count 3
+    Line 165: hit count 3
+    Line 166: hit count 4
+    Line 168: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/models/views/InterceptorLinearLayout.java
+  Only in first dataset lines: [44, 45, 47]
+    Line 44: hit count 3
+    Line 45: hit count 4
+    Line 47: hit count 4
+----------------------------------------
+File: it/feio/android/omninotes/models/views/RecyclerViewEmptySupport.java
+  Only in first dataset lines: [40, 41]
+    Line 40: hit count 5
+    Line 41: hit count 4
+----------------------------------------
+File: it/feio/android/omninotes/models/views/SquareImageView.java
+  Only in first dataset lines: [39, 40]
+    Line 39: hit count 4
+    Line 40: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/utils/AnimationsHelper.java
+  Only in first dataset lines: [43, 44, 47, 48, 49, 56, 57, 58, 59, 66, 67, 76, 77, 78, 79, 80, 86, 87, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+    Line 43: hit count 3
+    Line 44: hit count 3
+    Line 47: hit count 4
+    Line 48: hit count 4
+    Line 49: hit count 4
+    Line 56: hit count 4
+    Line 57: hit count 5
+    Line 58: hit count 8
+    Line 59: hit count 8
+    Line 66: hit count 8
+    Line 67: hit count 8
+    Line 76: hit count 8
+    Line 77: hit count 6
+    Line 78: hit count 8
+    Line 79: hit count 8
+    Line 80: hit count 8
+    Line 86: hit count 3
+    Line 87: hit count 3
+    Line 91: hit count 4
+    Line 92: hit count 35
+    Line 93: hit count 14
+    Line 94: hit count 14
+    Line 95: hit count 3
+    Line 96: hit count 4
+    Line 97: hit count 5
+    Line 98: hit count 3
+    Line 99: hit count 2
+    Line 100: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/utils/GeocodeHelper.java
+  Only in first dataset lines: [120, 121, 122, 124]
+    Line 120: hit count 4
+    Line 121: hit count 2
+    Line 122: hit count 4
+    Line 124: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/utils/IntentChecker.java
+  Only in first dataset lines: [77]
+    Line 77: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/utils/KeyboardUtils.java
+  Only in first dataset lines: [34, 38, 40, 42, 44, 45, 47, 50, 54, 57, 59, 64, 67, 68, 69, 72, 73]
+    Line 34: hit count 2
+    Line 38: hit count 3
+    Line 40: hit count 6
+    Line 42: hit count 5
+    Line 44: hit count 7
+    Line 45: hit count 2
+    Line 47: hit count 3
+    Line 50: hit count 1
+    Line 54: hit count 2
+    Line 57: hit count 6
+    Line 59: hit count 4
+    Line 64: hit count 2
+    Line 67: hit count 3
+    Line 68: hit count 3
+    Line 69: hit count 3
+    Line 72: hit count 6
+    Line 73: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/utils/Navigation.java
+  Only in first dataset lines: [100, 101]
+    Line 100: hit count 2
+    Line 101: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/utils/ResourcesUtils.java
+  Only in first dataset lines: [25, 30, 31, 32]
+    Line 25: hit count 21
+    Line 30: hit count 5
+    Line 31: hit count 4
+    Line 32: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/utils/TagsHelper.java
+  Only in first dataset lines: [42]
+    Line 42: hit count 3
+----------------------------------------
+File: it/feio/android/omninotes/utils/TextHelper.java
+  Only in first dataset lines: [49, 51, 52, 55, 66, 72, 75, 80, 81, 83, 84, 90, 127, 130, 133, 149, 150, 153]
+    Line 49: hit count 2
+    Line 51: hit count 3
+    Line 52: hit count 8
+    Line 55: hit count 5
+    Line 66: hit count 8
+    Line 72: hit count 5
+    Line 75: hit count 14
+    Line 80: hit count 5
+    Line 81: hit count 5
+    Line 83: hit count 8
+    Line 84: hit count 3
+    Line 90: hit count 3
+    Line 127: hit count 3
+    Line 130: hit count 4
+    Line 133: hit count 8
+    Line 149: hit count 14
+    Line 150: hit count 4
+    Line 153: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/utils/date/DateUtils.java
+  Only in first dataset lines: [173, 193, 194, 199, 200, 202, 203, 204, 205, 207]
+    Line 173: hit count 5
+    Line 193: hit count 3
+    Line 194: hit count 4
+    Line 199: hit count 2
+    Line 200: hit count 2
+    Line 202: hit count 6
+    Line 203: hit count 4
+    Line 204: hit count 2
+    Line 205: hit count 4
+    Line 207: hit count 4
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes
+
+FAIL continuation:
+Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_create_note_for_archive → Input: PK1NFn → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_data_setting → Back → Pass: test_data_setting → Start: test_create_note_for_archive → Input: ybRO77I → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_create_note_for_archive → Input: tkRMFlCd → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_reduced_view → Pass: test_reduced_view → Random operation: LONG_CLICK → Start: test_archive_note_removes_from_main_list → Pass: test_archive_note_removes_from_main_list → Start: test_search_does_not_show_archived_notes → Fail: test_search_does_not_show_archived_notes → Start: test_reduced_view → Pass: test_reduced_view → Start: test_search_does_not_show_archived_notes → Fail: test_search_does_not_show_archived_notes → Start: test_reduced_view
+
+## Correct Execution Path
+Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes
+
+## Error Execution Path
+Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: SCROLL_BOTTOM_UP → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: SCROLL_BOTTOM_UP → Random operation: CLICK → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_create_note_for_archive → Input: PK1NFn → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_data_setting → Back → Pass: test_data_setting → Start: test_create_note_for_archive → Input: ybRO77I → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_create_note_for_archive → Input: tkRMFlCd → Back → Pass: test_create_note_for_archive → Start: test_search_does_not_show_archived_notes → Pass: test_search_does_not_show_archived_notes → Start: test_reduced_view → Pass: test_reduced_view → Random operation: LONG_CLICK → Start: test_archive_note_removes_from_main_list → Pass: test_archive_note_removes_from_main_list → Start: test_search_does_not_show_archived_notes → Fail: test_search_does_not_show_archived_notes → Start: test_reduced_view → Pass: test_reduced_view → Start: test_search_does_not_show_archived_notes → Fail: test_search_does_not_show_archived_notes → Start: test_reduced_view
+
+## Files to Analyze
+it/feio/android/omninotes/BaseActivity.java
+  Differing lines: 19
+
+it/feio/android/omninotes/DetailFragment.java
+  Differing lines: 222
+
+it/feio/android/omninotes/ListFragment.java
+  Differing lines: 211
+
+it/feio/android/omninotes/MainActivity.java
+  Differing lines: 60
+
+it/feio/android/omninotes/NavigationDrawerFragment.java
+  Differing lines: 26
+
+it/feio/android/omninotes/SettingsActivity.java
+  Differing lines: 30
+
+it/feio/android/omninotes/SettingsFragment.java
+  Differing lines: 98
+
+it/feio/android/omninotes/async/CategoryMenuTask.java
+  Differing lines: 3
+
+it/feio/android/omninotes/async/UpdateWidgetsTask.java
+  Differing lines: 11
+
+it/feio/android/omninotes/async/bus/NotesUpdatedEvent.java
+  Differing lines: 4
+
+it/feio/android/omninotes/async/bus/SwitchFragmentEvent.java
+  Differing lines: 7
+
+it/feio/android/omninotes/async/notes/NoteLoaderTask.java
+  Differing lines: 1
+
+it/feio/android/omninotes/async/notes/NoteProcessor.java
+  Differing lines: 16
+
+it/feio/android/omninotes/async/notes/NoteProcessorArchive.java
+  Differing lines: 5
+
+it/feio/android/omninotes/async/notes/SaveNoteTask.java
+  Differing lines: 21
+
+it/feio/android/omninotes/databinding/ActivitySettingsBinding.java
+  Differing lines: 23
+
+it/feio/android/omninotes/databinding/FragmentDetailBinding.java
+  Differing lines: 69
+
+it/feio/android/omninotes/databinding/FragmentDetailContentBinding.java
+  Differing lines: 24
+
+it/feio/android/omninotes/databinding/NoteLayoutBinding.java
+  Differing lines: 46
+
+it/feio/android/omninotes/databinding/NoteLayoutExpandedBinding.java
+  Differing lines: 46
+
+it/feio/android/omninotes/db/DbHelper.java
+  Differing lines: 82
+
+it/feio/android/omninotes/helpers/AppVersionHelper.java
+  Differing lines: 1
+
+it/feio/android/omninotes/helpers/BackupHelper.java
+  Differing lines: 3
+
+it/feio/android/omninotes/helpers/date/DateHelper.java
+  Differing lines: 2
+
+it/feio/android/omninotes/models/NavigationItem.java
+  Differing lines: 1
+
+it/feio/android/omninotes/models/Note.java
+  Differing lines: 16
+
+it/feio/android/omninotes/models/ONStyle.java
+  Differing lines: 34
+
+it/feio/android/omninotes/models/PasswordValidator.java
+  Differing lines: 2
+
+it/feio/android/omninotes/models/UndoBarController.java
+  Differing lines: 14
+
+it/feio/android/omninotes/models/adapters/AttachmentAdapter.java
+  Differing lines: 7
+
+it/feio/android/omninotes/models/adapters/NavDrawerAdapter.java
+  Differing lines: 3
+
+it/feio/android/omninotes/models/adapters/NoteAdapter.java
+  Differing lines: 71
+
+it/feio/android/omninotes/models/holders/NoteViewHolder.java
+  Differing lines: 32
+
+it/feio/android/omninotes/models/listeners/RecyclerViewItemClickSupport.java
+  Differing lines: 10
+
+it/feio/android/omninotes/models/misc/DynamicNavigationLookupTable.java
+  Differing lines: 8
+
+it/feio/android/omninotes/models/views/ExpandableHeightGridView.java
+  Differing lines: 11
+
+it/feio/android/omninotes/models/views/Fab.java
+  Differing lines: 21
+
+it/feio/android/omninotes/models/views/InterceptorLinearLayout.java
+  Differing lines: 3
+
+it/feio/android/omninotes/models/views/RecyclerViewEmptySupport.java
+  Differing lines: 2
+
+it/feio/android/omninotes/models/views/SquareImageView.java
+  Differing lines: 2
+
+it/feio/android/omninotes/utils/AnimationsHelper.java
+  Differing lines: 28
+
+it/feio/android/omninotes/utils/GeocodeHelper.java
+  Differing lines: 4
+
+it/feio/android/omninotes/utils/IntentChecker.java
+  Differing lines: 1
+
+it/feio/android/omninotes/utils/KeyboardUtils.java
+  Differing lines: 17
+
+it/feio/android/omninotes/utils/Navigation.java
+  Differing lines: 2
+
+it/feio/android/omninotes/utils/ResourcesUtils.java
+  Differing lines: 4
+
+it/feio/android/omninotes/utils/TagsHelper.java
+  Differing lines: 1
+
+it/feio/android/omninotes/utils/TextHelper.java
+  Differing lines: 18
+
+it/feio/android/omninotes/utils/date/DateUtils.java
+  Differing lines: 10
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-20 15:18:23 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-20 15:18:24 [llm] INFO: LLM response: it/feio/android/omninotes/async/notes/NoteProcessorArchive.java
+it/feio/android/omninotes/async/notes/NoteLoaderTask.java
+it/feio/android/omninotes/async/notes/NoteProcessor.java
+it/feio/android/omninotes/db/DbHelper.java
+it/feio/android/omninotes/models/Note.java
+it/feio/android/omninotes/models/adapters/NoteAdapter.java
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/MainActivity.java
+it/feio/android/omninotes/BaseActivity.java
+it/feio/android/omninotes/DetailFragment.java
+it/feio/android/omninotes/NavigationDrawerFragment.java
+it/feio/android/omninotes/SettingsActivity.java
+it/feio/android/omninotes/SettingsFragment.java
+it/feio/android/omninotes/async/CategoryMenuTask.java
+it/feio/android/omninotes/async/UpdateWidgetsTask.java
+it/feio/android/omninotes/async/bus/NotesUpdatedEvent.java
+it/feio/android/omninotes/async/bus/SwitchFragmentEvent.java
+it/feio/android/omninotes/async/notes/SaveNoteTask.java
+it/feio/android/omninotes/databinding/ActivitySettingsBinding.java
+it/feio/android/omninotes/databinding/FragmentDetailBinding.java
+it/feio/android/omninotes/databinding/FragmentDetailContentBinding.java
+it/feio/android/omninotes/databinding/NoteLayoutBinding.java
+it/feio/android/omninotes/databinding/NoteLayoutExpandedBinding.java
+it/feio/android/omninotes/helpers/AppVersionHelper.java
+it/feio/android/omninotes/helpers/BackupHelper.java
+it/feio/android/omninotes/helpers/date/DateHelper.java
+it/feio/android/omninotes/models/NavigationItem.java
+it/feio/android/omninotes/models/ONStyle.java
+it/feio/android/omninotes/models/PasswordValidator.java
+it/feio/android/omninotes/models/UndoBarController.java
+it/feio/android/omninotes/models/adapters/AttachmentAdapter.java
+it/feio/android/omninotes/models/adapters/NavDrawerAdapter.java
+it/feio/android/omninotes/models/holders/NoteViewHolder.java
+it/feio/android/omninotes/models/listeners/RecyclerViewItemClickSupport.java
+it/feio/android/omninotes/models/misc/DynamicNavigationLookupTable.java
+it/feio/android/omninotes/models/views/ExpandableHeightGridView.java
+it/feio/android/omninotes/models/views/Fab.java
+it/feio/android/omninotes/models/views/InterceptorLinearLayout.java
+it/feio/android/omninotes/models/views/RecyclerViewEmptySupport.java
+it/feio/android/omninotes/models/views/SquareImageView.java
+it/feio/android/omninotes/utils/AnimationsHelper.java
+it/feio/android/omninotes/utils/GeocodeHelper.java
+it/feio/android/omninotes/utils/IntentChecker.java
+it/feio/android/omninotes/utils/KeyboardUtils.java
+it/feio/android/omninotes/utils/Navigation.java
+it/feio/android/omninotes/utils/ResourcesUtils.java
+it/feio/android/omninotes/utils/TagsHelper.java
+it/feio/android/omninotes/utils/TextHelper.java
+it/feio/android/omninotes/utils/date/DateUtils.java
+2026-06-20 15:18:24 [runner] INFO: Saving ranking to .\report\report_20260620_151815\test_search_does_not_show_archived_notes\ranking.txt
+2026-06-20 15:18:24 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260620_151815\index.html
+2026-06-20 15:18:24 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: .\report\report_20260620_151815

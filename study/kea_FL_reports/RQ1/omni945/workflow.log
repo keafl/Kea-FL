@@ -1,0 +1,485 @@
+2026-06-19 16:38:14 [runner] INFO: Building pair test cases...
+2026-06-19 16:38:14 [replayer] INFO: Parse 157 events
+2026-06-19 16:38:14 [replayer] INFO: Parse 32 Monkey actions
+2026-06-19 16:38:14 [reproducer] INFO: Extract 7 pairs test cases
+2026-06-19 16:38:14 [replayer] INFO: Property omni945.OmniNotesBugTest.test_data_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:38:14 [replayer] INFO: Property omni945.OmniNotesBugTest.test_behavior_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:38:14 [replayer] INFO: Property omni945.OmniNotesBugTest.test_create_category_within_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:38:14 [replayer] INFO: Property omni945.OmniNotesBugTest.test_create_note_with_tag_in_content not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:38:14 [replayer] INFO: Property omni945.OmniNotesBugTest.test_create_empty_category not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:38:14 [replayer] INFO: Property omni945.OmniNotesBugTest.test_reduced_view not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 16:38:14 [reproducer] INFO: Build 1 pairs test cases
+2026-06-19 16:38:14 [reproducer] INFO: Test case [1]: test_delete_category_information
+2026-06-19 16:38:14 [reproducer] INFO:     -happy_path: [preconditions]: 24, [property]: 8
+2026-06-19 16:38:14 [reproducer] INFO:     -bug_path: [preconditions]: 80, [property]: 8
+2026-06-19 16:38:14 [runner] INFO: Start running full coverage difference analysis...
+2026-06-19 16:38:14 [runner] INFO: Processing pair test case [1]: happy_test_delete_category_information <-> bug_test_delete_category_information
+2026-06-19 16:38:14 [runner] INFO: Running pair test case analysis: happy_test_delete_category_information <-> bug_test_delete_category_information
+2026-06-19 16:38:14 [runner] INFO: Running property-satisfying path...
+2026-06-19 16:38:14 [reproducer] INFO: Start reproducing test case: happy_test_delete_category_information
+2026-06-19 16:38:14 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 16:38:14 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:38:14 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 16:38:15 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 16:38:15 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: it.feio.android.omninotes.alpha
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=16ms (0ms mobile, 0ms wifi, 16ms not connected)
+
+2026-06-19 16:38:15 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 16:38:15 [reproducer] INFO: Init operation executed
+2026-06-19 16:38:18 [reproducer] INFO: Test environment setup completed
+2026-06-19 16:38:18 [reproducer] INFO: Start executing preconditions for test case: happy_test_delete_category_information
+2026-06-19 16:38:18 [replayer] INFO: [1] Execute Monkey event: LONG_CLICK
+2026-06-19 16:38:18 [replayer] INFO: Touch: Touch(touch_type='down', x=1078.0, y=126.0, wait_duration=0.0)
+2026-06-19 16:38:18 [replayer] INFO: Press coordinate at: (1078.0, 126.0)
+2026-06-19 16:38:18 [replayer] INFO: Touch: Touch(touch_type='up', x=1078.0, y=126.0, wait_duration=1.0)
+2026-06-19 16:38:18 [replayer] INFO: Release coordinate at: (1078.0, 126.0)
+2026-06-19 16:38:20 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_create_empty_category - start
+2026-06-19 16:38:20 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:20 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:38:21 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:22 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:38:23 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:23 [replayer] INFO: Click coordinate: (639.0, 160.0)
+2026-06-19 16:38:24 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:24 [replayer] INFO: Click coordinate: (768.5, 1191.0)
+2026-06-19 16:38:25 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:38:25 [replayer] INFO: Set text to: WnRumb
+2026-06-19 16:38:26 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:26 [replayer] INFO: Click coordinate: (659.5, 1385.5)
+2026-06-19 16:38:27 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:38:28 [replayer] INFO: Press key: back
+2026-06-19 16:38:29 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:29 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:38:30 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:38:30 [replayer] INFO: Press key: back
+2026-06-19 16:38:31 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_create_empty_category - pass
+2026-06-19 16:38:31 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_create_category_within_note - start
+2026-06-19 16:38:31 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:31 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:38:32 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:32 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:38:33 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:38:34 [replayer] INFO: Set text to: 2Eiy9YnpZK
+2026-06-19 16:38:35 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:38:35 [replayer] INFO: Set text to: test content
+2026-06-19 16:38:36 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:36 [replayer] INFO: Click coordinate: (639.0, 160.0)
+2026-06-19 16:38:37 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:37 [replayer] INFO: Click coordinate: (768.5, 1249.0)
+2026-06-19 16:38:38 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:38:38 [replayer] INFO: Set text to: reCPsX
+2026-06-19 16:38:39 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:40 [replayer] INFO: Click coordinate: (659.5, 1385.5)
+2026-06-19 16:38:41 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:38:41 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:38:42 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_create_category_within_note - pass
+2026-06-19 16:38:42 [replayer] INFO: [2] Execute Monkey event: LONG_CLICK
+2026-06-19 16:38:42 [replayer] INFO: Touch: Touch(touch_type='down', x=1078.0, y=179.0, wait_duration=0.0)
+2026-06-19 16:38:42 [replayer] INFO: Press coordinate at: (1078.0, 179.0)
+2026-06-19 16:38:42 [replayer] INFO: Touch: Touch(touch_type='up', x=1078.0, y=179.0, wait_duration=1.0)
+2026-06-19 16:38:42 [replayer] INFO: Release coordinate at: (1078.0, 179.0)
+2026-06-19 16:38:44 [reproducer] INFO: Preconditions executed for test case: happy_test_delete_category_information
+2026-06-19 16:38:44 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_delete_category_information
+2026-06-19 16:38:44 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:38:44 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:38:44 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:38:44 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_precondition/happy_test_delete_category_information.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_precondition/happy_test_delete_category_information.xml
+2026-06-19 16:38:44 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_precondition\happy_test_delete_category_information.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:38:44 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_precondition/happy_test_delete_category_information.ec -> .\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_precondition/happy_test_delete_category_information.xml
+2026-06-19 16:38:44 [reproducer] INFO: Coverage data collected: .\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_precondition/happy_test_delete_category_information.xml
+2026-06-19 16:38:44 [reproducer] INFO: Start executing property for test case: happy_test_delete_category_information
+2026-06-19 16:38:44 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_delete_category_information - start
+2026-06-19 16:38:44 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:38:45 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:38:46 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:38:47 [replayer] INFO: Click coordinate: (429.0, 639.0)
+2026-06-19 16:38:48 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:38:48 [replayer] INFO: Click coordinate: (422.0, 1385.5)
+2026-06-19 16:38:49 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:38:51 [replayer] INFO: Press key: back
+2026-06-19 16:38:52 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:38:53 [replayer] INFO: Press key: back
+2026-06-19 16:38:54 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:38:54 [replayer] INFO: Press key: back
+2026-06-19 16:38:55 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_delete_category_information - pass
+2026-06-19 16:38:55 [reproducer] INFO: Property executed for test case: happy_test_delete_category_information
+2026-06-19 16:38:55 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_delete_category_information
+2026-06-19 16:38:55 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:38:55 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:38:55 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:38:56 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_property/happy_test_delete_category_information.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_property/happy_test_delete_category_information.xml
+2026-06-19 16:38:56 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_property\happy_test_delete_category_information.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:38:56 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_property/happy_test_delete_category_information.ec -> .\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_property/happy_test_delete_category_information.xml
+2026-06-19 16:38:56 [reproducer] INFO: Coverage data collected: .\report\report_20260619_163813\test_delete_category_information\happy_test_delete_category_information_property/happy_test_delete_category_information.xml
+2026-06-19 16:38:56 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 16:38:56 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:38:56 [reproducer] INFO: Test environment reset completed
+2026-06-19 16:38:56 [runner] INFO: Running property-violating path path...
+2026-06-19 16:38:56 [reproducer] INFO: Start reproducing test case: bug_test_delete_category_information
+2026-06-19 16:39:08 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 16:39:08 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:39:08 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 16:39:08 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 16:39:09 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: it.feio.android.omninotes.alpha
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=46ms (0ms mobile, 0ms wifi, 46ms not connected)
+
+2026-06-19 16:39:09 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 16:39:09 [reproducer] INFO: Init operation executed
+2026-06-19 16:39:12 [reproducer] INFO: Test environment setup completed
+2026-06-19 16:39:12 [reproducer] INFO: Start executing preconditions for test case: bug_test_delete_category_information
+2026-06-19 16:39:12 [replayer] INFO: [1] Execute Monkey event: LONG_CLICK
+2026-06-19 16:39:12 [replayer] INFO: Touch: Touch(touch_type='down', x=1078.0, y=126.0, wait_duration=0.0)
+2026-06-19 16:39:12 [replayer] INFO: Press coordinate at: (1078.0, 126.0)
+2026-06-19 16:39:12 [replayer] INFO: Touch: Touch(touch_type='up', x=1078.0, y=126.0, wait_duration=1.0)
+2026-06-19 16:39:12 [replayer] INFO: Release coordinate at: (1078.0, 126.0)
+2026-06-19 16:39:14 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_create_empty_category - start
+2026-06-19 16:39:14 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:14 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:39:15 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:15 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:39:16 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:17 [replayer] INFO: Click coordinate: (639.0, 160.0)
+2026-06-19 16:39:18 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:18 [replayer] INFO: Click coordinate: (768.5, 1191.0)
+2026-06-19 16:39:19 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:39:19 [replayer] INFO: Set text to: WnRumb
+2026-06-19 16:39:20 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:20 [replayer] INFO: Click coordinate: (659.5, 1385.5)
+2026-06-19 16:39:21 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:39:21 [replayer] INFO: Press key: back
+2026-06-19 16:39:22 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:22 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:39:23 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 16:39:24 [replayer] INFO: Press key: back
+2026-06-19 16:39:25 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_create_empty_category - pass
+2026-06-19 16:39:25 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_create_category_within_note - start
+2026-06-19 16:39:25 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:25 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:39:26 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:26 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:39:27 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:39:27 [replayer] INFO: Set text to: 2Eiy9YnpZK
+2026-06-19 16:39:28 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:39:29 [replayer] INFO: Set text to: test content
+2026-06-19 16:39:30 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:30 [replayer] INFO: Click coordinate: (639.0, 160.0)
+2026-06-19 16:39:31 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:31 [replayer] INFO: Click coordinate: (768.5, 1249.0)
+2026-06-19 16:39:32 [replayer] INFO: [1] Execute Script event: setText
+2026-06-19 16:39:32 [replayer] INFO: Set text to: reCPsX
+2026-06-19 16:39:33 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:33 [replayer] INFO: Click coordinate: (659.5, 1385.5)
+2026-06-19 16:39:34 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 16:39:35 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:39:36 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_create_category_within_note - pass
+2026-06-19 16:39:36 [replayer] INFO: [2] Execute Monkey event: LONG_CLICK
+2026-06-19 16:39:36 [replayer] INFO: Touch: Touch(touch_type='down', x=1078.0, y=179.0, wait_duration=0.0)
+2026-06-19 16:39:36 [replayer] INFO: Press coordinate at: (1078.0, 179.0)
+2026-06-19 16:39:36 [replayer] INFO: Touch: Touch(touch_type='up', x=1078.0, y=179.0, wait_duration=1.0)
+2026-06-19 16:39:36 [replayer] INFO: Release coordinate at: (1078.0, 179.0)
+2026-06-19 16:39:38 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_delete_category_information - start
+2026-06-19 16:39:38 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:39:38 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:39:39 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:39:40 [replayer] INFO: Click coordinate: (429.0, 639.0)
+2026-06-19 16:39:41 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:39:42 [replayer] INFO: Click coordinate: (422.0, 1385.5)
+2026-06-19 16:39:43 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:39:44 [replayer] INFO: Press key: back
+2026-06-19 16:39:45 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:39:46 [replayer] INFO: Press key: back
+2026-06-19 16:39:47 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:39:47 [replayer] INFO: Press key: back
+2026-06-19 16:39:48 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_delete_category_information - pass
+2026-06-19 16:39:48 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_data_setting - start
+2026-06-19 16:39:48 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:39:49 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:39:50 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:39:50 [replayer] INFO: Click coordinate: (478.5, 901.0)
+2026-06-19 16:39:51 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:39:51 [replayer] INFO: Click coordinate: (89.5, 451.5)
+2026-06-19 16:39:52 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:39:52 [replayer] INFO: Click coordinate: (222.5, 310.5)
+2026-06-19 16:39:53 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:39:53 [replayer] INFO: Press key: back
+2026-06-19 16:39:54 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:39:54 [replayer] INFO: Press key: back
+2026-06-19 16:39:55 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:39:56 [replayer] INFO: Press key: back
+2026-06-19 16:39:57 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:39:57 [replayer] INFO: Press key: back
+2026-06-19 16:39:58 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_data_setting - pass
+2026-06-19 16:39:58 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_create_note_with_tag_in_content - start
+2026-06-19 16:39:58 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:39:59 [replayer] INFO: Click coordinate: (957.0, 2024.5)
+2026-06-19 16:40:00 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:40:00 [replayer] INFO: Click coordinate: (957.5, 1832.5)
+2026-06-19 16:40:01 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 16:40:01 [replayer] INFO: Set text to: rnTx7LTkbS
+2026-06-19 16:40:02 [replayer] INFO: [2] Execute Script event: setText
+2026-06-19 16:40:02 [replayer] INFO: Set text to: #tag1
+2026-06-19 16:40:03 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:40:03 [replayer] INFO: Press key: back
+2026-06-19 16:40:04 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_create_note_with_tag_in_content - pass
+2026-06-19 16:40:04 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_behavior_setting - start
+2026-06-19 16:40:04 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:40:04 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:40:05 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:40:06 [replayer] INFO: Click coordinate: (478.5, 901.0)
+2026-06-19 16:40:07 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:40:07 [replayer] INFO: Click coordinate: (140.5, 892.5)
+2026-06-19 16:40:08 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:40:08 [replayer] INFO: Click coordinate: (972.0, 510.0)
+2026-06-19 16:40:09 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 16:40:09 [replayer] INFO: Click coordinate: (972.0, 510.0)
+2026-06-19 16:40:10 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:40:10 [replayer] INFO: Press key: back
+2026-06-19 16:40:11 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:40:12 [replayer] INFO: Press key: back
+2026-06-19 16:40:13 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 16:40:13 [replayer] INFO: Press key: back
+2026-06-19 16:40:14 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_behavior_setting - pass
+2026-06-19 16:40:14 [replayer] INFO: [3] Execute Monkey event: CLICK
+2026-06-19 16:40:14 [replayer] INFO: Touch: Touch(touch_type='down', x=930.0, y=2108.0, wait_duration=0.0)
+2026-06-19 16:40:14 [replayer] INFO: Press coordinate at: (930.0, 2108.0)
+2026-06-19 16:40:14 [replayer] INFO: Touch: Touch(touch_type='up', x=930.0, y=2108.0, wait_duration=0.0)
+2026-06-19 16:40:14 [replayer] INFO: Release coordinate at: (930.0, 2108.0)
+2026-06-19 16:40:15 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_reduced_view - start
+2026-06-19 16:40:15 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:16 [replayer] INFO: Click coordinate: (1024.5, 160.0)
+2026-06-19 16:40:17 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:17 [replayer] INFO: Click coordinate: (799.5, 182.5)
+2026-06-19 16:40:18 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:18 [replayer] INFO: Click coordinate: (1024.5, 160.0)
+2026-06-19 16:40:19 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:19 [replayer] INFO: Click coordinate: (799.5, 182.5)
+2026-06-19 16:40:20 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_reduced_view - pass
+2026-06-19 16:40:20 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_delete_category_information - start
+2026-06-19 16:40:20 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:20 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:40:21 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:23 [replayer] INFO: Click coordinate: (429.0, 639.0)
+2026-06-19 16:40:24 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:24 [replayer] INFO: Click coordinate: (422.0, 1385.5)
+2026-06-19 16:40:25 [replayer] INFO: [3] Execute Script event: pressKey
+2026-06-19 16:40:25 [replayer] INFO: Press key: back
+2026-06-19 16:40:26 [replayer] INFO: [3] Execute Script event: pressKey
+2026-06-19 16:40:27 [replayer] INFO: Press key: back
+2026-06-19 16:40:28 [replayer] INFO: [3] Execute Script event: pressKey
+2026-06-19 16:40:28 [replayer] INFO: Press key: back
+2026-06-19 16:40:29 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_delete_category_information - pass
+2026-06-19 16:40:29 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_reduced_view - start
+2026-06-19 16:40:29 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:29 [replayer] INFO: Click coordinate: (1024.5, 160.0)
+2026-06-19 16:40:30 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:30 [replayer] INFO: Click coordinate: (799.5, 182.5)
+2026-06-19 16:40:31 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:31 [replayer] INFO: Click coordinate: (1024.5, 160.0)
+2026-06-19 16:40:32 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:33 [replayer] INFO: Click coordinate: (799.5, 182.5)
+2026-06-19 16:40:34 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_reduced_view - pass
+2026-06-19 16:40:34 [reproducer] INFO: Preconditions executed for test case: bug_test_delete_category_information
+2026-06-19 16:40:34 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_delete_category_information
+2026-06-19 16:40:34 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:40:34 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:40:34 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:40:34 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_precondition/bug_test_delete_category_information.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_precondition/bug_test_delete_category_information.xml
+2026-06-19 16:40:34 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_precondition\bug_test_delete_category_information.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:40:34 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_precondition/bug_test_delete_category_information.ec -> .\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_precondition/bug_test_delete_category_information.xml
+2026-06-19 16:40:34 [reproducer] INFO: Coverage data collected: .\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_precondition/bug_test_delete_category_information.xml
+2026-06-19 16:40:34 [reproducer] INFO: Start executing property for test case: bug_test_delete_category_information
+2026-06-19 16:40:34 [replayer] INFO: Script execution start state: omni945.OmniNotesBugTest.test_delete_category_information - start
+2026-06-19 16:40:34 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:34 [replayer] INFO: Click coordinate: (77.0, 160.0)
+2026-06-19 16:40:35 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:37 [replayer] INFO: Click coordinate: (429.0, 770.0)
+2026-06-19 16:40:38 [replayer] INFO: [3] Execute Script event: click
+2026-06-19 16:40:38 [replayer] INFO: Click coordinate: (422.0, 1385.5)
+2026-06-19 16:40:39 [replayer] INFO: [3] Execute Script event: pressKey
+2026-06-19 16:40:40 [replayer] INFO: Press key: back
+2026-06-19 16:40:41 [replayer] INFO: [3] Execute Script event: pressKey
+2026-06-19 16:40:43 [replayer] INFO: Press key: back
+2026-06-19 16:40:44 [replayer] INFO: [3] Execute Script event: pressKey
+2026-06-19 16:40:44 [replayer] INFO: Press key: back
+2026-06-19 16:40:45 [replayer] INFO: Script execution end state: omni945.OmniNotesBugTest.test_delete_category_information - fail
+2026-06-19 16:40:45 [reproducer] INFO: Property executed for test case: bug_test_delete_category_information
+2026-06-19 16:40:45 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_delete_category_information
+2026-06-19 16:40:45 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 16:40:45 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 16:40:45 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 16:40:45 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_property/bug_test_delete_category_information.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_property/bug_test_delete_category_information.xml
+2026-06-19 16:40:45 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_property\bug_test_delete_category_information.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-19 16:40:45 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_property/bug_test_delete_category_information.ec -> .\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_property/bug_test_delete_category_information.xml
+2026-06-19 16:40:45 [reproducer] INFO: Coverage data collected: .\report\report_20260619_163813\test_delete_category_information\bug_test_delete_category_information_property/bug_test_delete_category_information.xml
+2026-06-19 16:40:46 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 16:40:46 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 16:40:46 [reproducer] INFO: Test environment reset completed
+2026-06-19 16:40:46 [runner] INFO: Parsing coverage data...
+2026-06-19 16:40:46 [report_generator] INFO: generate line coverage data: .\report\report_20260619_163813\test_delete_category_information\data\bug_test_delete_category_information_pre_line_coverage.md
+2026-06-19 16:40:46 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_163813\test_delete_category_information\data\bug_test_delete_category_information_pre_branch_coverage.md
+2026-06-19 16:40:46 [report_generator] INFO: generate line coverage data: .\report\report_20260619_163813\test_delete_category_information\data\bug_test_delete_category_information_prop_line_coverage.md
+2026-06-19 16:40:46 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_163813\test_delete_category_information\data\bug_test_delete_category_information_prop_branch_coverage.md
+2026-06-19 16:40:46 [report_generator] INFO: generate line coverage data: .\report\report_20260619_163813\test_delete_category_information\data\happy_test_delete_category_information_pre_line_coverage.md
+2026-06-19 16:40:46 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_163813\test_delete_category_information\data\happy_test_delete_category_information_pre_branch_coverage.md
+2026-06-19 16:40:46 [report_generator] INFO: generate line coverage data: .\report\report_20260619_163813\test_delete_category_information\data\happy_test_delete_category_information_prop_line_coverage.md
+2026-06-19 16:40:46 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_163813\test_delete_category_information\data\happy_test_delete_category_information_prop_branch_coverage.md
+2026-06-19 16:40:46 [runner] INFO: Calculating incremental coverage...
+2026-06-19 16:40:46 [runner] INFO: Performing incremental coverage analysis...
+2026-06-19 16:40:46 [runner] INFO: Generating pair test case report...
+2026-06-19 16:40:46 [runner] INFO: Saving intermediate data...
+2026-06-19 16:40:46 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260619_163813\test_delete_category_information\data\bug_test_delete_category_information_line_incremental_data.md
+2026-06-19 16:40:46 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260619_163813\test_delete_category_information\data\bug_test_delete_category_information_branch_incremental_data.md
+2026-06-19 16:40:46 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260619_163813\test_delete_category_information\data\happy_test_delete_category_information_line_incremental_data.md
+2026-06-19 16:40:46 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260619_163813\test_delete_category_information\data\happy_test_delete_category_information_branch_incremental_data.md
+2026-06-19 16:40:46 [report_generator] INFO: generate line diff data: .\report\report_20260619_163813\test_delete_category_information\data\line_diff_data.md
+2026-06-19 16:40:46 [report_generator] INFO: generate branch diff data: .\report\report_20260619_163813\test_delete_category_information\data\branch_diff_data.md
+2026-06-19 16:40:46 [runner] INFO: Generating diff report...
+2026-06-19 16:40:46 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\CategoryActivity.java encoding: utf-8
+2026-06-19 16:40:46 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java encoding: utf-8
+2026-06-19 16:40:46 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\MainActivity.java encoding: utf-8
+2026-06-19 16:40:46 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\CategoryMenuTask.java encoding: utf-8
+2026-06-19 16:40:46 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\adapters\CategoryBaseAdapter.java encoding: utf-8
+2026-06-19 16:40:46 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260619_163813\test_delete_category_information\test_delete_category_information_line_diff_report.html
+2026-06-19 16:40:46 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\CategoryActivity.java encoding: utf-8
+2026-06-19 16:40:46 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java encoding: utf-8
+2026-06-19 16:40:46 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\MainActivity.java encoding: utf-8
+2026-06-19 16:40:46 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\CategoryMenuTask.java encoding: utf-8
+2026-06-19 16:40:46 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260619_163813\test_delete_category_information\test_delete_category_information_branch_diff_report.html
+2026-06-19 16:40:46 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_delete_category_information
+
+## Code Coverage Summary
+File: it/feio/android/omninotes/CategoryActivity.java
+  Only in second dataset lines: [75, 171, 172, 173, 174, 175, 176, 192, 193]
+    Line 75: hit count 11
+    Line 171: hit count 5
+    Line 172: hit count 2
+    Line 173: hit count 2
+    Line 174: hit count 2
+    Line 175: hit count 3
+    Line 176: hit count 1
+    Line 192: hit count 2
+    Line 193: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/ListFragment.java
+  Only in second dataset lines: [961, 962, 966, 975, 995, 1468, 1469, 1470, 1471]
+    Line 961: hit count 5
+    Line 962: hit count 2
+    Line 966: hit count 2
+    Line 975: hit count 1
+    Line 995: hit count 1
+    Line 1468: hit count 7
+    Line 1469: hit count 5
+    Line 1470: hit count 4
+    Line 1471: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/MainActivity.java
+  Only in second dataset lines: [250, 251, 252, 254]
+    Line 250: hit count 5
+    Line 251: hit count 2
+    Line 252: hit count 4
+    Line 254: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/async/CategoryMenuTask.java
+  Only in second dataset lines: [150, 151, 153, 154, 156, 159]
+    Line 150: hit count 4
+    Line 151: hit count 6
+    Line 153: hit count 2
+    Line 154: hit count 5
+    Line 156: hit count 1
+    Line 159: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/models/adapters/CategoryBaseAdapter.java
+  Only in second dataset lines: [66, 71]
+    Line 66: hit count 5
+    Line 71: hit count 3
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Input: test content → Input: reCPsX → Pass: test_create_category_within_note → Random operation: LONG_CLICK → Start: test_delete_category_information → Back → Pass: test_delete_category_information → Start: test_data_setting → Back → Pass: test_data_setting
+
+FAIL continuation:
+Start: test_create_note_with_tag_in_content → Input: rnTx7LTkbS → Input: #tag1 → Back → Pass: test_create_note_with_tag_in_content → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Random operation: CLICK → Start: test_reduced_view → Pass: test_reduced_view → Start: test_delete_category_information → Back → Pass: test_delete_category_information → Start: test_reduced_view → Pass: test_reduced_view → Start: test_delete_category_information → Back → Fail: test_delete_category_information → Start: test_delete_category_information → Start: test_create_empty_category → Input: 4XwA4ZOd → Back → Pass: test_create_empty_category → Random operation: CLICK → Random operation: LONG_CLICK → Random operation: SCROLL_TOP_DOWN → Start: test_create_category_within_note → Input: wbQVT → Input: test content → Input: tq94Na
+
+## Correct Execution Path
+Random operation: LONG_CLICK → Start: test_create_empty_category → Input: WnRumb → Back → Pass: test_create_empty_category → Start: test_create_category_within_note → Input: 2Eiy9YnpZK → Input: test content → Input: reCPsX → Pass: test_create_category_within_note → Random operation: LONG_CLICK → Start: test_delete_category_information → Back → Pass: test_delete_category_information → Start: test_data_setting → Back → Pass: test_data_setting
+
+## Error Execution Path
+Random operation: LONG_CLICK → Start: test_create_empty_category → Input: WnRumb → Back → Pass: test_create_empty_category → Start: test_create_category_within_note → Input: 2Eiy9YnpZK → Input: test content → Input: reCPsX → Pass: test_create_category_within_note → Random operation: LONG_CLICK → Start: test_delete_category_information → Back → Pass: test_delete_category_information → Start: test_data_setting → Back → Pass: test_data_setting → Start: test_create_note_with_tag_in_content → Input: rnTx7LTkbS → Input: #tag1 → Back → Pass: test_create_note_with_tag_in_content → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Random operation: CLICK → Start: test_reduced_view → Pass: test_reduced_view → Start: test_delete_category_information → Back → Pass: test_delete_category_information → Start: test_reduced_view → Pass: test_reduced_view → Start: test_delete_category_information → Back → Fail: test_delete_category_information → Start: test_delete_category_information → Start: test_create_empty_category → Input: 4XwA4ZOd → Back → Pass: test_create_empty_category → Random operation: CLICK → Random operation: LONG_CLICK → Random operation: SCROLL_TOP_DOWN → Start: test_create_category_within_note → Input: wbQVT → Input: test content → Input: tq94Na
+
+## Files to Analyze
+it/feio/android/omninotes/CategoryActivity.java
+  Differing lines: 9
+
+it/feio/android/omninotes/ListFragment.java
+  Differing lines: 9
+
+it/feio/android/omninotes/MainActivity.java
+  Differing lines: 4
+
+it/feio/android/omninotes/async/CategoryMenuTask.java
+  Differing lines: 6
+
+it/feio/android/omninotes/models/adapters/CategoryBaseAdapter.java
+  Differing lines: 2
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-19 16:40:47 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-19 16:40:48 [llm] INFO: LLM response: it/feio/android/omninotes/CategoryActivity.java
+it/feio/android/omninotes/async/CategoryMenuTask.java
+it/feio/android/omninotes/models/adapters/CategoryBaseAdapter.java
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/MainActivity.java
+2026-06-19 16:40:48 [runner] INFO: Saving ranking to .\report\report_20260619_163813\test_delete_category_information\ranking.txt
+2026-06-19 16:40:48 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260619_163813\index.html
+2026-06-19 16:40:48 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: .\report\report_20260619_163813

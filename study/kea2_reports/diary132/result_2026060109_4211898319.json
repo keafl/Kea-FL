@@ -1,0 +1,38 @@
+{
+    "activity_diary132.ActivityDiaryTest.test_add_activity": {
+        "precond_satisfied": 44,
+        "executed": 11,
+        "fail": 0,
+        "error": 0
+    },
+    "activity_diary132.ActivityDiaryTest.test_delete_activity": {
+        "precond_satisfied": 7,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "activity_diary132.ActivityDiaryTest.test_edit_note": {
+        "precond_satisfied": 38,
+        "executed": 8,
+        "fail": 0,
+        "error": 0
+    },
+    "activity_diary132.ActivityDiaryTest.test_open_setting": {
+        "precond_satisfied": 38,
+        "executed": 7,
+        "fail": 0,
+        "error": 0
+    },
+    "activity_diary132.ActivityDiaryTest.test_search_activity": {
+        "precond_satisfied": 42,
+        "executed": 16,
+        "fail": 1,
+        "error": 0
+    },
+    "activity_diary132.ActivityDiaryTest.test_select_activity": {
+        "precond_satisfied": 0,
+        "executed": 0,
+        "fail": 0,
+        "error": 0
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "driverName": "d",
+    "packageNames": [
+        "de.rampro.activitydiary.debug"
+    ],
+    "take_screenshots": false,
+    "pre_failure_screenshots": 0,
+    "post_failure_screenshots": 0,
+    "device_output_root": "/sdcard",
+    "log_stamp": "2026060109_4211898319",
+    "test_time": "2026-06-01 09:42:12"
+}

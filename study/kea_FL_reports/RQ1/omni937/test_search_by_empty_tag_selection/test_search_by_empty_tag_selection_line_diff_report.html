@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test_search_by_empty_tag_selection Line Coverage Diff Report</title>
+<style>
+    :root {
+        --github-bg: #ffffff;
+        --github-text: #24292f;
+        --github-gray-50: #f9fafb;
+        --github-gray-100: #f1f2f4;
+        --github-gray-200: #e4e7eb;
+        --github-gray-300: #d1d5db;
+        --github-gray-400: #9ca3af;
+        --github-gray-500: #6e7781;
+        --github-gray-600: #4d5663;
+        --github-gray-700: #374151;
+        --github-gray-800: #272e3b;
+        
+        --line-number-bg: #f6f8fa;
+        --line-number-text: #6e7781;
+        --line-number-border: #eaecef;
+        
+        --correct-bg: rgb(218, 251, 225);
+        --correct-border: rgb(172, 238, 187);
+        --correct-line-number-bg: rgb(172, 238, 187); 
+        --correct-line-number-text: #000000;
+        
+        --bug-bg: rgb(255, 235, 233); 
+        --bug-border: rgb(255, 206, 203);           
+        --bug-line-number-bg: rgb(255, 206, 203); 
+        --bug-line-number-text: #000000;            
+        
+        --covered-bg: var(--correct-bg);
+        --covered-border: var(--correct-border);
+        --covered-line-number-bg: var(--correct-line-number-bg);
+        --covered-line-number-text: var(--correct-line-number-text);
+        
+        --sidebar-width: 300px;
+        --sidebar-collapsed-width: 0px;
+        --border-radius: 6px;
+        --transition: all 0.2s ease;
+        --code-line-height: 1.5em;
+        --line-number-width: 4.5rem;
+        --header-height: 60px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.5;
+        color: var(--github-text);
+        background-color: var(--github-gray-50);
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        padding-top: var(--header-height);
+    }
+
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        background-color: var(--github-bg);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--github-gray-800);
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--github-gray-200);
+    }
+
+    p {
+        color: var(--github-gray-600);
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-toggle-btn {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        color: var(--github-gray-700);
+        cursor: pointer;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .sidebar-toggle-btn:hover {
+        background-color: var(--github-gray-50);
+        border-color: var(--github-gray-300);
+        color: var(--github-gray-800);
+    }
+
+    .sidebar {
+        width: var(--sidebar-width);
+        background-color: var(--github-bg);
+        border-right: 1px solid var(--github-gray-200);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        transition: var(--transition);
+        overflow: hidden;
+        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+    }
+
+    .sidebar.collapsed {
+        width: var(--sidebar-collapsed-width);
+        border-right: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .sidebar-resizer {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .file-list-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        color: var(--github-gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid var(--github-gray-200);
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-tree {
+        list-style: none;
+        overflow-y: auto;
+        flex: 1;
+        padding: 0.5rem 0;
+    }
+
+    .dir-item {
+        position: relative;
+    }
+
+    .dir-header {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .dir-header:hover {
+        background-color: var(--github-gray-50);
+    }
+
+    .dir-toggle {
+        width: 1rem;
+        height: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: var(--github-gray-500);
+        margin-right: 0.5rem;
+    }
+
+    .dir-content {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .file-item {
+        padding: 0;
+    }
+
+    .file-link {
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 1rem;
+        color: var(--github-gray-700);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: var(--transition);
+    }
+
+    .file-link::before {
+        content: "📄";
+        font-size: 0.75rem;
+        margin-right: 0.5rem;
+        opacity: 0.7;
+    }
+
+    .file-link:hover {
+        background-color: var(--github-gray-50);
+        color: #0969da;
+    }
+
+    .file-link.active {
+        color: #0969da;
+        font-weight: 500;
+    }
+
+    .main-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+        transition: var(--transition);
+        margin-left: var(--sidebar-width);
+        height: 100vh;
+        background-color: var(--github-gray-50);
+        padding-top: 1rem;
+    }
+
+    .sidebar.collapsed + .main-content {
+        margin-left: var(--sidebar-collapsed-width) !important;
+    }
+
+    .file-header {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        scroll-margin-top: calc(var(--header-height) + 1rem);
+    }
+
+    .file-header a {
+        color: #0969da;
+        text-decoration: none;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .file-header a:hover {
+        text-decoration: underline;
+    }
+
+    .diff-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        min-height: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .diff-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .diff-panel {
+        background-color: var(--github-bg);
+        border: 1px solid var(--github-gray-200);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .panel-header {
+        background-color: var(--github-gray-50);
+        border-bottom: 1px solid var(--github-gray-200);
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .panel-header::before {
+        content: "";
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .diff-container > .diff-panel:first-child .panel-header::before {
+        background-color: var(--bug-border);
+    }
+
+    .diff-container > .diff-panel:last-child .panel-header::before {
+        background-color: var(--correct-border);
+    }
+
+    .code-container {
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-size: 12px;
+        line-height: var(--code-line-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 600px;
+        flex: 1;
+        width: 100%;
+        background-color: var(--github-bg);
+    }
+
+    .code-line {
+        display: grid;
+        grid-template-columns: var(--line-number-width) 1fr;
+        width: 100%;
+        transition: background-color 0.2s ease;
+        border-left: 3px solid transparent;
+        min-height: var(--code-line-height);
+    }
+
+    .line-number {
+        width: var(--line-number-width);
+        padding: 0 0.75rem;
+        text-align: right;
+        color: var(--line-number-text);
+        user-select: none;
+        background-color: var(--line-number-bg);
+        border-right: 1px solid var(--line-number-border);
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .correct-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 100;
+    }
+
+    .bug-line .line-number {
+        background-color: var(--bug-line-number-bg);
+        color: var(--bug-line-number-text);
+        border-right-color: var(--bug-border);
+        font-weight: 100;
+    }
+
+    .covered-line .line-number {
+        background-color: var(--correct-line-number-bg);
+        color: var(--correct-line-number-text);
+        border-right-color: var(--correct-border);
+        font-weight: 600;
+    }
+
+    .code-content {
+        flex: 1;
+        padding: 0 0.75rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+        min-height: var(--code-line-height);
+        display: flex;
+        align-items: flex-start;
+        padding-top: calc((var(--code-line-height) - 1em) / 2);
+        width: 100%;
+        color: var(--github-text);
+    }
+
+    .correct-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .bug-line {
+        background-color: var(--bug-bg);
+        border-left-color: var(--bug-border);
+    }
+
+    .covered-line {
+        background-color: var(--correct-bg);
+        border-left-color: var(--correct-border);
+    }
+
+    .context-line .code-content:empty::before {
+        content: " ";
+    }
+
+    .separator-line {
+        background-color: var(--github-gray-50);
+        color: var(--github-gray-500);
+        text-align: center;
+        padding: 0.5rem 0;
+        font-style: italic;
+        border-top: 1px dashed var(--github-gray-300);
+        border-bottom: 1px dashed var(--github-gray-300);
+        grid-column: 1 / -1;
+    }
+
+    .separator-line .line-number,
+    .separator-line .code-content {
+        height: auto;
+        line-height: 1.5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--github-gray-300);
+        border-radius: 6px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--github-gray-400);
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            position: fixed;
+            z-index: 100;
+        }
+        
+        .main-content {
+            margin-left: 0 !important;
+            padding: 1rem;
+        }
+    }
+
+    .context-line {
+        background-color: var(--github-bg);
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+// Global sidebar toggle function
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("collapsed");
+}
+
+// Directory expand/collapse function
+function toggleDir(dirHeader) {
+    const toggle = dirHeader.querySelector(".dir-toggle");
+    const content = dirHeader.nextElementSibling;
+    
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        toggle.textContent = "−";
+    } else {
+        content.style.display = "none";
+        toggle.textContent = "+";
+    }
+}
+
+// File link click event handler
+document.addEventListener('DOMContentLoaded', () => {
+    const fileLinks = document.querySelectorAll('.file-link');
+    
+    fileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            fileLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    if (fileLinks.length > 0) {
+        fileLinks[0].classList.add('active');
+    }
+});
+</script>
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<div class="fixed-header">
+    <h1>test_search_by_empty_tag_selection Line Coverage Diff Report</h1>
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        File List
+    </button>
+</div>
+<div class="sidebar" id="sidebar">
+<h3 class="file-list-title">File List</h3>
+<ul class="dir-tree">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">it/feio</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">android/omninotes</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-0" class="file-link"><span>DetailFragment.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-1" class="file-link"><span>ListFragment.java</span></a>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">async/notes</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-2" class="file-link"><span>NoteLoaderTask.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">db</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-3" class="file-link"><span>DbHelper.java</span></a>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">models</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-4" class="file-link"><span>Tag.java</span></a>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">listeners</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-5" class="file-link"><span>RecyclerViewItemClickSupport.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+<li class="dir-item">
+  <div class="dir-header" onclick="toggleDir(this)">
+    <span class="dir-toggle">−</span>
+    <span class="dir-name">utils</span>
+  </div>
+  <ul class="dir-content" style="display: block;">
+<li class="file-item">
+  <a href="#file-6" class="file-link"><span>AnimationsHelper.java</span></a>
+</li>
+<li class="file-item">
+  <a href="#file-7" class="file-link"><span>TagsHelper.java</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+</ul>
+</div>
+<div class="main-content">
+<p>Generated Time: 2026-06-19 15:58:18</p>
+<h2>Line Coverage Diff</h2>
+<div class="file-header" id="file-0">
+    File: it/feio/android/omninotes/DetailFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\DetailFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">1133</span><span class="code-content">    startActivity(intent);</span></div>
+<div class="code-line context-line"><span class="line-number">1134</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1135</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1136</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1137</span><span class="code-content">  private void navigateUp() {</span></div>
+<div class="code-line bug-line"><span class="line-number">1138</span><span class="code-content">    afterSavedReturnsToList = true;</span></div>
+<div class="code-line bug-line"><span class="line-number">1139</span><span class="code-content">    saveAndExit(this);</span></div>
+<div class="code-line bug-line"><span class="line-number">1140</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1141</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1142</span><span class="code-content">  private void toggleChecklist() {</span></div>
+<div class="code-line context-line"><span class="line-number">1143</span><span class="code-content">    // In case checklist is active a prompt will ask about many options</span></div>
+<div class="code-line context-line"><span class="line-number">1144</span><span class="code-content">    // to decide hot to convert back to simple text</span></div>
+<div class="code-line context-line"><span class="line-number">1145</span><span class="code-content">    if (Boolean.FALSE.equals(noteTmp.isChecklist())) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1560</span><span class="code-content">      goHome();</span></div>
+<div class="code-line context-line"><span class="line-number">1561</span><span class="code-content">      return;</span></div>
+<div class="code-line context-line"><span class="line-number">1562</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1563</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1564</span><span class="code-content">    if (saveNotNeeded()) {</span></div>
+<div class="code-line bug-line"><span class="line-number">1565</span><span class="code-content">      exitMessage = &quot;&quot;;</span></div>
+<div class="code-line bug-line"><span class="line-number">1566</span><span class="code-content">      if (goBack) {</span></div>
+<div class="code-line bug-line"><span class="line-number">1567</span><span class="code-content">        goHome();</span></div>
+<div class="code-line context-line"><span class="line-number">1568</span><span class="code-content">      }</span></div>
+<div class="code-line bug-line"><span class="line-number">1569</span><span class="code-content">      return;</span></div>
+<div class="code-line context-line"><span class="line-number">1570</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1571</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1572</span><span class="code-content">    noteTmp.setAttachmentsListOld(note.getAttachmentsList());</span></div>
+<div class="code-line context-line"><span class="line-number">1573</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1574</span><span class="code-content">    new SaveNoteTask(mOnNoteSaved, lastModificationUpdatedNeeded()).executeOnExecutor(AsyncTask</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-1">
+    File: it/feio/android/omninotes/ListFragment.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">674</span><span class="code-content">    searchView.setSearchableInfo(searchManager.getSearchableInfo(mainActivity.getComponentName()));</span></div>
+<div class="code-line context-line"><span class="line-number">675</span><span class="code-content">    searchView.setImeOptions(EditorInfo.IME_ACTION_SEARCH);</span></div>
+<div class="code-line context-line"><span class="line-number">676</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">677</span><span class="code-content">    // Expands the widget hiding other actionbar icons</span></div>
+<div class="code-line context-line"><span class="line-number">678</span><span class="code-content">    searchView.setOnQueryTextFocusChangeListener(</span></div>
+<div class="code-line correct-line"><span class="line-number">679</span><span class="code-content">        (v, hasFocus) -&gt; setActionItemsVisibility(menu, hasFocus));</span></div>
+<div class="code-line context-line"><span class="line-number">680</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">681</span><span class="code-content">    searchMenuItem.setOnActionExpandListener(new OnActionExpandListener() {</span></div>
+<div class="code-line context-line"><span class="line-number">682</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">683</span><span class="code-content">          boolean searchPerformed = false;</span></div>
+<div class="code-line context-line"><span class="line-number">684</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">685</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">686</span><span class="code-content">          @Override</span></div>
+<div class="code-line context-line"><span class="line-number">687</span><span class="code-content">          public boolean onMenuItemActionCollapse(MenuItem item) {</span></div>
+<div class="code-line context-line"><span class="line-number">688</span><span class="code-content">            // Reinitialize notes list to all notes when search is collapsed</span></div>
+<div class="code-line correct-line"><span class="line-number">689</span><span class="code-content">            searchQuery = null;</span></div>
+<div class="code-line correct-line"><span class="line-number">690</span><span class="code-content">            if (binding.searchLayout.getVisibility() == View.VISIBLE) {</span></div>
+<div class="code-line correct-line"><span class="line-number">691</span><span class="code-content">              toggleSearchLabel(false);</span></div>
+<div class="code-line context-line"><span class="line-number">692</span><span class="code-content">            }</span></div>
+<div class="code-line correct-line"><span class="line-number">693</span><span class="code-content">            mainActivity.getIntent().setAction(Intent.ACTION_MAIN);</span></div>
+<div class="code-line correct-line"><span class="line-number">694</span><span class="code-content">            initNotesList(mainActivity.getIntent());</span></div>
+<div class="code-line correct-line"><span class="line-number">695</span><span class="code-content">            mainActivity.supportInvalidateOptionsMenu();</span></div>
+<div class="code-line correct-line"><span class="line-number">696</span><span class="code-content">            return true;</span></div>
+<div class="code-line context-line"><span class="line-number">697</span><span class="code-content">          }</span></div>
+<div class="code-line context-line"><span class="line-number">698</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">699</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">700</span><span class="code-content">          @Override</span></div>
+<div class="code-line context-line"><span class="line-number">701</span><span class="code-content">          public boolean onMenuItemActionExpand(MenuItem item) {</span></div>
+<div class="code-line context-line"><span class="line-number">702</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">703</span><span class="code-content">            searchView.setOnQueryTextListener(new OnQueryTextListener() {</span></div>
+<div class="code-line context-line"><span class="line-number">704</span><span class="code-content">              @Override</span></div>
+<div class="code-line context-line"><span class="line-number">705</span><span class="code-content">              public boolean onQueryTextSubmit(String arg0) {</span></div>
+<div class="code-line context-line"><span class="line-number">706</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">707</span><span class="code-content">                return Prefs.getBoolean(&quot;settings_instant_search&quot;, false);</span></div>
+<div class="code-line context-line"><span class="line-number">708</span><span class="code-content">              }</span></div>
+<div class="code-line context-line"><span class="line-number">709</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">710</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">711</span><span class="code-content">              @Override</span></div>
+<div class="code-line context-line"><span class="line-number">712</span><span class="code-content">              public boolean onQueryTextChange(String pattern) {</span></div>
+<div class="code-line context-line"><span class="line-number">713</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">714</span><span class="code-content">                if (Prefs.getBoolean(&quot;settings_instant_search&quot;, false)</span></div>
+<div class="code-line context-line"><span class="line-number">715</span><span class="code-content">                    &amp;&amp; binding.searchLayout != null &amp;&amp;</span></div>
+<div class="code-line context-line"><span class="line-number">716</span><span class="code-content">                    searchPerformed &amp;&amp; mFragment.isAdded()) {</span></div>
+<div class="code-line context-line"><span class="line-number">717</span><span class="code-content">                  searchTags = null;</span></div>
+<div class="code-line context-line"><span class="line-number">718</span><span class="code-content">                  searchQuery = pattern;</span></div>
+<div class="code-line context-line"><span class="line-number">719</span><span class="code-content">                  NoteLoaderTask.getInstance().execute(&quot;getNotesByPattern&quot;, pattern);</span></div>
+<div class="code-line context-line"><span class="line-number">720</span><span class="code-content">                  return true;</span></div>
+<div class="code-line context-line"><span class="line-number">721</span><span class="code-content">                } else {</span></div>
+<div class="code-line correct-line"><span class="line-number">722</span><span class="code-content">                  searchPerformed = true;</span></div>
+<div class="code-line correct-line"><span class="line-number">723</span><span class="code-content">                  return false;</span></div>
+<div class="code-line context-line"><span class="line-number">724</span><span class="code-content">                }</span></div>
+<div class="code-line context-line"><span class="line-number">725</span><span class="code-content">              }</span></div>
+<div class="code-line context-line"><span class="line-number">726</span><span class="code-content">            });</span></div>
+<div class="code-line correct-line"><span class="line-number">727</span><span class="code-content">            return true;</span></div>
+<div class="code-line context-line"><span class="line-number">728</span><span class="code-content">          }</span></div>
+<div class="code-line context-line"><span class="line-number">729</span><span class="code-content">        });</span></div>
+<div class="code-line context-line"><span class="line-number">730</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">731</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">732</span><span class="code-content"></span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">826</span><span class="code-content">          break;</span></div>
+<div class="code-line context-line"><span class="line-number">827</span><span class="code-content">        case R.id.menu_uncomplete_checklists:</span></div>
+<div class="code-line context-line"><span class="line-number">828</span><span class="code-content">          filterByUncompleteChecklists();</span></div>
+<div class="code-line context-line"><span class="line-number">829</span><span class="code-content">          break;</span></div>
+<div class="code-line context-line"><span class="line-number">830</span><span class="code-content">        case R.id.menu_tags:</span></div>
+<div class="code-line correct-line"><span class="line-number">831</span><span class="code-content">          filterByTags();</span></div>
+<div class="code-line correct-line"><span class="line-number">832</span><span class="code-content">          break;</span></div>
+<div class="code-line context-line"><span class="line-number">833</span><span class="code-content">        case R.id.menu_sort:</span></div>
+<div class="code-line context-line"><span class="line-number">834</span><span class="code-content">          initSortingSubmenu();</span></div>
+<div class="code-line context-line"><span class="line-number">835</span><span class="code-content">          break;</span></div>
+<div class="code-line context-line"><span class="line-number">836</span><span class="code-content">        case R.id.menu_expanded_view:</span></div>
+<div class="code-line context-line"><span class="line-number">837</span><span class="code-content">          switchNotesView();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">842</span><span class="code-content">        case R.id.menu_empty_trash:</span></div>
+<div class="code-line context-line"><span class="line-number">843</span><span class="code-content">          emptyTrash();</span></div>
+<div class="code-line context-line"><span class="line-number">844</span><span class="code-content">          break;</span></div>
+<div class="code-line context-line"><span class="line-number">845</span><span class="code-content">        case R.id.menu_search:</span></div>
+<div class="code-line context-line"><span class="line-number">846</span><span class="code-content">          // Nothing to do, it&#x27;s all managed by SearchView component</span></div>
+<div class="code-line correct-line"><span class="line-number">847</span><span class="code-content">          break;</span></div>
+<div class="code-line context-line"><span class="line-number">848</span><span class="code-content">        default:</span></div>
+<div class="code-line context-line"><span class="line-number">849</span><span class="code-content">          LogDelegate.e(&quot;Wrong element choosen: &quot; + item.getItemId());</span></div>
+<div class="code-line context-line"><span class="line-number">850</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">851</span><span class="code-content">    } else {</span></div>
+<div class="code-line context-line"><span class="line-number">852</span><span class="code-content">      switch (item.getItemId()) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1065</span><span class="code-content">    if (searchTags != null || searchQuery != null || searchUncompleteChecklists</span></div>
+<div class="code-line context-line"><span class="line-number">1066</span><span class="code-content">        || IntentChecker</span></div>
+<div class="code-line context-line"><span class="line-number">1067</span><span class="code-content">        .checkAction(intent, Intent.ACTION_SEARCH, ACTION_SEARCH_UNCOMPLETE_CHECKLISTS)) {</span></div>
+<div class="code-line context-line"><span class="line-number">1068</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1069</span><span class="code-content">      // Using tags</span></div>
+<div class="code-line correct-line"><span class="line-number">1070</span><span class="code-content">      if (searchTags != null &amp;&amp; intent.getStringExtra(SearchManager.QUERY) == null) {</span></div>
+<div class="code-line correct-line"><span class="line-number">1071</span><span class="code-content">        searchQuery = searchTags;</span></div>
+<div class="code-line correct-line"><span class="line-number">1072</span><span class="code-content">        NoteLoaderTask.getInstance()</span></div>
+<div class="code-line correct-line"><span class="line-number">1073</span><span class="code-content">            .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, &quot;getNotesByTag&quot;,</span></div>
+<div class="code-line context-line"><span class="line-number">1074</span><span class="code-content">                searchQuery);</span></div>
+<div class="code-line context-line"><span class="line-number">1075</span><span class="code-content">      } else if (searchUncompleteChecklists || ACTION_SEARCH_UNCOMPLETE_CHECKLISTS.equals(</span></div>
+<div class="code-line context-line"><span class="line-number">1076</span><span class="code-content">          intent.getAction())) {</span></div>
+<div class="code-line context-line"><span class="line-number">1077</span><span class="code-content">        searchQuery = getContext().getResources().getString(R.string.uncompleted_checklists);</span></div>
+<div class="code-line context-line"><span class="line-number">1078</span><span class="code-content">        searchUncompleteChecklists = true;</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1087</span><span class="code-content">        NoteLoaderTask.getInstance()</span></div>
+<div class="code-line context-line"><span class="line-number">1088</span><span class="code-content">            .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, &quot;getNotesByPattern&quot;,</span></div>
+<div class="code-line context-line"><span class="line-number">1089</span><span class="code-content">                searchQuery);</span></div>
+<div class="code-line context-line"><span class="line-number">1090</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">1091</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">1092</span><span class="code-content">      toggleSearchLabel(true);</span></div>
+<div class="code-line context-line"><span class="line-number">1093</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1094</span><span class="code-content">    } else {</span></div>
+<div class="code-line context-line"><span class="line-number">1095</span><span class="code-content">      // Check if is launched from a widget with categories</span></div>
+<div class="code-line context-line"><span class="line-number">1096</span><span class="code-content">      if ((ACTION_WIDGET_SHOW_LIST.equals(intent.getAction()) &amp;&amp; intent.hasExtra(INTENT_WIDGET))</span></div>
+<div class="code-line context-line"><span class="line-number">1097</span><span class="code-content">          || !isEmpty(mainActivity.navigationTmp)) {</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1120</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1121</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1122</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1123</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1124</span><span class="code-content">  public void toggleSearchLabel(boolean activate) {</span></div>
+<div class="code-line correct-line"><span class="line-number">1125</span><span class="code-content">    if (activate) {</span></div>
+<div class="code-line correct-line"><span class="line-number">1126</span><span class="code-content">      binding.searchQuery.setText(fromHtml(getString(R.string.search) + &quot;:&lt;b&gt; &quot; + searchQuery + &quot;&lt;/b&gt;&quot;));</span></div>
+<div class="code-line correct-line"><span class="line-number">1127</span><span class="code-content">      binding.searchLayout.setVisibility(View.VISIBLE);</span></div>
+<div class="code-line correct-line"><span class="line-number">1128</span><span class="code-content">      binding.searchCancel.setOnClickListener(v -&gt; toggleSearchLabel(false));</span></div>
+<div class="code-line correct-line"><span class="line-number">1129</span><span class="code-content">      searchLabelActive = true;</span></div>
+<div class="code-line context-line"><span class="line-number">1130</span><span class="code-content">    } else {</span></div>
+<div class="code-line correct-line"><span class="line-number">1131</span><span class="code-content">      if (searchLabelActive) {</span></div>
+<div class="code-line correct-line"><span class="line-number">1132</span><span class="code-content">        searchLabelActive = false;</span></div>
+<div class="code-line correct-line"><span class="line-number">1133</span><span class="code-content">        AnimationsHelper.expandOrCollapse(binding.searchLayout, false);</span></div>
+<div class="code-line correct-line"><span class="line-number">1134</span><span class="code-content">        searchTags = null;</span></div>
+<div class="code-line correct-line"><span class="line-number">1135</span><span class="code-content">        searchQuery = null;</span></div>
+<div class="code-line correct-line"><span class="line-number">1136</span><span class="code-content">        searchUncompleteChecklists = false;</span></div>
+<div class="code-line correct-line"><span class="line-number">1137</span><span class="code-content">        if (!goBackOnToggleSearchLabel) {</span></div>
+<div class="code-line correct-line"><span class="line-number">1138</span><span class="code-content">          mainActivity.getIntent().setAction(Intent.ACTION_MAIN);</span></div>
+<div class="code-line correct-line"><span class="line-number">1139</span><span class="code-content">          if (searchView != null) {</span></div>
+<div class="code-line correct-line"><span class="line-number">1140</span><span class="code-content">            searchMenuItem.collapseActionView();</span></div>
+<div class="code-line context-line"><span class="line-number">1141</span><span class="code-content">          }</span></div>
+<div class="code-line correct-line"><span class="line-number">1142</span><span class="code-content">          initNotesList(mainActivity.getIntent());</span></div>
+<div class="code-line context-line"><span class="line-number">1143</span><span class="code-content">        } else {</span></div>
+<div class="code-line context-line"><span class="line-number">1144</span><span class="code-content">          mainActivity.onBackPressed();</span></div>
+<div class="code-line context-line"><span class="line-number">1145</span><span class="code-content">        }</span></div>
+<div class="code-line correct-line"><span class="line-number">1146</span><span class="code-content">        goBackOnToggleSearchLabel = false;</span></div>
+<div class="code-line correct-line"><span class="line-number">1147</span><span class="code-content">        if (Intent.ACTION_VIEW.equals(mainActivity.getIntent().getAction())) {</span></div>
+<div class="code-line context-line"><span class="line-number">1148</span><span class="code-content">          mainActivity.getIntent().setAction(null);</span></div>
+<div class="code-line context-line"><span class="line-number">1149</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">1150</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">1151</span><span class="code-content">    }</span></div>
+<div class="code-line correct-line"><span class="line-number">1152</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1153</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1154</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1155</span><span class="code-content">  public void onEvent(NavigationUpdatedNavDrawerClosedEvent navigationUpdatedNavDrawerClosedEvent) {</span></div>
+<div class="code-line context-line"><span class="line-number">1156</span><span class="code-content">    listViewPosition = 0;</span></div>
+<div class="code-line context-line"><span class="line-number">1157</span><span class="code-content">    listViewPositionOffset = 16;</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">1798</span><span class="code-content">    initNotesList(new Intent(ACTION_SEARCH_UNCOMPLETE_CHECKLISTS));</span></div>
+<div class="code-line context-line"><span class="line-number">1799</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1800</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1801</span><span class="code-content">  private void filterByTags() {</span></div>
+<div class="code-line context-line"><span class="line-number">1802</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">1803</span><span class="code-content">    final List&lt;Tag&gt; tags = TagsHelper.getAllTags();</span></div>
+<div class="code-line context-line"><span class="line-number">1804</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">1805</span><span class="code-content">    if (tags.isEmpty()) {</span></div>
+<div class="code-line context-line"><span class="line-number">1806</span><span class="code-content">      mainActivity.showMessage(R.string.no_tags_created, ONStyle.WARN);</span></div>
+<div class="code-line context-line"><span class="line-number">1807</span><span class="code-content">      return;</span></div>
+<div class="code-line context-line"><span class="line-number">1808</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">1809</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1810</span><span class="code-content">    // Dialog and events creation</span></div>
+<div class="code-line correct-line"><span class="line-number">1811</span><span class="code-content">    new MaterialDialog.Builder(mainActivity)</span></div>
+<div class="code-line correct-line"><span class="line-number">1812</span><span class="code-content">        .title(R.string.select_tags)</span></div>
+<div class="code-line correct-line"><span class="line-number">1813</span><span class="code-content">        .items(TagsHelper.getTagsArray(tags))</span></div>
+<div class="code-line correct-line"><span class="line-number">1814</span><span class="code-content">        .positiveText(R.string.ok)</span></div>
+<div class="code-line correct-line"><span class="line-number">1815</span><span class="code-content">        .itemsCallbackMultiChoice(new Integer[]{}, (dialog, which, text) -&gt; {</span></div>
+<div class="code-line context-line"><span class="line-number">1816</span><span class="code-content">          // Retrieves selected tags</span></div>
+<div class="code-line correct-line"><span class="line-number">1817</span><span class="code-content">          List&lt;String&gt; selectedTags = new ArrayList&lt;&gt;();</span></div>
+<div class="code-line correct-line"><span class="line-number">1818</span><span class="code-content">          for (Integer aWhich : which) {</span></div>
+<div class="code-line context-line"><span class="line-number">1819</span><span class="code-content">            selectedTags.add(tags.get(aWhich).getText());</span></div>
+<div class="code-line context-line"><span class="line-number">1820</span><span class="code-content">          }</span></div>
+<div class="code-line context-line"><span class="line-number">1821</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1822</span><span class="code-content">          // Saved here to allow persisting search</span></div>
+<div class="code-line correct-line"><span class="line-number">1823</span><span class="code-content">          searchTags = selectedTags.toString().substring(1, selectedTags.toString().length() - 1)</span></div>
+<div class="code-line correct-line"><span class="line-number">1824</span><span class="code-content">              .replace(&quot; &quot;, &quot;&quot;);</span></div>
+<div class="code-line correct-line"><span class="line-number">1825</span><span class="code-content">          Intent intent = mainActivity.getIntent();</span></div>
+<div class="code-line context-line"><span class="line-number">1826</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1827</span><span class="code-content">          // Hides keyboard</span></div>
+<div class="code-line correct-line"><span class="line-number">1828</span><span class="code-content">          searchView.clearFocus();</span></div>
+<div class="code-line correct-line"><span class="line-number">1829</span><span class="code-content">          KeyboardUtils.hideKeyboard(searchView);</span></div>
+<div class="code-line context-line"><span class="line-number">1830</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">1831</span><span class="code-content">          intent.removeExtra(SearchManager.QUERY);</span></div>
+<div class="code-line correct-line"><span class="line-number">1832</span><span class="code-content">          initNotesList(intent);</span></div>
+<div class="code-line correct-line"><span class="line-number">1833</span><span class="code-content">          return false;</span></div>
+<div class="code-line correct-line"><span class="line-number">1834</span><span class="code-content">        }).build().show();</span></div>
+<div class="code-line correct-line"><span class="line-number">1835</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">1836</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1837</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">1838</span><span class="code-content">  public MenuItem getSearchMenuItem() {</span></div>
+<div class="code-line context-line"><span class="line-number">1839</span><span class="code-content">    return searchMenuItem;</span></div>
+<div class="code-line context-line"><span class="line-number">1840</span><span class="code-content">  }</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-2">
+    File: it/feio/android/omninotes/async/notes/NoteLoaderTask.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\notes\NoteLoaderTask.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">40</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">41</span><span class="code-content">  public static NoteLoaderTask getInstance() {</span></div>
+<div class="code-line context-line"><span class="line-number">42</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">43</span><span class="code-content">    if (instance != null) {</span></div>
+<div class="code-line context-line"><span class="line-number">44</span><span class="code-content">      if (instance.getStatus() == Status.RUNNING &amp;&amp; !instance.isCancelled()) {</span></div>
+<div class="code-line correct-line"><span class="line-number">45</span><span class="code-content">        instance.cancel(true);</span></div>
+<div class="code-line context-line"><span class="line-number">46</span><span class="code-content">      } else if (instance.getStatus() == Status.PENDING) {</span></div>
+<div class="code-line context-line"><span class="line-number">47</span><span class="code-content">        return instance;</span></div>
+<div class="code-line context-line"><span class="line-number">48</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">49</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">50</span><span class="code-content"></span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-3">
+    File: it/feio/android/omninotes/db/DbHelper.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\db\DbHelper.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">686</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">687</span><span class="code-content">  /**</span></div>
+<div class="code-line context-line"><span class="line-number">688</span><span class="code-content">   * Retrieves all tags</span></div>
+<div class="code-line context-line"><span class="line-number">689</span><span class="code-content">   */</span></div>
+<div class="code-line context-line"><span class="line-number">690</span><span class="code-content">  public List&lt;Tag&gt; getTags() {</span></div>
+<div class="code-line correct-line"><span class="line-number">691</span><span class="code-content">    return getTags(null);</span></div>
+<div class="code-line context-line"><span class="line-number">692</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">693</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">694</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">695</span><span class="code-content">  /**</span></div>
+<div class="code-line context-line"><span class="line-number">696</span><span class="code-content">   * Retrieves all tags of a specified note</span></div>
+<div class="code-line context-line"><span class="line-number">697</span><span class="code-content">   */</span></div>
+<div class="code-line context-line"><span class="line-number">698</span><span class="code-content">  public List&lt;Tag&gt; getTags(Note note) {</span></div>
+<div class="code-line correct-line"><span class="line-number">699</span><span class="code-content">    List&lt;Tag&gt; tags = new ArrayList&lt;&gt;();</span></div>
+<div class="code-line correct-line"><span class="line-number">700</span><span class="code-content">    HashMap&lt;String, Integer&gt; tagsMap = new HashMap&lt;&gt;();</span></div>
+<div class="code-line context-line"><span class="line-number">701</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">702</span><span class="code-content">    String whereCondition = &quot; WHERE &quot;</span></div>
+<div class="code-line correct-line"><span class="line-number">703</span><span class="code-content">        + (note != null ? KEY_ID + &quot; = &quot; + note.get_id() + &quot; AND &quot; : &quot;&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">704</span><span class="code-content">        + &quot;(&quot; + KEY_CONTENT + &quot; LIKE &#x27;%#%&#x27; OR &quot; + KEY_TITLE + &quot; LIKE &#x27;%#%&#x27; &quot; + &quot;)&quot;</span></div>
+<div class="code-line correct-line"><span class="line-number">705</span><span class="code-content">        + &quot; AND &quot; + KEY_TRASHED + &quot; IS &quot; + (Navigation.checkNavigation(Navigation.TRASH) ? &quot;&quot;</span></div>
+<div class="code-line correct-line"><span class="line-number">706</span><span class="code-content">        : &quot; NOT &quot;) + &quot; 1&quot;;</span></div>
+<div class="code-line correct-line"><span class="line-number">707</span><span class="code-content">    List&lt;Note&gt; notesRetrieved = getNotes(whereCondition, true);</span></div>
+<div class="code-line context-line"><span class="line-number">708</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">709</span><span class="code-content">    for (Note noteRetrieved : notesRetrieved) {</span></div>
+<div class="code-line correct-line"><span class="line-number">710</span><span class="code-content">      Map&lt;String, Integer&gt; tagsRetrieved = TagsHelper.retrieveTags(noteRetrieved);</span></div>
+<div class="code-line correct-line"><span class="line-number">711</span><span class="code-content">      for (String s : tagsRetrieved.keySet()) {</span></div>
+<div class="code-line correct-line"><span class="line-number">712</span><span class="code-content">        int count = tagsMap.get(s) == null ? 0 : tagsMap.get(s);</span></div>
+<div class="code-line correct-line"><span class="line-number">713</span><span class="code-content">        tagsMap.put(s, ++count);</span></div>
+<div class="code-line correct-line"><span class="line-number">714</span><span class="code-content">      }</span></div>
+<div class="code-line correct-line"><span class="line-number">715</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">716</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">717</span><span class="code-content">    for (Entry&lt;String, Integer&gt; entry : tagsMap.entrySet()) {</span></div>
+<div class="code-line correct-line"><span class="line-number">718</span><span class="code-content">      Tag tag = new Tag(entry.getKey(), entry.getValue());</span></div>
+<div class="code-line correct-line"><span class="line-number">719</span><span class="code-content">      tags.add(tag);</span></div>
+<div class="code-line correct-line"><span class="line-number">720</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">721</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">722</span><span class="code-content">    Collections.sort(tags, (tag1, tag2) -&gt; tag1.getText().compareToIgnoreCase(tag2.getText()));</span></div>
+<div class="code-line correct-line"><span class="line-number">723</span><span class="code-content">    return tags;</span></div>
+<div class="code-line context-line"><span class="line-number">724</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">725</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">726</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">727</span><span class="code-content">  /**</span></div>
+<div class="code-line context-line"><span class="line-number">728</span><span class="code-content">   * Retrieves all notes related to category it passed as parameter</span></div>
+<div class="code-line context-line"><span class="line-number">729</span><span class="code-content">   */</span></div>
+<div class="code-line context-line"><span class="line-number">730</span><span class="code-content">  public List&lt;Note&gt; getNotesByTag(String tag) {</span></div>
+<div class="code-line correct-line"><span class="line-number">731</span><span class="code-content">    if (tag.contains(&quot;,&quot;)) {</span></div>
+<div class="code-line context-line"><span class="line-number">732</span><span class="code-content">      return getNotesByTag(tag.split(&quot;,&quot;));</span></div>
+<div class="code-line context-line"><span class="line-number">733</span><span class="code-content">    } else {</span></div>
+<div class="code-line correct-line"><span class="line-number">734</span><span class="code-content">      return getNotesByTag(new String[]{tag});</span></div>
+<div class="code-line context-line"><span class="line-number">735</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">736</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">737</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">738</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">739</span><span class="code-content">  /**</span></div>
+<div class="code-line context-line"><span class="line-number">740</span><span class="code-content">   * Retrieves all notes with specified tags</span></div>
+<div class="code-line context-line"><span class="line-number">741</span><span class="code-content">   */</span></div>
+<div class="code-line context-line"><span class="line-number">742</span><span class="code-content">  public List&lt;Note&gt; getNotesByTag(String[] tags) {</span></div>
+<div class="code-line correct-line"><span class="line-number">743</span><span class="code-content">    StringBuilder whereCondition = new StringBuilder();</span></div>
+<div class="code-line correct-line"><span class="line-number">744</span><span class="code-content">    whereCondition.append(&quot; WHERE &quot;);</span></div>
+<div class="code-line correct-line"><span class="line-number">745</span><span class="code-content">    for (int i = 0; i &lt; tags.length; i++) {</span></div>
+<div class="code-line correct-line"><span class="line-number">746</span><span class="code-content">      if (i != 0) {</span></div>
+<div class="code-line context-line"><span class="line-number">747</span><span class="code-content">        whereCondition.append(&quot; AND &quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">748</span><span class="code-content">      }</span></div>
+<div class="code-line correct-line"><span class="line-number">749</span><span class="code-content">      whereCondition.append(&quot;(&quot; + KEY_CONTENT + &quot; LIKE &#x27;%&quot;).append(tags[i]).append(&quot;%&#x27; OR &quot;)</span></div>
+<div class="code-line correct-line"><span class="line-number">750</span><span class="code-content">          .append(KEY_TITLE)</span></div>
+<div class="code-line correct-line"><span class="line-number">751</span><span class="code-content">          .append(&quot; LIKE &#x27;%&quot;).append(tags[i]).append(&quot;%&#x27;)&quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">752</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">753</span><span class="code-content">    // Trashed notes must be included in search results only if search if performed from trash</span></div>
+<div class="code-line correct-line"><span class="line-number">754</span><span class="code-content">    whereCondition.append(&quot; AND &quot; + KEY_TRASHED + &quot; IS &quot;)</span></div>
+<div class="code-line correct-line"><span class="line-number">755</span><span class="code-content">        .append(Navigation.checkNavigation(Navigation.TRASH) ?</span></div>
+<div class="code-line correct-line"><span class="line-number">756</span><span class="code-content">            &quot;&quot; : &quot;&quot; +</span></div>
+<div class="code-line correct-line"><span class="line-number">757</span><span class="code-content">            &quot; NOT &quot;).append(&quot; 1&quot;);</span></div>
+<div class="code-line context-line"><span class="line-number">758</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">759</span><span class="code-content">    return rx.Observable.from(getNotes(whereCondition.toString(), true))</span></div>
+<div class="code-line correct-line"><span class="line-number">760</span><span class="code-content">        .map(note -&gt; {</span></div>
+<div class="code-line correct-line"><span class="line-number">761</span><span class="code-content">          boolean matches = rx.Observable.from(tags)</span></div>
+<div class="code-line correct-line"><span class="line-number">762</span><span class="code-content">              .all(tag -&gt; {</span></div>
+<div class="code-line correct-line"><span class="line-number">763</span><span class="code-content">                Pattern p = Pattern.compile(&quot;.*(\\s|^)&quot; + tag + &quot;(\\s|$).*&quot;,</span></div>
+<div class="code-line context-line"><span class="line-number">764</span><span class="code-content">                    Pattern.MULTILINE);</span></div>
+<div class="code-line correct-line"><span class="line-number">765</span><span class="code-content">                return p.matcher(</span></div>
+<div class="code-line correct-line"><span class="line-number">766</span><span class="code-content">                    (note.getTitle() + &quot; &quot; + note.getContent())).find();</span></div>
+<div class="code-line correct-line"><span class="line-number">767</span><span class="code-content">              }).toBlocking().single();</span></div>
+<div class="code-line correct-line"><span class="line-number">768</span><span class="code-content">          return matches ? note : null;</span></div>
+<div class="code-line context-line"><span class="line-number">769</span><span class="code-content">        })</span></div>
+<div class="code-line correct-line"><span class="line-number">770</span><span class="code-content">        .filter(o -&gt; o != null)</span></div>
+<div class="code-line correct-line"><span class="line-number">771</span><span class="code-content">        .toList().toBlocking().single();</span></div>
+<div class="code-line context-line"><span class="line-number">772</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">773</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">774</span><span class="code-content">  /**</span></div>
+<div class="code-line context-line"><span class="line-number">775</span><span class="code-content">   * Retrieves all uncompleted checklists</span></div>
+<div class="code-line context-line"><span class="line-number">776</span><span class="code-content">   */</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-4">
+    File: it/feio/android/omninotes/models/Tag.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\Tag.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">33</span><span class="code-content">    super();</span></div>
+<div class="code-line context-line"><span class="line-number">34</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">35</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">36</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">37</span><span class="code-content">  public Tag(String text, Integer count) {</span></div>
+<div class="code-line correct-line"><span class="line-number">38</span><span class="code-content">    super(text, count);</span></div>
+<div class="code-line correct-line"><span class="line-number">39</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">40</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">41</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">42</span><span class="code-content">  @Override</span></div>
+<div class="code-line context-line"><span class="line-number">43</span><span class="code-content">  public int describeContents() {</span></div>
+<div class="code-line context-line"><span class="line-number">44</span><span class="code-content">    return 0;</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">60</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">61</span><span class="code-content">  /*</span></div>
+<div class="code-line context-line"><span class="line-number">62</span><span class="code-content">   * Parcelable interface must also have a static field called CREATOR, which is an object implementing the</span></div>
+<div class="code-line context-line"><span class="line-number">63</span><span class="code-content">   * Parcelable.Creator interface. Used to un-marshal or de-serialize object from Parcel.</span></div>
+<div class="code-line context-line"><span class="line-number">64</span><span class="code-content">   */</span></div>
+<div class="code-line correct-line"><span class="line-number">65</span><span class="code-content">  public static final Parcelable.Creator&lt;Tag&gt; CREATOR = new Parcelable.Creator&lt;Tag&gt;() {</span></div>
+<div class="code-line context-line"><span class="line-number">66</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">67</span><span class="code-content">    public Tag createFromParcel(Parcel in) {</span></div>
+<div class="code-line context-line"><span class="line-number">68</span><span class="code-content">      return new Tag(in);</span></div>
+<div class="code-line context-line"><span class="line-number">69</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">70</span><span class="code-content"></span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-5">
+    File: it/feio/android/omninotes/models/listeners/RecyclerViewItemClickSupport.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\listeners\RecyclerViewItemClickSupport.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">60</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">61</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">62</span><span class="code-content">    @Override</span></div>
+<div class="code-line context-line"><span class="line-number">63</span><span class="code-content">    public void onChildViewDetachedFromWindow(View view) {</span></div>
+<div class="code-line context-line"><span class="line-number">64</span><span class="code-content">      // Nothing to do</span></div>
+<div class="code-line correct-line"><span class="line-number">65</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">66</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">67</span><span class="code-content">  };</span></div>
+<div class="code-line context-line"><span class="line-number">68</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">69</span><span class="code-content">  private RecyclerViewItemClickSupport(RecyclerView recyclerView) {</span></div>
+<div class="code-line context-line"><span class="line-number">70</span><span class="code-content">    mRecyclerView = recyclerView;</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-6">
+    File: it/feio/android/omninotes/utils/AnimationsHelper.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\AnimationsHelper.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number"></span><span class="code-content">// No line difference</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">100</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">101</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">102</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">103</span><span class="code-content">  public static void expandOrCollapse(final View v, boolean expand) {</span></div>
+<div class="code-line context-line"><span class="line-number">104</span><span class="code-content">    TranslateAnimation anim;</span></div>
+<div class="code-line correct-line"><span class="line-number">105</span><span class="code-content">    if (expand) {</span></div>
+<div class="code-line context-line"><span class="line-number">106</span><span class="code-content">      anim = new TranslateAnimation(0.0f, 0.0f, -v.getHeight(), 0.0f);</span></div>
+<div class="code-line context-line"><span class="line-number">107</span><span class="code-content">      v.setVisibility(View.VISIBLE);</span></div>
+<div class="code-line context-line"><span class="line-number">108</span><span class="code-content">    } else {</span></div>
+<div class="code-line correct-line"><span class="line-number">109</span><span class="code-content">      anim = new TranslateAnimation(0.0f, 0.0f, 0.0f, -v.getHeight());</span></div>
+<div class="code-line correct-line"><span class="line-number">110</span><span class="code-content">      Animation.AnimationListener collapselistener = new Animation.AnimationListener() {</span></div>
+<div class="code-line context-line"><span class="line-number">111</span><span class="code-content">        @Override</span></div>
+<div class="code-line context-line"><span class="line-number">112</span><span class="code-content">        public void onAnimationStart(Animation animation) {</span></div>
+<div class="code-line context-line"><span class="line-number">113</span><span class="code-content">          // Useless</span></div>
+<div class="code-line correct-line"><span class="line-number">114</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">115</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">116</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">117</span><span class="code-content">        @Override</span></div>
+<div class="code-line context-line"><span class="line-number">118</span><span class="code-content">        public void onAnimationRepeat(Animation animation) {</span></div>
+<div class="code-line context-line"><span class="line-number">119</span><span class="code-content">          // Useless</span></div>
+<div class="code-line context-line"><span class="line-number">120</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">121</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">122</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">123</span><span class="code-content">        @Override</span></div>
+<div class="code-line context-line"><span class="line-number">124</span><span class="code-content">        public void onAnimationEnd(Animation animation) {</span></div>
+<div class="code-line correct-line"><span class="line-number">125</span><span class="code-content">          v.setVisibility(View.GONE);</span></div>
+<div class="code-line correct-line"><span class="line-number">126</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">127</span><span class="code-content">      };</span></div>
+<div class="code-line context-line"><span class="line-number">128</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">129</span><span class="code-content">      anim.setAnimationListener(collapselistener);</span></div>
+<div class="code-line context-line"><span class="line-number">130</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">131</span><span class="code-content"></span></div>
+<div class="code-line correct-line"><span class="line-number">132</span><span class="code-content">    anim.setDuration(300);</span></div>
+<div class="code-line correct-line"><span class="line-number">133</span><span class="code-content">    anim.setInterpolator(new AccelerateInterpolator(0.5f));</span></div>
+<div class="code-line correct-line"><span class="line-number">134</span><span class="code-content">    v.startAnimation(anim);</span></div>
+<div class="code-line correct-line"><span class="line-number">135</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">136</span><span class="code-content">}</span></div>
+</div>
+</div>
+</div>
+<div class="file-header" id="file-7">
+    File: it/feio/android/omninotes/utils/TagsHelper.java
+    <a href="file:///D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\TagsHelper.java" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        Open Source Code
+    </a>
+</div>
+<div class="diff-container">
+<div class="diff-panel">
+<div class="panel-header">Bug Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">123</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">124</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">125</span><span class="code-content">  public static Integer[] getPreselectedTagsArray(Note note, List&lt;Tag&gt; tags) {</span></div>
+<div class="code-line context-line"><span class="line-number">126</span><span class="code-content">    List&lt;Integer&gt; t = new ArrayList&lt;&gt;();</span></div>
+<div class="code-line context-line"><span class="line-number">127</span><span class="code-content">    for (String noteTag : TagsHelper.retrieveTags(note).keySet()) {</span></div>
+<div class="code-line bug-line"><span class="line-number">128</span><span class="code-content">      for (Tag tag : tags) {</span></div>
+<div class="code-line bug-line"><span class="line-number">129</span><span class="code-content">        if (tag.getText().equals(noteTag)) {</span></div>
+<div class="code-line bug-line"><span class="line-number">130</span><span class="code-content">          t.add(tags.indexOf(tag));</span></div>
+<div class="code-line bug-line"><span class="line-number">131</span><span class="code-content">          break;</span></div>
+<div class="code-line context-line"><span class="line-number">132</span><span class="code-content">        }</span></div>
+<div class="code-line context-line"><span class="line-number">133</span><span class="code-content">      }</span></div>
+<div class="code-line bug-line"><span class="line-number">134</span><span class="code-content">    }</span></div>
+<div class="code-line context-line"><span class="line-number">135</span><span class="code-content">    return t.toArray(new Integer[]{});</span></div>
+<div class="code-line context-line"><span class="line-number">136</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">137</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">138</span><span class="code-content">  public static Integer[] getPreselectedTagsArray(List&lt;Note&gt; notes, List&lt;Tag&gt; tags) {</span></div>
+<div class="code-line context-line"><span class="line-number">139</span><span class="code-content">    HashSet&lt;Integer&gt; set = new HashSet&lt;&gt;();</span></div>
+</div>
+</div>
+<div class="diff-panel">
+<div class="panel-header">Correct Execution Lines</div>
+<div class="code-container">
+<div class="code-line context-line"><span class="line-number">37</span><span class="code-content">@UtilityClass</span></div>
+<div class="code-line context-line"><span class="line-number">38</span><span class="code-content">public class TagsHelper {</span></div>
+<div class="code-line context-line"><span class="line-number">39</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">40</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">41</span><span class="code-content">  public static List&lt;Tag&gt; getAllTags() {</span></div>
+<div class="code-line correct-line"><span class="line-number">42</span><span class="code-content">    return DbHelper.getInstance().getTags();</span></div>
+<div class="code-line context-line"><span class="line-number">43</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">44</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">45</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">46</span><span class="code-content">  public static Map&lt;String, Integer&gt; retrieveTags(Note note) {</span></div>
+<div class="code-line correct-line"><span class="line-number">47</span><span class="code-content">    HashMap&lt;String, Integer&gt; tagsMap = new HashMap&lt;&gt;();</span></div>
+<div class="code-line correct-line"><span class="line-number">48</span><span class="code-content">    String[] words = (note.getTitle() + &quot; &quot; + note.getContent()).replaceAll(&quot;\n&quot;, &quot; &quot;).trim()</span></div>
+<div class="code-line correct-line"><span class="line-number">49</span><span class="code-content">        .split(&quot; &quot;);</span></div>
+<div class="code-line correct-line"><span class="line-number">50</span><span class="code-content">    for (String word : words) {</span></div>
+<div class="code-line correct-line"><span class="line-number">51</span><span class="code-content">      String parsedHashtag = UrlCompleter.parseHashtag(word);</span></div>
+<div class="code-line correct-line"><span class="line-number">52</span><span class="code-content">      if (StringUtils.isNotEmpty(parsedHashtag)) {</span></div>
+<div class="code-line correct-line"><span class="line-number">53</span><span class="code-content">        int count = tagsMap.get(parsedHashtag) == null ? 0 : tagsMap.get(parsedHashtag);</span></div>
+<div class="code-line correct-line"><span class="line-number">54</span><span class="code-content">        tagsMap.put(parsedHashtag, ++count);</span></div>
+<div class="code-line context-line"><span class="line-number">55</span><span class="code-content">      }</span></div>
+<div class="code-line context-line"><span class="line-number">56</span><span class="code-content">    }</span></div>
+<div class="code-line correct-line"><span class="line-number">57</span><span class="code-content">    return tagsMap;</span></div>
+<div class="code-line context-line"><span class="line-number">58</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">59</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">60</span><span class="code-content">  public static Pair&lt;String, List&lt;Tag&gt;&gt; addTagToNote(List&lt;Tag&gt; tags, Integer[] selectedTags,</span></div>
+<div class="code-line context-line"><span class="line-number">61</span><span class="code-content">      Note note) {</span></div>
+<div class="code-line context-line"><span class="line-number">62</span><span class="code-content">    StringBuilder sbTags = new StringBuilder();</span></div>
+<div class="code-line separator-line"><span class="line-number"></span><span class="code-content">⋮</span></div>
+<div class="code-line context-line"><span class="line-number">113</span><span class="code-content">        ? word.replace(tagToRemove.getText(), &quot;&quot;)</span></div>
+<div class="code-line context-line"><span class="line-number">114</span><span class="code-content">        : word;</span></div>
+<div class="code-line context-line"><span class="line-number">115</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">116</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">117</span><span class="code-content">  public static String[] getTagsArray(List&lt;Tag&gt; tags) {</span></div>
+<div class="code-line correct-line"><span class="line-number">118</span><span class="code-content">    String[] tagsArray = new String[tags.size()];</span></div>
+<div class="code-line correct-line"><span class="line-number">119</span><span class="code-content">    for (int i = 0; i &lt; tags.size(); i++) {</span></div>
+<div class="code-line correct-line"><span class="line-number">120</span><span class="code-content">      tagsArray[i] = tags.get(i).getText().substring(1) + &quot; (&quot; + tags.get(i).getCount() + &quot;)&quot;;</span></div>
+<div class="code-line context-line"><span class="line-number">121</span><span class="code-content">    }</span></div>
+<div class="code-line correct-line"><span class="line-number">122</span><span class="code-content">    return tagsArray;</span></div>
+<div class="code-line context-line"><span class="line-number">123</span><span class="code-content">  }</span></div>
+<div class="code-line context-line"><span class="line-number">124</span><span class="code-content"></span></div>
+<div class="code-line context-line"><span class="line-number">125</span><span class="code-content">  public static Integer[] getPreselectedTagsArray(Note note, List&lt;Tag&gt; tags) {</span></div>
+<div class="code-line context-line"><span class="line-number">126</span><span class="code-content">    List&lt;Integer&gt; t = new ArrayList&lt;&gt;();</span></div>
+<div class="code-line context-line"><span class="line-number">127</span><span class="code-content">    for (String noteTag : TagsHelper.retrieveTags(note).keySet()) {</span></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+com/todoroo/astrid/api/SearchFilter.kt
+org/tasks/ui/TaskEditViewModel.kt
+com/todoroo/astrid/activity/TaskListFragment.kt
+com/todoroo/astrid/activity/MainActivityViewModel.kt
+com/todoroo/astrid/activity/TaskEditFragment.kt
+org/tasks/ui/TaskListViewModel.kt
+com/todoroo/astrid/activity/MainActivity.kt

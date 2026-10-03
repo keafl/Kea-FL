@@ -1,0 +1,317 @@
+2026-06-20 15:13:06 [runner] INFO: Building pair test cases...
+2026-06-20 15:13:06 [replayer] INFO: Parse 206 events
+2026-06-20 15:13:06 [replayer] INFO: Parse 104 Monkey actions
+2026-06-20 15:13:06 [reproducer] INFO: Extract 6 pairs test cases
+2026-06-20 15:13:06 [replayer] INFO: Property markor2153.Markor.test_stop_start not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:13:06 [replayer] INFO: Property markor2153.Markor.test_create_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:13:06 [replayer] INFO: Property markor2153.Markor.test_modify_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:13:06 [replayer] INFO: Property markor2153.Markor.test_open_file not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:13:06 [replayer] INFO: Property markor2153.Markor.test_new_folder not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:13:06 [reproducer] INFO: Build 1 pairs test cases
+2026-06-20 15:13:06 [reproducer] INFO: Test case [1]: test_check_recent_file
+2026-06-20 15:13:06 [reproducer] INFO:     -happy_path: [preconditions]: 7, [property]: 6
+2026-06-20 15:13:06 [reproducer] INFO:     -bug_path: [preconditions]: 27, [property]: 6
+2026-06-20 15:13:06 [runner] INFO: Start running full coverage difference analysis...
+2026-06-20 15:13:06 [runner] INFO: Processing pair test case [1]: happy_test_check_recent_file <-> bug_test_check_recent_file
+2026-06-20 15:13:06 [runner] INFO: Running pair test case analysis: happy_test_check_recent_file <-> bug_test_check_recent_file
+2026-06-20 15:13:06 [runner] INFO: Running property-satisfying path...
+2026-06-20 15:13:06 [reproducer] INFO: Start reproducing test case: happy_test_check_recent_file
+2026-06-20 15:13:06 [reproducer] INFO: Start executing preconditions for test case: happy_test_check_recent_file
+2026-06-20 15:13:06 [reproducer] INFO: Preconditions executed for test case: happy_test_check_recent_file
+2026-06-20 15:13:06 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_check_recent_file
+2026-06-20 15:13:06 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:13:06 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:13:07 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_precondition/happy_test_check_recent_file.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_precondition/happy_test_check_recent_file.xml
+2026-06-20 15:13:07 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_precondition\happy_test_check_recent_file.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-20 15:13:07 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_precondition/happy_test_check_recent_file.ec -> .\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_precondition/happy_test_check_recent_file.xml
+2026-06-20 15:13:07 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_precondition/happy_test_check_recent_file.xml
+2026-06-20 15:13:07 [reproducer] INFO: Start executing property for test case: happy_test_check_recent_file
+2026-06-20 15:13:07 [reproducer] INFO: Property executed for test case: happy_test_check_recent_file
+2026-06-20 15:13:07 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_check_recent_file
+2026-06-20 15:13:07 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:13:07 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:13:07 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_property/happy_test_check_recent_file.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_property/happy_test_check_recent_file.xml
+2026-06-20 15:13:07 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_property\happy_test_check_recent_file.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-20 15:13:07 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_property/happy_test_check_recent_file.ec -> .\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_property/happy_test_check_recent_file.xml
+2026-06-20 15:13:07 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151306\test_check_recent_file\happy_test_check_recent_file_property/happy_test_check_recent_file.xml
+2026-06-20 15:13:07 [runner] INFO: Running property-violating path path...
+2026-06-20 15:13:07 [reproducer] INFO: Start reproducing test case: bug_test_check_recent_file
+2026-06-20 15:13:07 [reproducer] INFO: Start executing preconditions for test case: bug_test_check_recent_file
+2026-06-20 15:13:07 [reproducer] INFO: Preconditions executed for test case: bug_test_check_recent_file
+2026-06-20 15:13:07 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_check_recent_file
+2026-06-20 15:13:07 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:13:07 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:13:07 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_precondition/bug_test_check_recent_file.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_precondition/bug_test_check_recent_file.xml
+2026-06-20 15:13:07 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_precondition\bug_test_check_recent_file.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-20 15:13:07 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_precondition/bug_test_check_recent_file.ec -> .\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_precondition/bug_test_check_recent_file.xml
+2026-06-20 15:13:07 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_precondition/bug_test_check_recent_file.xml
+2026-06-20 15:13:07 [reproducer] INFO: Start executing property for test case: bug_test_check_recent_file
+2026-06-20 15:13:07 [reproducer] INFO: Property executed for test case: bug_test_check_recent_file
+2026-06-20 15:13:07 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_check_recent_file
+2026-06-20 15:13:07 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:13:07 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:13:08 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_property/bug_test_check_recent_file.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_property/bug_test_check_recent_file.xml
+2026-06-20 15:13:08 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_property\bug_test_check_recent_file.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-20 15:13:08 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_property/bug_test_check_recent_file.ec -> .\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_property/bug_test_check_recent_file.xml
+2026-06-20 15:13:08 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151306\test_check_recent_file\bug_test_check_recent_file_property/bug_test_check_recent_file.xml
+2026-06-20 15:13:08 [runner] INFO: Parsing coverage data...
+2026-06-20 15:13:08 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151306\test_check_recent_file\data\bug_test_check_recent_file_pre_line_coverage.md
+2026-06-20 15:13:08 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151306\test_check_recent_file\data\bug_test_check_recent_file_pre_branch_coverage.md
+2026-06-20 15:13:08 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151306\test_check_recent_file\data\bug_test_check_recent_file_prop_line_coverage.md
+2026-06-20 15:13:08 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151306\test_check_recent_file\data\bug_test_check_recent_file_prop_branch_coverage.md
+2026-06-20 15:13:08 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151306\test_check_recent_file\data\happy_test_check_recent_file_pre_line_coverage.md
+2026-06-20 15:13:08 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151306\test_check_recent_file\data\happy_test_check_recent_file_pre_branch_coverage.md
+2026-06-20 15:13:08 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151306\test_check_recent_file\data\happy_test_check_recent_file_prop_line_coverage.md
+2026-06-20 15:13:08 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151306\test_check_recent_file\data\happy_test_check_recent_file_prop_branch_coverage.md
+2026-06-20 15:13:08 [runner] INFO: Calculating incremental coverage...
+2026-06-20 15:13:08 [runner] INFO: Performing incremental coverage analysis...
+2026-06-20 15:13:08 [runner] INFO: Generating pair test case report...
+2026-06-20 15:13:08 [runner] INFO: Saving intermediate data...
+2026-06-20 15:13:08 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260620_151306\test_check_recent_file\data\bug_test_check_recent_file_line_incremental_data.md
+2026-06-20 15:13:08 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260620_151306\test_check_recent_file\data\bug_test_check_recent_file_branch_incremental_data.md
+2026-06-20 15:13:08 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260620_151306\test_check_recent_file\data\happy_test_check_recent_file_line_incremental_data.md
+2026-06-20 15:13:08 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260620_151306\test_check_recent_file\data\happy_test_check_recent_file_branch_incremental_data.md
+2026-06-20 15:13:08 [report_generator] INFO: generate line diff data: .\report\report_20260620_151306\test_check_recent_file\data\line_diff_data.md
+2026-06-20 15:13:08 [report_generator] INFO: generate branch diff data: .\report\report_20260620_151306\test_check_recent_file\data\branch_diff_data.md
+2026-06-20 15:13:08 [runner] INFO: Generating diff report...
+2026-06-20 15:13:08 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MainActivity.java encoding: utf-8
+2026-06-20 15:13:08 [report_generator] ERROR: Source file not found: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MainActivity_ViewBinding.java
+2026-06-20 15:13:08 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MoreFragment.java encoding: utf-8
+2026-06-20 15:13:08 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MoreInfoFragment.java encoding: utf-8
+2026-06-20 15:13:08 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\util\AppSettings.java encoding: utf-8
+2026-06-20 15:13:08 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\util\ShortcutUtils.java encoding: utf-8
+2026-06-20 15:13:08 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\activity\GsFragmentBase.java encoding: utf-8
+2026-06-20 15:13:08 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\preference\GsPreferenceFragmentCompat.java encoding: utf-8
+2026-06-20 15:13:08 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\preference\SharedPreferencesPropertyBackend.java encoding: utf-8
+2026-06-20 15:13:08 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\util\ContextUtils.java encoding: utf-8
+2026-06-20 15:13:08 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260620_151306\test_check_recent_file\test_check_recent_file_line_diff_report.html
+2026-06-20 15:13:08 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260620_151306\test_check_recent_file\test_check_recent_file_branch_diff_report.html
+2026-06-20 15:13:08 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_check_recent_file
+
+## Code Coverage Summary
+File: net/gsantner/markor/activity/MainActivity.java
+  Only in first dataset lines: [127, 128, 129, 133, 332, 333, 337, 338, 340, 342, 355, 356, 357, 366, 367, 368, 369, 375, 377, 378, 380, 381, 384, 388, 495]
+    Line 127: hit count 4
+    Line 128: hit count 6
+    Line 129: hit count 2
+    Line 133: hit count 1
+    Line 332: hit count 7
+    Line 333: hit count 2
+    Line 337: hit count 2
+    Line 338: hit count 4
+    Line 340: hit count 3
+    Line 342: hit count 1
+    Line 355: hit count 5
+    Line 356: hit count 5
+    Line 357: hit count 5
+    Line 366: hit count 5
+    Line 367: hit count 3
+    Line 368: hit count 3
+    Line 369: hit count 7
+    Line 375: hit count 8
+    Line 377: hit count 10
+    Line 378: hit count 5
+    Line 380: hit count 5
+    Line 381: hit count 2
+    Line 384: hit count 10
+    Line 388: hit count 1
+    Line 495: hit count 1
+----------------------------------------
+File: net/gsantner/markor/activity/MainActivity_ViewBinding.java
+  Only in first dataset lines: [58, 59, 67]
+    Line 58: hit count 4
+    Line 59: hit count 1
+    Line 67: hit count 1
+----------------------------------------
+File: net/gsantner/markor/activity/MoreFragment.java
+  Only in first dataset lines: [38]
+    Line 38: hit count 2
+----------------------------------------
+File: net/gsantner/markor/activity/MoreInfoFragment.java
+  Only in first dataset lines: [60, 61, 62, 64, 65]
+    Line 60: hit count 6
+    Line 61: hit count 6
+    Line 62: hit count 2
+    Line 64: hit count 7
+    Line 65: hit count 3
+----------------------------------------
+File: net/gsantner/markor/util/AppSettings.java
+  Only in first dataset lines: [315, 316, 317, 318, 319, 320, 322, 323, 496, 497, 498, 506, 507, 508, 511, 512, 513, 514, 519, 530, 531]
+    Line 315: hit count 3
+    Line 316: hit count 5
+    Line 317: hit count 6
+    Line 318: hit count 6
+    Line 319: hit count 4
+    Line 320: hit count 4
+    Line 322: hit count 25
+    Line 323: hit count 3
+    Line 496: hit count 3
+    Line 497: hit count 4
+    Line 498: hit count 2
+    Line 506: hit count 4
+    Line 507: hit count 11
+    Line 508: hit count 1
+    Line 511: hit count 4
+    Line 512: hit count 11
+    Line 513: hit count 4
+    Line 514: hit count 1
+    Line 519: hit count 9
+    Line 530: hit count 7
+    Line 531: hit count 1
+----------------------------------------
+File: net/gsantner/markor/util/ShortcutUtils.java
+  Only in first dataset lines: [94, 96, 97, 98, 100, 101, 102, 103, 104, 105, 106, 109, 112]
+    Line 94: hit count 8
+    Line 96: hit count 6
+    Line 97: hit count 2
+    Line 98: hit count 3
+    Line 100: hit count 3
+    Line 101: hit count 16
+    Line 102: hit count 3
+    Line 103: hit count 4
+    Line 104: hit count 3
+    Line 105: hit count 1
+    Line 106: hit count 1
+    Line 109: hit count 4
+    Line 112: hit count 1
+----------------------------------------
+File: net/gsantner/opoc/activity/GsFragmentBase.java
+  Only in first dataset lines: [88, 89, 91, 184]
+    Line 88: hit count 3
+    Line 89: hit count 3
+    Line 91: hit count 1
+    Line 184: hit count 1
+----------------------------------------
+File: net/gsantner/opoc/preference/GsPreferenceFragmentCompat.java
+  Only in first dataset lines: [208, 209, 300, 301, 302, 303, 304, 305]
+    Line 208: hit count 6
+    Line 209: hit count 7
+    Line 300: hit count 3
+    Line 301: hit count 7
+    Line 302: hit count 4
+    Line 303: hit count 6
+    Line 304: hit count 2
+    Line 305: hit count 3
+----------------------------------------
+File: net/gsantner/opoc/preference/SharedPreferencesPropertyBackend.java
+  Only in first dataset lines: [150, 151, 152, 156, 159, 189, 190, 217, 218, 219, 220, 221, 222, 223, 231, 232, 240, 241, 244, 245]
+    Line 150: hit count 10
+    Line 151: hit count 4
+    Line 152: hit count 7
+    Line 156: hit count 6
+    Line 159: hit count 1
+    Line 189: hit count 8
+    Line 190: hit count 1
+    Line 217: hit count 4
+    Line 218: hit count 10
+    Line 219: hit count 4
+    Line 220: hit count 7
+    Line 221: hit count 1
+    Line 222: hit count 14
+    Line 223: hit count 1
+    Line 231: hit count 7
+    Line 232: hit count 2
+    Line 240: hit count 8
+    Line 241: hit count 1
+    Line 244: hit count 12
+    Line 245: hit count 1
+----------------------------------------
+File: net/gsantner/opoc/util/ContextUtils.java
+  Only in first dataset lines: [269, 270, 271, 272, 275, 276]
+    Line 269: hit count 3
+    Line 270: hit count 6
+    Line 271: hit count 4
+    Line 272: hit count 4
+    Line 275: hit count 1
+    Line 276: hit count 2
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Random operation: LONG_CLICK → Start: test_open_file → Back → Pass: test_open_file → Start: test_check_recent_file → Pass: test_check_recent_file
+
+FAIL continuation:
+Random operation: CLICK → Start: test_open_file → Back → Pass: test_open_file → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: LONG_CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_check_recent_file → Fail: test_check_recent_file → Start: test_stop_start → Pass: test_stop_start
+
+## Correct Execution Path
+Random operation: LONG_CLICK → Start: test_open_file → Back → Pass: test_open_file → Start: test_check_recent_file → Pass: test_check_recent_file
+
+## Error Execution Path
+Random operation: LONG_CLICK → Start: test_open_file → Back → Pass: test_open_file → Start: test_check_recent_file → Pass: test_check_recent_file → Random operation: CLICK → Start: test_open_file → Back → Pass: test_open_file → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: LONG_CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_check_recent_file → Fail: test_check_recent_file → Start: test_stop_start → Pass: test_stop_start
+
+## Files to Analyze
+net/gsantner/markor/activity/MainActivity.java
+  Differing lines: 25
+
+net/gsantner/markor/activity/MainActivity_ViewBinding.java
+  Differing lines: 3
+
+net/gsantner/markor/activity/MoreFragment.java
+  Differing lines: 1
+
+net/gsantner/markor/activity/MoreInfoFragment.java
+  Differing lines: 5
+
+net/gsantner/markor/util/AppSettings.java
+  Differing lines: 21
+
+net/gsantner/markor/util/ShortcutUtils.java
+  Differing lines: 13
+
+net/gsantner/opoc/activity/GsFragmentBase.java
+  Differing lines: 4
+
+net/gsantner/opoc/preference/GsPreferenceFragmentCompat.java
+  Differing lines: 8
+
+net/gsantner/opoc/preference/SharedPreferencesPropertyBackend.java
+  Differing lines: 20
+
+net/gsantner/opoc/util/ContextUtils.java
+  Differing lines: 6
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-20 15:13:14 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-20 15:13:15 [llm] INFO: LLM response: net/gsantner/markor/util/AppSettings.java
+net/gsantner/markor/util/ShortcutUtils.java
+net/gsantner/markor/activity/MainActivity.java
+net/gsantner/opoc/preference/SharedPreferencesPropertyBackend.java
+net/gsantner/opoc/util/ContextUtils.java
+net/gsantner/opoc/activity/GsFragmentBase.java
+net/gsantner/opoc/preference/GsPreferenceFragmentCompat.java
+net/gsantner/markor/activity/MoreInfoFragment.java
+net/gsantner/markor/activity/MainActivity_ViewBinding.java
+net/gsantner/markor/activity/MoreFragment.java
+2026-06-20 15:13:15 [runner] INFO: Saving ranking to .\report\report_20260620_151306\test_check_recent_file\ranking.txt
+2026-06-20 15:13:15 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260620_151306\index.html
+2026-06-20 15:13:15 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: .\report\report_20260620_151306

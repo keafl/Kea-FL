@@ -1,0 +1,32 @@
+{
+    "omni950.OmniNotesBugTest.test_behavior_setting": {
+        "precond_satisfied": 1,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni950.OmniNotesBugTest.test_create_empty_category": {
+        "precond_satisfied": 39,
+        "executed": 14,
+        "fail": 1,
+        "error": 0
+    },
+    "omni950.OmniNotesBugTest.test_create_note_with_tag_in_content": {
+        "precond_satisfied": 2,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni950.OmniNotesBugTest.test_data_setting": {
+        "precond_satisfied": 4,
+        "executed": 1,
+        "fail": 0,
+        "error": 0
+    },
+    "omni950.OmniNotesBugTest.test_reduced_view": {
+        "precond_satisfied": 35,
+        "executed": 5,
+        "fail": 0,
+        "error": 0
+    }
+}

@@ -1,0 +1,10 @@
+itkach/aard2/BlobDescriptorList.java
+itkach/aard2/ArticleCollectionActivity.java
+itkach/aard2/ArticleWebView.java
+itkach/aard2/BlobDescriptorListFragment.java
+itkach/aard2/BlobDescriptorListAdapter.java
+itkach/aard2/LookupFragment.java
+itkach/aard2/BlobListAdapter.java
+itkach/aard2/BlobDescriptor.java
+itkach/aard2/MainActivity.java
+itkach/aard2/Util.java

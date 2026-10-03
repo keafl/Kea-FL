@@ -1,0 +1,361 @@
+2026-06-19 12:31:28 [runner] INFO: Building pair test cases...
+2026-06-19 12:31:28 [replayer] INFO: Parse 206 events
+2026-06-19 12:31:28 [replayer] INFO: Parse 104 Monkey actions
+2026-06-19 12:31:28 [reproducer] INFO: Extract 6 pairs test cases
+2026-06-19 12:31:28 [replayer] INFO: Property markor2153.Markor.test_modify_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 12:31:28 [replayer] INFO: Property markor2153.Markor.test_create_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 12:31:28 [replayer] INFO: Property markor2153.Markor.test_stop_start not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 12:31:28 [replayer] INFO: Property markor2153.Markor.test_new_folder not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 12:31:28 [replayer] INFO: Property markor2153.Markor.test_open_file not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-19 12:31:28 [reproducer] INFO: Build 1 pairs test cases
+2026-06-19 12:31:28 [reproducer] INFO: Test case [1]: test_check_recent_file
+2026-06-19 12:31:28 [reproducer] INFO:     -happy_path: [preconditions]: 7, [property]: 6
+2026-06-19 12:31:28 [reproducer] INFO:     -bug_path: [preconditions]: 27, [property]: 6
+2026-06-19 12:31:28 [runner] INFO: Start running full coverage difference analysis...
+2026-06-19 12:31:28 [runner] INFO: Processing pair test case [1]: happy_test_check_recent_file <-> bug_test_check_recent_file
+2026-06-19 12:31:28 [runner] INFO: Running pair test case analysis: happy_test_check_recent_file <-> bug_test_check_recent_file
+2026-06-19 12:31:28 [runner] INFO: Running property-satisfying path...
+2026-06-19 12:31:28 [reproducer] INFO: Start reproducing test case: happy_test_check_recent_file
+2026-06-19 12:31:28 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 12:31:28 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 12:31:28 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 12:31:29 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 12:31:29 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: net.gsantner.markor_test
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=26ms (0ms mobile, 0ms wifi, 26ms not connected)
+
+2026-06-19 12:31:29 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 12:31:42 [reproducer] INFO: Init operation executed
+2026-06-19 12:31:45 [reproducer] INFO: Test environment setup completed
+2026-06-19 12:31:45 [reproducer] INFO: Start executing preconditions for test case: happy_test_check_recent_file
+2026-06-19 12:31:45 [replayer] INFO: [1] Execute Monkey event: LONG_CLICK
+2026-06-19 12:31:45 [replayer] INFO: Touch: Touch(touch_type='down', x=786.0, y=297.0, wait_duration=0.0)
+2026-06-19 12:31:45 [replayer] INFO: Press coordinate at: (786.0, 297.0)
+2026-06-19 12:31:45 [replayer] INFO: Touch: Touch(touch_type='up', x=786.0, y=297.0, wait_duration=1.0)
+2026-06-19 12:31:45 [replayer] INFO: Release coordinate at: (786.0, 297.0)
+2026-06-19 12:31:47 [replayer] INFO: Script execution start state: markor2153.Markor.test_open_file - start
+2026-06-19 12:31:47 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:31:47 [replayer] INFO: Click coordinate: (694.0, 209.0)
+2026-06-19 12:31:48 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:31:48 [replayer] INFO: Click coordinate: (717.5, 1107.0)
+2026-06-19 12:31:49 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:31:49 [replayer] INFO: Click coordinate: (230.5, 774.0)
+2026-06-19 12:31:50 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 12:31:51 [replayer] INFO: Press key: back
+2026-06-19 12:31:52 [replayer] INFO: Script execution end state: markor2153.Markor.test_open_file - pass
+2026-06-19 12:31:52 [reproducer] INFO: Preconditions executed for test case: happy_test_check_recent_file
+2026-06-19 12:31:52 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_check_recent_file
+2026-06-19 12:31:52 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 12:31:52 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 12:31:52 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 12:31:53 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_precondition/happy_test_check_recent_file.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_precondition/happy_test_check_recent_file.xml
+2026-06-19 12:31:53 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_precondition\happy_test_check_recent_file.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-19 12:31:53 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_precondition/happy_test_check_recent_file.ec -> .\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_precondition/happy_test_check_recent_file.xml
+2026-06-19 12:31:53 [reproducer] INFO: Coverage data collected: .\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_precondition/happy_test_check_recent_file.xml
+2026-06-19 12:31:53 [reproducer] INFO: Start executing property for test case: happy_test_check_recent_file
+2026-06-19 12:31:53 [replayer] INFO: Script execution start state: markor2153.Markor.test_check_recent_file - start
+2026-06-19 12:31:53 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:31:53 [replayer] INFO: Click coordinate: (694.0, 209.0)
+2026-06-19 12:31:54 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:31:54 [replayer] INFO: Click coordinate: (717.5, 736.5)
+2026-06-19 12:31:55 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:31:55 [replayer] INFO: Click coordinate: (804.0, 209.0)
+2026-06-19 12:31:56 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:31:57 [replayer] INFO: Click coordinate: (717.5, 1107.0)
+2026-06-19 12:31:58 [replayer] INFO: Script execution end state: markor2153.Markor.test_check_recent_file - pass
+2026-06-19 12:31:58 [reproducer] INFO: Property executed for test case: happy_test_check_recent_file
+2026-06-19 12:31:58 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_check_recent_file
+2026-06-19 12:31:58 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 12:31:58 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 12:31:58 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 12:31:58 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_property/happy_test_check_recent_file.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_property/happy_test_check_recent_file.xml
+2026-06-19 12:31:58 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_property\happy_test_check_recent_file.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-19 12:31:58 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_property/happy_test_check_recent_file.ec -> .\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_property/happy_test_check_recent_file.xml
+2026-06-19 12:31:58 [reproducer] INFO: Coverage data collected: .\report\report_20260619_123127\test_check_recent_file\happy_test_check_recent_file_property/happy_test_check_recent_file.xml
+2026-06-19 12:31:58 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 12:31:58 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 12:31:58 [reproducer] INFO: Test environment reset completed
+2026-06-19 12:31:58 [runner] INFO: Running property-violating path path...
+2026-06-19 12:31:58 [reproducer] INFO: Start reproducing test case: bug_test_check_recent_file
+2026-06-19 12:32:00 [replayer] INFO: Connected to device: emulator-5554
+2026-06-19 12:32:00 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 12:32:01 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-19 12:32:01 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-19 12:32:01 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: net.gsantner.markor_test
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=10ms (0ms mobile, 0ms wifi, 10ms not connected)
+
+2026-06-19 12:32:01 [reproducer] INFO: Execute init operation after app launches
+2026-06-19 12:32:13 [reproducer] INFO: Init operation executed
+2026-06-19 12:32:16 [reproducer] INFO: Test environment setup completed
+2026-06-19 12:32:16 [reproducer] INFO: Start executing preconditions for test case: bug_test_check_recent_file
+2026-06-19 12:32:16 [replayer] INFO: [1] Execute Monkey event: LONG_CLICK
+2026-06-19 12:32:16 [replayer] INFO: Touch: Touch(touch_type='down', x=786.0, y=297.0, wait_duration=0.0)
+2026-06-19 12:32:17 [replayer] INFO: Press coordinate at: (786.0, 297.0)
+2026-06-19 12:32:17 [replayer] INFO: Touch: Touch(touch_type='up', x=786.0, y=297.0, wait_duration=1.0)
+2026-06-19 12:32:17 [replayer] INFO: Release coordinate at: (786.0, 297.0)
+2026-06-19 12:32:19 [replayer] INFO: Script execution start state: markor2153.Markor.test_open_file - start
+2026-06-19 12:32:19 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:32:19 [replayer] INFO: Click coordinate: (694.0, 209.0)
+2026-06-19 12:32:20 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:32:20 [replayer] INFO: Click coordinate: (717.5, 1107.0)
+2026-06-19 12:32:21 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:32:21 [replayer] INFO: Click coordinate: (230.5, 774.0)
+2026-06-19 12:32:22 [replayer] INFO: [1] Execute Script event: pressKey
+2026-06-19 12:32:23 [replayer] INFO: Press key: back
+2026-06-19 12:32:24 [replayer] INFO: Script execution end state: markor2153.Markor.test_open_file - pass
+2026-06-19 12:32:24 [replayer] INFO: Script execution start state: markor2153.Markor.test_check_recent_file - start
+2026-06-19 12:32:24 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:32:24 [replayer] INFO: Click coordinate: (694.0, 209.0)
+2026-06-19 12:32:25 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:32:26 [replayer] INFO: Click coordinate: (717.5, 736.5)
+2026-06-19 12:32:27 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:32:27 [replayer] INFO: Click coordinate: (804.0, 209.0)
+2026-06-19 12:32:28 [replayer] INFO: [1] Execute Script event: click
+2026-06-19 12:32:28 [replayer] INFO: Click coordinate: (717.5, 1107.0)
+2026-06-19 12:32:29 [replayer] INFO: Script execution end state: markor2153.Markor.test_check_recent_file - pass
+2026-06-19 12:32:29 [replayer] INFO: [2] Execute Monkey event: CLICK
+2026-06-19 12:32:29 [replayer] INFO: Touch: Touch(touch_type='down', x=582.0, y=148.0, wait_duration=0.0)
+2026-06-19 12:32:29 [replayer] INFO: Press coordinate at: (582.0, 148.0)
+2026-06-19 12:32:29 [replayer] INFO: Touch: Touch(touch_type='up', x=582.0, y=148.0, wait_duration=0.0)
+2026-06-19 12:32:29 [replayer] INFO: Release coordinate at: (582.0, 148.0)
+2026-06-19 12:32:30 [replayer] INFO: Script execution start state: markor2153.Markor.test_open_file - start
+2026-06-19 12:32:30 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 12:32:31 [replayer] INFO: Click coordinate: (694.0, 209.0)
+2026-06-19 12:32:32 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 12:32:32 [replayer] INFO: Click coordinate: (717.5, 1107.0)
+2026-06-19 12:32:33 [replayer] INFO: [2] Execute Script event: click
+2026-06-19 12:32:33 [replayer] INFO: Click coordinate: (331.5, 623.0)
+2026-06-19 12:32:34 [replayer] INFO: [2] Execute Script event: pressKey
+2026-06-19 12:32:35 [replayer] INFO: Press key: back
+2026-06-19 12:32:36 [replayer] INFO: Script execution end state: markor2153.Markor.test_open_file - pass
+2026-06-19 12:32:36 [replayer] INFO: [3] Execute Monkey event: CLICK
+2026-06-19 12:32:36 [replayer] INFO: Touch: Touch(touch_type='down', x=946.0, y=2009.0, wait_duration=0.0)
+2026-06-19 12:32:36 [replayer] INFO: Press coordinate at: (946.0, 2009.0)
+2026-06-19 12:32:36 [replayer] INFO: Touch: Touch(touch_type='up', x=946.0, y=2009.0, wait_duration=0.0)
+2026-06-19 12:32:37 [replayer] INFO: Release coordinate at: (946.0, 2009.0)
+2026-06-19 12:32:38 [replayer] INFO: [4] Execute Monkey event: CLICK
+2026-06-19 12:32:38 [replayer] INFO: Touch: Touch(touch_type='down', x=1020.0, y=345.0, wait_duration=0.0)
+2026-06-19 12:32:38 [replayer] INFO: Press coordinate at: (1020.0, 345.0)
+2026-06-19 12:32:38 [replayer] INFO: Touch: Touch(touch_type='up', x=1020.0, y=345.0, wait_duration=0.0)
+2026-06-19 12:32:38 [replayer] INFO: Release coordinate at: (1020.0, 345.0)
+2026-06-19 12:32:39 [replayer] INFO: App net.gsantner.markor_test is in background, restarting...
+2026-06-19 12:32:41 [replayer] INFO: [5] Execute Monkey event: CLICK
+2026-06-19 12:32:41 [replayer] INFO: Touch: Touch(touch_type='down', x=55.0, y=411.0, wait_duration=0.0)
+2026-06-19 12:32:41 [replayer] INFO: Press coordinate at: (55.0, 411.0)
+2026-06-19 12:32:41 [replayer] INFO: Touch: Touch(touch_type='up', x=55.0, y=411.0, wait_duration=0.0)
+2026-06-19 12:32:41 [replayer] INFO: Release coordinate at: (55.0, 411.0)
+2026-06-19 12:32:42 [replayer] INFO: App net.gsantner.markor_test is in background, restarting...
+2026-06-19 12:32:44 [replayer] INFO: [6] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 12:32:44 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1140.0, wait_duration=0.0)
+2026-06-19 12:32:44 [replayer] INFO: Press coordinate at: (540.0, 1140.0)
+2026-06-19 12:32:44 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1140.0, wait_duration=0.0)
+2026-06-19 12:32:44 [replayer] INFO: Move coordinate to: (540.0, 1140.0)
+2026-06-19 12:32:44 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1227.5, wait_duration=0.02)
+2026-06-19 12:32:44 [replayer] INFO: Move coordinate to: (540.0, 1227.5)
+2026-06-19 12:32:44 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1315.0, wait_duration=0.02)
+2026-06-19 12:32:44 [replayer] INFO: Move coordinate to: (540.0, 1315.0)
+2026-06-19 12:32:45 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1402.5, wait_duration=0.02)
+2026-06-19 12:32:45 [replayer] INFO: Move coordinate to: (540.0, 1402.5)
+2026-06-19 12:32:45 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1490.0, wait_duration=0.02)
+2026-06-19 12:32:45 [replayer] INFO: Move coordinate to: (540.0, 1490.0)
+2026-06-19 12:32:45 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1577.5, wait_duration=0.02)
+2026-06-19 12:32:45 [replayer] INFO: Move coordinate to: (540.0, 1577.5)
+2026-06-19 12:32:45 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1665.0, wait_duration=0.02)
+2026-06-19 12:32:45 [replayer] INFO: Move coordinate to: (540.0, 1665.0)
+2026-06-19 12:32:45 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1752.5, wait_duration=0.02)
+2026-06-19 12:32:45 [replayer] INFO: Move coordinate to: (540.0, 1752.5)
+2026-06-19 12:32:45 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1840.0, wait_duration=0.02)
+2026-06-19 12:32:45 [replayer] INFO: Move coordinate to: (540.0, 1840.0)
+2026-06-19 12:32:45 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1927.5, wait_duration=0.02)
+2026-06-19 12:32:45 [replayer] INFO: Move coordinate to: (540.0, 1927.5)
+2026-06-19 12:32:45 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=2015.0, wait_duration=0.02)
+2026-06-19 12:32:45 [replayer] INFO: Release coordinate at: (540.0, 2015.0)
+2026-06-19 12:32:46 [replayer] INFO: [7] Execute Monkey event: LONG_CLICK
+2026-06-19 12:32:46 [replayer] INFO: Touch: Touch(touch_type='down', x=994.0, y=269.0, wait_duration=0.0)
+2026-06-19 12:32:46 [replayer] INFO: Press coordinate at: (994.0, 269.0)
+2026-06-19 12:32:46 [replayer] INFO: Touch: Touch(touch_type='up', x=994.0, y=269.0, wait_duration=1.0)
+2026-06-19 12:32:46 [replayer] INFO: Release coordinate at: (994.0, 269.0)
+2026-06-19 12:32:48 [replayer] INFO: [8] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-19 12:32:48 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 12:32:48 [replayer] INFO: Press coordinate at: (540.0, 1008.0)
+2026-06-19 12:32:48 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1008.0, wait_duration=0.0)
+2026-06-19 12:32:48 [replayer] INFO: Move coordinate to: (540.0, 1008.0)
+2026-06-19 12:32:48 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1108.7, wait_duration=0.02)
+2026-06-19 12:32:48 [replayer] INFO: Move coordinate to: (540.0, 1108.7)
+2026-06-19 12:32:48 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1209.4, wait_duration=0.02)
+2026-06-19 12:32:48 [replayer] INFO: Move coordinate to: (540.0, 1209.4)
+2026-06-19 12:32:48 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1310.1, wait_duration=0.02)
+2026-06-19 12:32:49 [replayer] INFO: Move coordinate to: (540.0, 1310.1)
+2026-06-19 12:32:49 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1410.8, wait_duration=0.02)
+2026-06-19 12:32:49 [replayer] INFO: Move coordinate to: (540.0, 1410.8)
+2026-06-19 12:32:49 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1511.5, wait_duration=0.02)
+2026-06-19 12:32:49 [replayer] INFO: Move coordinate to: (540.0, 1511.5)
+2026-06-19 12:32:49 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1612.2, wait_duration=0.02)
+2026-06-19 12:32:49 [replayer] INFO: Move coordinate to: (540.0, 1612.2)
+2026-06-19 12:32:49 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1712.8999, wait_duration=0.02)
+2026-06-19 12:32:49 [replayer] INFO: Move coordinate to: (540.0, 1712.8999)
+2026-06-19 12:32:49 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1813.6001, wait_duration=0.02)
+2026-06-19 12:32:49 [replayer] INFO: Move coordinate to: (540.0, 1813.6001)
+2026-06-19 12:32:49 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1914.3, wait_duration=0.02)
+2026-06-19 12:32:49 [replayer] INFO: Move coordinate to: (540.0, 1914.3)
+2026-06-19 12:32:49 [replayer] INFO: Touch: Touch(touch_type='up', x=540.0, y=2015.0, wait_duration=0.02)
+2026-06-19 12:32:49 [replayer] INFO: Release coordinate at: (540.0, 2015.0)
+2026-06-19 12:32:50 [replayer] INFO: [9] Execute Monkey event: CLICK
+2026-06-19 12:32:50 [replayer] INFO: Touch: Touch(touch_type='down', x=197.0, y=2000.0, wait_duration=0.0)
+2026-06-19 12:32:50 [replayer] INFO: Press coordinate at: (197.0, 2000.0)
+2026-06-19 12:32:50 [replayer] INFO: Touch: Touch(touch_type='up', x=197.0, y=2000.0, wait_duration=0.0)
+2026-06-19 12:32:50 [replayer] INFO: Release coordinate at: (197.0, 2000.0)
+2026-06-19 12:32:51 [reproducer] INFO: Preconditions executed for test case: bug_test_check_recent_file
+2026-06-19 12:32:51 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_check_recent_file
+2026-06-19 12:32:51 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 12:32:51 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 12:32:51 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 12:32:52 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_precondition/bug_test_check_recent_file.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_precondition/bug_test_check_recent_file.xml
+2026-06-19 12:32:52 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_precondition\bug_test_check_recent_file.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-19 12:32:52 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_precondition/bug_test_check_recent_file.ec -> .\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_precondition/bug_test_check_recent_file.xml
+2026-06-19 12:32:52 [reproducer] INFO: Coverage data collected: .\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_precondition/bug_test_check_recent_file.xml
+2026-06-19 12:32:52 [reproducer] INFO: Start executing property for test case: bug_test_check_recent_file
+2026-06-19 12:32:52 [replayer] INFO: Script execution start state: markor2153.Markor.test_check_recent_file - start
+2026-06-19 12:32:52 [replayer] INFO: [9] Execute Script event: click
+2026-06-19 12:32:52 [replayer] INFO: Click coordinate: (694.0, 209.0)
+2026-06-19 12:32:53 [replayer] INFO: [9] Execute Script event: click
+2026-06-19 12:32:53 [replayer] INFO: Click coordinate: (717.5, 736.5)
+2026-06-19 12:32:54 [replayer] INFO: [9] Execute Script event: click
+2026-06-19 12:32:54 [replayer] INFO: Click coordinate: (804.0, 209.0)
+2026-06-19 12:32:55 [replayer] INFO: [9] Execute Script event: click
+2026-06-19 12:32:55 [replayer] INFO: Click coordinate: (717.5, 1107.0)
+2026-06-19 12:32:56 [replayer] INFO: Script execution end state: markor2153.Markor.test_check_recent_file - fail
+2026-06-19 12:32:56 [reproducer] INFO: Property executed for test case: bug_test_check_recent_file
+2026-06-19 12:32:56 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_check_recent_file
+2026-06-19 12:32:56 [reproducer] INFO: Start generating coverage file operation
+2026-06-19 12:32:57 [reproducer] INFO: Complete generating coverage file operation
+2026-06-19 12:32:57 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-19 12:32:57 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_property/bug_test_check_recent_file.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_property/bug_test_check_recent_file.xml
+2026-06-19 12:32:57 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_property\bug_test_check_recent_file.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-19 12:32:57 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_property/bug_test_check_recent_file.ec -> .\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_property/bug_test_check_recent_file.xml
+2026-06-19 12:32:57 [reproducer] INFO: Coverage data collected: .\report\report_20260619_123127\test_check_recent_file\bug_test_check_recent_file_property/bug_test_check_recent_file.xml
+2026-06-19 12:32:57 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-19 12:32:57 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-19 12:32:57 [reproducer] INFO: Test environment reset completed
+2026-06-19 12:32:57 [runner] INFO: Parsing coverage data...
+2026-06-19 12:32:57 [report_generator] INFO: generate line coverage data: .\report\report_20260619_123127\test_check_recent_file\data\bug_test_check_recent_file_pre_line_coverage.md
+2026-06-19 12:32:57 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_123127\test_check_recent_file\data\bug_test_check_recent_file_pre_branch_coverage.md
+2026-06-19 12:32:57 [report_generator] INFO: generate line coverage data: .\report\report_20260619_123127\test_check_recent_file\data\bug_test_check_recent_file_prop_line_coverage.md
+2026-06-19 12:32:57 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_123127\test_check_recent_file\data\bug_test_check_recent_file_prop_branch_coverage.md
+2026-06-19 12:32:57 [report_generator] INFO: generate line coverage data: .\report\report_20260619_123127\test_check_recent_file\data\happy_test_check_recent_file_pre_line_coverage.md
+2026-06-19 12:32:57 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_123127\test_check_recent_file\data\happy_test_check_recent_file_pre_branch_coverage.md
+2026-06-19 12:32:57 [report_generator] INFO: generate line coverage data: .\report\report_20260619_123127\test_check_recent_file\data\happy_test_check_recent_file_prop_line_coverage.md
+2026-06-19 12:32:57 [report_generator] INFO: generate branch coverage data: .\report\report_20260619_123127\test_check_recent_file\data\happy_test_check_recent_file_prop_branch_coverage.md
+2026-06-19 12:32:57 [runner] INFO: Calculating incremental coverage...
+2026-06-19 12:32:57 [runner] INFO: Performing incremental coverage analysis...
+2026-06-19 12:32:57 [runner] INFO: Generating pair test case report...
+2026-06-19 12:32:57 [runner] INFO: Saving intermediate data...
+2026-06-19 12:32:57 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260619_123127\test_check_recent_file\data\bug_test_check_recent_file_line_incremental_data.md
+2026-06-19 12:32:57 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260619_123127\test_check_recent_file\data\bug_test_check_recent_file_branch_incremental_data.md
+2026-06-19 12:32:57 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260619_123127\test_check_recent_file\data\happy_test_check_recent_file_line_incremental_data.md
+2026-06-19 12:32:57 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260619_123127\test_check_recent_file\data\happy_test_check_recent_file_branch_incremental_data.md
+2026-06-19 12:32:57 [report_generator] INFO: generate line diff data: .\report\report_20260619_123127\test_check_recent_file\data\line_diff_data.md
+2026-06-19 12:32:57 [report_generator] INFO: generate branch diff data: .\report\report_20260619_123127\test_check_recent_file\data\branch_diff_data.md
+2026-06-19 12:32:57 [runner] INFO: Generating diff report...
+2026-06-19 12:32:57 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\util\AppSettings.java encoding: utf-8
+2026-06-19 12:32:57 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\ui\FilesystemViewerAdapter.java encoding: utf-8
+2026-06-19 12:32:57 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260619_123127\test_check_recent_file\test_check_recent_file_line_diff_report.html
+2026-06-19 12:32:57 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\util\AppSettings.java encoding: utf-8
+2026-06-19 12:32:57 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\ui\FilesystemViewerAdapter.java encoding: utf-8
+2026-06-19 12:32:57 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\ui\FilesystemViewerFragment.java encoding: utf-8
+2026-06-19 12:32:57 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260619_123127\test_check_recent_file\test_check_recent_file_branch_diff_report.html
+2026-06-19 12:32:57 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_check_recent_file
+
+## Code Coverage Summary
+File: net/gsantner/markor/util/AppSettings.java
+  Only in second dataset lines: [698]
+    Line 698: hit count 2
+----------------------------------------
+File: net/gsantner/opoc/ui/FilesystemViewerAdapter.java
+  Only in second dataset lines: [168, 170, 238, 239, 240, 241, 489, 490]
+    Line 168: hit count 11
+    Line 170: hit count 1
+    Line 238: hit count 5
+    Line 239: hit count 5
+    Line 240: hit count 5
+    Line 241: hit count 4
+    Line 489: hit count 6
+    Line 490: hit count 10
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Random operation: LONG_CLICK → Start: test_open_file → Back → Pass: test_open_file → Start: test_check_recent_file → Pass: test_check_recent_file
+
+FAIL continuation:
+Random operation: CLICK → Start: test_open_file → Back → Pass: test_open_file → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: LONG_CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_check_recent_file → Fail: test_check_recent_file → Start: test_stop_start → Pass: test_stop_start
+
+## Correct Execution Path
+Random operation: LONG_CLICK → Start: test_open_file → Back → Pass: test_open_file → Start: test_check_recent_file → Pass: test_check_recent_file
+
+## Error Execution Path
+Random operation: LONG_CLICK → Start: test_open_file → Back → Pass: test_open_file → Start: test_check_recent_file → Pass: test_check_recent_file → Random operation: CLICK → Start: test_open_file → Back → Pass: test_open_file → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: LONG_CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_check_recent_file → Fail: test_check_recent_file → Start: test_stop_start → Pass: test_stop_start
+
+## Files to Analyze
+net/gsantner/markor/util/AppSettings.java
+  Differing lines: 1
+
+net/gsantner/opoc/ui/FilesystemViewerAdapter.java
+  Differing lines: 8
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-19 12:32:58 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-19 12:33:00 [llm] INFO: LLM response: net/gsantner/opoc/ui/FilesystemViewerAdapter.java
+net/gsantner/markor/util/AppSettings.java
+2026-06-19 12:33:00 [runner] INFO: Saving ranking to .\report\report_20260619_123127\test_check_recent_file\ranking.txt
+2026-06-19 12:33:00 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260619_123127\index.html
+2026-06-19 12:33:00 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: .\report\report_20260619_123127

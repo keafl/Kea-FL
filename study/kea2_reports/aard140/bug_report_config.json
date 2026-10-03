@@ -1,0 +1,12 @@
+{
+    "driverName": "d",
+    "packageNames": [
+        "itkach.aard2"
+    ],
+    "take_screenshots": false,
+    "pre_failure_screenshots": 0,
+    "post_failure_screenshots": 0,
+    "device_output_root": "/sdcard",
+    "log_stamp": "2026053116_5032839382",
+    "test_time": "2026-05-31 16:50:32"
+}

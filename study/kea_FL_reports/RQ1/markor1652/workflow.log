@@ -1,0 +1,801 @@
+2026-06-18 22:39:34 [runner] INFO: Building pair test cases...
+2026-06-18 22:39:34 [replayer] INFO: Parse 220 events
+2026-06-18 22:39:34 [replayer] INFO: Parse 50 Monkey actions
+2026-06-18 22:39:34 [reproducer] INFO: Extract 5 pairs test cases
+2026-06-18 22:39:34 [replayer] INFO: Property markor1652.Markor.test_back_to_root not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-18 22:39:34 [replayer] INFO: Property markor1652.Markor.test_go_to_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-18 22:39:34 [replayer] INFO: Property markor1652.Markor.test_modify_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-18 22:39:34 [replayer] INFO: Property markor1652.Markor.test_create_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-18 22:39:34 [reproducer] INFO: Build 1 pairs test cases
+2026-06-18 22:39:34 [reproducer] INFO: Test case [1]: test_search_note
+2026-06-18 22:39:34 [reproducer] INFO:     -happy_path: [preconditions]: 9, [property]: 7
+2026-06-18 22:39:34 [reproducer] INFO:     -bug_path: [preconditions]: 89, [property]: 7
+2026-06-18 22:39:34 [runner] INFO: Start running full coverage difference analysis...
+2026-06-18 22:39:34 [runner] INFO: Processing pair test case [1]: happy_test_search_note <-> bug_test_search_note
+2026-06-18 22:39:34 [runner] INFO: Running pair test case analysis: happy_test_search_note <-> bug_test_search_note
+2026-06-18 22:39:34 [runner] INFO: Running property-satisfying path...
+2026-06-18 22:39:34 [reproducer] INFO: Start reproducing test case: happy_test_search_note
+2026-06-18 22:39:34 [replayer] INFO: Connected to device: emulator-5554
+2026-06-18 22:39:34 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-18 22:39:35 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-18 22:39:35 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-18 22:39:36 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: net.gsantner.markor_test
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=61ms (0ms mobile, 0ms wifi, 61ms not connected)
+
+2026-06-18 22:39:36 [reproducer] INFO: Execute init operation after app launches
+2026-06-18 22:39:50 [reproducer] INFO: Init operation executed
+2026-06-18 22:39:53 [reproducer] INFO: Test environment setup completed
+2026-06-18 22:39:53 [reproducer] INFO: Start executing preconditions for test case: happy_test_search_note
+2026-06-18 22:39:53 [replayer] INFO: [1] Execute Monkey event: CLICK
+2026-06-18 22:39:53 [replayer] INFO: Touch: Touch(touch_type='down', x=923.0, y=1897.0, wait_duration=0.0)
+2026-06-18 22:39:53 [replayer] INFO: Press coordinate at: (923.0, 1897.0)
+2026-06-18 22:39:53 [replayer] INFO: Touch: Touch(touch_type='up', x=923.0, y=1897.0, wait_duration=0.0)
+2026-06-18 22:39:53 [replayer] INFO: Release coordinate at: (923.0, 1897.0)
+2026-06-18 22:39:54 [replayer] INFO: [2] Execute Monkey event: CLICK
+2026-06-18 22:39:54 [replayer] INFO: Touch: Touch(touch_type='down', x=869.0, y=783.0, wait_duration=0.0)
+2026-06-18 22:39:54 [replayer] INFO: Press coordinate at: (869.0, 783.0)
+2026-06-18 22:39:54 [replayer] INFO: Touch: Touch(touch_type='up', x=869.0, y=783.0, wait_duration=0.0)
+2026-06-18 22:39:54 [replayer] INFO: Release coordinate at: (869.0, 783.0)
+2026-06-18 22:39:55 [replayer] INFO: [3] Execute Monkey event: LONG_CLICK
+2026-06-18 22:39:55 [replayer] INFO: Touch: Touch(touch_type='down', x=275.0, y=818.0, wait_duration=0.0)
+2026-06-18 22:39:55 [replayer] INFO: Press coordinate at: (275.0, 818.0)
+2026-06-18 22:39:55 [replayer] INFO: Touch: Touch(touch_type='up', x=275.0, y=818.0, wait_duration=1.0)
+2026-06-18 22:39:55 [replayer] INFO: Release coordinate at: (275.0, 818.0)
+2026-06-18 22:39:57 [replayer] INFO: [4] Execute Monkey event: LONG_CLICK
+2026-06-18 22:39:57 [replayer] INFO: Touch: Touch(touch_type='down', x=354.0, y=990.0, wait_duration=0.0)
+2026-06-18 22:39:57 [replayer] INFO: Press coordinate at: (354.0, 990.0)
+2026-06-18 22:39:57 [replayer] INFO: Touch: Touch(touch_type='up', x=354.0, y=990.0, wait_duration=1.0)
+2026-06-18 22:39:57 [replayer] INFO: Release coordinate at: (354.0, 990.0)
+2026-06-18 22:39:59 [replayer] INFO: [5] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-18 22:39:59 [replayer] INFO: Touch: Touch(touch_type='down', x=430.0, y=1243.0, wait_duration=0.0)
+2026-06-18 22:39:59 [replayer] INFO: Press coordinate at: (430.0, 1243.0)
+2026-06-18 22:39:59 [replayer] INFO: Touch: Touch(touch_type='move', x=430.0, y=1243.0, wait_duration=0.0)
+2026-06-18 22:39:59 [replayer] INFO: Move coordinate to: (430.0, 1243.0)
+2026-06-18 22:39:59 [replayer] INFO: Touch: Touch(touch_type='move', x=387.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:39:59 [replayer] INFO: Move coordinate to: (387.0, 1243.0)
+2026-06-18 22:39:59 [replayer] INFO: Touch: Touch(touch_type='move', x=344.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:00 [replayer] INFO: Move coordinate to: (344.0, 1243.0)
+2026-06-18 22:40:00 [replayer] INFO: Touch: Touch(touch_type='move', x=301.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:00 [replayer] INFO: Move coordinate to: (301.0, 1243.0)
+2026-06-18 22:40:00 [replayer] INFO: Touch: Touch(touch_type='move', x=258.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:00 [replayer] INFO: Move coordinate to: (258.0, 1243.0)
+2026-06-18 22:40:00 [replayer] INFO: Touch: Touch(touch_type='move', x=215.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:00 [replayer] INFO: Move coordinate to: (215.0, 1243.0)
+2026-06-18 22:40:00 [replayer] INFO: Touch: Touch(touch_type='move', x=172.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:00 [replayer] INFO: Move coordinate to: (172.0, 1243.0)
+2026-06-18 22:40:00 [replayer] INFO: Touch: Touch(touch_type='move', x=129.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:00 [replayer] INFO: Move coordinate to: (129.0, 1243.0)
+2026-06-18 22:40:00 [replayer] INFO: Touch: Touch(touch_type='move', x=86.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:00 [replayer] INFO: Move coordinate to: (86.0, 1243.0)
+2026-06-18 22:40:00 [replayer] INFO: Touch: Touch(touch_type='move', x=43.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:00 [replayer] INFO: Move coordinate to: (43.0, 1243.0)
+2026-06-18 22:40:00 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:00 [replayer] INFO: Release coordinate at: (0.0, 1243.0)
+2026-06-18 22:40:01 [replayer] INFO: [6] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-18 22:40:01 [replayer] INFO: Touch: Touch(touch_type='down', x=430.0, y=1243.0, wait_duration=0.0)
+2026-06-18 22:40:01 [replayer] INFO: Press coordinate at: (430.0, 1243.0)
+2026-06-18 22:40:01 [replayer] INFO: Touch: Touch(touch_type='move', x=430.0, y=1243.0, wait_duration=0.0)
+2026-06-18 22:40:01 [replayer] INFO: Move coordinate to: (430.0, 1243.0)
+2026-06-18 22:40:01 [replayer] INFO: Touch: Touch(touch_type='move', x=494.9, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:02 [replayer] INFO: Move coordinate to: (494.9, 1243.0)
+2026-06-18 22:40:02 [replayer] INFO: Touch: Touch(touch_type='move', x=559.8, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:02 [replayer] INFO: Move coordinate to: (559.8, 1243.0)
+2026-06-18 22:40:02 [replayer] INFO: Touch: Touch(touch_type='move', x=624.7, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:02 [replayer] INFO: Move coordinate to: (624.7, 1243.0)
+2026-06-18 22:40:02 [replayer] INFO: Touch: Touch(touch_type='move', x=689.6, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:02 [replayer] INFO: Move coordinate to: (689.6, 1243.0)
+2026-06-18 22:40:02 [replayer] INFO: Touch: Touch(touch_type='move', x=754.5, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:02 [replayer] INFO: Move coordinate to: (754.5, 1243.0)
+2026-06-18 22:40:02 [replayer] INFO: Touch: Touch(touch_type='move', x=819.4, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:02 [replayer] INFO: Move coordinate to: (819.4, 1243.0)
+2026-06-18 22:40:02 [replayer] INFO: Touch: Touch(touch_type='move', x=884.3, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:02 [replayer] INFO: Move coordinate to: (884.3, 1243.0)
+2026-06-18 22:40:02 [replayer] INFO: Touch: Touch(touch_type='move', x=949.2, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:02 [replayer] INFO: Move coordinate to: (949.2, 1243.0)
+2026-06-18 22:40:02 [replayer] INFO: Touch: Touch(touch_type='move', x=1014.1, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:02 [replayer] INFO: Move coordinate to: (1014.1, 1243.0)
+2026-06-18 22:40:02 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:02 [replayer] INFO: Release coordinate at: (1079.0, 1243.0)
+2026-06-18 22:40:03 [replayer] INFO: [7] Execute Monkey event: CLICK
+2026-06-18 22:40:03 [replayer] INFO: Touch: Touch(touch_type='down', x=166.0, y=965.0, wait_duration=0.0)
+2026-06-18 22:40:03 [replayer] INFO: Press coordinate at: (166.0, 965.0)
+2026-06-18 22:40:03 [replayer] INFO: Touch: Touch(touch_type='up', x=166.0, y=965.0, wait_duration=0.0)
+2026-06-18 22:40:03 [replayer] INFO: Release coordinate at: (166.0, 965.0)
+2026-06-18 22:40:04 [replayer] INFO: [8] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-18 22:40:04 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=990.0, wait_duration=0.0)
+2026-06-18 22:40:04 [replayer] INFO: Press coordinate at: (540.0, 990.0)
+2026-06-18 22:40:04 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=990.0, wait_duration=0.0)
+2026-06-18 22:40:05 [replayer] INFO: Move coordinate to: (540.0, 990.0)
+2026-06-18 22:40:05 [replayer] INFO: Touch: Touch(touch_type='move', x=593.9, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:05 [replayer] INFO: Move coordinate to: (593.9, 990.0)
+2026-06-18 22:40:05 [replayer] INFO: Touch: Touch(touch_type='move', x=647.8, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:05 [replayer] INFO: Move coordinate to: (647.8, 990.0)
+2026-06-18 22:40:05 [replayer] INFO: Touch: Touch(touch_type='move', x=701.7, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:05 [replayer] INFO: Move coordinate to: (701.7, 990.0)
+2026-06-18 22:40:05 [replayer] INFO: Touch: Touch(touch_type='move', x=755.6, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:05 [replayer] INFO: Move coordinate to: (755.6, 990.0)
+2026-06-18 22:40:05 [replayer] INFO: Touch: Touch(touch_type='move', x=809.5, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:05 [replayer] INFO: Move coordinate to: (809.5, 990.0)
+2026-06-18 22:40:05 [replayer] INFO: Touch: Touch(touch_type='move', x=863.4, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:05 [replayer] INFO: Move coordinate to: (863.4, 990.0)
+2026-06-18 22:40:05 [replayer] INFO: Touch: Touch(touch_type='move', x=917.3, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:05 [replayer] INFO: Move coordinate to: (917.3, 990.0)
+2026-06-18 22:40:05 [replayer] INFO: Touch: Touch(touch_type='move', x=971.2, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:05 [replayer] INFO: Move coordinate to: (971.2, 990.0)
+2026-06-18 22:40:05 [replayer] INFO: Touch: Touch(touch_type='move', x=1025.1, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:05 [replayer] INFO: Move coordinate to: (1025.1, 990.0)
+2026-06-18 22:40:05 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:05 [replayer] INFO: Release coordinate at: (1079.0, 990.0)
+2026-06-18 22:40:06 [replayer] INFO: [9] Execute Monkey event: CLICK
+2026-06-18 22:40:06 [replayer] INFO: Touch: Touch(touch_type='down', x=957.0, y=1422.0, wait_duration=0.0)
+2026-06-18 22:40:06 [replayer] INFO: Press coordinate at: (957.0, 1422.0)
+2026-06-18 22:40:06 [replayer] INFO: Touch: Touch(touch_type='up', x=957.0, y=1422.0, wait_duration=0.0)
+2026-06-18 22:40:07 [replayer] INFO: Release coordinate at: (957.0, 1422.0)
+2026-06-18 22:40:08 [reproducer] INFO: Preconditions executed for test case: happy_test_search_note
+2026-06-18 22:40:08 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_search_note
+2026-06-18 22:40:08 [reproducer] INFO: Start generating coverage file operation
+2026-06-18 22:40:08 [reproducer] INFO: Complete generating coverage file operation
+2026-06-18 22:40:08 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-18 22:40:08 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260618_223934\test_search_note\happy_test_search_note_precondition/happy_test_search_note.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260618_223934\test_search_note\happy_test_search_note_precondition/happy_test_search_note.xml
+2026-06-18 22:40:08 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260618_223934\test_search_note\happy_test_search_note_precondition\happy_test_search_note.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-18 22:40:08 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260618_223934\test_search_note\happy_test_search_note_precondition/happy_test_search_note.ec -> .\report\report_20260618_223934\test_search_note\happy_test_search_note_precondition/happy_test_search_note.xml
+2026-06-18 22:40:08 [reproducer] INFO: Coverage data collected: .\report\report_20260618_223934\test_search_note\happy_test_search_note_precondition/happy_test_search_note.xml
+2026-06-18 22:40:08 [reproducer] INFO: Start executing property for test case: happy_test_search_note
+2026-06-18 22:40:08 [replayer] INFO: Script execution start state: markor1652.Markor.test_search_note - start
+2026-06-18 22:40:08 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:40:08 [replayer] INFO: Click coordinate: (135.0, 2043.0)
+2026-06-18 22:40:09 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:40:09 [replayer] INFO: Click coordinate: (914.0, 160.0)
+2026-06-18 22:40:10 [replayer] INFO: [9] Execute Script event: setText
+2026-06-18 22:40:11 [replayer] INFO: Set text to: hi.md
+2026-06-18 22:40:12 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:40:12 [replayer] INFO: Click coordinate: (909.5, 1552.0)
+2026-06-18 22:40:13 [replayer] INFO: [9] Execute Script event: pressKey
+2026-06-18 22:40:13 [replayer] INFO: Press key: back
+2026-06-18 22:40:14 [replayer] INFO: Script execution end state: markor1652.Markor.test_search_note - pass
+2026-06-18 22:40:14 [reproducer] INFO: Property executed for test case: happy_test_search_note
+2026-06-18 22:40:14 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_search_note
+2026-06-18 22:40:14 [reproducer] INFO: Start generating coverage file operation
+2026-06-18 22:40:14 [reproducer] INFO: Complete generating coverage file operation
+2026-06-18 22:40:14 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-18 22:40:14 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260618_223934\test_search_note\happy_test_search_note_property/happy_test_search_note.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260618_223934\test_search_note\happy_test_search_note_property/happy_test_search_note.xml
+2026-06-18 22:40:14 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260618_223934\test_search_note\happy_test_search_note_property\happy_test_search_note.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-18 22:40:14 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260618_223934\test_search_note\happy_test_search_note_property/happy_test_search_note.ec -> .\report\report_20260618_223934\test_search_note\happy_test_search_note_property/happy_test_search_note.xml
+2026-06-18 22:40:14 [reproducer] INFO: Coverage data collected: .\report\report_20260618_223934\test_search_note\happy_test_search_note_property/happy_test_search_note.xml
+2026-06-18 22:40:14 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-18 22:40:15 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-18 22:40:15 [reproducer] INFO: Test environment reset completed
+2026-06-18 22:40:15 [runner] INFO: Running property-violating path path...
+2026-06-18 22:40:15 [reproducer] INFO: Start reproducing test case: bug_test_search_note
+2026-06-18 22:40:26 [replayer] INFO: Connected to device: emulator-5554
+2026-06-18 22:40:26 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-18 22:40:27 [adb_wrapper] INFO: Successfully uninstalled app: Success
+
+2026-06-18 22:40:27 [adb_wrapper] INFO: Successfully installed app: Performing Streamed Install
+Success
+
+2026-06-18 22:40:27 [adb_wrapper] INFO: Successfully launched app:   bash arg: -p
+  bash arg: net.gsantner.markor_test
+  bash arg: -c
+  bash arg: android.intent.category.LAUNCHER
+  bash arg: 1
+Events injected: 1
+## Network stats: elapsed time=14ms (0ms mobile, 0ms wifi, 14ms not connected)
+
+2026-06-18 22:40:27 [reproducer] INFO: Execute init operation after app launches
+2026-06-18 22:40:39 [reproducer] INFO: Init operation executed
+2026-06-18 22:40:42 [reproducer] INFO: Test environment setup completed
+2026-06-18 22:40:42 [reproducer] INFO: Start executing preconditions for test case: bug_test_search_note
+2026-06-18 22:40:42 [replayer] INFO: [1] Execute Monkey event: CLICK
+2026-06-18 22:40:42 [replayer] INFO: Touch: Touch(touch_type='down', x=923.0, y=1897.0, wait_duration=0.0)
+2026-06-18 22:40:43 [replayer] INFO: Press coordinate at: (923.0, 1897.0)
+2026-06-18 22:40:43 [replayer] INFO: Touch: Touch(touch_type='up', x=923.0, y=1897.0, wait_duration=0.0)
+2026-06-18 22:40:43 [replayer] INFO: Release coordinate at: (923.0, 1897.0)
+2026-06-18 22:40:44 [replayer] INFO: [2] Execute Monkey event: CLICK
+2026-06-18 22:40:44 [replayer] INFO: Touch: Touch(touch_type='down', x=869.0, y=783.0, wait_duration=0.0)
+2026-06-18 22:40:44 [replayer] INFO: Press coordinate at: (869.0, 783.0)
+2026-06-18 22:40:44 [replayer] INFO: Touch: Touch(touch_type='up', x=869.0, y=783.0, wait_duration=0.0)
+2026-06-18 22:40:44 [replayer] INFO: Release coordinate at: (869.0, 783.0)
+2026-06-18 22:40:45 [replayer] INFO: [3] Execute Monkey event: LONG_CLICK
+2026-06-18 22:40:45 [replayer] INFO: Touch: Touch(touch_type='down', x=275.0, y=818.0, wait_duration=0.0)
+2026-06-18 22:40:45 [replayer] INFO: Press coordinate at: (275.0, 818.0)
+2026-06-18 22:40:45 [replayer] INFO: Touch: Touch(touch_type='up', x=275.0, y=818.0, wait_duration=1.0)
+2026-06-18 22:40:45 [replayer] INFO: Release coordinate at: (275.0, 818.0)
+2026-06-18 22:40:47 [replayer] INFO: [4] Execute Monkey event: LONG_CLICK
+2026-06-18 22:40:47 [replayer] INFO: Touch: Touch(touch_type='down', x=354.0, y=990.0, wait_duration=0.0)
+2026-06-18 22:40:47 [replayer] INFO: Press coordinate at: (354.0, 990.0)
+2026-06-18 22:40:47 [replayer] INFO: Touch: Touch(touch_type='up', x=354.0, y=990.0, wait_duration=1.0)
+2026-06-18 22:40:47 [replayer] INFO: Release coordinate at: (354.0, 990.0)
+2026-06-18 22:40:49 [replayer] INFO: [5] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-18 22:40:49 [replayer] INFO: Touch: Touch(touch_type='down', x=430.0, y=1243.0, wait_duration=0.0)
+2026-06-18 22:40:49 [replayer] INFO: Press coordinate at: (430.0, 1243.0)
+2026-06-18 22:40:49 [replayer] INFO: Touch: Touch(touch_type='move', x=430.0, y=1243.0, wait_duration=0.0)
+2026-06-18 22:40:49 [replayer] INFO: Move coordinate to: (430.0, 1243.0)
+2026-06-18 22:40:49 [replayer] INFO: Touch: Touch(touch_type='move', x=387.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:49 [replayer] INFO: Move coordinate to: (387.0, 1243.0)
+2026-06-18 22:40:49 [replayer] INFO: Touch: Touch(touch_type='move', x=344.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:49 [replayer] INFO: Move coordinate to: (344.0, 1243.0)
+2026-06-18 22:40:50 [replayer] INFO: Touch: Touch(touch_type='move', x=301.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:50 [replayer] INFO: Move coordinate to: (301.0, 1243.0)
+2026-06-18 22:40:50 [replayer] INFO: Touch: Touch(touch_type='move', x=258.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:50 [replayer] INFO: Move coordinate to: (258.0, 1243.0)
+2026-06-18 22:40:50 [replayer] INFO: Touch: Touch(touch_type='move', x=215.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:50 [replayer] INFO: Move coordinate to: (215.0, 1243.0)
+2026-06-18 22:40:50 [replayer] INFO: Touch: Touch(touch_type='move', x=172.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:50 [replayer] INFO: Move coordinate to: (172.0, 1243.0)
+2026-06-18 22:40:50 [replayer] INFO: Touch: Touch(touch_type='move', x=129.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:50 [replayer] INFO: Move coordinate to: (129.0, 1243.0)
+2026-06-18 22:40:50 [replayer] INFO: Touch: Touch(touch_type='move', x=86.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:50 [replayer] INFO: Move coordinate to: (86.0, 1243.0)
+2026-06-18 22:40:50 [replayer] INFO: Touch: Touch(touch_type='move', x=43.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:50 [replayer] INFO: Move coordinate to: (43.0, 1243.0)
+2026-06-18 22:40:50 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:50 [replayer] INFO: Release coordinate at: (0.0, 1243.0)
+2026-06-18 22:40:51 [replayer] INFO: [6] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-18 22:40:51 [replayer] INFO: Touch: Touch(touch_type='down', x=430.0, y=1243.0, wait_duration=0.0)
+2026-06-18 22:40:51 [replayer] INFO: Press coordinate at: (430.0, 1243.0)
+2026-06-18 22:40:51 [replayer] INFO: Touch: Touch(touch_type='move', x=430.0, y=1243.0, wait_duration=0.0)
+2026-06-18 22:40:51 [replayer] INFO: Move coordinate to: (430.0, 1243.0)
+2026-06-18 22:40:51 [replayer] INFO: Touch: Touch(touch_type='move', x=494.9, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:51 [replayer] INFO: Move coordinate to: (494.9, 1243.0)
+2026-06-18 22:40:52 [replayer] INFO: Touch: Touch(touch_type='move', x=559.8, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:52 [replayer] INFO: Move coordinate to: (559.8, 1243.0)
+2026-06-18 22:40:52 [replayer] INFO: Touch: Touch(touch_type='move', x=624.7, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:52 [replayer] INFO: Move coordinate to: (624.7, 1243.0)
+2026-06-18 22:40:52 [replayer] INFO: Touch: Touch(touch_type='move', x=689.6, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:52 [replayer] INFO: Move coordinate to: (689.6, 1243.0)
+2026-06-18 22:40:52 [replayer] INFO: Touch: Touch(touch_type='move', x=754.5, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:52 [replayer] INFO: Move coordinate to: (754.5, 1243.0)
+2026-06-18 22:40:52 [replayer] INFO: Touch: Touch(touch_type='move', x=819.4, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:52 [replayer] INFO: Move coordinate to: (819.4, 1243.0)
+2026-06-18 22:40:52 [replayer] INFO: Touch: Touch(touch_type='move', x=884.3, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:52 [replayer] INFO: Move coordinate to: (884.3, 1243.0)
+2026-06-18 22:40:52 [replayer] INFO: Touch: Touch(touch_type='move', x=949.2, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:52 [replayer] INFO: Move coordinate to: (949.2, 1243.0)
+2026-06-18 22:40:52 [replayer] INFO: Touch: Touch(touch_type='move', x=1014.1, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:52 [replayer] INFO: Move coordinate to: (1014.1, 1243.0)
+2026-06-18 22:40:52 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1243.0, wait_duration=0.02)
+2026-06-18 22:40:52 [replayer] INFO: Release coordinate at: (1079.0, 1243.0)
+2026-06-18 22:40:53 [replayer] INFO: [7] Execute Monkey event: CLICK
+2026-06-18 22:40:53 [replayer] INFO: Touch: Touch(touch_type='down', x=166.0, y=965.0, wait_duration=0.0)
+2026-06-18 22:40:53 [replayer] INFO: Press coordinate at: (166.0, 965.0)
+2026-06-18 22:40:53 [replayer] INFO: Touch: Touch(touch_type='up', x=166.0, y=965.0, wait_duration=0.0)
+2026-06-18 22:40:53 [replayer] INFO: Release coordinate at: (166.0, 965.0)
+2026-06-18 22:40:54 [replayer] INFO: [8] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-18 22:40:54 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=990.0, wait_duration=0.0)
+2026-06-18 22:40:55 [replayer] INFO: Press coordinate at: (540.0, 990.0)
+2026-06-18 22:40:55 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=990.0, wait_duration=0.0)
+2026-06-18 22:40:55 [replayer] INFO: Move coordinate to: (540.0, 990.0)
+2026-06-18 22:40:55 [replayer] INFO: Touch: Touch(touch_type='move', x=593.9, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:55 [replayer] INFO: Move coordinate to: (593.9, 990.0)
+2026-06-18 22:40:55 [replayer] INFO: Touch: Touch(touch_type='move', x=647.8, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:55 [replayer] INFO: Move coordinate to: (647.8, 990.0)
+2026-06-18 22:40:55 [replayer] INFO: Touch: Touch(touch_type='move', x=701.7, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:55 [replayer] INFO: Move coordinate to: (701.7, 990.0)
+2026-06-18 22:40:55 [replayer] INFO: Touch: Touch(touch_type='move', x=755.6, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:55 [replayer] INFO: Move coordinate to: (755.6, 990.0)
+2026-06-18 22:40:55 [replayer] INFO: Touch: Touch(touch_type='move', x=809.5, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:55 [replayer] INFO: Move coordinate to: (809.5, 990.0)
+2026-06-18 22:40:55 [replayer] INFO: Touch: Touch(touch_type='move', x=863.4, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:55 [replayer] INFO: Move coordinate to: (863.4, 990.0)
+2026-06-18 22:40:55 [replayer] INFO: Touch: Touch(touch_type='move', x=917.3, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:55 [replayer] INFO: Move coordinate to: (917.3, 990.0)
+2026-06-18 22:40:55 [replayer] INFO: Touch: Touch(touch_type='move', x=971.2, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:55 [replayer] INFO: Move coordinate to: (971.2, 990.0)
+2026-06-18 22:40:55 [replayer] INFO: Touch: Touch(touch_type='move', x=1025.1, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:55 [replayer] INFO: Move coordinate to: (1025.1, 990.0)
+2026-06-18 22:40:55 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=990.0, wait_duration=0.02)
+2026-06-18 22:40:55 [replayer] INFO: Release coordinate at: (1079.0, 990.0)
+2026-06-18 22:40:56 [replayer] INFO: [9] Execute Monkey event: CLICK
+2026-06-18 22:40:56 [replayer] INFO: Touch: Touch(touch_type='down', x=957.0, y=1422.0, wait_duration=0.0)
+2026-06-18 22:40:56 [replayer] INFO: Press coordinate at: (957.0, 1422.0)
+2026-06-18 22:40:56 [replayer] INFO: Touch: Touch(touch_type='up', x=957.0, y=1422.0, wait_duration=0.0)
+2026-06-18 22:40:57 [replayer] INFO: Release coordinate at: (957.0, 1422.0)
+2026-06-18 22:40:58 [replayer] INFO: Script execution start state: markor1652.Markor.test_search_note - start
+2026-06-18 22:40:58 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:40:58 [replayer] INFO: Click coordinate: (135.0, 2043.0)
+2026-06-18 22:40:59 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:40:59 [replayer] INFO: Click coordinate: (914.0, 160.0)
+2026-06-18 22:41:00 [replayer] INFO: [9] Execute Script event: setText
+2026-06-18 22:41:00 [replayer] INFO: Set text to: hi.md
+2026-06-18 22:41:01 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:01 [replayer] INFO: Click coordinate: (909.5, 1552.0)
+2026-06-18 22:41:02 [replayer] INFO: [9] Execute Script event: pressKey
+2026-06-18 22:41:02 [replayer] INFO: Press key: back
+2026-06-18 22:41:03 [replayer] INFO: Script execution end state: markor1652.Markor.test_search_note - pass
+2026-06-18 22:41:03 [replayer] INFO: Script execution start state: markor1652.Markor.test_create_note - start
+2026-06-18 22:41:03 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:04 [replayer] INFO: Click coordinate: (694.0, 160.0)
+2026-06-18 22:41:05 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:05 [replayer] INFO: Click coordinate: (717.5, 1058.0)
+2026-06-18 22:41:06 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:06 [replayer] INFO: Click coordinate: (959.0, 1873.0)
+2026-06-18 22:41:07 [replayer] INFO: [9] Execute Script event: setText
+2026-06-18 22:41:07 [replayer] INFO: Set text to: MRA6Yipe
+2026-06-18 22:41:08 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:09 [replayer] INFO: Click coordinate: (909.5, 1400.0)
+2026-06-18 22:41:10 [replayer] INFO: [9] Execute Script event: pressKey
+2026-06-18 22:41:10 [replayer] INFO: Press key: back
+2026-06-18 22:41:11 [replayer] INFO: Script execution end state: markor1652.Markor.test_create_note - pass
+2026-06-18 22:41:11 [replayer] INFO: Script execution start state: markor1652.Markor.test_search_note - start
+2026-06-18 22:41:11 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:11 [replayer] INFO: Click coordinate: (135.0, 2043.0)
+2026-06-18 22:41:12 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:12 [replayer] INFO: Click coordinate: (914.0, 160.0)
+2026-06-18 22:41:13 [replayer] INFO: [9] Execute Script event: setText
+2026-06-18 22:41:13 [replayer] INFO: Set text to: hi.md
+2026-06-18 22:41:14 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:14 [replayer] INFO: Click coordinate: (909.5, 1552.0)
+2026-06-18 22:41:15 [replayer] INFO: [9] Execute Script event: pressKey
+2026-06-18 22:41:15 [replayer] INFO: Press key: back
+2026-06-18 22:41:16 [replayer] INFO: Script execution end state: markor1652.Markor.test_search_note - pass
+2026-06-18 22:41:16 [replayer] INFO: Script execution start state: markor1652.Markor.test_search_note - start
+2026-06-18 22:41:16 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:17 [replayer] INFO: Click coordinate: (135.0, 2043.0)
+2026-06-18 22:41:18 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:18 [replayer] INFO: Click coordinate: (914.0, 160.0)
+2026-06-18 22:41:19 [replayer] INFO: [9] Execute Script event: setText
+2026-06-18 22:41:19 [replayer] INFO: Set text to: hi.md
+2026-06-18 22:41:20 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:20 [replayer] INFO: Click coordinate: (909.5, 1552.0)
+2026-06-18 22:41:21 [replayer] INFO: [9] Execute Script event: pressKey
+2026-06-18 22:41:21 [replayer] INFO: Press key: back
+2026-06-18 22:41:22 [replayer] INFO: Script execution end state: markor1652.Markor.test_search_note - pass
+2026-06-18 22:41:22 [replayer] INFO: Script execution start state: markor1652.Markor.test_search_note - start
+2026-06-18 22:41:22 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:23 [replayer] INFO: Click coordinate: (135.0, 2043.0)
+2026-06-18 22:41:24 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:24 [replayer] INFO: Click coordinate: (914.0, 160.0)
+2026-06-18 22:41:25 [replayer] INFO: [9] Execute Script event: setText
+2026-06-18 22:41:25 [replayer] INFO: Set text to: hi.md
+2026-06-18 22:41:26 [replayer] INFO: [9] Execute Script event: click
+2026-06-18 22:41:26 [replayer] INFO: Click coordinate: (909.5, 1552.0)
+2026-06-18 22:41:27 [replayer] INFO: [9] Execute Script event: pressKey
+2026-06-18 22:41:27 [replayer] INFO: Press key: back
+2026-06-18 22:41:28 [replayer] INFO: Script execution end state: markor1652.Markor.test_search_note - pass
+2026-06-18 22:41:28 [replayer] INFO: [10] Execute Monkey event: CLICK
+2026-06-18 22:41:28 [replayer] INFO: Touch: Touch(touch_type='down', x=631.0, y=2084.0, wait_duration=0.0)
+2026-06-18 22:41:29 [replayer] INFO: Press coordinate at: (631.0, 2084.0)
+2026-06-18 22:41:29 [replayer] INFO: Touch: Touch(touch_type='up', x=631.0, y=2084.0, wait_duration=0.0)
+2026-06-18 22:41:29 [replayer] INFO: Release coordinate at: (631.0, 2084.0)
+2026-06-18 22:41:30 [replayer] INFO: [11] Execute Monkey event: CLICK
+2026-06-18 22:41:30 [replayer] INFO: Touch: Touch(touch_type='down', x=451.0, y=200.0, wait_duration=0.0)
+2026-06-18 22:41:30 [replayer] INFO: Press coordinate at: (451.0, 200.0)
+2026-06-18 22:41:30 [replayer] INFO: Touch: Touch(touch_type='up', x=451.0, y=200.0, wait_duration=0.0)
+2026-06-18 22:41:30 [replayer] INFO: Release coordinate at: (451.0, 200.0)
+2026-06-18 22:41:31 [replayer] INFO: [12] Execute Monkey event: CLICK
+2026-06-18 22:41:31 [replayer] INFO: Touch: Touch(touch_type='down', x=508.0, y=201.0, wait_duration=0.0)
+2026-06-18 22:41:31 [replayer] INFO: Press coordinate at: (508.0, 201.0)
+2026-06-18 22:41:31 [replayer] INFO: Touch: Touch(touch_type='up', x=508.0, y=201.0, wait_duration=0.0)
+2026-06-18 22:41:31 [replayer] INFO: Release coordinate at: (508.0, 201.0)
+2026-06-18 22:41:32 [replayer] INFO: [13] Execute Monkey event: CLICK
+2026-06-18 22:41:32 [replayer] INFO: Touch: Touch(touch_type='down', x=724.0, y=224.0, wait_duration=0.0)
+2026-06-18 22:41:32 [replayer] INFO: Press coordinate at: (724.0, 224.0)
+2026-06-18 22:41:32 [replayer] INFO: Touch: Touch(touch_type='up', x=724.0, y=224.0, wait_duration=0.0)
+2026-06-18 22:41:32 [replayer] INFO: Release coordinate at: (724.0, 224.0)
+2026-06-18 22:41:33 [replayer] INFO: [14] Execute Monkey event: CLICK
+2026-06-18 22:41:33 [replayer] INFO: Touch: Touch(touch_type='down', x=1031.0, y=1410.0, wait_duration=0.0)
+2026-06-18 22:41:33 [replayer] INFO: Press coordinate at: (1031.0, 1410.0)
+2026-06-18 22:41:33 [replayer] INFO: Touch: Touch(touch_type='up', x=1031.0, y=1410.0, wait_duration=0.0)
+2026-06-18 22:41:34 [replayer] INFO: Release coordinate at: (1031.0, 1410.0)
+2026-06-18 22:41:35 [replayer] INFO: [15] Execute Monkey event: CLICK
+2026-06-18 22:41:35 [replayer] INFO: Touch: Touch(touch_type='down', x=786.0, y=126.0, wait_duration=0.0)
+2026-06-18 22:41:35 [replayer] INFO: Press coordinate at: (786.0, 126.0)
+2026-06-18 22:41:35 [replayer] INFO: Touch: Touch(touch_type='up', x=786.0, y=126.0, wait_duration=0.0)
+2026-06-18 22:41:35 [replayer] INFO: Release coordinate at: (786.0, 126.0)
+2026-06-18 22:41:36 [replayer] INFO: [16] Execute Monkey event: SCROLL_RIGHT_LEFT
+2026-06-18 22:41:36 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1930.5, wait_duration=0.0)
+2026-06-18 22:41:36 [replayer] INFO: Press coordinate at: (540.0, 1930.5)
+2026-06-18 22:41:36 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1930.5, wait_duration=0.0)
+2026-06-18 22:41:36 [replayer] INFO: Move coordinate to: (540.0, 1930.5)
+2026-06-18 22:41:36 [replayer] INFO: Touch: Touch(touch_type='move', x=486.0, y=1930.5, wait_duration=0.02)
+2026-06-18 22:41:36 [replayer] INFO: Move coordinate to: (486.0, 1930.5)
+2026-06-18 22:41:36 [replayer] INFO: Touch: Touch(touch_type='move', x=432.0, y=1930.5, wait_duration=0.02)
+2026-06-18 22:41:36 [replayer] INFO: Move coordinate to: (432.0, 1930.5)
+2026-06-18 22:41:36 [replayer] INFO: Touch: Touch(touch_type='move', x=378.0, y=1930.5, wait_duration=0.02)
+2026-06-18 22:41:36 [replayer] INFO: Move coordinate to: (378.0, 1930.5)
+2026-06-18 22:41:36 [replayer] INFO: Touch: Touch(touch_type='move', x=324.0, y=1930.5, wait_duration=0.02)
+2026-06-18 22:41:36 [replayer] INFO: Move coordinate to: (324.0, 1930.5)
+2026-06-18 22:41:36 [replayer] INFO: Touch: Touch(touch_type='move', x=270.0, y=1930.5, wait_duration=0.02)
+2026-06-18 22:41:36 [replayer] INFO: Move coordinate to: (270.0, 1930.5)
+2026-06-18 22:41:36 [replayer] INFO: Touch: Touch(touch_type='move', x=216.0, y=1930.5, wait_duration=0.02)
+2026-06-18 22:41:36 [replayer] INFO: Move coordinate to: (216.0, 1930.5)
+2026-06-18 22:41:36 [replayer] INFO: Touch: Touch(touch_type='move', x=162.0, y=1930.5, wait_duration=0.02)
+2026-06-18 22:41:37 [replayer] INFO: Move coordinate to: (162.0, 1930.5)
+2026-06-18 22:41:37 [replayer] INFO: Touch: Touch(touch_type='move', x=108.0, y=1930.5, wait_duration=0.02)
+2026-06-18 22:41:37 [replayer] INFO: Move coordinate to: (108.0, 1930.5)
+2026-06-18 22:41:37 [replayer] INFO: Touch: Touch(touch_type='move', x=54.0, y=1930.5, wait_duration=0.02)
+2026-06-18 22:41:37 [replayer] INFO: Move coordinate to: (54.0, 1930.5)
+2026-06-18 22:41:37 [replayer] INFO: Touch: Touch(touch_type='up', x=0.0, y=1930.5, wait_duration=0.02)
+2026-06-18 22:41:37 [replayer] INFO: Release coordinate at: (0.0, 1930.5)
+2026-06-18 22:41:38 [replayer] INFO: Script execution start state: markor1652.Markor.test_search_note - start
+2026-06-18 22:41:38 [replayer] INFO: [16] Execute Script event: click
+2026-06-18 22:41:38 [replayer] INFO: Click coordinate: (135.0, 2049.0)
+2026-06-18 22:41:39 [replayer] INFO: [16] Execute Script event: click
+2026-06-18 22:41:39 [replayer] INFO: Click coordinate: (914.0, 160.0)
+2026-06-18 22:41:40 [replayer] INFO: [16] Execute Script event: setText
+2026-06-18 22:41:41 [replayer] INFO: Set text to: hi.md
+2026-06-18 22:41:42 [replayer] INFO: [16] Execute Script event: click
+2026-06-18 22:41:42 [replayer] INFO: Click coordinate: (909.5, 1552.0)
+2026-06-18 22:41:43 [replayer] INFO: [16] Execute Script event: pressKey
+2026-06-18 22:41:43 [replayer] INFO: Press key: back
+2026-06-18 22:41:44 [replayer] INFO: Script execution end state: markor1652.Markor.test_search_note - pass
+2026-06-18 22:41:44 [replayer] INFO: Script execution start state: markor1652.Markor.test_create_note - start
+2026-06-18 22:41:44 [replayer] INFO: [16] Execute Script event: click
+2026-06-18 22:41:44 [replayer] INFO: Click coordinate: (694.0, 160.0)
+2026-06-18 22:41:45 [replayer] INFO: [16] Execute Script event: click
+2026-06-18 22:41:45 [replayer] INFO: Click coordinate: (717.5, 1058.0)
+2026-06-18 22:41:46 [replayer] INFO: [16] Execute Script event: click
+2026-06-18 22:41:46 [replayer] INFO: Click coordinate: (959.0, 1873.0)
+2026-06-18 22:41:47 [replayer] INFO: [16] Execute Script event: setText
+2026-06-18 22:41:48 [replayer] INFO: Set text to: h2Q3XE5VXQ
+2026-06-18 22:41:49 [replayer] INFO: [16] Execute Script event: click
+2026-06-18 22:41:49 [replayer] INFO: Click coordinate: (909.5, 1400.0)
+2026-06-18 22:41:50 [replayer] INFO: [16] Execute Script event: pressKey
+2026-06-18 22:41:50 [replayer] INFO: Press key: back
+2026-06-18 22:41:51 [replayer] INFO: Script execution end state: markor1652.Markor.test_create_note - pass
+2026-06-18 22:41:51 [replayer] INFO: [17] Execute Monkey event: LONG_CLICK
+2026-06-18 22:41:51 [replayer] INFO: Touch: Touch(touch_type='down', x=977.0, y=1936.0, wait_duration=0.0)
+2026-06-18 22:41:51 [replayer] INFO: Press coordinate at: (977.0, 1936.0)
+2026-06-18 22:41:51 [replayer] INFO: Touch: Touch(touch_type='up', x=977.0, y=1936.0, wait_duration=1.0)
+2026-06-18 22:41:51 [replayer] INFO: Release coordinate at: (977.0, 1936.0)
+2026-06-18 22:41:53 [replayer] INFO: [18] Execute Monkey event: CLICK
+2026-06-18 22:41:53 [replayer] INFO: Touch: Touch(touch_type='down', x=806.0, y=138.0, wait_duration=0.0)
+2026-06-18 22:41:53 [replayer] INFO: Press coordinate at: (806.0, 138.0)
+2026-06-18 22:41:53 [replayer] INFO: Touch: Touch(touch_type='up', x=806.0, y=138.0, wait_duration=0.0)
+2026-06-18 22:41:53 [replayer] INFO: Release coordinate at: (806.0, 138.0)
+2026-06-18 22:41:55 [replayer] INFO: [19] Execute Monkey event: SCROLL_TOP_DOWN
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='down', x=662.5, y=578.0, wait_duration=0.0)
+2026-06-18 22:41:55 [replayer] INFO: Press coordinate at: (662.5, 578.0)
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='move', x=662.5, y=578.0, wait_duration=0.0)
+2026-06-18 22:41:55 [replayer] INFO: Move coordinate to: (662.5, 578.0)
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='move', x=662.5, y=734.9, wait_duration=0.02)
+2026-06-18 22:41:55 [replayer] INFO: Move coordinate to: (662.5, 734.9)
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='move', x=662.5, y=891.80005, wait_duration=0.02)
+2026-06-18 22:41:55 [replayer] INFO: Move coordinate to: (662.5, 891.80005)
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='move', x=662.5, y=1048.7, wait_duration=0.02)
+2026-06-18 22:41:55 [replayer] INFO: Move coordinate to: (662.5, 1048.7)
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='move', x=662.5, y=1205.6001, wait_duration=0.02)
+2026-06-18 22:41:55 [replayer] INFO: Move coordinate to: (662.5, 1205.6001)
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='move', x=662.5, y=1362.5, wait_duration=0.02)
+2026-06-18 22:41:55 [replayer] INFO: Move coordinate to: (662.5, 1362.5)
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='move', x=662.5, y=1519.4, wait_duration=0.02)
+2026-06-18 22:41:55 [replayer] INFO: Move coordinate to: (662.5, 1519.4)
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='move', x=662.5, y=1676.2999, wait_duration=0.02)
+2026-06-18 22:41:55 [replayer] INFO: Move coordinate to: (662.5, 1676.2999)
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='move', x=662.5, y=1833.2001, wait_duration=0.02)
+2026-06-18 22:41:55 [replayer] INFO: Move coordinate to: (662.5, 1833.2001)
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='move', x=662.5, y=1990.1, wait_duration=0.02)
+2026-06-18 22:41:55 [replayer] INFO: Move coordinate to: (662.5, 1990.1)
+2026-06-18 22:41:55 [replayer] INFO: Touch: Touch(touch_type='up', x=662.5, y=2147.0, wait_duration=0.02)
+2026-06-18 22:41:55 [replayer] INFO: Release coordinate at: (662.5, 2147.0)
+2026-06-18 22:41:56 [replayer] INFO: [20] Execute Monkey event: CLICK
+2026-06-18 22:41:56 [replayer] INFO: Touch: Touch(touch_type='down', x=834.0, y=158.0, wait_duration=0.0)
+2026-06-18 22:41:57 [replayer] INFO: Press coordinate at: (834.0, 158.0)
+2026-06-18 22:41:57 [replayer] INFO: Touch: Touch(touch_type='up', x=834.0, y=158.0, wait_duration=0.0)
+2026-06-18 22:41:57 [replayer] INFO: Release coordinate at: (834.0, 158.0)
+2026-06-18 22:41:58 [replayer] INFO: Script execution start state: markor1652.Markor.test_create_note - start
+2026-06-18 22:41:58 [replayer] INFO: [20] Execute Script event: click
+2026-06-18 22:41:58 [replayer] INFO: Click coordinate: (694.0, 160.0)
+2026-06-18 22:41:59 [replayer] INFO: [20] Execute Script event: click
+2026-06-18 22:41:59 [replayer] INFO: Click coordinate: (717.5, 1058.0)
+2026-06-18 22:42:00 [replayer] INFO: [20] Execute Script event: click
+2026-06-18 22:42:00 [replayer] INFO: Click coordinate: (959.0, 1873.0)
+2026-06-18 22:42:01 [replayer] INFO: [20] Execute Script event: setText
+2026-06-18 22:42:22 [replayer] INFO: Set text to: tA8E5G1j
+2026-06-18 22:42:23 [replayer] INFO: [20] Execute Script event: click
+2026-06-18 22:42:23 [replayer] INFO: Click coordinate: (909.5, 1400.0)
+2026-06-18 22:42:24 [replayer] INFO: [20] Execute Script event: pressKey
+2026-06-18 22:42:24 [replayer] INFO: Press key: back
+2026-06-18 22:42:25 [replayer] INFO: Script execution end state: markor1652.Markor.test_create_note - pass
+2026-06-18 22:42:25 [replayer] INFO: [21] Execute Monkey event: CLICK
+2026-06-18 22:42:25 [replayer] INFO: Touch: Touch(touch_type='down', x=832.0, y=126.0, wait_duration=0.0)
+2026-06-18 22:42:25 [replayer] INFO: Press coordinate at: (832.0, 126.0)
+2026-06-18 22:42:25 [replayer] INFO: Touch: Touch(touch_type='up', x=832.0, y=126.0, wait_duration=0.0)
+2026-06-18 22:42:25 [replayer] INFO: Release coordinate at: (832.0, 126.0)
+2026-06-18 22:42:26 [replayer] INFO: [22] Execute Monkey event: CLICK
+2026-06-18 22:42:26 [replayer] INFO: Touch: Touch(touch_type='down', x=984.0, y=345.0, wait_duration=0.0)
+2026-06-18 22:42:26 [replayer] INFO: Press coordinate at: (984.0, 345.0)
+2026-06-18 22:42:26 [replayer] INFO: Touch: Touch(touch_type='up', x=984.0, y=345.0, wait_duration=0.0)
+2026-06-18 22:42:26 [replayer] INFO: Release coordinate at: (984.0, 345.0)
+2026-06-18 22:42:27 [replayer] INFO: [23] Execute Monkey event: SCROLL_LEFT_RIGHT
+2026-06-18 22:42:27 [replayer] INFO: Touch: Touch(touch_type='down', x=540.0, y=1115.5, wait_duration=0.0)
+2026-06-18 22:42:27 [replayer] INFO: Press coordinate at: (540.0, 1115.5)
+2026-06-18 22:42:27 [replayer] INFO: Touch: Touch(touch_type='move', x=540.0, y=1115.5, wait_duration=0.0)
+2026-06-18 22:42:28 [replayer] INFO: Move coordinate to: (540.0, 1115.5)
+2026-06-18 22:42:28 [replayer] INFO: Touch: Touch(touch_type='move', x=593.9, y=1115.5, wait_duration=0.02)
+2026-06-18 22:42:28 [replayer] INFO: Move coordinate to: (593.9, 1115.5)
+2026-06-18 22:42:28 [replayer] INFO: Touch: Touch(touch_type='move', x=647.8, y=1115.5, wait_duration=0.02)
+2026-06-18 22:42:28 [replayer] INFO: Move coordinate to: (647.8, 1115.5)
+2026-06-18 22:42:28 [replayer] INFO: Touch: Touch(touch_type='move', x=701.7, y=1115.5, wait_duration=0.02)
+2026-06-18 22:42:28 [replayer] INFO: Move coordinate to: (701.7, 1115.5)
+2026-06-18 22:42:28 [replayer] INFO: Touch: Touch(touch_type='move', x=755.6, y=1115.5, wait_duration=0.02)
+2026-06-18 22:42:28 [replayer] INFO: Move coordinate to: (755.6, 1115.5)
+2026-06-18 22:42:28 [replayer] INFO: Touch: Touch(touch_type='move', x=809.5, y=1115.5, wait_duration=0.02)
+2026-06-18 22:42:28 [replayer] INFO: Move coordinate to: (809.5, 1115.5)
+2026-06-18 22:42:28 [replayer] INFO: Touch: Touch(touch_type='move', x=863.4, y=1115.5, wait_duration=0.02)
+2026-06-18 22:42:28 [replayer] INFO: Move coordinate to: (863.4, 1115.5)
+2026-06-18 22:42:28 [replayer] INFO: Touch: Touch(touch_type='move', x=917.3, y=1115.5, wait_duration=0.02)
+2026-06-18 22:42:28 [replayer] INFO: Move coordinate to: (917.3, 1115.5)
+2026-06-18 22:42:28 [replayer] INFO: Touch: Touch(touch_type='move', x=971.2, y=1115.5, wait_duration=0.02)
+2026-06-18 22:42:28 [replayer] INFO: Move coordinate to: (971.2, 1115.5)
+2026-06-18 22:42:28 [replayer] INFO: Touch: Touch(touch_type='move', x=1025.1, y=1115.5, wait_duration=0.02)
+2026-06-18 22:42:28 [replayer] INFO: Move coordinate to: (1025.1, 1115.5)
+2026-06-18 22:42:28 [replayer] INFO: Touch: Touch(touch_type='up', x=1079.0, y=1115.5, wait_duration=0.02)
+2026-06-18 22:42:28 [replayer] INFO: Release coordinate at: (1079.0, 1115.5)
+2026-06-18 22:42:29 [replayer] INFO: Script execution start state: markor1652.Markor.test_back_to_root - start
+2026-06-18 22:42:29 [replayer] INFO: [23] Execute Script event: click
+2026-06-18 22:42:29 [replayer] INFO: Click coordinate: (180.0, 272.0)
+2026-06-18 22:42:30 [replayer] INFO: [23] Execute Script event: click
+2026-06-18 22:42:31 [replayer] INFO: Click coordinate: (180.0, 272.0)
+2026-06-18 22:42:32 [replayer] INFO: [23] Execute Script event: click
+2026-06-18 22:42:32 [replayer] INFO: Click coordinate: (180.0, 272.0)
+2026-06-18 22:42:33 [replayer] INFO: [23] Execute Script event: click
+2026-06-18 22:42:33 [replayer] INFO: Click coordinate: (180.0, 272.0)
+2026-06-18 22:42:34 [replayer] INFO: [23] Execute Script event: click
+2026-06-18 22:42:34 [replayer] INFO: Click coordinate: (180.0, 272.0)
+2026-06-18 22:42:35 [replayer] INFO: Script execution end state: markor1652.Markor.test_back_to_root - pass
+2026-06-18 22:42:35 [reproducer] INFO: Preconditions executed for test case: bug_test_search_note
+2026-06-18 22:42:35 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_search_note
+2026-06-18 22:42:35 [reproducer] INFO: Start generating coverage file operation
+2026-06-18 22:42:35 [reproducer] INFO: Complete generating coverage file operation
+2026-06-18 22:42:35 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-18 22:42:36 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260618_223934\test_search_note\bug_test_search_note_precondition/bug_test_search_note.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260618_223934\test_search_note\bug_test_search_note_precondition/bug_test_search_note.xml
+2026-06-18 22:42:36 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260618_223934\test_search_note\bug_test_search_note_precondition\bug_test_search_note.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-18 22:42:36 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260618_223934\test_search_note\bug_test_search_note_precondition/bug_test_search_note.ec -> .\report\report_20260618_223934\test_search_note\bug_test_search_note_precondition/bug_test_search_note.xml
+2026-06-18 22:42:36 [reproducer] INFO: Coverage data collected: .\report\report_20260618_223934\test_search_note\bug_test_search_note_precondition/bug_test_search_note.xml
+2026-06-18 22:42:36 [reproducer] INFO: Start executing property for test case: bug_test_search_note
+2026-06-18 22:42:36 [replayer] INFO: Script execution start state: markor1652.Markor.test_search_note - start
+2026-06-18 22:42:36 [replayer] INFO: [23] Execute Script event: click
+2026-06-18 22:42:36 [replayer] INFO: Click coordinate: (135.0, 2043.0)
+2026-06-18 22:42:37 [replayer] INFO: [23] Execute Script event: click
+2026-06-18 22:42:37 [replayer] INFO: Click coordinate: (914.0, 160.0)
+2026-06-18 22:42:38 [replayer] INFO: [23] Execute Script event: setText
+2026-06-18 22:42:38 [replayer] INFO: Set text to: hi.md
+2026-06-18 22:42:39 [replayer] INFO: [23] Execute Script event: click
+2026-06-18 22:42:39 [replayer] INFO: Click coordinate: (909.5, 1552.0)
+2026-06-18 22:42:40 [replayer] INFO: [23] Execute Script event: pressKey
+2026-06-18 22:42:40 [replayer] INFO: Press key: back
+2026-06-18 22:42:41 [replayer] INFO: Script execution end state: markor1652.Markor.test_search_note - fail
+2026-06-18 22:42:41 [reproducer] INFO: Property executed for test case: bug_test_search_note
+2026-06-18 22:42:41 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_search_note
+2026-06-18 22:42:41 [reproducer] INFO: Start generating coverage file operation
+2026-06-18 22:42:41 [reproducer] INFO: Complete generating coverage file operation
+2026-06-18 22:42:41 [adb_wrapper] INFO: Successfully pulled file: 
+2026-06-18 22:42:42 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260618_223934\test_search_note\bug_test_search_note_property/bug_test_search_note.ec --classfiles D:\code\python\Kea-FL\example\markor-1\app\build\intermediates\javac\flavorAtestDebug\classes --sourcefiles D:\code\python\Kea-FL\example\markor-1\app\src\main\java --xml .\report\report_20260618_223934\test_search_note\bug_test_search_note_property/bug_test_search_note.xml
+2026-06-18 22:42:42 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260618_223934\test_search_note\bug_test_search_note_property\bug_test_search_note.ec.
+[INFO] Analyzing 252 classes.
+
+2026-06-18 22:42:42 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260618_223934\test_search_note\bug_test_search_note_property/bug_test_search_note.ec -> .\report\report_20260618_223934\test_search_note\bug_test_search_note_property/bug_test_search_note.xml
+2026-06-18 22:42:42 [reproducer] INFO: Coverage data collected: .\report\report_20260618_223934\test_search_note\bug_test_search_note_property/bug_test_search_note.xml
+2026-06-18 22:42:42 [adb_wrapper] INFO: Successfully shutdown app: 
+2026-06-18 22:42:42 [adb_wrapper] INFO: Successfully cleared app data: Success
+
+2026-06-18 22:42:42 [reproducer] INFO: Test environment reset completed
+2026-06-18 22:42:42 [runner] INFO: Parsing coverage data...
+2026-06-18 22:42:42 [report_generator] INFO: generate line coverage data: .\report\report_20260618_223934\test_search_note\data\bug_test_search_note_pre_line_coverage.md
+2026-06-18 22:42:42 [report_generator] INFO: generate branch coverage data: .\report\report_20260618_223934\test_search_note\data\bug_test_search_note_pre_branch_coverage.md
+2026-06-18 22:42:42 [report_generator] INFO: generate line coverage data: .\report\report_20260618_223934\test_search_note\data\bug_test_search_note_prop_line_coverage.md
+2026-06-18 22:42:42 [report_generator] INFO: generate branch coverage data: .\report\report_20260618_223934\test_search_note\data\bug_test_search_note_prop_branch_coverage.md
+2026-06-18 22:42:42 [report_generator] INFO: generate line coverage data: .\report\report_20260618_223934\test_search_note\data\happy_test_search_note_pre_line_coverage.md
+2026-06-18 22:42:42 [report_generator] INFO: generate branch coverage data: .\report\report_20260618_223934\test_search_note\data\happy_test_search_note_pre_branch_coverage.md
+2026-06-18 22:42:42 [report_generator] INFO: generate line coverage data: .\report\report_20260618_223934\test_search_note\data\happy_test_search_note_prop_line_coverage.md
+2026-06-18 22:42:42 [report_generator] INFO: generate branch coverage data: .\report\report_20260618_223934\test_search_note\data\happy_test_search_note_prop_branch_coverage.md
+2026-06-18 22:42:42 [runner] INFO: Calculating incremental coverage...
+2026-06-18 22:42:42 [runner] INFO: Performing incremental coverage analysis...
+2026-06-18 22:42:42 [runner] INFO: Generating pair test case report...
+2026-06-18 22:42:42 [runner] INFO: Saving intermediate data...
+2026-06-18 22:42:42 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260618_223934\test_search_note\data\bug_test_search_note_line_incremental_data.md
+2026-06-18 22:42:42 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260618_223934\test_search_note\data\bug_test_search_note_branch_incremental_data.md
+2026-06-18 22:42:42 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260618_223934\test_search_note\data\happy_test_search_note_line_incremental_data.md
+2026-06-18 22:42:42 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260618_223934\test_search_note\data\happy_test_search_note_branch_incremental_data.md
+2026-06-18 22:42:42 [report_generator] INFO: generate line diff data: .\report\report_20260618_223934\test_search_note\data\line_diff_data.md
+2026-06-18 22:42:42 [report_generator] INFO: generate branch diff data: .\report\report_20260618_223934\test_search_note\data\branch_diff_data.md
+2026-06-18 22:42:42 [runner] INFO: Generating diff report...
+2026-06-18 22:42:42 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MainActivity.java encoding: utf-8
+2026-06-18 22:42:42 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\ui\SearchOrCustomTextDialogCreator.java encoding: utf-8
+2026-06-18 22:42:42 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\ui\fsearch\FileSearchDialog.java encoding: utf-8
+2026-06-18 22:42:43 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\util\AppSettings.java encoding: utf-8
+2026-06-18 22:42:43 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\android\dummy\TextWatcherDummy.java encoding: utf-8
+2026-06-18 22:42:43 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\ui\FilesystemViewerFragment.java encoding: utf-8
+2026-06-18 22:42:43 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\util\ContextUtils.java encoding: utf-8
+2026-06-18 22:42:43 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260618_223934\test_search_note\test_search_note_line_diff_report.html
+2026-06-18 22:42:43 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\activity\MainActivity.java encoding: utf-8
+2026-06-18 22:42:43 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\ui\SearchOrCustomTextDialogCreator.java encoding: utf-8
+2026-06-18 22:42:43 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\markor\ui\fsearch\FileSearchDialog.java encoding: utf-8
+2026-06-18 22:42:43 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\markor-1\app\src\main\java\net\gsantner\opoc\ui\FilesystemViewerFragment.java encoding: utf-8
+2026-06-18 22:42:43 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260618_223934\test_search_note\test_search_note_branch_diff_report.html
+2026-06-18 22:42:43 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_search_note
+
+## Code Coverage Summary
+File: net/gsantner/markor/activity/MainActivity.java
+  Only in second dataset lines: [179, 180, 184]
+    Line 179: hit count 4
+    Line 180: hit count 4
+    Line 184: hit count 2
+----------------------------------------
+File: net/gsantner/markor/ui/SearchOrCustomTextDialogCreator.java
+  Only in second dataset lines: [130, 131, 136, 138]
+    Line 130: hit count 2
+    Line 131: hit count 5
+    Line 136: hit count 3
+    Line 138: hit count 1
+----------------------------------------
+File: net/gsantner/markor/ui/fsearch/FileSearchDialog.java
+  Only in second dataset lines: [28, 29, 30, 31, 33, 34, 35, 37, 40, 42, 43, 44, 45, 46, 48, 49, 51, 52, 54, 55, 56, 57, 58, 59, 60, 62, 63, 86, 87, 90, 91, 92, 93, 94, 95, 105, 108, 129, 130, 131, 134, 135, 136, 139, 140, 141, 144, 147, 148, 149, 150, 153, 156, 157, 158, 159, 163, 165]
+    Line 28: hit count 4
+    Line 29: hit count 7
+    Line 30: hit count 5
+    Line 31: hit count 6
+    Line 33: hit count 4
+    Line 34: hit count 5
+    Line 35: hit count 7
+    Line 37: hit count 1
+    Line 40: hit count 6
+    Line 42: hit count 5
+    Line 43: hit count 5
+    Line 44: hit count 3
+    Line 45: hit count 9
+    Line 46: hit count 4
+    Line 48: hit count 6
+    Line 49: hit count 10
+    Line 51: hit count 6
+    Line 52: hit count 12
+    Line 54: hit count 5
+    Line 55: hit count 5
+    Line 56: hit count 5
+    Line 57: hit count 5
+    Line 58: hit count 5
+    Line 59: hit count 5
+    Line 60: hit count 5
+    Line 62: hit count 5
+    Line 63: hit count 9
+    Line 86: hit count 3
+    Line 87: hit count 4
+    Line 90: hit count 3
+    Line 91: hit count 3
+    Line 92: hit count 3
+    Line 93: hit count 3
+    Line 94: hit count 7
+    Line 95: hit count 5
+    Line 105: hit count 4
+    Line 108: hit count 3
+    Line 129: hit count 3
+    Line 130: hit count 4
+    Line 131: hit count 4
+    Line 134: hit count 3
+    Line 135: hit count 4
+    Line 136: hit count 4
+    Line 139: hit count 3
+    Line 140: hit count 4
+    Line 141: hit count 4
+    Line 144: hit count 4
+    Line 147: hit count 3
+    Line 148: hit count 4
+    Line 149: hit count 6
+    Line 150: hit count 4
+    Line 153: hit count 3
+    Line 156: hit count 4
+    Line 157: hit count 3
+    Line 158: hit count 4
+    Line 159: hit count 2
+    Line 163: hit count 2
+    Line 165: hit count 2
+----------------------------------------
+File: net/gsantner/markor/util/AppSettings.java
+  Only in second dataset lines: [594, 602, 610, 618]
+    Line 594: hit count 7
+    Line 602: hit count 7
+    Line 610: hit count 7
+    Line 618: hit count 7
+----------------------------------------
+File: net/gsantner/opoc/android/dummy/TextWatcherDummy.java
+  Only in first dataset lines: [25, 29, 54, 55]
+    Line 25: hit count 1
+    Line 29: hit count 1
+    Line 54: hit count 4
+    Line 55: hit count 1
+----------------------------------------
+File: net/gsantner/opoc/ui/FilesystemViewerFragment.java
+  Only in second dataset lines: [375, 377, 379, 423, 425, 529, 530, 531, 540]
+    Line 375: hit count 6
+    Line 377: hit count 2
+    Line 379: hit count 3
+    Line 423: hit count 2
+    Line 425: hit count 2
+    Line 529: hit count 9
+    Line 530: hit count 3
+    Line 531: hit count 7
+    Line 540: hit count 1
+----------------------------------------
+File: net/gsantner/opoc/util/ContextUtils.java
+  Only in second dataset lines: [582]
+    Line 582: hit count 8
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Start: test_search_note → Input: hi.md → Back → Pass: test_search_note → Start: test_create_note → Input: MRA6Yipe
+
+FAIL continuation:
+Back → Pass: test_create_note → Start: test_search_note → Input: hi.md → Back → Pass: test_search_note → Start: test_search_note → Input: hi.md → Back → Pass: test_search_note → Start: test_search_note → Input: hi.md → Back → Pass: test_search_note → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Start: test_search_note → Input: hi.md → Back → Pass: test_search_note → Start: test_create_note → Input: h2Q3XE5VXQ → Back → Pass: test_create_note → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_create_note → Input: tA8E5G1j → Back → Pass: test_create_note → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Start: test_back_to_root → Pass: test_back_to_root → Start: test_search_note → Input: hi.md → Back → Fail: test_search_note → Random operation: CLICK → Random operation: LONG_CLICK → Start: test_modify_note → Input: jCnb0vt9jXDmOI_yMTwcdAXh8ZwJXL → Back → Pass: test_modify_note → Start: test_search_note → Input: hi.md
+
+## Correct Execution Path
+Random operation: CLICK → Random operation: LONG_CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Start: test_search_note → Input: hi.md → Back → Pass: test_search_note → Start: test_create_note → Input: MRA6Yipe
+
+## Error Execution Path
+Random operation: CLICK → Random operation: LONG_CLICK → Random operation: SCROLL_RIGHT_LEFT → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Random operation: CLICK → Start: test_search_note → Input: hi.md → Back → Pass: test_search_note → Start: test_create_note → Input: MRA6Yipe → Back → Pass: test_create_note → Start: test_search_note → Input: hi.md → Back → Pass: test_search_note → Start: test_search_note → Input: hi.md → Back → Pass: test_search_note → Start: test_search_note → Input: hi.md → Back → Pass: test_search_note → Random operation: CLICK → Random operation: SCROLL_RIGHT_LEFT → Start: test_search_note → Input: hi.md → Back → Pass: test_search_note → Start: test_create_note → Input: h2Q3XE5VXQ → Back → Pass: test_create_note → Random operation: LONG_CLICK → Random operation: CLICK → Random operation: SCROLL_TOP_DOWN → Random operation: CLICK → Start: test_create_note → Input: tA8E5G1j → Back → Pass: test_create_note → Random operation: CLICK → Random operation: SCROLL_LEFT_RIGHT → Start: test_back_to_root → Pass: test_back_to_root → Start: test_search_note → Input: hi.md → Back → Fail: test_search_note → Random operation: CLICK → Random operation: LONG_CLICK → Start: test_modify_note → Input: jCnb0vt9jXDmOI_yMTwcdAXh8ZwJXL → Back → Pass: test_modify_note → Start: test_search_note → Input: hi.md
+
+## Files to Analyze
+net/gsantner/markor/activity/MainActivity.java
+  Differing lines: 3
+
+net/gsantner/markor/ui/SearchOrCustomTextDialogCreator.java
+  Differing lines: 4
+
+net/gsantner/markor/ui/fsearch/FileSearchDialog.java
+  Differing lines: 58
+
+net/gsantner/markor/util/AppSettings.java
+  Differing lines: 4
+
+net/gsantner/opoc/android/dummy/TextWatcherDummy.java
+  Differing lines: 4
+
+net/gsantner/opoc/ui/FilesystemViewerFragment.java
+  Differing lines: 9
+
+net/gsantner/opoc/util/ContextUtils.java
+  Differing lines: 1
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-18 22:42:43 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-18 22:42:45 [llm] INFO: LLM response: net/gsantner/markor/ui/fsearch/FileSearchDialog.java
+net/gsantner/markor/ui/SearchOrCustomTextDialogCreator.java
+net/gsantner/markor/activity/MainActivity.java
+net/gsantner/opoc/ui/FilesystemViewerFragment.java
+net/gsantner/markor/util/AppSettings.java
+net/gsantner/opoc/util/ContextUtils.java
+net/gsantner/opoc/android/dummy/TextWatcherDummy.java
+2026-06-18 22:42:45 [runner] INFO: Saving ranking to .\report\report_20260618_223934\test_search_note\ranking.txt
+2026-06-18 22:42:45 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260618_223934\index.html
+2026-06-18 22:42:45 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: .\report\report_20260618_223934

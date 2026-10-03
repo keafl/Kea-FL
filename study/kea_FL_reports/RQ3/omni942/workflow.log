@@ -1,0 +1,419 @@
+2026-06-20 15:18:48 [runner] INFO: Building pair test cases...
+2026-06-20 15:18:48 [replayer] INFO: Parse 179 events
+2026-06-20 15:18:48 [replayer] INFO: Parse 5 Monkey actions
+2026-06-20 15:18:48 [reproducer] INFO: Extract 7 pairs test cases
+2026-06-20 15:18:48 [replayer] INFO: Property omni942.OmninotesTag.test_create_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:18:48 [replayer] INFO: Property omni942.OmninotesTag.test_open_existing_note not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:18:48 [replayer] INFO: Property omni942.OmninotesTag.test_data_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:18:48 [replayer] INFO: Property omni942.OmninotesTag.test_create_note_with_tag_in_content not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:18:48 [replayer] INFO: Property omni942.OmninotesTag.test_reduced_view not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:18:48 [replayer] INFO: Property omni942.OmninotesTag.test_behavior_setting not found, skip: [happy_path] = True, [bug_path] = False
+2026-06-20 15:18:48 [reproducer] INFO: Build 1 pairs test cases
+2026-06-20 15:18:48 [reproducer] INFO: Test case [1]: test_add_and_remove_tag
+2026-06-20 15:18:48 [reproducer] INFO:     -happy_path: [preconditions]: 17, [property]: 9
+2026-06-20 15:18:48 [reproducer] INFO:     -bug_path: [preconditions]: 58, [property]: 9
+2026-06-20 15:18:48 [runner] INFO: Start running full coverage difference analysis...
+2026-06-20 15:18:48 [runner] INFO: Processing pair test case [1]: happy_test_add_and_remove_tag <-> bug_test_add_and_remove_tag
+2026-06-20 15:18:48 [runner] INFO: Running pair test case analysis: happy_test_add_and_remove_tag <-> bug_test_add_and_remove_tag
+2026-06-20 15:18:48 [runner] INFO: Running property-satisfying path...
+2026-06-20 15:18:48 [reproducer] INFO: Start reproducing test case: happy_test_add_and_remove_tag
+2026-06-20 15:18:48 [reproducer] INFO: Start executing preconditions for test case: happy_test_add_and_remove_tag
+2026-06-20 15:18:48 [reproducer] INFO: Preconditions executed for test case: happy_test_add_and_remove_tag
+2026-06-20 15:18:48 [reproducer] INFO: Start collecting coverage data for preconditions of test case: happy_test_add_and_remove_tag
+2026-06-20 15:18:48 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:18:48 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:18:48 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition/happy_test_add_and_remove_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition/happy_test_add_and_remove_tag.xml
+2026-06-20 15:18:48 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition\happy_test_add_and_remove_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:18:48 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition/happy_test_add_and_remove_tag.ec -> .\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition/happy_test_add_and_remove_tag.xml
+2026-06-20 15:18:48 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_precondition/happy_test_add_and_remove_tag.xml
+2026-06-20 15:18:48 [reproducer] INFO: Start executing property for test case: happy_test_add_and_remove_tag
+2026-06-20 15:18:48 [reproducer] INFO: Property executed for test case: happy_test_add_and_remove_tag
+2026-06-20 15:18:48 [reproducer] INFO: Start collecting coverage data for property of test case: happy_test_add_and_remove_tag
+2026-06-20 15:18:48 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:18:48 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:18:49 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_property/happy_test_add_and_remove_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_property/happy_test_add_and_remove_tag.xml
+2026-06-20 15:18:49 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_property\happy_test_add_and_remove_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:18:49 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_property/happy_test_add_and_remove_tag.ec -> .\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_property/happy_test_add_and_remove_tag.xml
+2026-06-20 15:18:49 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151848\test_add_and_remove_tag\happy_test_add_and_remove_tag_property/happy_test_add_and_remove_tag.xml
+2026-06-20 15:18:49 [runner] INFO: Running property-violating path path...
+2026-06-20 15:18:49 [reproducer] INFO: Start reproducing test case: bug_test_add_and_remove_tag
+2026-06-20 15:18:49 [reproducer] INFO: Start executing preconditions for test case: bug_test_add_and_remove_tag
+2026-06-20 15:18:49 [reproducer] INFO: Preconditions executed for test case: bug_test_add_and_remove_tag
+2026-06-20 15:18:49 [reproducer] INFO: Start collecting coverage data for preconditions of test case: bug_test_add_and_remove_tag
+2026-06-20 15:18:49 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:18:49 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:18:49 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition/bug_test_add_and_remove_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition/bug_test_add_and_remove_tag.xml
+2026-06-20 15:18:49 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition\bug_test_add_and_remove_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:18:49 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition/bug_test_add_and_remove_tag.ec -> .\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition/bug_test_add_and_remove_tag.xml
+2026-06-20 15:18:49 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_precondition/bug_test_add_and_remove_tag.xml
+2026-06-20 15:18:49 [reproducer] INFO: Start executing property for test case: bug_test_add_and_remove_tag
+2026-06-20 15:18:49 [reproducer] INFO: Property executed for test case: bug_test_add_and_remove_tag
+2026-06-20 15:18:49 [reproducer] INFO: Start collecting coverage data for property of test case: bug_test_add_and_remove_tag
+2026-06-20 15:18:49 [reproducer] INFO: Start generating coverage file operation
+2026-06-20 15:18:49 [reproducer] INFO: Complete generating coverage file operation
+2026-06-20 15:18:49 [reproducer] INFO: JaCoCo conversion command: java -jar D:\code\python\Kea-FL_new\jacococli.jar report .\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_property/bug_test_add_and_remove_tag.ec --classfiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\build\intermediates\javac\alphaDebug\classes --sourcefiles D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java --xml .\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_property/bug_test_add_and_remove_tag.xml
+2026-06-20 15:18:49 [reproducer] INFO: JaCoCo conversion output: [INFO] Loading execution data file D:\code\python\Kea-FL_new\.\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_property\bug_test_add_and_remove_tag.ec.
+[INFO] Analyzing 250 classes.
+
+2026-06-20 15:18:49 [reproducer] INFO: Coverage file converted successfully: .\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_property/bug_test_add_and_remove_tag.ec -> .\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_property/bug_test_add_and_remove_tag.xml
+2026-06-20 15:18:49 [reproducer] INFO: Coverage data collected: .\report\report_20260620_151848\test_add_and_remove_tag\bug_test_add_and_remove_tag_property/bug_test_add_and_remove_tag.xml
+2026-06-20 15:18:49 [runner] INFO: Parsing coverage data...
+2026-06-20 15:18:49 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151848\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_pre_line_coverage.md
+2026-06-20 15:18:49 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151848\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_pre_branch_coverage.md
+2026-06-20 15:18:49 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151848\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_prop_line_coverage.md
+2026-06-20 15:18:49 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151848\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_prop_branch_coverage.md
+2026-06-20 15:18:49 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151848\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_pre_line_coverage.md
+2026-06-20 15:18:49 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151848\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_pre_branch_coverage.md
+2026-06-20 15:18:49 [report_generator] INFO: generate line coverage data: .\report\report_20260620_151848\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_prop_line_coverage.md
+2026-06-20 15:18:49 [report_generator] INFO: generate branch coverage data: .\report\report_20260620_151848\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_prop_branch_coverage.md
+2026-06-20 15:18:49 [runner] INFO: Calculating incremental coverage...
+2026-06-20 15:18:49 [runner] INFO: Performing incremental coverage analysis...
+2026-06-20 15:18:49 [runner] INFO: Generating pair test case report...
+2026-06-20 15:18:49 [runner] INFO: Saving intermediate data...
+2026-06-20 15:18:49 [report_generator] INFO: generate bug line coverage increment data: .\report\report_20260620_151848\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_line_incremental_data.md
+2026-06-20 15:18:49 [report_generator] INFO: generate bug branch coverage increment data: .\report\report_20260620_151848\test_add_and_remove_tag\data\bug_test_add_and_remove_tag_branch_incremental_data.md
+2026-06-20 15:18:49 [report_generator] INFO: generate correct line coverage increment data: .\report\report_20260620_151848\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_line_incremental_data.md
+2026-06-20 15:18:49 [report_generator] INFO: generate correct branch coverage increment data: .\report\report_20260620_151848\test_add_and_remove_tag\data\happy_test_add_and_remove_tag_branch_incremental_data.md
+2026-06-20 15:18:49 [report_generator] INFO: generate line diff data: .\report\report_20260620_151848\test_add_and_remove_tag\data\line_diff_data.md
+2026-06-20 15:18:49 [report_generator] INFO: generate branch diff data: .\report\report_20260620_151848\test_add_and_remove_tag\data\branch_diff_data.md
+2026-06-20 15:18:49 [runner] INFO: Generating diff report...
+2026-06-20 15:18:49 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\ListFragment.java encoding: utf-8
+2026-06-20 15:18:49 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\MainActivity.java encoding: utf-8
+2026-06-20 15:18:49 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\NavigationDrawerFragment.java encoding: utf-8
+2026-06-20 15:18:49 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\SettingsActivity.java encoding: utf-8
+2026-06-20 15:18:49 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\SettingsFragment.java encoding: utf-8
+2026-06-20 15:18:49 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\async\CategoryMenuTask.java encoding: utf-8
+2026-06-20 15:18:49 [report_generator] ERROR: Source file not found: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\databinding\ActivitySettingsBinding.java
+2026-06-20 15:18:49 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\helpers\AppVersionHelper.java encoding: utf-8
+2026-06-20 15:18:49 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\models\views\Fab.java encoding: utf-8
+2026-06-20 15:18:49 [report_generator] INFO: Successfully read source file: D:\code\python\Kea-FL\example\Omni-Notes-1\omniNotes\src\main\java\it\feio\android\omninotes\utils\ResourcesUtils.java encoding: utf-8
+2026-06-20 15:18:49 [report_generator] INFO: Line Coverage Diff Report Generated: .\report\report_20260620_151848\test_add_and_remove_tag\test_add_and_remove_tag_line_diff_report.html
+2026-06-20 15:18:49 [report_generator] INFO: Branch Coverage Diff Report Generated: .\report\report_20260620_151848\test_add_and_remove_tag\test_add_and_remove_tag_branch_diff_report.html
+2026-06-20 15:18:49 [llm] INFO: Generated prompt: ## Question
+You will read an event flow including page actions and code coverage differences between correct and error executions.
+Then answer:
+Which files most likely contain the non-crash functional (NCF) bug?
+
+## Rules
+(0) Infer functionality from failed test case name.
+(1) Only NCF bugs.
+(2) Compare execution flows and identify divergence point.
+    (a) Focus on last shared action → first divergence.
+    (b) Coverage is supporting evidence only.
+(3) Consider state inconsistency issues.
+(4) Ignore random exploratory actions unless directly relevant.
+(5) Focus only on files relevant to failed scenario.
+(6) Exclude test/mock/third-party code.
+(7) Rank by contribution to divergence behavior.
+(8) Prefer simplest explanation.
+
+## Failed Test Case
+test_add_and_remove_tag
+
+## Code Coverage Summary
+File: it/feio/android/omninotes/ListFragment.java
+  Only in first dataset lines: [192, 193, 194, 201, 202, 203, 204, 205, 207, 240, 361, 362, 363, 364, 365, 366, 367, 456, 459, 754, 755]
+    Line 192: hit count 2
+    Line 193: hit count 3
+    Line 194: hit count 1
+    Line 201: hit count 4
+    Line 202: hit count 5
+    Line 203: hit count 5
+    Line 204: hit count 5
+    Line 205: hit count 5
+    Line 207: hit count 3
+    Line 240: hit count 6
+    Line 361: hit count 3
+    Line 362: hit count 2
+    Line 363: hit count 5
+    Line 364: hit count 5
+    Line 365: hit count 5
+    Line 366: hit count 5
+    Line 367: hit count 1
+    Line 456: hit count 3
+    Line 459: hit count 1
+    Line 754: hit count 4
+    Line 755: hit count 3
+----------------------------------------
+File: it/feio/android/omninotes/MainActivity.java
+  Only in first dataset lines: [151, 152, 153, 277, 278, 279, 281, 321, 322, 324, 327, 329, 330, 337, 345, 346, 347, 352, 353, 354, 376, 377, 378, 379, 381, 609, 610]
+    Line 151: hit count 2
+    Line 152: hit count 3
+    Line 153: hit count 1
+    Line 277: hit count 5
+    Line 278: hit count 2
+    Line 279: hit count 3
+    Line 281: hit count 1
+    Line 321: hit count 5
+    Line 322: hit count 2
+    Line 324: hit count 4
+    Line 327: hit count 8
+    Line 329: hit count 4
+    Line 330: hit count 5
+    Line 337: hit count 1
+    Line 345: hit count 3
+    Line 346: hit count 5
+    Line 347: hit count 1
+    Line 352: hit count 2
+    Line 353: hit count 1
+    Line 354: hit count 1
+    Line 376: hit count 3
+    Line 377: hit count 3
+    Line 378: hit count 2
+    Line 379: hit count 2
+    Line 381: hit count 1
+    Line 609: hit count 3
+    Line 610: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/NavigationDrawerFragment.java
+  Only in first dataset lines: [77, 78, 79, 184, 185, 189, 190, 191]
+    Line 77: hit count 2
+    Line 78: hit count 3
+    Line 79: hit count 1
+    Line 184: hit count 4
+    Line 185: hit count 1
+    Line 189: hit count 4
+    Line 190: hit count 4
+    Line 191: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/SettingsActivity.java
+  Only in first dataset lines: [33, 36, 43, 45, 46, 47, 49, 50, 51, 52, 56, 57, 58, 59, 60, 72, 75, 77, 97, 98, 100, 101, 102, 103, 104, 106, 107, 108, 109, 110]
+    Line 33: hit count 2
+    Line 36: hit count 6
+    Line 43: hit count 3
+    Line 45: hit count 5
+    Line 46: hit count 4
+    Line 47: hit count 3
+    Line 49: hit count 2
+    Line 50: hit count 7
+    Line 51: hit count 3
+    Line 52: hit count 1
+    Line 56: hit count 6
+    Line 57: hit count 7
+    Line 58: hit count 4
+    Line 59: hit count 4
+    Line 60: hit count 1
+    Line 72: hit count 4
+    Line 75: hit count 2
+    Line 77: hit count 1
+    Line 97: hit count 4
+    Line 98: hit count 5
+    Line 100: hit count 6
+    Line 101: hit count 2
+    Line 102: hit count 1
+    Line 103: hit count 3
+    Line 104: hit count 4
+    Line 106: hit count 5
+    Line 107: hit count 2
+    Line 108: hit count 1
+    Line 109: hit count 2
+    Line 110: hit count 2
+----------------------------------------
+File: it/feio/android/omninotes/SettingsFragment.java
+  Only in first dataset lines: [91, 102, 103, 104, 106, 107, 109, 110, 115, 118, 119, 120, 121, 122, 123, 124, 125, 128, 129, 130, 132, 147, 149, 152, 153, 167, 168, 183, 184, 249, 250, 285, 286, 287, 292, 293, 294, 296, 309, 310, 315, 316, 317, 321, 322, 323, 324, 325, 334, 335, 344, 345, 363, 364, 377, 378, 395, 396, 397, 398, 399, 400, 401, 402, 414, 415, 434, 435, 467, 468, 482, 484, 489, 490, 491, 495, 499, 500, 523, 524, 540, 541, 542, 552]
+    Line 91: hit count 3
+    Line 102: hit count 3
+    Line 103: hit count 2
+    Line 104: hit count 8
+    Line 106: hit count 5
+    Line 107: hit count 4
+    Line 109: hit count 3
+    Line 110: hit count 1
+    Line 115: hit count 1
+    Line 118: hit count 4
+    Line 119: hit count 8
+    Line 120: hit count 5
+    Line 121: hit count 3
+    Line 122: hit count 6
+    Line 123: hit count 5
+    Line 124: hit count 2
+    Line 125: hit count 7
+    Line 128: hit count 6
+    Line 129: hit count 2
+    Line 130: hit count 3
+    Line 132: hit count 1
+    Line 147: hit count 2
+    Line 149: hit count 2
+    Line 152: hit count 4
+    Line 153: hit count 2
+    Line 167: hit count 4
+    Line 168: hit count 2
+    Line 183: hit count 4
+    Line 184: hit count 2
+    Line 249: hit count 4
+    Line 250: hit count 2
+    Line 285: hit count 5
+    Line 286: hit count 2
+    Line 287: hit count 4
+    Line 292: hit count 3
+    Line 293: hit count 2
+    Line 294: hit count 4
+    Line 296: hit count 5
+    Line 309: hit count 5
+    Line 310: hit count 2
+    Line 315: hit count 5
+    Line 316: hit count 2
+    Line 317: hit count 3
+    Line 321: hit count 5
+    Line 322: hit count 2
+    Line 323: hit count 14
+    Line 324: hit count 4
+    Line 325: hit count 5
+    Line 334: hit count 4
+    Line 335: hit count 2
+    Line 344: hit count 5
+    Line 345: hit count 2
+    Line 363: hit count 5
+    Line 364: hit count 2
+    Line 377: hit count 5
+    Line 378: hit count 2
+    Line 395: hit count 5
+    Line 396: hit count 2
+    Line 397: hit count 3
+    Line 398: hit count 3
+    Line 399: hit count 3
+    Line 400: hit count 4
+    Line 401: hit count 3
+    Line 402: hit count 5
+    Line 414: hit count 5
+    Line 415: hit count 2
+    Line 434: hit count 4
+    Line 435: hit count 2
+    Line 467: hit count 5
+    Line 468: hit count 2
+    Line 482: hit count 4
+    Line 484: hit count 2
+    Line 489: hit count 4
+    Line 490: hit count 2
+    Line 491: hit count 4
+    Line 495: hit count 5
+    Line 499: hit count 4
+    Line 500: hit count 2
+    Line 523: hit count 5
+    Line 524: hit count 2
+    Line 540: hit count 4
+    Line 541: hit count 2
+    Line 542: hit count 4
+    Line 552: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/async/CategoryMenuTask.java
+  Only in first dataset lines: [135, 136, 137]
+    Line 135: hit count 7
+    Line 136: hit count 4
+    Line 137: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/databinding/ActivitySettingsBinding.java
+  Only in first dataset lines: [33, 34, 35, 36, 37, 38, 43, 48, 54, 55, 58, 67, 68, 69, 73, 74, 75, 78, 80, 81, 82, 85, 87]
+    Line 33: hit count 2
+    Line 34: hit count 3
+    Line 35: hit count 3
+    Line 36: hit count 3
+    Line 37: hit count 3
+    Line 38: hit count 1
+    Line 43: hit count 3
+    Line 48: hit count 5
+    Line 54: hit count 6
+    Line 55: hit count 2
+    Line 58: hit count 3
+    Line 67: hit count 2
+    Line 68: hit count 5
+    Line 69: hit count 2
+    Line 73: hit count 2
+    Line 74: hit count 4
+    Line 75: hit count 2
+    Line 78: hit count 3
+    Line 80: hit count 2
+    Line 81: hit count 4
+    Line 82: hit count 2
+    Line 85: hit count 3
+    Line 87: hit count 9
+----------------------------------------
+File: it/feio/android/omninotes/helpers/AppVersionHelper.java
+  Only in first dataset lines: [58]
+    Line 58: hit count 8
+----------------------------------------
+File: it/feio/android/omninotes/models/views/Fab.java
+  Only in first dataset lines: [127, 134]
+    Line 127: hit count 6
+    Line 134: hit count 1
+----------------------------------------
+File: it/feio/android/omninotes/utils/ResourcesUtils.java
+  Only in first dataset lines: [25, 30, 31, 32]
+    Line 25: hit count 21
+    Line 30: hit count 5
+    Line 31: hit count 4
+    Line 32: hit count 1
+----------------------------------------
+
+## Execution Divergence Hint
+Common prefix:
+Start: test_create_note_with_tag_in_content → Input: rkjsYWO → Input: #tag1 → Back → Pass: test_create_note_with_tag_in_content → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Pass: test_add_and_remove_tag
+
+FAIL continuation:
+Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Pass: test_add_and_remove_tag → Start: test_create_note → Input: BRha2sY9g → Input: abc123 → Back → Pass: test_create_note → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Fail: test_add_and_remove_tag → Start: test_create_note → Input: 478e
+
+## Correct Execution Path
+Random operation: SCROLL_LEFT_RIGHT → Start: test_create_note → Input: 1nvrOrCjS → Back → Pass: test_create_note → Start: test_create_note_with_tag_in_content → Input: rkjsYWO → Input: #tag1 → Back → Pass: test_create_note_with_tag_in_content → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Pass: test_add_and_remove_tag
+
+## Error Execution Path
+Random operation: SCROLL_LEFT_RIGHT → Start: test_create_note → Input: 1nvrOrCjS → Back → Pass: test_create_note → Start: test_create_note_with_tag_in_content → Input: rkjsYWO → Input: #tag1 → Back → Pass: test_create_note_with_tag_in_content → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Pass: test_add_and_remove_tag → Start: test_behavior_setting → Back → Pass: test_behavior_setting → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Pass: test_add_and_remove_tag → Start: test_create_note → Input: BRha2sY9g → Input: abc123 → Back → Pass: test_create_note → Start: test_open_existing_note → Pass: test_open_existing_note → Start: test_add_and_remove_tag → Back → Fail: test_add_and_remove_tag → Start: test_create_note → Input: 478e
+
+## Files to Analyze
+it/feio/android/omninotes/ListFragment.java
+  Differing lines: 21
+
+it/feio/android/omninotes/MainActivity.java
+  Differing lines: 27
+
+it/feio/android/omninotes/NavigationDrawerFragment.java
+  Differing lines: 8
+
+it/feio/android/omninotes/SettingsActivity.java
+  Differing lines: 30
+
+it/feio/android/omninotes/SettingsFragment.java
+  Differing lines: 84
+
+it/feio/android/omninotes/utils/TagsHelper.java
+  Differing lines: 1
+
+it/feio/android/omninotes/async/CategoryMenuTask.java
+  Differing lines: 3
+
+it/feio/android/omninotes/databinding/ActivitySettingsBinding.java
+  Differing lines: 23
+
+it/feio/android/omninotes/helpers/AppVersionHelper.java
+  Differing lines: 1
+
+it/feio/android/omninotes/models/views/Fab.java
+  Differing lines: 2
+
+it/feio/android/omninotes/utils/ResourcesUtils.java
+  Differing lines: 4
+
+## Output Format
+Provide your answer with file paths only. Sort all the files by suspicion level (highest first). One file path per line. No numbering, no explanations, no additional text, no extra punctuation.
+
+Output:
+2026-06-20 15:18:55 [httpx] INFO: HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-06-20 15:18:56 [llm] INFO: LLM response: it/feio/android/omninotes/SettingsFragment.java
+it/feio/android/omninotes/SettingsActivity.java
+it/feio/android/omninotes/MainActivity.java
+it/feio/android/omninotes/ListFragment.java
+it/feio/android/omninotes/NavigationDrawerFragment.java
+it/feio/android/omninotes/utils/TagsHelper.java
+it/feio/android/omninotes/async/CategoryMenuTask.java
+it/feio/android/omninotes/databinding/ActivitySettingsBinding.java
+it/feio/android/omninotes/helpers/AppVersionHelper.java
+it/feio/android/omninotes/models/views/Fab.java
+it/feio/android/omninotes/utils/ResourcesUtils.java
+2026-06-20 15:18:56 [runner] INFO: Saving ranking to .\report\report_20260620_151848\test_add_and_remove_tag\ranking.txt
+2026-06-20 15:18:56 [report_generator] INFO: Generated comprehensive analysis report: .\report\report_20260620_151848\index.html
+2026-06-20 15:18:56 [runner] INFO: Full coverage difference analysis completed, processed 1 pair test cases, results saved to: .\report\report_20260620_151848
