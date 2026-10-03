@@ -15,4 +15,3 @@ wheels/
 
 # Virtual environments
 .venv
-study/app_src/*.7z
